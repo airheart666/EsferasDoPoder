@@ -4,6 +4,8 @@ let allPages = [];       // PageData[] completo, na ordem do documento
 let chapters = [];       // { start, end, title, sectionLabel, anchor }[]
 let tocTreesGlobal = []; // árvores do {{toc}}, reusadas pelo índice de capa
 let cardDescriptions = {}; // descrições curadas dos cards (descriptions.json)
+let sphereThemes = {};   // identidade por esfera (sphere-themes.json): título -> {h,s,sig,lLight?}
+let availableSigils = new Set(); // ids de sigilo já presentes no sprite (sigils.svg)
 let currentChapterIndex = -1;
 let activeObserver = null;
 
@@ -40,6 +42,24 @@ async function init() {
       const cRes = await fetch('conditions.json');
       if (cRes.ok) conditionsData = await cRes.json();
     } catch (_) { /* mantém {} */ }
+
+    // Identidade por esfera (cor/sigilo). Opcional.
+    try {
+      const stRes = await fetch('sphere-themes.json');
+      if (stRes.ok) sphereThemes = await stRes.json();
+    } catch (_) { /* mantém {} → esferas usam a cor da seção */ }
+
+    // Sprite de sigilos (SVG injetado uma vez; referenciado por <use>). Opcional.
+    try {
+      const sigRes = await fetch('sigils.svg');
+      if (sigRes.ok) {
+        const holder = document.createElement('div');
+        holder.style.display = 'none';
+        holder.innerHTML = await sigRes.text();
+        document.body.insertBefore(holder, document.body.firstChild);
+        holder.querySelectorAll('symbol[id^="sig-"]').forEach(s => availableSigils.add(s.id.slice(4)));
+      }
+    } catch (_) { /* sem sigilos → esferas mostram só a cor */ }
 
     const { pages, tocTrees } = HBParser.parse(text);
 
@@ -499,12 +519,14 @@ function buildCoverIndex(tocTrees) {
   const wrap = document.createElement('div');
   wrap.className = 'cover-index';
 
-  for (const tree of tocTrees) {
+  tocTrees.forEach((tree, ti) => {
     const root = tree[0];
-    if (!root) continue;
+    if (!root) return;
 
     const col = document.createElement('div');
     col.className = 'cover-index-col';
+    // cor de seção nos cards não-esfera (0 = magia, 1 = marcial)
+    col.dataset.section = ti === 1 ? 'martial' : 'magic';
 
     const heading = document.createElement('h2');
     const headingLink = document.createElement('a');
@@ -528,25 +550,40 @@ function buildCoverIndex(tocTrees) {
       card.href = child.anchor;
       card.className = 'sphere-card';
 
+      // Identidade da esfera: matiz próprio + sigilo (herdando a cor via CSS).
+      const theme = sphereThemes[child.text];
+      let sig = null;
+      if (theme) {
+        card.classList.add('themed');
+        card.style.setProperty('--sphere-h', theme.h);
+        card.style.setProperty('--sphere-s', theme.s);
+        if (theme.sig && availableSigils.has(theme.sig)) sig = makeSigil(theme.sig, 'card-sig');
+      }
+
+      const text = document.createElement('div');
+      text.className = 'sphere-card-text';
+
       const name = document.createElement('span');
       name.className = 'sphere-card-name';
       name.textContent = child.text;
-      card.appendChild(name);
+      text.appendChild(name);
 
       const cd = cardDescription(child);
       if (cd) {
         const d = document.createElement('span');
         d.className = 'sphere-card-desc';
         d.textContent = cd;
-        card.appendChild(d);
+        text.appendChild(d);
       }
 
+      if (sig) card.appendChild(sig);
+      card.appendChild(text);
       grid.appendChild(card);
     }
     col.appendChild(grid);
 
     wrap.appendChild(col);
-  }
+  });
 
   return wrap;
 }
@@ -1007,6 +1044,7 @@ function renderChapter(index) {
   linkSphereCrossRefs(sectionsFrag, chapter);
   linkGlossaryTerms(sectionsFrag, chapter);
   highlightMechanics(sectionsFrag);
+  if (isSphere) injectSphereSigil(sectionsFrag, chapter);
 
   if (isCover) {
     frag.appendChild(sectionsFrag);
@@ -1038,6 +1076,7 @@ function renderChapter(index) {
   frag.appendChild(nav);
 
   applySectionTheme(content, chapter.sectionLabel);
+  applySphereTheme(content, chapter);
   content.appendChild(frag);
   applyStagger(content);
 
@@ -1055,6 +1094,45 @@ function applySectionTheme(content, sectionLabel) {
   const sec = sectionLabel === 'Esferas de Poder' ? 'martial'
             : sectionLabel === 'Esferas de Magia' ? 'magic' : '';
   if (sec) content.dataset.section = sec; else content.removeAttribute('data-section');
+}
+
+// Identidade por esfera: define o matiz/saturação (e L opcional) que o CSS
+// converte em accent. Fora de uma esfera, limpa e cai na cor da seção.
+function applySphereTheme(content, chapter) {
+  const t = chapter && sphereThemes[chapter.title];
+  if (t) {
+    content.classList.add('sphere-themed');
+    content.style.setProperty('--sphere-h', t.h);
+    content.style.setProperty('--sphere-s', t.s);
+    if (t.lLight != null) content.style.setProperty('--sphere-l-light', t.lLight + '%');
+    else content.style.removeProperty('--sphere-l-light');
+  } else {
+    content.classList.remove('sphere-themed');
+    content.style.removeProperty('--sphere-h');
+    content.style.removeProperty('--sphere-s');
+    content.style.removeProperty('--sphere-l-light');
+  }
+}
+
+// Cria um <svg> que referencia um sigilo do sprite (herda a cor da esfera).
+function makeSigil(sigId, cls) {
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('class', cls || 'sphere-sigil');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  const use = document.createElementNS(NS, 'use');
+  use.setAttribute('href', '#sig-' + sigId);
+  svg.appendChild(use);
+  return svg;
+}
+
+// Insere o sigilo da esfera acima do título (1º h2 do capítulo), se houver.
+function injectSphereSigil(sectionsFrag, chapter) {
+  const t = sphereThemes[chapter.title];
+  if (!t || !t.sig || !availableSigils.has(t.sig)) return;
+  const h2 = sectionsFrag.querySelector('section[id] h2');
+  if (h2 && h2.parentNode) h2.parentNode.insertBefore(makeSigil(t.sig), h2);
 }
 
 function applyStagger(content) {
@@ -1128,6 +1206,7 @@ function renderGlossary() {
   }
 
   content.removeAttribute('data-section');
+  applySphereTheme(content, null);
   content.appendChild(frag);
   applyStagger(content);
   document.getElementById('top-title').textContent = 'Glossário';
@@ -1255,7 +1334,18 @@ function buildTocList(entries) {
     const a = document.createElement('a');
     a.href = entry.anchor;
     a.className = 'toc-link';
-    a.textContent = entry.text;
+
+    // Item de esfera: tinge pelo matiz da esfera + mini-sigilo (se houver).
+    const theme = sphereThemes[entry.text];
+    if (theme) {
+      a.classList.add('toc-sphere');
+      a.style.setProperty('--sphere-h', theme.h);
+      a.style.setProperty('--sphere-s', theme.s);
+      if (theme.sig && availableSigils.has(theme.sig)) a.appendChild(makeSigil(theme.sig, 'toc-sig'));
+      a.appendChild(document.createTextNode(entry.text));
+    } else {
+      a.textContent = entry.text;
+    }
 
     li.appendChild(a);
 

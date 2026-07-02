@@ -17,6 +17,8 @@
   --copper:           #a4692f;
   --accent:           var(--oxblood);
   --accent-light:     var(--oxblood-light);
+  --acc-l-default:    36%;   /* luminosidade do accent por esfera (claro) */
+  --acc-bright-delta: -8%;   /* accent-light = accent mais escuro no claro */
   --sidebar-bg:       #e3d9be;
   --sidebar-text:     #4a4234;
   --sidebar-muted:    #8a7d64;
@@ -59,6 +61,8 @@
   --oxblood:          #c06152;  --oxblood-light:  #d5715f;
   --verdigris:        #6fae98;  --verdigris-light:#8ac9b3;
   --copper:           #cf9257;
+  --acc-l-default:    64%;   /* accent por esfera mais claro no tema escuro */
+  --acc-bright-delta: 10%;
   --sidebar-bg:       #1b150d;
   --sidebar-text:     #cbbfa4;
   --sidebar-muted:    #8a7d64;
@@ -88,6 +92,17 @@
 
 /* Distinção de seção: a metade marcial re-tinge o accent para verdete */
 [data-section="martial"] { --accent: var(--verdigris); --accent-light: var(--verdigris-light); }
+
+/* Identidade por esfera: quando #content tem tema de esfera, o accent vem do
+   matiz/saturação (inline) via HSL, com L fixa por tema (Escuridão/Morte podem
+   forçar uma L mais escura no claro). Declarado AQUI (onde --sphere-h existe)
+   para o var() resolver certo — a esfera vence a cor da seção. */
+#content.sphere-themed {
+  --sph-l: var(--sphere-l-light, var(--acc-l-default));
+  --accent: hsl(var(--sphere-h) calc(var(--sphere-s) * 1%) var(--sph-l));
+  --accent-light: hsl(var(--sphere-h) calc(var(--sphere-s) * 1%) calc(var(--sph-l) + var(--acc-bright-delta)));
+}
+[data-theme="dark"] #content.sphere-themed { --sph-l: var(--acc-l-default); }
 
 /* ============================================================
    RESET & BASE
@@ -798,7 +813,9 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 }
 
 .sphere-card {
-  display: block;
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
   padding: 0.75rem 0.9rem;
   border: 1px solid var(--table-border);
   border-left: 3px solid var(--accent);
@@ -810,6 +827,10 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 }
 .sphere-card:hover { background: var(--note-bg); border-left-color: var(--accent-light); }
 .sphere-card:active { transform: scale(0.99); background: var(--table-stripe); }
+/* card de esfera: accent pelo matiz próprio (L padrão do tema, p/ vibrar) */
+.sphere-card.themed { --accent: hsl(var(--sphere-h) calc(var(--sphere-s) * 1%) var(--acc-l-default)); }
+.card-sig { width: 30px; height: 30px; flex: none; color: var(--accent); margin-top: 0.1rem; }
+.sphere-card-text { min-width: 0; }
 
 .sphere-card-name {
   display: block;
@@ -873,6 +894,33 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 /* selo de seção: arcano (❧) × marcial (⚔) */
 [data-section="magic"] .chapter-breadcrumb::before { content: '❧ '; }
 [data-section="martial"] .chapter-breadcrumb::before { content: '⚔ '; }
+
+/* sigilo da esfera (acima do título) — herda a cor da esfera */
+.sphere-sigil {
+  display: block;
+  width: 46px;
+  height: 46px;
+  color: var(--accent);
+  margin: 0.1rem 0 0.15rem;
+  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--accent) 22%, transparent));
+}
+.sphere-sigil + h2 { margin-top: 0.15rem; }
+@media (max-width: 768px) { .sphere-sigil { width: 40px; height: 40px; } }
+
+/* mini-sigilo na sidebar; item de esfera tinge pelo matiz próprio */
+#toc-nav a.toc-sphere {
+  --accent: hsl(var(--sphere-h) calc(var(--sphere-s) * 1%) var(--acc-l-default));
+}
+.toc-sig {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  margin-right: 0.45rem;
+  color: var(--accent);
+  opacity: 0.9;
+}
+#toc-nav a.toc-sphere:hover, #toc-nav a.toc-sphere.active { color: var(--accent); }
 
 .chapter-nav {
   display: flex;
