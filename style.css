@@ -1,77 +1,93 @@
 /* ============================================================
    DESIGN TOKENS
    ============================================================ */
+/* ============================================================
+   GRIMÓRIO — claro (velino) · escuro (tomo à noite)
+   Paleta: velino + oxblood (arcano) + verdete (marcial) + cobre.
+   --accent é semântico: default = magia (oxblood); [data-section=martial]
+   o troca por verdete. --copper é o metálico neutro (glossário/regras).
+   ============================================================ */
 :root {
-  --bg:               #faf8f3;
-  --bg-content:       #ffffff;
-  --text:             #1a1a1a;
-  --text-muted:       #555;
-  --accent:           #7b2d2d;
-  --accent-light:     #a33a3a;
-  --sidebar-bg:       #2c2c2c;
-  --sidebar-text:     #e8e8e8;
-  --sidebar-muted:    #aaa;
-  --sidebar-active-bg:#3d3d3d;
-  --sidebar-active:   #d4a017;
-  --sidebar-border:   #444;
-  --topbar-bg:        #1e1e1e;
-  --topbar-text:      #f0f0f0;
-  --stat-bg:          #f5ede0;
-  --stat-border:      #8b6914;
-  --stat-hr:          #c9ad6a;
-  --note-bg:          #e8f4ea;
-  --note-border:      #3a7a3a;
-  --table-head-bg:    #3d2b1f;
-  --table-head-text:  #fff;
-  --table-stripe:     #f5f0e8;
-  --table-border:     #ccc;
-  --hr-color:         #c9ad6a;
-  --mark-bg:          #ffe066;
-  --mark-text:        #000;
-  --mark-current-bg:  #ff9900;
-  --cover-overlay:    rgba(0, 0, 0, 0.55);
-  --cover-text:       #fff;
-  --badge-bg:         #7b2d2d;
-  --badge-text:       #fff;
+  --bg:               #e8dfc6;
+  --bg-content:       #f4ecd6;
+  --text:             #2c2620;
+  --text-muted:       #6a6051;
+  --oxblood:          #7c2b23;  --oxblood-light:  #96382c;
+  --verdigris:        #356f5f;  --verdigris-light:#2c6152;
+  --copper:           #a4692f;
+  --accent:           var(--oxblood);
+  --accent-light:     var(--oxblood-light);
+  --sidebar-bg:       #e3d9be;
+  --sidebar-text:     #4a4234;
+  --sidebar-muted:    #8a7d64;
+  --sidebar-active-bg:rgba(124,43,35,0.10);
+  --sidebar-active:   var(--accent);
+  --sidebar-border:   #d0c09a;
+  --topbar-bg:        #e3d9be;
+  --topbar-text:      #4a4234;
+  --chrome-hover:     rgba(60,40,20,0.08);
+  --stat-bg:          #efe6cc;
+  --stat-border:      #c19a54;
+  --stat-hr:          #cbb26a;
+  --note-bg:          #e6ecd9;
+  --note-border:      var(--verdigris);
+  --table-head-bg:    #4a3a28;
+  --table-head-text:  #f4ecd6;
+  --table-stripe:     #efe6cc;
+  --table-border:     #d0c09a;
+  --hr-color:         #cbb890;
+  --mark-bg:          #e8c34a;
+  --mark-text:        #2c2620;
+  --mark-current-bg:  #d98a4a;
+  --cover-overlay:    rgba(28, 20, 12, 0.5);
+  --cover-text:       #f4ecd6;
+  --badge-bg:         var(--accent);
+  --badge-text:       #f4ecd6;
+  --grain:            0.5;
   --border-radius:    4px;
-  --font-body:        Georgia, 'Times New Roman', serif;
-  --font-ui:          system-ui, -apple-system, sans-serif;
+  --font-body:        'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-ui:          'EB Garamond', Georgia, serif;
+  --font-display:     'Grenze Gotisch', Georgia, serif;
   --font-mono:        'Courier New', monospace;
 }
 
 [data-theme="dark"] {
-  --bg:               #1a1a1a;
-  --bg-content:       #222222;
-  --text:             #e0d8cc;
-  --text-muted:       #999;
-  --accent:           #d4a017;
-  --accent-light:     #e8b420;
-  --sidebar-bg:       #111111;
-  --sidebar-text:     #cccccc;
-  --sidebar-muted:    #777;
-  --sidebar-active-bg:#1e1e1e;
-  --sidebar-active:   #d4a017;
-  --sidebar-border:   #333;
-  --topbar-bg:        #0d0d0d;
-  --topbar-text:      #e0d8cc;
-  --stat-bg:          #2a2218;
-  --stat-border:      #8b6914;
-  --stat-hr:          #5a4a20;
-  --note-bg:          #1a2a1a;
-  --note-border:      #3a7a3a;
-  --table-head-bg:    #2c1f14;
-  --table-head-text:  #e0d8cc;
-  --table-stripe:     #1e1e1e;
-  --table-border:     #444;
-  --hr-color:         #5a4a20;
-  --mark-bg:          #b8860b;
-  --mark-text:        #fff;
-  --mark-current-bg:  #e8a000;
-  --cover-overlay:    rgba(0, 0, 0, 0.65);
-  --cover-text:       #f0e8d8;
-  --badge-bg:         #8b4400;
-  --badge-text:       #fff;
+  --bg:               #15110b;
+  --bg-content:       #1c160e;
+  --text:             #e9dec4;
+  --text-muted:       #ab9c81;
+  --oxblood:          #c06152;  --oxblood-light:  #d5715f;
+  --verdigris:        #6fae98;  --verdigris-light:#8ac9b3;
+  --copper:           #cf9257;
+  --sidebar-bg:       #1b150d;
+  --sidebar-text:     #cbbfa4;
+  --sidebar-muted:    #8a7d64;
+  --sidebar-active-bg:rgba(192,97,82,0.14);
+  --sidebar-border:   #3a2f20;
+  --topbar-bg:        #17120b;
+  --topbar-text:      #e9dec4;
+  --chrome-hover:     rgba(233,222,196,0.09);
+  --stat-bg:          #221b11;
+  --stat-border:      #7a5a30;
+  --stat-hr:          #4a3d24;
+  --note-bg:          #17231c;
+  --note-border:      var(--verdigris);
+  --table-head-bg:    #2a2216;
+  --table-head-text:  #e9dec4;
+  --table-stripe:     #1c160e;
+  --table-border:     #3c3121;
+  --hr-color:         #4a3d28;
+  --mark-bg:          #8a6a20;
+  --mark-text:        #f4ecd6;
+  --mark-current-bg:  #c07a34;
+  --cover-overlay:    rgba(0, 0, 0, 0.62);
+  --cover-text:       #f4ecd6;
+  --badge-text:       #1c160e;
+  --grain:            0.32;
 }
+
+/* Distinção de seção: a metade marcial re-tinge o accent para verdete */
+[data-section="martial"] { --accent: var(--verdigris); --accent-light: var(--verdigris-light); }
 
 /* ============================================================
    RESET & BASE
@@ -89,9 +105,34 @@ body {
   font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
-  font-size: 16px;
+  line-height: 1.62;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Atmosfera: gradiente quente + grão de papel (fixos atrás de tudo) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(90% 55% at 85% -10%, color-mix(in srgb, var(--copper) 20%, transparent), transparent 55%),
+    radial-gradient(80% 55% at 5% 108%, color-mix(in srgb, var(--verdigris) 12%, transparent), transparent 55%),
+    linear-gradient(165deg, var(--bg), color-mix(in srgb, var(--bg) 85%, #000 6%));
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--grain);
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-theme="dark"] body::after { mix-blend-mode: overlay; }
 
 /* ============================================================
    LAYOUT
@@ -140,10 +181,10 @@ body {
   padding: 0.6rem 1.25rem;
   font-family: var(--font-ui);
   font-size: 0.9rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid var(--sidebar-border);
 }
 
-#top-title { flex: 1; font-weight: 600; letter-spacing: 0.02em; }
+#top-title { flex: 1; font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; letter-spacing: 0.01em; }
 
 #menu-toggle, #theme-toggle, #home-link, #search-toggle {
   display: inline-flex;
@@ -161,8 +202,8 @@ body {
   opacity: 0.85;
   transition: opacity 0.15s, background 0.15s;
 }
-#menu-toggle:hover, #theme-toggle:hover, #home-link:hover, #search-toggle:hover { opacity: 1; background: rgba(255,255,255,0.1); }
-#menu-toggle:active, #theme-toggle:active, #home-link:active, #search-toggle:active { background: rgba(255,255,255,0.18); }
+#menu-toggle:hover, #theme-toggle:hover, #home-link:hover, #search-toggle:hover { opacity: 1; background: var(--chrome-hover); color: var(--accent); }
+#menu-toggle:active, #theme-toggle:active, #home-link:active, #search-toggle:active { background: var(--chrome-hover); }
 #menu-toggle { display: none; }
 #home-link { text-decoration: none; line-height: 1; }
 #search-toggle svg { display: block; }
@@ -180,12 +221,11 @@ body {
 }
 
 .sidebar-title {
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--sidebar-muted);
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--sidebar-text);
 }
 
 #sidebar-close {
@@ -360,7 +400,7 @@ body.modal-open { overflow: hidden; }
   border-left: 2px solid transparent;
   transition: background 0.1s, border-color 0.1s, color 0.1s;
 }
-#toc-nav a:hover { background: var(--sidebar-active-bg); color: #fff; }
+#toc-nav a:hover { background: var(--sidebar-active-bg); color: var(--accent); }
 #toc-nav a.active {
   border-left-color: var(--sidebar-active);
   color: var(--sidebar-active);
@@ -453,11 +493,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1.75rem;
   margin-bottom: 0.5rem;
 }
+/* Grenze Gotisch nos títulos maiores e nos nomes de talento */
+h1, h2, .talent-card > h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: 0.01em; }
 
-h1 { font-size: 2rem; border-bottom: 2px solid var(--hr-color); padding-bottom: 0.4rem; margin-top: 2.5rem; }
-h2 { font-size: 1.5rem; border-bottom: 1px solid var(--hr-color); padding-bottom: 0.25rem; }
-h3 { font-size: 1.2rem; }
-h4 { font-size: 1.05rem; }
+h1 { font-size: 2.4rem; border-bottom: 1px solid var(--hr-color); padding-bottom: 0.4rem; margin-top: 2.5rem; }
+h2 { font-size: 1.95rem; border-bottom: 1px solid var(--hr-color); padding-bottom: 0.25rem; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+h4 { font-size: 1.05rem; font-weight: 600; }
+.talent-card > h4 { font-size: 1.5rem; }
 h5 { font-size: 0.95rem; font-style: italic; color: var(--text-muted); }
 h6 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); margin-top: 1.25rem; }
 
@@ -481,6 +524,22 @@ a { color: var(--accent); text-decoration: underline; }
 a:hover { color: var(--accent-light); }
 
 img { max-width: 100%; height: auto; }
+
+/* ============================================================
+   CARREGAMENTO ORQUESTRADO (revelação escalonada "sangria de tinta")
+   Aplicado por app.js aos blocos de topo de #content (--i incremental).
+   ============================================================ */
+#content > .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(5px);
+  animation: ink-bleed 0.7s ease forwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+@keyframes ink-bleed { to { opacity: 1; transform: none; filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) {
+  #content > .reveal { animation: none; opacity: 1; transform: none; filter: none; }
+}
 
 /* ============================================================
    SPACERS
@@ -656,10 +715,12 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 .cover-hero-content { position: relative; z-index: 1; }
 
 .cover-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 1.02;
+  color: #f4ecd6;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.65);
   margin-bottom: 0.5rem;
 }
 
@@ -802,13 +863,16 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
    ============================================================ */
 .chapter-breadcrumb {
   font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.74rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
+  letter-spacing: 0.18em;
+  color: var(--accent);
   margin-bottom: 0.75rem;
 }
+/* selo de seção: arcano (❧) × marcial (⚔) */
+[data-section="magic"] .chapter-breadcrumb::before { content: '❧ '; }
+[data-section="martial"] .chapter-breadcrumb::before { content: '⚔ '; }
 
 .chapter-nav {
   display: flex;
@@ -1013,15 +1077,15 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 .talent-params dd { margin: 0; }
 
 .enhancement {
-  border-left: 3px solid var(--accent-light);
-  background: var(--note-bg);
+  border-left: 3px solid var(--copper);
+  background: color-mix(in srgb, var(--copper) 9%, transparent);
   padding: 0.45rem 0.75rem;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   margin: 0.4rem 0;
 }
-.enhancement-label { color: var(--accent); }
-.glossary-term[data-term="pm"] { text-decoration: none; font-weight: 700; color: var(--accent); }
-.glossary-term[data-term="pm"]:hover { color: var(--accent-light); }
+.enhancement-label { color: var(--copper); }
+.glossary-term[data-term="pm"] { text-decoration: none; font-weight: 700; color: var(--copper); }
+.glossary-term[data-term="pm"]:hover { color: var(--accent); }
 
 h4.base-ability::after {
   content: 'base';

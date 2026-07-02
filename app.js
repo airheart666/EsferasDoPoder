@@ -1037,7 +1037,9 @@ function renderChapter(index) {
   `;
   frag.appendChild(nav);
 
+  applySectionTheme(content, chapter.sectionLabel);
   content.appendChild(frag);
+  applyStagger(content);
 
   document.getElementById('top-title').textContent = chapter.title;
   document.title = `${chapter.title} — Esferas de Magia e Poder`;
@@ -1045,6 +1047,23 @@ function renderChapter(index) {
   setupObserver();
   setupMiniTocSpy();
   updateActiveSidebarLink(chapter.anchor);
+}
+
+/* Tema de seção (accent Magia=oxblood / Marcial=verdete) + carregamento
+   escalonado dos blocos de topo (revelação "sangria de tinta"). */
+function applySectionTheme(content, sectionLabel) {
+  const sec = sectionLabel === 'Esferas de Poder' ? 'martial'
+            : sectionLabel === 'Esferas de Magia' ? 'magic' : '';
+  if (sec) content.dataset.section = sec; else content.removeAttribute('data-section');
+}
+
+function applyStagger(content) {
+  let i = 0;
+  for (const el of content.children) {
+    el.classList.add('reveal');
+    el.style.setProperty('--i', Math.min(i, 6));
+    i++;
+  }
 }
 
 /* ============================================================
@@ -1108,7 +1127,9 @@ function renderGlossary() {
     frag.appendChild(dl);
   }
 
+  content.removeAttribute('data-section');
   content.appendChild(frag);
+  applyStagger(content);
   document.getElementById('top-title').textContent = 'Glossário';
   document.title = 'Glossário — Esferas de Magia e Poder';
   setupObserver();
@@ -1213,7 +1234,10 @@ function buildSidebar(tocTrees) {
   frag.appendChild(document.createElement('hr'));
 
   tocTrees.forEach((tree, i) => {
-    frag.appendChild(buildTocList(tree));
+    const list = buildTocList(tree);
+    // 0 = Esferas de Magia (oxblood), 1 = Esferas de Poder (verdete)
+    list.dataset.section = i === 1 ? 'martial' : 'magic';
+    frag.appendChild(list);
     if (i < tocTrees.length - 1) {
       frag.appendChild(document.createElement('hr'));
     }
