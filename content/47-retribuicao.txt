@@ -1,0 +1,105 @@
+<div class='pageNumber auto'></div>
+
+## Retribuição
+Guerreiros analíticos que aguardam o momento preciso para atacar, os praticantes habilidosos na esfera da Retribuição são capazes de se defender com ataques cuidadosamente preparados.
+
+Todos os praticantes da esfera da Retribuição adquirem a seguinte habilidade:
+
+#### Contra-ataque
+Quando você prepara uma ação para realizar um ataque corpo a corpo, o ataque causa dano adicional igual ao seu bônus de proficiência.
+
+Se você possuir Ataque Extra ou Ataques Múltiplos, preparar um ataque é considerado um ataque especial; apenas um ataque é preparado, e os demais podem ser realizados normalmente. Seu ataque é resolvido antes da ação que o desencadeou, em vez de depois, e se este ataque for bem-sucedido, você recupera o uso de sua reação.
+
+Ao preparar um ataque, você deve escolher um gatilho para esse ataque. Gatilhos comumente aceitáveis são:
+
+• :: Uma criatura hostil realizando uma jogada de ataque
+• :: Uma criatura hostil tentando um teste de habilidade contestado
+• :: Uma criatura hostil se movendo de seu espaço
+• :: Uma criatura hostil conjurando uma magia ou efeito de esfera
+• :: Uma criatura hostil sacando uma arma
+• :: Uma criatura hostil falando
+
+Outros gatilhos podem ser permitidos com a permissão do Mestre. Você pode selecionar um gatilho adicional desta lista no 5º nível (2 gatilhos), 11º nível (3 gatilhos) e 17º nível (4 gatilhos). Você só pode realizar um contra-ataque por rodada, independentemente do número de gatilhos escolhidos.
+
+Você pode aplicar um único talento com a etiqueta (contra) a um contra-ataque.
+
+
+### Talentos de Contra-Ataque
+
+#### Agarrar (contra)
+Você pode tentar agarrar uma criatura ferida por este contra-ataque como uma reação.
+
+#### Golpe Poderoso (contra)
+Você mira na boca do alvo ou em um orifício equivalente, impedindo sua capacidade de falar. O alvo deve ser bem-sucedido em um teste de resistência de Destreza ou terá sua boca danificada. Se sua boca for danificada, ele deve ser bem-sucedido em um teste de resistência de Constituição toda vez que desejar falar, morder, usar uma arma de sopro ou conjurar qualquer magia ou efeito de esfera com um componente verbal, ou ficará impossibilitado de fazê-lo. Este efeito termina se o alvo receber pelo menos 1 ponto de cura mágica ou após um descanso curto ou longo.
+
+#### Gancho Lançador (contra)
+Você pode gastar seu foco marcial para fazer com que criaturas até um tamanho maior que você, feridas por este contra-ataque, sejam lançadas 3 metros para o ar. Seu movimento para a rodada cessa e a criatura cai, sofrendo dano de queda e aterrissando no chão normalmente.
+
+Você pode usar este talento em um aliado disposto que não seja você mesmo sem gastar seu foco marcial, atingindo-o automaticamente e sem causar dano. Nesse caso, o movimento do alvo não termina e ele pode se mover horizontalmente pelo ar como se tivesse velocidade de voo, embora ainda caia ao final do movimento. Se o aliado atacar um alvo enquanto ele aterrissa no chão, ele não sofre dano de queda nem cai no chão.
+
+#### Golpe no Fígado (contra)
+As criaturas atingidas por este contra-ataque têm todas as suas velocidades de movimento reduzidas para 1,5 m até o final do próximo turno delas.
+
+#### Gancho Aterrorizante (contra)
+As criaturas atingidas por este contra-ataque devem ser bem-sucedidas em um teste de resistência de Sabedoria ou ficarão amedrontadas por você até o final do próximo turno delas.
+
+
+### Outros Talentos
+#### Foco de Contra-Ataque
+Sempre que você causar dano a uma criatura com seu contra-ataque, você pode gastar uma reação para recuperar seu foco marcial. A criatura deve ter um ND (Nível de Desafio) de pelo menos metade do seu nível de personagem (arredondado para baixo, mínimo 1/2).
+
+#### Contra-Ataque Cruzado
+Sempre que uma criatura ao seu alcance fizer um ataque de oportunidade contra você, você pode gastar seu foco marcial como uma reação para fazer um único ataque contra ela, causando dano normalmente. Resolva esta reação antes do ataque de oportunidade da criatura. Se o seu ataque for bem-sucedido, a criatura sofre desvantagem em seu ataque.
+
+#### Golpe Enraizado
+Sempre que você fizer um ataque bem-sucedido com seu contra-ataque, você ganha resistência a dano de concussão, perfuração e corte de um ataque feito pelo alvo do contra-ataque antes do início do seu próximo turno.
+
+#### Finta de Cabeça
+Enquanto você tiver foco marcial, sempre que uma criatura tentar fazer um ataque de oportunidade contra você, a jogada de ataque dela sofre desvantagem.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Golpe Interceptador
+Como gatilho, você pode definir um contra-ataque não contra um alvo, mas contra um ataque realizado dentro do seu alcance ou que passe pelo seu alcance. Você não pode interceptar ataques de magia ou armas de longo alcance massivas, como pedregulhos ou virotes de balista, a menos que você mesmo esteja usando uma arma massiva desse tipo. Faça um ataque normalmente. Se o seu resultado de ataque for maior que o resultado do ataque que você está interceptando, o ataque do oponente é negado. Você pode gastar foco marcial para usar esta habilidade como uma reação.
+
+#### Contra-ataque Poderoso
+Se você possuir Ataque Extra ou Ataques Múltiplos, você pode trocar seus ataques extras para tornar seu contra-ataque ainda mais poderoso, causando +1d8 de dano para cada ataque adicional sacrificado. Além disso, ao realizar um contra-ataque, você também pode gastar seu foco marcial para conceder a si mesmo vantagem na jogada de ataque.
+
+#### Touro Enfurecido
+Sempre que seu contra-ataque for acionado, você pode se mover até metade do seu deslocamento em linha reta antes de realizar o ataque.
+
+#### Preparação
+Como parte da preparação de uma ação para realizar um contra-ataque, você pode fazer uma jogada de ataque corpo a corpo contra uma criatura dentro do seu alcance. Se este ataque acertar, ele não causa dano, mas até o início do seu próximo turno, o alvo deste ataque só poderá se mover de forma que o espaço que ocupar seja adjacente a você após o seu movimento. Se o alvo desejar se libertar dessa limitação, ele pode tentar um teste contestado de Força (Atletismo) ou Destreza (Acrobacia) oposto ao seu teste de Força (Atletismo) ou Destreza (Acrobacia) como uma ação bônus.
+
+#### Quebra-Magia
+Quando você causa dano com um contra-ataque contra uma criatura conjurando uma magia ou efeito de esfera, a criatura danificada deve ser bem-sucedida em um teste de resistência de Constituição como se estivesse sofrendo dano enquanto se concentra em uma magia. Uma falha significa que a conjuração falha, desperdiçando a ação, bem como qualquer espaço de magia ou pontos de magia. Isso conta como concentração para bônus e penalidades que se aplicam a testes de resistência feitos para manter a concentração.
+
+#### Golpe Surpresa
+Quando você realiza um ataque de oportunidade, você pode gastar seu foco marcial para tratar esse ataque de oportunidade como se fosse um contra-ataque. Se fizer isso, você só poderá usar a ação Esquivar ou Desengajar no seu próximo turno.
+
+#### Guarda Firme
+Sempre que você usar as ações Esquivar ou Preparar, você ganha um bônus de +1 na sua CA até o início do seu próximo turno. Esse bônus funciona como o bônus de CA de um escudo e, portanto, não se acumula com o bônus de CA de usar um escudo. Esse bônus aumenta para +2 no 11º nível.
+
+#### Pressão Violenta
+Sempre que você preparar um contra-ataque, você pode gastar uma ação bônus para forçar uma criatura hostil a até 9 metros a fazer um teste de resistência de Sabedoria ou ficar amedrontada por você até o final do próximo turno dela. Você só pode usar esse talento em uma criatura específica uma vez por dia.
+
+
+### Talentos Lendários de Retribuição
+
+#### Ataque Perseguidor
+**Pré-requisitos**: :: Esfera de Retribuição (Gancho Lançador).
+
+Sempre que você lançar uma criatura hostil ao ar com seu talento Gancho Lançador, você pode saltar ao ar ao lado dela (este movimento não provoca ataques de oportunidade). Você pode fazer um único ataque contra essa criatura, derrubando-a no chão se acertar e dobrando o dano de queda. Você retorna ao chão ao final do turno do alvo e não sofre dano de queda pela distância do salto.
+
+
+#### Condicionamento Intenso (contra)
+**Pré-requisitos**: :: Esfera de Retribuição (habilidade de contra-ataque), 5º nível ou superior.
+
+Sempre que você realizar um contra-ataque bem-sucedido, você pode gastar seu foco marcial para fazer com que a criatura atingida pelo seu contra-ataque faça um teste de resistência de Carisma; Se este teste de resistência falhar, durante 1 minuto, sempre que a criatura tentar a ação que desencadeou seu contra-ataque, ela deverá fazer um teste de resistência de Carisma bem-sucedido ou ficará impossibilitada de realizar essa ação, embora ainda possa optar por realizar outra ação em seu lugar. Criaturas imunes à condição amedrontada são imunes a este efeito.
+
+### Variantes
+#### Pugilista
+Você só pode contra-atacar usando ataques desarmados. Você recebe um talento (contra) como talento bônus.
+
+\page

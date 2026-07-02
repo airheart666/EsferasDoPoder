@@ -1,0 +1,13 @@
+
+{{insideCover}}
+
+# Esferas de Poder
+___
+
+{{imageMaskCenter11,--offsetX:0%,--offsetY:0%,--rotation:0
+  ![background image](https://cdna.artstation.com/p/assets/images/images/046/357/992/large/anato-finnstark-web.jpg?1644933671){position:absolute,bottom:10px,right:-190px,height:80%}
+}}
+
+{{logo ![](/assets/naturalCritLogoRed.svg)}}
+
+\page

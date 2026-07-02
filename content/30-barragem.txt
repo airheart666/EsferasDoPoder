@@ -1,0 +1,77 @@
+<div class='pageNumber auto'></div>
+
+
+## Barragem
+
+Praticantes de Barragem se especializam no uso de armas de longo alcance para realizar disparos rápidos, geralmente do meio do combate corpo a corpo.
+
+Todos os praticantes da esfera de Barragem ganham a seguinte habilidade:
+
+#### Barragem
+Como um ataque especial, você pode realizar um ataque à distância com uma arma de arremesso ou de longo alcance e, em seguida, realizar um ataque à distância adicional com essa arma como uma ação bônus. Você pode escolher resolver este ataque de ação bônus antes do seu(s) outro(s) ataque(s). Você não adiciona seu modificador de habilidade ao dano deste ataque bônus, a menos que este modificador seja negativo.
+
+O ataque realizado como um ataque especial e este ataque de ação bônus são chamados, em conjunto, de "barragem". Alguns talentos são marcados (rajada). Você pode aplicar uma (rajada) a uma barragem. Você deve atender aos pré-requisitos para a (rajada), se houver.
+
+### Talentos de Rajada
+
+#### Tiro Distrativo (rajada)
+Você pode errar intencionalmente seu ataque de ação bônus para manipular os movimentos do seu oponente. Em vez de realizar seu ataque de ação bônus, você se dá vantagem sobre seu outro ataque feito como parte da sua barragem.
+
+#### Barragem Mista (rajada)
+Você pode substituir seu ataque de ação bônus por um ataque corpo a corpo ou um empurrão.
+
+#### Redirecionamento (rajada)
+Ao realizar uma barragem, você pode sacrificar seu ataque de ação bônus para, em vez disso, desferir um de seus outros ataques com armas, mudando seu curso em pleno voo. Este ataque pode girar uma vez até 90 graus, permitindo que você ataque em cantos, desvie de coberturas ou realize outros feitos semelhantes.
+
+#### Tiro Giratório (rajada)
+Você pode gastar seu foco marcial para realizar dois ataques como uma ação bônus em vez de um. No entanto, cada ataque da sua barragem deve ser feito contra alvos diferentes.
+
+#### Fogo Supressor (rajada)
+Em vez de realizar seu ataque de ação bônus, você dispara dois tiros descontrolados. O alvo pode optar por esquivar desses ataques, e nesse caso eles erram automaticamente, mas o alvo tem sua velocidade de movimento reduzida pela metade e sofre uma penalidade de -2 em testes de Percepção e jogadas de ataque até o final do seu próximo turno. O alvo pode optar por não evitar esses ataques, e nesse caso você pode rolar ambos os ataques normalmente (mas com desvantagem), e o alvo não sofre as penalidades.
+
+### Outros Talentos
+
+#### Saqueador de Campo de Batalha
+Ao coletar munição que não seja de arma de fogo após ela ter sido usada em combate, você recupera três quartos de toda a munição gasta, em vez da metade. Você pode sacar uma arma de arremesso ou munição do ambiente ou de uma criatura morta como parte da mesma ação usada para realizar um ataque à distância com ela, ou até mesmo de uma criatura viva ao seu alcance, embora seja permitido um teste de resistência de Destreza para evitar isso. Em uma falha no teste de resistência, você pode extrair quantas armas de arremesso ou munição desejar da criatura alvo, até a quantidade total presente, e o alvo sofre 1d4 pontos de dano cortante por munição extraída.
+
+Sua ação de ataque é desperdiçada em um teste de resistência bem-sucedido, pois você não conseguiu obter a munição necessária para realizar os ataques pretendidos.
+
+Se você possuir a esfera do Canalha, você pode aplicar um talento (truque) ao ato de sacar munição de uma criatura.
+
+#### Rajada Focada
+Sempre que você acertar com pelo menos dois ataques enquanto faz uma barragem, você recupera seu foco marcial.
+
+#### Barragem de Repulsão
+Quando você atinge o mesmo alvo pelo menos duas vezes com a mesma barragem, esse alvo deve realizar um teste de resistência de Força bem-sucedido ou será empurrado para trás 1,5 metro. Se esse movimento forçar uma criatura contra um objeto sólido, ela cairá prostrada.
+
+#### Tiros Martelantes
+Você pode gastar seu foco marcial ao fazer uma barragem. Se fizer isso, seus ataques de ação bônus podem adicionar seu modificador de habilidade às jogadas de dano.
+
+#### Atirador Vigilante
+Enquanto você tiver foco marcial, você pode fazer ataques de oportunidade com uma arma de longo alcance que esteja empunhando, tratando-a como se fosse uma arma corpo a corpo com a qualidade Alcance.
+
+\page
+<div class='pageNumber auto'></div>
+
+### Talentos Lendários de Barragem
+
+#### Cone da Morte
+**Pré-requisitos**: :: Esfera de Barragem (Tiro Giratório), 5º nível ou superior.
+
+Com uma ação, você pode gastar seu foco marcial para realizar um ataque contra cada criatura dentro de um cone de 9 metros. Você deve ter uma munição para cada alvo, como de costume, e fazer uma jogada de ataque separada para cada alvo.
+
+#### Munição Incessante
+**Pré-requisitos**: :: Esfera de Barragem.
+
+Contanto que você tenha pelo menos 10 munição de um tipo não mágico específico, você pode disparar quantas munição desejar sem gastar sua munição.
+
+Quando o combate termina, você não pode recuperar mais munição do que tinha antes do início do combate; você sempre termina o combate com a mesma quantidade de munição com que começou. Este é um efeito mágico.
+
+#### Tiro de Escada
+**Pré-requisitos**: :: Esfera de Barragem.
+
+Como ação, você pode gastar 10 peças de munição de uma arma de longo alcance para criar uma escada de flechas/virotes. Deve haver uma parede, penhasco ou outra superfície adequada, quase vertical, para você usar ao criar uma escada de flechas. A escada não pode se estender por mais de 1,5 metro por nível, mas você pode escolher seu formato (indo em linha reta, para cima ou para baixo, conforme desejar, mas não mais inclinado do que 45 graus em nenhuma direção). Você pode gastar seu foco marcial para executar esta manobra como uma reação, como construir uma plataforma para impedir que alguém caia.
+
+Isso só funciona com armas que disparam flechas, virotes ou outras munições apropriadas e não possui a propriedade de carregamento.
+
+\page

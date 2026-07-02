@@ -1,0 +1,34 @@
+<div class='pageNumber auto'></div>
+
+#
+Bem-vindo às Esferas de Magia, um sistema de magia alternativo para D&D 5ª edição. Nestas páginas, você encontrará não apenas uma maneira original de criar e administrar usuários de magia em seus jogos de fantasia da 5ª edição, mas também, por meio dela, ferramentas para contar histórias e construir cenários que vão muito além do escopo do jogo principal.
+
+A maioria das regras para criar um usuário de magia conjurador de esferas são extremamente semelhante às regras com as quais você já deve estar familiarizado para criar um conjurador: a CD das esferas e a CD das magias são calculadas da mesma forma, escolher talentos mágicos é muito semelhante a escolher magias conhecidas e usar pontos de magia é, em muitos aspectos, ainda mais simples do que usar espaços de magia. Esferas de Poder é balanceado em relação ao sistema de magia principal, portanto, introduzir esferas de forma simples ou por meio de apenas um ou mais personagens pode ser feito facilmente; a mesa inteira não precisa usar esferas para que as esferas sejam aproveitadas.
+
+As diferenças entre os dois sistemas, no entanto, abrem inúmeras opções para o que e como a magia é praticada, permitindo uma exploração praticamente irrestrita dos conceitos de personagens por meio da interação de dois sistemas: Tradições de Conjuração e as Esferas.
+
+Tradições de Conjuração são os "comos" e os "porquês" da magia. Elas determinam como um usuário de magia cria magia, qual é a fonte de seu poder e qual o escopo de suas capacidades.
+
+Na maioria dos jogos de mesa de fantasia, a tradição de conjuração está vinculada à classe: as tradições de conjuração possíveis são Artífice, Clérigo, Mago, Feiticeiro, etc. Com as Esferas de Poder, no entanto, essas regras são abertas para que os Mestres de Jogo (e, com permissão, até mesmo os jogadores) possam adaptar a magia às suas necessidades, em vez de adaptar suas necessidades. Se o Mestre do Jogo quiser criar um mundo personalizado onde artistas marciais com poderes elementais lutem contra invocadores de mascotes mágicos, e onde heróis superpoderosos lutem contra espadachins com sopro mágico, tudo isso pode ser feito sem multiclasses complexas ou subclasses caseiras.
+
+As Esferas são a forma como um conjurador determina o que pode fazer. Em vez de magias conhecidas, um conjurador de esferas ganha talentos mágicos, que pode gastar para desbloquear uma nova esfera ou para obter um talento de uma esfera que já possua. As esferas oferecem habilidades temáticas, enquanto os talentos alteram e aumentam essas habilidades de maneiras novas e interessantes. Assim, se um jogador quiser jogar como um mestre da magia das chamas, em vez de se limitar à progressão da magia das chamas conforme detalhado nas magias tradicionais (raio de fogo como um truque, mãos flamejantes como uma magia de 1º nível, esfera flamejante como uma magia de 2º nível, bola de fogo como uma magia de 3º nível, etc.), ele pode escolher sua progressão e capacidades como quiser (com as esferas da Natureza e da Destruição, ele pode ganhar imediatamente a habilidade de comandar e atacar com fogo e, à medida que sobe de nível, pode gastar talentos conforme desejar para lançar esse fogo como uma bola de fogo, envolver esse fogo ao seu redor como um escudo, invocar esse fogo como uma parede e assim por diante).
+
+O restante desta introdução detalha algumas das diferentes regras e termos necessários para entender o uso da Esfera de Poder, bem como um passo a passo sobre como construir um personagem conjurador de esferas. A maioria dessas regras deve ser familiar para qualquer um que já tenha jogado com um usuário de magia básico, mas ainda são apresentadas abaixo para serem o mais explícitas possível.
+
+## Usando uma Esfera de Magia
+
+Cada esfera mágica possui uma ou mais habilidades básicas concedidas quando você a ganha. As habilidades de esfera têm os seguintes parâmetros:
+
+**Tempo de Conjuração**: :: A ação necessária para conjurar o efeito da esfera mágica. Assim como a ação Conjurar uma Magia, cada efeito de esfera possui um tempo de conjuração, que especifica se o conjurador da esfera deve usar uma ação, uma ação bônus, uma reação, minutos ou até mesmo horas para conjurar a magia. Se um efeito de esfera levar mais de uma rodada para ser conjurado, você deve gastar sua ação a cada turno conjurando o efeito e manter sua concentração enquanto o faz. Se sua concentração for quebrada, o efeito falha, mas você não perde nenhum ponto de magia. Se quiser tentar conjurar o efeito novamente, você deve recomeçar.
+
+**Alcance**: :: O alvo de um efeito de esfera deve estar dentro do alcance do efeito. Uma vez conjurado, seus efeitos não são limitados por seu alcance, a menos que a descrição do efeito indique o contrário.
+
+**Duração**: :: A duração do efeito.
+
+**Alvo**: :: Define o que pode ser alvo do efeito. Alvos típicos são você (o conjurador de esferas), uma ou mais criaturas, um ou mais objetos, ou ambos, criaturas e objetos. Outras limitações podem se aplicar (aliados, criaturas hostis, etc.).
+
+**Custo**: :: O número de pontos de magia necessários para conjurar o efeito, antes de quaisquer aprimoramentos. Você perde esses pontos de magia e não pode tentar conjurar um efeito de esfera que exija mais pontos de magia do que você possui.
+
+**Teste de Resistência**: :: Algumas habilidades de esfera definem o teste de resistência permitido pelo efeito. As criaturas sempre podem optar por falhar no teste de resistência, se desejarem.
+
+\page

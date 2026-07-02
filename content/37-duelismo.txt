@@ -1,0 +1,145 @@
+<div class='pageNumber auto'></div>
+
+## Duelismo
+Duelistas são lutadores rápidos que usam jogo de pés ágil e fintas precisas para abrir a guarda do alvo antes de desferir um golpe fatal.
+
+Todos os praticantes da esfera da esgrima adquirem as seguintes habilidades:
+
+#### Estocada Fatal
+Ao realizar um ataque corpo a corpo, incluindo ataques com magia, que tenha vantagem, você pode rolar novamente um dos dois dados de ataque uma vez. Este benefício não se acumula com outros benefícios semelhantes de talentos ou habilidades.
+
+#### Finta
+Quando você usa a ação Ajudar para auxiliar uma criatura aliada a atacar uma criatura a até 1,5 metro de você, você pode optar por ajudar a si mesmo em vez de um aliado, caso em que sua próxima jogada de ataque contra esse alvo será feita com vantagem antes do final do seu próximo turno.
+
+Qualquer uso de Ajudar para conceder vantagem a alguém em uma jogada de ataque, seja um aliado ou você mesmo, é chamado de "finta".
+
+Alguns talentos são marcados (explorar). Uma vez por rodada, ao realizar um ataque bem-sucedido que tenha vantagem, ou que não tenha desvantagem e seja contra um alvo que esteja a 1,5 metro de um aliado seu que não esteja incapacitado, você pode aplicar um talento (explorar) a esse ataque.
+
+### Lembretes das Regras de Combate
+#### Desarmar
+Uma criatura pode usar um ataque com arma para derrubar uma arma ou outro item das mãos de um alvo. O atacante faz uma jogada de ataque contestada pelo teste de Força (Atletismo) ou Destreza (Acrobacia) do alvo. Se o atacante vencer a contestação, o ataque não causa dano ou outro efeito negativo, mas o defensor deixa cair o item.
+
+O atacante tem desvantagem na sua jogada de ataque se o alvo estiver segurando o item com duas ou mais mãos. O alvo tem vantagem no seu teste de habilidade se for maior que a criatura atacante, ou desvantagem se for menor.
+
+#### Ajudar
+Ao usar a ação Ajudar, você pode auxiliar uma criatura aliada a atacar uma criatura a até 1,5 metro de você. Você finge um ataque, distrai o alvo ou, de alguma outra forma, trabalha em conjunto para tornar o ataque do seu aliado mais eficaz. Se o seu aliado atacar o alvo antes do seu próximo turno, a primeira jogada de ataque é feita com vantagem.
+
+
+### Talentos de Explorar
+
+#### Golpe no Tornozelo (explorar)
+A criatura deve passar em um teste de resistência de Destreza ou cairá no chão.
+
+#### Golpe no Braço (explorar)
+Seu ataque atinge um membro em um ponto crítico. O alvo sofre uma penalidade de -2 em todas as jogadas de ataque e testes de habilidade feitos com esse membro por um número de rodadas igual ao seu bônus de proficiência.
+
+#### Golpe no Peito (explorar)
+Seu ataque atinge o peito do alvo. O alvo deve passar em um teste de resistência de Constituição ou ficará envenenado por 1 rodada.
+
+#### Lâminas Distrativas (explorar)
+O alvo perde a capacidade de fazer ataques de oportunidade por 1 rodada.
+
+#### Golpe no Rosto (explorar)
+Você pode gastar seu foco marcial para atingir o rosto do alvo, prejudicando sua visão. O alvo deve passar em um teste de resistência de Destreza ou ficará cego por um minuto. Limpar o sangue como uma Ação encerra esse efeito antecipadamente.
+
+#### Corte na Perna (explorar)
+A velocidade de movimento do alvo é reduzida à metade por 1 rodada. Golpe de Reposicionamento (explorar)
+Você faz o alvo tropeçar, permitindo que você passe por ele. Você pode mover imediatamente o alvo 1,5 metro para um espaço diferente dentro do seu alcance.
+
+#### Até o Cabo (explorar)
+Você pode gastar seu foco marcial para criar um grande ferimento no alvo que outros podem explorar. Por um número de rodadas igual à metade do seu bônus de proficiência, a resistência do alvo a dano de concussão, perfuração e corte é suprimida.
+
+#### Ataque Desarmado (explorar)
+Escolha um aliado que não seja você. O primeiro ataque desse aliado contra o alvo desta explorar, feito antes do início do seu próximo turno, terá vantagem.
+
+
+### Outros Talentos
+#### Prender Arma
+Ao realizar um desarme, em vez de fazer o alvo soltar o item, você pode prender a arma dele à sua. Isso pode ser feito com a mão ou o ataque natural do alvo, como se fosse uma arma empunhada.
+
+Enquanto o item da criatura estiver preso, ela não poderá usá-lo para realizar ataques e será considerada agarrada por você. Ela pode soltar o item para se libertar da agarrada, mas, caso contrário, deve se libertar da agarrada normalmente para recuperar o uso do item e poder se mover.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Finta Perfeita
+Você pode realizar uma finta como uma ação bônus.
+
+#### Abertura Fatal
+Ataques que você realizar com a vantagem obtida pelo uso da finta causam um acerto crítico com um resultado de 19 ou 20 no dado.
+
+#### Foco do Duelista
+Sempre que você desarmar ou fintar um alvo com sucesso, você poderá recuperar seu foco marcial como uma ação bônus.
+
+#### Jogo de Pés
+Você pode gastar foco marcial para se mover até 3 metros. Você pode fazer isso mesmo quando não for seu turno, sem precisar gastar uma reação, e isso não provoca ataques de oportunidade. Se feito em resposta a uma jogada de ataque declarada contra você, você impõe desvantagem nessa jogada. Se feito em resposta a um efeito que permite um teste de resistência de Destreza, você tem vantagem nesse teste de resistência.
+
+#### Finta Maior
+Ao realizar uma finta, você pode gastar seu foco marcial para forçar o alvo a fazer um teste de resistência de Sabedoria. Em caso de falha, o primeiro ataque de qualquer criatura contra esse alvo terá vantagem até o final do seu próximo turno.
+
+#### Cobertura em Grupo
+Seus movimentos rápidos permitem que você use temporariamente um inimigo como cobertura contra outro. Se uma criatura hostil atacar você, qualquer outra criatura hostil adjacente a essa criatura sofrerá desvantagem nas jogadas de ataque contra você até o início do seu próximo turno.
+
+#### Investida
+Enquanto você tiver foco marcial, você pode aumentar o alcance dos seus ataques corpo a corpo em 1,5 metro até o final do seu turno, mas sofrerá uma penalidade de -2 nas jogadas de ataque contra alvos adjacentes até o início do seu próximo turno.
+
+#### Aparar e Contra-atacar
+Quando uma criatura o atacar corpo a corpo, você pode gastar seu foco marcial como uma reação para tentar aparar esse ataque.
+
+Faça uma jogada de dano com arma ou ataque desarmado e subtraia o resultado do dano do ataque. Se isso reduzir o dano do ataque para 0 ou menos, você pode imediatamente fazer um único ataque contra a criatura atacante; você pode adicionar um talento (explorar) a este ataque, desde que não tenha desvantagem nele.
+
+#### Espeto
+Você pode gastar foco marcial para aplicar dois talentos diferentes (explorar) a um ataque em vez de um.
+
+#### Ler o Inimigo
+Você aprendeu a ler as sutilezas do seu inimigo. Você ganha proficiência em Intuição. Se você já possui proficiência em Intuição, pode adicionar o dobro do seu modificador de proficiência à Intuição. Você pode escolher este talento duas vezes. Se você já adiciona o dobro do seu modificador de proficiência à Intuição, não pode escolher este talento.
+
+#### Lâmina Traiçoeira
+Sempre que você usar desarmar com sucesso, você pode imediatamente pegar o objeto desarmado, contanto que tenha pelo menos uma mão livre. Se assim desejar, você pode imediatamente fazer um único ataque com esse item como uma ação bônus.
+
+
+### Talentos Lendários de Esgrima
+#### Aparar Qualquer Coisa
+**Pré-requisitos**: :: Esfera de Esgrima (Aparar e Contra-atacar), 5º nível ou superior.
+
+Você pode usar seu talento Aparar e Contra-atacar contra ataques de magia e arma à distância, bem como contra ataques corpo a corpo. Você ainda não pode fazer um ataque retaliatório contra o alvo, a menos que ele esteja ao seu alcance (para uma arma corpo a corpo) ou dentro do alcance normal (para uma arma à distância ou uma arma com a propriedade de arremesso).
+
+#### Golpe da Alma (exploração)
+**Pré-requisitos**: :: Esfera de Esgrima.
+
+Você mira na psique do inimigo. O alvo sofre uma penalidade de -2 em todos os testes de resistência por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica.
+
+#### Golpe Sombrio (exploração)
+**Pré-requisitos**: :: Esfera de Esgrima.
+
+Seu ataque corta a essência. Uma criatura atingida pelo seu ataque deve ser bem-sucedida em um teste de resistência de Constituição ou terá seu nível de exaustão aumentado em 1 por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica e pode acumular com outras habilidades.
+
+
+#### Sangrar Ar (explorar)
+**Pré-requisitos**: :: Esfera de Esgrima, 11º nível ou superior.
+
+Se você atacar uma criatura com menos pontos de vida do que o máximo que ela possui, você pode gastar seu foco marcial para girar sua lâmina e perfurar um pulmão ou órgão similar, fazendo com que o alvo comece a sufocar 1d4 rodadas depois, a menos que seja 
+
+\page
+<div class='pageNumber auto'></div>
+
+bem-sucedido em um teste de resistência de Constituição. Assim que a sufocação começar, o alvo cai para 0 pontos de vida e começa a fazer testes de resistência contra a morte.
+
+Criaturas que não precisam respirar são imunes a este efeito. Se o alvo for curado completamente antes do início da sufocação, ela é evitada
+
+#### Vácuo Cortante
+**Pré-requisitos**: :: Esfera de Esgrima.
+
+Sempre que você usar a ação de ataque para fazer um ataque corpo a corpo na mesma rodada em que sacar uma arma embainhada, você pode gastar seu foco marcial para aumentar o alcance do seu ataque para 9 metros.
+
+
+#### Vácuo Rasgante
+**Pré-requisitos**: :: Esfera de Esgrima (Vácuo Cortante), 11º nível ou superior.
+
+Sempre que usar o talento Vácuo Cortante, você pode gastar uma ação bônus para aumentar o efeito, tendo como alvo todas as criaturas em uma linha de 9 metros. Faça uma única jogada de ataque e compare o resultado com o de cada criatura na área afetada; todas as criaturas atingidas pelo ataque sofrem dano como se você as tivesse atingido diretamente com o ataque corpo a corpo. Apenas o dano é causado; nenhum outro efeito concedido pelo ataque é aplicado.
+
+### Variantes
+#### Lâmina Imprecisa
+Você não ganha a habilidade Estocada Fatal. Você ganha um talento (explorar) como talento bônus.
+
+\page

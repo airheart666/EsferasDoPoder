@@ -1,0 +1,431 @@
+<div class='pageNumber auto'></div>
+
+## Batedor
+O treinamento na esfera Batedor ensina como se esconder do perigo, identificar ameaças e riscos potenciais, rastrear oponentes em praticamente qualquer ambiente e identificar as principais fraquezas de uma criatura.
+
+### Lembretes de Regras de Combate
+
+#### Ação de Busca
+*Ação de Combate*
+___
+**Custo da Ação**: 1 Ação
+___
+Dedique sua atenção a descobrir algo
+
+**Inteligência (Investigação)**
+• :: Ilusões
+• :: Itens que não estão intencionalmente escondidos
+• :: Evidências forenses
+
+**Sabedoria (Percepção)**
+• :: Criaturas que estão escondidas
+• :: Itens que estão intencionalmente escondidos
+• :: Armadilhas
+
+**Sabedoria (Sobrevivência)**
+• :: Riscos ambientais
+• :: Partes coletáveis
+• :: Rastros
+
+#### Escondido
+Uma criatura oculta é aquela que não é vista nem ouvida. Após realizar um ataque, você perde a condição de oculto, independentemente de o ataque acertar ou errar. A localização da criatura pode ser detectada por qualquer ruído que ela faça ou por quaisquer rastros que ela deixe.
+
+As jogadas de ataque contra a criatura têm desvantagem, e as jogadas de ataque da criatura têm vantagem. 
+
+#### Características Analisáveis
+Abaixo está uma lista de características que podem ser identificadas através da análise de um alvo:
+
+• :: Classe de Armadura
+• :: Resistências a Condições
+• :: Imunidades a Condições
+• :: Resistências a Dano
+• :: Imunidades a Dano
+• :: Vulnerabilidades a Dano
+• :: Velocidade
+• :: Um Atributo
+• :: Um de seus testes de resistência
+• :: Um de seus sentidos
+• :: Seus pontos de vida máximos
+• :: Seu tipo de criatura.
+
+Outras característica podem ser descobertas com a permissão do Mestre.
+
+### Características da Esfera Batedor
+Ao obter a esfera Batedor pela primeira vez, você ganha as características Analisar e Afinidade com Perícia: Furtividade.
+
+#### Analisar
+**Custo de Ação**: :: 10 minutos, ou 1 Ação gastando foco marcial.
+**Alcance**: :: 18 metros
+**Duração**: :: 24 horas, ou até você fazer um descanso longo
+
+Faça um teste de Inteligência (Investigação) ou Sabedoria (Percepção) (à sua escolha) contra uma CD 10 + ND do alvo (arredondado para baixo); Para fins da característica Analisar, os PCs têm um ND igual à metade do seu nível.
+
+Em um teste bem-sucedido, você aprende uma característica à sua escolha e o alvo é Analisado.
+
+Uma vez que você tenha Analisado um alvo com sucesso, você pode aplicar quaisquer talentos (de pesquisa) que possua contra o alvo durante a duração.
+
+Você só pode tentar Analisar cada alvo individual uma vez por descanso longo.
+
+#### Afinidade com Perícia: Furtividade
+Você ganha proficiência na perícia Furtividade. Se você já for proficiente em Furtividade, poderá selecionar qualquer talento da esfera Batedor como talento bônus.
+
+
+### Talentos de Abordagem
+Alguns talentos possuem a etiqueta (abordagem), que aprimoram a forma como você pode tentar Analisar um alvo.
+
+#### Intuição Biológica (abordagem)
+Você pode tentar Analisar alvos com testes de Inteligência (Natureza).
+
+Além disso, aprender o tipo de criatura do alvo analisado não conta para o número de características analisáveis ​​que você pode aprender.
+
+#### Rastreador Empírico (abordagem)
+Você pode tentar Analisar alvos com testes de Sabedoria (Sobrevivência).
+
+Além disso, você não precisa de linha de visão para Analisar um alvo; em vez disso, você pode Analisar um alvo observando pegadas ou um rastro deixado por ele.
+
+#### Folclorista (abordagem)
+Você pode tentar Analisar alvos com testes de Inteligência (História).
+
+Além disso, sempre que você exceder a CD de Análise em 5 ou mais, você aprende uma característica analisável adicional.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Quebra-Partes (abordagem)
+Gaste Foco Marcial. Como um ataque especial, você pode analisar automaticamente um alvo que você atingir com sucesso (sem precisar de um teste). Se você acertar criticamente com o ataque, você aprende o dobro do número de características.
+
+#### Exame Físico (abordagem, pesquisa)
+Você pode tentar analisar alvos com testes de Sabedoria (Medicina).
+
+Além disso, você sabe constantemente a condição geral de saúde dos alvos analisados, conforme descrito abaixo:
+
+• :: Normal: Possui pelo menos 90% dos pontos de vida normais.
+
+• :: Razoável: De 30% a 90% dos pontos de vida normais restantes.
+
+• :: Ruim: Menos de 30% dos pontos de vida normais restantes ou sofrendo de uma lesão debilitante.
+
+• :: Fraco: 0 pontos de vida, aleijado ou sofrendo de uma condição grave que ameace sua vida imediatamente.
+
+#### Engenharia Social (abordagem)
+Você pode tentar analisar alvos com testes de Carisma (Enganação), Carisma (Intimidação) ou Carisma (Persuasão).
+
+### Talentos de Noção
+Alguns talentos possuem a etiqueta (noção), que aprimoram sua percepção e seus sentidos.
+
+#### Acuidade Súbita (noção)
+Você pode usar a ação Procurar como uma ação bônus.
+
+#### Percepção Cooperativa (noção)
+**Alcance**: :: 18 metros
+**Duração**: :: 1 hora
+
+**Gaste Foco Marcial.** Quando você fizer um teste de Sabedoria (noção), você pode compartilhar o resultado total com um número de aliados igual ao seu bônus de proficiência. Esse efeito dura pela duração do teste ou até que você o use novamente, contanto que eles permaneçam dentro do seu alcance.
+
+
+#### Discernir Ilusões (noção)
+**Alcance**: :: 9 metros
+
+Enquanto você tiver Foco Marcial, você ganha vantagem em todos os testes de resistência e testes de Inteligência (Investigação) feitos contra magias da escola de Ilusão ou efeitos de esfera da esfera de Ilusão.
+:
+**Gaste Foco Marcial.** Como uma ação bônus, você pode conceder essa vantagem a todos os aliados dentro do alcance por um número de rodadas igual ao seu modificador de Habilidade Principal.
+
+
+\column
+
+
+#### Conhecimento Mágico (noção)
+**Alcance**: :: 3 metros
+
+Você pode usar a ação Procurar para detectar a presença de auras mágicas ativas, como as deixadas por magias como alarme ou invisibilidade.
+
+Se não houver outra CD especificada (como por uma criatura usando Furtividade), a CD é igual à CD da magia original, ou CD 15 se o efeito não se originar de uma fonte que permita determinar a CD da magia. Isso não lhe dá nenhuma informação sobre a natureza exata dos efeitos mágicos detectados dessa maneira; você apenas fica ciente de que um efeito mágico está ativo e da área geral em que ele está ativo.
+
+Enquanto você tiver Foco Marcial, você pode usar Investigação, Percepção ou Sobrevivência passivas para notar a presença de efeitos mágicos ativos (como descrito acima) sempre que passar dentro do alcance deles, esteja você procurando ativamente ou não.
+
+
+#### Interceptar Análise (noção)
+**Alcance**: :: 36 metros
+Enquanto você tiver Foco Marcial, você sempre sabe quando uma criatura dentro do alcance aprende uma característica analisável que você possui. 
+:
+**Gaste Foco Marcial.** Você descobre quais características a criatura aprendeu sobre você naquela rodada, bem como quais criaturas aprenderam essas características.
+
+#### Leitor de Vento (noção)
+Você pode usar seus sentidos treinados para ler os movimentos do vento e outros fatores do ambiente para melhorar sua precisão com ataques à distância.
+
+Enquanto você tiver Foco Marcial, você pode ignorar a desvantagem em ataques com armas à distância causados ​​por vento, chuva ou outras condições climáticas.
+
+#### Percepção Treinada (noção)
+Você ganha proficiência em Inteligência (Investigação), Sabedoria (noção) ou Sabedoria (Sobrevivência).
+
+
+#### Sentidos Penetrantes (noção)
+**Alcance**: :: 9 metros
+
+Você não sofre desvantagem ao realizar um ataque contra um alvo dentro do alcance que esteja fortemente obscurecido ou invisível, embora ainda precise de uma maneira de localizar em que espaço a criatura está. Isso também se aplica a ataques realizados enquanto você estiver cego.
+
+Se o alvo estiver sob o efeito de uma magia de imagem espelhada ou um efeito similar, isso permite que você role duas vezes e escolha o resultado mais favorável ao determinar se o alvo foi atingido.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Sentir e Resistir à Vidência (noção)
+**Alcance**: :: 9 metros
+Você pode usar a ação Procurar para detectar sensores (como os da magia clarividência) como se fossem criaturas invisíveis, com um teste de Furtividade igual à CD da magia do conjurador.
+
+Enquanto você tiver Foco Marcial, você também fica imediatamente ciente de qualquer tentativa de vidência em você, como com a magia vidência ou o talento avançado de esfera de Adivinhação Vidência. Se essas magias e efeitos se originarem a até 9 metros de você, você também saberá sua localização. Assim que você tomar conhecimento de tal efeito, poderá forçar o conjurador a fazer um teste de habilidade de conjuração contestado pelo seu teste de Destreza (Furtividade). Se você for bem-sucedido, o efeito se torna incapaz de detectar qualquer informação sobre você, a área ou criaturas dentro do alcance.
+
+#### Sonambulismo (noção)
+Você não sofre mais desvantagem em testes de Percepção enquanto dorme e cai inconsciente, e dormir não faz mais com que você perca Foco Marcial. Além disso, enquanto inconsciente, você não falha automaticamente em testes de resistência de Força e Destreza, e criaturas não têm vantagem em jogadas de ataque contra você.
+
+Você pode escolher este talento uma segunda vez; na segunda vez que o escolher, você não sofrerá mais a maioria das limitações negativas de estar dormindo; isso é funcionalmente semelhante à imunidade ao sono, embora, em vez de permanecer acordado quando alvo de um efeito de sono, sua mente subconsciente e seus instintos simplesmente assumam o controle, permitindo que você continue lutando sem impedimentos. No entanto, você ainda não pode realizar testes de habilidade baseados em Carisma, Destreza ou Inteligência, nem qualquer habilidade que exija paciência ou concentração.
+
+#### Rastrear a Cena (noção)
+Você ganha vantagem em testes de habilidade feitos para encontrar e seguir rastros.
+
+Ao seguir com sucesso um rastro com menos de 24 horas, você aprende não apenas a direção para onde foram, mas também as ações que os alvos rastreados realizaram antes de deixarem a área e durante seu deslocamento, contanto que você continue seguindo o rastro. As informações obtidas dessa maneira são geralmente bastante gerais, como se os alvos pararam para comer, se separaram, tiveram um desentendimento, etc.
+
+Informações detalhadas, como quais magias eles podem ter lançado ou quais itens podem ter usado, geralmente não estão disponíveis, a menos que os alvos tenham deixado alguma indicação tangível do ato, como um frasco de poção vazio.
+
+#### Visão Além da Visão (noção)
+**Custo de Ação**: :: Ação bônus
+**Duração**: :: 1 rodada
+Você ganha percepção sísmica em um raio de 3 metros até o início do seu próximo turno.
+:
+**Gaste Foco Marcial.** Em vez disso, você ganha visão às cegas em um raio de 3 metros até o início do seu próximo turno.
+:
+**Em Níveis Superiores.** O alcance se estende por mais 3 metros no 5º (6 metros), 11º (9 metros) e 17º nível (12 metros).
+
+
+### Talentos de Pesquisa
+Alguns talentos possuem a etiqueta (pesquisa), que permite aplicar o que você aprendeu sobre um alvo Analisado de maneiras ofensivas ou defensivas.
+
+#### Foco Ágil (pesquisa)
+Sempre que uma criatura que você analisou for reduzida a 0 pontos de vida, você pode recuperar Foco Marcial como uma ação bônus ou reação.
+
+#### Análise de Assalto (pesquisa)
+Ao atacar o alvo analisado com armas de precisão ou de ataque à distância, você pode usar sua habilidade principal em vez de Força ou Destreza para as jogadas de ataque e dano.
+
+Você pode escolher este talento duas vezes. Depois disso, você pode usar sua habilidade principal para quaisquer jogadas de ataque e dano com armas contra o alvo analisado.
+
+#### Discernir Indícios (pesquisa)
+Você ganha vantagem em testes de Sabedoria (Intuição) que fizer contra alvos analisados.
+
+Além disso, alvos analisados ​​nunca têm vantagem em jogadas de ataque contra você.
+
+#### Explorar Fraqueza (pesquisa)
+**Teste de Resistência**: :: Constituição
+Como um ataque especial, faça um ataque com arma contra um alvo analisado. Se você acertar, o alvo deve ser bem-sucedido no teste de resistência ou sofrerá 1d10 de dano adicional.
+
+#### Encontrar Lacuna (pesquisa)
+Você acerta alvos analisados ​​com um resultado de 19 ou 20 no dado.
+
+#### Seguir Movimentos (pesquisa)
+**Custo de Ação**: :: Reação
+Quando um alvo que você analisou e que você pode ver se move durante o turno dele, você pode se deslocar até metade do seu deslocamento, seja na direção dele ou diretamente para longe dele.
+
+\page
+<div class='pageNumber auto'></div>
+
+Esse movimento ocorre ao mesmo tempo que o movimento do seu alvo e provoca ataques de oportunidade normalmente.
+
+Gaste Foco Marcial. Você pode se deslocar até o seu deslocamento total.
+
+#### Identificar Ritmos (pesquisa)
+Você recebe um bônus na CA igual à metade do seu bônus de proficiência contra alvos analisados.
+
+Enquanto você tiver Foco Marcial, esse bônus também se aplica a testes de resistência feitos contra alvos analisados.
+
+#### Prognóstico (pesquisa)
+**Teste de Resistência**: :: Constituição
+Inimigos analisados que forem feridos por seus ataques com armas devem fazer um teste de resistência ou ficarão impossibilitados de recuperar pontos de vida até o início do seu próximo turno.
+
+Sempre que um aliado Analisado recupera pontos de vida, ele recupera um número adicional de pontos de vida igual ao seu bônus de proficiência. Se você foi quem restaurou os pontos de vida dele, ele também terá vantagem no próximo teste de resistência que fizer antes do início do seu próximo turno. Este talento não se aplica a 'cura natural rápida' ou 'regeneração' que curam ao longo do tempo.
+
+#### Sabotagem da Mobilidade (pesquisa)
+**Teste de Resistência**: :: Constituição
+**Duração**: :: 1 rodada
+Na primeira vez em cada rodada em que um alvo Analisado for atingido por um ataque com sua arma, ele deve fazer um teste de resistência ou terá sua velocidade reduzida em um número de metros igual a 5 vezes o seu modificador de Habilidade Principal (mínimo de 1,5 metro). Essa redução de velocidade dura até o início do seu próximo turno.
+
+#### Surto Furtivo (pesquisa, perseguidor)
+Enquanto oculto, alvos analisados sofrem desvantagem em testes de Sabedoria (Percepção) feitos para detectar sua localização.
+
+### Talentos de Perseguidor
+Alguns talentos possuem a marca (perseguidor), que permite que você aproveite ao máximo sua perícia Furtividade enquanto estiver oculto.
+
+#### Assassinar (perseguidor)
+Enquanto oculto, se você matar ou reduzir os pontos de vida de uma criatura a 0 com um ataque corpo a corpo ou à distância, você não perde automaticamente a condição de oculto; em vez disso, sua localização só é detectada por criaturas cuja Percepção passiva seja maior que sua Furtividade passiva.
+
+\column
+
+#### Golpe Mortal (perseguidor)
+Enquanto oculto, seus ataques corpo a corpo e à distância causam dano adicional igual ao seu bônus de proficiência.
+:
+**Gastar Foco Marcial**. Seu primeiro ataque corpo a corpo ou à distância realizado nesta rodada causa 1d6 de dano adicional por bônus de proficiência.
+
+#### Astúcia Acelerada (perseguidor)
+Enquanto oculto, você tem vantagem em testes de Iniciativa.
+
+Enquanto mantiver o Foco Marcial, você pode se mover em velocidade normal enquanto se move furtivamente.
+
+#### Foco Oculto (perseguidor)
+**Alcance**: :: 36 metros
+Enquanto estiver oculto de todos os inimigos dentro do alcance, você pode recuperar seu Foco Marcial como uma ação bônus.
+
+#### Espreitador (perseguidor)
+**Custo de Ação**: :: Reação
+Gaste Foco Marcial. Imponha desvantagem em quaisquer testes de Sabedoria (Percepção) feitos para localizar sua posição enquanto estiver oculto.
+
+#### Envenenador Astuto (perseguidor)
+Alcance: 36 metros
+Duração: 1 rodada
+Quando você ataca uma criatura da qual você está oculto dentro do alcance, ela sofre desvantagem em testes de resistência contra qualquer doença ou veneno ao qual você a submeta até o início do seu próximo turno.
+
+#### Perseguidor Incomum (perseguidor)
+Enquanto oculto, o custo de ação para Analisar um alvo é reduzido em um nível.
+
+|Custo de Ação Inicial|Custo de Ação Final|
+|:------------------:|:-------------------:|
+|10 Minutos|1 Minuto|
+|1 Minuto|1 Ação|
+|1 Ação|1 Ação Bônus|
+|1 Ação Bônus|1 Reação|
+
+
+### Outros Talentos
+
+#### Furtividade Cooperativa
+**Alcance**: :: 18 metros
+Enquanto estiver oculto, você pode compartilhar seu teste de Destreza (Furtividade) com um número de aliados igual ao seu bônus de proficiência. Esse efeito dura enquanto eles permanecerem dentro do seu alcance.
+
+O número de aliados com quem você pode compartilhar seu teste dobra enquanto você tiver Foco Marcial.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Análise à Distância
+Aumenta o alcance da sua habilidade Analisar para 36 metros.
+
+#### Furtividade Rápida
+Você pode usar a ação Esconder-se como uma ação bônus.
+
+#### Perseguidor Aprimorado
+Você recebe os benefícios de quaisquer talentos (de perseguidor) que possua, mesmo que esteja apenas fortemente obscurecido ou invisível.
+
+Enquanto tiver Foco Marcial, você continua a se beneficiar de quaisquer talentos (de perseguidor) que possua, mesmo que esteja apenas levemente obscurecido.
+
+#### Análise Persistente
+Você pode tentar Analisar cada alvo individual um número de vezes por descanso longo igual ao seu bônus de proficiência.
+
+#### Análise Rápida
+Analisar agora leva apenas 1 minuto ou 1 Ação Bônus ao gastar Foco Marcial.
+
+Além disso, sempre que você rolar a iniciativa, poderá tentar Analisar um alvo individual sem gastar uma ação ou Foco Marcial.
+
+#### Furtividade Reflexiva
+**Custo da Ação**: :: Reação
+**Duração**: :: 1 rodada
+Sempre que você obtiver sucesso em um teste de resistência de Destreza contra um efeito de área, poderá usar a ação Esconder-se. Isso só dura até o final do seu próximo turno se você não conseguir encontrar cobertura ou outra maneira de permanecer escondido.
+
+#### Oponente Digno
+Quando você analisar um alvo com sucesso, poderá escolhê-lo como seu rival. Seus rivais não perdem a qualidade Analisado após 24 horas ou se você fizer um descanso longo. Você só pode ter um rival por vez, e escolher um novo rival faz com que o anterior perca essa qualidade. Você não pode escolher um novo rival até terminar um descanso longo ou até que o rival atual seja reduzido a 0 pontos de vida.
+
+
+### Talentos Lendários
+
+#### Pesquisador Conselheiro
+**Pré-requisitos**: :: Esfera de Batedor (Percepção Cooperativa), 1º nível ou superior.
+
+Sempre que você analisar um alvo com sucesso, aliados que se beneficiam de Percepção Cooperativa tratam o alvo como Analisado. Esses aliados se beneficiam de um talento (de pesquisa) que você possui (à sua escolha) enquanto permanecerem dentro do alcance do alvo.
+
+
+#### Perseguidor Conselheiro
+**Pré-requisitos**: :: Esfera de Batedor (Furtividade Cooperativa), 1º nível ou superior.
+
+Aliados ocultos que se beneficiam de Furtividade Cooperativa também recebem o benefício de um talento (de perseguidor) que você possui (à sua escolha).
+
+
+#### Detectar Pensamentos Superficiais (pesquisa)
+**Pré-requisitos**: :: Esfera de Batedor, proficiente em Intuição, 5º nível ou superior.
+
+**Custo de Ação**: :: 1 ação
+**Duração**: :: 1 rodada
+
+Você pode ouvir os pensamentos superficiais de uma criatura Analisada a até 9 metros de distância durante a duração.
+
+Você ganha vantagem em todos os testes de resistência e testes de habilidade feitos contra o alvo.
+
+
+#### Batedor Especialista
+**Pré-requisitos**: :: Esfera de Batedor, proficiente em Investigação, Percepção, Furtividade ou Sobrevivência, 1º nível ou superior.
+
+Escolha uma das seguintes perícias nas quais você seja proficiente: Investigação, Percepção, Furtividade ou Sobrevivência.
+
+Adicione o dobro do seu modificador de proficiência a essa perícia.
+
+Este talento pode ser escolhido múltiplas vezes, cada vez que uma perícia diferente for selecionada.
+
+
+#### Olhar Inimigo
+**Pré-requisitos**: :: Esfera de Batedor (Análise Rápida), 5º nível ou superior.
+
+**Custo de Ação**: :: 1 Ação
+
+**Gaste Foco Marcial.** Você pode tentar Analisar todas as criaturas dentro do seu alcance de Análise.
+
+
+#### Visão do Caçador de Magos Abordagem
+**Pré-requisitos**: :: Esfera de Batedor (Conhecimento Mágico), 3º nível ou superior.
+
+Sua Percepção passiva de Conhecimento Mágico se estende até onde sua visão alcança, em vez de apenas 3 metros.
+
+
+#### Análise Detalhada
+**Pré-requisitos**: :: Esfera de Batedor, 1º nível ou superior
+Ao analisar o alvo, você pode discernir um número adicional de características igual à metade do seu bônus de proficiência.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Modificar Características (pesquisa)
+**Pré-requisitos**: :: Esfera de Batedor (Quebrador de Partes), 5º nível ou superior.
+
+Sempre que você acertar um golpe crítico contra uma criatura analisada, você pode alterar 1 característica analisada conhecida do alvo de uma das seguintes maneiras por 1 hora:
+
+•:: Classe de Armadura. Reduzida em 2.
+•:: Resistências a Condições. Perde uma resistência a condição.
+•:: Imunidades a Condições. Uma imunidade a condição é transformada em resistência a condição.
+•:: Resistências a Dano. Perde uma resistência a dano.
+•:: Imunidades a Dano. Uma imunidade a dano é transformada em resistência a dano.
+•:: Vulnerabilidades a Dano. *(Requer Resistência a Dano e Imunidades a Dano como características conhecidas)* Escolha um tipo de dano para o qual a criatura não tenha Imunidade ou Resistência. Ganha essa vulnerabilidade a dano.
+•:: Velocidade. Reduz todos os modos de movimento em 3 metros (mínimo 0 m).
+•:: Um Atributo. Reduz um atributo conhecido em 2 (mínimo 1).
+•:: Um de seus Testes de Resistência. Reduz um teste de resistência conhecido em 2.
+•:: Um de seus Sentidos. Reduz um de seus sentidos conhecidos em 3 metros (mínimo 0 m).
+•:: Pontos de Vida Máximos. Reduz seus Pontos de Vida Máximos em 10 (mínimo 1).
+•::Outra Característica. Modificada com a permissão do Mestre.
+
+#### Visão Verdadeira Abordagem
+**Pré-requisitos**: :: Esfera de Batedor (Discernir Ilusões, Sentidos Penetrantes), 17º nível ou superior.
+**Alcance**: :: 36 metros
+
+Enquanto você tiver Foco Marcial, você poderá ver através da escuridão normal e mágica, perceber portas secretas ocultas por magia, ver a localização exata de criaturas ou objetos sob efeitos de distorção ou deslocamento, ver criaturas ou objetos invisíveis normalmente, ver através de ilusões e ver a verdadeira forma de coisas polimorfadas, alteradas ou transmutadas. Além disso, você pode focar sua visão para ver o Plano Etéreo (mas não espaços extradimensionais).
+
+Esta habilidade não penetra objetos sólidos. Ela não confere visão de raio-X ou equivalente. Não anula efeitos de obscurecimento, incluindo os causados ​​por neblina e similares. Não permite ver através de disfarces mundanos, detectar criaturas que estão simplesmente escondidas ou perceber portas secretas ocultas por meios mundanos. Este efeito não pode ser aprimorado com magia, portanto, não é possível usar esta habilidade através de uma bola de cristal ou em conjunto com a magia clarividência ou efeitos similares.
+
+### Variantes
+#### Abordagem Alternativa
+Você não pode tentar Analisar um alvo com um teste de Inteligência (Investigação) ou Sabedoria (Percepção). Você ganha um talento (de aproximação) à sua escolha como talento bônus.
+
+#### Olhos Ocultos
+Você não ganha a característica Analisar da esfera Batedor. Você não pode escolher talentos (de aproximação) ou (de pesquisa). Você ganha Furtividade Rápida e um talento adicional (de rastreador) à sua escolha como talentos bônus.
+
+#### Rivalidade
+Os alvos da sua tentativa bem-sucedida de Analisar também o consideram Analisado durante a duração da sua habilidade Analisar. Quaisquer características que você aprenda sobre eles, eles também aprendem sobre você e podem aplicar talentos (de pesquisa) que você possua a você. Você ganha Oponente Digno como talento bônus.
+
+#### Buscador
+Você não ganha a característica Afinidade de Perícia: Furtividade. Você ganha o talento Percepção Treinada (de percepção) como talento bônus.
+
+
+\page

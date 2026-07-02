@@ -1,0 +1,14 @@
+
+{{insideCover}}
+
+# Esferas de magia
+___
+
+{{imageMaskCenter8,--offsetX:0%,--offsetY:0%,--rotation:0
+  ![background image](https://cdna.artstation.com/p/assets/images/images/003/899/732/large/grzegorz-rutkowski-human-overlord-final-landscape-final-2-1920-logo-2.jpg?1478353812){position:absolute,top:150px,left:0,height:60%}
+}}
+
+{{logo ![](/assets/naturalCritLogoRed.svg)}}
+
+
+\page

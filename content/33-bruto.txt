@@ -1,0 +1,137 @@
+<div class='pageNumber auto'></div>
+
+## Bruto
+Os Brutos gostam de impor sua força, empurrando e golpeando os inimigos para movê-los pelo campo de batalha. Ao adquirir a esfera do Bruto, você ganha proficiência na perícia Atletismo. Se você já for proficiente, em vez disso, ganha um talento adicional desta esfera.
+
+Todos os praticantes da esfera do Bruto adquirem a seguinte habilidade:
+
+#### Empurrão Brutal
+Sempre que você empurra uma criatura, pode movê-la 1,5 metro adicional para cada 5 pontos pelos quais ela falhar no teste resistido, mesmo que você escolha derrubá-la em vez de movê-la. Além disso, se o empurrão for bem-sucedido, o alvo sofre dano de concussão igual ao seu modificador de Força.
+
+Como um ataque especial, você pode realizar um empurrão e aplicar os efeitos de um talento (maltrato) que você conheça a essa criatura.
+
+### Lembretes de Regras de Combate
+#### Desarmar
+Uma criatura pode usar um ataque com arma para derrubar uma arma ou outro item das mãos de um alvo. O atacante faz uma jogada de ataque, que é contestada por um teste de Força (Atletismo) ou Destreza (Acrobacia) do alvo. Se o atacante vencer a disputa, o ataque não causa dano ou outros efeitos negativos, mas o defensor deixa cair o item.
+
+O atacante tem desvantagem na sua jogada de ataque se o alvo estiver segurando o item com duas ou mais mãos. O alvo tem vantagem no seu teste de habilidade se for maior que a criatura atacante ou desvantagem se for menor.
+
+#### Atropelar
+Quando uma criatura tenta se mover através do espaço de uma criatura hostil, o atacante pode tentar forçar a passagem atropelando a criatura hostil. Como uma ação ou ação bônus, o atacante faz um teste de Força (Atletismo) contestado por um teste de Força (Atletismo) da criatura hostil. A criatura que tenta o atropelamento tem vantagem neste teste se for maior que a criatura hostil ou desvantagem se for menor. Se o atacante vencer a disputa, ele pode se mover através do espaço da criatura hostil uma vez neste turno.
+
+#### Empurrar para o Lado
+Uma criatura pode usar a ação de empurrar para forçar um alvo para o lado, em vez de para longe. O atacante tem desvantagem no seu teste de Força (Atletismo) ao fazer isso. Se o teste for bem-sucedido, o atacante move o alvo 1,5 metro para um espaço diferente dentro do seu alcance.
+
+
+\column
+
+### Talentos de Maltrato
+Talentos designados (maltrato) lhe concedem novas formas de abusar da sua superioridade sobre seus oponentes.
+
+#### Giro Vertiginoso (maltrato)
+O alvo deve fazer um teste de resistência de Constituição ou sofrer desvantagem em todas as jogadas de ataque e testes de habilidade até o final do seu próximo turno.
+
+#### Humilhar (maltrato)
+Você joga a criatura em posições onde ela não consegue se mover efetivamente. O alvo deve ser bem-sucedido em um teste de resistência de Destreza ou ter seu movimento reduzido a 0 até o final do seu próximo turno.
+
+#### Movimento Perpétuo (maltrato)
+Você pode imediatamente fazer um segundo empurrão contra o mesmo alvo, embora não possa adicionar talentos de (maltrato) a este empurrão adicional.
+
+#### Roubo (maltrato)
+Você pode tentar desarmar o alvo ou roubar algo dele com Prestidigitação. Se você possuir a esfera de Canalha, pode aplicar um talento de (truque) a este roubo.
+
+#### Derrubar (maltrato)
+Você pode fazer um teste de agarrar contra o alvo no final do seu empurrão, se ele ainda estiver ao seu alcance.
+
+#### Arremessar (maltrato)
+Você pode gastar seu foco marcial para arremessar a criatura. A criatura se move 3 metros adicionais em qualquer direção e deve ser bem-sucedida em um teste de resistência de Destreza ou cairá no chão.
+
+### Outros Talentos
+#### Manobras Alternativas
+Você não sofre desvantagem ao usar a variante de empurrar para o lado. Ao tentar uma investida, você pode causar dano e aplicar um talento de (maltrato) como se fosse um empurrão brutal.
+
+#### Quebrar Defesas
+Sempre que você empurrar uma criatura com sucesso, o próximo ataque feito contra essa criatura antes do início do turno dela terá vantagem.
+
+#### Maltrato Brutal
+Ao aplicar um talento de (maltrato), você pode gastar seu foco marcial para aplicar um segundo talento de (maltrato). Você não pode aplicar o mesmo talento de (maltrato) duas vezes com este talento.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Dominó
+Quando você usa empurrar para empurrar uma criatura contra outra, você pode imediatamente fazer uma tentativa de empurrão gratuita para derrubar a segunda criatura, mesmo que ela não esteja ao seu alcance. Você não pode adicionar um talento de (maltrato) a este segundo empurrão.
+
+#### Chute Voador
+Se você terminar um salto longo ou alto ao alcance de uma criatura, você ganha vantagem no próximo empurrão que fizer contra o alvo naquele turno, desde que tenha se movido pelo menos 3 metros antes ou durante o salto.
+
+#### Força Concentrada
+Sempre que você realizar um empurrão com sucesso, você pode recuperar seu foco marcial como uma ação bônus.
+
+#### Acompanhamento
+Sempre que você causar dano a uma criatura com um ataque de arma corpo a corpo, você pode empurrar o alvo como uma ação bônus.
+
+#### Venha Cá
+Quando você controla uma extremidade de uma amarra, como segurar a ponta de uma rede ou laço, ancorar uma corda em uma criatura ou através do uso de um talento de Amarra (veja as esferas de Destruição, Telecinese ou Universal (ligação de mana) em Esferas de Poder), você pode fazer tentativas de empurrão como se a criatura amarrada estivesse ao seu alcance. Em caso de sucesso, essas tentativas de empurrão movem o alvo para mais perto de você em vez de para longe, e mesmo usando a variante de empurrar para o lado, você deve movê-lo pelo menos diagonalmente em sua direção. Você pode aplicar talentos de (maltrato) a esses empurrões, embora quaisquer talentos que exijam que o alvo esteja ao seu alcance (como os talentos de Roubo ou Derrubar) só funcionem se a criatura for trazida para dentro do seu alcance natural.
+
+#### Bruto Maior
+Você adiciona o dobro do seu bônus de proficiência aos testes de Força (Atletismo). Isso não se acumula com efeitos semelhantes.
+
+#### Martelo
+Enquanto você tiver foco marcial, sempre que empurrar uma criatura para um espaço ocupado por uma parede, criatura ou objeto não mais de um tamanho menor que a criatura, o alvo do empurrão para seu movimento no espaço adjacente e tanto a criatura quanto a parede, outra criatura ou objeto sofrem 1d6 de dano de concussão. Esse dano é aumentado em 1d6 para cada 1,5 metro que a criatura teria percorrido além da parede, outra criatura ou objeto.
+
+#### Surto Muscular
+Como uma ação bônus, você pode se energizar para atingir níveis cada vez maiores de força. Por 1 minuto, você pode adicionar seu bônus de proficiência ao seu valor de Força ao determinar sua capacidade de carga, bem como à distância que você pode saltar ao realizar um salto em distância com corrida. Você pode se considerar um tamanho maior ao determinar quem você pode empurrar e agarrar.
+
+Você pode encerrar esse efeito antecipadamente para obter vantagem em um teste de Força feito para escalar, nadar, pular ou realizar feitos de força, como arrombar uma porta, quebrar correntes ou derrubar uma estátua. Isso não se aplica a jogadas de ataque nem a testes contestados, como testes feitos para empurrar.
+
+Você ganha 1 nível de exaustão por 10 minutos após o término deste efeito. Você não pode usar essa habilidade se tiver qualquer nível de exaustão.
+
+#### Deslocar Peso
+Quando uma criatura falha em uma jogada de ataque ou teste de Força contestado contra você, você pode gastar seu foco marcial para empurrar essa criatura como uma reação.
+
+
+### Talentos Lendários de Bruto
+
+#### Dilacerar Alma (Maltrato)
+**Pré-requisitos**: :: Esfera de Bruto, 15º nível ou superior.
+
+O alvo deve ser bem-sucedido em um teste de resistência de Carisma ou será arremessado para o plano etéreo, tornando-se etéreo por um número de rodadas igual ao seu bônus de proficiência. Ele pode tentar um novo teste de resistência a cada rodada no final de seu turno para encerrar esse efeito antecipadamente. Durante esse tempo, ele pode se mover em qualquer direção. Se ele se mover para cima ou para baixo, cada metro de movimento custa um metro extra. Ele pode ver e ouvir o plano de onde se originou, mas tudo lá parece cinza e ele não consegue ver nada a mais de 18 metros de distância.
+
+Enquanto estiver no Plano Etéreo, ele só pode afetar e ser afetado por outras criaturas nesse plano. Criaturas que não estão no Plano Etéreo não podem percebê-lo nem interagir com ele, a menos que uma habilidade especial ou magia lhes conceda essa capacidade. Ele ignora todos os objetos e efeitos que não estão no Plano Etéreo, permitindo que a criatura se mova através de objetos que percebe no plano de onde se originou.
+
+Quando o efeito termina, a criatura retorna imediatamente ao plano de origem, no local onde se encontra. Se, ao retornar, a criatura ocupar o mesmo espaço que um objeto sólido ou outra criatura, ela será imediatamente deslocada para o espaço desocupado mais próximo que possa ocupar e sofrerá dano de força igual ao dobro da distância em metros que for deslocada.
+
+\page
+<div class='pageNumber auto'></div>
+
+Essa habilidade não tem efeito se for usada enquanto a criatura estiver no Plano Etéreo ou em um plano que não faça fronteira com ele, como um dos Planos Exteriores.
+
+Depois que uma criatura se torna etérea por meio dessa habilidade, você não poderá afetá-la novamente com ela até completar um descanso longo. Este é um efeito mágico.
+
+
+#### Pisotão Terremoto
+**Pré-requisitos**: :: Esfera de Bruto
+
+Como uma ação, você pode pisar no chão com tanta força que criaturas próximas caem no chão.
+
+Todas as criaturas a até 1,5 metro de você devem fazer um teste de resistência de Destreza ou cairão no chão.
+
+A área afetada aumenta seu raio em mais 1,5 metro nos níveis 5 (3 metros), 11 (4,5 metros) e 17 (6 metros).
+
+
+#### Destruidor de Terreno
+**Pré-requisitos**: :: Esfera de Bruto, nível 11 ou superior.
+
+Você pode gastar seu foco marcial como uma ação para agarrar uma superfície sólida, como uma parede, porta ou chão, dentro do seu alcance e tentar destruí-la. Superfícies não sólidas, como terra solta, não podem ser quebradas dessa maneira, nem superfícies feitas de ferro ou substâncias mais duras. Se estiver tentando quebrar um alvo com mais de 30 centímetros de espessura (como tentar atravessar a muralha externa de um castelo ou uma montanha), você só consegue quebrar 30 centímetros por uso desta habilidade.
+
+Faça um teste de Força com CD 10. Se for bem-sucedido, você arranca uma seção da parede, porta ou chão do mesmo tamanho que você (um buraco de aproximadamente 1,5 metro de diâmetro para uma criatura Média).
+
+
+#### Palmas Trovejantes
+**Pré-requisitos**: :: Esfera de Bruto, nível 5 ou superior.
+
+Você pode gastar seu foco marcial como uma ação para bater as palmas das mãos, criando uma onda de choque trovejante que derruba tudo em seu caminho. Criaturas dentro de uma esfera de 9 metros sofrem 1d8 + modificador de Força de dano trovejante (aumentando em 1d8 nos níveis 5 (2d8), 11 (3d8) e 17 (4d8)) e ficam surdas por 1d4+1 rodadas. Um teste de resistência de Constituição bem-sucedido reduz o dano pela metade e nega o efeito de surdez. Todas as fontes de fogo não mágicas dentro da área afetada são extintas instantaneamente.
+
+
+\page

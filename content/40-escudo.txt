@@ -1,0 +1,88 @@
+<div class='pageNumber auto'></div>
+
+## Escudo
+Os praticantes da esfera do Escudo dominam os escudos, extraindo mais poder e utilidade desse equipamento do que a maioria dos guerreiros jamais sonha. Todos os praticantes da esfera do Escudo ganham a seguinte habilidade:
+
+#### Defesa Ativa
+Se você estiver usando um escudo e for atacado por uma criatura da qual você tenha consciência, você pode usar sua reação para aumentar seu bônus de CA contra esse ataque em +2.
+
+Talentos com o descritivo (defletir) concedem efeitos adicionais a esta habilidade. Cada uso de defesa ativa só pode se beneficiar de um talento (defletir). Você pode gastar seu foco marcial para usar defesa ativa sem gastar uma reação.
+
+
+### Talentos de Defletir
+
+#### Aparar Lâmina (defletir)
+Se o ataque que desencadeou a habilidade errar e tiver sido feito com uma arma corpo a corpo, você pode fazer uma tentativa de desarmar essa arma sem ação adicional. Escudos mágicos adicionam seu bônus a este teste.
+
+#### Contra-Ataque Esmagador (defletir)
+Se o ataque que desencadeou a habilidade errar e tiver sido feito por uma criatura adjacente, você pode empurrar a criatura atacante sem ação adicional.
+
+#### Escudo Redirecionador (defletir)
+Sempre que um ataque com arma (exceto armas de cerco ou outras armas maciças) errar uma criatura que se beneficia da sua defesa ativa, você pode gastar seu foco marcial para escolher um novo alvo para o ataque dentro do seu alcance original (para ataques à distância) ou alcance (para ataques corpo a corpo), comparando a rolagem de ataque original com a CA do novo alvo.
+
+#### Escudo Sacrificial (defletir)
+Se o ataque que desencadeou a habilidade acertar e for um acerto crítico, você pode quebrar seu escudo para transformar o acerto crítico em um acerto normal. Escudos quebrados geralmente podem ser reparados durante um descanso longo.
+
+
+### Outros Talentos
+#### Bloqueio
+Você pode usar defesa ativa contra efeitos que permitem fazer um teste de resistência de Destreza para reduzir o dano à metade. Quando usada dessa forma, você adiciona o bônus de CA do seu escudo ao seu teste de resistência de Destreza, em vez de obter os benefícios usuais da defesa ativa. Se você for bem-sucedido no teste de resistência, não sofrerá dano algum pelo efeito.
+
+#### Proteger Aliado
+Você pode conceder sua defesa ativa a um aliado dentro do seu alcance natural quando um ataque tiver esse aliado como alvo.
+
+#### Defesa Abrangente
+Você pode gastar foco marcial sem uma ação, mesmo quando não for seu turno, para aplicar sua defesa ativa contra todos os ataques válidos que a ativarem até o início do seu próximo turno, sem gastar uma reação. Se você possuir o talento Proteger Aliado, poderá aplicar esse benefício a si mesmo e a todos os aliados dentro do alcance.
+
+#### Cobertura Flexível
+Como uma ação, você pode usar seu escudo para criar cobertura. Ao usar um escudo dessa forma, você deve escolher uma das bordas do seu espaço para criar essa cobertura. Isso cria cobertura de três quartos (+5 na CA e nos testes de resistência de Destreza) até o início do seu próximo turno para quaisquer ataques que passem por essa borda.
+
+A cobertura concedida desta forma é insuficiente para permitir que você faça um teste de Destreza (Furtividade) para se esconder. Você pode gastar seu foco marcial para usar este talento como uma ação bônus. Como uma reação, você pode alterar a borda selecionada do seu espaço.
+
+#### Desvio Maior
+Ao usar defesa ativa, você pode gastar foco marcial para aplicar dois talentos (desvio) em vez de um.
+
+#### Postura Protegida
+Você pode usar defesa ativa quando não estiver equipado com um escudo. Você pode considerar uma arma que estiver empunhando como um escudo para fins de talentos que façam referência ao seu escudo.
+
+#### Escudo Interposto
+As criaturas que se beneficiam do seu bônus de defesa ativa (incluindo você) reduzem o dano recebido de ataques que acertam apesar da defesa ativa pelo seu bônus de proficiência. Isso é aplicado antes da resistência.
+
+#### Bloqueio de Soco
+Quando você usa sua defesa ativa, você pode optar por fazer uma jogada de ataque com um golpe desarmado e usar o resultado desse ataque em vez da sua CA para resolver o ataque que desencadeou a defesa, mesmo que seja menor.
+
+#### Defesa Reativa
+Sempre que você usar a ação Esquivar enquanto empunha um escudo, você pode realizar um ataque como reação contra uma criatura que errar o ataque.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Deslizamento com Escudo
+Ao se mover em uma ladeira ou usar a ação Disparada, você pode gastar uma ação bônus para jogar seu escudo no chão à sua frente e usá-lo para deslizar pelo solo. Isso aumenta sua velocidade de deslocamento em +6 metros (20 pés) durante aquela rodada. Você não se beneficia do bônus de CA do seu escudo durante o seu movimento enquanto usa esta habilidade. Você pode recuperar e equipar seu escudo novamente ao final do seu movimento.
+
+
+### Talentos Lendários de Escudo
+
+#### Redirecionamento Perfeito
+**Pré-requisitos**: :: Esfera de Escudo (Escudo Redirecionador), 7º nível ou superior.
+
+Você pode usar seu talento Escudo Redirecionador contra ataques de magia.
+
+
+#### Escudo da Alma
+**Pré-requisitos**: :: Esfera de Escudo, 11º nível ou superior.
+
+Você recebe um bônus em todos os testes de resistência igual ao bônus de CA do seu escudo. Isso não se acumula com efeitos que permitem adicionar um modificador de habilidade a testes de resistência, como a aura de proteção do paladino.
+
+### Variantes
+#### Destemido
+Sua defesa ativa não concede bônus à CA. Você recebe um talento (defletir) como talento bônus.
+
+#### Bloqueador Passivo
+Você não recebe a habilidade de defesa ativa e não pode escolher talentos (defletir) ou outros talentos que exijam o uso de defesa ativa. Você recebe Cobertura Flexível como talento bônus. Você não pode possuir este talento e Destemido ou Sem Escudo simultaneamente.
+
+#### Destemido
+Você não pode usar defesa ativa com um escudo. Você recebe Postura Guardada como talento bônus.
+
+
+\page

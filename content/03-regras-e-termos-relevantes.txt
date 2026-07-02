@@ -1,0 +1,103 @@
+<div class='pageNumber auto'></div>
+
+
+## Regras e Termos Relevantes
+
+### Aprimoramento
+Em muitas esferas, as habilidades concedidas podem ser aprimoradas ou alteradas pelo conjurador gastando pontos de magia adicionais. Essas modificações são chamadas de aprimoramentos. O custo de adicionar um aprimoramento é sempre adicionado a quaisquer pontos de magia necessários para usar a habilidade em si. A escolha de aplicar um aprimoramento deve ser feita no momento em que o efeito é conjurado, salvo indicação do contrário. O número de pontos de magia que você pode gastar em um único efeito de esfera (incluindo aprimoramentos) não pode exceder seu bônus de proficiência, mesmo que o aprimoramento seja aplicada após a conjuração inicial.
+
+### Concentração
+Alguns efeitos de esfera têm uma duração de "concentração" e, assim como acontece com as magias, essa concentração pode ser interrompida. Quaisquer fatores que se apliquem a magias com duração de concentração também se aplicam a efeitos de esfera com duração de concentração. Muitos efeitos de esfera com duração de concentração também têm uma ampliação que permite que o efeito persista sem concentração. Efeitos de esfera que são alterados de uma duração de concentração para uma duração diferente não podem ser alterados de volta.
+
+### Anulação
+Alguns efeitos de esfera podem se anular explicitamente (por exemplo, as esferas Escuridão e Luz). Se um efeito de esfera indicar que neutraliza outro efeito de esfera, aplicá-lo a um alvo sob o efeito neutralizado funciona como uma tentativa de dissipação (veja a habilidade de dissipação da esfera Universal).
+
+### Habilidade Chave
+A tradição mágica de um personagem determina qual atributo (geralmente Inteligência, Sabedoria ou Carisma) é usado para determinar a força de sua magia. Esse atributo é chamado de habilidade chave. Os termos "habilidade chave" e "habilidade de conjuração de esferas" são usados indistintamente.
+
+Seu modificador de habilidade chave (MHC) é usado para determinar muitas coisas, como a Classe de Dificuldade de suas habilidades de esfera, bem como seu número total de pontos de magia. Se um personagem possui uma tradição mágica e uma tradição marcial (consulte Esferas do Poder), ele pode usar sua habilidade de conjuração de esferas como habilidade chave tanto para suas habilidades mágicas quanto marciais, se for maior.
+
+:
+
+### Testes de Habilidade de Conjuração
+Às vezes, um conjurador de esferas usa diretamente o poder bruto de sua magia contra o de outro conjurador. Nesses momentos, o conjurador rola um d20 + seu modificador de habilidade de conjuração contra uma CD definida (geralmente a CD da magia ou efeito de esfera em questão).
+
+Se o efeito se originar de um item mágico em vez de um conjurador, use a Tabela: Perícia em Magia de Item abaixo para determinar o modificador de habilidade de conjuração ou CD com base na raridade do item.
+
+Itens de nível de artefato normalmente não podem ser anulados ou suprimidos sem o auxílio de outros itens de nível de artefato ou magia rara e poderosa.
+
+#### Tabela: Habilidade de Item Mágico
+| Raridade | MAC | CD | 
+|:---------|:---:|:--:|
+|Comum     |+2   |12  |
+|Incomum   |+3   |14  |
+|Raro      |+4   |16  |
+|Muito Raro|+5   |18  |
+|Lendário  |+6   |20  |
+
+### Dado de Dano
+Algumas classes, características ou talentos e habilidades de esfera podem alterar a quantidade de dano que uma arma ou efeito de esfera causa, diminuindo ou aumentando o tamanho do seu dado de dano em um ou mais passos. Esta tabela deve ser usada como guia de referência para ocasiões em que tal informação não seja fornecida.
+
+##### Tabela: Progressão de Dado de Dano
+| Dado de dano |
+|:-------------|
+| 1d2          |
+| 1d4          |
+| 1d6          |
+| 1d8          |
+| 1d10         |
+| 2d6 (ou 1d12)|
+| 2d8          |
+| 3d6          |
+| 3d8          |
+
+### Classe de Conjuração de Esferas
+Qualquer classe que conceda a habilidade de conjurar efeitos de esfera é uma classe de conjuração de esferas. Às vezes, como quando uma tradição mágica concede pontos de magia bônus, o que importa são os níveis totais de um personagem em classes de conjuração. Isso significa que todos os seus níveis de quaisquer classes de conjuração de esferas que você possua são somados para esse propósito.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+### Talento Mágico
+Conforme um conjurador de esferas ganha níveis, ele ganha talentos mágicos. Talentos mágicos podem ser gastos para permitir que um conjurador ganhe novos poderes e habilidades. Sempre que um conjurador de esferas ganha um talento mágico, ele pode gastá-lo de três maneiras: para ganhar uma nova esfera mágica base, para ganhar um talento associado a uma esfera mágica que já possui ou para remover uma variante que possui de uma esfera (mas mantendo os talentos bônus concedidos). O número de talentos mágicos que um conjurador de esferas ganha difere entre as classes, mas todos os personagens ganham talentos mágicos bônus como parte de sua tradição de conjuração. Uma vez gasto, um talento não pode ser alterado, a menos que seja permitido retreinamento.
+
+Algumas características de classe ou outras opções concedem a você uma esfera bônus ou um talento bônus específico. Se você ganhar uma esfera ou talento que já possui, poderá ganhar um talento diferente de sua escolha da mesma esfera.
+
+### Talentos Avançados
+Talentos básicos podem ser adquiridos por qualquer conjurador de esferas que possua a esfera à qual o talento pertence, enquanto talentos avançados têm pré-requisitos que o conjurador de esferas deve atender antes de adquiri-los. Além disso, a permissão do seu Mestre de Jogo é necessária para adquirir talentos avançados (consulte o capítulo 6: Construção de Mundo).
+
+### Tradição Mágica
+A tradição de conjuração de um usuário de magia é outro termo para as regras que regem o uso de seu poder, bem como sua fonte. Sua magia vem de uma divindade aliada? Talento inato? Comunhão com espíritos? Sua magia requer cânticos ou gestos, ou talvez materiais raros e o desenho de diagramas? Essas e outras questões determinam a tradição do conjurador. Observe que nos jogos básicos da 5ª edição, a classe de um personagem determina essas respostas (magos estudam fórmulas mágicas, clérigos comungam com divindades, etc.), mas com a Esfera de Poder, a classe não determina mais as regras que vinculam um usuário de magia.
+
+Uma tradição de conjuração é composta de 4 partes: um modificador de habilidade chave, desvantagens, dádivas e talentos mágicos. As desvantagens determinam as regras que vinculam um usuário de magia e determinam onde e como ele pode usar magia. Dádivas são benefícios que determinam os pontos fortes especiais dos usuários de uma tradição de conjuração. Por fim, cada tradição de conjuração concede a seus usuários dois talentos mágicos para servir como o início de seu crescimento em poder mágico.
+
+::
+
+### Ataques Mágicos e Testes de Resistência
+Salvo indicação em contrário, sempre que uma habilidade de esfera mágica exigir um teste de resistência, a Classe de Dificuldade (CD) para esse teste de resistência é igual a 8 + seu bônus de proficiência + seu modificador de habilidade chave. Se a criatura alvo atingir ou exceder esse número com seu teste de resistência, ela frequentemente reduz ou nega o efeito.
+
+Além disso, sempre que uma habilidade de esfera mágica exigir uma jogada de ataque, seu modificador de ataque de esfera é igual ao seu bônus de proficiência + seu modificador de habilidade chave.
+
+### Ponto de Magia
+Todos os conjuradores de esferas ganham uma reserva de pontos de magia, que acumula pontos de magia à medida que sobem de nível. Os pontos de magia são uma medida da capacidade de um conjurador e são gastos para aumentar o poder de suas habilidades mágicas. O número de pontos de magia que você pode gastar em um único efeito de esfera (incluindo aprimoramentos) não pode exceder seu bônus de proficiência, mesmo que o aprimoramento seja aplicado após a conjuração inicial. Sua reserva de magia é renovada após um descanso longo.
+
+A reserva de pontos de magia de um conjurador de esferas é definida por sua classe, mas tradições de conjuração podem, às vezes, aumentar o número de pontos de magia que você possui. Se a multiclasse for permitida, você soma todos os seus pontos de magia em uma única reserva, a menos que use a regra da variante de múltiplas tradições, exceto que você só ganha pontos de magia adicionais do seu modificador de habilidade chave uma vez.
+
+### Esfera
+Uma esfera é um grupo de habilidades baseadas em um tema. Cada esfera concede uma ou mais habilidades a qualquer conjurador que a possua, e essas habilidades podem ser expandidas com os talentos daquela esfera.
+
+Existem 20 esferas mágicas, incluindo Alteração, Criação, Conjuração, Escuridão, Morte, Destruição, Adivinhação, Aprimoramento, Destino, Ilusão, Luz, Vida, Mente, Natureza, Proteção, Telecinese, Tempo, Universal, Distorção e Clima. A esfera Universal se distingue das demais por consistir principalmente em habilidades que modificam a forma como o conjurador interage com outras esferas, além de lidar com a dissipação de outras magias e magia selvagem.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+### Efeito de Esfera
+Um efeito de esfera mágica é equivalente a uma magia e, na maioria dos casos, funciona da mesma forma. Para fins de interação com as regras da 5ª edição, todos os efeitos de esfera são geralmente tratados como magias de nível igual ao número de pontos de magia gastos nelas (um efeito de esfera conjurado com um custo final de 0 pontos de magia é considerado um Truque).
+
+### Variantes
+Esferas mágicas às vezes possuem variantes, listadas no final de suas páginas. Elas são consideradas parte das Tradições de Conjuração e normalmente são selecionadas na primeira vez que um personagem obtém acesso a essa esfera. Essas variantes infligem algum tipo de desvantagem ou limitação, mas também fornecem um benefício para compensar, conforme listado em suas descrições.
+
+Embora sejam amplamente opcionais, a menos que o Mestre as selecione como parte da criação de tradições de conjuração, as variantes oferecem uma maneira de personalizar personagens e fornecer mecânicas que melhor se adaptam a um conceito específico de personagem.
+
+\page

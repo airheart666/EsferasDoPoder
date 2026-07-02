@@ -1,0 +1,197 @@
+<div class='pageNumber auto'></div>
+
+## Domínio das Feras
+
+A esfera de Domínio das Feras concentra-se em todas as formas de manejo de animais.
+
+Você ganha proficiência na perícia Lidar com Animais. Se você já for proficiente nessa perícia, ganha um talento bônus desta esfera em vez disso. Além disso, você ganha o pacote de Cavaleiro ou Domador da esfera Domínio das Feras.
+
+Algumas habilidades exigem ações conjuntas. Essas ações requerem que tanto o usuário quanto a criatura domesticada paguem o custo de ação necessário juntos.
+:
+**Especial**: O pacote de Domador e os talentos relacionados a ele não podem ser adquiridos como talentos temporários ou talentos intercambiáveis; eles não podem ser colocados na arma personalizada de um armígero ou alterados através do talento Combatente Intuitivo, etc. Da mesma forma, os jogadores não podem fazer com que seus companheiros conjurados, companheiros animais, ajudantes ou qualquer outra coisa que não sejam seus próprios personagens jogadores adquiram este pacote ou seus talentos relacionados.
+
+### Pacotes de Domínio das Feras
+
+#### Pacote de Cavaleiro
+Você ganha a seguinte habilidade:
+
+##### Montaria Habilidosa
+Se sua montaria for submetida a um efeito que permita um teste de Destreza para sofrer apenas metade do dano, ela não sofre dano se for bem-sucedida e sofre metade do dano se falhar.
+
+#### Pacote de Domador
+Você ganha a seguinte habilidade:
+
+##### Domar
+Você pode tentar treinar uma besta para obedecer prontamente aos seus comandos dentro e fora do combate. Você deve encontrar, comprar ou capturar uma besta antes que ela possa ser treinada, e o treinamento requer 8 horas de trabalho. Você só pode treinar uma criatura por vez com esta habilidade. Ao final desse período, faça um teste de Adestramento de Animais com uma CD de 10 + o Nível de Desafio da criatura. Se for bem-sucedido, a criatura agora é considerada domesticada.
+
+O Nível de Desafio total das criaturas que você pode domar é dado na tabela abaixo. Você pode ter várias criaturas domesticadas, mas não pode ter mais animais domesticados por vez do que o seu bônus de proficiência, e o ND total de suas criaturas domesticadas não pode exceder o valor listado na tabela abaixo. Criaturas de ND 0 contam como ND 1/8 após a primeira adquirida.
+
+Se você tentar domar uma criatura que exceda esse limite, você deve escolher quais outras criaturas liberar. Criaturas controladas por outras fontes, como o companheiro animal de um Mestre das Feras, não contam para esse limite. Uma besta que foi despertada não é mais um alvo válido para esta habilidade e é automaticamente liberada.
+
+Suas criaturas domesticadas seguem seus comandos da melhor maneira possível (nenhuma ação é necessária de sua parte). Na ausência de um comando, suas criaturas agirão por conta própria. Se outra criatura tentar exercer controle sobre uma de suas criaturas domesticadas por qualquer meio, ela deve ser bem-sucedida em um teste de Carisma oposto ao seu teste de Adestramento de Animais.
+
+##### Tabela: Domador
+|Nível do Personagem|ND Total das Feras|Nível do Personagem|ND Total das Feras
+|:-----------------:|:----------------:|:-----------------:|:----------------:|
+|1|0|11|5
+|2|1/8|12|5
+|3|1/4|13|6
+|4|1/2|14|6
+|5|1|15|7
+|6|2|16|8
+|7|2|17|8
+|8|3|18|9
+|9|3|19|9
+|10|4|20|10
+
+### Lembretes de Regras de Combate
+#### Escalar uma Criatura Maior
+Ao lidar com uma criatura dois tamanhos maior que você, você pode tratá-la como terreno para fins de saltar em suas costas ou se agarrar a um membro. Depois de realizar quaisquer testes de habilidade necessários para se posicionar e subir na criatura maior, a criatura menor usa sua ação para fazer um teste de Força (Atletismo) ou Destreza (Acrobacia) contra o teste de Destreza (Acrobacia) do alvo. Se vencer o teste, a criatura menor se move com sucesso para o espaço da criatura alvo e se agarra ao seu corpo. Enquanto estiver no espaço do alvo, a criatura menor se move com o alvo e tem vantagem em jogadas de ataque contra ele.
+
+A criatura menor pode se mover dentro do espaço da criatura maior, tratando o espaço como terreno difícil. A capacidade da criatura maior de atacar a criatura menor depende da localização da criatura menor e fica a critério do Mestre. A criatura maior pode desalojar a criatura menor como uma ação — derrubando-a, esfregando-a contra uma parede ou agarrando-a e jogando-a — fazendo um teste de Força (Atletismo) contra o teste de Força (Atletismo) ou Destreza (Acrobacia) da criatura menor. A criatura menor escolhe qual habilidade usar.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Atropelar
+Quando uma criatura tenta se mover através do espaço de uma criatura hostil, o atacante pode tentar forçar a passagem atropelando a criatura hostil. Como uma ação ou ação bônus, o atacante faz um teste de Força (Atletismo) contra o teste de Força (Atletismo) da criatura hostil. A criatura que tenta o atropelamento tem vantagem neste teste se for maior que a criatura hostil, ou desvantagem se for menor. Se o atacante vencer o teste, ele pode se mover através do espaço da criatura hostil uma vez neste turno.
+
+### Talentos de Montaria
+Talentos com o descritivo (montaria) lhe concedem novas maneiras de melhorar suas montarias e sua habilidade como cavaleiro.
+
+#### Montaria Acrobática (montaria)
+Enquanto montado, você pode substituir um teste de Adestramento de Animais por qualquer teste de habilidade modificado pela proficiência em Atletismo ou Acrobacia feito por sua montaria. Se você possuir a esfera de Atletismo, poderá usar seus talentos de (movimento) como parte do movimento de sua montaria, usando Adestramento de Animais em vez de Acrobacia e Atletismo.
+
+#### Montaria Selvagem (montaria)
+Se você agarrar uma fera maior que você ou subir em uma criatura maior do tipo besta, poderá forçar a criatura a agir como sua montaria. A criatura pode fazer um teste de resistência de Carisma para resistir a isso e, se falhar, poderá tentar novamente no início de seu turno a cada rodada para se libertar do seu controle. Se falhar no teste de resistência, deverá agir como uma montaria disposta naquele turno e não poderá realizar nenhuma ação, exceto as direcionadas por você. Se a criatura se libertar do seu controle, mas você ainda estiver montado nela, poderá tentar forçar o controle novamente como uma ação.
+
+Se você possuir o pacote (domador) e o talento Habilidades Abrangentes, poderá usar este talento em qualquer criatura à qual sua habilidade de domar se aplique, embora criaturas que não sejam do tipo besta recebam um bônus de +2 em seu teste de resistência de Carisma.
+
+#### Cavaleiro Defensivo (montaria)
+Quando um ataque mira sua montaria, você pode forçar o ataque a mirar em você.
+
+#### Escudo Humano (montaria)
+Enquanto montado em uma criatura do seu tamanho ou maior, você pode se proteger atrás de sua montaria como uma ação bônus. Você pode gastar foco marcial para usar isso como uma reação. Sua montaria fornece cobertura total de uma direção. Ao usar uma montaria dessa maneira, você deve escolher uma borda do seu espaço. Essa borda é tratada como cobertura total para ataques que visam apenas você e que passam por essa borda, mas sua montaria ainda pode ser alvo de ataques normalmente, e você não pode usar Cavaleiro Defensivo ao usar sua montaria como cobertura. Se essa habilidade for usada em reação a um ataque, o ataque mirará em sua montaria. Você pode encerrar esse efeito sem a necessidade de uma ação em seu turno.
+
+#### Manobras Montadas (montaria)
+Você pode comandar sua montaria não apenas para realizar as ações de Disparada, Desengajar e Esquivar, mas também pode comandá-la para realizar a ação de Ataque, mas apenas para realizar um empurrão. Se você realizar um empurrão, pode usar o modificador de Força da sua montaria em vez do seu próprio.
+
+#### Ataque Montado (montaria)
+Você tem vantagem em jogadas de ataque corpo a corpo contra criaturas desmontadas que sejam menores que sua montaria.
+
+#### Atropelar (montaria)
+Sua montaria pode realizar uma manobra de atropelamento como sua ação ou como uma ação bônus.
+
+#### Cavaleiro de Escaramuça (montaria)
+Sua montaria pode realizar a ação Desengajar como uma ação bônus.
+
+
+### Talentos de Domador
+Talentos com o descritivo (domador) lhe concedem novas maneiras de melhorar suas feras domadas e sua habilidade como domador.
+
+#### Cúmplice (Domador)
+Como uma ação bônus conjunta, você ou uma de suas criaturas domadas podem distrair um inimigo como se estivessem usando a ação Ajudar, concedendo vantagem no teste de ataque para o outro, realizado antes do final do seu turno.
+
+#### Habilidades Abrangentes (Domador)
+Você pode domar criaturas de qualquer tipo não humanoide, embora elas devam possuir um máximo de 4 de Inteligência, e você tem desvantagem no teste contra criaturas que não sejam do tipo besta. Apenas a Inteligência permanente conta para determinar se uma criatura pode ser afetada; penalidades ou efeitos que reduzem a Inteligência não permitem que uma criatura seja afetada.
+
+#### Trabalho em Equipe Defensivo (Domador)
+Enquanto estiver ao alcance de uma de suas bestas domadas, quando um ataque for direcionado a você ou à besta, o outro pode aumentar a CA da criatura alvo em +2 como uma reação.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Ataque em Dupla (Domador)
+Quando uma de suas bestas domadas obtiver sucesso em uma manobra de agarrar ou empurrar, você pode fazer um ataque contra o alvo como uma reação.
+
+#### Conexão Focada (Domador)
+Como uma ação bônus conjunta, você pode fazer contato físico com uma de suas criaturas domadas dentro do seu alcance natural, recuperando seu foco marcial.
+
+#### Vigilância (Domador)
+Enquanto estiver a até 9 metros de suas bestas domadas, você e essas bestas domadas podem usar a maior pontuação de Percepção passiva possuída por você ou por um aliado animal dentro desse alcance.
+
+#### Treinamento de Montaria (Domador)
+Todas as suas criaturas domadas são consideradas treinadas para serem montarias.
+
+#### Ataque em Grupo (Domador)
+Suas criaturas domadas têm vantagem em testes de ataque contra uma criatura se pelo menos uma outra de suas criaturas domadas estiver a até 1,5 metro da criatura, e esse aliado não estiver incapacitado.
+
+### Outros Talentos
+#### Pacote Extra de Domínio de Feras
+Escolha um pacote de Domínio de Feras que você ainda não possua. Você adquire esse pacote.
+
+#### Adestrador Firme
+Ao fazer um teste de Adestramento de Animais, você pode gastar foco marcial como parte do teste para considerar o resultado como se tivesse rolado um 10. Essa decisão deve ser tomada antes de rolar o dado.
+
+#### Treinador
+Você adiciona o dobro do seu bônus de proficiência aos testes de Adestramento de Animais.
+
+
+### Talentos Lendários de Domínio de Feras
+
+#### Domador de Feras (domador)
+**Pré-requisitos**: :: Esfera de Domínio de Feras, 1º nível ou superior.
+
+Você pode gastar foco marcial como uma ação para forçar uma criatura que você possa domar a até 9 metros de distância a fazer um teste de resistência de Carisma ou servi-lo como uma criatura domesticada por 10 minutos. A criatura ainda conta para o seu limite de criaturas domesticadas.
+
+Criaturas que não sejam do tipo besta recebem um bônus de +2 em seus testes de resistência. Se uma criatura for bem-sucedida em seu teste de resistência contra o uso dessa habilidade ou se você ou seus aliados a atacarem ou causarem dano a ela, ela fica imune a novos usos dessa habilidade por você até que você complete um descanso longo. Quando a duração do efeito de domesticação termina, a criatura retorna à sua disposição anterior, modificada por quaisquer outros efeitos que a tenham alterado nesse meio tempo.
+
+Tentar fazer a criatura realizar uma ação obviamente suicida encerra a domesticação.
+
+
+#### Chamar Fera
+**Pré-requisitos**: :: Esfera de Domínio de Feras, 1º nível ou superior.
+
+Como uma ação bônus, você pode chamar todos os seus aliados animais para o seu lado. Eles devem estar a até 1,6 km por nível e vir na sua velocidade máxima, evitando perigos e riscos aparentes da melhor maneira possível. Esse movimento ocorre usando as ações normais da criatura em seu turno. No 11º nível, os aliados animais precisam apenas estar no mesmo plano.
+
+
+#### Domador Distante (domador)
+**Pré-requisitos**: :: Esfera de Domínio de Feras (Domador de Feras), 1º nível ou superior.
+
+O alcance da sua habilidade Domador de Feras aumenta para 36 metros.
+
+
+#### Controle Duradouro (domador)
+**Pré-requisitos**: :: Esfera de Domínio de Feras (Domador de Feras), 1º nível ou superior.
+
+A duração da sua habilidade Domador de Feras aumenta para 8 horas.
+
+
+#### Domínio em Massa (domador)
+**Pré-requisitos**: :: Esfera de Domínio de Feras (Domador de Feras), 1º nível ou superior.
+
+Ao usar sua habilidade Domador de Feras, você pode afetar várias criaturas simultaneamente, até o seu bônus de proficiência. Todas as criaturas devem estar dentro do alcance. Seus limites de Dados de Vida ainda se aplicam ao número total de criaturas que você pode afetar de uma vez com esta habilidade.
+
+
+#### Controle Permanente (domador)
+**Pré-requisitos**: :: Esfera de Domínio de Feras (Domador de Feras, Controle Duradouro), 5º nível ou superior.
+
+A duração da sua habilidade Domador de Feras torna-se permanente.
+
+
+#### Mestre de Enxames
+**Pré-requisitos**: :: Esfera de Domínio de Feras (Treinador), 1º nível ou superior.
+
+Aumente o número de criaturas que você pode ter domadas simultaneamente pelo seu nível. Isso não aumenta o Nível de Desafio total das criaturas que você pode ter domadas de uma vez.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Orador Selvagem (domador)
+**Pré-requisitos**: :: Esfera de Domínio de Feras, 5º nível ou superior.
+
+Você pode falar com animais. Você pode fazer perguntas e receber respostas de criaturas do tipo besta, mas essa habilidade não as torna mais amigáveis ​​do que o normal. Bestas cautelosas e astutas provavelmente serão lacônicas e evasivas, enquanto as mais estúpidas farão comentários sem sentido. Se uma besta for amigável com você, ela poderá lhe prestar algum favor ou serviço.
+
+### Variantes
+
+#### Companheiro Bestial (Requer Pacote de Domador)
+Você só pode ter uma criatura domesticada por vez e só pode domesticar feras que não sejam maiores que Médias e tenham um nível de desafio de 1/4 ou inferior. Adicione seu bônus de proficiência à CA, às jogadas de ataque e às jogadas de dano da fera, bem como a quaisquer testes de resistência e perícias nos quais ela seja proficiente. Seu máximo de pontos de vida é igual a (o modificador de Constituição da fera + seu modificador de atributo principal + 5) multiplicado pelo seu nível. Como qualquer criatura, ela pode gastar Dados de Vida durante um descanso curto para recuperar pontos de vida (a fera tem um número de Dados de Vida [d6s] igual ao seu nível). O nível de desafio máximo da sua fera domesticada aumenta em um passo quando você atinge o 5º nível (ND 1/2), o 11º nível (ND 1) e o 17º nível (ND 2). Você não pode possuir esta variante e a variante Domador de Monstros simultaneamente.
+
+#### Domador de Monstros (Requer Pacote de Domador)
+Você ganha Habilidades Abrangentes com esta variante. Você não pode usar sua habilidade de domesticar em criaturas do tipo besta.
+
+#### Cavaleiro Ofensivo (Requer Pacote de Montaria)
+Você não ganha a habilidade de Montaria Habilidosa. Você ganha Cavaleiro de Escaramuça com esta variante.
+
+
+\page

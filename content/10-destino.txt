@@ -1,0 +1,349 @@
+<div class='pageNumber auto'></div>
+
+## Destino
+Você comanda forças cósmicas, incluindo sorte, destino e alinhamento. Ao obter a esfera do Destino pela primeira vez, você ganha as habilidades de esfera de consagração, motivo e palavra. Além disso, você ganha um talento de (consagração), (motivo) ou (palavra) à sua escolha.
+
+#### Consagração
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: Pessoal
+**Duração**: :: Concentração, até 1 minuto
+**Área**: :: Raio de 3 metros
+**Custo**: :: 0PM
+
+Poder cósmico irradia do alvo em uma aura não maior que a área da consagração. Até o efeito da esfera terminar, a aura se move com o alvo e permanece centrada nele. Escolha e aplique uma habilidade de consagração que você possua à aura. A área aumenta em 1,5 metro quando você atinge o 5º nível (raio de 4,5 metros), o 11º nível (raio de 6 metros) e o 17º nível (raio de 7,5 metros).
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação.
+
+#### Motivo
+**Tempo de Conjuração**: :: 10 minutos
+**Alcance**: :: Toque
+**Duração**: :: Concentração, até 1 hora
+**Alvo**: :: 1 criatura
+**Custo**: :: 0PM
+
+Manifeste o vestígio de um aspecto ou entidade cósmica em uma criatura. Escolha e aplique uma habilidade de motivo que você possua ao alvo. Uma criatura individual nunca pode ter mais de uma instância de um talento (motivo) específico ativa nela ao mesmo tempo; uma segunda conjuração substitui a primeira.
+
+**Aprimoramento 1PM**: :: O tempo de conjuração é reduzido para 1 ação.
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem a necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação. Cada motivo, se aprimorado, pode ser dissipado pelo alvo como uma reação para conceder um benefício adicional.
+
+#### Palavra
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: 9 metros
+**Duração**: :: Instantânea
+**Alvo**: :: 1 criatura ou objeto
+**Custo**: :: 0PM
+
+Altere a realidade através do uso de palavras cósmicas de poder. Escolha e aplique um talento (palavra) que você conheça a uma criatura ou objeto dentro do alcance.
+
+**Aprimoramento 1PM**: :: O tempo de conjuração é reduzido para 1 ação bônus.
+
+### Talentos de Consagração
+Talentos com o descritor (consagração) concedem novos efeitos de consagração que você pode manifestar com sua magia de destino.
+
+Manto do Campeão (consagração)
+Você imbuí energia cósmica nas armas de criaturas próximas. Enquanto esta consagração estiver em efeito, cada criatura na aura causa 1d4 de dano radiante extra ao acertar um ataque com arma.
+
+**Aprimoramento 1PM**: :: Esta consagração não afeta mais todas as criaturas dentro da aura, mas agora afeta apenas seus aliados.
+
+#### Consequências (consagração)
+Enquanto esta consagração estiver em efeito, qualquer criatura na aura que atacar qualquer outra criatura (esteja ela na área ou não) sofre dano psíquico igual ao seu Bônus de Proficiência. Para os propósitos deste efeito, um ataque inclui qualquer magia, efeito de esfera ou habilidade não inofensiva que tenha como alvo uma criatura hostil ou cuja área de efeito inclua uma criatura hostil. Esta consagração só pode afetar uma criatura individual uma vez por rodada. O número de vezes por rodada que uma criatura individual pode ser afetada pela consagração aumenta em 1 no 5º nível (2 vezes), no 11º nível (3 vezes) e no 17º nível (4 vezes).
+
+#### Força Divina (consagração)
+Sua consagração preenche uma área com a influência de um tipo de alinhamento ao qual você está conectado (bom, mau, leal ou caótico).
+
+Você deve possuir esse tipo de alinhamento. Criaturas do alinhamento oposto (bom para mau, leal para caótico, etc.) que iniciarem seu turno dentro da aura da consagração devem ser bem-sucedidas em um teste de resistência de Carisma ou sofrerão uma das seguintes condições por 1 rodada, escolhida aleatoriamente:
+
+1. cegas
+2. surdas
+3. enfeitiçadas
+4. envenenadas
+5. amedrontadas
+6. imobilizadas
+
+Como esse poder é de origem cósmica, ele ignora as imunidades que uma criatura normalmente possui contra essas condições. Se você for verdadeiramente neutro, pode escolher a neutralidade com esta consagração, caso em que todas as criaturas nos extremos do espectro de alinhamento (caótico maligno, caótico bom, leal maligno e leal bom) sofrem as condições.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Santificação (consagração)
+Sua consagração preenche uma área com energias cósmicas que protegem contra certas criaturas sobrenaturais: aberrações, celestiais, elementais, fadas, demônios e mortos-vivos. Tais criaturas têm desvantagem em jogadas de ataque feitas contra criaturas aliadas dentro da aura.
+
+**Aprimoramento 1PM**: :: Criaturas aliadas dentro da aura também não podem ser enfeitiçadas, amedrontadas ou possuídas pelas criaturas sobrenaturais. Se uma criatura aliada na aura já estiver enfeitiçada, amedrontada ou possuída por tal criatura, o aliado tem vantagem em qualquer novo teste de resistência contra o efeito relevante.
+
+#### Logos (consagração)
+Enquanto estiverem dentro da área de sua consagração, você e seus aliados podem entender todas as palavras faladas, independentemente do idioma.
+
+**Aprimoramento 1PM**: :: Você e seus aliados também podem ser compreendidos por qualquer criatura que possua um idioma. Você e seus aliados não aprendem o idioma da criatura, mas, em vez disso, cada criatura ouve o que é dito no idioma que lhe for mais confortável.
+
+#### Desgraça (consagração) [maldição]
+Sua aura inflige má sorte aos seus inimigos. Na primeira vez que uma criatura hostil entrar em sua aura, ela deve ser bem-sucedida em um teste de resistência de Carisma ou será amaldiçoada pela duração da consagração. Sempre que uma criatura amaldiçoada dentro de sua aura fizer uma jogada de ataque ou um teste de resistência, a criatura deve rolar um d4 e subtrair o número rolado do resultado do ataque ou do teste de resistência.
+
+#### Pureza (consagração)
+Sua consagração abençoa as criaturas com esperança e vitalidade. Enquanto esta consagração estiver em vigor, você e cada aliado em sua aura têm vantagem em testes de resistência de Sabedoria e testes de resistência contra a morte.
+
+**Aprimoramento 1PM**: :: Sua consagração também maximiza o número de pontos de vida possíveis de qualquer cura. Por exemplo, uma poção de cura que normalmente cura 2d4+2 pontos de vida curaria automaticamente 10 pontos de vida se usada dentro da área.
+
+#### Revelar Alinhamento (consagração)
+Sua consagração revela o alinhamento de todas as criaturas dentro dela. Enquanto esta consagração estiver em vigor, o alinhamento de todas as criaturas dentro da área fica claro para qualquer um que as observe. A forma como isso se manifesta é única para cada observador — alguns podem ver uma criatura boa com uma auréola e uma criatura maligna com chifres, enquanto outros podem ouvir temas e acordes musicais evocando um alinhamento — mas, seja como for, a interpretação é inequívoca na mente do observador. Um observador ainda precisa ser capaz de sentir uma criatura para discernir seu alinhamento.
+
+#### Serendipidade (consagração)
+Sua aura concede sorte aos seus aliados. Sempre que uma criatura aliada dentro da sua aura fizer uma jogada de ataque ou teste de resistência, ela pode rolar um d4 e adicionar o número rolado ao ataque ou teste de resistência. Uma criatura individual só pode se beneficiar desta consagração uma vez por rodada.
+
+#### Silêncio (consagração)
+Sua aura abafa todo som dentro ou através da sua consagração. Qualquer criatura ou objeto inteiramente dentro da esfera ganha resistência a dano de trovão, e criaturas ficam surdas enquanto estiverem inteiramente dentro dela. Usar qualquer magia que inclua ou exija um componente verbal é impossível ali.
+
+**Aprimoramento 2PM**: :: Sua aura concede imunidade a dano de trovão.
+
+#### Manipular o Destino (consagração) [maldição]
+Sua aura manipula a sorte e o destino dos outros. Enquanto esta consagração estiver em vigor, qualquer criatura dentro da aura que rolar um 10 no d20 de uma jogada de ataque, teste de habilidade ou teste de resistência recebe um bônus ou uma penalidade em sua rolagem igual ao seu Bônus de Proficiência (à sua escolha).
+
+**Aprimoramento 1PM**: :: Além disso, uma vez por rodada, sempre que uma criatura dentro da área rolar um 1 natural ou um 20 natural, você pode alterar a rolagem para o oposto. Isso não requer uma ação, mas só pode ser usado uma vez por rodada. Converter um 20 natural em um 1 natural é um efeito de maldição e pode ser negado com um teste de resistência de Sabedoria bem-sucedido.
+
+#### Desfazer Dano (consagração)
+Enquanto esta consagração estiver em vigor, na primeira vez a cada rodada que qualquer criatura individual dentro da aura sofrer dano, ela ganha imediatamente 5 pontos de vida temporários. Esses pontos de vida temporários não se acumulam e desaparecem se a criatura sair da aura ou se a consagração terminar. O número de pontos de vida temporários aumenta em 10 no 5º nível (15 pontos de vida temporários), no 11º nível (25 pontos de vida temporários) e no 17º nível (35 pontos de vida temporários).
+
+**Aprimoramento 1PM**: :: Esta consagração não afeta mais todas as criaturas dentro da aura, mas agora afeta apenas seus aliados.
+
+\page
+<div class='pageNumber auto'></div>
+
+### Talentos de Motivo
+Talentos com o descritor (motivo) concedem novos motivos que influenciam probabilidades e tendências em suas manipulações de destino.
+
+#### A Carruagem (motivo)
+Você pode conceder um motivo que garante que o alvo esteja sempre apto a agir. O alvo ganha vantagem em testes de resistência contra efeitos que infligem as condições incapacitado, paralisado, atordoado ou inconsciente. Se o alvo estiver morrendo, isso também lhe concede vantagem em testes de resistência contra a morte.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo ignore um desses efeitos por 1 minuto, e pode dispensar o motivo mesmo quando, de outra forma, não seria capaz de realizar ações, como se estivesse incapacitado. Se o alvo estivesse morrendo, isso apenas o estabiliza como se tivesse passado em três testes de resistência contra a morte.
+
+#### O Diabo (motivo)
+Você pode conceder um motivo que permite ao alvo avaliar outras criaturas. Como uma ação livre, uma vez por rodada, ele pode avaliar um oponente que possa ver. O alvo aprende o ND aproximado do inimigo (veja a tabela ND do Inimigo). O alvo pode avaliar uma criatura adicional a cada rodada no 5º nível (2 oponentes), 11º nível (3 oponentes) e 17º nível (4 oponentes). 
+:
+Dispensar este motivo enquanto estiver aprimorado concede ao alvo um bônus de +2 na CA e nas jogadas de ataque contra qualquer inimigo que ele tenha avaliado usando o benefício deste motivo por 1 minuto.
+
+##### Tabela: ND do Inimigo
+| ND do Inimigo            | Resultado           |
+|:-------------------------|:--------------------|
+4+ abaixo do nível do alvo | Trivial             |
+1–3 abaixo do nível do alvo| Fácil               |
+Igual ao nível do alvo     | Combate equilibrado |
+1–3 acima do nível do alvo | Difícil             |
+4+ acima do nível do alvo  | Avassalador         |
+
+#### O Imperador (motivo)
+Você pode conceder um motivo que permite ao seu portador projetar melhor seu poder. Sempre que o alvo sofrer penalidades em jogadas de ataque, jogadas de dano, testes de resistência ou testes de habilidade, ele reduz sua penalidade total em 1, até um mínimo de 0. A penalidade reduzida aumenta em 1 no 5º nível (2 no total), 11º nível (3 no total) e 17º nível (4 no total).
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo escolha uma penalidade que esteja sofrendo e a adicione à sua rolagem por 1 minuto. Algumas proezas ou habilidades permitem aplicar uma penalidade a rolagens ou testes individuais. Este motivo permite afetar apenas uma dessas rolagens ou testes com o efeito de dispensa.
+
+##### Variante O Imperador (motivo)
+Você pode conceder um motivo que permite ao seu portador projetar melhor seu poder. Sempre que o alvo sofrer desvantagem em rolagens de ataque, dano, testes de resistência ou testes de habilidade, ele pode ignorar uma fonte de desvantagem. Ele pode ignorar uma fonte adicional de desvantagem a cada rodada no 5º nível (2 no total), 11º nível (3 no total) e 17º nível (4 no total).
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo trate uma fonte de desvantagem como uma fonte de vantagem por 1 minuto. Algumas proezas ou habilidades permitem aplicar desvantagem a rolagens ou testes individuais. Este motivo permite afetar apenas uma dessas rolagens ou testes com o efeito de dispensa.
+
+#### A Imperatriz (motivo)
+Você pode conceder um motivo que aprimora sutilmente a capacidade do alvo de moldar seu próprio destino. O alvo recebe uma ficha de inspiração temporária que pode usar durante toda a duração deste motivo. Uma criatura não pode ser alvo de A Imperatriz (motivo) mais vezes do que seu Bônus de Proficiência por descanso longo. O alvo pode gastar um ponto de inspiração temporário para obter vantagem em um teste de habilidade, jogada de ataque ou teste de resistência. Gastar seu ponto de inspiração temporário não encerra o motivo.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo adicione seu Bônus de Proficiência a qualquer jogada de ataque, teste de habilidade ou teste de resistência. Isso não se acumula com perícia e outras habilidades similares que permitem adicionar seu Bônus de Proficiência uma segunda vez.
+
+#### O Tolo (motivo)
+Você pode conceder um motivo que permite que um alvo se entregue ao destino. O alvo tem desvantagem em todos os testes de resistência, mas recebe um bônus de +5 neles.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo role novamente um teste de resistência que acabou de falhar. Eles não têm desvantagem nem bônus neste teste de resistência. O alvo também pode optar por rejeitar este motivo como uma reação, sem nenhum efeito adicional.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### O Enforcado (motivo)
+Você pode conceder um motivo que permite ao alvo se beneficiar de seus sacrifícios. A cada rodada, como uma ação bônus, o alvo pode decidir adicionar o dobro de seu bônus de proficiência a um teste de resistência de sua escolha, mas perder seu bônus de proficiência em todos os outros testes de resistência, ou manter seus testes de resistência como estão. Essa escolha permanece até que ele decida alterá-la.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo gaste um de seus Dados de Vida, sofrendo dano igual ao Dado de Vida gasto e ganhando esse valor (mínimo 1) como bônus em um único teste de habilidade, jogada de ataque ou teste de resistência.
+
+#### O Eremita (motivo)
+Você pode conceder um motivo que melhora a capacidade de um alvo de trabalhar sozinho. Enquanto o alvo não estiver ao alcance corpo a corpo de outra criatura, ele pode usar a ação Ajudar em si mesmo como uma ação bônus. Em qualquer rodada em que o façam, também não podem se beneficiar de outra criatura usando a ação Ajudar neles.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo tenha vantagem nas jogadas de ataque contra todos os inimigos, contanto que nenhum dos aliados do alvo ameace o inimigo por 1 minuto. Se o alvo possuir a habilidade Ataque Furtivo (ou similar), ele poderá usá-la contra inimigos por 1 minuto, mesmo que uma fonte de desvantagem anule a vantagem concedida.
+
+#### O Hierofante (motivo)
+Você pode conceder um motivo que permite ao alvo se integrar ao grupo. O alvo ganha uma aura com um raio de 9 metros que concede vantagem a aliados, exceto ao alvo, em todos os testes de resistência contra a condição enfeitiçado, bem como contra qualquer magia pertencente à escola de Encantamento ou à esfera da Mente.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo transfira para si até metade do dano que um aliado a até 9 metros de distância sofrer. O alvo pode dissipar este efeito mesmo que o dano que seu aliado sofreria normalmente o reduzisse a menos de 1 ponto de vida, e mesmo que o matasse instantaneamente. O dano é transferido após os efeitos de resistência, imunidade e efeitos similares. O dano transferido é de natureza empática e não pode ser reduzido, dividido ou transferido.
+
+#### Julgamento (motivo)
+Você pode conceder um motivo que aprimora o discernimento do alvo. O alvo não pode ser surpreendido enquanto consciente, e outras criaturas não obtêm vantagem em jogadas de ataque contra ele por estarem invisíveis. Além disso, o alvo não tem desvantagem em jogadas de ataque contra inimigos invisíveis que ele não pode ver.
+:
+Dispensar este motivo enquanto aprimorado permite que o alvo faça com que todos os inimigos invisíveis adjacentes se tornem visíveis por 1 minuto e incapazes de fazer testes de Destreza (Furtividade) durante esse período.
+
+#### Justiça (motivo)
+Você pode conceder um motivo que impõe equilíbrio. Na primeira vez em que uma criatura hostil causar dano ao alvo em cada rodada, ele ficará marcado, sofrendo 1d6 de dano adicional de ataques com armas por uma rodada.
+:
+Dissipar este motivo enquanto estiver aprimorado permite que o alvo transfira até metade do dano que um inimigo lhe causaria para o inimigo que causou o dano. O alvo pode dissipar este efeito mesmo que o dano sofrido normalmente o reduzisse a menos de 1 ponto de vida, e mesmo que o matasse instantaneamente. O dano é transferido após os efeitos de resistência, imunidade e efeitos similares. O dano transferido é de natureza empática e não pode ser reduzido, dividido ou transferido posteriormente.
+
+#### Os Amantes (motivo)
+Você pode conceder um motivo que fortalece um alvo quando ele estiver próximo de seus aliados. O alvo recebe um bônus em todos os testes de resistência igual ao número de aliados adjacentes a ele. Este bônus não pode exceder seu Bônus de Proficiência.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo gaste um de seus Dados de Vida e conceda essa quantidade de pontos de vida temporários a um aliado a até 9 metros de distância. Esses pontos de vida temporários duram 1 minuto.
+
+#### O Mágico (motivo)
+Você pode conceder um motivo que ajuda o alvo a tirar o máximo proveito de suas circunstâncias atuais. O alvo recebe um bônus igual à metade de seu bônus de proficiência, arredondado para baixo, em testes de habilidade aos quais seu bônus de proficiência não se aplica.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo ganhe uma ação adicional em seu turno. Esta ação só pode ser usada para realizar as ações de Disparada, Ajudar ou Usar um Objeto.
+
+#### A Lua (motivo)
+Você pode conceder um motivo que protege o alvo de ilusões. O alvo ganha vantagem em testes de resistência contra qualquer magia pertencente à escola de Ilusão ou à esfera de Ilusão.
+:
+Dissipar este motivo enquanto estiver aprimorado permite que um alvo que descredibilizou com sucesso uma ilusão faça com que todos os outros aliados em um raio de 9 metros também descrevam a mesma ilusão.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+
+#### A Estrela (motivo)
+Você pode conceder um motivo que oferece orientação em circunstâncias difíceis. Qualquer jogada de ataque feita contra o alvo durante o turno dele tem desvantagem.
+:
+Dissipar este motivo enquanto estiver aprimorado permite que o alvo evite provocar ataques de oportunidade por 1 minuto.
+
+#### Força (motivo)
+Você pode conceder um motivo que aumenta o poder e a vontade de um alvo. Ao fazer um teste de Força, o alvo pode substituir Força pelo seu atributo principal, se for maior.
+:
+Dissipar este motivo enquanto estiver aprimorado permite que um alvo se torne imune à condição amedrontado por 1 minuto.
+
+#### O Sol (motivo)
+Você pode conceder um motivo que garante um amanhecer glorioso após a noite mais escura. Sempre que o alvo tiver menos da metade de seus pontos de vida máximos, ele terá vantagem em todos os testes de resistência.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo gaste Dados de Vida para recuperar pontos de vida como se tivesse feito um descanso curto.
+
+#### Temperança (motivo)
+Você pode conceder um motivo que protege contra os caprichos da sorte. Quando o alvo rolar um 1 natural em qualquer jogada de ataque, teste de habilidade ou teste de resistência, ele poderá rolar novamente. Se a nova rolagem também for um 1 natural, este efeito não permitirá que ele role novamente.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo force qualquer criatura a até 9 metros a rolar novamente qualquer jogada de ataque, teste de habilidade ou teste de resistência. Ela deve aceitar o resultado da nova rolagem, mesmo que seja pior que a rolagem original.
+
+#### A Torre (motivo)
+Você pode conceder um motivo que permite ao alvo concentrar as vicissitudes do tempo em uma criatura ou objeto. Os ataques desarmados, ataques naturais e armas manufaturadas do alvo ignoram resistência.
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo modifique um único ataque de um aliado para que ele ignore qualquer resistência que uma criatura ou objeto possa ter.
+
+#### A Roda (motivo)
+Você pode conceder um motivo que fortalece o alvo quase aleatoriamente. Role 1d6 ao conceder o motivo. O alvo recebe um bônus de +1 nas rolagens indicadas na tabela abaixo. Este bônus aumenta em 1 no 5º nível (+2), 11º nível (+3) e 17º nível (+4).
+:
+Dispensar este motivo enquanto estiver aprimorado permite que o alvo receba um bônus em uma única rolagem de ataque, teste de habilidade ou teste de resistência igual ao dobro do bônus concedido. Ele deve escolher fazer isso antes de rolar.
+
+##### Tabela: A Roda
+|d6  |Bônus                    |
+|:--:|:------------------------|
+|1-2 |Rolagens de ataque e dano|
+|3-4 |Testes de resistência    |
+|5-6 |Testes de habilidade     |
+
+#### O Mundo (motivo)
+Você pode conceder um motivo que aprimora a capacidade do alvo de ter sucesso em todos os seus empreendimentos sempre que ele se empenhar. Sempre que ele fizer um teste de habilidade que permita adicionar seu bônus de proficiência, você pode considerar uma rolagem de d20 de 9 ou menos como 10.
+:
+Dispensar o motivo enquanto estiver aprimorado permite que o alvo aumente o valor de qualquer rolagem de d20 feita em um teste de habilidade realizado por qualquer aliado a até 9 metros para 10.
+
+### Talentos de Palavra
+Talentos com o descritor (palavra) concedem novas palavras místicas que você pode evocar como expressões diretas do poder do destino.
+
+#### Abençoar (palavra)
+Você pode abençoar as ações imediatas de um alvo dentro do alcance. O próximo dado de 20 lados que o alvo rolar antes do final da próxima rodada terá vantagem.
+
+#### Escravidão (palavra) [maldição]
+Você pode invocar uma maldição de escravidão sobre um alvo dentro do alcance. O alvo deve fazer um teste de resistência de Carisma ou ficará restringido até o início do seu próximo turno.
+
+#### Maldição (palavra) [maldição]
+Você pode amaldiçoar as ações imediatas de um alvo dentro do alcance. O próximo d20 que o alvo rolar antes do final da próxima rodada terá desvantagem.
+
+#### Exorcizar (palavra)
+Você pode invocar forças cósmicas para encerrar um efeito de dominação ou possessão em uma criatura ou objeto. Uma criatura sob o efeito de Ladrão de Corpos (ou habilidade similar) é considerada sob o efeito de possessão. O alvo dominado ou possuído recebe um novo teste de resistência para resistir ao efeito. Se o alvo for bem-sucedido em seu teste de resistência, o efeito termina e o alvo estará imune de dominação ou possessão daquela fonte por 24 horas; uma fonte possessora, se for uma criatura, é ejetada do corpo e aparece no espaço desocupado mais próximo.
+
+\page
+<div class='pageNumber auto'></div>
+
+**Aprimoramento 1PM**: :: A fonte do efeito de dominação ou possessão deve fazer um teste de resistência de Carisma ou sofrer 2d6 de dano necrótico, psíquico ou radiante, escolhido ao aprimorar o efeito. Em caso de sucesso no teste de resistência, a fonte da dominação ou possessão pode transferir até metade do dano sofrido para o alvo; o dano transferido não pode ser reduzido por resistência ou imunidade. A quantidade de dano aumenta em 1d6 no 5º nível (3d6), 11º nível (4d6) e 17º nível (5d6).
+
+#### Liberdade (palavra)
+Você pode invocar uma bênção de liberdade para um alvo dentro do alcance. Até o início do próximo turno, o alvo automaticamente obtém sucesso no próximo teste de Destreza (acrobacias) ou Força (atletismo) realizado para escapar de uma imobilização, se libertar de algemas ou se desamarrar de cordas. Além disso, durante a rodada, o alvo ganha imunidade às condições agarrado, incapacitado, paralisado, restringido e atordoado. Se o alvo for uma criatura petrificada, ela perde temporariamente a condição durante a rodada.
+
+#### Dano (palavra) [maldição]
+Você pode amaldiçoar um alvo com dor aumentada. Todo o dano sofrido pelo alvo é aumentado pelo seu Bônus de Proficiência por 1 rodada.
+
+#### Marca (palavra) [maldição]
+**Duração**: :: Concentração, até 1 minuto
+
+Você pode amaldiçoar um alvo, permitindo que você cause 1d6 de dano necrótico extra a ele sempre que o atingir com um ataque. Além disso, ao lançar a maldição, você pode escolher uma das seguintes opções:
+
+• :: Escolha um atributo. O alvo também terá desvantagem em testes de atributo feitos com o atributo escolhido. Isso funciona como a magia hex para fins de características e habilidades.
+
+• :: Você também terá vantagem em quaisquer testes de Sabedoria (Percepção) ou Sabedoria (Sobrevivência) que fizer para encontrar o alvo amaldiçoado. Isso funciona como a magia marca do caçador para fins de características e habilidades.
+
+Se o alvo chegar a 0 pontos de vida antes do término da duração, você pode usar uma ação bônus em um turno subsequente para amaldiçoar um novo alvo.
+
+**Aprimoramento 1PM**: :: Você pode aplicar ambas as opções à maldição.
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser lançado em seu turno, sem a necessidade de uma ação.
+
+#### Misericórdia (palavra)
+Você pode invocar uma bênção de misericórdia sobre um alvo dentro do alcance. Durante 1 hora, sempre que o alvo reduzir os pontos de vida de uma criatura a 0 com um ataque corpo a corpo, o atacante deve escolher nocautear a criatura (ou incapacitá-la de alguma outra forma) em vez de matá-la. Além disso, o alvo deve ser bem-sucedido em um teste de resistência de Carisma antes de atacar qualquer criatura inconsciente (ou incapacitada de alguma outra forma).
+
+#### Abrir/Fechar (palavra) [maldição]
+Você faz com que algo se abra ou se feche. Esta palavra tem efeitos diferentes dependendo do alvo e se você está abrindo ou fechando.
+
+• :: **Criatura: Abrir.** O alvo percebe que seus olhos ou boca estão forçados a se abrir (escolhido no momento da conjuração) e não podem ser fechados. A cada rodada, no início do turno do alvo, ele faz um novo teste de resistência de Força contra o efeito. Se for bem-sucedido no teste de resistência, o alvo pode abrir ou fechar os olhos ou a boca normalmente.
+
+• :: **Criatura: Fechar.** O alvo percebe que seus olhos ou boca estão forçados a se fechar (escolhido no momento da conjuração) e não podem ser abertos. A cada rodada, no início do turno do alvo, ele faz um novo teste de resistência de Força contra o efeito. Em um teste de resistência bem-sucedido, o alvo pode abrir ou fechar os olhos ou a boca normalmente.
+
+• :: **Objeto: Abrir.** Um alvo que está fechado por uma fechadura comum, ou que está preso ou bloqueado, é destrancado, desbloqueado ou bloqueado. Se o alvo tiver várias fechaduras, apenas uma delas é destrancada. Se o alvo estiver fechado magicamente, o efeito é suprimido por 10 minutos, durante os quais o alvo pode ser aberto e fechado normalmente.
+
+• :: **Objeto: Fechar.** Um alvo que possui uma fechadura comum destrancada é trancado. Se o alvo tiver várias fechaduras destrancadas, apenas uma delas é trancada. Se o alvo não tiver nenhuma fechadura própria, ele fica preso, exigindo um teste de Força contra o efeito da esfera para arrombar o objeto.
+
+#### Acalmar (palavra)
+Você pode abençoar um alvo com cura aumentada. Quaisquer pontos de vida restaurados ao alvo são aumentados pelo seu Bônus de Proficiência por 1 rodada.
+
+#### Subverter (palavra) [maldição]
+Você pode amaldiçoar as ações imediatas de um alvo dentro do alcance. Na próxima vez que o alvo causar dano a uma criatura ou objeto, antes do final da próxima rodada, ele deve fazer um teste de resistência de Carisma ou causar dano a si mesmo.
+
+#### Violência (palavra) [maldição]
+Você pode invocar uma maldição de violência sobre um alvo dentro do alcance. O alvo deve fazer um teste de resistência de Carisma ou atacar a criatura mais próxima (exceto a si mesmo) em seu próximo turno.
+
+\page
+<div class='pageNumber auto'></div>
+
+
+### Outros Talentos
+
+#### Consagração Vinculada
+**Aprimoramento 0PM**: :: Ao usar uma consagração, você pode optar por manter a aura no lugar em vez de se mover com você. Alternativamente, você pode aplicar uma consagração a um objeto com um toque. A aura é centrada no objeto e se move com ele (como de costume, escolha um canto do espaço do objeto para ser o centro da consagração). Você deve fazer essa escolha ao usar a consagração pela primeira vez.
+
+### Talentos Avançados de Destino
+
+#### Expiação (palavra)
+**Pré-requisitos**: :: Esfera de Destino.
+
+Invocando forças cósmicas, você age como um intermediário em nome do seu alinhamento. Se você estiver conectado a uma divindade ou outra fonte de poder devido à sua tradição de conjuração, você também pode interceder em seu nome. Você faz um teste de Intuição usando seu atributo principal em vez de Sabedoria contra uma CD 20. Em um teste bem-sucedido, você restaura o alvo ao seu alinhamento original.
+
+
+#### Solo Consagrado
+**Pré-requisitos**: :: Esfera do Destino (Consagração Vinculada), nível de personagem 5º.
+
+**Aprimoramento 2PM**: :: Ao usar uma consagração aprimorada que permanece no local em vez de se mover com você, a duração aumenta para 8 horas.
+
+**Aprimoramento 3PM**: :: Ao usar uma consagração aprimorada que permanece no local em vez de se mover com você, a duração aumenta para permanente até ser dissipada.
+
+
+#### Morte (motivo)
+**Pré-requisitos**: :: Esfera do Destino (um talento (motivo)), nível de personagem 5º.
+
+Você pode conceder um motivo que permite a um alvo preservar e, em última instância, alterar os outros motivos que ele possui. Enquanto este motivo estiver ativo, sempre que o alvo dispensar um motivo aprimorado que não seja Morte, há 50% de chance de que ele não termine. Dispensar o motivo enquanto estiver aprimorado permite que o alvo conjure qualquer talento (motivo) que ele conheça como parte da mesma ação.
+
+
+#### Execração
+**Pré-requisitos**: :: Esfera do Destino (pelo menos um talento [maldição] (palavra)), nível de personagem 11º.
+
+**Aprimoramento 3PM**: :: Qualquer efeito de talento [maldição] (palavra) que normalmente dura até o início do próximo turno torna-se permanente até ser dissipado.
+
+
+#### A Alta Sacerdotisa (motivo)
+**Pré-requisitos**: :: Esfera do Destino (um talento (motivo)), nível de personagem 5º.
+
+Você pode conceder um motivo que estende os benefícios de outros motivos que afetam o alvo aos seus aliados. Ao conjurar este motivo, escolha outro motivo que esteja afetando o alvo para vinculá-lo. Os aliados do alvo recebem o efeito do motivo enquanto estiverem a até 9 metros do alvo. Dissipar este motivo enquanto estiver aprimorado permite que o alvo, como parte da mesma ação, dispense o talento (motivo) vinculado, concedendo o efeito dispensado a todos os aliados a até 9 metros do alvo.
+
+\page

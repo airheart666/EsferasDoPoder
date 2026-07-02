@@ -1,0 +1,194 @@
+<div class='pageNumber auto'></div>
+
+## Brigão
+Brigões se especializam em usar tudo o que estiver disponível, dispostos a usar pernas de mesa, cadeiras e qualquer outra coisa como arma enquanto bebem uma cerveja gelada.
+
+Praticantes da Esfera do Brigão recebem as seguintes habilidades:
+
+#### Quebrador Brutal
+Você é proficiente com todas as armas improvisadas. Você pode pegar um objeto desacompanhado dentro do seu alcance natural e realizar uma ação de ataque com ele como parte da mesma ação.
+
+Alguns talentos possuem o descritivo (frágil), que permite que você quebre uma arma ou arma improvisada feita de madeira, tijolo ou materiais mais fracos (como um porrete, uma cadeira ou uma garrafa de vinho), em troca de um benefício. Esses itens são mencionados como "frágeis" nos talentos abaixo. Você não pode quebrar ou destruir itens mágicos, ou itens feitos de materiais resistentes, como ferro, mithril ou adamantium, nem uma criatura que você esteja usando como arma.
+
+#### Beberrão
+Beber qualquer líquido, incluindo uma poção, é considerado interagir com um objeto para você.
+:
+**Normal**: Beber uma bebida alcoólica geralmente é considerado interagir com um objeto e pode ser feito em conjunto com seu movimento e ação, mas beber uma poção requer uma ação.
+:
+Sempre que você ingerir uma bebida alcoólica, você ganha a condição de embriagado por 1 minuto. Alguns talentos possuem o descritivo (bêbado), exigindo que você gaste sua condição de embriagado para realizá-los. Talentos (condição) não requerem ação, a menos que seja indicado de outra forma em sua descrição.
+
+### Regras para o Consumo de Álcool
+O álcool pode ser consumido em excesso e causar efeitos negativos significativos. Em geral, um personagem pode consumir um número de bebidas alcoólicas igual ao dobro do seu modificador de Constituição por descanso longo, mas fica envenenado por 1 hora para cada bebida consumida acima desse limite. Bebidas alcoólicas particularmente exóticas ou fortes podem ser tratadas como drogas. Aqueles que abusam regularmente do álcool podem desenvolver dependência.
+
+
+### Talentos de Bêbado
+
+#### Boxeador Bêbado (bêbado)
+Enquanto estiver sob o efeito da condição bêbado, o dano base do seu ataque desarmado aumenta para 1d6, caso seja menor. Você pode gastar a condição bêbado para rolar automaticamente o dano máximo com um ataque desarmado.
+
+#### Intuição de Bêbado (bêbado)
+Você pode rerolar um teste de habilidade baseado em Inteligência ou Sabedoria que tenha falhado, mas deve aceitar o novo resultado, mesmo que seja pior. Cada vez que você usa este talento além da primeira, sofre uma penalidade cumulativa de -1 na rerolagem concedida por este talento. Essa contagem é zerada ao completar um descanso curto ou longo.
+
+#### Falsa Coragem (bêbado)
+Como uma reação à condição de amedrontado, você pode ignorar a condição de amedrontado até o início do seu próximo turno. Ao usar essa reação, no início do seu próximo turno, você pode fazer um teste de resistência de Sabedoria contra uma fonte da condição de amedrontado da qual esteja sofrendo, encerrando o efeito em caso de sucesso. Se o efeito normalmente não exigir um teste de resistência, considere a CD como 8 + o modificador de proficiência do criador do efeito + o modificador da habilidade principal do criador.
+
+#### Algumas a Mais (bêbado)
+Você ganha pontos de vida temporários iguais ao seu nível por 1 minuto.
+
+#### Arroto Ameaçador (bêbado)
+Como uma ação, você pode forçar uma criatura a até 9 metros que possa ouvi-lo a fazer um teste de resistência de Sabedoria ou ficar amedrontada por um número de rodadas igual ao seu bônus de proficiência. Criaturas afetadas podem fazer um novo teste de resistência no final de cada um de seus turnos para encerrar o efeito mais cedo. Depois que uma criatura falha em um teste de resistência contra essa habilidade, ela tem vantagem em testes de resistência subsequentes contra a mesma fonte até que essa fonte complete um descanso longo.
+
+#### Bebida Milagrosa (bêbado)
+Você ganha um bônus de +2 em Força, Destreza ou Carisma (à sua escolha) por um número de rodadas igual ao seu modificador de Constituição (mínimo 1). Isso não pode fazer com que o atributo escolhido seja maior que 20.
+
+#### Bem Solto (bêbado)
+Sempre que precisar fazer um teste de resistência de Destreza ou um teste de habilidade para escapar de uma imobilização ou restrição, você pode gastar seu estado de embriaguez para obter vantagem na jogada.
+
+#### Purgação (bêbado)
+Como uma ação ou ação bônus, você pode vomitar, concedendo a si mesmo um novo teste de resistência contra qualquer veneno ingerido do qual esteja sofrendo, com vantagem. 
+
+\page
+<div class='pageNumber auto'></div>
+
+Além disso, escolha um quadrado adjacente a você. Esse quadrado se torna terreno difícil pelo próximo minuto. Se uma criatura entrar nesse quadrado movendo-se a mais da metade de sua velocidade, ela deve fazer um teste de resistência de Destreza ou cairá no chão. A cada 5 níveis, você pode selecionar um quadrado adjacente adicional para afetar. Limpar um quadrado de terreno difícil é uma ação.
+
+#### Passos Cambaleantes (bêbado)
+Você pode gastar seu estado de embriaguez para realizar a ação Desengajar como uma ação bônus. Alternativamente, você pode gastar seu estado de embriaguez para impor desvantagem em uma jogada de ataque contra você como uma reação.
+
+#### Nervos Firmes (bêbado)
+Você pode gastar seu estado de embriaguez para anular a desvantagem em uma jogada de ataque à distância.
+
+### Talentos de Frágil
+
+#### Energizar (frágil)
+Você pode clarear sua mente momentaneamente quebrando um objeto contra si mesmo. Como uma ação bônus, você pode quebrar um objeto frágil e gastar um Dado de Vida para obter vantagem em testes de resistência contra ser enfeitiçado, confuso (incluindo a magia confusão e efeitos semelhantes) ou amedrontado por 1 minuto.
+
+#### Concussão (frágil)
+Ao quebrar um objeto na cabeça de uma criatura, você provoca uma ação descontrolada. Depois de acertar uma criatura com uma arma frágil, você pode quebrar essa arma. O alvo deve ser bem-sucedido em um teste de resistência de Constituição ou ficará confuso por 1 minuto. Um alvo confuso não pode realizar reações e deve rolar um d10 no início de cada um de seus turnos para determinar seu comportamento naquele turno. Você pode gastar seu foco marcial como uma reação para aumentar o resultado do d10 rolado pelo seu modificador de atributo principal.
+
+|d10|Comportamento
+|:-:|:-----------
+|1|A criatura usa todo o seu movimento para se mover em uma direção aleatória. Para determinar a direção, role um d8 e atribua uma direção a cada face do dado. A criatura não realiza nenhuma ação neste turno.
+|2-6|A criatura não se move nem realiza ações neste turno.
+|7-8|A criatura usa sua ação para fazer um ataque corpo a corpo contra uma criatura determinada aleatoriamente dentro do seu alcance. Se não houver nenhuma criatura dentro do seu alcance, a criatura não faz nada neste turno.
+|9+|A criatura pode agir e se mover normalmente.
+
+Ao final de cada um de seus turnos, um alvo confuso pode fazer um teste de resistência de Constituição. Se for bem-sucedido, esse efeito termina para esse alvo, e ele não poderá ser confundido por essa habilidade novamente por 24 horas.
+
+#### Escudo Improvisado (frágil)
+Você pode empunhar uma arma ou arma improvisada como um escudo improvisado até o início do seu próximo turno; essa decisão é tomada no início do seu turno e não requer nenhuma ação.
+
+Ao empunhar um escudo improvisado, você ganha um bônus de +1 na CA como se estivesse equipado com um escudo, mas não pode usar esse item para atacar. Um escudo improvisado conta como um escudo normal para a esfera de Escudo.
+
+Sempre que você estiver empunhando um escudo frágil e uma criatura causar um acerto crítico contra você, como uma reação, você pode quebrar seu escudo para transformar o acerto crítico em um acerto normal. Borda Irregular (frágil)
+Você sabe como quebrar um objeto para usar suas bordas irregulares a seu favor. Ao rolar dano com uma arma frágil, você pode quebrar essa arma para causar 1d6 de dano adicional. A quantidade de dano aumenta em um passo nos níveis 5 (1d8), 11 (1d10) e 17 (1d12).
+
+#### Fragmento Incrustado (frágil)
+Ao deixar estilhaços, lascas ou fragmentos na armadura ou pele de uma criatura, você a torna mais vulnerável a ataques futuros. Depois de acertar uma criatura com uma arma frágil, você pode quebrar essa arma para impor uma penalidade de -1 na CA por 1 minuto. Essa penalidade não se acumula com outros usos desta habilidade.
+
+
+### Outros Talentos
+
+#### Especialista de Boteco
+Ao empunhar armas improvisadas que não se assemelham a uma arma padrão (incluindo arremessar uma arma corpo a corpo ou usar uma arma de longo alcance para fazer um ataque corpo a corpo), elas causam 1d6 de dano em vez de 1d4, e você pode tratá-las como se tivessem as propriedades arremesso (20/60) e arma de precisão, e a propriedade leve ou versátil (1d8) (a critério do Mestre, dependendo do item. Por exemplo, uma caneca seria uma arma leve, enquanto um saco pesado de farinha seria uma arma versátil (1d8)).
+
+#### Foguete de Garrafa
+Ao arremessar uma arma (incluindo armas improvisadas), você a trata como se tivesse a propriedade arremesso (40/120), a menos que já possua um alcance maior.
+
+#### Gole Duplo
+Você pode sacar e beber duas bebidas, sejam alcoólicas ou poções mágicas, como uma ação. Se fizer isso com bebidas alcoólicas, isso dobra a duração do estado de embriaguez e permite que você gaste seu estado de 
+
+\page
+<div class='pageNumber auto'></div>
+
+embriaguez duas vezes antes de realmente perdê-lo. Você precisa ter as duas mãos livres para realizar um gole duplo.
+
+#### Pausa para Concentração
+Sempre que um inimigo causar dano ou quebrar uma arma ou escudo improvisado que você esteja usando, você pode recuperar o foco marcial como uma reação.
+
+#### Foco Revigorante
+Sempre que você consumir uma bebida alcoólica não mágica, pode usar uma ação bônus para recuperar seu foco marcial.
+
+#### Bom Para Todos os Males
+Sempre que você consumir uma bebida alcoólica não mágica, pode usar uma ação bônus para gastar um Dado de Vida e curar a si mesmo.
+
+#### Embriagado pelos Vapores
+Você pode gastar seu foco marcial como uma ação bônus para obter a condição de embriagado, como se tivesse consumido uma bebida alcoólica. Isso ainda conta para o número total de bebidas que você pode consumir por descanso longo.
+
+#### Fígado de Ferro
+Aumente o número de bebidas que você pode consumir antes de adquirir a condição de envenenado para 3 vezes o seu modificador de Constituição, em vez de 2 vezes. Você não pode desenvolver vício em álcool.
+
+#### Surpresa
+Sempre que você atacar um alvo com uma arma que ele desconhecia (uma arma escondida ou uma arma improvisada do ambiente que ainda não foi empunhada ou usada para atacar), você ganha vantagem na jogada de ataque.
+
+
+### Talentos Lendários de Taverna
+
+#### Dragão Alquímico
+**Pré-requisitos**: :: Esfera de Alquimia, Esfera de Taverna.
+
+Como uma ação, você pode ingerir qualquer arma alquímica líquida, como fogo alquímico, algumas fórmulas ou ácido, e então cuspi-la em um cone de 4,5 metros. Todas as criaturas dentro desse cone devem fazer um teste de resistência de Destreza bem-sucedido ou sofrer os efeitos do item alquímico.
+
+
+#### Água Flamejante
+**Pré-requisitos**: :: Esfera de Taverna, 7º nível ou superior.
+
+Sempre que você puder ingerir uma bebida alcoólica, você pode, em vez disso, derramá-la em uma arma que você ou um aliado adjacente esteja empunhando e incendiá-la. Por um minuto, essa arma causa 1d6 de dano de fogo adicional. Isso não conta como ingerir o álcool você mesmo.
+
+
+#### Arma Descartável (frágil)
+**Pré-requisitos**: :: Esfera de Taverna (Gume Afiado), 5º nível ou superior.
+
+Você sabe como quebrar um objeto no meio de um golpe para infligir ferimentos graves. Uma vez por descanso curto, antes de fazer um ataque com uma arma frágil, você pode gastar seu foco marcial, quebrando a arma. Se o ataque acertar, você pode, como uma reação, transformar um acerto normal em um acerto crítico. Você pode adquirir este talento várias vezes, cada vez aumentando o número de vezes que você pode usar este talento por descanso curto.
+
+
+#### Embriaguez Eterna
+**Pré-requisitos**: :: Esfera de Taverna (Inalador de Fumaça, Fígado de Ferro), 15º nível ou superior.
+
+Ao usar o talento Inalador de Fumaça, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela.
+
+
+#### Ficar Mole (bêbado)
+**Pré-requisitos**: :: Esfera de Taverna, 5º nível ou superior.
+
+Como uma reação, você pode gastar seu status de bêbado para obter resistência a dano de concussão, perfuração e corte contra um ataque.
+
+
+#### Magia Destilada
+**Pré-requisitos**: :: Esfera de Taverna, 5º nível ou superior.
+
+Enquanto você tiver o status de bêbado, seus ataques desarmados não mágicos e armas empunhadas ganham um bônus de +1 para ataque e dano, e são tratados como mágicos. 
+
+
+#### Relaxamento Perfeito
+**Pré-requisitos**: :: Esfera de Bar (Descontraído e Relaxado), nível 11 ou superior.
+
+Ao usar Descontraído e Relaxado para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido.
+
+
+#### Quebrador de Relíquias
+**Pré-requisitos**: :: Esfera da Taverna.
+
+Ao usar um item mágico como arma improvisada, qualquer dano causado por ele conta como dano mágico.
+
+Você pode tratar itens mágicos como frágeis para fins de qualificação para talentos (frágeis); o item mágico ainda deve ser feito de um material que seja, de outra forma, frágil. Quando você aplica um talento (frágil) a um item mágico, o objeto não se quebra, mas sim sofre uma tensão inofensiva em sua integridade estrutural; um item mágico só pode ter um talento (frágil) aplicado a ele por rodada.
+
+\page
+<div class='pageNumber auto'></div>
+
+Se você também estiver usando Esferas de Poder, sempre que puder aplicar um talento (frágil) a um item mágico, você pode, em vez disso, gastar seu foco para ativar um efeito de magia selvagem de truque ou um efeito de magia selvagem universal.
+
+#### Quebrador de Aço
+**Pré-requisitos**: :: Esfera da Taverna.
+
+Para fins de qualificação para talentos (frágeis), objetos feitos de material durável (ferro, aço, etc.) são tratados como se fossem frágeis.
+
+### Variantes
+
+#### Alcoólatra
+Você não ganha a habilidade Quebrador Brutal. Você não pode possuir esta variante e a variante Abstinente simultaneamente. Você ganha Beber em Dobro como talento bônus.
+
+#### Abstinente
+Você não ganha a habilidade Beberrão e não pode adquirir o status de bêbado nem selecionar talentos (bêbado). Você não pode possuir esta variante e a variante Alcoólatra simultaneamente. Você ganha Especialista da Taverna como talento bônus.
+
+\page

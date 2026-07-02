@@ -1,0 +1,880 @@
+<div class='pageNumber auto'></div>
+
+## Conjuração
+Você fez contratos com criaturas extraplanares, chamando-as para o seu lado quando necessário.
+
+Ao ganhar a esfera de Conjuração pela primeira vez, você ganha a habilidade de esfera de invocação, um único companheiro e um talento (base) à sua escolha.
+
+#### Invocação
+**Tempo de Conjuração**: :: 10 minutos
+**Alcance**: :: Toque
+**Duração**: :: Concentração, até 1 hora
+**Alvo**: :: Espaço desocupado suficiente para conter o companheiro
+**Custo**: :: 0 PM
+
+Você pode invocar uma criatura (chamada de companheiro) usando atributos de um talento (base) que você possui, fazendo com que ela apareça em um quadrado adjacente, pronta para agir no seu turno seguinte.
+
+Em combate, seu companheiro compartilha sua contagem de iniciativa, mas ele joga o turno dele imediatamente após o seu. Ele pode se mover e usar suas ações de reação e bônus por conta própria, mas a única ação que ele realiza no seu turno é a ação de Esquiva, a menos que você faça uma ação bônus no seu turno para comandá-lo a realizar uma das ações em seu bloco de atributos ou a ação de Disparar, Desengajar, Ajudar, Esconder-se ou Procurar.
+
+**Aprimoramento 1PM**: :: O tempo de conjuração da invocação se torna uma ação.
+
+**Aprimoramento 2 PM**: :: O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser lançado no seu turno sem uma ação.
+
+### Companheiros
+Companheiros podem assumir muitas formas; um conjurador pode contratar anjos ou demônios simpáticos, espíritos elementais ou seres primordiais que só adquirem forma após o contrato ser firmado. A forma de um companheiro não afeta suas estatísticas e, portanto (dentro dos limites de sua forma básica), um companheiro pode ter a forma de um cavaleiro de armadura, um cão demoníaco, um gato antropomórfico voador ou praticamente qualquer outra forma. Você não pode escolher um companheiro com a mesma aparência de outra criatura específica.
+
+Se um companheiro for conjurado várias vezes durante um dia, ele não recupera pontos de vida ou outros recursos gastos. Se um companheiro for reduzido a 0 pontos de vida, ele desaparece instantaneamente e não pode ser invocado até que você termine um descanso longo. Um companheiro pode ser dispensado no seu turno sem que nenhuma ação seja necessária. Quando a habilidade de um companheiro exige um teste de resistência, ele usa a CD da esfera do conjurador (8 + bônus de proficiência + modificador de habilidade chave).
+
+Companheiros não podem carregar equipamentos ou itens de um lado para o outro quando invocados e, portanto, não podem ser usados para armazenar itens em seu plano de origem ou trazer itens para o plano do conjurador. A exceção a esta regra são os equipamentos obtidos por meio de talentos de Conjuração. Equipamentos concedidos ao companheiro por talentos de esfera de Conjuração desaparecem uma rodada após deixar a posse do companheiro, embora possam ser reinvocados pelo companheiro como uma ação bônus.
+
+Se um companheiro passar pelo menos 1 hora sem ser invocado, conta como tendo completado um descanso curto. Durante um descanso curto, um companheiro pode gastar Dados de Vida para recuperar pontos de vida (o companheiro tem um número de Dados de Vida [d6s] igual ao seu nível). Um companheiro só é considerado como tendo completado um descanso longo se o conjurador também completar um descanso longo, independentemente de o companheiro ser invocado naquele momento ou não. Companheiros que são invocados ainda precisam descansar para completar um descanso longo.
+
+Companheiros têm qualquer alinhamento que melhor corresponda ao seu ou se encaixe no conceito deles.
+
+Alguns talentos são talentos marcados (de forma). Esses talentos, em vez de conceder novos poderes ou aprimoramentos, concedem a um de seus companheiros uma nova habilidade ou benefício. Sempre que você selecionar um talento (forma) como um talento mágico, aplique seus efeitos a apenas um companheiro. Você pode selecionar talentos (forma) várias vezes, mas não mais do que uma vez por companheiro, a menos que o talento indique o contrário.
+
+Alguns talentos (forma) podem conceder a um companheiro um talento mágico (ou um talento marcial, se estiver usando Esferas de Poder). Um companheiro nunca pode possuir a esfera mágica Conjuração, nem as esferas de combate Domínio das Feras ou Liderança.
+
+### Talentos Básicos de Conjuração
+
+#### Aberração (base)
+Seu companheiro é uma criatura alienígena e sobrenatural.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+{{monster
+## Companheiro ABERRANTE
+*Aberração média*
+___
+**Classe de Armadura** :: 10 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|16 (+3)|10 (+0)|15 (+2)|16 (+3)|10 (+0)| 6 (−2)|
+___
+**Imunidade a Dano**:: psíquico
+**Sentidos**: :: visão no escuro 18 metros, Percepção passiva 10
+**Idiomas**: :: Fala Profunda, entende os idiomas que você fala
+___
+**Aura Sussurrante.** No início de cada turno da aberração, cada criatura a até 1,5 metro dela deve ser bem-sucedida em um teste de resistência de Sabedoria ou sofrer 1d6 de dano psíquico, desde que a aberração não esteja incapacitada. A quantidade de dano psíquico aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).
+### Ações (Requer sua Ação Bônus)
+**Ataque Psíquico.**:: Ataque Mágico Corpo a Corpo ou à Distância: 3 (Int) + seu bônus de proficiência para atingir, alcançar 1,5 metro ou atingir 9 metros de distância, uma criatura. Acerto: 1d6 + 3 (Int) de dano psíquico.
+}}
+
+#### Besta (base)
+Seu companheiro é modelado a partir de uma grande fera. Seu companheiro ganha o talento Criatura Terrestre, Criatura Aérea, Criatura da Terra, Companheiro Resiliente, Criatura Praga ou Criatura Aquática (forma) como talento bônus.
+
+{{monster
+## Companheiro BESTIAL
+*Fera pequena*
+___
+**Classe de Armadura** :: 13 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|16 (+3)|16 (+3)|16 (+3)| 4 (−3)|14 (+2)| 8 (−1)|
+___
+**Sentidos**: :: visão no escuro 18 m, Percepção passiva 12
+**Idiomas**: :: entende os idiomas que você fala
+___
+**Criatura Mágica.** No 5º nível, os ataques do seu companheiro são considerados mágicos para contornar a resistência e a imunidade a danos não mágicos de concussão, corte e perfuração.
+### Ações (Requer sua Ação Bônus)
+**Atacar.** ::Ataque com Arma Corpo a Corpo: 3 (For) + seu bônus de proficiência para atingir, alcance 1,5 m, um alvo. Acerto: 1d8 + 3 (For) de dano perfurante.
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+
+\column
+
+
+#### Celestial (base)
+Seu companheiro é um ser celestial.
+
+{{monster
+## Companheiro CELESTIAL
+*Celestial médio*
+___
+**Classe de Armadura** :: 10 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|14 (+2)|10 (+0)|13 (+1)| 8 (−1)|16 (+3)|12 (+1)|
+___
+**Resistências a Dano**: :: radiante
+**Imunidades de Condição**: :: enfeitiçado, amedrontado
+**Sentidos**: :: visão no escuro 18 m, Percepção passiva 13
+**Idiomas**: :: Celestial, entende os idiomas que você fala
+___
+### Ações (Requer sua Ação Bônus)
+**Castigar.**:: Ataque com Arma Corpo a Corpo ou à Distância: 3 (Sab) + seu bônus de proficiência para atingir, alcance 1,5 m ou alcance 9/36 m, um alvo. Acerto: 1d8 + 3 (Sab) de dano radiante.
+**Estender Misericórdia.**:: Com uma ação, o celestial pode tocar uma criatura viva e transferir seus próprios pontos de vida para ela, curando o alvo e causando dano a si mesmo em quantidades iguais. Isso não pode reduzir os pontos de vida do celestial para menos de 1.
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+
+#### Constructo (base)
+Seu companheiro é um poderoso constructo.
+
+{{monster
+## Companheiro CONSTRUCTO
+*Construto médio, neutro*
+___
+**Classe de Armadura** :: 11 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 7,5m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|14 (+2)|12 (+1)|14 (+2)| 4 (−3)|14 (+2)| 6 (−2)|
+___
+**Resistências a Dano**: :: veneno
+**Imunidades a Condição**: :: encantado, exaustão, envenenado
+**Sentidos**: :: visão no escuro 18 m, Percepção passiva 12
+**Idiomas**: :: entende os idiomas que você fala
+___
+**Vigilante.**:: O construto não pode ser surpreendido.
+### Ações (Requer sua Ação Bônus)
+**Golpe Cinético.**:: Ataque com Arma Corpo a Corpo: 2 (For) + seu bônus de proficiência para acertar, alcance 1,5 m, um alvo. Acerto: 1d8 + 2 (For) de dano de força.
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+### Reações
+**Defletir Ataque.**:: impõe desvantagem no ataque contra outro alvo de uma criatura que ele possa ver a até 1,5 metro
+}}
+
+\page
+<div class='pageNumber auto'></div>
+
+
+#### Dragão (base)
+Seu companheiro é modelado em dragões grandes. Seu companheiro ganha Criatura Aérea (forma) ou Criatura Dracônica (forma) como talento bônus.
+
+{{monster
+## Companheiro DRAGÃO
+*Dragão pequeno*
+___
+**Classe de Armadura** :: 10 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|14 (+2)|10 (+0)|13 (+1)|12 (+1)|12 (+1)|12 (+1)|
+___
+**Imunidade a Dano**: :: qualquer elemento escolhido para seu sopro.
+**Sentidos**: :: visão às cegas 3 metros, visão no escuro 18 metros, Percepção passiva 11
+**Idiomas**: :: Dracônico, compreende os idiomas que você fala
+___
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos para o propósito de contornar resistência e imunidade a danos não mágicos de concussão, corte e perfuração.
+### Ações (Requer sua Ação Bônus)
+**Mordida.**:: Ataque com Arma Corpo a Corpo: 2 (For) + seu bônus de proficiência para acertar, alcance 1,5 metro, um alvo. Acerto: 1d10 + 2 (For) de dano perfurante.
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+
+#### Elemental (base)
+Seu companheiro é um ser elemental. Escolha se ele é um elemental do ar, da terra, do fogo ou da água. Elementais do ar ganham o talento Criatura Aérea (forma). Elementais da água ganham o talento Criatura da Água (forma). Elementais da terra ganham o talento Criatura da Terra (forma). Elementais do fogo, por outro lado, ganham o talento Criatura Elemental (forma), selecionando o fogo como seu elemento. Esses talentos já estão refletidos nos blocos de estatísticas abaixo:
+
+{{monster
+## Companheiro Elemental do Ar
+*Elemental minúsculo*
+___
+**Classe de Armadura** :: 12 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 6m de voo (pairar).
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|16 (+3)|14 (+2)|17 (+3)| 6 (−2)|10 (+0)| 8 (−1)|
+___
+**Resistências a Dano**: :: elétrico, trovejante
+**Imunidades a dano**: :: veneno
+**Imunidades de Condição**: :: exaustão, paralisado, petrificado, envenenado, inconsciente
+**Sentidos**: :: visão no escuro 18 metros, Percepção passiva 10
+**Idiomas**: :: Primordial, entende os idiomas que você fala
+___
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos para o propósito de contornar resistência e imunidade a danos não mágicos de concussão, corte e perfuração.
+**Criatura Aérea.**:: De acordo com o talento, a velocidade de voo do seu companheiro aumenta em 3 metros no 5º (9 metros), 11º (12 metros) e 17º níveis (15 metros).
+**Forma Aérea.**:: Seu companheiro pode entrar no espaço de uma criatura hostil e parar ali. Ele pode se mover por um espaço estreito de até 2,5 cm sem se espremer.
+### Ações (Requer sua Ação Bônus)
+**Batida.**:: Ataque com Arma Corpo a Corpo: 3 (For) + seu bônus de proficiência para acertar, alcance 1,5 metro, um alvo. Acerto: 1d6 + 3 (For) de dano contundente
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+**Redemoinho (Recarga 4-6).**:: Seu companheiro cria um redemoinho de 1,5 metro de diâmetro centrado em si mesmo que permanece até o início do seu próximo turno. Cada criatura no redemoinho deve fazer um teste de resistência de Força contra a CD da sua esfera. Criaturas que não estão totalmente no redemoinho ganham vantagem no teste de resistência. Em caso de falha, o alvo sofre o dano de pancada do seu companheiro e é arremessado a até 1,5 metro de distância do elemental na direção de sua escolha e fica prostrado. Se um alvo arremessado atingir um objeto, como uma parede ou chão, o alvo sofre 3 (1d6) de dano contundente para cada 3 metros que foi arremessado. Se o alvo for arremessado contra outra criatura, essa criatura deve ser bem-sucedida em um teste de resistência de Destreza contra a CD da sua esfera ou sofrer o mesmo dano e ficar prostrado. Se o teste de resistência for bem-sucedido, o alvo não sofre dano e não é arremessado para longe ou fica prostrado. O diâmetro do redemoinho e a distância do alvo arremessado aumentam em 1,5 metro no 5º nível (3 metros de diâmetro, arremesso de 3 metros), 11º nível (4,5 metros de diâmetro, arremesso de 4,5 metros) e 17º nível (6 metros de diâmetro, arremesso de 6 metros).
+}}
+
+\page
+<div class='pageNumber auto'></div>
+
+{{monster
+## Companheiro Elemental da Terra
+*Elemental minúsculo*
+___
+**Classe de Armadura** :: 12 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 7,5 m. escavação 4,5 m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|16 (+3)|14 (+2)|17 (+3)| 6 (−2)|10 (+0)| 8 (−1)|
+___
+**Imunidades a dano**: :: veneno
+**Imunidades de Condição**: :: exaustão, paralisado, petrificado, envenenado, inconsciente
+**Sentidos**: :: visão no escuro 18 m, sentido sísmico 3 m, Percepção passiva 10
+**Idiomas**: :: Primordial, entende os idiomas que você fala
+___
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos para o propósito de contornar resistência e imunidade a danos não mágicos de concussão, corte e perfuração.
+**Criatura da Terra.**:: De acordo com o talento, a velocidade de escavação e o sentido de tremor do companheiro aumentam em 1,5 metro no 5º nível (6 metros, sentido de tremor 4,5 metros), 11º nível (escavação 7,5 metros, sentido de tremor 6 metros) e 17º nível (escavação 9 metros, sentido de tremor 7,5 metros).
+**Deslizar na Terra.**:: O elemental pode escavar através de terra e rocha não-mágica bruta. Enquanto faz isso, o elemental não perturba o material pelo qual se move.
+**Monstro de Cerco.**:: O elemental causa o dobro do dano a objetos e estruturas.
+### Ações (Requer sua Ação Bônus)
+**Bater.**:: Ataque com Arma Corpo a Corpo: 3 (For) + seu bônus de proficiência para acertar, alcance 1,5 m, um alvo. Acerto: 1d6 + 3 (For) de dano contundente
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+{{monster
+## Companheiro Elemental do Fogo
+*Elemental minúsculo*
+___
+**Classe de Armadura** :: 12 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|16 (+3)|14 (+2)|17 (+3)| 6 (−2)|10 (+0)| 8 (−1)|
+___
+**Imunidades a dano**: :: veneno, fogo
+**Imunidades de Condição**: :: exaustão, paralisado, petrificado, envenenado, inconsciente
+**Sentidos**: :: visão no escuro 18 metros, Percepção passiva 10
+**Idiomas**: :: Primordial, entende os idiomas que você fala
+___
+**Forma de Fogo.**:: O elemental pode se mover por um espaço estreito de até 2,5 cm sem se espremer. Uma criatura que tocar o elemental ou atingi-lo com um Ataque corpo a corpo a até 1,5 m dele sofre 2 (1d4) de dano de fogo. A quantidade de dano que a forma de fogo causa aumenta em 1 passo no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).
+**Iluminação.**:: O elemental emite luz brilhante em um raio de 9 metros e luz fraca em um raio adicional de 9 metros.
+**Suscetibilidade à Água.**:: Para cada 1,5 metro que o elemental se move na água, ou para cada galão de água espirrado nele, ele sofre 1 de dano de frio.
+### Ações (Requer sua Ação Bônus)
+**Toque.**:: Ataque com Arma Corpo a Corpo: 3 (For) + seu bônus de proficiência para acertar, alcance 1,5 m, um alvo. Acerto: 1d4 + 3 (For) de dano de fogo. Se o alvo for uma criatura ou um objeto inflamável, ele se incendeia. Até que uma criatura realize uma ação para apagar o fogo, o alvo sofre 2 (1d4) de dano de fogo no início de cada um de seus turnos. O dano do ataque e o efeito de incendiar aumentam em um passo no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).
+**Inferno (Recarga 4-6).**:: O companheiro cria uma parede de chamas em seu espaço até o início do seu próximo turno. Na primeira vez que uma criatura inicia seu turno ou entra naquele espaço em um turno, ela sofre 2 (1d4) de dano de fogo e pega fogo; até que alguém realize uma ação para apagar o fogo, a criatura sofre 2 (1d4) de dano de fogo no início de cada um de seus turnos. A quantidade de dano que o inferno causa aumenta em 1 passo no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).
+}}
+
+
+
+\page
+<div class='pageNumber auto'></div>
+
+{{monster
+## Companheiro Elemental da Água
+*Elemental pequeno*
+___
+**Classe de Armadura** :: 12 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9 m, natação 9 m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|16 (+3)|14 (+2)|17 (+3)| 6 (−2)|10 (+0)| 8 (−1)|
+___
+**Resistências a Dano**: :: ácido
+**Imunidades a dano**: :: veneno
+**Imunidades de Condição**: :: exaustão, paralisado, petrificado, envenenado, inconsciente
+**Sentidos**: :: visão no escuro 18 m, sentido cego 4,5 m (somente na água), Percepção passiva 10
+**Idiomas**: :: Primordial, entende os idiomas que você fala
+___
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos para o propósito de contornar resistência e imunidade a danos não mágicos de concussão, corte e perfuração.
+**Criatura Aquática.**:: De acordo com o talento, a velocidade de nado do companheiro aumenta em 3 metros e a Percepção às Cegas aumenta em 1,5 metro no 5º nível (nadar 12 metros, percepção às cegueiras 6 metros), 11º nível (nadar 15 metros, percepção às cegueiras 7,5 metros) e 17º nível (nadar 18 metros, percepção às cegueiras 9 metros).
+**Forma de Água.**:: O elemental pode entrar no espaço de uma criatura Hostil e parar ali. O elemental pode se mover por um espaço estreito de até 2,5 centímetros sem se espremer.
+**Congelar.**:: Se o elemental sofrer dano de frio, ele congela parcialmente; sua velocidade é reduzida em 6 metros até o final do próximo turno.
+### Ações (Requer sua Ação Bônus)
+**Bater.**:: Ataque com Arma Corpo a Corpo: 3 (For) + seu bônus de proficiência para acertar, alcance 1,5 m, um alvo. Acerto: 1d6 + 3 (For) de dano contundente
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+**Esmagamento (Recarga 4-6).**:: Seu companheiro cria um vórtice com 1,5 m de diâmetro centrado em si mesmo, que permanece até o início do seu próximo turno. Cada criatura no vórtice deve realizar um teste de resistência de Força contra a CD da sua esfera. Criaturas que não estejam totalmente no vórtice ganham vantagem no teste de resistência. Em caso de falha, o alvo sofre o dano de batida do seu companheiro. Se ele não for maior que um tamanho maior que o seu companheiro, ele também é Agarrado (CD de fuga é a CD da sua esfera).
+::Até que este agarrão termine, o alvo fica Restringido e incapaz de respirar, a menos que possa respirar água. Se o teste de resistência for bem-sucedido, o alvo é empurrado para fora do espaço do elemental.
+::No início de cada turno do elemental, o alvo agarrado sofre seu dano de pancada. Outra criatura que esteja fora do vórtice, mas ainda ao alcance de uma criatura agarrada dentro do vórtice, pode puxá-la para fora dele realizando uma ação para realizar um teste de Força contra a CD da sua esfera e obtendo sucesso.
+::O diâmetro do vórtice aumenta em 1,5 metro no 5º nível (3 metros de diâmetro), 11º nível (4,5 metros de diâmetro) e 17º nível (6 metros de diâmetro).
+}}
+
+
+#### Feérico (base)
+Seu companheiro é uma criatura de Fada. Ele ganha o talento Companheiro Mágico (forma) ou Companheiro Protegido por Magia (forma) como talento bônus.
+
+{{monster
+## Companheiro Feérico
+*Fada minúscula*
+___
+**Classe de Armadura** :: 13 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 3m, voo 9m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|8 (−1) |16 (+3)|13 (+1)|10 (+0)|10 (+0)|16 (+3)|
+___
+**Imunidade a Condição**: :: encantado
+**Sentidos**: :: visão no escuro 18 metros, Percepção passiva 10
+**Idiomas**: :: Silvestre, compreende os idiomas que você fala
+___
+### Ações (Requer sua Ação Bônus)
+**Zombaria Cruel.**:: A fada magicamente libera uma série de insultos misturados com encantamentos em uma criatura que ela possa ver a até 18 metros. Se o alvo puder ouvir a fada (embora não precise entendê-la), ele deve ser bem-sucedido em um teste de resistência de Sabedoria ou sofrer 1d4 de dano psíquico e terá desvantagem na próxima jogada de ataque que fizer antes do final do seu próximo turno. O dano aumenta em 1d4 ao atingir o 5º nível (2d4), 11º nível (3d4) e 17º nível (4d4).
+**Invisibilidade.**:: A fada magicamente se torna invisível até atacar ou conjurar uma magia, ou até que sua concentração termine (como se estivesse se concentrando em uma magia). Tanto Zombaria Cruel quanto Passo da Fada contam como magias para o propósito de acabar com a invisibilidade. Qualquer equipamento que a fada use ou carregue fica invisível com ela.
+### Ação Bônus
+**Passo da Fada.**:: A fada pode se teletransportar magicamente até 9 metros para um espaço desocupado que ela possa ver.
+}}
+
+
+
+#### Demônio (base)
+Seu companheiro se assemelha a um pequeno demônio ou diabo. Ele ganha o talento Companheiro Protegido por Magia (forma) como talento bônus.
+
+#### Gigante (base)
+Seu companheiro se assemelha a um gigante, porém seu tamanho varia de acordo com seu nível, conforme a tabela baixo. A mudança de tamanho afeta o dano causado pelos ataques, conforme descrito no bloco de estatísticas do companheiro.
+
+|Nível| Tamanho    | Espaço | Alcance |
+|:---:|:-----------|:------:|:-------:|
+|1º   | Médio      | 1,5m   | 1,5m    |
+|5°   | Grande     | 3m     | 3m      |
+|11º  | Enorme     | 4,5m   | 4,5m    |
+|17º  | Gigantesco | 6m     | 6m      |
+
+
+\page
+<div class='pageNumber auto'></div>
+
+{{monster
+## Companheiro Corruptor
+*Pequeno Corruptor (demônio ou diabo; metamorfo)*
+___
+**Classe de Armadura** :: 10 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 12 m (somente Demônio); 3 m, voo 9 m (somente Diabo).
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|14 (+2)|10 (+0)|13 (+1)|12 (+1)|8 (−1) |16 (+3)|
+___
+**Imunidades a Dano**:: veneno
+**Imunidade a Condição**: :: envenenado
+**Sentidos**: :: visão no escuro 18 metros, Percepção passiva 9
+**Idiomas**: :: Abissal (somente Demônio), Infernal (somente Diabo), telepatia 18 metros, entende os idiomas que você fala
+___
+**Visão do Diabo.**:: Escuridão Mágica não impede a Visão no Escuro do diabinho.
+**Veneno Demoníaco (5º nível).**:: Os ataques de mordida do companheiro demoníaco são mágicos. Quando o diabólico morde um alvo, ele deve ser bem-sucedido em um teste de resistência de Constituição ou sofrer 1d4 de dano de veneno e ficar envenenado por 1 minuto. A quantidade de dano de veneno aumenta em 1d4 no 11º nível (2d4) e no 17º nível (3d4).
+### Ações (Requer sua Ação Bônus)
+**Mordida.**:: Ataque com Arma Corpo a Corpo: 2 (For) + seu bônus de proficiência para acertar, alcance 1,5 m, um alvo. Acerto: 1d4 + 2 (For) de dano perfurante.
+**Metamorfo.**:: O demônio pode se polimorfar em uma forma de fera que se assemelha a um rato (velocidade 6 m), um corvo (6 m, voar 18 m) ou uma Aranha (6 m, escalar 6 m), ou retornar à sua forma verdadeira. Suas estatísticas são as mesmas em cada forma, exceto que ele adota a velocidade da criatura enquanto estiver nessa forma. Qualquer equipamento que esteja usando ou carregando não é transformado. Ele reverte à sua forma verdadeira se morrer.
+}}
+
+{{monster
+## Companheiro Gigante
+*Gigante Médio, neutro*
+___
+**Classe de Armadura** :: 9 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9 m
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|20 (+5)|8 (-1) |15 (+2)|8 (-1) |12 (+1)|10 (+0)|
+___
+**Sentidos**: :: Percepção passiva 11
+**Idiomas**: :: Gigante, entende os idiomas que você fala
+___
+**Surto de Crescimento (5º nível).**:: O dano que um gigante causa com qualquer um de seus golpes (ou armas, se obtido através de Criatura de Batalha) aumenta em 1d6 (2d6). Além disso, o tamanho do companheiro aumenta em um passo (geralmente Grande), aumentando o espaço e o alcance de acordo com a Tabela de Tamanho e Alcance abaixo. O tamanho e o dano do gigante aumentam novamente no 11º nível (geralmente Enorme, 3d6) e no 17º nível (geralmente Imenso, 4d6). O tamanho aumenta com a acumulação de Surto de Crescimento com aqueles concedidos pelo talento Alterar Tamanho (forma), mas não aumenta a taxa de aumento de dano das armas do gigante.
+**Compleição Poderosa.**:: O gigante conta como um tamanho maior ao determinar sua capacidade de carga e o peso que pode empurrar, arrastar ou levantar.
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos para o propósito de contornar a resistência e a imunidade a danos não mágicos de concussão, corte e perfuração.
+### Ações (Requer sua Ação Bônus)
+**Bater.**:: Ataque com Arma Corpo a Corpo: 5 (For) + seu bônus de proficiência para acertar, alcance de 1,5 m, um alvo. Acerto: 1d6 + 5 (For) de dano contundente.
+**Pedra.**:: Ataque com Arma à Distância: 5 (For) + seu bônus de proficiência para acertar, alcance de 18/73 m, um alvo. Acerto: 1d6 + 5 (For) de dano contundente. Se o alvo for uma criatura, ela deve ser bem-sucedida em um teste de resistência de Força ou será derrubada.
+}}
+
+
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Humanoide (base)
+Seu companheiro é constituído, e possivelmente pode até se passar por, um humanoide. Seu companheiro ganha o talento Criatura de Batalha (forma) (já refletido em seu bloco de atributos) e um outro talento (forma) da lista a seguir como talentos bônus: Criatura de Batalha, Companheiro Mágico, Companheiro Místico, Criatura Ladina, Companheiro Furioso ou Companheiro Habilidoso.
+
+{{monster
+## Companheiro Humanoide
+*Humanoide Médio, neutro*
+___
+**Classe de Armadura** :: 13 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9 m
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|13 (+1)|12 (+1)|12 (+1)|12 (+1)|12 (+1)|12 (+1)|
+___
+**Perícias**:: quaisquer duas de sua escolha (adicione seu bônus de proficiência ao teste)
+**Sentidos**: :: Percepção passiva 11
+**Idiomas**: :: Comum + 1 outro idioma
+___
+**Treinamento Básico.**:: O humanoide é proficiente com armas simples.
+**Equipamento.**:: O humanoide é invocado com uma lança e um escudo, considerados mágicos para contornar resistência ou imunidade. Se desejar que ele tenha outros equipamentos, altere sua classe de armadura e ataques conforme necessário.
+### Ações (Requer sua Ação Bônus)
+**Lança.**:: Ataque com Arma Corpo a Corpo ou à Distância: 1 + seu bônus de proficiência para atingir, alcance de 1,5 m ou alcance de 6/18 m, um alvo. Acerto: 1d6 + 1 de dano perfurante (1d8 + 1 versátil).
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+
+#### Monstruosidade (base)
+Seu companheiro é uma abominação estranha.
+
+**Aprimoramento 1 PM:**:: Sempre que invocar um companheiro monstruoso, você pode escolher um talento (forma) que ele não possui, mas para o qual atende aos pré-requisitos. Aplique esse talento à monstruosidade.
+
+#### Gosma (base)
+A gosma ganha o talento Criatura Voraz (forma) ou Companheiro Resiliente (forma) como talento bônus.
+
+{{monster
+## Companheiro Monstruoso
+*Monstruosidade Média*
+___
+**Classe de Armadura** :: 11 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9 m
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|15 (+2)|12 (+1)|20 (+5)|6 (−2) |12 (+1)|8 (−1) |
+___
+**Sentidos**: :: Percepção passiva 11
+**Idiomas**: :: entende os idiomas que você fala
+___
+**Anatomia Bizarra.**:: A monstruosidade é sempre tratada como se possuísse os membros necessários para interagir com a esfera de Alteração.
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos para contornar a resistência e a imunidade a danos não mágicos de concussão, corte e perfuração.
+### Ações (Requer sua Ação Bônus)
+**Batida.**:: Ataque com Arma Corpo a Corpo: 2 (For) + seu bônus de proficiência para acertar, alcance 1,5 m, um alvo. Acerto: 1d6 + 2 (For) de dano contundente..
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+
+{{monster
+## Companheiro Gosma
+*Gosma Média*
+___
+**Classe de Armadura** :: 8 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 6 m, escalar 6 m
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|16 (+3)|6 (-2) |20 (+5)|1 (-5) |6 (-2) |1 (-5) |
+___
+**Resistências a Dano**:: ácido
+**Imunidades de Condição**:: cego, enfeitiçado, surdo, exausto, assustado, caído
+**Sentidos**: :: Percepção passiva 11
+**Idiomas**: :: entende os idiomas que você fala
+___
+**Amorfo.**:: A gosma pode se mover por um espaço estreito de até 2,5 cm sem se espremer.
+**Toque Corrosivo (5º nível).**:: Quando a gosma atinge com seu ataque de pseudópode, ela causa 1d6 de dano ácido extra (2d6). O dano aumenta em 1d6 no 11º nível (3d6) e no 17º nível (4d6).
+**Escalada de Aranha.**:: A gosma pode escalar superfícies difíceis, incluindo tetos de cabeça para baixo, sem precisar fazer um teste de habilidade.
+### Ações (Requer sua Ação Bônus)
+**Pseudópode.**:: Ataque com Arma Corpo a Corpo: 3 (For) + seu bônus de proficiência para atingir, alcance 1,5 m, um alvo. Acerto: 1d6 + 3 (For) de dano ácido.
+}}
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Planta (base)
+
+{{monster
+## Companheiro Planta
+*Planta Pequena, neutra*
+___
+**Classe de Armadura** :: 13 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9m
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|17 (+3)| 16 (+3)| 16 (+3)| 5 (−3)| 10 (+0)| 6 (−2)|
+___
+**Vulnerabilidades a Dano**:: fogo
+**Imunidades de Condição**:: cego, surdo
+**Sentidos**: :: visão cega 18 m (cego além deste raio), Percepção passiva 10
+**Idiomas**: :: entende os idiomas que você fala
+___
+**Aparência Falsa.**:: Enquanto a planta permanecer imóvel, ela é indistinguível de um arbusto ou árvore do mesmo tamanho.
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos com o propósito de contornar a resistência e a imunidade a danos não mágicos de concussão, corte e perfuração.
+### Ações (Requer sua Ação Bônus)
+**Constrição.**::  Ataque com Arma Corpo a Corpo: 3 (For) + seu bônus de proficiência para atingir, alcance 3 metros, um alvo. Acerto: 1d6 + 3 (For) de dano de concussão, e um alvo que não seja mais do que uma categoria de tamanho maior que a planta é agarrado (CD de fuga igual à CD da sua esfera). Até que este agarramento termine, o alvo fica imobilizado e a planta não pode constringir outro alvo.
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+
+\column
+
+#### Enxame (base)
+
+{{monster
+## Companheiro Enxame
+*Enxame médio*
+___
+**Classe de Armadura** :: 13 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 6 m, escalada 6 m.
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|3 (-4) |16 (+3)| 10 (+0)| 5 (-3)| 7 (-2)| 6 (−2)|
+___
+**Resistência a Dano**:: Concussão, Perfuração, Corte
+**Imunidades de Condição**:: Encantado, Assustado, Agarrado, Paralisado, Petrificado, Caído, Restringido, Atordoado
+**Sentidos**: :: Visão às Cegas 3 metros, Percepção passiva 8
+**Idiomas**: :: entende os idiomas que você fala
+___
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos com o propósito de contornar a resistência e a imunidade a danos não mágicos de concussão, corte e perfuração.
+**Enxame.**:: O enxame pode ocupar o espaço de outra criatura e vice-versa, e o enxame pode se mover por qualquer abertura grande o suficiente para um inseto minúsculo. O enxame não pode recuperar pontos de vida, exceto por meio de um descanso longo, e não pode ganhar pontos de vida temporários.
+**Fraqueza do Enxame.**:: O enxame tem desvantagem em todos os testes de resistência contra magias, efeitos de esfera ou habilidades com área de efeito, em vez de alvejar um número específico de criaturas.
+### Ações (Requer sua Ação Bônus)
+**Mordidas.**::  Ataque com Arma Corpo a Corpo: +3 (Des) + seu bônus de proficiência para atingir, a 0 pés de distância, um alvo no espaço do enxame. Acerto: (2d4+3) de dano perfurante ou (1d4+3) de dano perfurante se o enxame tiver metade de seus pontos de vida ou menos.
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Morto-vivo (base)
+{{monster
+## Companheiro Morto-vivo
+*Morto-vivo médio, neutro*
+___
+**Classe de Armadura** :: 13 + seu bônus de prof (armadura natural)
+**Pontos de Vida**     :: modificador de constituição + 5x seu nível
+**Deslocamento**       :: 9 m
+___   
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|12 (+1)|16 (+3)|15 (+2)|4 (−3) |10 (+0)| 9 (−1)|
+___
+**imunidades a Dano**:: necrótico, veneno
+**Imunidades de Condição**:: exaustão, assustado, paralisado, envenenado
+**Perícias**:: Atletismo 1 + seu bônus de proficiência
+**Sentidos**: :: visão no escuro 18 m, Percepção passiva 10
+**Idiomas**: :: entende os idiomas que você fala
+___
+**Criatura Mágica.**:: No 5º nível, os ataques do seu companheiro são considerados mágicos com o propósito de contornar a resistência e a imunidade a danos não mágicos de concussão, corte e perfuração.
+**Drenagem de Sangue.**:: Seu companheiro drena sangue no final do turno se agarrar um inimigo, causando 1d6 de dano necrótico. Este dano aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6). Seu companheiro ganha 1 ponto de vida temporário por Dado de Vida da criatura agarrada sempre que usar sua habilidade de drenar sangue, exceto contra criaturas do tipo constructo, planta ou morto-vivo. Esses pontos de vida temporários duram 1 hora.
+**Fortitude de Morto-Vivo.**:: Se o dano reduzir o companheiro a 0 pontos de vida, ele deve realizar um teste de resistência de Constituição com CD 5 + o dano sofrido, a menos que o dano seja radiante ou de um acerto crítico. Em caso de sucesso, o companheiro cai para 1 ponto de vida.
+### Ações (Requer sua Ação Bônus)
+**Garras.**::  Ataque com Arma Corpo a Corpo: 3 + seu bônus de proficiência para atingir, alcance 1,5 m, um alvo. Acerto: 1d4 + 3 de dano cortante. Ao usar suas garras para realizar ataques com armas, ele pode usar sua Força ou Destreza, o que for maior.
+**Ataque Múltiplo.**:: A partir do 11º nível, este companheiro pode realizar dois ataques.
+}}
+
+### Talentos de Forma
+
+#### Tamanho Alterado (forma)
+Seu companheiro aumenta ou diminui permanentemente em 1 categoria de tamanho. Um companheiro pode ganhar este talento várias vezes, e os efeitos se acumulam. Seu companheiro ganha um bônus de +2 em Força (máximo de 20) e uma penalidade de -2 em Destreza cada vez que seu tamanho aumenta em 1 passo, e um bônus de +2 em Destreza (máximo de 20) e uma penalidade de -2 em Força cada vez que seu tamanho diminui em 1 passo.
+
+Uma mudança em seu modificador de Força altera suas jogadas de ataque e dano em quantidades iguais de ataques baseados em Força, enquanto uma mudança em seu modificador de Destreza altera sua CA em quantidades iguais (assim como jogadas de ataque e dano de ataques baseados em Destreza). Esses bônus e penalidades em CA, ataque e dano não são adicionais aos aumentos ou reduções nos valores de atributo, mas sim um resultado de seus valores de atributo terem sido ajustados.
+
+O Alcance também é ajustado de acordo com a Tabela de Tamanho e Alcance abaixo.
+
+##### Tabela: Tamanho e Alcance
+| Tamanho   | Espaço | Alcance |
+|:----------|:------:|:-------:|
+| Minúsculo | 0,75m  | 0m      |
+| Pequeno   | 1,5m   | 1,5m    |
+| Médio     | 1,5m   | 1,5m    |
+| Grande    | 3m     | 3m      |
+| Enorme    | 4,5m   | 4,5m    |
+| Gigantesco| 6m     | 6m      |
+
+#### Criatura Aérea (forma)
+Seu companheiro ganha asas e uma velocidade de voo de 6 metros. Isso aumenta em 3 metros no 5º nível (voa 9 metros), 11º nível (voa 12 metros) e 17º nível (voa 15 metros). Alternativamente, seu companheiro pode ganhar voo por meios mágicos: ele não ganha asas e pode pairar. Isso se torna uma habilidade mágica e está sujeito à magia de campo antimagia e outras limitações semelhantes.
+
+#### Criatura de Batalha (forma)
+Seu companheiro é versado nos caminhos da guerra. É proficiente com escudos e todas as armas simples e, quando invocado, aparece com até 2 escudos ou armas de composição comum com as quais seja proficiente, bem como 50 peças de munição para cada arma que a requeira. Essas armas são consideradas mágicas para o propósito de superar resistência a dano.
+
+Um companheiro pode ganhar este talento duas vezes. Se escolhido duas vezes, torna-se proficiente com todas as armas marciais.
+
+#### Criatura Dracônica (forma)
+Seu companheiro é dracônico por natureza. Ele ganha um sopro com recarga 5-6. Você deve decidir, ao ganhar este talento, se seu companheiro soprará um cone de 9 metros ou uma linha de 18 metros e se ele causa dano ácido, frio, fogo, raio, necrótico, venenoso, psíquico, radiante ou trovejante. Ele causa 2d6 de dano, e as criaturas podem realizar testes de resistência de Destreza para reduzir o dano pela metade. O dano do sopro aumenta em 1d6 no 5º nível (3d6), 11º nível (4d6) e 17º nível (5d6).
+
+#### Criatura da Terra (forma)
+Seu companheiro é uma criatura acostumada a viver no solo. Ele ganha 4,5 metros de deslocamento de Escavação e 3 metros de Sentido de Tremor. Seus deslocamentos de Escavação e Sentido de Tremor 
+
+
+\page
+<div class='pageNumber auto'></div>
+
+
+aumentam em 1,5 metro no 5º nível (escavação 6 metros, sentido de tremor 4,5 metros), 11º nível (escavação 7,5 metros, sentido de tremor 6 metros) e 17º nível (escavação 9 metros, sentido de tremor 7,5 metros).
+
+#### Criatura Elemental (forma)
+Seu companheiro é um ser sintonizado com um elemento específico. Escolha entre ácido, frio, fogo, relâmpago, necrótico, venenoso, psíquico, radiante ou trovão. Seu companheiro ganha resistência àquele tipo de dano e causa 1d4 de dano adicional daquele tipo a cada ataque. Este dano aumenta em um dado no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).
+
+Este talento pode ser escolhido mais de uma vez; cada vez, um tipo de dano diferente é escolhido. O bônus de dano não acumula; apenas o tipo mais vantajoso se aplica.
+
+#### Companheiro Exemplar (forma)
+Você pode aumentar um dos atributos do seu companheiro em 2. Este bônus aumenta em +2 no 5º nível (+4), 11º nível (+6) e 17º nível (+8), até um valor máximo de 20. Este talento pode ser escolhido mais de uma vez para cada companheiro; escolha um atributo diferente a cada vez.
+
+#### Companheiro Explosivo (forma)
+Quando seu companheiro é reduzido a 0 pontos de vida, ele explode em uma explosão de energia, causando 2d6 de dano a todas as criaturas em um raio de 1,5 metro. Este dano e raio aumentam no 5º nível (4d6, raio de 3 metros), 11º nível (6d6, raio de 4,5 metros) e 17º nível (8d6, raio de 6 metros). Este dano pode ser ácido, frio, fogo, relâmpago, necrótico, venenoso, psíquico, radiante ou trovejante, escolhidos quando o talento é adquirido. Um teste de resistência de Destreza bem-sucedido reduz este dano pela metade. Uma criatura individual só pode sofrer dano deste talento uma vez por turno, independentemente de quantos companheiros forem reduzidos a 0 pontos de vida.
+
+#### Companheiro Evoluído (forma)
+Escolha um talento (característica) da esfera Alteração que não tenha um requisito de nível mínimo. Escolha uma característica desse talento que não tenha um custo de aumento de 1 ponto de magia ou mais. Seu companheiro ganha esta característica permanentemente.
+
+#### Companheiro Fortificado (forma)
+Seu companheiro ganha proficiência em um tipo de teste de resistência no qual não é proficiente. Este talento pode ser escolhido mais de uma vez; Escolha um teste de resistência diferente para conceder proficiência em cada vez.
+
+#### Presença Assustadora (forma)
+Com uma ação, seu companheiro pode amedrontar criaturas à sua escolha em um raio de 9 metros. Criaturas afetadas que estejam cientes disso devem ser bem-sucedidas em uma Teste de resistência de Sabedoria ou ficará amedrontado por 1 minuto. Uma criatura pode repetir o teste de resistência ao final de cada um de seus turnos, encerrando o efeito sobre si mesma em caso de sucesso. Se o teste de resistência de uma criatura for bem-sucedido ou o efeito terminar para ela, a criatura fica imune à Presença Assustadora do companheiro pelas próximas 24 horas. O alcance da Presença Assustadora aumenta em 9 metros no 5º nível (18 metros), 11º nível (27 metros) e 17º nível (36 metros).
+
+#### Criatura Terrestre (forma)
+Seu companheiro ganha um bônus de +6 metros em seu deslocamento terrestre, bem como vantagem em todos os testes de Sabedoria (Percepção) baseados em olfato. Ele ganha um bônus adicional de +3 metros em seu deslocamento terrestre no 5º nível (+9 metros), 11º nível (+12 metros) e 17º nível (+15 metros).
+
+#### Companheiro Mágico (forma)
+Seu companheiro ganha o talento Treinamento Mágico, selecionando a tradição Natural. Seu companheiro usa seus níveis e bônus de proficiência para determinar a força de sua conjuração de esferas. Seu companheiro não pode adquirir talentos avançados.
+
+Este talento pode ser escolhido mais de uma vez; se o companheiro já possuir este talento, este talento concede à sua escolha o Talento Mágico Extra ou o talento Pontos de Magia Extra.
+
+#### Companheiro Místico (forma)
+Seu companheiro ganha um ponto de ki, energia sobrenatural que pode usar para realizar feitos incríveis. Esta reserva aumenta em 1 no 5º nível (2 pontos de ki), 11º nível (3 pontos de ki) e 17º nível (4 pontos de ki). O ki do companheiro é renovado quando ele completa um descanso curto ou longo. Ele pode gastar ki nas seguintes habilidades:
+
+• **Rajada de Golpes:**:: Imediatamente após o companheiro realizar a ação de Ataque em seu turno, ele pode gastar 1 ponto de ki para realizar um ataque adicional como uma ação bônus. Este ataque causa 1d4 + For de dano contundente e não se beneficia de poderes de criatura que, de outra forma, aumentariam o dano.
+• **Defesa Paciente:**:: O companheiro pode gastar 1 ponto de ki para realizar a ação de Esquiva como uma ação bônus em seu turno.
+• **Passo do Vento:**:: O companheiro pode gastar 1 ponto de ki para realizar a ação de Desengajar ou Disparar como uma ação bônus em seu turno e sua distância de salto é dobrada para o turno.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Companheiro em Fúria (forma)
+Seu companheiro pode lutar com ferocidade primitiva. Em seu turno, ele pode entrar em fúria como uma ação bônus.
+
+Enquanto em fúria, ele ganha os seguintes efeitos:
+
+• ::Ele tem vantagem em testes de Força e testes de resistência de Força.
+• ::Ele tem vantagem em jogadas de ataque baseadas em Força.
+• ::Ele tem resistência a dano contundente, perfurante e cortante.
+• ::Jogadas de ataque contra ele têm vantagem.
+
+Se o companheiro puder conjurar magias ou efeitos de esfera, ele não poderá conjurá-los ou se concentrar neles enquanto estiver em fúria. A fúria dura 1 minuto. Ela termina mais cedo se o companheiro ficar inconsciente ou se seu turno terminar e ele não tiver atacado uma criatura hostil desde seu último turno ou sofrido dano desde então. Ele também pode encerrar sua fúria em seu turno como uma ação bônus. Uma vez que um companheiro tenha entrado em fúria, ele não pode fazê-lo novamente até completar um descanso longo. Seu companheiro pode usar sua fúria mais de uma vez por descanso longo, mas você deve pagar 1 ponto de magia a cada vez após o primeiro.
+
+#### Criatura Voraz (forma)
+Se este companheiro não possuir um ataque de mordida, ele ganha um que causa 1d4 de dano perfurante. Além disso, seu companheiro pode engolir criaturas até 1 categoria de tamanho menor que ele. O companheiro realiza um ataque de mordida contra um alvo que esteja agarrando.
+
+Se o ataque acertar, o alvo é engolido e o agarramento termina. O alvo engolido fica Cego e Restringido, tem cobertura total contra ataques e outros efeitos fora do companheiro e sofre 1d6 de dano de ácido no início de cada turno do companheiro. Isso aumenta em 1d6 no 5º (2d6), 11º (3d6) e 17º níveis (4d6). O companheiro pode ter apenas um alvo engolido por vez.
+
+Se o companheiro morrer, a criatura engolida não será mais Restringida por ele e permanecerá no lugar do companheiro após seu desaparecimento.
+
+#### Companheiro Resiliente (forma)
+Seu companheiro ganha +1 de bônus na CA e aumenta seus pontos de vida em uma quantidade igual ao seu nível mais o seu modificador de habilidade chave.
+
+#### Criatura Ladina (forma)
+Seu companheiro é uma criatura astuta. Seu companheiro causa +1d6 de dano de ataque furtivo como característica da classe ladina, que aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).
+
+
+#### Criatura das Sombras (forma)
+Seu companheiro é um ser feito de sombra. Ele ganha Visão no Escuro a 18 metros e tem proficiência em testes de Destreza (Furtividade) feitos em penumbra ou escuridão, usando seu bônus de proficiência como se fosse seu. Se o companheiro já tiver proficiência em testes de Destreza (Furtividade), ele adiciona seu bônus de proficiência duas vezes em penumbra ou escuridão. Isso não se acumula com outras habilidades que permitiriam adicionar proficiência duas vezes.
+
+#### Companheiro Habilidoso (forma)
+Seu companheiro ganha qualquer combinação de duas proficiências escolhidas entre instrumentos musicais, perícias ou ferramentas. Ao ser invocado, seu companheiro aparece com quaisquer ferramentas e instrumentos com os quais seja proficiente. O instrumento musical selecionado não pode ser maior que o do companheiro.
+
+Este talento pode ser escolhido várias vezes, concedendo ao seu companheiro duas proficiências adicionais a cada vez.
+
+#### Companheiro Protegido por Magia (forma)
+Seu companheiro ganha vantagem em testes de resistência contra magias, efeitos de esfera e outras habilidades mágicas.
+
+#### Sentidos Superiores (forma)
+Seu companheiro ganha visão no escuro a 18 metros. Se seu companheiro possuir visão no escuro de outra fonte, aumente seu alcance em 9 metros. Dependendo das esferas possuídas, você pode escolher uma das seguintes opções:
+
+• ::**Visão da Vida:** (aumente 2 PM) Se você ou seu companheiro possuir a esfera da Vida, seu companheiro pode ganhar sentido da vida a 9 metros. A criatura percebe e localiza criaturas vivas dentro do alcance, como se possuísse a habilidade de visão às cegas.
+• ::**Sentido do Pensamento**: (aumente 2 PM) Se você ou seu companheiro possuir a esfera da Mente, seu companheiro pode ganhar sentido do pensamento a 9 metros. Esta habilidade funciona de forma semelhante à visão às cegas. Não detecção, branco mental e efeitos similares podem bloquear sentido do pensamento. Sentido do Pensamento pode distinguir entre criaturas sencientes (Inteligência 5 ou superior) e não sencientes (Inteligência 1-5), mas, de outra forma, não fornece nenhuma informação sobre as criaturas que detecta.
+• ::**Visão da Terra**: (aumento de 0 PM) Se você ou seu companheiro possuir o pacote terra da esfera da Natureza, seu companheiro poderá ganhar a habilidade de ver através de até 1,5 metro de terra e pedra.
+• ::**Sentido Sísmico**: (aumento de 1 PM) Se você ou seu companheiro possuir o pacote terra da esfera da Natureza, seu companheiro ganha sentido sísmico a 9 metros. Um companheiro com sentido sísmico é sensível a vibrações no solo e localiza qualquer coisa que esteja em contato com o solo automaticamente. Criaturas aquáticas com sentido sísmico sentem a localização de criaturas na água.
+
+\page
+<div class='pageNumber auto'></div>
+
+
+• ::**Visão da Fumaça**: (aumento de 0 PM) Se você ou seu companheiro possuir o pacote fogo da esfera da Natureza, seu companheiro poderá ganhar a habilidade de ver através de fumaça mágica e mundana, ignorando penalidades e ocultação dessas obstruções, até seu alcance normal de visão.
+• ::**Visão Verde**: (aumento de 0 PM) Se você ou seu companheiro possuir o pacote de plantas da esfera da Natureza, seu companheiro pode ver através de matéria vegetal espessa como se fosse transparente, com um alcance de 9 metros. Folhas, trepadeiras, vegetação e vegetação rasteira não oferecem ocultação à visão do companheiro, embora madeira sólida ainda bloqueie sua linha de visão.
+• ::**Visão da Névoa**: (aumento de 0 PM) Se você ou seu companheiro possuir o pacote de água da esfera da Natureza, seu companheiro pode ver através de neblina, névoa e água turva como se fossem perfeitamente claras, ignorando a ocultação dessas obstruções, até seu alcance normal de visão.
+• ::**Visão do Tato**: (aumento de 2 PM) Se você ou seu companheiro possuir a esfera da Telecinese, seu companheiro pode ganhar visão às cegas de 9 metros.
+• ::**Visão no Escuro**: (aumento de 1 PM) Se você ou seu companheiro possuir a esfera das Trevas, a visão no escuro do seu companheiro não é prejudicada pela escuridão mágica. (requer visão no escuro)
+
+Um companheiro pode ganhar este talento várias vezes. Cada vez que ele ganhar este talento, selecione um novo sentido ou aumente o alcance da sua visão no escuro em 9 metros. Se uma habilidade selecionada tiver um custo de aprimoramento, o conjurador deve escolher conceder a habilidade e pagar o custo cada vez que o companheiro for invocado.
+
+#### Transformador (forma)
+Seu companheiro pode mudar de aparência com uma Ação. Este é um efeito mágico. O companheiro pode adicionar seu bônus de proficiência a qualquer teste de Carisma (Enganação) que fizer para se disfarçar. Se o companheiro não tiver os atributos físicos corretos (por exemplo, a categoria de tamanho ou o número de pernas corretos), o disfarce ainda falhará completamente. Seu companheiro também pode imitar perfeitamente vozes e sons com os quais esteja familiarizado (ouvidos por pelo menos 10 minutos).
+
+Seu companheiro pode ganhar este talento duas vezes. Se ganho duas vezes, ele pode imitar qualquer coisa, ajustando sua forma para se adequar (embora não ganhe ou perca ataques ou características, embora o uso de certas habilidades possa quebrar o disfarce imediatamente).
+
+#### Criatura Praga (forma)
+Seu companheiro pode escalar praticamente qualquer superfície, não importa quão escorregadia ou íngreme seja. Ele pode escalar e se deslocar em superfícies verticais ou até mesmo atravessar tetos tão bem quanto uma aranha. O companheiro ganha um deslocamento de escalada de 9 metros; além disso, não precisa fazer testes de habilidade para atravessar uma superfície vertical ou horizontal (mesmo de cabeça para baixo).
+
+Além disso, seu companheiro ganha um dos seguintes benefícios. Este talento pode ser ganho duas vezes, concedendo ambos os benefícios:
+
+• ::**Veneno**: Requer um ataque de mordida. Criaturas danificadas pelo ataque de mordida do seu companheiro devem ser bem-sucedidas em um teste de Constituição ou serão envenenadas por 1 minuto, sofrendo 3 (1d6) de dano de veneno. no início de cada um de seus turnos enquanto estiver envenenado. As criaturas podem realizar um novo teste de resistência no final de cada um de seus turnos para encerrar a condição de envenenamento.
+• ::**Teia**: (Recarga 5-6). Ataque com Arma de Longo Alcance: Modificador de Des + sua proficiência para acertar, alcance 9/18 metros, uma criatura. Acerto: O alvo é Restringido por uma teia. Como uma ação, o alvo Restringido pode fazer um teste de Força contra sua CD de Esfera, rompendo a teia em caso de sucesso. A teia também pode ser atacada e destruída (CA 10; PV 5; vulnerabilidade a dano de fogo; imunidade a concussão, veneno e dano psíquico). O alvo ignora as restrições de movimento causadas pela teia e, enquanto estiver em contato com uma teia, o alvo sabe a localização exata de qualquer outra criatura em contato com a mesma teia. Uma teia pode suportar até o dobro do peso do companheiro que a criou. Se seu companheiro for dispensado, quaisquer teias que ele tenha criado desaparecem imediatamente.
+
+
+#### Criatura da Água (forma)
+Seu companheiro ganha um Velocidade de Natação de 9 metros, capacidade de respirar debaixo d'água e Sensibilidade às Cegas de 4,5 metros (somente na água). A Velocidade de Natação aumenta em 3 metros e a Sensibilidade às Cegas aumenta em 1,5 metro no 5º nível (nadar 12 metros, Sensibilidade às Cegas 6 metros), 11º nível (nadar 15 metros, Sensibilidade às Cegas 7,5 metros) e 17º nível (nadar 18 metros, Sensibilidade às Cegas 9 metros).
+
+### Outros Talentos
+
+#### Criaturas Amórficas
+**Aprimoramento 0 PM**: Ao invocar um companheiro cuja base envolva uma escolha (como Dragão ou Elemental), cada vez que você invocar seu companheiro, você poderá alterar essa escolha. Por exemplo, se seu companheiro for um elemental, você poderá alterá-lo para um companheiro baseado em água, ar, terra ou fogo cada vez que invocá-lo.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Chamar os Mortos
+**Aprimoramento 1 PM**: Ao invocar um companheiro, você pode invocar um companheiro que já tenha sido reduzido a 0 pontos de vida. O companheiro reaparece com um quarto de seus pontos de vida máximos e sofre uma penalidade de -1 em todas as rolagens de d20 que fizer. Quaisquer outras condições ou efeitos contínuos no companheiro são removidos. Essa penalidade dura até você completar um descanso longo, mas caso contrário, não pode ser removida.
+
+Após invocar um aliado por meio deste aumento, você não precisa usá-lo novamente, a menos que ele seja reduzido a 0 pontos de vida novamente. Penalidades por usos múltiplos desta habilidade se acumulam. Se o companheiro tiver uma penalidade maior que seu bônus de proficiência, você não pode invocá-lo novamente até que a penalidade seja removida.
+
+#### Companheiro Extra
+Você ganha um companheiro adicional. Sempre que invocar um companheiro, você deve selecionar apenas um de seus companheiros e não pode ter vários companheiros invocados ao mesmo tempo. Você pode selecionar este talento várias vezes. Cada vez que ele for selecionado, você ganha outro companheiro.
+
+Este talento não pode ser obtido por meio de nenhuma habilidade que conceda talentos temporariamente.
+
+#### Vínculo
+Você ganha um vínculo telepático com cada um dos seus companheiros. Enquanto estiver no mesmo plano que um deles, você pode se comunicar com essa criatura a qualquer distância.
+
+#### Conduto de Magia
+Seus companheiros podem lançar magias de toque e habilidades de esfera para você. Se você e um de seus companheiros estiverem em contato no momento em que você conjurar uma magia de toque ou habilidade de esfera que exija um ataque de magia corpo a corpo, você pode designar seu companheiro como o atacante. Você pode tocar um companheiro dentro do seu alcance natural (nenhuma ação necessária) durante o seu turno para iniciar este contato; seu companheiro pode fazer o mesmo durante o turno dele. O companheiro pode então lançar a magia ou habilidade da mesma forma que você faria com o mesmo custo de ação. Se você conjurar outra magia ou efeito de esfera antes que o efeito seja lançado, a magia ou efeito se dissipa.
+
+Você pode usar este talento várias vezes. Se usado duas vezes, o companheiro pode estar em qualquer lugar a até 9 metros de você quando você conjurar a magia ou habilidade e também pode desferir ataques mágicos à distância, usando seus modificadores de ataque e servindo como ponto de origem do efeito. Cada vez que este talento for usado, o alcance de funcionamento desta habilidade aumenta; aumentando para 36 metros e depois para 91 metros.
+
+#### Companheiros Vinculados por Magia
+Você pode aplicar o seguinte aprimoramento a qualquer efeito de esfera que você conjurar e que tenha como alvo você:
+
+**Aprimoramento 0 PM**: Você pode aplicar o efeito a um companheiro da esfera de Conjuração. O companheiro afetado deve estar a até 9 metros. Este aprimoramento pode ser usado até mesmo em efeitos que normalmente só podem ter como alvo o conjurador.
+
+### Talentos Avançados de Conjuração
+
+#### Invocação
+**Pré-requisitos**::: Esfera de Conjuração.
+**Tempo de Conjuração**::: 10 minutos
+**Custo**::: 2 PM
+**Alcance**::: 9 metros
+**Duração**::: especial
+
+Você pode invocar seres de outros planos e trazê-los para o seu. A invocação pode ser feita de duas formas: aliados e hostis. Se você invocar um servo de um ser extraplanar com o qual você tenha uma forte conexão (por exemplo, um clérigo invocando um servo de seu deus), ele será considerado um aliado. Todas as outras criaturas são consideradas hostis, independentemente de sua disposição em relação ao conjurador. O Mestre tem a palavra final sobre se um personagem é ou não capaz de invocar aliados.
+
+Para invocar um alvo, você deve escolher um local a até 9 metros para que ele apareça, e o tipo de criatura a ser invocada deve ser conhecido e declarado. Se desejar invocar um indivíduo específico, você deve usar o nome próprio desse indivíduo. Você pode invocar várias criaturas com um único uso desta habilidade (até 3 de uma vez), mas o ND combinado de todas as criaturas invocadas não pode exceder metade do seu nível.
+
+**Hostis**: Se uma criatura hostil não quiser ser chamada, é permitido um teste de resistência de Sabedoria para resistir. Se o teste for bem-sucedido, a criatura não é chamada. Se o teste falhar, a criatura é chamada imediatamente.
+
+Quando uma criatura hostil é chamada, ela é enraizada em um local específico dentro do alcance (você pode decidir quanto espaço dar a ela, até um raio de 9 metros). Ela não pode deixar essa área até que um acordo com você seja alcançado. Ela pode escapar desse local por teletransporte ou viagem dimensional, ou com um teste de resistência de Carisma bem-sucedido. Ela pode tentar cada método uma vez por dia. Se ela se libertar, pode fazer o que quiser, incluindo fugir, retornar ao seu plano de origem ou atacar você.
+
+Se a criatura não se libertar de sua prisão, você pode mantê-la presa pelo tempo que tiver coragem. Você pode tentar compelir a criatura a realizar um serviço descrevendo o serviço e talvez oferecendo algum tipo de recompensa. Você faz um teste de Carisma contestado pelo teste de Carisma da criatura.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+O teste pode ter vantagem com base na natureza do serviço e na recompensa. Se a criatura vencer o teste oposto, ela recusa o serviço. Novas ofertas, subornos e similares podem ser feitos ou as antigas podem ser oferecidas novamente a cada 24 horas. Esse processo pode ser repetido até que a criatura prometa servir, até que ela se liberte ou até que você decida dispensá-la (uma ação livre enquanto ela permanecer presa). Exigências impossíveis ou ordens irracionais nunca são aceitas. Se você tirar um 1 natural no teste de Carisma, a criatura se liberta do efeito e pode escapar ou atacar você.
+
+Assim que o serviço solicitado for concluído, a criatura precisa apenas informá-lo para ser imediatamente enviada de volta ao seu lugar de origem. A criatura pode posteriormente buscar vingança. Se você atribuir alguma tarefa aberta que a criatura não possa completar por meio de suas próprias ações, o efeito permanece por no máximo 1 dia por nível, e a criatura ganha uma chance imediata de se libertar (com a mesma chance de resistir de quando estava presa). Observe que um destinatário inteligente pode subverter algumas instruções.
+
+**Aliados**: Aliados nunca são hostis e não resistem, embora pagamentos adicionais sejam sempre esperados por seus serviços. O pagamento pode assumir diversas formas, desde a doação de ouro ou itens mágicos para um templo aliado, passando por um presente dado diretamente à criatura, até uma missão sua que corresponda ao alinhamento e aos objetivos da criatura. Independentemente disso, esse pagamento deve ser feito antes que a criatura concorde em realizar qualquer serviço. A barganha leva pelo menos 1 rodada, portanto, quaisquer ações da criatura começam na rodada seguinte à sua chegada.
+
+Como regra geral, uma tarefa que pode ser medida em minutos requer um pagamento no valor de 100 PO por minuto. Uma tarefa medida em horas requer 1.000 PO por hora. E uma tarefa medida em dias (até 10 dias) requer 10.000 PO por dia. O Mestre pode ajustar esses pagamentos com base nas circunstâncias em que você conjurou a magia. Se a tarefa estiver alinhada com o ethos da criatura, o pagamento pode ser reduzido pela metade ou até mesmo dispensado. Tarefas não perigosas normalmente exigem apenas metade do pagamento sugerido, enquanto tarefas especialmente perigosas podem exigir um presente maior. Criaturas raramente aceitam tarefas que pareçam suicidas. Ao contrário de um companheiro da esfera de Conjuração, que simplesmente retorna ao seu plano de vida quando reduzido a 0 pontos de vida, uma criatura convocada morre ao ser morta.
+
+Se um acordo não puder ser alcançado, o aliado retorna ao seu plano de vida imediatamente. Se você não estiver disposto a pagar o pagamento solicitado, mas tentar pressionar o alvo a servir mesmo assim, trate a criatura como hostil. Pressionar uma criatura dessa forma pode ter um efeito prejudicial em quaisquer tentativas futuras de convocar um aliado de fora.
+
+Ao final de sua tarefa, ou quando a duração negociada expira, um aliado convocado retorna ao seu plano de vida (após reportar a você, se apropriado e possível).
+
+#### Diagrama
+**Pré-requisitos**: :: Esfera de Conjuração (Invocação).
+
+**Aprimoramento 0 PM**: Ao usar o talento avançado Invocação para convocar criaturas hostis, suas armadilhas são ainda mais difíceis de quebrar do que como de costume. Se você gastar 10 minutos e passar em um teste de Inteligência (Arcana) CD 15 para preparar um círculo de invocação antes de invocar uma criatura, será muito difícil para ela escapar. Você não pode saber o resultado do seu teste até que o invocação seja realizado, mas pode considerar o resultado da rolagem de dados como 20 dedicando 4 horas para criar o círculo.
+
+Se o seu teste for bem-sucedido, a criatura invocada não poderá usar nenhum efeito dimensional ou de teletransporte, nem nenhuma de suas habilidades ou ataques poderá cruzar os limites da prisão. Ao usar o Carisma dela contra a sua armadilha, a CD aumenta em 5. Embora uma criatura não possa perturbar o círculo de invocação, se qualquer força externa perturbar o círculo (mesmo que um fio de cabelo caia sobre ele), a criatura invocada é imediatamente libertada.
+
+#### Companheiro Dividido (forma)
+**Pré-requisitos**::: Esfera de Conjuração.
+
+Seu companheiro não é uma criatura única, mas sim um grupo de criaturas que se comportam juntas em combate. O companheiro assume a forma de um grupo de criaturas de sua espécie. A tropa é composta apenas por criaturas Pequenas ou Médias; isso não pode ser usado em um companheiro de enxame e o tamanho deste companheiro não pode ser alterado por Tamanho Alterado, ampliar pessoa ou outros efeitos. A tropa preenche um quadrado de 6 metros (ou um cubo, se estiver voando) e tem seu alcance normal, podendo ocupar o espaço de outra criatura e vice-versa. O companheiro pode se mover por aberturas grandes o suficiente para as criaturas individuais.
+
+Além disso, a tropa tem vantagem em testes de Força, testes de resistência de Força e qualquer teste de resistência feito contra efeitos que tenham como alvo uma única criatura, mas desvantagem em qualquer teste de resistência feito contra efeitos que tenham como alvo uma área.
+
+
+
+
+\page
+<div class='pageNumber auto'></div>
+
+##### Dano Dividido da Tropa de Companheiros
+Para determinar o dano que uma tropa causa com uma arma natural, ataque desarmado ou arma, aumente o dado de dano do ataque em dois tamanhos e multiplique o número de dados rolados por x2, ou x1 se a tropa tiver metade dos seus pontos de vida ou menos. Por exemplo, se o ataque de um companheiro normalmente causaria 1d6 de dano, ele causaria 2d10 de dano, ou 1d10 se estivesse com metade dos pontos de vida ou menos. Consulte a Tabela: Progressão dos Dados de Dano na página Usando Esferas de Poder se não tiver certeza de como progredir um dado de dano.
+
+Ataques mágicos, corpo a corpo ou à distância, não têm seu dano aumentado em uma tropa, nem reduzido em uma tropa se estiverem com metade dos pontos de vida ou menos.
+
+**Observação**: Dano adicional aplicado aos ataques do seu companheiro, como o de Criatura Elemental (forma), não tem seu dano aumentado em uma tropa, nem reduzido em uma tropa se estiverem com metade dos pontos de vida ou menos.
+
+#### Criatura Fantasmagórica (forma)
+**Pré-requisitos**::: Esfera de Conjuração.
+
+Seu companheiro pode se mover através de outras criaturas e objetos como se fossem terrenos acidentados. Ele sofre 5 (1d10) de dano de força se terminar seu turno dentro de um objeto.
+
+#### Invocação em Grupo
+**Pré-requisitos**::: Esfera de Conjuração (Companheiro Extra).
+
+Aumento de 1 pm: Você pode invocar um companheiro adicional que você possua. Este aumento pode ser aplicado várias vezes para invocar companheiros adicionais. Perder a concentração na invocação faz com que todos os companheiros desapareçam.
+
+#### Companheiro Independente
+**Pré-requisitos**::: Esfera de Conjuração.
+
+Criaturas aliadas podem gastar suas ações bônus em seu lugar para permitir que um companheiro realize ações além da ação de Esquiva. Se você tiver vários companheiros invocados, você ou um aliado pode gastar uma única ação bônus para permitir que todos os companheiros realizem ações além da ação de Esquiva.
+
+**Aprimoramento 1 PM**::: Seus companheiros invocados obedecem a quaisquer comandos verbais que você ou um aliado der a eles (nenhuma ação é necessária de sua parte ou do aliado). Se você não der nenhum comando a eles, eles se defenderão de criaturas hostis, mas não realizarão nenhuma ação.
+
+**Aprimoramento 2 PM**::: Seus companheiros invocados obedecerão, mas não precisarão de nenhum comando verbal para realizar qualquer ação além da ação de Esquiva. Seu companheiro tomará ações por conta própria que ele acredita serem do melhor interesse seu e dele mesmo, de acordo com as circunstâncias da situação.
+
+Por exemplo, se você ordenar a um companheiro invocado que explore os inimigos à frente e, ao longo do caminho, ele encontrar uma armadilha, ele também incluirá a localização da armadilha como parte do relatório; ou, por exemplo, se durante o combate você ficar inconsciente, seu companheiro tomará ações para tirá-lo do perigo, acordá-lo ou tratar seus ferimentos.
+
+#### Companheiro Desaparecido (forma)
+**Pré-requisitos**::: Esfera de Conjuração (Criatura das Sombras), 11º nível ou superior.
+
+Seu companheiro pode usar Destreza (Furtividade) para se esconder mesmo quando observado e sem ocultação.
+
+
+### Variantes
+
+#### Aprisionado a Objetos
+Escolha um objeto para cada companheiro que você possui (por exemplo: uma pequena lamparina a óleo, um anel ou uma espada). Tais objetos contam como itens mágicos da esfera de Conjuração.
+
+Você deve derrubar ou arremessar este objeto como parte da conjuração de invocação. Isso não afeta o tempo de conjuração, embora ações adicionais possam ser necessárias para sacar o objeto.
+
+Se este objeto for destruído, você não poderá invocar o companheiro correspondente. Enquanto o companheiro estiver presente, o objeto fica visível nele e pode ser alvo de ataques, efeitos de dissipação e outros efeitos que podem atingir itens mágicos usados. Enquanto parte do companheiro, o objeto emite um sinal que chama a atenção, geralmente brilhante. Se o objeto for destruído ou tiver sua magia suprimida, o companheiro desaparece imediatamente e não pode ser invocado novamente até que seja reparado ou substituído.
+
+Sintonizar um novo objeto requer 8 horas, o que pode ser feito durante um descanso longo. Qualquer dano causado ao objeto também é causado ao companheiro sem ser afetado por imunidade, resistência ou vulnerabilidade.
+
+Você pode escolher ter um único item para qualquer um ou todos os seus companheiros, mas não mais de um companheiro pode ser invocado usando um único item simultaneamente.
+
+Você ganha o talento Alcance (metasfera) da esfera Universal como um talento bônus.
+
+#### Convocador
+Você não ganha a habilidade de invocação da esfera de Conjuração. Você ganha o talento avançado Invocação como um talento bônus. Esta variante não pode ser selecionada se o talento avançado Invocação não for permitido em sua campanha. Você não pode possuir esta variante se possuir qualquer desvantagem que afete a habilidade de invocação ou os companheiros concedidos por ela.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Vínculo Constante
+Manter a presença do seu companheiro exige grande esforço. Você deve gastar uma ação a cada rodada para manter sua invocação com concentração. O custo para invocar seu companheiro é reduzido em 1 PM, até um mínimo de 0.
+
+#### Invocação Prolongada
+Sua invocação tem um tempo de conjuração de 1 hora e não pode ser aumentada para ter um tempo de conjuração reduzido. Você ganha um talento bônus de esfera de Conjuração.
+
+#### Companheiro Ilusório
+Seus companheiros são apenas projeções semi-reais. Na primeira vez em cada rodada, uma criatura é afetada por um efeito originado de seus companheiros, como ataques ou efeitos de esfera, ela pode realizar um teste de resistência de Sabedoria para negar o efeito e quaisquer outros originados de seu companheiro antes do início do próximo turno da criatura. Obter sucesso neste teste concede vantagem em testes de resistência futuros contra o mesmo companheiro pelas próximas 24 horas. Você ganha um talento de esfera de Conjuração adicional.
+
+#### Fraqueza Material
+Escolha prata ou madeira (ou outro material especial com a aprovação explícita do Mestre). Ao ser atingido por uma arma composta principalmente do material escolhido, seu companheiro deve realizar um teste de resistência de Sabedoria com CD igual a 5 + o dano sofrido, ou será expulso do plano. O companheiro não pode ser invocado novamente por 1 hora. Você ganha um talento de esfera de Conjuração adicional.
+
+#### Invocação Involuntária
+Seu companheiro de conjuração só o serve por compulsão. Caso você perca a concentração na invocação, em vez de desaparecer, o companheiro permanece pelo restante da duração máxima e ataca ou age contra você da melhor maneira possível. Você não pode dispensar um companheiro descontrolado. Você ganha um talento bônus de esfera de Conjuração.
+
+
+\page

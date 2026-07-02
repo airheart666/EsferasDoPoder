@@ -1,0 +1,23 @@
+
+
+{{backCover}}
+
+# Esferas de Magia e Poder
+
+Esferas de Magia e Esferas de Poder são sistemas únicos criados pela Drop Dead Studios para uso com a Quinta Edição do RPG de Fantasia Dungeons & Dragons.
+:
+Esferas de Magia apresenta uma abordagem alternativa à magia tradicional, na qual os jogadores escolhem suas habilidades mágicas a partir de diferentes esferas, gastando Talentos Mágicos para criar um conjurador de esferas altamente personalizável. O foco de Esferas de Magia está menos em limitações e mais no que o personagem é capaz de fazer: o sistema fornece as ferramentas necessárias para a criação do personagem, enquanto o jogador decide sua interpretação e estilo.
+:
+Esferas de Poder, por sua vez, é um sistema marcial que segue a mesma filosofia. Nele, os jogadores selecionam habilidades de combate entre várias esferas, utilizando Talentos de Combate para criar um praticante igualmente personalizável. O sistema é extremamente flexível e incentiva os jogadores a desenvolverem um conceito próprio, em vez de enquadrá-los em papéis rígidos.
+:
+Essa é uma tradução não oficial feita por um fã, para uso da comunidade.
+___
+
+Que seus passos os levem à grandiosas aventuras, dentro e fora do jogo!
+
+![background image](https://cdna.artstation.com/p/assets/images/images/051/095/906/large/greg-rutkowski-dragonslayer-key-art-final-1920.jpg?1656443296){position:absolute,bottom:0,left:-150px,height:100%}
+
+{{logo
+![](/assets/naturalCritLogoWhite.svg)
+
+}}

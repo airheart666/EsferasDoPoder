@@ -1,0 +1,193 @@
+<div class='pageNumber auto'></div>
+
+## Atletismo
+Ao adquirir a esfera de Atletismo, você se torna proficiente em Atletismo ou Acrobacia. Se você já for proficiente em ambas, em vez disso, escolha um talento qualquer desta esfera como talento bônus.
+
+Além disso, você adquire a seguinte habilidade:
+
+#### Movimento Coordenado
+Sempre que você realizar a ação de Correr ou Desengajar como uma ação (mas não como uma ação bônus, caso possua essa habilidade), você recupera seu foco marcial.
+
+### Lembretes de Regras de Combate
+
+#### Acrobacias com Auxílio
+É possível realizar algumas ações acrobáticas com a ajuda de uma ferramenta. Alguns exemplos são dados abaixo.
+
+• :: Salto com Vara: Use uma vara de 3 metros, uma arma de haste, um cajado ou uma lança para realizar um salto com vara como uma Ação, permitindo que você considere seu valor de Força ou Destreza como 10 pontos maior ao determinar a distância ou altura do seu salto.
+• :: Salto com Bomba: Lance um explosivo atrás de você como uma Ação para considerar seu valor de Força ou Destreza como 10 pontos maior ao determinar a distância ou altura do seu salto.
+• :: Trenó de Combate: Deslize ladeira abaixo em um trenó ou escudo para poder realizar uma ação de Corrida como uma ação bônus.
+• :: Escalada com Auxílio: Use adagas, picaretas ou outras armas perfurantes de uma mão para escalar uma parede que, de outra forma, seria impossível de escalar.
+• :: Queda Amortecida: Use adagas, picaretas, uma bolsa de emaranhamento ou outra arma perfurante como uma Reação para se prender a uma parede e interromper sua queda.
+• :: Planar: Use uma capa como uma Reação durante um salto em corrida para planar 30 centímetros horizontalmente para cada 60 centímetros de queda vertical. Ao realizar qualquer uma dessas ações, você geralmente deve passar em um teste de Força (Atletismo) ou Destreza (Acrobacia) difícil (CD 20) para evitar falhar e cair no chão.
+
+#### Escalar uma Criatura Maior
+Ao lidar com uma criatura dois tamanhos maior que você, você pode considerar essa criatura como terreno para fins de saltar em suas costas ou se agarrar a um membro. Depois de realizar quaisquer testes de habilidade necessários para se posicionar e subir na criatura maior, a criatura menor usa sua ação para fazer um teste de Força (Atletismo) ou Destreza (Acrobacia) contestado pelo teste de Destreza (Acrobacia) do alvo. Se vencer a disputa, a criatura menor se move com sucesso para o espaço da criatura alvo e se agarra ao seu corpo. Enquanto estiver no espaço do alvo, a criatura menor se move com o alvo e tem vantagem em jogadas de ataque contra ele.
+
+A criatura menor pode se mover dentro do espaço da criatura maior, tratando o espaço como terreno difícil. A capacidade da criatura maior de atacar a criatura menor depende da localização da criatura menor e fica a critério do Mestre. A criatura maior pode desalojar a criatura menor com uma ação – derrubando-a, arrastando-a contra uma parede ou agarrando-a e arremessando-a – fazendo um teste de Força (Atletismo) contra um teste de Força (Atletismo) ou Destreza (Acrobacia) da criatura menor. A criatura menor escolhe qual atributo usar.
+
+#### Balanço de Corda
+Você pode usar uma corrente ou corda presa, um gancho de escalada, um talento mágico de Amarrar (veja as esferas de Destruição, Telecinese ou Universal (ligação mágica) em Esferas de Poder), ou um chicote ou tentáculo para se balançar pelo campo de batalha. Deve haver algo presente para o item se prender (por exemplo, você pode prender-se a um lustre, mas não a uma parede lisa). Prender o item requer uma ação e que o ponto de ancoragem esteja dentro do alcance do item. Considere que um gancho de escalada tem um alcance de 9 metros para este propósito. Você pode criar um ponto de ancoragem em uma criatura pelo menos dois tamanhos maior que você, mas isso requer uma jogada de ataque.
+
+Uma vez que sua corda ou arma esteja presa, como parte do seu movimento normal, você pode tentar se mover para qualquer outro quadrado válido no chão que esteja dentro do alcance da corda ou arma, conforme determinado pelo ponto de ancoragem. Seu movimento não provoca ataques de oportunidade. Você ainda precisa ter um caminho livre até o destino. Soltar sua arma ou item requer outra ação.
+
+#### Rolamento
+Uma criatura pode tentar rolar através do espaço de uma criatura hostil, desviando e se esquivando do oponente. Como uma ação ou ação bônus, o personagem que rola faz um teste de Destreza (Acrobacia) contra um teste de Destreza (Acrobacia) da criatura hostil. Se o personagem que rola vencer o teste, ele pode se mover através do espaço da criatura hostil uma vez neste turno.
+
+### Talentos de Movimento
+Talentos com o descritor (movimento) lhe concedem novos efeitos para adicionar ao seu deslocamento. Não é possível aplicar mais de um talento (movimento) a um determinado deslocamento.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Rolamento Vertiginoso (movimento)
+Seus giros e movimentos rápidos deixam uma criatura atordoada. Quando você sai de um espaço adjacente a uma criatura hostil, você pode gastar 3 metros de movimento para forçar essa criatura a fazer um teste de resistência de Sabedoria. Se a criatura falhar, ela sofre desvantagem em todas as jogadas de ataque até o final do seu próximo turno. Depois que uma criatura obtiver sucesso neste teste de resistência, ela fica imune ao uso dessa habilidade por você até que você complete um descanso curto ou longo.
+
+#### Alvo em Movimento (movimento)
+Ao se mover mais de 6 metros durante o seu turno, você ganha cobertura parcial (+2 de bônus na CA e nos testes de resistência de Destreza) contra ataques à distância e magias até o início do seu próximo turno. Se você se mover pelo menos 12 metros, pode gastar seu foco marcial para aumentar a cobertura para três quartos (+5 de bônus na CA e nos testes de resistência de Destreza). Se você adquirir este talento uma segunda vez, a cobertura também se aplica a ataques corpo a corpo.
+
+#### Flanqueamento Súbito (movimento)
+Se você conseguir se mover através do espaço de um alvo hostil usando a manobra de rolamento, você ganha vantagem no seu próximo ataque contra essa criatura antes do final do seu turno.
+
+### Outros Talentos
+
+#### Giro de Capoeira
+Você não sofre desvantagem em jogadas de ataque com golpes desarmados devido à condição de caído. Se você começar seu turno caído, pode se levantar como uma ação bônus, realizando um único ataque desarmado simultaneamente.
+
+#### Treinamento em Combate Corpo a Corpo
+Você pode ficar ou se mover pelo espaço de uma criatura hostil e até mesmo realizar ataques a partir desse espaço. Você deve ser bem-sucedido em um teste de Destreza (Acrobacia) resistido pelo teste de Força (Atletismo) ou Destreza (Acrobacia) da criatura (a criatura escolhe); se falhar, seu movimento para no espaço anterior e você provoca um ataque de oportunidade dela. Ataques que você fizer contra uma criatura com a qual está compartilhando um espaço têm desvantagem, a menos que sejam feitos com armas leves, armas naturais ou golpes desarmados.
+
+Se duas criaturas compartilhando um espaço dessa forma forem do mesmo tamanho, elas concedem uma à outra cobertura parcial (+2 de bônus na CA e em testes de resistência de Destreza) contra criaturas que não estejam compartilhando o espaço. Se uma criatura for maior, a criatura menor ganha cobertura de três quartos (+5 de bônus na CA e em testes de resistência de Destreza), e a criatura maior não ganha cobertura. Se essa cobertura for suficiente para fazer com que um ataque erre, resolva o ataque contra a outra criatura usando a jogada de ataque original.
+
+#### Condicionamento Poderoso
+Sempre que você fizer um teste de Força (Atletismo) ou Destreza (Acrobacia), você pode usar Força ou Destreza como seu atributo (à sua escolha). Você pode usar Destreza em vez de Força para determinar a distância ou altura que pode pular.
+
+#### Mobilidade
+Ataques de oportunidade feitos contra você por se mover para fora do alcance de uma criatura sofrem desvantagem.
+
+#### Múltiplos Movimentos
+Ao se mover, você pode gastar foco marcial para aplicar dois talentos (de movimento) ao movimento.
+
+#### Saltador com Vara
+Você não precisa mais gastar uma ação ou fazer um teste para saltar com vara. Além disso, ao saltar com vara, você pode gastar seu foco marcial como uma ação bônus para aumentar a distância do salto em 3 metros adicionais ou a altura do salto em 1,5 metros adicionais, independentemente do seu valor de Força (ou Destreza) ou movimento restante.
+
+#### Asas Poderosas
+Se você puder voar usando asas, poderá pairar no ar.
+
+#### Balanço de Corda
+Você pode prender um item apropriado para realizar um balanço de corda como uma ação bônus, e soltá-lo não requer nenhuma ação.
+
+Ao se balançar em uma corda, você pode terminar seu movimento no ar (como se tivesse velocidade de voo) ou até mesmo balançar até o ponto de ancoragem como uma forma de escalada rápida.
+
+#### Movimento Rápido
+Você pode realizar a ação de Disparada como uma ação bônus.
+
+#### Escalar Inimigo
+Você pode fazer o teste de Força (Atletismo) ou Destreza (Acrobacia) necessário para escalar uma criatura maior como uma ação bônus em vez de uma ação padrão. Criaturas nas quais você escalou têm desvantagem em quaisquer ataques feitos contra você (mas não em tentativas de desalojá-lo).
+
+Se você possuir o talento Domador de Feras da esfera de Domínio de Feras, você pode usar testes de Força (Lidar com Animais) em vez de testes de Força (Atletismo) ao escalar uma criatura maior. Se você tiver a esfera de Luta Livre, escalar uma criatura maior conta como agarrá-la para os propósitos dessa esfera.
+\page
+
+<div class='pageNumber auto'></div>
+
+Se você possuir o talento Treinamento de Combate Corpo a Corpo, você obtém seus benefícios enquanto estiver agarrado a uma criatura maior.
+
+#### Pulmões Fortes
+Você é habilidoso em respirar fundo rapidamente, inspirando mais ar em menos tempo. Isso lhe concede os seguintes benefícios:
+
+• :: Você tem vantagem em qualquer teste de resistência contra um efeito que exija inalação ou cause sufocamento.
+• :: Você tem vantagem em testes de resistência de Constituição feitos contra exaustão como parte de uma marcha forçada.
+• :: Multiplique o número de rodadas que você normalmente consegue prender a respiração pelo seu bônus de proficiência.
+
+#### Aderência Firme
+O poder em suas mãos é grande. Isso lhe concede os seguintes benefícios:
+
+• :: Você tem vantagem em testes de Atletismo para escalar ou evitar quedas e, como reação, pode fazer um teste de Atletismo para se segurar ou segurar outra criatura dentro do seu alcance natural ao cair.
+• :: Você nunca solta itens que esteja segurando quando estiver sob as condições amedrontado, atordoado ou inconsciente. Isso inclui magias ou habilidades que fazem você soltar itens além de estar sob uma dessas condições (como a magia Medo).
+• :: Se você estiver agarrando uma criatura, seu agarrão não termina automaticamente se você ficar incapacitado.
+
+#### Movimento Rápido
+Quando você tem foco marcial, todas as suas velocidades de movimento aumentam em +10 pés.
+
+#### Treinamento
+Você se torna proficiente em Força (Atletismo) ou Destreza (Acrobacia). Se você já for proficiente em uma delas, pode optar por receber o dobro do seu bônus de proficiência. Este talento pode ser adquirido mais de uma vez.
+
+#### Recuperação com Rolamento
+Você pode se jogar no chão a qualquer momento, mesmo quando não for o seu turno. Sempre que for derrubado ou se jogar no chão, você pode gastar uma ação bônus ou reação para se mover até 3 metros em qualquer direção. Se usado para evitar um ataque ou efeito de área, este talento impõe desvantagem na jogada de ataque e lhe concede vantagem na jogada de salvamento de Destreza.
+
+#### Posicionamento Desimpedido
+Enquanto tiver foco marcial, você ignora terreno difícil não mágico.
+
+#### Impulso Involuntário
+Você pode usar o impulso do ataque de outra criatura para se impulsionar. Quando seu movimento provoca um ataque de oportunidade de uma criatura de pelo menos o seu tamanho, você pode aumentar sua velocidade de movimento para o turno em 1,5 metro por ponto do bônus de Força da criatura horizontalmente, ou metade desse valor verticalmente. Para isso, a criatura deve acertá-lo ou, se errar, você deve usar sua ação bônus para ainda assim usar o ataque dela a seu favor. Aliados podem optar por usar sua reação para ajudá-lo como se estivessem fazendo um ataque de oportunidade contra você, mas você ainda precisa usar uma ação bônus para aproveitar a ajuda deles.
+
+#### Acrobacia na Parede
+Você pode correr em paredes como se fossem chão plano, embora as trate como terreno difícil. Você pode tratar criaturas pelo menos duas vezes maiores que você como se fossem paredes (a critério do Mestre), mas usar uma criatura dessa forma provoca um ataque de oportunidade por parte dela. Você cai no final do seu turno se ainda estiver sobre uma "parede" dessa maneira, a menos que tenha algo para se segurar (incluindo uma criatura, caso esteja tentando escalar uma criatura maior).
+
+#### Giro Furacão
+Sempre que você obtiver sucesso em um teste de acrobacia contra uma criatura hostil, você recupera seu foco marcial.
+
+
+### Talentos Lendários de Atletismo
+
+#### Imagem Residual (movimento)
+**Pré-requisitos**: :: Esfera de Atletismo.
+
+Ao se mover mais de 6 metros durante seu turno, a velocidade do seu movimento faz com que você deixe uma imagem residual para trás, que pode frustrar os ataques do seu inimigo. Essa imagem residual desaparece no início do seu próximo turno.
+
+Sempre que uma criatura atacar você ou mirar em você com uma magia, há 50% de chance de que ela ataque seu duplicado em vez disso. Assim que uma criatura atingir seu duplicado, ele é destruído. Um atacante deve ser capaz de ver as imagens residuais para ser enganado. Se você estiver invisível ou o atacante for cego, esta habilidade não tem efeito.
+
+
+#### Acrobacia Aérea
+**Pré-requisitos**: :: Esfera de Atletismo (Acrobacia na Parede), 5º nível ou superior.
+
+Você pode tratar o ar como se fosse uma parede para o talento Acrobacia na Parede.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Passo Relâmpago (movimento)
+**Pré-requisitos**: :: Esfera de Atletismo, 11º nível ou superior.
+
+Quando você realiza a ação de Correr, você pode gastar foco marcial para se teleportar magicamente para o seu destino final sem passar por nenhum quadrado intermediário. O local onde você termina deve estar à vista e dentro do alcance da sua velocidade de movimento.
+
+
+#### Descida de Helicóptero
+**Pré-requisitos**: :: Esfera de Atletismo (Salto com Vara ou Balanço de Corda).
+
+Se você terminar seu turno no ar enquanto empunha um item de Salto com Vara ou Balanço de Corda, você pode, como uma Reação, gastar seu foco marcial para diminuir a velocidade da sua queda para 18 metros por um número de rodadas igual ao seu bônus de proficiência. Se você aterrissar antes que a descida lenta termine, você não sofre dano de queda e pode aterrissar de pé.
+
+
+#### Nado de Tubarão
+**Pré-requisitos**: :: Esfera de Atletismo.
+
+Você ganha uma velocidade de natação igual à sua velocidade terrestre. Se você possuir o talento Pulmões Fortes, você pode substituir seu bônus usual para prender a respiração e, em vez disso, prender a respiração por um número de horas igual ao seu modificador de Constituição.
+
+
+#### Caminho do Pardal
+**Pré-requisitos**: :: Esfera de Atletismo (Acrobacia Aérea, Acrobacia na Parede), 5º nível ou superior.
+
+Você ganha uma velocidade de voo igual à metade da sua velocidade terrestre base.
+
+
+#### Aumento de Velocidade
+**Pré-requisitos**: :: Esfera de Atletismo.
+
+Você pode se mover 3 metros adicionais ao usar as ações Correr ou Desengajar. Você também pode gastar seu foco para aumentar sua velocidade de movimento em 15 metros por um número de rodadas igual ao seu modificador de Constituição. Após o término dessas rodadas, seu nível de exaustão aumenta em 1 até que você complete um descanso curto ou longo. Você sofre essa exaustão mesmo que normalmente seja imune a ela. Você não pode usar essa habilidade se seu nível de exaustão for superior a 2.
+
+
+#### Toque da Aranha
+**Pré-requisitos**: :: Esfera de Atletismo.
+
+Você ganha uma velocidade de escalada igual à sua velocidade base em terra. Se possuir o talento Aderência Firme, você pode escalar superfícies verticais e de cabeça para baixo em tetos. Você deve ter pelo menos uma mão livre para escalar.
+
+
+#### Deslize Terrestre
+**Pré-requisitos**: :: Esfera de Atletismo, nível 11 ou superior.
+
+Suas habilidades e músculos aprimorados pela natação permitem que você se mova através do solo e da neve com facilidade. Você pode nadar na terra e na areia como se fosse água. Isso conta como nadar em terreno difícil (cada metro de movimento custa 2 metros extras, ou 1 se você possuir velocidade de natação). Isso não concede a você a capacidade de ver ou respirar através da terra, o que significa que você fica efetivamente cego enquanto nada dessa maneira e pode ficar sem ar se passar muito tempo embaixo da terra.
+
+### Variantes
+#### Atletismo Limitado
+Você não ganha proficiência em Atletismo ou Acrobacia e não pode adquirir o talento Treinamento. Você ganha um talento (de movimento) como talento bônus.
+
+\page

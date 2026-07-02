@@ -1,0 +1,86 @@
+<div class='pageNumber auto'></div>
+
+## Duas Armas 
+Os praticantes que utilizam duas armas simultaneamente treinam técnicas de ambidestria que lhes permitem empunhar duas armas ao mesmo tempo. Poucos guerreiros são tão impressionantes quanto os praticantes da arte do combate com duas armas.
+
+Os praticantes da Esfera de combate com duas armas adquirem as seguintes habilidades:
+
+#### Ambidestria
+Ao usar o estilo de luta com duas armas, você pode gastar seu foco marcial para realizar o ataque com a arma secundária sem gastar sua ação bônus (nenhuma ação necessária).
+
+#### Defesa Equilibrada
+Você recebe um bônus de +1 na CA enquanto estiver empunhando uma arma corpo a corpo em cada mão. Este bônus de CA é tratado como um escudo para fins de acumulação com outras fontes de CA. Você não pode considerar um ataque desarmado ou ataque natural como uma arma para este propósito, a menos que possua o talento Treinamento Desarmado (disciplina) da esfera de Equipamento.
+
+#### Saque Duplo
+Sempre que puder sacar ou guardar uma arma, você pode sacar ou guardar duas armas de uma mão.
+
+### Talentos de Secundário
+Talentos designados (secundário) lhe concedem novas formas de aplicar suas habilidades de ambidestria. Ao lutar com duas armas, você pode aplicar os efeitos de apenas um talento (secundário) ao seu ataque secundário.
+
+
+#### Manobras Combinadas (secundário)
+Ao usar combate com duas armas, você pode substituir seu ataque com a arma secundária por uma manobra de agarrar ou empurrar.
+
+#### Exibição Dançante (secundário)
+Ao usar combate com duas armas, se você atingir um alvo com seu ataque da arma secundária, seu movimento não provoca ataques de oportunidade da criatura atingida pelo resto do seu turno.
+
+#### Redemoinho Defensivo (secundário)
+Ao usar combate com duas armas, se você atingir um alvo com seu ataque da arma secundária, você pode gastar seu foco marcial para impor desvantagem nos ataques dessa criatura contra você durante o próximo turno dela.
+
+#### Combinação Desorientadora (secundário)
+Se você atingir o alvo com seu ataque da arma secundária, essa criatura deve fazer um teste de resistência de Destreza ou ter todas as suas velocidades de movimento reduzidas pela metade por 1 minuto.
+
+#### Golpe Seguido (secundário)
+Você pode fazer um ataque adicional com sua arma secundária, mas ambos os ataques e pelo menos um dos seus ataques com a arma principal devem ser contra criaturas diferentes.
+
+#### Preparação Perfeita (secundário)
+Ao usar combate com duas armas, você pode substituir seu ataque com a arma secundária pela ação de Ajuda.
+
+
+### Outros Talentos
+
+#### Golpe Assíncrono
+Enquanto você tiver foco marcial, ambas as armas causam o mesmo dado de dano sempre que você usar combate com duas armas, e você pode escolher que ambas as armas causem o mesmo tipo de dano. Você pode escolher o dado de dano de qualquer uma das armas e o tipo de dano de qualquer uma das armas.
+
+#### Crítico Seguido
+Ao usar combate com duas armas, seu ataque com a arma secundária causa um acerto crítico em um resultado de 19 ou 20.
+
+#### Oportunidade Dupla
+Uma vez por rodada, você pode fazer um ataque com duas armas qualificadas ao realizar um ataque de oportunidade, como se estivesse usando combate com duas armas.
+
+#### Defesa Focada
+Ao usar a ação Esquivar, seu bônus de CA por empunhar duas armas aumenta de +1 para +3.
+
+#### Lâminas Maiores
+Você pode usar combate com duas armas mesmo que as armas de combate corpo a corpo de uma mão que você esteja empunhando não sejam leves.
+
+#### Combinação Alta-Baixa
+Quando você atinge o mesmo alvo pelo menos uma vez com sua arma principal e com seu ataque secundário, você pode gastar seu foco marcial para tentar empurrar a criatura. Isso não custa nenhuma ação adicional, mas deve ser feito imediatamente após resolver o ataque secundário.
+
+#### Defesa Mista
+Sempre que você empunhar uma arma corpo a corpo em uma mão e uma arma de longo alcance ou arremesso na outra, você não sofre desvantagem em ataques à distância se uma criatura hostil estiver a até 1,5 metro de você. Você pode tratar a arma de longo alcance ou arremesso como se fosse uma arma corpo a corpo com a propriedade de alcance.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Precisão Síncrona
+Ao usar combate com duas armas, se o seu ataque com a arma principal errar, você pode gastar seu foco marcial para fazer dois ataques como uma ação bônus em vez de um com sua segunda arma. Você pode aplicar um talento (secundário) a cada um desses ataques, desde que sejam talentos diferentes.
+
+#### Ofensiva Conjunta
+Enquanto você tiver foco marcial, se você usar com sucesso a ação de ataque para atingir uma criatura com sua arma principal enquanto usa combate com duas armas, seu ataque secundário ganha quaisquer bônus mágicos que sua arma principal possua até o início do seu próximo turno, substituindo quaisquer bônus que sua arma secundária possa possuir, se forem maiores.
+
+
+### Talentos Lendários de Empunhadura Dupla
+
+#### Corte Ciclônico
+**Pré-requisitos**: :: Esfera de Duas Armas, 5º nível ou superior.
+
+Enquanto empunha duas armas, você pode gastar seu foco marcial como uma ação para girar as duas armas com força suficiente para criar um ciclone de ar devastador. Cada criatura a até 4,5 metros de você sofre dano de concussão igual à soma dos dados de dano das suas duas armas. Um teste de resistência de Destreza bem-sucedido reduz esse dano pela metade.
+
+
+#### Estilo das Três Espadas
+**Pré-requisitos**: :: Esfera de Duas Armas, 5º nível ou superior.
+
+Você adquire a capacidade de empunhar uma arma adicional. Se você não possuir mãos adicionais ou algum outro método, pode empunhar a terceira arma com a boca, tratando-a como uma mão adicional que só pode ser usada para empunhar uma arma de uma mão ou leve. Enquanto empunha uma arma dessa maneira, você não pode fornecer componentes verbais para conjurar magias ou realizar testes de perícia que exijam fala ou canto, embora ainda possa se comunicar de forma incompreensível. Quando você usa o combate com duas armas em seu turno, pode fazer um ataque adicional com a arma da mão secundária, usando a terceira arma. Se fizer isso, não poderá realizar uma reação neste turno.
+
+\page

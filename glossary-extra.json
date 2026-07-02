@@ -1,0 +1,8 @@
+{
+  "PM": "Pontos de Magia — o recurso que um conjurador de esferas gasta para usar e aprimorar efeitos de esfera. A reserva é definida pela classe e renovada após um descanso longo. \"2 PM\" significa um custo de 2 pontos de magia.",
+  "pontos de magia": "O recurso gasto para conjurar e aprimorar efeitos de esfera. Você não pode gastar, em um único efeito (incluindo aprimoramentos), mais pontos que seu bônus de proficiência. Renova em descanso longo.",
+  "CD": "Classe de Dificuldade — o número que o alvo precisa alcançar ou superar em um teste de resistência para resistir ao efeito. Em geral, CD = 8 + bônus de proficiência + modificador de habilidade chave.",
+  "MHC": "Modificador de Habilidade Chave — o bônus do atributo (Inteligência, Sabedoria ou Carisma) que rege sua magia por esferas. Usado em CDs, ataques e no total de pontos de magia.",
+  "MAC": "Modificador de Ataque de esfera — bônus usado nas jogadas de ataque de um efeito de esfera; igual ao bônus de proficiência + modificador de habilidade chave.",
+  "bônus de proficiência": "Bônus que cresce com o nível do personagem. Limita quantos pontos de magia você pode gastar em um único efeito de esfera (incluindo aprimoramentos)."
+}

@@ -1,0 +1,195 @@
+<div class='pageNumber auto'></div>
+
+## Equipamento
+A esfera de Equipamento controla o equipamento que você aprende a usar e como você o utiliza. Ao obter a esfera de Equipamento pela primeira vez, escolha um talento de Equipamento à sua escolha e ganhe-o gratuitamente.
+
+Alguns talentos são marcados com (disciplina). Esses talentos concedem grupos de armas com raízes temáticas em comum, que podem ser muito diferentes mecanicamente, mas geralmente são apresentadas como complementares de alguma forma. Sempre que um talento ou habilidade se referir a uma disciplina de arma, ele afetará todas as armas incluídas em um determinado talento de (disciplina).
+
+Alguns talentos de (disciplina) listam armas específicas de determinadas regiões ou culturas. Essas armas têm sua arma padrão equivalente listada entre parênteses imediatamente após seus nomes.
+
+
+### Talentos de Disciplina
+
+#### Treinamento Básico (disciplina)
+Você se torna proficiente com todas as armas simples.
+
+#### Treinamento de Bombardeiro (disciplina)
+Você pode tratar itens alquímicos ou similares (como um frasco de ácido, fogo alquímico, água benta, bombas, etc.) como uma arma corpo a corpo simples com a propriedade de destreza e arremesso (20/60), embora ainda sejam destruídos após o uso. Se você arremessar um desses objetos e errar, poderá redirecionar o ataque contra uma criatura adjacente, realizando um novo ataque contra essa criatura. Você só pode fazer isso uma vez por arremesso.
+
+#### Ferramentas de Caçador de Recompensas (disciplina)
+Você ganha proficiência com a bola, o garrote, o laço, a rede, a besta de rede e o chicote.
+
+#### Treinamento de Brutal (disciplina)
+Você ganha proficiência com o machado de batalha, o mangual, o machado grande, o malho, a estrela da manhã, a picareta de guerra e o martelo de guerra.
+
+#### Treinamento Bushido (disciplina)
+Você ganha proficiência com a katana (espada longa), arco longo, naginata (glaive), nodachi (espada grande), tetsubo (maça) e wakizashi (espada curta).
+
+#### Especialista em Bestas (disciplina)
+Você é proficiente com todas as bestas leves, bestas de mão, bestas pesadas e bestas de rede. As armas de longo alcance com as quais você é proficiente ignoram cobertura parcial e cobertura de três quartos.
+
+\column
+
+#### Treinamento Personalizado (disciplina)
+Selecione 3 armas; você ganha proficiência com as armas selecionadas. Você pode escolher este talento várias vezes, selecionando novas armas a cada vez.
+
+#### Treinamento de Duelista (disciplina)
+Você ganha proficiência com a espada grande, besta de mão, espada longa, florete e espada curta.
+
+#### Treinamento de Gallowglass (disciplina)
+Você adquire proficiência com a espada larga (espada curta), claymore (espada grande), adaga, arco longo e espada longa.
+
+#### Treinamento de Gladiador (disciplina)
+Você adquire proficiência com o machado de batalha, gládio (espada curta), rede, tridente e chicote.
+
+#### Treinamento de Caçador (disciplina)
+Você adquire proficiência com zarabatana, boleadeira, laço, arco longo, rede e pique.
+
+#### Treinamento de Cavaleiro (disciplina)
+Você adquire proficiência com mangual, espada grande, lança, espada longa, florete, maça e espada curta.
+
+#### Treinamento de Batedor (disciplina)
+Você adquire proficiência com boleadeira, lança, laço, arco longo, cimitarra e chicote.
+
+#### Treinamento de Lanceiro (disciplina)
+Você adquire proficiência com besta pesada, tridente, lança, glaive, alabarda e pique.
+
+#### Treinamento de Pirata (disciplina)
+Você adquire proficiência com florete, espada curta, cimitarra, tridente, rede, besta de mão e picareta de guerra.
+
+#### Arremesso de Pedras (disciplina)
+Você é proficiente em arremessar pedras, rochas, pessoas e outros objetos enormes que outros seres possam achar difíceis de atingir. Ao arremessar uma criatura ou objeto, você o considera uma arma na qual você é proficiente, que causa dano de concussão e possui a propriedade de arma arremessável (20/60). Qualquer habilidade que aumente seu tamanho efetivo para agarrar ou empurrar (como o talento Impulso Muscular da esfera Bruto) aumenta seu tamanho para Arremesso de Pedra.
+
+Criaturas e objetos com pelo menos dois tamanhos menores que você são considerados armas leves de uma mão, enquanto criaturas e objetos com um tamanho menor que você são considerados armas de uma mão. Criaturas e objetos do seu mesmo tamanho são armas de duas mãos.
+
+\page
+<div class='pageNumber auto'></div>
+
+##### Tabela: Arremesso de Pedra
+|Tamanho do Objeto|Dado de Dano
+|:----------------|:----------:|
+|Minúsculo|1d4
+|Pequeno|1d6
+|Médio|1d8
+|Grande|1d10
+|Enorme|2d6
+|Gargantuesco|3d6
+
+Se você arremessar uma criatura contra uma parede ou outra criatura, tanto a criatura quanto o alvo sofrerão dano. Você não pode arremessar uma criatura que não queira, a menos que a tenha agarrado primeiro.
+
+#### Treinamento com Armas de Ladino (disciplina)
+Você ganha proficiência com zarabatanas, garrote, besta de mão, florete, cimitarra, espada curta e chicote.
+
+#### Domínio de Cajado (disciplina)
+Você pode tratar o bastão como se tivesse a qualidade de arma de alcance. Quando você usa a ação Atacar e ataca apenas com uma glaive, alabarda, bastão ou lança, você pode usar uma ação bônus para fazer um ataque corpo a corpo com a extremidade oposta da arma; isso é considerado combate com duas armas. A extremidade oposta da arma usa um d4 como dado de dano e causa dano de concussão.
+
+#### Treinamento com Ferramentas (disciplina)
+Você é tão experiente com ferramentas que uma frigideira, uma chave inglesa ou um martelo de ferreiro podem ser tão letais em suas mãos quanto uma lâmina. Ao empunhar uma ferramenta com a qual você é proficiente como uma arma improvisada, você é considerado proficiente com essa arma. O dado de dano da ferramenta é 1d4, mas você pode escolher a cada rodada se deseja causar dano de concussão, perfuração ou corte, e pode usar seu atributo principal, Destreza ou Força, para as jogadas de ataque e dano com essas ferramentas.
+
+#### Treinamento Desarmado (disciplina)
+Você pode tratar seus ataques desarmados como se fossem armas de precisão, causando 1d4 de dano de concussão. Você pode optar por tratar seu ataque desarmado com as propriedades leve ou versátil (1d6), mas não ambas simultaneamente. Um chute conta como um ataque desarmado com as duas mãos com a propriedade versátil.
+
+Você pode escolher este talento duas vezes. Se escolhido duas vezes, você pode tratar seu chute como uma arma leve, conforme descrito acima, o que significa que você pode usar o talento Combate com Duas Armas mesmo que suas mãos estejam ocupadas.
+
+
+\column
+
+
+### Outros Talentos
+#### Especialista em Armaduras
+Você ignora a desvantagem em Destreza (Furtividade) imposta por armaduras médias e pode tratar armaduras médias como armaduras leves para fins de tempo gasto para vestir ou despir a armadura. Se você escolher este talento uma segunda vez, poderá aplicar esses benefícios a armaduras pesadas.
+
+#### Treinamento em Armaduras
+Você ganha proficiência com armaduras leves. Se você já for proficiente com armaduras leves, você se torna proficiente com armaduras médias e escudos. Se você já for proficiente com armaduras leves e médias, você ganha proficiência em armaduras pesadas e escudos. Você pode escolher este talento várias vezes.
+
+#### Artífice
+Você tem experiência em desmontar e montar artefatos e mecanismos complexos ou alienígenas, sejam eles arcanos ou tecnológicos. Embora você não seja automaticamente proficiente com tecnologia alienígena, você ganha vantagem em todos os testes de Inteligência feitos para descobrir seu uso. A tecnologia alienígena nunca quebra permanentemente por falha em descobrir seu funcionamento.
+
+#### Artesão
+Você é habilidoso em fabricar e reparar equipamentos. Você ganha proficiência com um tipo de ferramenta de artesão. Ao criar um item mundano usando uma ferramenta com a qual você é proficiente, você pode fazê-lo na metade do tempo normal.
+
+#### Adaga Bravo
+Seus ataques com adaga causam um acerto crítico com um resultado de 19 ou 20 no dado. No 11º nível, quando você acerta um acerto crítico com uma adaga, você rola um d4 adicional para determinar o dano extra do acerto crítico.
+
+#### Empunhadura Precisa
+Se um inimigo errar um ataque corpo a corpo contra você enquanto você estiver empunhando uma arma corpo a corpo de destreza em uma mão e nada mais na outra, você pode, como uma reação, fazer um ataque de oportunidade.
+
+#### Recarga Especialista
+Ao empunhar uma arma com a qual você é proficiente, você pode ignorar a propriedade de recarga, se ela a possuir.
+
+#### Agarrador de Garrote
+Quando você causa dano a uma criatura com sucesso usando um garrote em uma ação de ataque, você pode tentar agarrar essa criatura como uma ação bônus. Se você gastar foco marcial, poderá fazê-lo como parte de
+
+\page
+<div class='pageNumber auto'></div>
+
+um ataque de oportunidade. Sempre que uma criatura tentar escapar do seu agarramento e falhar, ela sofre dano como se você a tivesse atacado com o garrote.
+
+#### Domínio da Besta de Mão
+Quando você realiza uma ação de ataque com uma arma de uma mão (incluindo uma besta de mão), você pode usar uma ação bônus para atacar com a besta de mão que estiver empunhando.
+
+#### Recarga Impossível
+Você sabe como usar empunhaduras especiais e dedos ágeis para carregar munição em uma arma de ataque à distância de uma mão, mesmo quando sua outra mão estiver ocupada.
+
+#### Punhos Místicos
+Quando você possui foco marcial, seus ataques desarmados são tratados como se fossem mágicos para fins de resistência a dano. Você pode optar por causar dano cortante ou perfurante com seu ataque desarmado em vez de dano contundente. A escolha do tipo de dano é feita quando o ataque é declarado. Se você possuir Treinamento Desarmado, o dano do seu ataque desarmado aumenta para d6, ou d8 através da propriedade versátil.
+
+#### Tiro à Queima-Roupa
+Estar a 1,5 metro de uma criatura hostil não impõe desvantagem nas suas jogadas de ataque à distância.
+
+#### Guarda com Arma de Haste
+Enquanto você estiver empunhando uma glaive, alabarda, pique, bastão ou lança, outras criaturas provocam um ataque de oportunidade seu quando entrarem no seu alcance.
+
+#### Especialista em Zarabatana Envenenada
+Enquanto você estiver usando uma zarabatana, você pode aumentar a CD do teste de resistência de qualquer veneno que reveste sua munição pelo seu bônus de proficiência. Se a CD do veneno já for calculada usando um bônus de proficiência (como venenos criados com a esfera de Alquimia), você pode gastar foco marcial para adicionar seu bônus de proficiência ao bônus de proficiência já existente para determinar a CD do teste de resistência.
+
+#### Combatente com Funda
+Você pode tratar uma funda carregada como se fosse um porrete com a qualidade de arma de destreza ao realizar ataques corpo a corpo com ela. Qualquer bônus mágico de ataque ou dano também se aplica à sua jogada de ataque ou dano corpo a corpo.
+
+Você também pode lançar itens como fogo alquímico, ácido, água benta, fórmulas ou veneno da esfera de Alquimia como se fossem munição, usando o alcance da funda em vez do alcance de arremesso normal do item. Quaisquer bônus mágicos de jogadas de ataque concedidos pela funda se aplicam às jogadas de ataque feitas dessa forma.
+
+Finalmente, você pode arremessar itens da sua funda com leveza suficiente para que o alvo possa pegá-los, sem a necessidade de uma jogada de ataque.
+
+#### Dançarino da Lança
+Você pode tratar qualquer glaive, bastão, alabarda, lança, pique ou tridente (ou arma similar com a aprovação do Mestre) que você empunha como se tivesse a propriedade de arma de precisão. Você pode tratar a propriedade de duas mãos da glaive, alabarda ou pique como se fosse a propriedade versátil. Usar essas armas com uma mão reduz o dado de dano em um nível (1d12 torna-se 1d10, 1d10 torna-se 1d8, 1d8 torna-se 1d6).
+
+#### Tiro Dividido
+Sempre que você realizar uma ação de ataque com um arco, você pode carregar duas flechas e dispará-las como parte do primeiro ataque. Ao realizar uma ação de ataque dessa forma, seu ataque sofre desvantagem, mas pode atingir duas criaturas a até 3 metros uma da outra e que estejam a pelo menos 6 metros de você.
+
+#### Arremesso de Escudo
+Você é proficiente no uso de escudos como arma improvisada e pode considerar os escudos que empunha como tendo a propriedade de arremesso (6/18 m).
+
+Se você possui o talento Proteger Aliado da esfera de escudo, pode considerar qualquer aliado dentro do alcance normal do seu escudo como estando ao seu alcance, arremessando-o como parte da defesa ativa. Você pode aplicar um talento (desviar) a esta defesa ativa normalmente, realizando quaisquer ações adicionais ricocheteando o escudo no ataque. Se você possui o talento Maestria em Arremesso, o escudo retorna após usar Proteger Aliado como se você tivesse realizado um ataque com ele.
+
+#### Maestria em Arremesso
+Ao usar uma arma com a propriedade de arremesso para realizar um ataque à distância, você pode aplicar um giro extra ao arremesso, fazendo com que a arma ricocheteie de volta em sua direção após o ataque ser resolvido. Contanto que você tenha pelo menos uma mão livre, você pode pegar automaticamente uma arma após ela ricochetear dessa maneira; caso contrário, a arma cai aos seus pés.
+
+#### Treinamento sem Armadura
+Seus movimentos ágeis, condicionamento físico e uso especializado de suas armas escolhidas permitem que você crie uma barreira protetora ao seu redor tão eficaz quanto qualquer armadura completa. Enquanto você não estiver usando armadura e não estiver empunhando um escudo, sua CA será igual a 10 + modificador de Destreza + seu modificador de habilidade principal.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Escudo Versátil
+Você pode usar um escudo como se fosse uma segunda mão ao empunhar uma glaive, alabarda, lança, pique, tridente (ou arma similar com a aprovação do Mestre), ou uma besta ou arma de fogo de duas mãos, apoiando a arma contra o escudo.
+
+Se você estiver empunhando um escudo, mas não o estiver usando como descrito acima, você pode usar uma ação bônus após realizar a ação de Ataque para tentar empurrar uma criatura a até 1,5 metro de você com seu escudo.
+
+#### Chicote Demoníaco
+Você aumenta o dano base dos chicotes que empunha para 1d6. Quando você causar dano com sucesso com um chicote, você pode tentar agarrar a criatura atingida como uma ação bônus. Se bem-sucedido, você pode se mover até metade da sua velocidade para trazê-los para perto de você como parte desta ação bônus.
+
+Você também pode usar seu chicote para agarrar objetos ao seu alcance como uma Ação.
+
+
+### Talentos Lendários de Equipamento
+
+#### Viajante Futurista (disciplina)
+Você ganha proficiência com itens e tecnologia da era Futurista. Exemplos de armas da era Futurista incluem rifles de antimatéria, pistolas laser e rifles laser.
+
+#### Viajante Moderno (disciplina)
+Você ganha proficiência com itens e tecnologia da era Moderna. Exemplos de armas da era Moderna incluem pistolas automáticas, rifles automáticos, dinamite, granadas de fragmentação, lançadores de granadas, rifles de caça, revólveres, espingardas e granadas de fumaça.
+
+#### Viajante Renascentista (disciplina)
+Você ganha proficiência com itens e tecnologia da era Renascentista. Exemplos de armas da era Renascentista incluem bombas, mosquetes e pistolas.
+
+\page

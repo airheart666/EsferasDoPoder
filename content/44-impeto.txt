@@ -1,0 +1,143 @@
+<div class='pageNumber auto'></div>
+
+## Ímpeto
+Os Ímpetuosos são guerreiros indomáveis com reservas ilimitadas de resistência e um potencial destrutivo incomparável.
+
+Os praticantes da esfera do Ímpeto ganham as habilidades Adrenalina e Atordoar, além de um talento (adrenalina) à sua escolha.
+
+#### Adrenalina
+No início do seu turno, você pode escolher sofrer uma penalidade de -2 na CA para obter os benefícios de um talento (adrenalina) que você possua até o início do seu próximo turno.
+
+#### Atordoar
+Seus golpes poderosos podem desequilibrar os inimigos, permitindo que você explore suas brechas. Como um ataque especial, você pode fazer um ataque corpo a corpo ou com arma de arremesso que marca o alvo se causar dano a ele. Um alvo que foi marcado por meio dessa habilidade é considerado "espancado".
+
+Alguns talentos são marcados como (esforço). Você pode aplicar um talento (esforço) ao usar o ataque especial Atordoar.
+
+
+### Talentos de Adrenalina
+
+#### Acelerado (adrenalina)
+Sua velocidade de deslocamento em terra aumenta em 1,5 m, aumentando em mais 1,5 m nos níveis 5 (3 m), 11 (4,5 m) e 17 (6 m).
+
+#### Executor (adrenalina)
+Você pode gastar seu foco marcial para rolar novamente um ataque com arma que tenha errado.
+
+#### Imparável (adrenalina)
+Você não é afetado por terreno difícil e sua velocidade de movimento não pode ser reduzida, como por exemplo, por uma magia de lentidão.
+
+#### Insensível (adrenalina)
+Todo o dano que você sofre é reduzido em uma quantidade igual ao seu bônus de proficiência. Isso é aplicado antes da resistência.
+
+#### Intocável (adrenalina)
+Você ganha vantagem em todos os testes de habilidade e testes de resistência feitos para resistir às condições de agarrado, paralisado, petrificado, caído, imobilizado ou atordoado.
+
+### Talentos de Esforço
+
+#### Sino da Morte (esforço)
+Criaturas danificadas por este ataque têm desvantagem em testes de resistência de Inteligência e testes para manter a concentração por 1 rodada, incluindo qualquer teste feito como resultado deste ataque.
+
+#### Quebra-Ossos (esforço)
+Se você causar dano a uma criatura com este ataque, ela subtrai 1d4 de todas as jogadas de ataque que fizer por 1 rodada.
+
+#### Golpe Pesado (esforço)
+Se você causar dano a uma criatura com este ataque, ela deve ser bem-sucedida em um teste de resistência de Constituição ou ficará incapaz de realizar ações bônus ou reações por 1 rodada. Se o alvo já estiver espancado, ele também ficará atordoado até o início do seu próximo turno se falhar neste teste de resistência.
+
+#### Esmaga-Pernas (esforço)
+Se você causar dano a uma criatura com este ataque, sua velocidade de movimento será reduzida pela metade (mínimo de 1,5 metro) por 1 rodada. Se ela já estiver espancada, deverá ser bem-sucedida em um teste de resistência de Força ou cairá no chão.
+
+#### Ímpeto do Ceifador (esforço)
+Você pode aplicar uma penalidade de -5 à sua jogada de ataque. Se o seu ataque acertar, você pode fazer um ataque adicional, também com uma penalidade de -5, contra uma criatura diferente ao seu alcance. Se este ataque também acertar, você pode fazer um terceiro ataque com uma penalidade semelhante contra uma criatura que você não atacou com seus primeiros ou segundos ataques. Isso pode continuar se repetindo enquanto seus ataques continuarem acertando e houver novas criaturas ao seu alcance que você ainda não atacou.
+
+#### Quebra-Terra (esforço)
+Se você atacar o solo em vez de uma criatura, você pode gastar seu foco marcial para quebrá-lo. O solo deve ser de pedra ou um material mais macio. Isso afeta todos os espaços em um raio de 1,5 metro ao seu redor, um cone de 3 metros ou uma linha de 4,5 metros. Esta área se torna terreno difícil, e os alvos dentro desta área devem ser bem-sucedidos em um teste de resistência de Força ou Destreza (à sua escolha) ou cairão no chão.
+
+Um quadrado de 1,5 metro de terreno difícil pode ser limpo como uma ação ou com uma magia como Consertar.
+
+
+### Outros Talentos
+
+#### Carnificina Avançada
+Sempre que você causar um acerto crítico com uma arma corpo a corpo ou reduzir uma criatura a 0 pontos de vida com uma, você pode fazer um ataque corpo a corpo como uma ação bônus.
+
+#### Ataque Brutal
+Quando você atinge um alvo com um ataque corpo a corpo, ele fica marcado por dois turnos em vez de um. Os efeitos de talentos (de esforço) com duração de um turno duram dois turnos.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Contra-ataque Sangrento
+Como uma reação, quando uma criatura mira em você com um ataque corpo a corpo, antes da rolagem de ataque ser feita, você pode permitir que o ataque acerte automaticamente (embora a rolagem ainda seja feita para determinar se o ataque é um acerto crítico). Depois que o dano for determinado, você pode fazer um ataque corpo a corpo contra essa criatura, que pode ser aprimorado por um talento (de esforço). Se a criatura que está atacando você estiver marcada, você pode resolver o ataque antes que o ataque dela seja resolvido.
+
+#### Golpe Brutal
+Ao atacar um alvo com um ataque corpo a corpo, você pode escolher sofrer uma penalidade de -5 na rolagem de ataque. Se você fizer isso e o ataque acertar, ele causa +10 de dano.
+
+#### Imortal
+Você tem vantagem em todas as jogadas de salvamento contra a morte e pode multiplicar seus pontos de vida máximos por 3 ao determinar se morre por dano massivo. Se você estiver estável, recupera 1 ponto de vida após 1d4 minutos em vez de 1d4 horas.
+
+#### Esforço Estendido
+Você pode gastar uma ação bônus ou gastar foco marcial para aplicar dois talentos (de esforço) a um ataque em vez de apenas um.
+
+#### Grande Destruidor
+Enquanto tiver foco marcial, você causa o dobro de dano ao fazer ataques com armas corpo a corpo contra objetos e tem vantagem em qualquer teste feito para quebrar um objeto.
+
+#### Revigoramento Sanguíneo
+Sempre que você reduzir uma criatura a 0 pontos de vida com um ataque corpo a corpo ou com arma de arremesso, você ganha pontos de vida temporários iguais ao seu nível até o início do seu próximo turno. A criatura deve ter um Nível de Desafio (ND) de pelo menos metade do seu nível de personagem (arredondado para baixo, mínimo 1/2).
+
+#### Selvagem
+Sempre que você reduzir uma criatura a 0 pontos de vida com um ataque corpo a corpo ou com arma de arremesso, você pode gastar uma ação bônus para recuperar foco marcial. A criatura deve ter um Nível de Desafio (ND) de pelo menos metade do seu nível de personagem (arredondado para baixo, mínimo 1/2).
+
+
+### Talentos Lendários do Berserker
+
+#### Alterar Terreno
+**Pré-requisitos**: :: Esfera do Berserker (Quebrar a Terra), 7º nível ou superior.
+
+Ao usar o talento Quebrar a Terra, você pode criar um buraco de 1,5 metro de profundidade no solo nos quadrados afetados. Se desejar, você também pode elevar o terreno em 1,5 metro em todos os quadrados adjacentes aos quadrados afetados.
+
+
+#### Atavismo (adrenalina)
+**Pré-requisitos**: :: Esfera do Berserker
+
+Sempre que for afetado por uma magia, efeito ou outra habilidade, você pode escolher ser considerado como seu tipo de criatura original ou como uma besta, sempre que isso for vantajoso para você (como ser imune a uma magia de imobilizar pessoa, tratando-se como uma besta, ou receber uma magia de aumentar pessoa, tratando-se como um humanoide).
+
+
+#### Golpe da Fenda
+**Pré-requisitos**: :: Esfera do Berserker, 11º nível ou superior.
+
+Como uma ação que provoca ataques de oportunidade, você libera um rugido poderoso e desfere um golpe com uma arma com tamanha ferocidade que rasga o próprio tecido do espaço-tempo, abrindo uma fenda para outro local. Isso teletransporta você, seus itens carregados e até uma criatura Média ou menor disposta e seus equipamentos por três níveis para um local que pode estar a até 160 quilômetros por nível de distância. Criaturas Grandes contam como duas criaturas Médias, uma criatura Enorme conta como duas criaturas Grandes, e assim por diante. Todas as criaturas a serem transportadas devem estar em contato umas com as outras, e pelo menos uma dessas criaturas deve estar em contato com você.
+
+Você deve ter uma ideia clara da localização e do layout do destino; se você nunca esteve no destino desejado antes, você não chega ao local exato, criando uma fenda para um local a até 1d20 milhas do ponto desejado.
+
+Seu nível de exaustão aumenta em 1 após usar esta habilidade. Você sofre essa penalidade mesmo que seja imune à condição de exaustão. Se o seu nível de exaustão atual for maior que 1, você tem 50% de chance de a habilidade falhar e seu nível de exaustão ainda aumenta em 1. Este é um efeito mágico.
+
+
+#### Passos Ruinosos
+**Pré-requisitos**: :: Esfera do Berserker (Quebrar a Terra).
+
+Você pode escolher quebrar o chão enquanto se move. Sempre que sair de um quadrado, você pode escolher tornar esse quadrado terreno difícil. Este terreno difícil permanece até ser removido por uma ação (limpando 1 quadrado dentro do alcance da criatura) ou reparado com uma magia ou efeito, como a magia Consertar.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Dilacerar
+**Pré-requisitos**: :: Esfera do Berserker, 11º nível ou superior.
+
+Quando você acerta um golpe crítico com uma arma corpo a corpo, você pode gastar foco marcial. O alvo deve passar em um teste de resistência de Constituição ou ter um membro decepado. O alvo sofre 1d6 pontos de dano necrótico da ferida a cada rodada no início do seu turno até receber pelo menos 1 ponto de cura ou o sangramento ser estancado com um teste de Sabedoria (Medicina) CD 10.
+
+Perder um membro reduz pela metade qualquer velocidade de movimento dependente desse membro e remove quaisquer ataques e habilidades dependentes desse membro. Criaturas com todas as pernas removidas ficam caídas e têm uma velocidade de caminhada de 5 pés, a menos que possuam outras formas de movimento.
+
+
+#### Quebra-Feitiço (esforço)
+**Pré-requisitos**: :: Esfera do Berserker, 5º nível ou superior.
+
+Você pode tentar quebrar um efeito mágico ativo no alvo. Você pode escolher um efeito do qual esteja ciente, mas, caso contrário, isso afeta o efeito mágico de nível mais baixo. Se o dano do ataque exceder uma CD de 10 + o nível da magia, o efeito mágico é suprimido por um número de rodadas igual ao seu bônus de proficiência. Se o seu dano exceder a CD em 5 ou mais, ele é dissipado completamente. Você pode usar isso para atingir um efeito mágico em uma área.
+
+### Variantes
+#### Calma
+Você não adquire a habilidade Adrenalina nem o talento bônus (Adrenalina). Se você remover esta variante, adquirirá tanto a habilidade Adrenalina quanto o talento bônus (Adrenalina). Você adquire Esforço Prolongado como talento bônus.
+
+#### Intacto
+Você não pode espancar alvos. Você adquire Revigoramento Sanguíneo como talento bônus.
+
+
+\page

@@ -1,0 +1,457 @@
+<div class='pageNumber auto'></div>
+
+## Distorção
+Você pode manipular o espaço à sua vontade. Ao obter a esfera de distorção pela primeira vez, você ganha as habilidades de teletransporte e de manipular espaço.
+
+
+#### Teletransporte
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: Toque
+**Duração**: :: Instantânea
+**Alvo**: :: 1 criatura
+**Custo**: :: 0PM
+
+Você pode se teletransportar ou teletransportar uma criatura voluntária e qualquer coisa até a capacidade de carga do alvo para qualquer lugar a até 3 metros de distância. Você precisa ter linha de visão para o seu destino. A distância que você pode teletransportar um alvo aumenta em 3 metros no 5º nível (6 metros), no 11º nível (9 metros) e no 17º nível (12 metros).
+
+**Aprimoramento 1PM**: :: A distância que você pode teletransportar um alvo aumenta para 9 metros no 1º nível, 18 metros no 5º nível, 27 metros no 11º nível e 36 metros no 17º nível.
+
+Talentos marcados com (teletransporte) aprimoram ou concedem novas maneiras de utilizar sua habilidade de esfera de teletransporte.
+
+
+#### Manipular Espaço
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: Toque
+**Duração**: :: variável
+**Alvo**: :: variável
+**Custo**: :: 0PM
+
+
+Talentos marcados com (espaço) concedem maneiras de dobrar e manipular o espaço. Você precisa estar em contato com o alvo ou local que será afetado.
+
+
+### Talentos Espaciais
+
+#### Piscar (espaço)
+**Duração**: :: Concentração, até 1 minuto
+**Alvo**: :: 1 criatura
+**Custo**: :: 1PM
+
+Uma criatura afetada por esta habilidade interage com objetos físicos de forma errática. Você pode escolher aplicar este efeito como um benefício ou uma penalidade.
+
+Como benefício, criaturas que atacam o alvo sofrem desvantagem em suas jogadas de ataque, a menos que primeiro sejam bem-sucedidas em um teste de resistência de Sabedoria. Como penalidade, se o alvo falhar em um teste de resistência de Sabedoria contra esta habilidade, ele sofre desvantagem em todas as jogadas de ataque. Esta habilidade não tem efeito sobre ataques feitos com efeitos de força ou efeitos que se propagam entre planos contíguos, incluindo qualquer ataque feito enquanto estiver sob os efeitos do talento Manipulador de Planos.
+
+Ao final de cada um de seus turnos, uma criatura afetada pode tentar um teste de resistência de Sabedoria. Em caso de sucesso, o efeito termina para aquela criatura.
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação.
+
+
+#### Criar Fenda (espaço)
+**Duração**: :: Concentração, até 10 minutos
+**Alvo**: :: 1 objeto inanimado
+**Custo**: :: 1PM
+
+Você distorce o espaço para criar uma fenda em um objeto ou parede que, de outra forma, seria sólido. Você pode criar um buraco em um objeto inanimado de até 1,5 metro de lado (cubo). Este buraco não danifica o objeto nem afeta sua integridade estrutural; como o buraco criado é formado por espaço adicionado em vez de espaço removido, tudo na área afetada permanece acessível, empurrado para a borda mais próxima da fenda criada. Se a fenda for criada de forma que uma criatura caia através dela, ela pode fazer um teste de resistência de Destreza para se mover com segurança até a borda mais próxima do buraco. O buraco pode incluir um cubo adicional de 1,5 metro de lado (cubo) no 5º nível (2 cubos), no 11º nível (3 cubos) e no 17º nível (4 cubos); a configuração dos cubos deve ser contígua.
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação.
+
+
+#### Distorcer Tamanho (espaço)
+**Duração**: :: Concentração, até 10 minutos
+**Alvo**: :: 1 criatura ou objeto
+
+Você distorce a pegada espacial de um alvo, fazendo com que ele ocupe uma área menor ou maior. Alvos que não desejam a alteração podem fazer um teste de resistência de Sabedoria para negar o efeito. O alvo ocupa o espaço como se fosse um tamanho maior ou menor (à sua escolha); isso não altera a categoria de tamanho do alvo, embora seu alcance agora se estenda a partir do novo espaço que ele ocupa. Você pode alterar o espaço do alvo em uma categoria adicional no 5º nível (3 metros), 11º nível (4,5 metros) e 17º nível (6 metros).
+
+Você pode alterar o espaço do alvo para um novo tamanho como uma ação bônus. Você também pode conceder a um alvo o controle sobre seu próprio espaço, permitindo que ele gaste a ação bônus em vez disso.
+
+\page
+<div class='pageNumber auto'></div>
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem a necessidade de concentração. Esta melhoria pode ser aplicada após o efeito ser lançado no seu turno, sem a necessidade de uma ação.
+
+
+#### Sala Extradimensional (espaço)
+**Duração**: :: especial (ver texto)
+**Alvo**: :: especial
+
+Você pode criar uma pequena dimensão de bolso, acessível através de um portal cintilante que aparece no ar à sua frente ou em uma superfície plana e tocada. Esta dimensão de bolso mede um cubo de 3 metros por nível, organizado como desejar, contanto que o espaço seja contínuo. Você pode fazer a entrada com um quadrado de 1,5 metro ou com um quadrado de 3 metros. Você pode selecionar o nível de luz e a temperatura (de -40°C a 49°C), mas, fora isso, é um local sem características.
+
+Este espaço não existe até que você entre no portal e continua a existir enquanto você estiver dentro dele. Se o portal estiver no chão ou de alguma outra forma em que uma criatura involuntária possa cair, a criatura tem direito a um teste de Destreza para evitar a queda. Escalar as paredes desta sala requer um teste de Atletismo contra a CD da sua esfera. Quando esta habilidade expira ou é dissipada, todos os objetos e criaturas dentro deste espaço são ejetados inofensivamente através do portal.
+
+**Aprimoramento 1PM**: :: Você pode criar o espaço sem entrar nele e mantê-lo ativo por até 1 minuto, independentemente de você estar dentro dele ou não. Você pode dissipar esta habilidade no seu turno sem gastar uma ação.
+
+
+#### Armazenamento Extradimensional (espaço)
+**Duração**: :: especial, veja o texto
+**Alvo**: :: especial
+
+Você ganha um espaço extradimensional permanente que pode armazenar até 4,5 kg por nível de material não vivo. Você pode criar um portal para este espaço extradimensional ao alcance do seu braço, à vontade. Colocar um objeto neste espaço ou chamar um objeto deste espaço requer uma ação, mas pode ser feito sem ação, gastando um ponto de magia. Seres vivos e criaturas não vivas que não desejam entrar não podem ser colocados em seu armazenamento extradimensional. Se você morrer, todo o conteúdo do seu espaço extradimensional reaparece no seu quadrado ou no espaço desocupado mais próximo.
+
+Se você também possuir Sala Extradimensional, seu armazenamento extradimensional se torna tão grande quanto uma sala extradimensional, sem limite de peso, contanto que tudo caiba dentro desse espaço. Ao criar uma sala extradimensional, você pode dispor todos ou alguns dos itens dentro do seu armazenamento extradimensional nesse espaço, organizados como desejar.
+
+
+#### Espaço Flexível (espaço)
+**Duração**: :: Concentração, até 10 minutos
+**Área**: :: três cubos de 3 metros
+
+Você pode optar por contrair ou expandir o espaço em uma área, medida em cubos de 3 metros. Esses cubos devem ser contíguos, mas podem assumir qualquer formato. O espaço contraído facilita a movimentação, permitindo que você se mova 3 metros a cada 1,5 metro de movimento. O espaço expandido dificulta a movimentação, e 3 metros de movimento permitem que você se mova apenas um quadrado de 1,5 metro. Esses efeitos multiplicam e dividem todos os outros custos de movimento (como terreno difícil). Se você ocupar quadrados com efeitos diferentes na sua velocidade de movimento, você se move na velocidade mais lenta entre todos os quadrados. Se você tentar contrair um espaço expandido (ou vice-versa), você deve ser bem-sucedido em um teste de habilidade de conjuração contra a CD do efeito oposto. Em caso de sucesso, seu efeito funciona normalmente e o efeito oposto é suprimido durante a duração.
+
+O número de cubos de 3 metros que você pode afetar aumenta em 1 no 5º nível (4 cubos), no 11º nível (5 cubos) e no 17º nível (6 cubos).
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem uma ação.
+
+
+#### Espaço em Loop (espaço)
+**Duração**: :: Concentração, até 1 minuto
+**Área**: :: um cubo de 3 metros
+
+Você distorce as bordas de uma área, delimitando-a com sua magia e aprisionando criaturas dentro dela. A área delimitada é medida em cubos de 3 metros que podem ser organizados como você desejar, contanto que toda a área seja contígua. Qualquer criatura dentro da área deve ser bem-sucedida em um teste de resistência de Sabedoria para sair da área.
+
+Em caso de falha no teste, ela se move para a face oposta da área e deve esperar até o seu próximo turno para tentar sair novamente. Isso não impede ataques através da fronteira em qualquer direção, e criaturas podem entrar na área sem dificuldade.
+
+O número de cubos de 3 metros que você pode afetar aumenta em 1 no 5º nível (2 cubos), no 11º nível (3 cubos) e no 17º nível (4 cubos).
+
+**Aprimoramento 1PM**: :: Se você também possuir Manipulador de Planos, poderá aplicar seu efeito de âncora dimensional à área do seu espaço em loop, contestando teletransporte e viagem planar com um teste de habilidade de conjuração.
+
+\page
+<div class='pageNumber auto'></div>
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação.
+
+#### Manipulador de Planos (espaço)
+Você ganha as habilidades de aura de ancoragem e esfera de toque banidor.
+
+
+#### Aura de Ancoragem
+**Duração**: :: Concentração, até 10 minutos
+**Alvo**: :: você mesmo
+
+Você pode criar uma âncora dimensional emanando de si mesmo, afetando você e todas as criaturas em um raio de 3 metros, aumentando em 3 metros no 5º nível (6 metros), 11º nível (9 metros) e 17º nível (12 metros). Qualquer tentativa de teletransporte ou travessia de planos feita por qualquer criatura dentro desta área falha, a menos que ela seja bem-sucedida em um teste de habilidade de conjurador contra a CD da sua esfera. Isso também se aplica à invocação de companheiros e outras criaturas extraplanares. Criaturas que residem no plano etéreo próximo ou em outros planos similares podem ser vistas e interagidas como se estivessem no Plano Material enquanto estiverem dentro deste espaço.
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação.
+
+**Aprimoramento 2PM**: :: O tempo de conjuração desta habilidade passa a ser 1 reação.
+
+**Aprimoramento 1PM**: :: Quando um efeito de teletransporte falha devido à sua âncora dimensional, você pode redirecioná-lo, escolhendo seu destino como se você tivesse conjurado o efeito em vez do conjurador. O conjurador deve ser bem-sucedido em um teste de resistência de Sabedoria para evitar que o efeito seja redirecionado. Este aprimoramento pode ser aplicado após a conjuração do efeito, sem necessidade de ação, mesmo que não seja seu turno.
+
+
+#### Toque Banidor
+**Custo**: :: 1PM
+**Duração**: :: Instantânea
+**Alvo**: :: uma criatura que você possa ver e que seja nativa de um plano diferente
+
+Você pode tentar banir uma criatura de volta para seu plano de origem. Um teste de resistência de Carisma bem-sucedido nega este efeito.
+
+
+#### Alcance Espacial (espaço)
+**Duração**: :: Concentração, até 10 minutos
+**Alvo**: :: uma criatura que você possa ver
+**Custo**: :: 1PM
+
+Você pode imbuir uma criatura com magia que cria uma ponte entre a distância entre ela e qualquer coisa que ela alcance ou para a qual se mova, distorcendo o espaço a seu favor. O alvo recebe um bônus de +3 metros em sua velocidade de movimento e adiciona 3 metros ao seu alcance natural. Ambos os bônus aumentam em 1,5 metro no 5º (+4,5 metros de velocidade, +4,5 metros de alcance), 11º (+6 metros de velocidade, +6 metros de alcance) e 17º (+7,5 metros de velocidade, +7,5 metros de alcance) níveis.
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação.
+
+
+#### Ligação de Teletransporte (espaço)
+**Duração**: :: especial
+**Alvo**: :: uma criatura, local ou objeto que você possa ver
+
+Você pode criar uma ligação com um ponto, objeto ou criatura que você toque, permitindo que você saiba a direção e a distância até ele. Você sabe se o alvo está em outro plano e se esse plano é coexistente, contíguo ou separado do plano em que você está, mas você não sabe a direção e a distância dele se ele estiver em outro plano. Se o seu alvo não quiser criar a ligação, ele tem direito a um teste de resistência de Sabedoria para negar o efeito.
+
+A ligação dura até você completar um descanso longo. Você só pode manter uma ligação por vez; usar esta habilidade novamente encerra quaisquer instâncias anteriores. Se você também possuir o Farol de Teletransporte, seus faróis ganham todos os efeitos deste talento como se também fossem ligações, embora não contem como ligações para o propósito de criar ou encerrar ligações.
+
+**Aprimoramento 1PM**: :: Você cria uma ligação que não encerra ligações anteriores nem é encerrada por ligações futuras.
+
+
+#### Buraco de Minhoca (espaço)
+**Duração**: :: Concentração, até 1 minuto
+**Alcance**: :: 9 metros
+**Alvo**: :: dois cubos de 1,5 metro
+
+Você afeta dois cubos de 1,5 metro dentro do alcance e os conecta, contraindo o espaço entre eles. Qualquer um pode optar por usar 1,5 metro do seu movimento para viajar em linha reta entre dois cubos conectados como se fossem adjacentes (embora não sejam considerados adjacentes para nenhum outro propósito). O número de cubos de 1,5 metro que você pode afetar aumenta em 1 no 5º nível (3 cubos), 11º nível (4 cubos) e 17º nível (5 cubos).
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem uma ação.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+
+### Talentos de Teleporte
+
+#### Portal de Ataque (teleporte)
+**Aprimoramento 0PM**: :: Você pode usar seu teleporte para interceptar o ataque de uma criatura. Isso geralmente requer uma ação preparada para interceptar o ataque no momento em que ele é realizado e requer Teleporte Involuntário como de costume se o alvo não estiver disposto. Você pode usar este poder em si mesmo, desde que tenha ataques para realizar (um ataque realizado como uma ação bônus se você possuir esse poder, ou através do uso de Teleporte Rápido).
+
+Até o final do turno da criatura afetada, ela pode escolher uma criatura à sua escolha dentro do alcance de teleporte, mesmo que normalmente não pudesse. Se o alvo não estiver disposto, isso afeta apenas um único ataque.
+
+**Aprimoramento 1PM**: :: Você pode usar teleporte com o aprimoramento acima como uma reação.
+
+#### Teleporte à Distância (teleporte)
+Quando você gasta um ponto de magia para aumentar a distância do seu teleporte, a distância aumenta para 18 metros no 1º nível, 36 metros no 5º nível, 90 metros no 11º nível e 180 metros no 17º nível.
+
+
+#### Teleporte de Emergência (teleporte)
+**Aprimoramento 1PM**: :: Você pode realizar um teleporte como uma reação. A distância é reduzida para 1,5 metro, aumentando para 3 metros no 11º nível; a distância não pode ser aumentada. Se usado para evitar um ataque ou efeito em área, isso concede ao alvo vantagem em todos os testes de resistência contra o efeito, ao mesmo tempo que impõe desvantagem em quaisquer jogadas de ataque. Se o alvo for bem-sucedido em um teste de resistência contra um efeito que permite que um teste de resistência reduza o dano, ele não sofre dano.
+
+
+#### Imbuir Teleporte (teleporte)
+**Aprimoramento 0PM**: :: Quando você for teleportar um alvo, você pode imbuí-lo com a habilidade de teleporte em vez de teleportá-lo imediatamente. O alvo imbuído adquire a habilidade de se teletransportar uma vez com os mesmos detalhes (como distância, talentos, gastos de pontos de magia) que você usou na conjuração original. No entanto, o alvo só pode se teletransportar e não outros.
+
+O teletransporte imbuído permanece até que o alvo ou o conjurador complete um descanso curto ou longo, ou até que seja usado uma vez. Você pode manter um teletransporte imbuído por vez, aumentando em 1 no 5º nível (2 teletransportes imbuídos), no 11º nível (3 teletransportes imbuídos) e no 17º nível (4 teletransportes imbuídos).
+
+
+#### Isotransporte (teleporte)
+**Aprimoramento 0PM**: :: Quando você teletransporta um alvo, você pode alterar sua orientação e diminuir sua velocidade. Isso permite girar o alvo em até 360 graus, o que permite girá-lo enquanto se move (contando o movimento como uma linha reta), aplicar ou remover a condição de caído e cancelar movimentos baseados em impulso (como cair, ser arremessado ou empurrado), o que efetivamente redefine qualquer distância que ele tenha caído. Usar este talento para responder a ações ou eventos fora do seu turno normalmente requer uma ação preparada.
+
+Você pode optar por aplicar apenas os efeitos de Isoportar, alterando a orientação espacial e a velocidade de um alvo sem teleportá-lo para outro local. Fazer isso reduz o tempo de conjuração para uma ação bônus em vez de uma ação. Você ainda precisa aplicar Teleporte Involuntário para afetar alvos involuntários.
+
+**Aprimoramento 1PM**: :: Você pode Isoportar um alvo como uma reação.
+
+
+#### Teleporte Rápido (teleporte)
+**Aprimoramento 1PM**: :: O tempo de conjuração de teleporte é reduzido para 1 ação bônus.
+
+**Aprimoramento 1PM**: :: Quando você se teleporta ou teleporta um grupo que o inclui, você pode se teleportar em vez de usar seu movimento para aquela rodada, em vez de uma ação. Ter uma velocidade de movimento de 0 não impede que você se teleporte dessa forma.
+
+
+#### Retorno (teleporte)
+**Aprimoramento 0PM**: :: Antes de se teleportar ou teleportar um aliado disposto, você pode designar o quadrado atual do alvo como um ponto de retorno como uma ação bônus. Ao final de cada rodada, o alvo pode optar por retornar ao ponto de retorno, teleportando-se para lá sem gastar uma ação, desde que esteja dentro da distância máxima que você pode teleportar um alvo. O ponto de retorno dura 1 minuto ou até ser usado uma vez, o que ocorrer primeiro.
+
+**Aprimoramento 1PM**: :: Esta habilidade não requer mais uma ação bônus.
+
+
+#### Distorção Segmentada (teleporte)
+**Aprimoramento 1PM**: :: Ao se teletransportar, você pode dividir o teletransporte em dois. Você conjura um único teletransporte em si mesmo e paga qualquer custo em pontos de magia uma vez, mas pode se teletransportar duas vezes em rápida sucessão. Entre esses dois teletransportes, você só pode realizar uma ação de qualquer tipo que tenha disponível (como uma ação simples ou uma ação bônus simples). Conjurar o segundo teletransporte não requer uma segunda ação, mas conta como conjurar um efeito de esfera. A distância total combinada percorrida por 
+
+\page
+<div class='pageNumber auto'></div>
+
+:: ambos os teletransportes não pode ser maior que a distância máxima que você pode teletransportar um alvo. Se o seu segundo teletransporte for interrompido, ele é perdido.
+
+Se usado em conjunto com Portal de Ataque, você não recebe ataques extras, mas pode realizar seu ataque após qualquer uma das metades do teletransporte dividido. Atacar dessa forma conta como sua ação simples para os propósitos de Distorção Segmentada.
+
+Se você optar por aprimorar o Portal de Ataque para permitir uma ação de ataque porque o usou como uma reação, poderá usar qualquer número de seus ataques como a única ação permitida e usar quaisquer ataques restantes após o seu segundo teleporte. Outras habilidades que criariam efeitos adicionais com o seu teleporte só se aplicam a um dos teleportes divididos.
+
+
+#### Fragmento (teleporte)
+**Aprimoramento 0PM**: :: Quando você teleporta um alvo, pode fragmentá-lo, fazendo com que ele apareça não exatamente como era. Isso causa 1d8 de dano cortante ao alvo, aumentando em 1d8 no 5º nível (2d8), 11º nível (3d8) e 17º nível (4d8).
+
+**Aprimoramento 1PM**: :: O teleporte, em vez disso, causa 1d10 de dano + 1d10 de dano a cada 2 níveis.
+
+
+#### Troca de Posição (teleporte)
+**Aprimoramento 0PM**: :: Ao se teletransportar ou teletransportar outra criatura para um local já ocupado por outra criatura, você pode enviar a criatura que já ocupa esse local de volta para o local de onde a criatura que se teletransportou veio. Este alvo deve ser voluntário, a menos que você possua o talento Teletransporte Contra a Vontade. Se o segundo alvo for relutante, você deve pagar o custo de aprimoramento de Teletransporte Contra a Vontade (este custo é pago apenas uma vez, mesmo que ambos os alvos sejam relutantes) e ele terá direito a um teste de resistência normalmente. Se alguma criatura relutante for bem-sucedida em seu teste de resistência, a criatura que se teletransportou permanece em seu ponto de origem, ilesa.
+
+
+#### Sinalizador de Teletransporte (teleporte)
+**Tempo de Conjuração**: :: 1 ação
+**Alvo**: :: 1 local, criatura ou objeto que você possa ver
+**Custo**: :: 0PM
+**Alcance**: :: Toque
+**Duração**: :: 24 horas
+
+Você pode designar um local, objeto ou criatura tocado como um sinalizador dimensional pessoal. Você só pode ter um sinalizador de teletransporte designado por vez; criar um segundo remove o primeiro.
+
+**Aprimoramento 1PM**: :: Você pode criar um sinalizador de teletransporte sem remover nenhum sinalizador de teletransporte anterior.
+
+Além disso, seu teletransporte recebe o seguinte aprimoramento:
+
+**Aprimoramento 1PM**: :: Você pode se teletransportar para o seu sinalizador de teletransporte, independentemente da distância, contanto que esteja no mesmo plano. Se o seu sinalizador de teletransporte for uma criatura ou objeto, você pode, em vez disso, teletransportar o seu sinalizador de teletransporte para você. Você deve usar o talento Teletransporte Involuntário para fazer isso com uma criatura involuntária, e ela tem direito a um teste de resistência normalmente.
+
+Se você possuir múltiplos faróis de teletransporte e o talento Massa (metaesfera) da esfera Universal, você pode usar o talento Massa (metaesfera) para teletransportar múltiplos faróis de teletransporte de uma só vez, como se estivesse tocando todos os alvos afetados. Todos os faróis de teletransporte afetados devem ser teletransportados para o mesmo local (você ou um farol de teletransporte não afetado de sua escolha).
+
+Se você possuir o talento avançado Mudança Planar, você pode usá-lo para aprimorar esta habilidade para funcionar através de fronteiras planares.
+
+
+#### Teletransportar Objeto (teleporte)
+**Aprimoramento 0PM**: :: Você pode teletransportar objetos independentemente de pessoas. O objeto deve ser de tamanho Minúsculo e não pode pesar mais de 4,5 kg por nível, e não pode estar na posse de outra criatura (na mão dela ou sobre ela). Se uma criatura estiver disposta, você pode teletransportar o objeto diretamente para a mão dela ou sobre ela.
+
+Se você possuir o talento Alcance (metaesfera) da esfera Universal, você pode, como uma ação preparada, pegar um projétil no ar que passe dentro do alcance, redirecionando-o contra outro alvo, se desejar. A criatura que iniciou o ataque tem direito a um teste de resistência de Sabedoria para negar este efeito, e você deve fazer uma jogada de ataque mágico contra o novo alvo. O dano ainda é determinado pela criatura que iniciou o ataque.
+
+**Aprimoramento 1PM**: :: O objeto teleportado máximo aumenta para tamanho Pequeno e 45 kg por nível.
+
+
+#### Teleporte Invisível (teleporte)
+**Aprimoramento 1PM**: :: Ao usar teleporte, você não precisa mais de linha de visão para o local; em vez de escolher um ponto para aparecer, você pode indicar uma direção e distância. Se o alvo chegar em um local que já esteja ocupado por um corpo sólido, ele sofre 4d6 de dano de força e a magia falha ao teleportá-lo.
+
+\page
+<div class='pageNumber auto'></div>
+
+**Aprimoramento 1PM**: :: Quando o alvo ou alvos de um teleporte chegam dentro de um objeto sólido, eles retornam ao seu ponto de origem ilesos. Este aprimoramento pode ser aplicado no momento em que os alvos chegam ao objeto sólido, sem necessidade de qualquer ação.
+
+
+#### Teletransporte Involuntário (teleporte)
+**Aprimoramento 1PM**: :: Você pode usar seu teletransporte em criaturas involuntárias que você possa ver, contanto que estejam dentro do alcance da sua habilidade de esfera de teletransporte. A criatura involuntária tem direito a um teste de resistência de Sabedoria para negar o teletransporte. Uma criatura involuntária só pode ser teletransportada para áreas abertas em superfícies sólidas (portanto, ela não pode ser teletransportada para o ar ou para dentro de um objeto sólido, e qualquer tentativa nesse sentido falha instantaneamente). Além disso, ela ganha vantagem no teste de resistência se o local for diretamente prejudicial a ela (para um leito de espinhos, a área de ativação de uma armadilha, etc.).
+
+
+### Talentos Avançados de Distorção
+
+#### Criar Semiplano
+**Pré-requisitos**: :: Esfera de Distorção (Sala Extradimensional), 15º nível ou superior.
+
+**Aprimoramento 3PM**: :: Ao usar o talento Sala Extradimensional, você pode criar sua sala extradimensional como um efeito instantâneo; ela se torna um semiplano permanente e não pode ser dissipada, independentemente de quem esteja ou não dentro dela. Alternativamente, você pode usar esta habilidade para criar um novo portal para um semiplano permanente que você tenha criado anteriormente. Você pode fechar permanentemente um portal para o seu semiplano no seu turno, sem precisar de nenhuma ação, mas saiba que apenas viagens interdimensionais podem alcançar um semiplano sem um portal funcionando.
+
+Como um semiplano permanente, você tem muito mais controle sobre a composição, aparência e conteúdo da sua sala. O semiplano pode ser preenchido com ar ou água (à sua escolha) e pode ter piso de terra, pedra, água ou madeira. As “paredes” e o “teto” do plano podem parecer terra sólida, pedra, madeira ou água, ou podem terminar em névoa, um vazio sem características ou uma borda semelhante de aparência irreal. Embora ainda seja geralmente sem características, você pode transplantar plantas ou animais para o seu semiplano para criar um ecossistema e manipular a terra, a água e/ou a pedra do semiplano como faria com qualquer outro material.
+
+Se você usar esta habilidade enquanto estiver dentro do seu semiplano, você pode aumentar permanentemente seu tamanho em um cubo adicional de 3 metros por nível, ou adicionar ou remover uma das seguintes características a todo o semiplano:
+
+• :: **Magia**: Por padrão, a magia funciona normalmente em seu plano. Você pode aplicar as seguintes características:
+ {{width:30px}} ○ :: **Magia Morta**: Você pode tornar seu plano um plano de magia morta. Nenhum efeito de magia ou esfera, incluindo os seus próprios, pode ser conjurado lá. Você ainda pode usar esta habilidade para remover esta característica.
+{{width:30px}} ○ :: **Magia Impedida**: Você pode impedir toda a magia em seu plano; qualquer tentativa de conjurar uma magia ou efeito de esfera requer um teste de habilidade de conjuração contra a CD da sua esfera. Se este teste falhar, a ação e quaisquer espaços de magia ou pontos de magia serão perdidos. Você pode optar por ter sucesso automático neste teste. Você pode optar por impedir uma única esfera ou escola de magia, em vez de toda a magia.
+{{width:30px}} ○ :: **Magia Selvagem**: Você pode tornar seu plano um plano de magia selvagem; todas as magias e efeitos de esfera lançados no plano desencadeiam um evento de magia selvagem (consulte Magia Selvagem para obter mais regras sobre isso).
+• :: **Mórfico**: Seu plano reage aos seus pensamentos; você pode ajustar a forma do terreno como uma habilidade à vontade. Ao se concentrar por 1 minuto, você pode ajustar uma porção de terra, pedra ou vegetação de 45 metros quadrados (3 metros de profundidade), moldando-a como desejar. Isso não é rápido o suficiente para causar dano ou aprisionar criaturas, mas pode ser usado para criar cercas e muros, valas, formas humanas, aterros e outros.
+• :: **Portal**: Se você possuir o talento avançado Transposição Planar, poderá conceder ao seu semiplano um portal permanente para um local em outro plano, que só pode ser usado para viagens planares. Este local deve ser muito familiar para você. Este portão está sempre aberto e utilizável de ambos os lados, mas você pode trancá-lo usando meios normais (como construir uma porta ao redor dele).
+• :: **Tempo**: Por padrão, o tempo passa na velocidade normal em seu semiplano. Se você possuir a esfera do Tempo, poderá fazer com que seu fluxo de tempo seja dobrado ou reduzido à metade.
+• :: **Alinhamento**: Se você possuir a esfera do Destino, você força criaturas de um alinhamento específico que completarem um descanso longo em seu semiplano a serem bem-sucedidas em um teste de resistência de Carisma CD 10 ou sofrerão um nível de exaustão. Esta característica só pode afetar criaturas com um alinhamento oposto ao seu (bom versus mau, leal versus caótico).
+
+
+\page
+<div class='pageNumber auto'></div>
+
+• :: **Abundante**: Se você possuir a esfera da Natureza, poderá conceder ao seu semiplano uma ecologia natural próspera, com riachos, lagoas, cachoeiras e plantas. O semiplano fornece alimento vegetal suficiente (nozes, grãos, frutas, fungos e assim por diante) para sustentar uma criatura Média para cada cubo de 3 metros do semiplano. O semiplano não possui animais, a menos que você os transporte para lá, mas a ecologia pode se sustentar enquanto o semiplano existir sem a necessidade de rega, jardinagem, polinização e assim por diante; a matéria orgânica morta se decompõe e retorna ao solo normalmente. Se o seu semiplano tiver luz ambiente, essas plantas são plantas de superfície comuns e familiares; se for um reino de crepúsculo ou escuridão, essas plantas são fungos e outras plantas adaptadas à quase escuridão ou a locais subterrâneos.
+• :: **Gravidade**: Por padrão, a gravidade de um semiplano é normal e orientada em uma direção, como a maioria das criaturas está acostumada no Plano Material. Se você possuir a esfera de Telecinese, poderá ajustar a gravidade do plano para ser forte, fraca, nenhuma, objetivamente direcional ou subjetivamente direcional.
+{{width:30px}} ○ :: **Gravidade Forte**: Em áreas de gravidade forte, os testes de Força e Destreza sofrem desvantagem, assim como todas as jogadas de ataque com armas. O peso de todos os itens é efetivamente dobrado, o que pode afetar a velocidade de um personagem. O alcance das armas é reduzido pela metade. Os valores de Força e Destreza de um personagem não são afetados. Personagens que caem em áreas de gravidade forte sofrem 1d10 pontos de dano de impacto para cada 3 metros de queda, em vez de 1d6, até um máximo de 20d10 pontos de dano.
+{{width:30px}} ○ :: **Gravidade Fraca**: Personagens em uma área de gravidade fraca têm vantagem em jogadas de ataque com armas pesadas, testes de resistência de Destreza e em testes de Destreza (Acrobacia). Todos os itens pesam metade do peso e o alcance das armas dobra. Força e Destreza não mudam como resultado da gravidade leve, mas o que você pode fazer com esses atributos muda. Personagens em queda livre sob gravidade leve sofrem 1d4 pontos de dano de concussão para cada 3 metros de queda, em vez de 1d6, até um máximo de 10d4.
+{{width:30px}} ○ :: **Sem Gravidade**: Não há gravidade.
+{{width:30px}} ○ :: **Gravidade Objetiva**: Toda a gravidade funciona em uma direção definida.
+{{width:30px}} ○ :: **Gravidade Subjetiva**: Cada criatura determina a direção da gravidade e pode escolher uma nova direção uma vez por turno.
+• :: **Clima**: Se você possuir a esfera do Clima, poderá conceder um ciclo climático e sazonal ao seu semiplano, personalizável como desejar (por exemplo, seu semiplano poderia ser sempre inverno ou ter estações de uma semana).
+• :: **Forma**: Por padrão, o semiplano tem uma forma e bordas fixas. Você pode tornar seu plano autocontido para que ele se complete quando uma criatura alcançar uma das bordas. Você pode designar áreas ou locais nas bordas do seu plano onde isso ocorre (como um par de portas secretas ou uma trilha na floresta) ou aplicar isso a todo o plano.
+• :: **Estrutura**: Se você possuir a esfera Criação, poderá dar ao seu semiplano uma estrutura física específica e vinculada, como uma árvore gigante, um castelo flutuante, um labirinto, uma montanha e assim por diante. (Essa opção existe para que você possa escolher um tema para o seu plano sem ter que se preocupar com os pequenos detalhes de determinar quais habilidades você precisa para cada colina, buraco, parede, chão e canto.)
+
+
+#### Bloqueio Dimensional (espaço)
+**Pré-requisitos**: :: Esfera de Distorção (Manipulador de Planos), 15º nível ou superior.
+
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: 36 metros
+**Alvo**: :: cubo de 12 metros
+**Custo**: :: 2PM
+**Duração**: :: 1 semana
+
+Você pode designar uma área dentro do alcance como sendo completamente imune a viagens extradimensionais. Qualquer tentativa dentro desta área de atravessar o espaço ou planos (incluindo todos os efeitos da Esfera de Teletransporte, invocar um companheiro da esfera de Conjuração, projeção astral, piscar, porta dimensional, eterealidade, portal, labirinto, mudança planar e habilidades similares a magias) falha instantaneamente.
+
+Um bloqueio dimensional não interfere no movimento de criaturas já em forma etérea ou astral quando é criado, nem bloqueia a percepção extradimensional ou formas de ataque. Além disso, a magia não impede que criaturas invocadas desapareçam ao final de uma magia de invocação.
+
+
+#### Teletransporte Perfeito
+**Pré-requisitos**: :: Esfera de Distorção (Teletransporte à Distância, Teletransporte Verdadeiro, Teletransporte Invisível), 15º nível ou superior.
+
+**Aprimoramento 0PM**: :: Ao usar o talento avançado Teletransporte Verdadeiro, a distância aumenta para ilimitada e você não corre mais o risco de chegar fora do alvo, sempre aparecendo exatamente onde pretendia. Ao usar o talento avançado Mudança Planar, você não aparece mais fora do alvo em relação ao seu destino pretendido no outro plano.
+
+Você não precisa ter visto o destino que está tentando alcançar, mas, nesse caso, você deve ter pelo menos uma descrição confiável do local para o qual está se teletransportando, senão você desaparece e simplesmente reaparece em sua localização original. 
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Mudança Planar
+**Pré-requisitos**: :: Esfera de Distorção (Teletransporte à Distância, Teletransporte Verdadeiro, Teletransporte Invisível), 11º nível ou superior.
+
+**Aprimoramento 2PM**: :: Você pode se teletransportar para uma dimensão ou plano de existência alternativo. Você precisa saber o plano que deseja alcançar, bem como onde, dentro desse plano, deseja aparecer (se não souber um local específico para aparecer nesse plano, ainda poderá usar esta habilidade, mas corre o risco de aparecer em qualquer lugar do plano). Você aparece próximo ao seu destino pretendido (se especificar uma cidade, poderá aparecer em qualquer portão dessa cidade ou em qualquer outro lugar visível do exterior dela, por exemplo), embora a localização exata fique a critério do Mestre.
+
+Alternativamente, se você souber a sequência de sigilos de um círculo de teletransporte em outro plano de existência, este efeito pode levá-lo até esse círculo. Se o círculo de teletransporte for pequeno demais para conter todas as criaturas que você transportou, elas aparecerão nos espaços desocupados mais próximos ao círculo.
+
+**Sequência de Sigilos**; :: Círculos de teletransporte permanentes possuem uma sequência de sigilos única que os identifica. Aprender uma sequência de sigilos requer estudar um círculo por 1 minuto.
+
+
+#### Portal
+**Pré-requisitos**: :: Esfera de Distorção (Teletransporte Involuntário), 5º nível ou superior.
+
+**Aprimoramento 1PM**: :: Ao usar sua habilidade de teletransporte, você pode abrir um portal entre sua localização e seu destino. Este portal tem um diâmetro máximo de 1,5 metro por nível e se abre no ar em algum lugar adjacente a você. O portal dura enquanto você se concentrar, até um máximo de 1 minuto. Qualquer coisa que se mova por uma extremidade deste portal chega à outra extremidade; é possível realizar ataques, ameaças ou outras ações como se as duas localizações fossem adjacentes.
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação.
+
+**Aprimoramento 2PM**: :: A duração máxima do portal passa a ser de 8 horas.
+
+
+#### Armazenar Estrutura
+**Pré-requisitos**: :: Esfera de Distorção (Armazenamento Extradimensional), 5º nível ou superior.
+
+**Aprimoramento 1PM**: :: Você pode tocar um objeto para colocá-lo em seu armazenamento extradimensional, mesmo que normalmente ele seja muito grande ou denso. Objetos armazenados dessa forma não contam para o limite de peso do seu armazenamento, mas são limitados pelo tamanho; você pode armazenar objetos cujo tamanho combinado não seja maior que o tamanho máximo listado na Tabela: Estruturas abaixo.
+
+Quando você recupera um objeto armazenado dessa forma, ele aparece em um quadrado adjacente desocupado. Ele deve ser colocado em uma superfície de suporte adequada; um barco pode ser colocado em uma planície relativamente plana ou em uma grande massa de água, mas não no ar.
+
+
+#### Teletransportar Exército
+**Pré-requisitos**: :: Esfera de Distorção, Esfera Universal (Massa (metasfera), Alcance (metasfera)), 11º nível ou superior
+
+**Aprimoramento 2PM**: :: Você pode teletransportar qualquer número de alvos dentro do alcance. Se você possuir Teletransporte Involuntário, você só precisa gastar um ponto de magia, não importa quantos alvos involuntários sejam afetados. Se um alvo involuntário passar no teste de resistência, os outros alvos ainda serão afetados normalmente. Se você possuir o talento Teletransportar Objeto, também poderá teletransportar qualquer número de objetos, desde que cada objeto individual esteja dentro do seu limite de peso (ou limite de tamanho, caso possua o talento Teletransportar Estrutura).
+
+
+#### Teletransportar Estrutura
+**Pré-requisitos**: :: Esfera de Distorção (Teletransporte de Objeto), 5º nível ou superior
+
+Você pode teletransportar objetos de peso e tamanho muito maiores, até mesmo veículos e estruturas inteiras. Você pode teletransportar qualquer objeto de tamanho apropriado, conforme mostrado na Tabela: Estruturas abaixo. Se você usar Teletransporte de Exército em conjunto com este talento, poderá teletransportar todos os alvos que estiverem tocando um objeto ou estrutura teletransportada dentro do alcance, em vez de teletransportar todas as criaturas dentro do alcance.
+
+Você deve usar Teletransporte Involuntário para teletransportar quaisquer criaturas involuntárias em contato com o objeto ou estrutura.
+
+##### Tabela: Estruturas
+|Nível|Tamanho Máximo|Exemplo de Objeto
+|:---:|:------------:|:----------------|
+|1º|Médio|Barril
+|5º|Grande|Mesa
+|11º|Enorme|Carroça
+|17º|Gargantuesco|Catapulta
+
+\page
+<div class='pageNumber auto'></div>
+
+
+#### Teletransporte Verdadeiro
+**Pré-requisitos**: :: Esfera de Dobra (Teletransporte à Distância, Teletransporte Invisível) de 11º nível ou superior.
+
+**Aprimoramento 2PM**: :: Ao se teletransportar, sua distância passa a ser de 1600 km. Você deve ter uma ideia clara da localização e do layout do destino. Quanto mais nítida for sua imagem mental, maior a probabilidade de o teletransporte funcionar. Áreas com forte energia física ou mágica podem tornar o teletransporte mais perigoso ou até mesmo impossível.
+
+Para verificar a eficácia do teletransporte, role um d100 e consulte a tabela a seguir. Consulte as informações a seguir para obter as definições dos termos na tabela.
+
+##### Tabela: Acidente
+
+|Familiaridade|Contratempo|Área Similar|Alvo Incorreto|Alvo Correto
+|:------------|:---------:|:----------:|:------------:|:-----------:|
+|Círculo Permanente|-|-|-|1-100
+|Objeto Associado|-|-|-|1-100
+|Muito Familiar|1-5|6-13|14-24|25-100
+|Visto Ocasionalmente|1-33|34-43|44-53|54-100
+|Visualizado Uma Vez|1-43|44-53|54-73|74-100
+|Descrição|1-43|44-53|54-73|74-100
+|Destino Falso|1-50|51-100|-|-
+
+**Familiaridade.** “Círculo Permanente” significa um círculo de teletransporte permanente cuja sequência de sigilo você conhece.
+
+“Objeto associado” significa que você possui um objeto retirado do destino desejado nos últimos seis meses, como um livro da biblioteca de um mago, lençóis de uma suíte real ou um pedaço de mármore da tumba secreta de um lich.
+
+“Muito familiar” é um lugar que você frequentou muito, um lugar que você estudou cuidadosamente ou um lugar que você pode ver ao conjurar a magia. “Visto casualmente” é um lugar que você viu mais de uma vez, mas com o qual não está muito familiarizado. “Visto uma vez” é um lugar que você viu uma vez, possivelmente usando magia. “Descrição” é um lugar cuja localização e aparência você conhece através da descrição de outra pessoa, talvez em um mapa.
+
+“Destino falso” é um lugar que não existe. Talvez você tenha tentado usar vidência para encontrar o santuário de um inimigo, mas em vez disso viu uma ilusão, ou esteja tentando se teletransportar para um local familiar que não existe mais.
+:
+**No alvo.** Você e seu grupo (ou o objeto alvo) aparecem onde desejam.
+:
+**Fora do alvo.** Você e seu grupo (ou o objeto alvo) aparecem a uma distância aleatória do destino, em uma direção aleatória. A distância do alvo é de 1d10 × 1d10 por cento da distância que deveria ser percorrida. Por exemplo, se você tentasse viajar 120 milhas, aterrissasse fora do alvo e rolasse 5 e 3 nos dois d10, você estaria 15% fora do alvo, ou 18 milhas. O Mestre determina a direção do desvio aleatoriamente, rolando um d8 e designando 1 como norte, 2 como nordeste, 3 como leste e assim por diante, seguindo os pontos cardeais. Se você estivesse se teletransportando para uma cidade costeira e parasse a 18 milhas da costa, você poderia estar em apuros.
+:
+**Área Similar.** Você e seu grupo (ou o objeto alvo) acabam em uma área diferente, visual ou tematicamente similar à área alvo. Se você estiver se dirigindo ao seu laboratório, por exemplo, poderá acabar no laboratório de outro mago ou em uma loja de suprimentos alquímicos que tenha muitas das mesmas ferramentas e utensílios que o seu laboratório. Geralmente, você aparece no local similar mais próximo, mas como a magia não tem limite de distância, você poderia, teoricamente, acabar em qualquer lugar do plano.
+:
+**Acidente.** A magia imprevisível resulta em uma jornada difícil. Cada criatura teleportada (ou o objeto alvo) sofre 3d10 de dano de força, e o Mestre rola novamente na tabela para ver onde você vai parar (múltiplos acidentes podem ocorrer, causando dano a cada vez).
+
+### Variantes
+#### Dobrador
+Você não pode se teletransportar, apenas dobrar o espaço. Você recebe um talento (espacial) como talento bônus.
+
+#### Teletransporte Inanimado
+Você não pode teletransportar criaturas, apenas objetos. Você recebe Teletransporte de Objeto como talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
+
+#### Distorção Limitada
+Você só pode se teletransportar quando estiver dentro de uma área que atenda a uma condição específica e só pode escolher um destino que também corresponda a essa condição. Escolha uma das seguintes condições ou converse com seu Mestre para encontrar outra apropriada: você só pode se teletransportar para e de áreas de escuridão; você só pode se teletransportar para e de um corpo d'água; você só pode se teletransportar para e de fogo; você só pode se teletransportar para e de uma árvore viva. Você recebe um talento (teletransporte) como talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Distorção Pessoal
+Você só pode usar sua habilidade de teletransporte em si mesmo. Você não pode receber os talentos Teletransporte de Objeto ou Teletransporte Involuntário. Você recebe um talento (teletransporte) como talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
+
+#### Teletransporte Fragmentado
+Seja devido ao estilo do seu teletransporte, treinamento incompleto ou algum outro fenômeno, sempre que você teletransporta algo, ele sofre dano durante o transporte. Você recebe Fragmentado como um talento bônus e deve sempre aplicar seus efeitos ao seu teletransporte. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
+
+#### Teletransporte Exaustivo
+Ao se teletransportar, você deve sempre aplicar o aprimoramento para aumentar a distância que você pode teletransportar um alvo, mesmo que esteja se teletransportando para uma distância menor. Você recebe um talento (teletransporte) como um talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
+
+\page

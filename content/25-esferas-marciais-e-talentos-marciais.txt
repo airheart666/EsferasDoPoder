@@ -1,0 +1,60 @@
+<div class='pageNumber auto'></div>
+
+# 
+Bem-vindo às Esferas de Poder, um suplemento de combate para D&D 5ª edição. Neste capítulo, você encontrará uma nova maneira de criar e jogar com personagens marciais em seus jogos da 5ª edição, expandindo não apenas o que eles podem fazer, mas também o fluxo dos combates e os tipos de personagens com os quais você pode jogar.
+
+Esferas de Poder utiliza pouquíssimas mecânicas novas (todas apresentadas abaixo), optando por usar as mecânicas principais de maneiras novas e interessantes para tornar o combate uma experiência mais cinematográfica. Em vez de simplesmente trocar golpes, Esferas de Poder oferece aos personagens uma variedade de novos truques, táticas e técnicas para que eles possam fortalecer seus aliados, debilitar seus inimigos e tornar o combate uma parte divertida e envolvente de suas histórias.
+
+Assim como Esferas de Magia, o sistema de magia alternativo, Esferas de Poder é uma abordagem conceitual para a criação de personagens. Em vez de simplesmente escolher uma classe e ficar preso a esse estilo de jogo (ladinos para habilidades, guerreiros para dano, bárbaros para absorver dano, etc.), os personagens podem combinar esferas e talentos para criar uma réplica muito mais exata da ideia que têm em mente. E embora a classe certamente desempenhe um papel na criação dessa imagem, ela não é de forma alguma a única escolha determinante.
+
+## Esferas Marciais e Talentos Marciais
+As habilidades marciais listadas neste suplemento são divididas em esferas. Uma esfera é um grupo de habilidades baseadas em um tema. Cada esfera possui uma habilidade ou habilidades concedidas pela esfera base e pode ser expandida com os talentos daquela esfera.
+Existem 22 esferas marciais: Alquimia, Atletismo, Barragem, Briga de Bar, Domínio das Feras, Berserker, Bruto, Duas Armas, Equipamento, Esgrima, Gladiador, Guardião, Liderança, Retribuição, Canalha, Batedor, Escudo, Atirador de Elite, Engenhosidade, Armadilha, Líder de Guerra e Luta Livre.
+
+As esferas marciais concedem técnicas poderosas, mas são separadas da habilidade de conjuração. Sempre que um personagem ganha um talento marcial, ele pode gastá-lo de duas maneiras: para ganhar uma nova esfera marcial base ou para ganhar um talento associado a uma esfera marcial que já possua. O número de talentos marciais que um personagem ganha difere entre as classes. Uma vez gasto, um talento não pode ser alterado, a menos que seja permitido retreinamento. Algumas características de classe ou outras opções concedem a você uma esfera bônus ou um talento bônus específico. Se você ganhar uma esfera ou talento que já possui, poderá ganhar um talento de sua escolha da mesma esfera.
+
+**Talentos Lendários**: Talentos Básicos podem ser adquiridos por qualquer personagem que possua a esfera à qual o talento pertence, mas os talentos lendários são diferentes em muitos aspectos importantes. Primeiro, os talentos Lendários têm pré-requisitos que um personagem deve possuir para adquiri-los. Segundo, enquanto os talentos básicos são apropriados para praticamente qualquer cenário realista e desafiador, os talentos lendários são diferentes.
+
+Os talentos lendários permitem que um personagem marcial realize feitos de poder sobre-humanos, como saltar sobre montanhas ou golpear com tanta força que abre buracos através das dimensões.
+
+Portanto, os talentos lendários podem não ser apropriados para todos os jogos e, portanto, exigem a permissão do Mestre para serem usados.
+
+## Regras e Termos Relevantes
+
+### Foco Marcial
+Um personagem que possui tradição marcial ou talentos marciais pode alcançar o foco marcial. Os personagens ganham seu foco marcial após um minuto de descanso ou realizando a ação de Esquiva. Você não pode, de forma alguma, recuperar o foco mais de uma vez por rodada.
+
+Quando você tem foco marcial, pode gastá-lo antes de realizar qualquer teste de resistência de Força, Destreza ou Constituição para tratar o dado como se tivesse tirado um 10. Você também pode gastar seu foco marcial para obter o benefício de certos talentos marciais e características de classe, conforme descrito em sua descrição, enquanto outros talentos e habilidades podem exigir que você tenha foco marcial.
+
+Uma vez que você tenha adquirido foco marcial, você permanece focado até gastar seu foco, ficar inconsciente ou dormir (ou entrar em transe meditativo).
+
+### Habilidade Chave
+A tradição marcial de um personagem determina qual atributo (geralmente Inteligência, Sabedoria ou Carisma) é usado para determinar a força de sua destreza em combate. Esse atributo é chamado de habilidade chave. Os termos "habilidade-chave" e "habilidade do praticante" são usados indistintamente.
+
+Seu modificador de habilidade-chave (MAC) é usado para determinar muitas coisas, como a Classe de Dificuldade das habilidades de sua esfera, bem como 
+
+\page
+<div class='pageNumber auto'></div>
+
+algumas características da classe do praticante. Se um personagem possui uma tradição marcial e uma tradição mágica (veja Esferas de Poder), ele pode usar sua habilidade de conjuração de esferas como habilidade-chave tanto para suas habilidades mágicas quanto marciais, se for maior.
+
+A regra opcional "Múltiplas Tradições" pode permitir que um personagem tenha mais de um modificador de habilidade-chave.
+
+### Praticante
+Praticantes são personagens que treinam em esferas marciais. Sempre que uma esfera ou habilidade se refere ao praticante, refere-se à criatura individual que usa aquela esfera ou talento.
+
+### Classe de Dificuldade de Teste de Resistência
+Sempre que uma habilidade de esfera marcial exigir um teste de resistência, a Classe de Dificuldade (CD) para aquele teste de resistência será igual a 8 + seu bônus de proficiência + o modificador de habilidade-chave da tradição dele. Se a criatura alvo atingir ou exceder esse número em seu teste de resistência, ela frequentemente reduz ou nega o efeito. Se um personagem não possuir uma tradição marcial, ele usa Sabedoria como seu modificador de habilidade principal.
+
+### Ataque Especial
+Um ataque especial representa um método único de realizar um ataque. Um ataque especial aumenta o ataque que você realiza ao realizar a ação de Ataque; você não pode realizar múltiplos ataques especiais em uma rodada e, se puder realizar múltiplos ataques, isso aumenta apenas um. Ataques especiais são concedidos por certas esferas.
+
+### Variantes
+Esferas marciais às vezes têm variantes, listadas no final de suas páginas. Elas são consideradas parte das Tradições Marciais e normalmente são selecionadas na primeira vez que um personagem obtém acesso a essa esfera. Essas variantes infligem algum tipo de desvantagem ou limitação, mas também fornecem um benefício para compensar, conforme listado em suas descrições.
+
+Embora amplamente opcionais, a menos que o Mestre as selecione como parte da criação de tradições marciais, as variantes oferecem uma maneira de personalizar personagens e fornecer mecânicas que melhor se adaptam a um conceito específico de personagem.
+
+### Lembretes de Regras
+Muitas esferas marciais incluem lembretes de regras acima de seus talentos básicos, mas abaixo das habilidades padrão da esfera. Estes não são talentos, mas sim lembretes de regras padrão ou opcionais que são especialmente relevantes para o que os personagens que usam aquela esfera podem querer fazer em seus turnos. A menos que o Mestre diga o contrário, geralmente presume-se que os personagens tenham acesso ao conteúdo dos lembretes de regras, independentemente de conhecerem ou não aquela esfera.
+
+\page

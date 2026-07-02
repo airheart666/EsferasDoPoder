@@ -1,0 +1,330 @@
+<div class='pageNumber auto'></div>
+
+## Aprimoramento
+Você pode aplicar melhorias em criaturas e objetos, alterando suas propriedades. Ao obter a esfera de Aprimoramento pela primeira vez, você ganha as habilidades de degradar e aprimorar, além de um talento (aprimorar) ou (degradar) à sua escolha.
+
+#### Aprimorar
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: 9 metros
+**Duração**: :: Concentração, até 10 minutos
+**Alvo**: :: 1 criatura ou objeto
+**Custo**: :: 0 pp
+**Teste de Resistência**: :: Sabedoria
+
+Você pode aprimorar uma criatura ou objeto dentro do alcance. Se o alvo for uma criatura ou objeto inteligente que não queira ser aprimorado (ou um objeto na posse de uma criatura que não queira que seu objeto seja aprimorado), o alvo tem direito a um teste de resistência de Sabedoria para negar o efeito. Ao final de cada um de seus turnos, a criatura afetada pode fazer um teste de resistência de Sabedoria. Em caso de sucesso, o efeito termina para aquela criatura ou objeto em sua posse.
+:
+**Aprimoramento 2PM**: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem a necessidade de uma ação.
+
+#### Degradar
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: 9 metros
+**Duração**: :: Concentração, até 10 minutos
+**Alvo**: :: 1 criatura ou objeto
+**Custo**: :: 0PM
+**Teste de Resistência**: :: Sabedoria
+
+Você pode degradar uma criatura ou objeto dentro do alcance. O alvo tem direito a um teste de resistência de Sabedoria para negar o efeito sobre si mesmo ou sobre objetos em sua posse. Ao final de cada um de seus turnos, a criatura afetada pode fazer um teste de resistência de Sabedoria. Em caso de sucesso, o efeito termina para aquela criatura ou objeto em sua posse.
+:
+**Aprimorar 2PM**: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação. 
+
+### Talentos de Aprimorar/Degradar
+Talentos designados (aprimorar/degradar) lhe concedem diferentes maneiras de manipular as propriedades de objetos e criaturas. Ao usar uma habilidade de degradação ou aprimoramento, você escolhe uma opção dentre as que possui para conceder.
+
+Alguns talentos têm um custo em pontos de magia diferente das habilidades básicas de degradação ou aprimoramento; esses talentos substituem o custo base da habilidade quando usados.
+
+Se uma habilidade concede opções de degradação e aprimoramento, tentar aplicar a opção de degradação a um alvo sob o efeito do aprimoramento, ou vice-versa, exige que você seja bem-sucedido em um teste de habilidade de conjuração contra a CD da esfera do efeito existente; se bem-sucedido, você anula o efeito anterior em vez de aplicar o novo.
+
+#### Animar Objeto (aprimorar,degradar)
+
+###### <u>Aprimorar</u>
+**Custo**: :: 2PM
+
+Você pode aprimorar um objeto Minúsculo, concedendo-lhe movimento e uma aparência de vida. O objeto obedece aos seus comandos e entende sua linguagem, mas, como não é inteligente, só pode obedecer a comandos simples como "mover", "lutar", "guardar", "parar", etc.
+
+Se você animar a arma de um inimigo, a arma não poderá se mover nem atacar enquanto estiver sendo empunhada, mas o portador deverá passar em um teste de resistência de Destreza igual à CD da sua esfera de Aprimoramento a cada rodada em que estiver empunhando o item, ou perderá sua ação lutando contra a arma para controlá-la. Se você animar a armadura ou vestimenta de uma criatura, a criatura ficará agarrada e deverá passar em um teste de resistência de Destreza a cada rodada, ou também ficará impedida de se mover.
+
+Como uma ação bônus, você pode comandar mentalmente qualquer criatura que você tenha criado com este efeito, desde que a criatura esteja a até 150 metros de você (se você controlar múltiplas criaturas, pode comandar qualquer uma delas ou todas ao mesmo tempo, emitindo o mesmo comando para cada uma). Você decide qual ação a criatura realizará e para onde ela se moverá durante seu próximo turno, ou pode emitir um comando geral, como guardar uma câmara ou corredor específico. Se você não emitir nenhum comando, a criatura usará apenas as ações Desengajar, Esquivar ou Esconder-se para se defender da melhor maneira possível contra criaturas hostis. Uma vez dada uma ordem, a criatura continua a segui-la até que sua tarefa seja concluída.
+
+Um objeto animado é um constructo com CA, pontos de vida, ataques, Força e Destreza determinados por seu tamanho. Sua Constituição é 10, sua Inteligência e Sabedoria são 3 e seu Carisma é 1. Sua velocidade de deslocamento é de 9 metros; se o objeto não possuir pernas ou outros apêndices que possa usar para locomoção, ele terá uma velocidade de voo de 9 metros e poderá pairar. Se o objeto estiver firmemente preso a uma superfície ou a um objeto maior, como uma corrente parafusada a uma parede, sua velocidade é 0. Ele possui visão às cegas com um raio de 9 metros e fica cego além dessa distância. Quando o objeto animado chega a 0 pontos de vida, ele retorna à sua forma original e qualquer dano restante é transferido para essa forma.
+
+\page
+<div class='pageNumber auto'></div>
+
+Se você ordenar que um objeto ataque, ele pode realizar um único ataque corpo a corpo contra uma criatura a até 1,5 metro de distância. Ele realiza um ataque de pancada com um bônus de ataque e dano de concussão determinado pelo seu tamanho. O Mestre pode determinar que um objeto específico cause dano cortante ou perfurante com base em sua forma, ou outros tipos de dano, conforme apropriado (como dano de fogo para uma tocha animada).
+
+O tamanho máximo do objeto que você pode alvejar aumenta em uma categoria de tamanho no 5º nível (Pequeno), 11º (Médio) e 17º (Grande).
+:
+**Aprimoramento 1PM**: Você pode alvejar um objeto um tamanho maior que o normal. 
+:
+**Aprimoramento 2PM**: Você pode mirar em um objeto duas vezes maior que o normal.
+
+###### Tabela: Animar Objecto
+|Tamanho     | PV  | CA | For| Des| Ataque                             |
+|:-----------|:---:|:--:|:--:|:--:|:-----------------------------------|
+| Minúsculo  | 20  | 18 | 4  | 18 | +8 para acertar, 1d4 + 4 de dano   |
+| Pequeno    | 25  | 16 | 6  | 14 | +6 para acertar, 1d8 + 2 de dano   |
+| Médio      | 40  | 13 | 10 | 12 | +5 para acertar, 2d6 + 1 de dano   |
+| Grande     | 50  | 10 | 14 | 10 | +6 para acertar, 2d10 + 2 de dano  |
+| Enorme     | 80  | 10 | 18 | 6  | +8 para acertar, 2d12 + 4 de dano  |
+| Gigantesco | 120 | 10 | 22 | 4  | +10 para acertar, 3d12 + 6 de dano |
+
+###### <u>Degradar</u>
+Você pode degradar uma criatura do tipo constructo, fazendo com que ela fique impedida de se mover caso falhe em seu teste de resistência.
+
+#### Conceder Inteligência (degradar, aprimorar)
+###### <u>Aprimorar</u>
+**Custo**: :: 1PM
+
+Você pode aprimorar uma árvore, um objeto ou uma criatura sem Inteligência ou com Inteligência 3 ou menos, concedendo-lhe inteligência temporária. O alvo ganha Inteligência 10 e a capacidade de falar e entender um idioma que você conheça. Se o alvo for um objeto mágico ou uma árvore, ele também ganha sentidos semelhantes aos de um humano e Sabedoria ou Carisma 10. Isso não concede ao alvo habilidades extras nem a capacidade de se mover. Se a criatura alvo possuía imunidade a dano psíquico ou às condições enfeitiçado ou amedrontado por ser irracional, ela perde essas imunidades.
+
+A criatura ou objeto é amigável com você, mas não adquire maior percepção do ambiente ao seu redor antes de desenvolver inteligência (portanto, uma pedra inteligente não poderia lhe dizer quem passou por ela antes de adquirir consciência, nem uma árvore inteligente poderia descrever uma criatura que a escalou no dia anterior), nem obedece automaticamente aos seus comandos, embora geralmente ofereça favores e auxílio que não sejam muito perigosos.
+
+Se você possuir o talento Animar Objeto, ele receberá o seguinte aprimoramento:
+:
+**Aprimoramento 1PM**: Seu objeto animado ganha inteligência, como o aprimoramento Conceder Inteligência. O objeto ainda obedece a você explicitamente, mesmo agora que é inteligente.
+
+###### <u>Degradar</u>
+Você pode degradar uma criatura do tipo constructo, reduzindo sua pontuação de Inteligência para 2 (a menos que seja menor) e removendo sua capacidade de falar ou entender qualquer idioma.
+:
+**Aprimoramento 1PM**: O constructo afetado também fica atordoado por 1d4 rodadas.
+
+#### Arma Mortal (aprimorar,degradar)
+Você ganha as seguintes habilidades:
+
+##### Arma Afiada
+###### <u>Aprimorar</u>
+Você pode aprimorar uma arma, arma natural ou ataque desarmado; Ataques realizados com esta arma causam um acerto crítico com um resultado de 19 ou 20 no dado.
+
+###### <u>Degradar</u>
+Você pode degradar uma arma, arma natural ou ataque desarmado; ataques feitos com esta arma consideram todos os dados de dano rolados como se tivessem rolado 1 e são incapazes de causar acertos críticos.
+
+##### Munição Perseguidora
+###### <u>Aprimorar</u>
+Você pode aprimorar uma arma de ataque à distância ou uma arma natural de ataque à distância, concedendo à munição disparada por ela uma mente rudimentar. Ataques à distância com essa arma consideram o nível de cobertura do alvo como um nível inferior (cobertura total se torna três quartos de cobertura, três quartos de cobertura se torna meia cobertura, meia cobertura é ignorada). Para atingir uma criatura com cobertura total, deve haver uma abertura na cobertura grande o suficiente para a munição passar.
+
+###### <u>Degradar</u>
+Você pode degradar uma arma de ataque à distância ou uma arma natural de ataque à distância, concedendo à munição disparada por ela uma mente rudimentar. Ataques à distância realizados com esta arma têm desvantagem. Se um ataque errar e houver uma criatura aliada ao atacante a até 9 metros do alvo, a munição se desvia em direção ao aliado. Role um novo ataque, sem desvantagem desta habilidade, contra a CA do aliado mais próximo do atacante e aplique o resultado do ataque a essa criatura.
+
+\page
+<div class='pageNumber auto'></div>
+
+##### Arma Versátil
+###### <u>Aprimorar</u>
+Você pode aprimorar uma arma, arma natural ou ataque desarmado, fazendo com que ela seja tratada como um tipo de material escolhido para fins de ignorar resistência a dano.
+
+#### Arma de Energia (aprimorar)
+###### <u>Aprimorar</u>
+Você pode aprimorar uma arma, permitindo que ela cause 1d6 de dano adicional de ácido, frio, fogo, relâmpago, necrótico, radiante ou trovão, escolhido no momento da conjuração da habilidade. Uma arma não pode se beneficiar de mais de uma instância deste efeito; se conjurado em uma arma que já esteja se beneficiando desta habilidade, a instância anterior termina.
+
+#### Aprimorar Equipamento (aprimorar,degradar)
+###### <u>Aprimorar</u>
+Você pode aprimorar uma arma, arma natural, armadura ou escudo, fazendo com que seja considerado mágico e concedendo-lhe um bônus nas jogadas de ataque e dano (se for uma arma ou arma natural) ou na CA (se for uma armadura) igual à metade do seu bônus de proficiência, arredondado para baixo. Isso não se acumula com nenhum bônus mágico nas jogadas de ataque e dano ou na CA já concedido pelo item. Você pode considerar roupas ou o corpo de uma criatura como armadura para fins de aplicação da CA. Objetos que poderiam ser usados como armas improvisadas podem se beneficiar deste efeito.
+
+###### <u>Degradar</u>
+Você pode degradar uma arma, arma natural, armadura ou escudo. Quaisquer bônus mágicos de ataque, dano ou CA do alvo são suprimidos durante a duração.
+
+#### Aprimorar Veneno (aprimorar,degradar)
+Você ganha as seguintes habilidades:
+
+##### Veneno Corrosivo
+###### <u>Aprimorar</u>
+Você pode aprimorar uma arma natural ou objeto que cause dano de veneno, tornando-o corrosivo, alterando o dano de veneno para dano ácido.
+
+##### Aumentar Virulência
+###### <u>Aprimorar</u>
+Você pode aprimorar uma dose de veneno; qualquer criatura que fizer um teste de resistência contra os efeitos da dose de veneno terá desvantagem no teste. Você pode aplicar este efeito de aprimoramento a uma arma natural que cause dano de veneno ou inflija a condição envenenado; os efeitos se aplicam ao próximo ataque bem-sucedido feito com ela.
+:::
+###### <u>Degradar</u>
+Você pode degradar uma dose de veneno; qualquer criatura que fizer um teste de resistência contra os efeitos da dose de veneno terá vantagem no teste. Você pode aplicar este efeito de degradação a uma arma natural que cause dano de veneno ou inflija a condição envenenado; os efeitos se aplicam a todos os ataques feitos com ela durante a duração do efeito. Você pode degradar uma fonte de dano de veneno ou a condição envenenado que afeta uma criatura; a criatura ganha vantagem nos testes de resistência contra o efeito alvo.
+
+#### Aprimorar Tamanho (aprimorar,degradar)
+Você ganha as seguintes habilidades de aprimoramento:
+
+##### Aprimorar Capacidade
+###### <u>Aprimorar</u>
+Você pode aprimorar criaturas, dobrando sua capacidade de carga.
+:
+**Aprimoramento 1PM**: A capacidade de carga da criatura é multiplicada por 4.
+
+###### <u>Degradar</u>
+Você pode degradar criaturas, reduzindo sua capacidade de carga para 1/4 do valor normal.
+:
+**Aprimoramento 1PM**: A capacidade de carga da criatura é reduzida para 1/8.
+
+##### Flexibilidade Aprimorada
+###### <u>Aprimorar</u>
+Você pode aprimorar uma criatura, permitindo que ela seja tratada como um tamanho menor ao passar por espaços apertados.
+
+###### <u>Degradar</u>
+Você pode degradar uma criatura, fazendo com que ela seja tratada como um tamanho maior ao passar por espaços apertados.
+
+#### Energia Falsa (aprimorar)
+Você ganha as seguintes habilidades de aprimoramento:
+
+##### Ignorar Exaustão
+###### <u>Aprimorar</u>
+Você pode aplicar um aprimoramento a uma criatura, permitindo que ela trate temporariamente seu nível de exaustão como um número de níveis menor igual ao seu bônus de proficiência. O alvo ainda está exausto para efeitos que aumentam a exaustão, mas só pode morrer de exaustão se seu valor de exaustão reduzido for 6 ou maior. A criatura também adiciona seu nível à sua pontuação de Constituição para determinar por quanto tempo ela pode prender a respiração ou correr antes de fazer testes de Constituição. Como efeito colateral, aplicar este aprimoramento a uma criatura adormecida faz com que ela acorde imediatamente.
+
+\page
+<div class='pageNumber auto'></div>
+
+##### Resistir à Debilitação
+###### <u>Aprimorar</u>
+Você pode aprimorar criaturas, permitindo que elas ignorem uma redução em um atributo, até o dobro do seu bônus de proficiência.
+
+#### Manipular Dureza (aprimorar,degradar)
+Você pode manipular a durabilidade de objetos. Ter como alvo o equipamento desgastado de uma criatura não concede o benefício à criatura.
+
+###### <u>Aprimorar</u>
+Você pode aprimorar um objeto para torná-lo resistente a dano de concussão, perfuração e corte.
+:
+**Aprimoramento 2PM**: Você pode aplicar este efeito a uma criatura.
+
+###### <u>Degradar</u>
+Você pode degradar um objeto, tornando-o vulnerável a dano de concussão, perfuração e corte. Se o alvo tiver resistência a um desses tipos de dano, ele perde essa resistência em vez de ganhar vulnerabilidade. Se o alvo for imune a um tipo de dano, ele perde a imunidade e ganha resistência.
+:
+**Aprimoramento 2PM**: Você pode aplicar este efeito a uma criatura.
+
+#### Aprimoramento Mental (aprimorar,degradar)
+Você ganha as seguintes habilidades:
+
+##### Aprimorar Foco
+###### <u>Aprimorar</u>
+Você pode aprimorar criaturas. Escolha uma perícia ou proficiência em ferramenta; ao fazer um teste de habilidade usando essa perícia ou ferramenta, a criatura afetada pode optar por tratar o resultado como se tivesse rolado um 10 em vez de rolar.
+
+###### <u>Degradar</u>
+Você pode degradar criaturas. O alvo não pode adicionar seu bônus de proficiência a nenhum teste de perícia ou habilidade com ferramentas que fizer.
+
+##### Aprimorar Mente
+###### <u>Aprimorar</u>
+Você pode aprimorar criaturas, concedendo-lhes vantagem em testes de Inteligência, Sabedoria e Carisma.
+
+###### <u>Degradar</u>
+Você pode degradar criaturas, impondo desvantagem em testes de Inteligência, Sabedoria e Carisma.
+
+#### Abafar Som (aprimorar,degradar)
+###### <u>Aprimorar</u>
+Você pode aprimorar uma criatura ou objeto, abafando qualquer som que ele produza. Testes de Sabedoria (Percepção) feitos para ouvir qualquer som que ele produza sofrem desvantagem.
+
+###### <u>Degradar</u>
+Você pode degradar uma criatura ou objeto, amplificando qualquer som que ele produza. Testes de Sabedoria (Percepção) feitos para ouvir qualquer som que ele produza têm vantagem. Criaturas afetadas e criaturas que possuam objetos afetados sofrem desvantagem em testes de Furtividade.
+
+#### Aprimoramento Físico (aprimorar,degradar)
+Você adquire as seguintes habilidades:
+
+##### Aprimorar Físico
+###### <u>Aprimorar</u>
+Você pode aprimorar criaturas, concedendo-lhes vantagem em testes de Força, Destreza ou Constituição.
+
+###### <u>Degradar</u>
+Você pode degradar criaturas, impondo desvantagem em testes de Força, Destreza e Constituição.
+
+##### Reflexos Superiores
+###### <u>Aprimorar</u>
+Você pode aprimorar criaturas, concedendo-lhes vantagem em testes de iniciativa e permitindo que elas realizem um ataque de oportunidade por rodada sem gastar sua reação. Se este efeito for aplicado após a rolagem de iniciativa, role a iniciativa da criatura afetada novamente, aplicando vantagem. A criatura age com a nova iniciativa se ela for maior que a original; caso contrário, a iniciativa original é mantida.
+
+###### <u>Degradar</u>
+Você pode degradar criaturas, concedendo-lhes desvantagem em testes de iniciativa e removendo sua capacidade de realizar ataques de oportunidade. Se este efeito for aplicado após a rolagem de iniciativa, role a iniciativa da criatura afetada novamente, aplicando desvantagem. A criatura age com a nova iniciativa se ela for menor que a original; caso contrário, a iniciativa original é mantida.
+
+##### Controle de Velocidade (aprimorar,degradar)
+###### <u>Aprimorar</u>
+Você pode aprimorar criaturas, concedendo a elas um bônus de +3 metros em qualquer deslocamento que possuam. Esse bônus de deslocamento aumenta em +1,5 metro no 5º (4,5 metros), 11º (6 metros) e 17º (7,5 metros) níveis.
+
+###### <u>Degradar</u>
+Você pode degradar uma criatura, reduzindo pela metade um de seus deslocamentos.
+___
+**Aprimoramento 1PM**: a criatura não pode usar a ação Desengajar.
+___
+**Aprimoramento 1PM**: você remove completamente um dos deslocamentos especiais de uma criatura, como voo ou escavação; se a criatura em questão tiver um deslocamento natural de voo, ela plana até o chão.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Resistência Inabalável (aprimorar,degradar)
+###### <u>Aprimorar</u>
+Você pode aprimorar criaturas, concedendo-lhes proficiência em um teste de resistência.
+
+###### <u>Degradar</u>
+Você pode degradar criaturas, concedendo-lhes desvantagem em todos os testes de resistência.
+
+#### Roubar Habilidades (degradar)
+Você adquire as seguintes habilidades:
+
+##### Roubar Sentidos
+###### <u>Degradar</u>
+**Custo**: :: 1PM
+
+Você pode degradar criaturas, fazendo com que elas fiquem cegas ou surdas (à sua escolha), ou percam um sentido especial, como o faro, Percepção Sísmica, Percepção Cega, Visão Cega, etc.
+
+##### Língua Silenciosa
+###### <u>Degradar</u>
+Você pode degradar criaturas, tornando-as incapazes de falar e de fornecer componentes verbais. Se a criatura possuir telepatia ou algum outro meio de comunicação sem fala (incluindo linguagem de sinais ou escrita), você pode tornar um desses meios de comunicação impossível.
+
+#### Controle de Peso (aprimorar,degradar)
+###### <u>Aprimorar</u>
+Você pode aprimorar um objeto ou criatura, reduzindo seu peso ou até mesmo tornando-o sem peso. Você pode tornar criaturas e objetos Minúsculos sem peso no 1º nível, o que melhora para objetos Pequenos no 5º nível, objetos Médios no 11º nível e objetos Grandes no 17º nível.
+
+Alvos um tamanho maior que o seu limite máximo são reduzidos à metade do peso, enquanto objetos um tamanho menor que o seu máximo podem ser feitos para flutuar.
+
+Os seguintes efeitos se aplicam a alvos que estão com metade do peso, sem peso ou flutuando. Esses efeitos se acumulam (portanto, um objeto sem peso receberia os efeitos de sem peso e de metade do peso).
+
+• :: **Meio-Peso**: Uma criatura com metade do peso sofre desvantagem em testes para resistir a ser empurrada.
+• :: **Sem Peso**: Uma criatura ou objeto sem peso conta como sendo de um tamanho menor que o normal ao determinar quem pode levantá-lo por meio de efeitos determinados pelo tamanho, como telecinese ou o talento Arremesso de Rocha (veja Esferas de Poder). Armas maiores sem peso não impõem desvantagem quando empunhadas por uma criatura um tamanho menor que o necessário para elas.
+• :: **Flutuando**: Você pode optar por mover o alvo para cima ou para baixo 6 metros por rodada. Embora você não possa fazer um objeto ou criatura se mover em qualquer direção que não seja para cima ou para baixo, isso pode ser facilmente combinado com telecinese, poder do vento ou empurrão em uma parede (com metade da velocidade usual do alvo) para criar efeitos semelhantes a voo. Criaturas que não desejam o efeito têm direito a um novo teste de resistência a cada rodada para negar esse efeito sobre si mesmas, mas podem sofrer dano de queda se forem bem-sucedidas.
+:
+**Aprimoramento 1PM**: Aumenta o tamanho do objeto que você pode afetar em 2 categorias de tamanho.
+
+###### <u>Degradar</u>
+Você pode degradar um objeto ou criatura, dobrando seu peso e reduzindo todas as suas velocidades de movimento em 3 metros, além de impedi-lo de usar a ação Disparada.
+
+### Outros Talentos
+#### Aprimoramento Duplo
+**Aprimoramento 1PM**: Sempre que você degradar ou aprimorar com um talento (degradar) ou (aprimorar) que lhe conceda múltiplas opções, você pode selecionar duas opções desse talento específico. Por exemplo, você pode usar Aprimorar Equipamento para que um escudo conceda um bônus de ataque e dano (se usado para realizar ataques), bem como CA.
+:
+**Aprimoramento 2PM**: Sempre que você usar uma habilidade de degradar ou aprimorar, você pode optar por conceder duas opções diferentes que você possua com uma única conjuração. Por exemplo, se você tiver o talento Arma de Energia (aprimorar) e o talento Aprimorar Equipamento (aprimorar), você pode optar por conceder ambas as opções de aprimoramento ao usar a habilidade de aprimoramento. Os custos em pontos de magia de cada um dos dois talentos (aprimorar) são combinados e são tratados como um único efeito de esfera para fins de contra-ataque e dissipação.
+
+### Talentos Avançados de Aprimoramento
+#### Conceder Sensibilidade
+**Pré-requisitos**: :: Esfera de Aprimoramento (Animar Objeto, Conceder Inteligência), 11º nível ou superior.
+:
+**Aprimoramento 3PM**: Você pode aumentar o tempo de conjuração do seu aprimoramento Conceder Inteligência para 24 horas, trazendo uma besta, corpo, árvore ou objeto mágico à plena consciência. Este é um efeito instantâneo e, como tal, é uma mudança permanente e não pode ser dissipada. Não tem efeito em criaturas com Inteligência 3 ou superior.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+:
+Esta habilidade pode se manifestar de uma das seguintes maneiras:
+ 
+• ::Você transforma uma árvore em um objeto animado inteligente, concedendo-lhe os benefícios dos seus aprimoramentos Animar Objeto e Conceder Inteligência.
+
+• :: Você transforma uma besta em uma besta desperta, concedendo-lhe os benefícios de Conceder Inteligência permanentemente.
+
+• :: Você concede vida a um corpo vazio. Este pode ser um corpo criado através dos talentos avançados Criação de Carne e Criação de Matérias-Primas, ou um corpo feito de partes de outros corpos recentemente mortos costuradas juntas. A criatura criada é um ser simples (sem antecedente, sem classe, 10 em todos os atributos e 4 pontos de vida, raça determinada pela composição do corpo), mas com a permissão do Mestre, pode rolar os atributos normalmente e ser treinada para obter sua própria classe e antecedente.
+
+• :: Você transforma um objeto mágico em um item inteligente com Inteligência, Sabedoria e Carisma 10. O item deve ser um item mágico permanente (portanto, pergaminhos, varinhas, poções, etc., não podem ser aprimorados desta forma) e o item não adquire nenhum poder.
+
+A criatura alvo geralmente compartilha seu alinhamento e fica enfeitiçada por você por 30 dias ou até que você ou seus companheiros façam algo prejudicial a ela. Quando a condição de encantamento termina, a criatura escolhe se deseja permanecer amigável a você, com base em como você a tratou enquanto estava enfeitiçada.
+
+#### Aprimoramentos Referenciais
+**Pré-requisitos**: :: Esfera de Aprimoramento, Esfera Universal (Estendida (metasfera), Massa (metasfera)), 15º nível ou superior.
+:
+**Aprimoramento 2PM**: Sempre que você aprimorar uma habilidade de degradação ou aprimoramento com o talento Massa (metaesfera), você pode fazer com que a habilidade de degradação ou aprimoramento afete uma esfera de 9 metros (30 pés). Se fizer isso, a duração do efeito muda para 1 semana, não é necessária concentração e afeta todos os alvos válidos que estiverem dentro da área; os benefícios e penalidades desaparecem imediatamente se o alvo sair da área.
+
+Ao usar este talento, você pode excluir alvos do efeito com base em algum critério visível ou audível. Isso permitiria, por exemplo, que Aprimorar Equipamento afetasse quaisquer espadas dentro da área, ou que Roubar Habilidade se aplicasse apenas a criaturas que não estejam exibindo um emblema específico de forma proeminente.
+
+#### Inversão de Gravidade (aprimorar)
+**Pré-requisitos**: :: Esfera de Aprimoramento (Controle de Peso), 15º nível ou superior.
+:
+**Aprimoramento 2PM**: Você pode aprimorar uma área de até 10 cubos de 3 metros, dispostos contiguamente. Dentro desta área, a gravidade se inverte. Objetos e criaturas soltos na área caem para cima e atingem o topo da área em 1 rodada. Se um objeto sólido (como um teto) for encontrado durante a queda, os objetos e criaturas em queda o atingirão da mesma forma que atingiriam durante uma queda normal. Se um objeto ou criatura atingir o topo da área sem atingir nada, ele permanece lá, oscilando levemente, até o efeito terminar. Ao final da duração, os objetos e criaturas afetados caem para baixo.
+
+Desde que tenha algo para se segurar, uma criatura presa na área pode tentar um teste de resistência de Destreza para se firmar e não cair para cima. Criaturas que podem voar ou levitar podem se impedir de cair.
+
+### Variantes
+#### Especialista em Entropia
+Você não pode usar a habilidade de aprimoramento. Você ganha um talento bônus, mas tanto o talento ganho ao escolher esta esfera quanto o talento bônus ganho por esta variante devem ser talentos de (aprimorar,degradar).
+
+##### Magias Pessoais
+Você só pode usar suas habilidades de degradar e aprimorar em si mesmo e em seus próprios equipamentos, independentemente do alcance da esfera de Aprimoramento. Qualquer efeito de aprimoramento concedido a um objeto deixa de funcionar quando o objeto não estiver em sua posse ao final do seu turno. Você ganha um talento de (aprimorar) como talento bônus.
+
+\page

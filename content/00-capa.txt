@@ -1,0 +1,102 @@
+{{frontCover}}
+
+{{logo ![](/assets/naturalCritLogoRed.svg)}}
+
+# Esferas de Magia e Poder
+___
+
+{{banner HOMEBREW}}
+
+{{footnote
+  Um sistema de magias e regras de combate alternativo para D&D 5e.
+}}
+
+![background image](https://cdna.artstation.com/p/assets/images/images/051/095/906/large/greg-rutkowski-dragonslayer-key-art-final-1920.jpg?1656443296){position:absolute,bottom:0,right:-20px,height:100%}
+ 
+
+\page
+<div class='pageNumber auto'></div>
+
+# Índice de Conteúdos
+
+{{toc
+- ### [{{ Esferas de Magia}}{{ 3}}](#p3)
+    - #### [{{ Usando uma Esfera de Magia}}{{ 4}}](#p4)
+  - #### [{{ Regras e Termos Relevantes}}{{ 5}}](#p5)
+    - ##### [{{ Aprimoramento}}{{ 5}}](#p5)
+    - ##### [{{ Concentração}}{{ 5}}](#p5)
+    - ##### [{{ Anulação}}{{ 5}}](#p5)
+    - ##### [{{ Dado de Dano}}{{ 5}}](#p5)
+    - ##### [{{ Habilidade Chave}}{{ 5}}](#p5)
+    - ##### [{{ Testes de Habilidade de Conjuração}}{{ 5}}](#p5)
+    - ##### [{{ Classe de Conjuração de Esferas}}{{ 6}}](#p6)
+    - ##### [{{ Talento Mágico}}{{ 6}}](#p6)
+    - ##### [{{ Talentos Avançados}}{{ 6}}](#p6)
+    - ##### [{{ Tradição Mágica}}{{ 6}}](#p6)
+    - ##### [{{ Ataques Mágicos e Testes de Resistência}}{{ 6}}](#p6)
+    - ##### [{{ Ponto de Magia}}{{ 6}}](#p6)
+    - ##### [{{ Esfera}}{{ 7}}](#p7)
+    - ##### [{{ Efeito de Esfera}}{{ 7}}](#p7)
+    - ##### [{{ Variantes}}{{ 7}}](#p7)
+  - #### [{{ Adivinhação}}{{ 8}}](#p8)
+  - #### [{{ Aprimoramento}}{{ 21}}](#p21)
+  - #### [{{ Alteração}}{{ 27}}](#p27)
+  - #### [{{ Clima}}{{ 40}}](#p40)
+  - #### [{{ Conjuração}}{{ 49}}](#p49)
+  - #### [{{ Criação}}{{ 65}}](#p65)
+  - #### [{{ Destino}}{{ 71}}](#p71)
+  - #### [{{ Destruição}}{{ 78}}](#p78)
+  - #### [{{ Distorção}}{{ 91}}](#p91)
+  - #### [{{ Escuridão}}{{ 101}}](#p101)
+  - #### [{{ Ilusão}}{{ 108}}](#p108)
+  - #### [{{ Luz}}{{ 114}}](#p114)
+  - #### [{{ Mente}}{{ 120}}](#p120)
+  - #### [{{ Morte}}{{ 128}}](#p128)
+  - #### [{{ Natureza}}{{ 144}}](#p144)
+  - #### [{{ Proteção}}{{ 165}}](#p165)
+  - #### [{{ Telecinese}}{{ 171}}](#p171)
+  - #### [{{ Tempo}}{{ 178}}](#p178)
+  - #### [{{ Universal}}{{ 186}}](#p186)
+  - #### [{{ Vida}}{{ 197}}](#p197)
+}}
+
+
+\column
+
+{{toc
+- ### [{{ Esferas de Poder }}{{ 201}}](#p201) 
+  - #### [{{ Esferas Marciais e Talentos Marciais}}{{ 202}}](#p202)
+  - #### [{{ Regras e Termos Relevantes}}{{ 202}}](#p202)
+    - ##### [{{ Foco Marcial}}{{ 202}}](#p202)
+    - ##### [{{ Habilidade Chave}}{{ 202}}](#p202)
+    - ##### [{{ Praticante}}{{ 203}}](#p203)
+    - ##### [{{ Classe de Dificuldade de Teste de Resistência}}{{ 203}}](#p203)
+    - ##### [{{ Ataque Especial}}{{ 203}}](#p203)
+    - ##### [{{ Variantes}}{{ 203}}](#p203)
+    - ##### [{{ Lembretes de Regras}}{{ 203}}](#p203)
+  - #### [{{ Alquimia}}{{ 204}}](#p204)
+  - #### [{{ Armadilha}}{{ 216}}](#p216)
+  - #### [{{ Atirador}}{{ 220}}](#p220)
+  - #### [{{ Atletismo}}{{ 222}}](#p222)
+  - #### [{{ Barragem}}{{ 226}}](#p226)
+  - #### [{{ Batedor}}{{ 228}}](#p228)
+  - #### [{{ Brigão}}{{ 234}}](#p234)
+  - #### [{{ Bruto}}{{ 238}}](#p238)
+  - #### [{{ Canalha}}{{ 241}}](#p241)
+  - #### [{{ Domínio das Feras}}{{ 244}}](#p244)
+  - #### [{{ Duas Armas}}{{ 248}}](#p248)
+  - #### [{{ Duelismo}}{{ 250}}](#p250)
+  - #### [{{ Engenhosidade}}{{ 253}}](#p253)
+  - #### [{{ Equipamento}}{{ 259}}](#p259)
+  - #### [{{ Escudo}}{{ 263}}](#p263)
+  - #### [{{ General}}{{ 265}}](#p265)
+  - #### [{{ Gladiador}}{{ 268}}](#p268)
+  - #### [{{ Guardião}}{{ 271}}](#p271)
+  - #### [{{ Ímpeto}}{{ 275}}](#p275)
+  - #### [{{ Liderança}}{{ 278}}](#p278)
+  - #### [{{ Luta Livre}}{{ 287}}](#p287)
+  - #### [{{ Retribuição}}{{ 290}}](#p290)
+}}
+
+
+\page

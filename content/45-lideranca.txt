@@ -1,0 +1,451 @@
+<div class='pageNumber auto'></div>
+
+## Liderança
+Os praticantes da esfera de Liderança aprendem a reunir, organizar e comandar outros. Ao adquirir a esfera de Liderança, você ganha proficiência em Persuasão. Se você já possui proficiência em Persuasão, você ganha um talento bônus desta esfera. Além disso, você ganha o pacote de Liderança de Seguidor ou de Parceiro.
+
+### Regras de Liderança
+A esfera de Liderança difere das outras esferas marciais porque não lida com as habilidades de um indivíduo, mas sim com as pessoas com quem ele se cerca. É sempre possível que um Mestre de Jogo crie um NPC para complementar um grupo ou que uma equipe de aventureiros contrate alguns capangas para auxiliá-los, e essas decisões cabem ao Mestre de Jogo.
+
+A esfera de Liderança, no entanto, reflete personagens para os quais ter seguidores e companheiros não é apenas algo passageiro, mas sim tão essencial à sua personalidade quanto sua habilidade com a espada ou seu conhecimento de magia. Talvez você seja um nobre e mantenha acompanhantes em suas aventuras. Talvez você seja um professor e esteja sempre rodeado de alunos. Ou talvez você simplesmente tenha um NPC favorito que, quando chega a hora de se separar de você, você decide adicioná-lo ao grupo como um companheiro em vez de vê-lo partir.
+
+Sendo assim, a esfera de Liderança possui algumas restrições especiais que a diferenciam das demais esferas:
+
+• :: Embora o Mestre de Jogo sempre tenha a capacidade de alterar as regras para se adequarem a um jogo ou campanha, a esfera de Liderança só pode ser utilizada com a permissão do Mestre; alguns jogos podem simplesmente não se adequar a ajudantes e companheiros, enquanto alguns Mestres podem simplesmente não querer assumir o fardo de ter tantos NPCs seguindo os personagens jogadores o tempo todo. Mesmo que o Mestre de Jogo permita a esfera de Liderança, ele tem o direito de dizer que ela não pode ser escolhida antes do 5º nível do personagem; embora alguns personagens possam começar o jogo com um aliado de confiança, a maioria dos aventureiros precisa, no mínimo, ter uma reputação antes de começar a atrair ajudantes e seguidores para sua causa.
+
+• :: A esfera de Liderança e seus talentos não podem ser escolhidos como talentos temporários ou talentos intercambiáveis; Eles não podem ser colocados dentro da arma personalizada de um armígero ou alterados por meio do talento Combatente Intuitivo, etc. Da mesma forma, os jogadores não podem fazer com que seus companheiros conjurados, companheiros animais, ajudantes ou qualquer pessoa que não seja seu personagem jogador assuma a esfera ou os talentos de Liderança.
+
+#### Companheiros
+Os companheiros não são exclusivos da esfera de Liderança; eles também aparecem em diversas publicações oficiais. Companheiros de outras publicações podem ser obtidos através da esfera de Liderança, e um Mestre de Jogo pode sempre adicionar um companheiro a um grupo quando desejar, independentemente de um jogador ter ou não a esfera de Liderança.
+
+Quando, onde e como um companheiro é obtido fica a critério do Mestre de Jogo, mas ele deve trabalhar com o jogador para determinar a escolha mais apropriada para a campanha.
+
+#### Experiência
+Companheiros e seguidores não são considerados personagens jogadores e, portanto, não recebem pontos de experiência.
+
+#### Custos de Companheiros
+Como os companheiros e seguidores obtidos na esfera de Liderança são "comprados" com talentos, eles não custam dinheiro para contratar, mas, da mesma forma, não podem gerar dinheiro para os jogadores trabalhando em empregos paralelos, a menos que um talento específico na esfera de Liderança diga o contrário. Em vez disso, o custo de contratar, alimentar e equipar esses companheiros, bem como o dinheiro que eles ganhariam com atividades de tempo livre, é abstraído; Os ajudantes são pagos com a experiência que ganham, com os itens diversos que recuperam e vendem, que os PCs não se preocupam em usar, e os seguidores geram dinheiro para o PC em trabalhos secundários sem importância, que então cobrem seu pagamento e manutenção. Um jogador sempre pode dar aos seus ajudantes e companheiros equipamentos melhores e itens mágicos por conta própria, mas esses custos precisam sair do seu próprio bolso.
+
+#### Lealdade
+Os ajudantes e seguidores são leais ao jogador, mas nenhum ser inteligente tolerará ser maltratado. Ajudantes especialmente descontentes podem trabalhar em segredo para causar sua ruína.
+
+Além disso, se um jogador causar a morte de seus ajudantes e seguidores, ele começará a ter dificuldade em encontrar outros dispostos a tomar seus lugares.
+
+Se um ajudante ou grupo de seguidores está se sentindo particularmente leal ou como eles reagem a maus tratos é determinado pelo Mestre de Jogo, mas como regra opcional, a lealdade pode ser medida em uma escala de 0 a 20. Companheiros e seguidores têm uma lealdade máxima igual ao seu valor de Carisma e uma lealdade inicial de metade desse valor. Se os membros do grupo agirem de maneira contrária ao 
+
+\page
+<div class='pageNumber auto'></div>
+
+alinhamento ou vínculo do companheiro, role 1d4 e subtraia esse número da lealdade dele.
+
+Esse valor aumenta para 2d4 se ele for abusado, enganado ou colocado em perigo pelo grupo por motivos puramente egoístas. Da mesma forma, se o personagem o tratar especialmente bem, ajudá-lo a alcançar objetivos ligados ao seu vínculo, gastar seu próprio dinheiro em presentes e recompensas para ele ou realizar um feito inspirador que o faça se sentir bem com seu trabalho, role 1d4 e adicione esse número à lealdade dele. Se a lealdade chegar a 0, o personagem deixa de ser leal e irá abandonar o grupo ou trabalhar para sabotá-lo.
+
+#### Substituindo Parceiros
+A esfera de Liderança pressupõe que seus parceiros e seguidores não sejam contratados temporários, mas sim companheiros dedicados: um cavaleiro e seu escudeiro, um mestre da guilda dos ladrões e sua família criminosa, um estudioso e seus alunos, um capitão mercenário e suas tropas, etc. No entanto, é possível que o jogador deseje trocar de parceiro ou que, por razões narrativas, o Mestre tenha decidido removê-lo; o escudeiro ou estagiário pode se formar ou retornar para casa para cuidar da família, etc. Quando isso acontecer, o Mestre e o jogador devem trabalhar juntos para determinar onde, quando e como um novo parceiro será recrutado para substituí-lo. Isso também pode ocorrer se o antigo parceiro precisar ser substituído porque morreu ou o abandonou devido à baixa lealdade, mas o jogador pode ter dificuldade em encontrar um novo parceiro ou grupo de seguidores se tiver a reputação de maltratar ou de causar a morte de parceiros e seguidores.
+
+#### Interpretando Ajudantes e Seguidores
+Ajudantes e seguidores estão sob o controle do jogador (especialmente em combate), mas isso não significa que sejam criaturas sem mente. O Mestre pode querer controlar o ajudante ou até mesmo alguns seguidores importantes (o chefe da caravana, o estagiário-chefe, etc.) para fins de interpretação, assim como faria com outros NPCs importantes. Se o Mestre não quiser dar voz a tantos NPCs, uma alternativa a um jogador simplesmente controlar todos os seus seguidores e ajudantes (o que pode privar o jogo de interações divertidas entre os personagens) é deixar a interpretação dos ajudantes e seguidores de um jogador para os outros jogadores à mesa, que podem escolher um ajudante ou seguidor importante e interpretá-lo sempre que necessário.
+
+##### Variante: Seguidores do Grupo
+Em alguns jogos, especialmente aqueles focados em um grupo viajante maior do que um grupo de aventureiros normal (como uma caravana, um exército mercenário, etc.), em vez de um jogador arcar com o ônus de gastar recursos de personagem para ter um grupo de seguidores e companheiros, o grupo como um todo poderia ter a permissão de adquirir talentos. Isso poderia ser feito de várias maneiras, como permitir que cada personagem contribua com talentos para um conjunto compartilhado. Um "líder" ficaria com a esfera base, enquanto os outros poderiam adicionar talentos adicionais, refletindo os companheiros e seguidores que atraem com suas habilidades. Qualquer um que possua um talento (de companheiro) poderia usá-lo com qualquer um dos companheiros compartilhados do grupo.
+
+Alternativamente, a esfera base poderia simplesmente ser concedida ao grupo, com a proficiência em Persuasão removida, e então talentos adicionais concedidos em intervalos apropriados com base no nível, conquistas ou riqueza (acumulada ou gasta) para refletir o prestígio e a influência que o grupo alcançou por meio de suas ações.
+
+### Pacotes de Liderança
+#### Pacote de Companheiro
+Você ganha um companheiro. Um companheiro pode ser qualquer tipo de criatura com uma ficha de estatísticas, mas seu nível de desafio deve ser 1/2 ou menor.
+
+Como explicado na seção “Aprimorando um Companheiro”, um companheiro começa com esta ficha de estatísticas e a aprimora conforme progride como companheiro. Algumas classes de companheiro podem ter pré-requisitos adicionais. Ao criar um companheiro, você escolhe a classe que ele terá pelo resto de sua carreira, cada uma detalhada abaixo: Explorador, Estudante ou Veterano. Trabalhe com o Mestre para determinar quais opções estão disponíveis, pois, dependendo do local, algumas coisas podem simplesmente não fazer sentido. Além das classes de ajudante Explorador, Estudante e Veterano, um Mestre pode aprovar outras classes de ajudante que tenham sido publicadas em outras fontes aprovadas.
+
+Os ajudantes que você ganha através da esfera de Liderança sempre têm um nível igual à metade do seu (nível mínimo 1); quando você ganha um nível par após o nível 2, seu ajudante sobe 1 nível. Você não pode possuir mais de 1 ajudante da esfera de Liderança, a menos que seus talentos digam o contrário.
+
+Os ajudantes abaixo começam o jogo com o equipamento concedido por sua tradição marcial. O equipamento inicial de um ajudante não pode ser usado para aumentar a riqueza do personagem; os ajudantes raramente concordarão em ter o equipamento do qual dependem para sobreviver vendido sem o seu conhecimento.
+
+Para conveniência dos jogadores, aqui estão três fichas de estatísticas que podem ser usadas para aplicar níveis de classe de ajudante
+
+
+\page
+<div class='pageNumber auto'></div>
+
+
+##### <u>**Soldado Dispensado**</u>
+___
+Humanoide Médio ou Pequeno (qualquer raça), qualquer alinhamento
+___
+**Classe de Armadura** 11
+___
+**Pontos de Vida** 13 (2d8+4)
+___
+**Deslocamento** 9 m
+___
+|FOR|DES|CON|INT|SAB|CAR|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|15(+2)|12(+1)|14(+2)|10(+0)|13(+1)|10(+0)|
+___
+**Sentidos** Percepção passiva 11
+___
+**Idiomas** Comum
+___
+**Nível de Desafio** 1/8 (25 XP)
+:
+**Ações**
+___
+**Lança.** Ataque com Arma Corpo a Corpo ou à Distância: +4 para acertar, alcance 1,5 m ou alcance 6/18 m, um alvo. Acerto: 5 (1d6 + 2) de dano perfurante, ou 6 (1d8 + 2) de dano perfurante se usada com as duas mãos para realizar um ataque corpo a corpo.
+:
+**Reações**
+___
+**Aparar.** O soldado desmobilizado adiciona 2 à sua CA contra um ataque corpo a corpo que o atingiria. Para isso, o soldado dispensado deve ver o atacante e estar empunhando uma arma corpo a corpo.
+::
+##### <u>**Erudito Itinerante**</u>
+___
+Humanoide Médio ou Pequeno (qualquer raça), qualquer alinhamento
+___
+**Classe de Armadura** 11
+___
+**Pontos de Vida** 9 (2d8)
+___
+**Deslocamento** 9 m
+___
+|FOR|DES|CON|INT|SAB|CAR|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|10 (+0)| 13 (+1)| 10 (+0)| 15 (+2)| 14 (+2)| 12 (+1)|
+___
+**Perícias** Arcano +4, Religião +4
+___
+**Sentidos** Percepção passiva 12
+___
+**Idiomas** Comum
+___
+**Nível de Desafio** 1/8 (25 XP)
+:
+**Ações**
+___
+**Cajado.** Ataque com Arma Corpo a Corpo: +2 para acertar, alcance 1,5 m, um alvo. Acerto: 3 (1d6) de dano de concussão, 4 (1d8) de dano de concussão se empunhado com as duas mãos.
+::
+##### <u>**Viajante Errante**</u>
+___
+Humanoide Médio ou Pequeno (qualquer raça), qualquer alinhamento
+___
+**Classe de Armadura** 12
+___
+**Pontos de Vida** 11 (2d8+2)
+___
+**Deslocamento** 9 m
+___
+|FOR|DES|CON|INT|SAB|CAR|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|14 (+2)| 15 (+2)| 12 (+1)| 10 (+0)| 10 (+0)| 13 (+1)|
+___
+**Sentidos**: Percepção passiva 10
+___
+**Idiomas**: Comum
+___
+**Nível de Desafio** 1/8 (25 XP)
+___
+**Ação Astuta.** Em cada um de seus turnos, o viajante errante pode usar uma ação bônus para realizar as ações Disparada, Desengajar ou Esconder-se.
+:
+**Ações**
+___
+**Arco Curto.** Ataque com Arma à Distância: +4 para acertar, alcance 24/97 m, um alvo. Acerto: 5 (1d6 + 2) de dano perfurante.
+
+#### Pacote de Seguidores
+Você ganha um grupo de seguidores leais a você e à sua causa. Esses seguidores não o acompanharão em locais perigosos; se atacados, tentarão fugir para um local seguro da melhor maneira possível. No entanto, eles podem ajudar de várias maneiras, como fornecendo mão de obra não especializada para tarefas simples (como limpar uma estrada obstruída por pedras), transportar mercadorias, dirigir e supervisionar suas carroças e transporte, ou outras coisas.
+
+Se precisar de estatísticas para um seguidor específico, utilize a ficha de estatísticas do plebeu ou a ficha de estatísticas da tropa de plebeus para os seguidores como um grupo em combate. Você pode ter um máximo de 20 seguidores, o que equivale a 1 tropa. Esse número aumenta em 20 seguidores adicionais no 5º nível (40 seguidores ou 2 tropas), no 11º nível (60 seguidores ou 3 tropas) e no 17º nível (80 seguidores ou 4 tropas).
+
+As tropas são consideradas uma única criatura para fins de combate; Uma tropa pode ser ferida, mas seus membros individuais geralmente não são considerados mortos, a menos que a tropa seja reduzida a 0 pontos de vida. Nesse caso, ela pode ser curada, mas seus pontos de vida máximos são reduzidos à metade, pois metade de seus membros está morta e precisará ser substituída por novos seguidores antes que possa retornar à força total. Se uma tropa for completamente dizimada, todos os seus membros morrem, exceto talvez um ou dois.
+
+Os seguidores devem trabalhar em grupos de cerca de 20; eles não podem ser divididos em vários grupos e, se reduzidos à metade ou menos, seus pontos de vida totais são reduzidos à metade até serem reagrupados.
+
+Seus seguidores iniciais são recrutados em assentamentos que você visitou no passado e onde fez contatos. Se você precisar recrutar novos seguidores para substituir alguns que morreram ou foram desfeitos, você pode atrair um novo seguidor por dia gasto em um assentamento. Se você gastar 1po por dia em bebidas e socialização, ou 8 horas recrutando ativamente, esse número é dobrado.
+
+Alguns talentos de (seguidores) exigem que você disperse seus seguidores por um assentamento. Quando isso acontece, a tropa é essencialmente dissolvida, pois seus membros realizam várias ações para atingir um objetivo específico. Reunir a tropa leva pelo menos uma hora.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+### Talentos de Seguidores
+Os talentos marcados como (seguidores) concedem opções adicionais aos seus seguidores. Se você tiver vários grupos de seguidores, cada talento (seguidores) se aplica a todos eles.
+
+
+#### Alquimistas (seguidores)
+Seus seguidores possuem suprimentos de alquimista e são proficientes em seu uso, podendo usar a ação Ajudar para auxiliar no uso dessas ferramentas, concedendo vantagem a alguém. Ao criar itens alquímicos (como fogos alquímicos), um grupo pode produzir itens dez vezes mais rápido. Se um personagem do seu grupo puder criar fórmulas da esfera Alquimia, ele poderá produzir uma fórmula a mais do que seu limite usual, desde que esses seguidores estejam presentes para auxiliá-lo. Se você possuir o talento Mercador, poderá comprar itens alquímicos com 25% de desconto.
+
+#### Artífices (seguidores)
+Seus seguidores possuem ferramentas de artesão e são proficientes em seu uso, podendo usar a ação Ajudar para conceder vantagem a alguém no uso de ferramentas de artesão. Ao criar itens mecânicos, como um sistema de polias, um grupo pode produzir itens dez vezes mais rápido. Se um personagem do seu grupo puder criar engenhocas da esfera Engenharia, ele poderá produzir uma engenhoca a mais, desde que os seguidores estejam presentes para auxiliá-lo. Se você possuir o talento Mercador, os itens mecânicos comprados de seus seguidores terão seu custo reduzido em 25%.
+
+#### Artesãos (seguidores)
+Seus seguidores possuem ferramentas de ferreiro e são proficientes em seu uso, podendo usar a ação Ajudar para conceder vantagem a alguém em testes que envolvam ferramentas de ferreiro. Eles podem gastar uma hora trabalhando para reparar objetos como se estivessem usando o truque Consertar. Ao fabricar armas, armaduras ou outros itens de metal, uma tropa pode produzir itens dez vezes mais rápido. Se você possuir o talento Mercador, poderá comprar armas, armaduras e munições não mágicas com 25% de desconto.
+
+#### Detetives (seguidores)
+Alguns de seus seguidores são inquisidores ou investigadores. Eles são proficientes em Investigação e Percepção e podem usar a ação Ajudar para conceder vantagem a alguém em testes que envolvam qualquer uma dessas perícias. Seus seguidores sabem como realizar pesquisas para você. Durante o tempo livre, seus seguidores podem realizar pesquisas em seu lugar; você ainda é obrigado a pagar por quaisquer despesas de pesquisa.
+
+#### Artistas (seguidores)
+Seus seguidores incluem atores, músicos e outros artistas, e eles possuem adereços, cenários e outros acessórios necessários para uma apresentação deslumbrante.
+
+Seus seguidores são proficientes nas perícias Acrobacia e Performance e podem usar a ação Ajudar para auxiliá-lo nessas perícias. Enquanto estiver em um assentamento, seus seguidores podem lhe dar acesso a um teatro, palco ou salão, se houver um disponível, ou podem estabelecer uma área de apresentação ao ar livre para você onde for necessário.
+
+Além disso, seus artistas são particularmente hábeis em ganhar dinheiro com suas habilidades de performance, mesmo enquanto você viaja; cada grupo de seguidores ganha 1 po por dia passado em um assentamento, que é usado para cobrir suas despesas de estilo de vida (ou, com a permissão do Mestre, pode ir para o seu bolso, se você não estiver usando as regras de estilo de vida).
+
+#### Amigos em Lugares Baixos (seguidores)
+Alguns de seus seguidores são brutais e astutos. Seus seguidores são proficientes em Intimidação e Prestidigitação e, contanto que você esteja em um local grande o suficiente, eles podem fornecer distrações ou uma presença intimidadora para que você use a ação Ajudar para auxiliá-lo com essas habilidades.
+
+Enquanto seus seguidores estiverem dispersos pelo assentamento, você ganha os seguintes benefícios:
+
+• :: Você sempre pode encontrar um receptador disposto a comprar mercadorias roubadas de você.
+
+• :: Se você for preso ou multado por crimes cometidos na jurisdição do assentamento, você sabe como encontrar funcionários corruptos dispostos a aceitar subornos para garantir sua liberdade (embora o valor do suborno dependa do Mestre e da natureza de seus crimes).
+
+• :: Se um objeto estiver disponível no assentamento e tiver um valor máximo de 100 po multiplicado pelo seu bônus de proficiência, você pode "comprá-lo" pela metade do preço com 2d6 horas de trabalho. Se tiver 2d6 dias, esse valor aumenta para 1.000 po multiplicado pelo seu bônus de proficiência. Este item é obtido por meios pouco ortodoxos (subornos, arrombamentos, etc.), e você não pode obter mais de um objeto dessa forma por vez e nunca mais de uma vez por dia. Observe que, embora seja possível obter itens únicos dessa maneira (a chave de uma cela específica, as joias de uma dama nobre em particular, etc.), roubar tais itens pode ter grandes consequências, ou eles podem ser tão bem guardados que apenas a ação direta dos próprios PCs permita um roubo bem-sucedido.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Equipe Terrestre (seguidores)
+Seus seguidores são proficientes em Enganação e Persuasão e podem usar a ação Ajudar para auxiliá-lo com qualquer uma das perícias. Além disso, eles podem se dispersar em um assentamento, conversando, ouvindo e influenciando. Enquanto dispersos, seus seguidores podem realizar as seguintes ações:
+:
+**Reunir Multidão.** Seus seguidores podem gastar 1d4 horas reunindo uma multidão para você. Faça um teste de Carisma (Persuasão) contra uma das CDs listadas na tabela abaixo para determinar o tamanho da multidão; O tamanho da multidão nunca ultrapassa a população do assentamento. Após a multidão se reunir, ela se dispersará naturalmente após 1 a 4 horas, caso não seja incentivada a permanecer, seja por meio de entretenimento ou intimidação.
+:
+|Resultado da Persuasão | Tamanho da Multidão | Tamanho Mínimo do Assentamento
+|:---------------------:|:-------------------:|:----------------:
+|15 | 1 - 500 | Vila
+|20 | 500 - 1.000 | Vila
+|25 | 1.000 - 3.000 | Cidade
+|30 | 3.000 - 6.000 | Cidade
+|35 | 6.000 - 12.000 | Cidade
+|40 | 12.000 - 25.000 | Cidade
+:
+**Coletar Informações.** Seus seguidores sabem como perguntar por aí ou ouvir conversas alheias para obter informações sobre os eventos atuais da cidade em seu nome. Com 1d4 horas de trabalho, eles podem descobrir detalhes específicos sobre uma pessoa ou evento específico para você, investigar rumores em seu nome, etc.
+:
+**Sussurros.** Você pode fazer com que seus seguidores participem da disseminação de um rumor pelo assentamento. Eles podem espalhar rumores em seu nome mesmo que você não esteja presente (embora você deva fornecer-lhes dinheiro para bebidas, aparições sociais, etc.), ou reduzir pela metade o tempo necessário para espalhar o rumor se você estiver presente, além de ajudá-lo com os testes necessários para lhe dar vantagem.
+
+#### Curandeiros (seguidores)
+Seus seguidores são curandeiros habilidosos. Eles são proficientes na perícia Medicina e podem usar a ação Ajudar para conceder vantagem a alguém ao fazer testes com essa perícia. Seus seguidores podem fornecer a você um kit de cura completo por dia. Esses kits de cura não podem ser vendidos ou estocados. Quando alguém gasta dados de vida durante um descanso curto para se curar na presença desses seguidores, aumente o tamanho do dado de vida dessa pessoa em um nível, até um máximo de 1d12.
+
+
+\column
+
+
+#### Caçadores (seguidores)
+Alguns de seus seguidores são bem treinados em perseguição e caça de feras. Eles são proficientes em Adestramento de Animais e Furtividade e podem usar a ação Ajudar para auxiliar alguém em testes que envolvam qualquer uma dessas perícias. Enquanto viajam ou acampam na natureza com seus seguidores, eles podem coletar alimentos para você, fornecendo comida para você e seu grupo.
+
+#### Trabalhadores (seguidores)
+Seus seguidores incluem especialistas em construção e tarefas físicas. Eles são proficientes na perícia Atletismo e trabalham duas vezes mais rápido ao mover pedras, cavar valas ou realizar outros trabalhos manuais.
+
+Durante um descanso curto, você pode ordenar que seus seguidores fortifiquem um acampamento. Seus seguidores concedem vantagem em testes de Sabedoria (Percepção) realizados dentro de um acampamento fortificado, e quaisquer intrusos devem lidar com uma cerca de 1,5 metro de altura ao redor do acampamento.
+
+#### Linguistas (seguidores)
+Alguns dos seus seguidores são multilíngues. Eles são proficientes em um número de idiomas adicionais igual ao seu bônus de proficiência e podem usar a ação Ajudar para auxiliar alguém em verificações que envolvam criptografia, descriptografia ou tradução de mensagens.
+
+#### Gerentes (seguidores)
+Seus seguidores sabem como administrar um negócio de sua propriedade. Uma tropa pode administrar um negócio seu na sua ausência e realizar testes em seu nome. Eles também podem ajudá-lo em testes para administrar um negócio, permitindo que você faça esses testes com vantagem.
+
+#### Mercadores (seguidores)
+Seus seguidores incluem mercadores que podem negociar com você. Seus seguidores podem comprar e vender itens para você cujo valor individual não exceda 25 po, mas aumenta no 5º nível (100 po), 11º nível (400 po) e 17º nível (1.700 po). Você não pode utilizar os mercadores para comprar ou vender mais itens individuais por dia do que seu bônus de proficiência.
+
+Quaisquer testes feitos para determinar o valor de um item enquanto estiver com os seguidores recebem vantagem da ajuda dos mercadores.
+
+#### Mensageiros (seguidores)
+Seus seguidores podem entregar mensagens rapidamente por meio de cavaleiro, pássaro mensageiro e outros meios, conforme apropriado ao cenário.
+
+Ao interagir com seus seguidores, você pode enviar mensagens escritas e itens que não excedam 4,5 kg (10 libras) por nível de personagem para qualquer lugar acessível por viagem normal a uma velocidade terrestre base de 96 km por dia.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+A velocidade base aumenta em 16 km no 5º nível (112 km por dia), 11º nível (128 km por dia) e 17º nível (144 km por dia).
+
+Mensageiros também podem ser usados para entregar e receber itens de seus seguidores durante aventuras, embora, como de costume para seguidores, eles não irão a lugares aparentemente perigosos. Um mensageiro pode ser invocado por pássaro mensageiro, assobio ou meios mágicos, caso você possua algum.
+
+Se você possuir o talento Linguistas, poderá criptografar qualquer mensagem entregue por seus mensageiros, exigindo que indivíduos que não sejam o alvo desejado obtenham sucesso em um teste de Inteligência (Investigação) para decifrá-la.
+
+Se você possuir o talento Mercadores, poderá comprar ou vender para seus seguidores mercadores um número adicional de vezes por dia igual ao seu modificador de habilidade principal (mínimo +1).
+
+#### Sacerdotes (seguidores)
+Alguns de seus seguidores são Versados ​​em estudos religiosos e compreensivos com as necessidades espirituais dos outros, seus seguidores podem conjurar rituais de 1º nível da lista de magias de clérigo e obter livros de rituais que contêm a magia cerimônia. Esses livros de rituais não podem ser vendidos ou estocados. Eles também são proficientes em Intuição e Religião e podem usar a ação Ajudar para auxiliar alguém em testes que envolvam qualquer uma dessas perícias.
+
+##### Cerimônia
+**Abjuração** ::
+**Nível**: :: 1
+**Tempo de Conjuração**: :: 1 hora
+**Alcance**: :: Toque
+**Componentes**: :: V, S, M (25 po em prata em pó, que a magia consome)
+**Duração**: :: Instantânea
+
+Você realiza uma cerimônia religiosa especial imbuída de magia. Ao conjurar a magia, escolha um dos seguintes ritos, cujo alvo deve estar a até 3 metros de você durante toda a conjuração.
+
+• :: Expiação. Você toca uma criatura voluntária cujo alinhamento tenha mudado e faz um teste de Sabedoria (Intuição) CD 20. Em caso de sucesso, você restaura o alinhamento original do alvo.
+
+• :: Abençoar Água. Você toca um frasco de água e a transforma em água benta.
+
+• :: Maioridade. Você toca um humanoide que seja um jovem adulto. Nas próximas 24 horas, sempre que o alvo fizer um teste de habilidade, ele pode rolar um d4 e adicionar o número rolado ao teste de habilidade. Uma criatura pode se beneficiar deste rito apenas uma vez.
+
+• :: Dedicação. Você toca um humanoide que deseja ser dedicado ao serviço do seu deus. Pelas próximas 24 horas, sempre que o alvo fizer um teste de resistência, ele pode rolar um d4 e adicionar o número rolado ao teste. Uma criatura pode se beneficiar deste rito apenas uma vez.
+
+• :: Rito Funerário. Você toca um cadáver e, pelos próximos 7 dias, o alvo não poderá se tornar um morto-vivo por nenhum meio, exceto por um desejo mágico.
+
+• :: Casamento. Você toca humanoides adultos dispostos a se unirem em matrimônio. Pelos próximos 7 dias, cada alvo recebe um bônus de +2 na CA enquanto estiverem a até 9 metros um do outro. Uma criatura pode se beneficiar deste rito novamente apenas se ficar viúva.
+
+#### Patrulheiros (seguidores)
+Alguns de seus seguidores são especialistas em atravessar áreas selvagens. Seus seguidores são proficientes nas perícias Natureza e Sobrevivência e podem usar a ação Ajudar para auxiliar alguém em testes que envolvam qualquer uma dessas perícias. Enquanto viajarem com seus seguidores por mais de 1 hora, terrenos difíceis não reduzem a velocidade de viagem do seu grupo.
+
+Seus seguidores sabem como encontrar e capturar animais para você. Ao viajar ou acampar na natureza, seus seguidores podem fornecer metade do seu nível de personagem em ND (Nível de Desafio) em feras por dia (como para domar com a esfera de Domínio das Feras), embora estejam limitados às feras presentes em seus arredores, e o número de feras individuais não pode exceder seu bônus de proficiência.
+
+#### Eruditos (seguidores)
+Alguns de seus seguidores são versados ​​em erudição e conhecimento arcano. Seus seguidores podem conjurar rituais de 1º nível da lista de magias de mago e obter livros de rituais que contêm a magia Identificar. Esses livros de rituais não podem ser vendidos ou estocados. Eles são proficientes em Arcano e História e podem usar a ação Ajudar para auxiliar alguém em testes envolvendo qualquer uma dessas perícias.
+
+#### Soldados (seguidores)
+Seus seguidores estão dispostos a segui-lo em combate, embora ainda não realizem ações obviamente suicidas. Eles são proficientes com armas simples e armaduras leves. Seus seguidores podem usar a ação Atacar e obter clavas como arma inicial:
+:
+**Clavas.** Ataque com Arma Corpo a Corpo: +4 para acertar, alcance 1,5 m, um alvo. Acerto: 8 (2d8) de dano de impacto, ou 5 (1d8) de dano de impacto se a tropa tiver metade de seus pontos de vida ou menos.
+:
+Cada vez que este talento for adquirido após o primeiro, seus seguidores recebem um talento marcial adicional. Cada tropa recebe o mesmo talento marcial.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+
+### Talentos de Parceiro
+
+#### Cobertura Aliada (parceiro)
+Você e seus parceiros recebem um bônus de +1 na CA enquanto estiverem a 1,5 metro de você ou de outro parceiro. Os benefícios de múltiplos parceiros não se acumulam.
+
+Quando você for alvo de um ataque ou efeito de alvo único e estiver a 1,5 metro de um parceiro, você pode gastar foco marcial para redirecionar o ataque ou efeito para o parceiro como uma reação.
+
+#### Manobra Inicial (parceiro)
+Uma vez por rodada, quando um de seus parceiros obtiver sucesso em um desarme, agarramento ou empurrão, o alvo provoca um ataque de oportunidade seu.
+
+#### Trabalho em Equipe Oportunista (parceiro)
+Enquanto estiver a 1,5 metro de um parceiro, quando você ou o parceiro realizar um desarme, agarramento ou empurrão, o outro pode gastar seu foco marcial como uma reação para conceder vantagem na rolagem.
+
+#### Táticas de Matilha (companheiro)
+Você e seus companheiros recebem um bônus de +1 nas jogadas de ataque com armas enquanto estiverem a 1,5 metro de você ou de outro companheiro. Os benefícios de múltiplos companheiros não se acumulam.
+
+#### Ataque de Companheiro (companheiro)
+Quando você fizer uma jogada de ataque com arma contra um inimigo hostil, um de seus companheiros também poderá atacar seu alvo com uma única arma que possua como uma reação. Se você e o companheiro causarem dano com sucesso com esses ataques, o companheiro poderá se mover imediatamente 1,5 metro sem gastar uma ação. Esse movimento não provoca ataques de oportunidade.
+
+#### Vigia da Equipe (companheiro)
+Ao fazer um teste de Sabedoria (Percepção) enquanto estiver a 9 metros de qualquer companheiro, você e esses companheiros podem compartilhar o resultado de quem tiver obtido o maior resultado.
+
+
+### Outros Talentos
+#### Base de Operações
+Você ganha um novo grupo de seguidores. No entanto, esses seguidores adicionais são residentes permanentes em um assentamento com o qual você está familiarizado; eles têm casas e vidas pessoais e não deixarão o assentamento em circunstâncias normais. Eles podem se mudar para um novo assentamento em circunstâncias excepcionais, mas isso geralmente requer 1d4 meses de vendas, compras, viagens e formação de novos contatos. Esses seguidores não podem se beneficiar do talento Soldados.
+
+Você pode escolher este talento várias vezes. Os efeitos se acumulam.
+
+#### Liderança Expandida
+Escolha um pacote de Liderança que você não possua. Você ganha esse pacote.
+
+Recrutamento Aprimorado
+O nível do seu parceiro passa a ser igual a 3/4 do seu nível, arredondado para baixo, em vez de 1/2 do seu nível, arredondado para baixo. Você pode escolher este talento duas vezes, caso em que o nível máximo do seu parceiro passa a ser igual ao seu.
+
+Liderança Aprimorada
+Você adiciona o dobro do seu bônus de proficiência aos testes de Persuasão.
+
+
+### Talentos Lendários de Liderança
+
+#### Companheiro Adicional
+**Pré-requisitos**: :: Esfera de Liderança (pacote de companheiros), 5º nível.
+
+Ganhe um companheiro adicional. Você deve dividir os níveis de seus companheiros entre os dois, podendo fazê-lo como achar melhor (portanto, se você normalmente pudesse ter um companheiro com nível máximo de 6, com este talento você poderia ter dois companheiros de 3º nível, um de 4º nível e outro de 2º nível, etc.). Você pode escolher este talento várias vezes. Cada vez que você o adquire, aumente em 1 o número de companheiros que você pode possuir. Isso não aumenta o número total combinado de níveis que seus companheiros podem ter.
+
+
+#### Viagem Aérea (seguidores)
+**Pré-requisitos**: :: Esfera de Liderança (pacote de seguidores), 11º nível.
+
+Seus seguidores estão equipados com bestas voadoras, dirigíveis, levitação arcana ou outros meios confiáveis de voo terrestre. Eles possuem uma velocidade de voo de 15 metros. 
+:
+**Especial**: O pré-requisito de nível pode ser reduzido com base na frequência com que o voo ocorre no cenário. Por exemplo, no cenário de Skybourne, o voo é comum e as aeronaves são onipresentes, então o pré-requisito de nível poderia ser ignorado completamente.
+
+
+#### Alistar
+**Pré-requisitos**: :: Esfera de Liderança, 5º nível.
+
+Você pode gastar foco marcial como uma Ação para forçar uma criatura não hostil a até 9 metros a fazer um teste de resistência de Carisma ou ficar enfeitiçada por você por 1 hora. Enquanto enfeitiçada, a criatura servirá você como se fosse um ajudante. Criaturas que não sejam humanoides têm vantagem em seus testes de resistência.
+
+\page
+<div class='pageNumber auto'></div>
+
+Uma vez que uma criatura seja bem-sucedida em seu teste de resistência contra o uso desta habilidade, ela fica imune a outros usos desta habilidade por você por 24 horas. Quando a duração do efeito de rascunho terminar, a criatura retorna à sua disposição anterior, modificada por quaisquer outros efeitos que a teriam alterado nesse meio tempo.
+
+Caso a criatura enfeitiçada sofra dano, ou caso você tente fazer com que ela realize uma ação obviamente suicida, ela será automaticamente libertada dos efeitos do encantamento.
+
+
+#### Mestre dos Mortos (ajudante)
+**Pré-requisitos**: :: Esfera de Liderança (pacote de ajudante).
+
+Você pode recrutar ajudantes do tipo morto-vivo, que encontram e reanimam cadáveres com rituais arcanos. Esses companheiros são construídos normalmente, mas possuem o tipo morto-vivo e ganham os seguintes modificadores e habilidades, dependendo se são Esqueleto ou Zumbi:
+:
+**Esqueleto**
+
+• :: +2 Des, -4 Int, -4 Car
+• :: **Vulnerável**: concussão
+• :: **Imune**: dano de veneno
+• :: **Imunidade a Condições**: exaustão e veneno
+• :: **Sentidos**: visão no escuro 18 m
+• :: **Idiomas**: Não pode falar, mas ainda entende os idiomas que conhece
+:
+**Zumbi**
+
+• :: +1 For, +2 Con, -6 Int, -4 Sab, -4 Car
+• :: Fortitude Morta-Viva (Se o dano reduzir a criatura a 0 Pontos de Vida, ela deve fazer um teste de resistência de Constituição com CD 5 + o dano sofrido, a menos que o dano seja radiante ou proveniente de um acerto crítico. Em caso de sucesso, a criatura fica com 1 ponto de vida.)
+• :: **Imune**: dano de veneno
+• :: **Imunidade a Condições**: veneno
+• :: **Sentidos**: visão no escuro 18 m
+• :: **Idiomas**: Não pode Fala, mas ainda entende os idiomas que conhece.
+
+#### Artesão Místico (seguidores)
+**Pré-requisitos**: :: Esfera de Liderança (Artesão, Eruditos)
+
+Seus seguidores podem criar itens mágicos, mesmo na sua ausência, utilizando as regras de criação de itens mágicos do seu jogo. Eles não podem produzir magias e pré-requisitos por conta própria, mas podem trabalhar em qualquer item mágico que você tenha nível suficiente para criar, desde que você possa fornecer os pré-requisitos. Um grupo pode criar no mesmo ritmo que uma única pessoa do seu nível e, se você trabalhar com eles, qualquer teste que você fizer para criar o item mágico será feito com vantagem.
+
+
+#### Planisfera
+**Pré-requisitos**: :: Esfera de Liderança (pacote de seguidores, Viagem Aérea, Teletransporte), 15º nível.
+
+Seus seguidores estão equipados para viagens planares. Seus seguidores ignoram características planares negativas e, se você estiver com eles, você e um número de aliados igual ao seu bônus de proficiência também ignoram. Seus seguidores podem encontrá-lo em qualquer local em qualquer plano dentro de 1d4 dias. Uma vez por dia, você e seus aliados podem ser transportados para outro plano por seus seguidores, chegando entre 5 e 500 milhas de um destino escolhido. Isso leva de 1d4 horas.
+
+Se você possuir o talento Mensageiros, seus mensageiros podem alcançar qualquer local em qualquer plano e retornar em até 1d4 dias. Se você possuir tanto Mensageiros quanto Mercadores, seus mensageiros podem ser enviados para obter itens de qualquer lugar nos planos. Você não precisa rolar para verificar a disponibilidade; se o item estiver disponível para compra em qualquer lugar dos planos, ele será comprado e trazido até você.
+
+
+#### Esquadrão
+**Pré-requisitos**: :: Esfera de Liderança (pacotes de seguidores e parceiros, Soldados), 5º nível de personagem.
+
+Você pode recrutar suas tropas de seguidores para serem parceiros.
+
+Escolha uma tropa para se tornar um parceiro. Essa tropa se torna uma tropa de estudantes, uma tropa de exploradores ou uma tropa de veteranos e avança como se fosse um parceiro, exceto que cada nível que um esquadrão possui conta como dois níveis ao determinar o nível máximo do seu parceiro ou parceiros. Para cada nível que o esquadrão tiver além do 1º, ele ganha três Dados de Vida e seu máximo de pontos de vida aumenta. Para determinar o valor do aumento, role o Dado de Vida (o tipo de dado aparece na ficha de estatísticas do parceiro) três vezes e adicione três vezes o seu modificador de Constituição. Ele ganha um mínimo de 3 pontos de vida por nível. Essa tropa o seguirá em situações perigosas como qualquer outro parceiro.
+
+
+#### Teletransporte
+**Pré-requisitos**: :: Esfera de Liderança, pacote (seguidores), 13º nível.
+
+Seus seguidores são capazes de realizar rituais, solicitar serviços de conjuração, percorrer estradas feéricas e outros métodos de viagem rápida de longa distância. Seus seguidores podem encontrá-lo em qualquer lugar do mesmo plano em até 1d4 dias, independentemente da distância. Uma vez por dia, você e seus aliados podem ser transportados para outro local em seu plano atual por seus seguidores, chegando a 
+
+\page
+<div class='pageNumber auto'></div>
+
+2d20 milhas de um destino escolhido. Isso requer 1d4 horas.
+
+Se você possuir o talento Mensageiros, seus mensageiros podem alcançar qualquer local do mesmo plano e retornar em até 1d4 dias. Se você possuir tanto Mensageiros quanto Mercadores, seus mensageiros podem ser enviados para obter itens de qualquer lugar do plano. Você não precisa rolar para verificar a disponibilidade; se o item estiver disponível para compra em qualquer lugar do plano, ele será comprado e trazido até você.
+
+
+### Regras Adicionais
+#### Avançando um Ajudante
+Seu ajudante começa como um personagem de 1º nível. Consulte a tabela abaixo para determinar o bônus de proficiência do seu ajudante e as novas características que ele ganha ao subir de nível.
+
+#### Pontos de Vida
+Sempre que o ajudante sobe de nível, ele ganha um Dado de Vida e seu máximo de pontos de vida aumenta. Para determinar o valor do aumento, role o Dado de Vida (o tipo de dado aparece na ficha de estatísticas do ajudante) e adicione seu modificador de Constituição. Ele ganha um mínimo de 1 ponto de vida por nível.
+
+Se o ajudante chegar a 0 pontos de vida e não for morto imediatamente, ele fica inconsciente e, em seguida, faz testes de resistência contra a morte, assim como um personagem jogador.
+
+#### Bônus de Proficiência
+O bônus de proficiência do ajudante é determinado pelo seu nível de classe, conforme mostrado na tabela da classe. Sempre que o bônus de proficiência do parceiro aumentar em 1, adicione 1 ao modificador de ataque de todos os ataques em sua ficha de estatísticas e aumente as CDs em sua ficha de estatísticas em 1.
+
+#### Aumentos de Atributo
+Sempre que o parceiro adquirir a característica Aprimoramento de Atributo, ajuste qualquer atributo em sua ficha de estatísticas que dependa de um modificador de atributo que você aumentar. Por exemplo, se o parceiro tiver um ataque que usa seu modificador de Força, aumente os modificadores de ataque e dano do ataque se o modificador de Força aumentar. Se não estiver claro se um ataque corpo a corpo na ficha de estatísticas usa Força ou Destreza, o ataque pode usar qualquer um dos dois.
+
+\page

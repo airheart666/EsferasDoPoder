@@ -1,0 +1,328 @@
+<div class='pageNumber auto'></div>
+
+## Proteção
+Você é um usuário das magias de preservação. Ao adquirir a esfera de Proteção pela primeira vez, você obtém as habilidades de égide, socorro e aura da esfera.
+
+#### Égide
+
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: toque
+**Duração**: :: concentração, até 1 hora
+**Alvo**: :: 1 criatura
+**Teste de Resistência**: :: Sabedoria
+**Custo**: :: 0PM
+
+Você pode conceder a uma criatura uma égide. Alvos não voluntários têm direito a um teste de resistência de Sabedoria para resistir a receber uma égide.
+
+**Aprimoramento 2PM**: :: O efeito persiste pelo restante da duração sem concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado, no seu turno, sem gastar uma ação.
+
+Você obtém a seguinte égide ao adquirir a esfera de Proteção:
+
+##### Blindado (égide)
+Você pode criar uma égide que envolve o alvo em barreiras protetoras, concedendo a ele uma CA base igual ao seu CD da esfera (sem benefício do modificador de Destreza). Isso não se soma a outras armaduras, embora o alvo ainda possa se beneficiar de um escudo.
+
+#### Socorro
+
+**Tempo de Conjuração**: :: 1 reação
+**Alvo**: :: 1 criatura sob os efeitos da sua égide
+**Alcance**: :: 90m
+**Custo**: :: 0PM
+
+Você pode criar um efeito sacrificando uma égide que você criou. Ao fazer isso, uma das égides no alvo termina imediatamente. A égide sacrificada deve ser uma que você tenha aprimorado para ser mantida sem concentração. Você não pode usar socorro em uma criatura que não esteja atualmente sob os efeitos da sua égide.
+
+A esfera básica de Proteção não concede habilidades de socorro.
+
+#### Aura
+
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: pessoal
+**Duração**: :: concentração, até 1 minuto
+**Área**: :: cilindro de 3m de altura e 6m pés de raio
+**Custo**: :: 0PM
+
+Você pode criar uma aura centrada em um ponto dentro do alcance. Auras permanecem no local onde foram criadas, mesmo que você se mova. Ao criar uma aura, você sempre pode escolher reduzir sua altura ou raio abaixo do máximo. A altura máxima do cilindro aumenta em 1,5m e o raio máximo aumenta em 6m nos níveis 5 (cilindro de 4,5m por 9m de raio), 11 (cilindro de 6m por 12m de raio) e 17 (cilindro de 7,5m por 15m de raio).
+
+**Aprimoramento 2PM**: :: O efeito persiste pelo restante da duração sem concentração. Esse aprimoramento pode ser aplicado após a conjuração, no seu turno, sem gastar uma ação.
+
+Ao adquirir a esfera de Proteção, você ganha a seguinte aura:
+
+#### Barreira (aura)
+Você pode criar uma aura que forma uma parede quase transparente em seu perímetro, bloqueando ataques, movimento, armas de sopro, e quaisquer magias ou efeitos de esferas que precisem viajar até seu destino (como rajadas destrutivas, golpes espectrais ou magias que exigem jogadas de ataque). Outras magias ou efeitos de esferas, porém — como teletransporte, magia mental ou ataques de olhar — podem atravessar essa aura.
+
+Se a barreira surgir atravessando o espaço de uma criatura, ela é empurrada para um dos lados (à sua escolha). Se uma criatura ficaria completamente cercada pela barreira (ou pela barreira e outra superfície sólida), ela pode fazer um teste de resistência de Destreza. Em caso de sucesso, pode usar sua reação para mover-se até seu deslocamento para não ficar enclausurada pela barreira.
+
+A barreira também se estende pelo Plano Etéreo, bloqueando movimento etéreo através da aura. Criaturas etéreas às vezes podem passar por baixo da barreira, já que ela não atravessa objetos e geralmente termina ao nível do chão.
+
+A barreira possui uma CA igual ao seu CD da esfera e pontos de vida iguais a 4 + seu nível. Se a barreira for reduzida a 0 pontos de vida, todo o efeito termina imediatamente. Se você mantiver a barreira por concentração, seus pontos de vida são restaurados a cada rodada no seu turno.
+
+Se um ataque causar mais dano do que os pontos de vida atuais da barreira, o atacante pode rompê-la e continuar o ataque contra um alvo do outro lado. O atacante faz uma nova jogada de ataque contra um alvo dentro do alcance no lado oposto, causando o dano restante se acertar. Isso também se aplica a dano em área; por exemplo, uma magia de área que supere os pontos de vida da barreira pode afetar alvos do outro lado com seu dano reduzido.
+
+Criaturas particularmente fortes podem simplesmente esmagar a barreira arremetendo contra ela. Uma criatura pode tentar quebrar a barreira empurrando ou atropelando (veja o Guia do Mestre), destruindo-a completamente se tiver sucesso. Em vez de um teste contestado, a criatura tem sucesso se seu teste de Força (Atletismo) exceder o seu CD da esfera.
+
+\page
+<div class='pageNumber auto'></div>
+
+
+### Talentos de Égide
+
+#### Sem Fôlego (égide)
+Você pode criar uma égide que permite a uma criatura sobreviver sem ar. A criatura se torna imune a efeitos que exigem respiração (como venenos inalados), pode sobreviver debaixo d’água ou até no vácuo. Isso não concede imunidade a ataques de nuvens ou gases que não dependam de respiração.
+
+#### Imortal (égide)
+Você pode criar uma égide que concede ao alvo resistência a dano necrótico e vantagem em todos os testes de resistência contra efeitos que o matariam instantaneamente sem causar dano. O alvo recebe um teste de resistência para negar tais efeitos mesmo quando normalmente não receberia um. Esta égide não protege contra outros tipos de ataques, mesmo que possam ser letais.
+Além disso, o alvo estabiliza automaticamente ao ser reduzido a 0 pontos de vida e não precisa fazer testes de morte no início do turno.
+
+#### Resistência Elemental (égide, aura)
+Você pode criar uma égide que concede resistência a um tipo de dano à sua escolha (ácido, frio, fogo, elétrico, radiante ou trovão).
+
+Você também pode criar uma aura que suprime um tipo de dano à sua escolha. Todas as criaturas dentro da aura recebem resistência ao tipo escolhido enquanto permanecerem nela.
+
+#### Amizade (égide)
+Você pode criar uma égide que concede a uma criatura proteção especial contra a magia de seus aliados. Você pode designar um número de criaturas igual ao seu bônus de proficiência; sempre que uma dessas criaturas usar uma magia ou habilidade de esfera que cubra uma área, elas podem excluir o alvo desta égide da área de efeito.
+
+#### Guardião (égide)
+Você pode criar uma égide que atrai a atenção hostil para seu portador e a afasta de seus aliados.
+Qualquer criatura hostil dentro de 3 m do portador desta égide que tente atacar uma criatura que não seja o portador sofre desvantagem na jogada de ataque.
+
+Múltiplas égides Guardião não se acumulam; se uma criatura atacar um alvo com essa égide enquanto estiver na área de outra, nenhuma desvantagem se aplica.
+
+#### Imparcialidade (égide, aura)
+Criaturas sob esta égide ou dentro desta aura são tratadas como sem alinhamento para todos os efeitos mágicos. Celestiais, ínferos e mortos-vivos ainda contam como tais, mas não são detectados por efeitos como o sentido divino de um paladino.
+
+Efeitos que detectam alinhamento (como Aderência Divina da esfera de Adivinhação) não detectam as criaturas protegidas; efeitos que têm impacto apenas em certos alinhamentos não funcionam contra elas.
+Isso não permite mascarar um alinhamento — elas aparecem como ausência de alinhamento.
+Isso também oculta o tipo de criatura de ínferos, fadas, celestiais e mortos-vivos.
+
+#### Impedância (égide, aura)
+Você pode criar uma égide que exige que criaturas tenham sucesso em um teste de resistência de Sabedoria para entrar em um espaço a 1,5 m do alvo. Se falharem, não podem entrar até o início de seu próximo turno, quando podem tentar novamente, ativando um novo teste de resistência.
+
+Este talento não interfere com ataques, apenas movimento.
+
+Você pode criar uma aura que dificulta que criaturas se aproximem do centro da área. No início do turno ou ao tentar entrar na aura, uma criatura deve ter sucesso em um teste de resistência de Sabedoria ou será incapaz de entrar ou se mover mais perto do centro até o início do próximo turno, quando pode tentar novamente.
+
+**Aprimoramento 1PM**: :: a égide passa a afetar espaços dentro de 3 m.
+
+#### Paz Interior (égide)
+Você pode criar uma égide que concede resistência a dano psíquico e concede ao alvo vantagem em testes de resistência contra efeitos que causariam as condições enfeitiçado ou amedrontado, ou que manipulem emoções, como a magia acalmar emoções ou a Hostilidade (encantamento) da esfera da Mente.
+
+#### Obscuridade (égide, aura)
+Criaturas com esta égide ou dentro desta aura parecem pouco notáveis e desinteressantes. Criaturas devem fazer um teste de resistência de Inteligência para notar sua presença, antes de qualquer teste de Sabedoria (Percepção).
+Em sucesso, podem ver normalmente os protegidos (desde que possam vê-los normalmente) até que estes saiam de sua linha de visão ou tenham sucesso em um teste de Destreza (Furtividade).
+
+Criaturas que estão procurando especificamente pelos protegidos e sabem quem são, ou que já estejam em combate com eles, sempre têm sucesso no teste de resistência.
+
+#### Obstrução (égide)
+Você pode criar uma égide que absorve dano. O alvo recebe resistência a dano contundente, perfurante e cortante não mágico.
+
+#### Vínculo Pacífico (égide, aura)
+Você pode criar uma égide que torna o alvo imune a ações ou magias violentas. Qualquer ação violenta contra o alvo exige que o atacante passe em um teste de resistência de Sabedoria ou perca a ação, incluindo quaisquer pontos de magia ou espaços de magia gastos.
+
+\page
+<div class='pageNumber auto'></div>
+
+Se uma criatura tiver sucesso neste teste (ou se o portador da égide realizar uma ação ofensiva), a égide termina imediatamente.
+
+Você pode criar uma aura que torna todas as criaturas incapazes de cometer violência. Qualquer ação violenta ou efeito mágico ofensivo direcionado criado dentro da aura exige sucesso em um teste de resistência de Sabedoria ou a ação é desperdiçada.
+Se qualquer criatura tiver sucesso nesse teste, a aura termina para todas as criaturas.
+Quando uma aura pacífica é quebrada desta forma, todas as criaturas dentro dela tornam-se imunes à aura desse conjurador até a próxima alvorada.
+
+#### Saúde Protegida (égide, aura)
+Você pode criar uma égide que concede ao alvo resistência a dano por veneno e vantagem em testes de resistência contra todos os venenos e doenças, mágicos ou mundanos.
+Você pode criar uma aura que concede esse benefício a todos em sua área.
+
+#### Punição (égide, socorro)
+Você pode criar uma égide que inflige dor em criaturas que ferem seu portador. Sempre que uma criatura acerta o portador desta égide com um ataque corpo a corpo ou à distância, ela sofre 1d4 de dano psíquico, aumentando no 5º nível (2d4), 11º nível (3d4) e 17º nível (4d4).
+
+Como socorro, quando um aliado sob sua égide sofre dano de um ataque, você pode dissipar uma égide para causar 1d6 de dano psíquico ao atacante, aumentando no 5º (2d6), 11º (3d6) e 17º nível (4d6). Esse dano se acumula com o da égide Punição.
+
+#### Resistência (égide)
+Você pode criar uma égide que concede ao alvo a capacidade de gastar uma reação para receber vantagem em um teste de resistência.
+
+#### Escudo (égide)
+Você pode criar uma égide que concede ao alvo um escudo de força translúcida. Ele funciona como um escudo normal, mas é sem peso e não interfere em componentes materiais ou somáticos.
+Se o alvo pegar outro objeto com a mão que segura o escudo (exceto para manipular componentes), o escudo é suprimido até o início do próximo turno em que ele tiver uma mão livre.
+
+**Aprimoramento 1PM**: :: o alvo é sempre considerado proficiente com o escudo.
+
+#### Escorregadio (égide)
+Você pode criar uma égide que protege uma criatura de ser fisicamente restringida ou manipulada. O portador recebe vantagem em testes de resistência contra ser contido ou movido, e em testes de habilidade para evitar ser empurrado, escapar de uma agarrada, passar por espaços apertados ou escapar de amarras.
+
+#### Aura Anti-Magia (égide, aura)
+**Custo**: 1PM
+___
+Você cria uma égide que concede ao alvo vantagem em todos os testes de resistência contra magia.
+:
+**Custo**: 1PM
+___
+Você cria uma aura que reprime toda magia dentro de sua área. Faça um teste de habilidade de conjuração contra cada efeito mágico, item mágico ou criatura conjurada dentro da área. Se seu resultado exceder o CD de resistência da magia ou o CD da esfera do efeito, o efeito é suprimido, o item mágico deixa de funcionar ou a criatura conjurada desaparece temporariamente.
+
+O tempo suprimido conta para a duração total do efeito.
+Qualquer conjurador que tente usar uma habilidade mágica dentro ou direcionada à área, ou qualquer criatura conjurada que tente entrar na área, deve passar em um teste de habilidade de conjuração contra o seu CD da esfera. Em sucesso, o efeito é permitido e a criatura não é banida pela aura.
+
+### Talentos de Barreira
+
+#### Contínua (barreira)
+**Aprimoramento 0PM**: :: Você pode formar sua barreira como uma cúpula hemisférica ou uma esfera; independentemente da forma, essa barreira é completamente selada.
+Se criar a barreira faria com que ela atravessasse outro objeto, a barreira o corta de forma inofensiva (sem comprometer a integridade do objeto, mas impedindo que o objeto seja movido). Se criar a barreira faria com que ela atravessasse uma criatura ou objeto animado, a criatura é deslocada como de costume.
+
+Essas modificações fazem com que criaturas etéreas ou com modos de movimento incomuns, como escavar, não possam entrar na área protegida contornando a barreira, devendo destruí-la para entrar ou sair.
+
+Esta habilidade pode ser combinada com o talento Maior (barreira) para permitir que sua barreira atravesse objetos.
+
+#### Maior (barreira)
+**Aprimoramento 0PM**: :: Você pode moldar sua barreira em um plano vertical e plano, se desejar. Essa parede deve ser contínua e estar adjacente a você em um ponto, embora possa se estender até 9 m (ou até o dobro do seu alcance, se você possuir o talento Alongamento (metaesfera) da esfera Universal), formada por um número máximo de painéis de 3 m por 3 m igual ao dobro do seu bônus de proficiência.
+
+**Aprimoramento 1PM**: :: Você aumenta os Pontos de Vida da sua barreira para 10 por nível e aumenta em 5 a CD para empurrar ou atropelar a barreira. Os pontos de vida da barreira não se regeneram, mesmo que ela seja mantida por concentração.
+
+\page
+<div class='pageNumber auto'></div>
+
+**Aprimoramento 1PM**: :: O número máximo de painéis que você pode criar aumenta para quatro vezes seu bônus de proficiência.
+
+**Aprimoramento 2PM**: :: O tamanho máximo de cada painel aumenta para 6 m por 6 m.
+
+##### Contraforte
+**Tempo de Conjuração**: :: 1 ação
+**Alvo**: :: 1 barreira de aura
+**Alcance**: :: 90 m
+**Custo**: :: 1PM
+
+Você restaura até 5 pontos de vida por nível a uma barreira que você criou.
+
+**Aprimoramento 1PM**: :: O tempo de conjuração é reduzido para uma ação bônus.
+
+**Aprimoramento 2PM**: :: O tempo de conjuração é reduzido para uma reação.
+Se usado em reação a um ataque que destruiria a barreira, os pontos de vida restaurados podem impedir sua destruição. Subtraia o dano causado do total de pontos de vida atuais da barreira mais os pontos restaurados para determinar os pontos de vida finais.
+Isso não pode exceder o máximo de pontos de vida da barreira.
+
+### Talentos de Socorro
+
+#### Baluarte (socorro)
+Quando um aliado é alvo de uma jogada de ataque, você pode dissipar uma égide nesse aliado para conceder resistência a todo o dano do ataque acionador como reação.
+
+#### Sorte (socorro)
+Você pode dissipar uma égide em um alvo para permitir que ele role novamente um teste de resistência que acabou de fazer.
+Ele deve usar o segundo resultado, mesmo que seja pior.
+
+#### Punição (égide, socorro)
+Você pode criar uma égide que inflige dor em criaturas que ferem seu portador. Sempre que uma criatura acerta o portador desta égide com um ataque corpo a corpo ou à distância, ela sofre 1d4 de dano psíquico, aumentando para 2d4 no 5º nível, 3d4 no 11º e 4d4 no 17º.
+
+Como socorro, quando um aliado sob sua égide sofre dano de um ataque, você pode dissipar uma égide para causar 1d6 de dano psíquico ao atacante, aumentando para 2d6 no 5º nível, 3d6 no 11º e 4d6 no 17º.
+Este dano se acumula com o dano da égide de Punição.
+
+### Talentos de Aura
+
+#### Clareza (aura)
+Dentro da área desta aura, tentativas de ocultar, obfuscar ou disfarçar-se são dificultadas. Qualquer criatura dentro da aura deve fazer um teste de resistência de Sabedoria ou ficará incapaz de usar quaisquer habilidades para se disfarçar ou se ocultar. Da mesma forma, qualquer magia, efeito de esfera ou outra habilidade que crie ilusões ou dificulte perceber fenômenos físicos se torna mais difícil de usar.
+
+Quando a aura é criada, você realiza um único teste de habilidade de conjuração contra cada ilusão ou efeito mágico de ocultação. Se seu teste tiver sucesso, o efeito é suprimido ou o item mágico deixa de funcionar, respectivamente. O tempo suprimido conta para a duração total do efeito mágico.
+
+Qualquer nova tentativa de criar uma ilusão ou efeito de ocultação exige que o conjurador tenha sucesso em um teste de habilidade de conjuração contra a sua CD da esfera, mesmo que ele tenha passado no teste de resistência de Sabedoria.
+
+#### Resistência a Energia (égide, aura)
+Você pode criar uma égide que concede resistência a um tipo de dano à sua escolha (ácido, frio, fogo, elétrico, radiante ou trovejante).
+
+Você também pode criar uma aura que suprime um tipo de dano à sua escolha. Todas as criaturas dentro da aura recebem resistência ao tipo de dano escolhido enquanto permanecerem nela.
+
+#### Exclusão (aura)
+Você pode criar uma aura que impede a entrada de um material ou elemento comum escolhido ao criar a aura. Você pode escolher o elemento com base em seu material físico (como pedra, metal, água ou ácido), forma de energia (como fogo ou luz) ou propriedades físicas (como materiais venenosos ou materiais vivos). Materiais mágicos e não mágicos excluídos têm grande dificuldade para entrar na aura, mas permanecem inalterados caso já estejam dentro.
+
+Criaturas feitas do material ou carregando o material devem fazer um teste de Força contra sua CD da esfera de Proteção para cruzar o limite da aura, ou simplesmente podem largar o material que estão carregando. Um ataque vindo de fora da aura que atravesse o limite e seja composto do material excluído tem desvantagem na jogada de ataque.
+
+#### Imparcialidade (égide, aura)
+Criaturas sob esta égide ou dentro desta aura são tratadas como sem alinhamento para todos os efeitos mágicos. Celestiais, ínferos e mortos-vivos ainda contam como tais, mas não são detectados por efeitos como o sentido divino de um paladino.
+
+Efeitos que detectam alinhamento não detectam as criaturas protegidas, enquanto efeitos que afetam certos alinhamentos não têm qualquer efeito sobre elas. Isso não permite mascarar o alinhamento — a criatura aparece como uma ausência de alinhamento. Também oculta o tipo de criatura para ínferos, fadas, celestiais e mortos-vivos.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Impedimento (égide, aura)
+Você pode criar uma égide que exige que criaturas passem em um teste de resistência de Sabedoria para entrar em um espaço a até 1,5 m do alvo. Em caso de falha, elas não podem entrar nesse espaço até o início do próximo turno, quando podem tentar novamente, disparando um novo teste. Este talento não interfere com ataques, apenas movimento.
+
+Você também pode criar uma aura que dificulta que criaturas se aproximem do centro da aura. No início do turno ou ao tentar entrar na aura, a criatura deve ter sucesso em um teste de resistência de Sabedoria ou fica incapaz de entrar ou mover-se mais perto do centro até o início de seu próximo turno, quando pode tentar novamente.
+
+**Aprimoramento 1PM**: :: a opção de égide afeta espaços a até 3 m.
+
+#### Obscuridade (égide, aura)
+Criaturas sob esta égide ou dentro desta aura parecem irrelevantes e desinteressantes para os demais. As criaturas devem fazer um teste de resistência de Inteligência para notar sua presença. Isso ocorre antes de quaisquer testes de Sabedoria (Percepção).
+
+Um sucesso permite que vejam as criaturas normalmente (assumindo que já poderiam vê-las), até que percam a linha de visão ou que o alvo faça um teste bem-sucedido de Destreza (Furtividade). Criaturas que estejam procurando especificamente os protegidos e saibam quem eles são, ou que estejam engajadas em combate com eles, passam automaticamente no teste de resistência.
+
+#### Pacifismo (égide, aura)
+(Tradução de Peacebound — mantendo o sentido usual do termo)
+
+Você pode criar uma égide que torna o alvo imune a ações violentas ou magia violenta. Qualquer ação desse tipo contra o alvo exige que o agressor passe em um teste de resistência de Sabedoria ou perca a ação, incluindo quaisquer pontos de magia ou espaços de magia gastos. Se uma criatura tiver sucesso no teste (ou se o portador da égide de pacifismo fizer uma ação ofensiva contra qualquer criatura), a égide termina imediatamente.
+
+Você pode criar uma aura que torna todas as criaturas incapazes de cometer violência. Qualquer ação violenta ou efeito mágico ofensivo direcionado criado dentro da aura exige um teste de resistência de Sabedoria bem-sucedido, ou a ação é desperdiçada.
+
+Se qualquer criatura obtiver sucesso no teste, o efeito da aura termina imediatamente para todos. Quando uma aura de pacifismo é quebrada dessa forma, todas as criaturas dentro se tornam imunes à aura daquele conjurador até o próximo amanhecer.
+
+#### Saúde Protegida (égide, aura)
+Você pode criar uma égide que concede resistência a dano de veneno e vantagem em testes de resistência contra todos os venenos e doenças, mágicos ou não. Você pode criar uma aura que concede este benefício a todos dentro dela.
+
+#### Repelir Alinhamento (aura)
+Você pode criar uma aura que repele criaturas dos tipos ínfero, celestial, fada e morto-vivo. Essas criaturas não podem cruzar a borda da aura a menos que tenham sucesso em um teste de resistência de Carisma. Após ter sucesso, podem cruzar normalmente e ficam imunes à sua aura de Repelir Alinhamento até o próximo amanhecer.
+
+Se uma criatura estiver dentro da área quando a aura for criada ou se a aura for movida para o espaço dela, ela se torna imediatamente imune, como se tivesse passado no teste de resistência.
+
+#### Aura Antimagia (égide, aura)
+**Custo**: 1PM
+___
+Você cria uma égide que concede ao alvo vantagem em todos os testes de resistência contra magia.
+:
+**Custo**: 1PM
+___
+Você cria uma aura que reprime toda magia dentro de sua área de efeito. Faça um teste de habilidade de conjuração contra cada efeito mágico, item mágico ou criatura invocada dentro da área. Se seu teste superar a CD de resistência do efeito, item ou conjurador, o efeito é suprimido, o item mágico deixa de funcionar ou a criatura invocada desaparece temporariamente.
+
+O tempo suprimido conta para a duração total.
+Qualquer conjurador tentando usar magia dentro da área ou alvo dentro dela, ou qualquer criatura invocada tentando entrar, deve passar em um teste de habilidade de conjuração contra sua CD da esfera. Em caso de sucesso, o efeito ocorre normalmente e a criatura invocada não é banida pela aura.
+
+
+### Outros Talentos
+#### Comunidade
+Sempre que uma criatura sob sua égide sofrer dano, você pode transferir até metade desse dano para qualquer outra criatura voluntária sob uma de suas égides como ação gratuita.
+O dano transferido é do mesmo tipo e não pode ser redirecionado novamente por qualquer meio.
+
+#### Status
+Você sempre conhece a direção e a distância de todas as criaturas que se beneficiam de sua égide e está ciente de quaisquer condições que as afetem (ileso, ferido, incapacitado, amedrontado, inconsciente, morrendo, envenenado, atordoado, doente, confuso etc.).
+Se o alvo morrer ou se mover para outro plano de existência, este efeito deixa de funcionar.
+
+\page
+<div class='pageNumber auto'></div>
+
+### Talentos Avançados de Proteção
+
+#### Adaptação (égide)
+**Pré-requisitos**: :: Esfera de Proteção (Sem Fôlego, Resistência a Energia), 11º nível ou superior.
+
+**Aprimoramento 4PM**: :: Ao aplicar a égide Sem Fôlego, você pode tornar o alvo imune à maioria das condições ambientais. Eles se tornam imunes a temperaturas extremas, toxicidade no ar e podem respirar debaixo d’água ou no vácuo.
+
+Além disso, o alvo ganha resistência a dano ácido, frio, fogo, elétrico, radiante e trovejante. O alvo também ganha resistência a dano necrótico se você possuir Imortal, psíquico se você possuir Paz Interior, e veneno se você possuir Saúde Protegida.
+
+Aura Antimagia Avançada
+
+**Pré-requisitos**: :: Esfera de Proteção (Aura Antimagia), 11º nível ou superior.
+
+**Aprimoramento 2PM**: :: Ao criar uma aura com Aura Antimagia, você pode melhorar suas habilidades: a aura bloqueia toda magia e criaturas invocadas sem necessidade de teste de conjuração. Esta aura só pode ser centrada em você mesmo.
+
+#### Indetectável (égide)
+**Pré-requisitos**: :: Esfera de Proteção (Obscuridade), 15º nível ou superior.
+
+**Aprimoramento 3PM**: :: Ao conceder a égide Obscuridade a um alvo, você pode torná-lo indetectável por magia de adivinhação de qualquer tipo.
+Qualquer tentativa mágica de coletar informações sobre o alvo (incluindo espreitar, efeitos que detectam invisibilidade, detectar alinhamento, ou até magias Milagre e Desejo usadas de forma similar) falha automaticamente.
+
+No caso de espreitar que não observe diretamente o portador da égide (por exemplo, examinando a área onde ele está), a magia ou efeito funciona normalmente, mas o alvo não é detectado.
+
+### Variantes
+#### Proteção Limitada
+Escolha entre aura ou égide; você só recebe a habilidade escolhida.
+Se selecionar égide, ainda pode adquirir e se beneficiar de talentos de (socorro).
+Você ganha um talento bônus do tipo selecionado.
+
+#### Alma Protegida
+Você não pode direcionar sua égide a outras criaturas, apenas a si mesmo.
+Qualquer aura que você criar termina imediatamente se você encerrar seu turno fora dela.
+Você ganha um talento bônus de (aura) ou (égide) à sua escolha.
+
+\page

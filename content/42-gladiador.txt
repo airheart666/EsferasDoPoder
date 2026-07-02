@@ -1,0 +1,172 @@
+<div class='pageNumber auto'></div>
+
+## Gladiador
+Os praticantes da esfera Gladiador são especialistas em lutar com estilo e elegância para manipular as emoções e ações de seus inimigos, aliados ou da multidão. O gladiador entende que a vitória é um jogo mental; se você conseguir convencer seu inimigo de que deve ser temido, a batalha já está meio ganha.
+
+Ao obter a esfera Gladiador, você adquire as seguintes habilidades:
+
+#### Vangloriar
+Enquanto você tiver foco marcial, após causar dano a uma criatura com um acerto crítico, reduzir os pontos de vida de uma criatura hostil a 0 ou obter sucesso em uma manobra de agarrar ou empurrar uma criatura hostil, você pode se vangloriar como uma reação. Se uma vanglória afetar outra criatura, essa criatura deve estar a até 9 metros e deve ser capaz de ver e ouvir você.
+
+Ao adquirir a esfera Gladiador, você ganha a seguinte vanglória.
+
+##### Proeza (vanglória)
+**Alvo**: :: você mesmo
+**Duração**: :: até o final do seu próximo turno ou até ser usada.
+
+Você tem vantagem no próximo ataque com arma ou teste de habilidade contestado que fizer antes do final do seu próximo turno.
+
+##### Desmoralizar
+Como uma ação, você pode forçar uma criatura a até 9 metros que possa ver ou ouvir você a fazer um teste de resistência de Carisma; se ela falhar, ficará amedrontada por você até o final do seu próximo turno. Você pode gastar seu foco marcial para usar Desmoralizar como uma ação bônus.
+
+
+### Talentos de Vanglória
+Talentos com o descritor (vanglória) concedem novas formas de ser gabar para seus oponentes, potencializando sua proeza de combate.
+
+
+#### Sede de Sangue (vanglória)
+**Alvo**: :: você mesmo
+**Duração**: :: instantânea
+
+O sucesso o impulsiona a continuar o ataque. Você pode realizar um ataque contra um inimigo dentro da área da sua vanglória usando uma arma empunhada. O inimigo deve estar dentro do alcance da sua arma.
+
+
+#### Travessura (vanglória)
+**Alvo**: :: todas as criaturas dentro do alcance que o escolherem como alvo em uma jogada de ataque
+**Duração**: :: final do seu próximo turno
+**Teste de Resistência**: :: Sabedoria
+
+Sua exibição extravagante e incomum confunde seus inimigos. Até o início do seu próximo turno, qualquer criatura dentro do alcance desta vanglória que tentar acertá-lo como alvo em uma jogada de ataque deve fazer um teste de resistência de Sabedoria ou perderá o ataque e ficará impossibilitada de atacá-lo com quaisquer ataques subsequentes durante a duração desta habilidade, embora ainda possa direcionar quaisquer ataques restantes a outros alvos. Se o alvo for uma magia, a magia ou a parte da magia que o tinha como alvo é perdida. Uma vez que uma criatura seja bem-sucedida em um teste de resistência contra esta habilidade, ela se torna imune ao seu uso até que você complete um descanso longo.
+
+
+#### Exibição Distrativa (vanglória)
+**Alvo**: :: todos os aliados dentro do alcance
+**Duração**: :: final do seu próximo turno
+**Teste de Resistência**: :: nenhum
+
+Ao chamar a atenção para si, você permite que seus aliados desapareçam da vista. Até o final do seu próximo turno, aliados que não sejam você dentro do alcance desta vanglória podem se esconder mesmo que estejam sendo observados. Você pode realizar esta vanglória como uma ação padrão, ignorando o gatilho necessário.
+
+
+#### Exemplar (vanglória)
+**Alvo**: :: todos os aliados dentro do alcance
+**Duração**: :: final do seu próximo turno ou até ser usada.
+
+**Teste de Resistência**: :: nenhum
+
+Seus aliados dentro do alcance têm vantagem em sua próxima jogada de ataque, agarrar ou empurrar antes do início do seu próximo turno. Você não se beneficia desta vantagem.
+
+
+#### Pose Inspiradora (vanglória)
+**Alvo**: :: veja o texto
+**Duração**: :: final do seu próximo turno ou até ser usada. **Teste de Resistência**: :: nenhum
+
+Um número de criaturas aliadas dentro do alcance igual ao seu bônus de proficiência pode fazer um novo teste de resistência contra qualquer efeito contínuo que estejam sofrendo e que normalmente conceda um teste de resistência, mesmo que já tenham falhado no teste inicial e normalmente não teriam direito a outro. Falhar neste teste adicional não causa o progresso de quaisquer efeitos que normalmente seriam incorridos em um teste falho. Você só pode afetar uma criatura uma vez, mas pode fazê-lo novamente após um descanso curto ou longo.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Ameaça (vanglória)
+**Alvo**: :: criaturas hostis dentro do alcance
+**Duração**: :: início do seu próximo turno
+**Teste de Resistência**: :: Sabedoria
+
+Criaturas hostis dentro do alcance da sua vanglória não podem se aproximar voluntariamente de você, a menos que sejam bem-sucedidas em um teste de resistência de Sabedoria. Isso dura até o início do seu próximo turno. Criaturas imunes à condição amedrontada são imunes a este efeito.
+
+
+#### Fanfarrão de Aço (vangloria)
+**Alvo**: :: você mesmo
+**Duração**: :: início do seu próximo turno
+
+Você ganha resistência a dano de concussão, corte e perfuração.
+
+
+### Talentos de Desmoralização
+Talentos com o descritor (desmoralizar) modificam quando e como você pode usar Desmoralizar
+
+#### Inimigo Covarde (desmoralizar)
+Quando você causa dano ou obtém sucesso em uma tentativa de agarrar ou empurrar uma criatura enquanto usa a ação de ataque, você pode desmoralizar essa criatura como uma ação bônus.
+
+#### Mestre do Medo (desmoralizar)
+Ao usar desmoralizar, você pode escolher como alvo um número de criaturas igual ao seu bônus de proficiência. Você pode gastar seu foco marcial para escolher como alvo todos os inimigos a até 6 metros que possam ver e ouvir você.
+
+#### Espetáculo (desmoralizar)
+Sempre que você causar dano a uma criatura hostil com um acerto crítico ou reduzir os pontos de vida de uma criatura hostil a 0 ou menos, você pode usar desmoralizar em qualquer criatura dentro do alcance como uma reação.
+
+#### Destemido (desmoralizar)
+Você é proficiente em qualquer teste de resistência para evitar a condição de amedrontado, e as criaturas têm desvantagem em testes de Intimidação contra você.
+
+Quando uma criatura tenta um teste de Intimidação contra você e falha, ou quando você obtém sucesso em um teste de resistência contra um efeito que impõe a condição de amedrontado, você pode gastar foco marcial para desmoralizar a criatura que iniciou o efeito como uma reação.
+
+
+### Talentos de Medo
+Talentos com o descritor (medo) concedem benefícios adicionais contra aqueles que estão amedrontados.
+
+#### Maldição dos Covardes (medo)
+Você tem vantagem em jogadas de ataque contra criaturas que estejam amedrontadas por você.
+
+#### Intimidante (medo)
+Quando uma criatura amedrontada por você erra um ataque ou falha em uma tentativa de agarrar ou empurrar você, ela provoca um ataque de oportunidade seu.
+
+
+### Outros Talentos
+#### Escárnio
+Quando uma criatura erra uma jogada de ataque contra você ou falha em uma tentativa de agarrar ou empurrar você, você pode se gabar como uma reação.
+
+#### Favorito dos Fãs
+Você pode se gabar como uma reação sempre que obtiver sucesso em um teste de resistência contra um efeito originado de uma criatura hostil.
+
+#### Intimidante
+Você ganha proficiência em Intimidar. Se você já possui proficiência em Intimidar, você pode adicionar o dobro do seu modificador de proficiência a Intimidar. Você pode escolher este talento duas vezes. Se você já adiciona o dobro do seu modificador de proficiência a Intimidar, você não pode escolher este talento.
+
+#### Autoconfiança
+Você pode realizar uma bravata como uma ação em vez de uma reação, ignorando o gatilho necessário. Se o fizer, você pode recuperar seu foco marcial como uma ação bônus.
+
+#### Bravata Teatral
+Dobre o alcance de suas bravatas e desmoralizações.
+
+#### Provocador
+Ao realizar uma bravata, você pode gastar seu foco marcial para realizar duas bravatas em vez de uma.
+
+### Talentos Lendários de Gladiador
+
+#### Aura do Medo
+**Pré-requisitos**: :: Esfera de Gladiador, 9º nível ou superior.
+
+Quando uma criatura que está ciente de você se move ou inicia seu turno a até 9 metros de você, ela deve ser bem-sucedida em um teste de resistência de Sabedoria ou ficará amedrontada por você por 1 minuto. Uma criatura pode repetir o teste de resistência no final de cada um de seus turnos, encerrando o efeito sobre si mesma em caso de sucesso. Se o teste de resistência de uma criatura for bem-sucedido ou o efeito terminar para ela, a criatura fica imune à sua aura até que você complete um descanso longo.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Queimar a Palha (medo)
+**Pré-requisitos**: :: Esfera de Gladiador, 9º nível ou superior.
+
+Sempre que você realizar um ataque corpo a corpo bem-sucedido contra um alvo com ND menor que seu bônus de proficiência e que esteja sofrendo da condição amedrontado, seu ataque será um acerto crítico automático.
+
+
+#### Estrondo Ensurdecedor (desmoralizar)
+**Pré-requisitos**: :: Esfera de Gladiador, Esfera de Escudo, 5º nível ou superior.
+
+Sempre que você desmoralizar, você pode optar por golpear um escudo que esteja empunhando com uma arma ou membro para produzir um estrondo ensurdecedor. Além de quaisquer resultados de sua desmoralização, todos os alvos (exceto você mesmo) dentro do seu alcance de desmoralização devem passar em um teste de resistência de Constituição ou ficarão surdos por 1d4+1 rodadas. Ao usar esta habilidade, você pode avisar seus aliados para cobrirem os ouvidos e protegê-los dos efeitos do estrondo ensurdecedor (tornando-os imunes a essa instância), mas fazer isso concede vantagem aos inimigos em seus testes de resistência contra esse efeito.
+
+
+#### Combustível para Pesadelos (desmoralizar, medo)
+**Pré-requisitos**: :: Esfera de Gladiador, 11º nível ou superior.
+
+Sempre que uma criatura hostil falhar em seu teste de resistência contra seu desmoralizar, você pode gastar seu foco marcial para forçar o alvo a passar em um teste de resistência de Sabedoria ou ficar permanentemente com medo de você. A criatura tem desvantagem em todos os testes de resistência contra seu desmoralizar, e você tem vantagem em todos os testes de Intimidação contra ela. Este efeito é permanente até ser removido por uma magia de quebrar encantamento, cura, milagre ou desejo, ou efeitos similares.
+
+
+#### Medo Penetrante (desmoralizar)
+**Pré-requisitos**: :: Esfera de Gladiador
+
+Você pode gastar foco marcial ao usar desmoralizar para ignorar a imunidade do alvo à condição amedrontado. Em vez disso, o alvo tem vantagem em seu teste de resistência.
+
+### Variantes
+#### Fanfarrão
+Você não adquire a habilidade de desmoralizar. Você ganha Autoconfiança como talento bônus. Você não pode possuir esta variante e Combatente Humilde.
+
+\column
+
+#### Combatente Humilde
+Você não adquire a habilidade de se gabar e não pode selecionar talentos (gabar-se). Você ganha Destemido como talento bônus. Você não pode possuir esta variante e Fanfarrão.
+
+\page

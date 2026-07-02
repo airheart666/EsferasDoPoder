@@ -1,0 +1,202 @@
+<div class='pageNumber auto'></div>
+
+## Vida
+Você detém os poderes da vida. Ao obter a esfera da Vida, você ganha as habilidades de cura, revigoramento e restauração.
+
+
+#### Cura
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: toque
+**Duração**: :: Instantânea
+**Alvo**: :: 1 criatura
+**Custo**: :: 1PM
+
+O alvo recupera um número de pontos de vida igual a 1d8 + seu modificador de habilidade principal. A quantidade de cura aumenta em 1d8 no 5º nível (2d8 + MHC), 11º nível (3d8 + MHC) e 17º nível (4d8 + MHC). Esta habilidade não tem efeito em mortos-vivos ou constructos.
+
+
+#### Revigorar
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: toque
+**Duração**: :: 1 hora
+**Alvo**: :: 1 criatura
+**Teste de Resistência**: :: nenhum
+**Custo**: :: 0PM
+
+Você pode revigorar uma criatura, concedendo a ela pontos de vida temporários iguais ao seu bônus de proficiência. Se usado em uma criatura viva que tenha 0 pontos de vida, a criatura se estabiliza antes de receber os pontos de vida temporários. Diferentemente dos pontos de vida temporários normais, esta habilidade só pode ser usada em um alvo ferido e não pode aumentar os pontos de vida atuais do alvo, somados aos seus pontos de vida temporários, para um valor superior aos seus pontos de vida máximos. Se uma criatura revigorada receber cura posteriormente que eleve seus pontos de vida temporários acima dos seus pontos de vida máximos, ela perderá pontos de vida temporários até que a soma dos seus pontos de vida atuais não ultrapasse os seus pontos de vida máximos.
+
+**Aprimoramento 1PM**: :: Aumenta a duração do efeito para: até que se esgote ou até que você termine um descanso longo. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação.
+
+#### Restaurar
+**Tempo de Conjuração**: :: 1 ação
+**Alcance**: :: toque
+**Duração**: :: Instantânea
+**Alvo**: :: 1 criatura
+**Custo**: :: 1PM
+
+Você pode curar uma doença ou uma condição que esteja afetando o alvo. A condição pode ser cegueira, surdez, paralisia ou envenenamento. Se a condição alvo for causada por um efeito contínuo, este efeito é suprimido por um número de rodadas igual ao seu modificador de habilidade principal. Esta habilidade não pode ser usada para remover maldições ou efeitos instantâneos.
+
+
+### Talentos Básicos de Vida
+
+#### Surto de Adrenalina
+**Aprimoramento 1PM**: :: Quando você usa uma habilidade da esfera Vida em um aliado (que não seja você mesmo), você também pode conceder a ele um surto de adrenalina. O aliado pode fazer uma das seguintes ações como reação:
+
+• fazer um único ataque com arma
+___
+• mover-se até o seu deslocamento
+___
+• fazer um teste de Destreza para escapar de amarras, agarramentos ou outras restrições
+___
+• sacar, pegar ou preparar uma arma ou escudo
+___
+• levantar-se da posição deitada
+___
+___
+Se você possuir o talento Massa (metaesfera) da esfera Universal, você pode gastar um ponto de magia adicional para aplicar este aprimoramento a todas as criaturas afetadas. Os surtos são resolvidos na ordem de iniciativa.
+
+
+#### Quebrar Encantamento
+**Aprimoramento 1PM**: :: Você pode permitir que sua habilidade de restauração remova um efeito mágico do alvo que tenha uma duração. Isso pode ser usado contra maldições, incluindo equipamentos amaldiçoados, embora não remova a maldição do equipamento, mas sim suprima o efeito por tempo suficiente para que o item seja removido. Se você não especificar um efeito em particular, um aleatório será selecionado. Você deve ser bem-sucedido em um teste de habilidade de conjuração contra a CD da esfera ou da magia do efeito mágico para removê-lo. Isso conta como usar a magia remover maldição contra aquelas magias e efeitos que especificam que só podem ser removidos por meio dessa magia. Isso não tem efeito sobre efeitos instantâneos.
+
+
+#### Contágio
+**Aprimoramento 1PM**: :: Quando você restaura uma criatura, pode imediatamente tentar infligir as condições que acabou de remover em outra criatura viva dentro do alcance da sua habilidade de restaurar. A criatura alvo deve ser bem-sucedida em um teste de Constituição contra a CD da sua esfera ou receberá todas as condições que você acabou de restaurar. Imunidade se aplica a essas condições normalmente.
+
+Essas condições duram uma rodada, independentemente da duração original das condições restauradas. Se a criatura for bem-sucedida em seu teste de resistência, a criatura original ainda estará restaurada. 
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Diagnosticar
+**Tempo de Conjuração**: :: 1 ação bônus
+**Alcance**: :: toque (veja o texto)
+**Duração**: :: Instantânea
+**Alvo**: :: 1 criatura
+**Custo**: :: 0PM
+
+Como uma ação bônus, você pode descobrir quaisquer condições que estejam afetando uma criatura viva.
+
+Ao aumentar o tempo de conjuração desta habilidade para uma ação, você pode descobrir os detalhes de qualquer condição que a criatura esteja sofrendo, como se ela foi afetada por uma magia ou a natureza de qualquer doença ou veneno que a aflige. Você pode usar esta habilidade em uma criatura morta para determinar como ela morreu, contanto que o alvo esteja morto há no máximo um dia.
+
+Você também pode usar esta habilidade em qualquer aliado que esteja atualmente sob o efeito de uma de suas habilidades da esfera Vida, independentemente do alcance ou linha de efeito (como aliados que atualmente possuem pontos de vida temporários da sua habilidade Revigorar), contanto que estejam no mesmo plano de existência. Você sempre sabe a direção e a distância até tal aliado.
+
+
+#### Cura Empática
+Aprimoramento -1PM: Você pode curar outros absorvendo seus ferimentos. Ao curar uma criatura empaticamente, você adquire quaisquer condições que tenha removido dela, como se você fosse o afetado originalmente. Você não pode transferir condições que o matarão ou condições que resultem de efeitos contínuos.
+
+Você não pode transferir efeitos que já o afetam, a menos que sejam cumulativos (portanto, você pode curar um nível de exaustão aumentando o seu próprio, mas não pode curar uma doença que já possui). Ao curar múltiplas condições, você pode selecionar quais condições transferir e quais deixar sem tratamento.
+
+Se o efeito causador da condição permitir um teste de resistência, você não terá direito a um novo teste, embora quaisquer efeitos que o protejam da condição ainda funcionem enquanto você os tiver.
+
+
+#### Cura Esotérica
+**Aprimoramento 0PM**: :: Sua habilidade de cura afeta mortos-vivos e constructos.
+
+#### Fonte da Vida
+Você pode armazenar uma cura dentro de si, permitindo que acesse essa cura conforme necessário ao longo do dia. Você gasta um ponto de magia e rola o dano curado normalmente, exceto que, em vez de curar o valor indicado, essa quantidade de cura é armazenada. Você pode armazenar múltiplas curas dessa maneira para aumentar a quantidade de cura armazenada, mas não pode armazenar mais cura do que 10 vezes o seu nível. A cura armazenada é perdida ao completar um descanso longo.
+
+Você pode usar essa cura armazenada para curar alvos exatamente como se estivesse usando sua habilidade de cura, exceto que não precisa gastar um ponto de magia; você pode escolher a quantidade de cura concedida (até um máximo igual à sua cura armazenada), e qualquer cura concedida a um alvo é subtraída da sua cura armazenada. Uma cura aprimorada com o talento Revitalizar não pode ser usada para adicionar à sua cura armazenada.
+
+#### Cura Maior
+**Aprimoramento 1PM**: :: Sua habilidade de cura restaura 5 pontos de vida por nível + seu modificador de habilidade principal em vez da quantidade normal.
+
+
+#### Revigorar Maior
+**Aprimoramento 1PM**: :: Seu efeito de revigorar concede 5 pontos de vida temporários em vez da quantidade normal. Além disso, seu revigorar pode aumentar o total de pontos de vida efetivos de um alvo além do seu máximo de pontos de vida, como é normal com pontos de vida temporários. Isso significa que você pode usar este talento para conceder um revigorar a uma criatura que já esteja com seus pontos de vida máximos. O número de pontos de vida temporários concedidos por revigorar aumenta em 5 no 5º nível (10 pontos de vida temporários), no 11º nível (15 pontos de vida temporários) e no 17º nível (20 pontos de vida temporários).
+
+
+#### Restauração Maior
+**Aprimoramento 1PM**: :: Sua habilidade de restauração pode reduzir o nível de exaustão do alvo em 1 ou remover qualquer um dos seguintes efeitos:
+
+Qualquer redução em um dos atributos do alvo
+Um efeito que reduza o máximo de pontos de vida do alvo
+
+#### Cura Latente
+**Aprimoramento 0PM**: :: Quando você usa cura ou revigorar em um alvo, você pode optar por atrasar seus efeitos. Você pode aplicar efeitos que adicionam pontos de vida adicionais de cura no momento da cura inicial, como pontos de vida adicionais da Fonte da Vida. A qualquer momento, o alvo do efeito pode ativar seus efeitos como uma reação. Você pode até mesmo escolher alvos não feridos ao usar suas habilidades dessa forma, embora os efeitos só possam ser ativados quando o alvo estiver ferido. A cura atrasada dessa forma dura até que o alvo complete um descanso curto ou longo. Um alvo só pode estar sob os efeitos de uma Cura Latente por vez.
+
+**Aprimoramento 0PM**: :: Quando você usa cura ou revigorar em um alvo, você pode optar por atrasar seus efeitos. Cura Restauradora
+ 
+\page
+<div class='pageNumber auto'></div>
+
+**Aprimoramento 1PM**: :: Ao usar suas habilidades de cura ou revigorar em um ou mais alvos, você também pode restaurá-los. Quaisquer custos de aprimoramento incorridos pela restauração devem ser pagos normalmente.
+
+
+#### Restaurar Mente
+**Aprimoramento 1PM**: :: Sua habilidade de restaurar pode remover qualquer efeito que cause uma das seguintes condições:
+
+Enfeitiçado,
+Amedrontado,
+Atordoado,
+Inconsciente,
+
+#### Restaurar Movimento
+Sua habilidade de restaurar pode permitir que o alvo se levante da posição deitada ou tente um teste de Força (Atletismo) ou Destreza (Acrobacia) para escapar de uma imobilização com vantagem como uma reação.
+
+**Aprimoramento 1PM**: :: Sua habilidade de restaurar pode remover qualquer efeito que cause uma das seguintes condições:
+
+Petrificado,
+Imobilizado,
+Um efeito que reduz a velocidade de um alvo abaixo do seu valor normal, como um raio de gelo ou a Explosão Impedidora (tipo explosão).
+
+
+#### Ressuscitar
+**Aprimoramento 2PM**: :: Sua habilidade Revigorar funciona em criaturas que morreram em no máximo 1 rodada, trazendo-as de volta à vida. Voltar dos mortos é uma provação. O nível de exaustão do alvo aumenta em 1, até um máximo de 5, e não pode ser reduzido abaixo do nível de exaustão 1 por nenhum meio até completar um descanso longo. Esta habilidade requer um corpo quase intacto para funcionar. Ela não pode trazer de volta à vida uma criatura que morreu de velhice, nem pode restaurar partes do corpo perdidas. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação.
+
+**Aprimoramento 3PM**: :: Este funciona como o aprimoramento acima, exceto que você pode escolher criaturas que morreram no último minuto.
+
+
+#### Revitalizar
+**Aprimoramento 0PM**: :: Ao usar Cura, você pode optar por conceder ao alvo cura natural rápida em vez de curar diretamente o dano. O alvo cura 1 ponto de vida por rodada no início de seu turno enquanto você se concentrar, até 1 minuto. Alvos com 0 pontos de vida não recuperam pontos de vida com uma cura aprimorada por este talento, mas são estabilizados se estiverem morrendo. A quantidade curada a cada rodada aumenta em 1 no 5º nível (2 pontos de vida), 11º nível (3 pontos de vida) e 17º nível (4 pontos de vida).
+
+**Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação.
+
+
+### Talentos Avançados de Vida
+
+#### Regeneração
+**Pré-requisitos**: :: Esfera da Vida (Revitalizar), Esfera Universal (Estendida (metaesfera)), 11º nível ou superior.
+
+**Aprimoramento 1PM**: :: Durante a duração, se você possuir a parte decepada e a segurar contra o coto (uma interação com objeto) de uma criatura sob o efeito de Revitalizar, o membro é instantaneamente reconectado. Se Revitalizar também for aprimorado com o talento Estendido (metaesfera) da esfera Universal, os membros decepados do alvo (dedos, pernas, caudas, etc.), se houver, serão restaurados após 2 minutos.
+
+
+#### Restaurar Mente e Corpo
+**Pré-requisitos**: :: Esfera da Vida, 11º nível ou superior.
+
+**Aprimoramento 2PM**: :: Ao usar Restaurar, você pode remover qualquer número de condições que afetem o alvo.
+
+
+#### Ressurreição
+**Pré-requisitos**: :: Esfera da Vida (Ressuscitar), 11º nível ou superior.
+
+**Tempo de Conjuração**: :: 1 hora
+**Alcance**: :: toque
+**Duração**: :: instantânea
+**Alvo**: :: 1 criatura morta
+**Custo**: :: 3PM
+
+Você traz uma criatura morta de volta à vida, desde que ela esteja morta há no máximo 10 dias. Se a alma da criatura estiver disposta e livre para retornar ao corpo, a criatura retorna à vida com 1 ponto de vida.
+
+Este efeito também neutraliza quaisquer venenos e cura doenças não mágicas que afetavam a criatura no momento de sua morte. No entanto, este efeito não remove doenças mágicas, maldições ou efeitos similares; se estes não forem removidos antes de conjurar o efeito, eles entrarão em vigor quando a criatura retornar à vida. O efeito não pode ressuscitar uma criatura morta-viva. Este efeito fecha todos os ferimentos mortais, mas não restaura partes do corpo perdidas. Se a criatura não possuir partes do corpo ou órgãos essenciais para sua sobrevivência (sua cabeça, por exemplo), o efeito falha automaticamente, consumindo todos os pontos de magia e ações usados ​​na conjuração.
+
+Retornar dos mortos é uma provação. O alvo sofre uma penalidade de -4 em todas as jogadas de ataque, testes de resistência e testes de habilidade. A cada descanso longo concluído pelo alvo, a penalidade é reduzida em 1 até desaparecer.
+ 
+\page
+<div class='pageNumber auto'></div>
+
+#### Ressurreição Maior
+**Pré-requisitos**: :: Esfera da Vida (Ressuscitar, Ressurreição, Regeneração), 15º nível ou superior.
+
+**Aprimoramento 1PM**: :: Você pode usar Ressurreição em criaturas que morreram há menos de 100 anos e restaurar todas as partes do corpo perdidas. Usar este aprimoramento para restaurar a vida de uma criatura que morreu há um ano ou mais exige muito de você. Até terminar um descanso longo, você não poderá conjurar magias ou usar efeitos de esfera novamente e terá desvantagem em todas as jogadas de ataque, testes de habilidade e testes de resistência.
+
+### Variantes
+#### Restauração Limitada
+Escolha a habilidade de restaurar ou as habilidades de curar e revigorar. Você não pode usar esta habilidade ou habilidades, nem escolher talentos que apenas aprimorem essas habilidades. Você recebe um talento bônus desta esfera.
+
+#### Regenerar
+Você só pode usar suas habilidades da esfera da Vida em si mesmo. Você recebe o talento Revitalizar ou o talento Acelerar (metaesfera) da esfera Universal como um talento bônus.
+
+#### Simpático
+Você só pode curar os outros absorvendo seus sofrimentos. Você recebe o talento Cura Empática como um talento bônus e deve usá-lo ao usar a habilidade de restaurar. Você não pode combinar esta variante com nenhuma variante que remova a habilidade de restaurar.
+
+\page

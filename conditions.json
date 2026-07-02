@@ -1,0 +1,17 @@
+{
+  "agarrado": "A velocidade da criatura vira 0 (ela não pode se mover). A condição termina se quem agarrou ficar incapacitado ou se a criatura for afastada do alcance.",
+  "amedrontado": "A criatura fica com desvantagem em testes e ataques enquanto a fonte do medo estiver à vista, e não pode se aproximar voluntariamente dela.",
+  "atordoado": "A criatura fica incapacitada (não age), não se move, fala com dificuldade, falha automaticamente em testes de Força e Destreza, e ataques contra ela têm vantagem.",
+  "caído": "A criatura está no chão. Só pode engatinhar (ou gastar movimento para se levantar), ataca com desvantagem, e ataques corpo a corpo contra ela têm vantagem (à distância, desvantagem).",
+  "cego": "A criatura não enxerga: falha em testes que dependem de visão, ataca com desvantagem e é atacada com vantagem.",
+  "enfeitiçado": "A criatura não pode atacar quem a enfeitiçou nem o escolher como alvo de efeitos nocivos; quem a enfeitiçou tem vantagem em interações sociais com ela.",
+  "envenenado": "A criatura ataca com desvantagem e faz testes de habilidade com desvantagem.",
+  "restringido": "A velocidade vira 0 (a criatura não pode se mover); ela ataca com desvantagem, é atacada com vantagem e faz testes de resistência de Destreza com desvantagem (condição \"restrained\").",
+  "incapacitado": "A criatura não pode realizar ações nem reações.",
+  "inconsciente": "A criatura fica incapacitada, caída, sem perceber o entorno, larga o que segura e falha em testes de Força/Destreza; ataques contra ela têm vantagem e acertos de perto são críticos.",
+  "invisível": "A criatura não pode ser vista sem ajuda especial; conta como muito bem escondida, ataca com vantagem e é atacada com desvantagem.",
+  "paralisado": "A criatura fica incapacitada, não se move nem fala, falha em testes de Força/Destreza; ataques têm vantagem e qualquer acerto de perto é crítico.",
+  "petrificado": "A criatura vira pedra: incapacitada, sem perceber o entorno, resiste muito a dano e fica imune a veneno e doença; ataques contra ela têm vantagem.",
+  "surdo": "A criatura não ouve e falha automaticamente em testes que dependem de audição.",
+  "exausto": "Cansaço extremo, medido em níveis: começa com desvantagem em testes e piora progressivamente (menos velocidade, desvantagem em ataques e resistências, até a morte no nível 6)."
+}

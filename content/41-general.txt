@@ -1,0 +1,167 @@
+<div class='pageNumber auto'></div>
+
+## General
+Praticantes da esfera do General aprendem técnicas para organizar, reunir e dirigir seus aliados em batalha. Sejam guerreiros carismáticos liderando na linha de frente ou táticos astutos comandando suas tropas de uma posição segura com vista para o campo de batalha, seu talento superior para liderar tropas os torna forças inestimáveis ​​no campo de batalha.
+
+Praticantes da esfera do General adquirem as seguintes habilidades:
+
+#### Táticas
+Táticas são planos de batalha coordenados que exigem direção contínua do praticante para serem mantidos. Iniciar e manter uma tática a cada rodada custa uma ação bônus. Enquanto uma tática estiver ativa, você e todos os aliados a até 6 metros de você que possam vê-lo e ouvi-lo recebem seus benefícios, contanto que você não esteja indefeso, morto, paralisado, inconsciente ou atordoado. Uma criatura não pode se beneficiar de mais de uma tática por vez.
+
+Ao obter a esfera do General pela primeira vez, você ganha a seguinte tática:
+
+##### Flanqueamento Agressivo
+Quando duas criaturas aliadas afetadas por esta tática tiverem a mesma criatura hostil ao seu alcance, elas recebem um bônus de +2 nas jogadas de ataque contra ela.
+
+#### Gritos
+Gritos são efeitos sonoros que você pode realizar como uma ação e que afetam criaturas a até 3 metros de você. Você pode escolher se incluir ou não nos efeitos do seu grito. Aliados precisam ser capazes de ouvi-lo para obter os benefícios de um grito, e personagens que não podem ouvir têm vantagem em todos os testes de resistência contra os efeitos nocivos de um grito.
+
+Enquanto alguns gritos afetam apenas aliados ou inimigos, outros afetam todos os alvos dentro de sua área de efeito. Ao realizar um grito desse tipo, você pode gastar uma ação bônus para avisar seus aliados para que tapem os ouvidos e anulem os efeitos, mas fazer isso concede vantagem aos inimigos dentro da área de efeito em seus testes de resistência contra os efeitos do grito.
+
+Ao adquirir a esfera do General pela primeira vez, você ganha o seguinte grito:
+
+##### Grito Feroz
+Ao usar este grito, os aliados afetados recebem um bônus igual ao seu bônus de proficiência na jogada de dano do primeiro ataque que realizarem dentro de 1 rodada.
+
+\column
+
+### Talentos de Grito
+Talentos com o descritivo (grito) lhe concedem novas formas de comandar seus aliados e desestabilizar seus inimigos com sua voz de comando.
+
+#### Chamar a Atenção (grito)
+Ao usar este grito, a atenção de seus oponentes é atraída para você durante sua duração, dificultando que eles se concentrem em seus aliados. Aliados dentro da área afetada pelo grito têm vantagem em testes de Destreza (Furtividade) por 1 rodada, mas você falha automaticamente em quaisquer testes de Destreza (Furtividade) durante a duração do grito.
+
+#### Grito Concentrador (grito)
+Você pode gastar seu foco marcial para usar este grito e restaurar o foco marcial de um número de criaturas igual à metade do seu bônus de proficiência, exceto você, dentro da área afetada pelo grito.
+
+#### Rugido Aterrorizante (grito)
+Você pode gastar seu foco marcial para usar este grito e desmoralizar inimigos, forçando criaturas hostis dentro de seu raio de ação a serem bem-sucedidas em um teste de resistência de Sabedoria ou ficarem amedrontadas por 1 rodada. Enquanto amedrontada por este grito, uma criatura deve usar a ação Disparada e se afastar de você pela rota mais segura disponível em cada um de seus turnos, a menos que não haja para onde se mover. Se a criatura terminar seu turno em um local onde não tenha linha de visão para você, ela pode fazer um teste de resistência de Sabedoria. Em caso de sucesso, a condição de amedrontado termina para essa criatura. Este talento pode ser escolhido até duas vezes; na segunda vez que este talento for escolhido, qualquer criatura afetada por este grito que já esteja amedrontada ficará amedrontada por 1 minuto.
+
+#### Arenga (grito)
+Você pode gastar seu foco marcial para usar este grito, permitindo que todos os aliados dentro de sua área façam um novo teste de resistência contra qualquer efeito contínuo que estejam sofrendo e que normalmente conceda um teste de resistência usando a CD original, mesmo que já tenham falhado no teste inicial e normalmente não teriam direito a outro. Efeitos que podem piorar em um teste de resistência falho não contam este teste de resistência como uma falha ao determinar tais efeitos, caso seja malsucedido. Uma criatura só pode se beneficiar deste grito uma vez por descanso curto.
+
+#### Discurso Inspirador (grito)
+Você pode gastar seu foco marcial para inspirar seus aliados e fortalecer suas mentes. Aliados afetados têm vantagem em todos os testes de resistência contra efeitos que os deixariam enfeitiçados ou amedrontados por 1 minuto.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Brado Revigorante (grito)
+Você pode gastar seu foco marcial para conceder a todos os aliados afetados um número de pontos de vida temporários igual ao seu bônus de proficiência e permitir que eles tratem sua exaustão como se fosse 1 nível menor por 1 hora. Um alvo não pode recuperar os benefícios deste talento até terminar um descanso curto ou longo.
+
+
+### Talentos Táticos
+Talentos com o descritivo (tática) representam novas estratégias e linhas de ação que você pode usar no campo de batalha, para guiar seus aliados à vitória.
+
+#### Coordenação no Campo de Batalha (tática)
+Uma criatura afetada por esta tática pode usar uma Reação para permitir que outro aliado afetado ignore uma fonte de desvantagem em qualquer rolagem.
+
+#### Disparada do Mensageiro (tática)
+Criaturas afetadas por esta tática que iniciam seu turno dentro de seu raio recebem um bônus de +3 metros em seus deslocamentos para aquela rodada.
+
+#### Auxílio Coordenado (tática)
+Criaturas afetadas por esta tática podem usar a ação Ajudar para auxiliar outro aliado afetado dentro de seu alcance em um teste de habilidade como uma reação.
+
+#### Reflexos Coordenados (tática)
+Criaturas afetadas por esta tática que estão dentro do alcance recebem um bônus de +2 em testes de resistência de Destreza para evitar dano de ataques e efeitos que visam uma área, como uma magia de bola de fogo, desde que estejam adjacentes a outra criatura que se beneficie desta tática.
+
+Quando uma criatura afetada por esta tática falha em seu teste de resistência de Destreza contra tal efeito, você pode gastar uma reação para permitir que ela role o teste de resistência novamente. 
+
+#### Pastoreio Mortal (tática)
+Sempre que uma criatura beneficiada por esta tática causar dano a um inimigo com um ataque, ela pode empurrar o alvo como uma ação bônus. O movimento forçado pode provocar um ataque de oportunidade de aliados que não seja aquele que iniciou o movimento.
+
+#### Falange Fortificante (tática)
+Criaturas afetadas por esta tática que estejam dentro do alcance recebem um bônus de +2 em testes de resistência de Constituição para evitar dano de ataques e efeitos que visam uma área, como a magia nuvem fétida, desde que estejam adjacentes a outra criatura beneficiada por esta tática.
+
+Quando uma criatura afetada por esta tática falhar em um teste de resistência de Constituição, você pode gastar uma reação para permitir que ela role o teste novamente.
+
+#### Revestido de Ferro (tática)
+Criaturas afetadas por esta tática que estejam dentro do alcance reduzem o dano de concussão, perfuração e corte de fontes não mágicas em um valor igual ao seu bônus de proficiência.
+
+#### Vontade Militante (tática)
+Criaturas afetadas por esta tática que estejam dentro do alcance recebem um bônus de +2 em testes de resistência contra as condições enfeitiçado e amedrontado.
+
+Quando uma criatura afetada por esta tática falhar em seu teste de resistência contra tal efeito, você pode gastar uma reação para permitir que ela role o teste novamente.
+
+#### Preparação (tática)
+Criaturas afetadas por esta tática que estejam dentro do alcance recebem um bônus em seus testes de iniciativa igual ao seu bônus de proficiência. Uma criatura não pode se beneficiar desta tática por mais de uma hora no total. A capacidade de se beneficiar dela é recuperada após completar um descanso longo.
+
+#### Posição Reativa (tática)
+Uma criatura afetada por esta tática pode trocar de lugar com outro aliado adjacente afetado como uma reação. Este movimento não provoca ataques de oportunidade.
+
+#### Irmãos de Escudo (tática)
+Enquanto uma criatura afetada por esta tática estiver adjacente a pelo menos um outro aliado afetado, ela recebe um bônus de +2 na CA.
+
+
+### Outros Talentos
+#### Suporte Respiratório
+Ao realizar um grito, você pode alterar a área de efeito para um cone de 4,5 metros. O tamanho do cone aumenta em 1,5 metro no 5º nível (cone de 6 metros), no 11º nível (cone de 7,5 metros) e no 17º nível (cone de 9 metros).
+
+#### Concentração em Táticas
+Qualquer aliado atualmente afetado por um de seus gritos ou táticas pode gastar uma ação para restaurar seu foco marcial.
+
+#### Comandos Rápidos
+Você pode gastar seu foco marcial para realizar um grito como uma ação bônus ou permitir que uma tática continue por 1 minuto sem precisar gastar uma ação bônus para mantê-la a cada rodada.
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Reservatório Rugidor
+Você pode usar um grito que normalmente exige que você gaste seu foco marcial sem gastá-lo, mas fazer isso aumenta seu nível de exaustão em 1 por 1 minuto.
+
+#### Comandos Verbais
+As criaturas podem se beneficiar de suas táticas mesmo que não possam vê-lo, contanto que possam ouvir suas instruções. Isso permite que criaturas cegas, mas não surdas, se beneficiem de suas táticas. Você também pode centralizar a área de sua tática longe de si; em vez de afetar criaturas a até 6 metros de você, ela afetará criaturas em um círculo de 6 metros de raio, centrado em qualquer lugar dentro do alcance da sua voz. Você pode até mesmo centralizar suas táticas longe de si, contanto que tenha um método mágico ou mundano de ver o que está acontecendo e se comunicar com os aliados na área.
+
+
+### Talentos Lendários de General
+
+#### Grito das Terras Sombrias (grito)
+**Pré-requisitos**: :: Esfera do General, 11º nível ou superior.
+**Duração**: :: Instantânea
+**Teste de Resistência**: :: Constituição
+
+Você pode gastar seu foco marcial para realizar um grito que suga a própria vida e vontade de viver de uma criatura. Qualquer criatura dentro do raio de alcance deste grito que falhar em um teste de resistência de Constituição aumenta sua exaustão em 1. Este é um efeito mágico.
+
+
+#### Uivo Explosivo (grito)
+**Pré-requisitos**: :: Esfera do General.
+**Duração**: :: veja o texto
+**Teste de Resistência**: :: Constituição
+
+Você pode gastar seu foco marcial para realizar um grito ensurdecedor. Todos os alvos dentro da área de efeito sofrem 1d8 de dano trovejante, aumentando em 1d8 no 5º (2d8), 11º (3d8) e 17º (4d8) níveis. Além disso, os alvos são empurrados 3 metros diretamente para longe de você e ficam surdos por 1 minuto. Os alvos têm direito a um teste de resistência de Constituição para reduzir o dano à metade e negar o efeito de empurrão e surdez.
+
+
+#### Legião Infinita (tática)
+**Pré-requisitos**: :: Esfera do General (Sinal de Impulso), 11º nível ou superior.
+
+Sempre que uma criatura afetada por esta tática estiver prestes a ter seus pontos de vida reduzidos a 0, você pode usar uma reação para conceder a ela um número de pontos de vida temporários igual ao dobro do seu nível. Esses pontos de vida temporários são aplicados antes do dano do ataque que a desencadeou. Esses pontos de vida temporários expiram no início do seu turno.
+
+Você pode gastar foco marcial para usar esta habilidade sem usar sua reação, mas fazer isso encerra a tática.
+
+
+#### Aura do Mestre (tática)
+**Pré-requisitos**: :: Esfera do General, 11º nível ou superior.
+**Alvo**: :: você mesmo
+
+Qualquer criatura que entrar em contato físico com você enquanto esta tática estiver ativa deve ser bem-sucedida em um teste de resistência de Sabedoria ou ficará enfeitiçada por 1 hora. Uma vez que uma criatura tenha tentado um teste de resistência contra este efeito, ela não poderá ser afetada por ele novamente até que você complete um descanso longo.
+
+
+#### Recuperar Espírito (grito)
+**Pré-requisitos**: :: Esfera do General (Sinal de Impulso), 11º nível ou superior.
+
+Você pode gastar seu foco marcial para recuperar o espírito de uma criatura dentro do alcance do seu grito que tenha morrido em 1 rodada. O alvo é curado em uma quantidade igual ao seu nível + seu modificador de habilidade principal. O nível de exaustão do alvo aumenta em 2, até um máximo de 5, e não pode ser reduzido abaixo do nível de exaustão 1 por nenhum meio até completar um descanso longo.
+
+
+#### Lealdade Infinita
+**Pré-requisitos**: :: Esfera do General (Legião Infinita, Recuperar Espírito, Sinal de Impulso), 15º nível ou superior.
+
+Você pode usar seu grito Recuperar Espírito em um alvo que tenha morrido em 1 minuto, em vez de 1 rodada. O alvo retorna à vida com um número de pontos de vida igual ao dobro do seu nível + seu modificador de habilidade principal e sem exaustão (se isso lhe conceder mais pontos de vida do que o normal, ele recebe o excesso como pontos de vida temporários). Após uma hora, a criatura morre independentemente de seus pontos de vida e não pode ser afetada por este talento uma segunda vez, a menos que seja trazida de volta à vida por outros meios. Este é um efeito mágico.
+
+### Variantes
+#### Barbarismo
+Você não ganha a habilidade de táticas. Você ganha o talento Rugido Aterrorizante como um talento bônus. Você não pode possuir este talento e Líder Manso.
+
+#### Líder Manso
+Você não ganha a habilidade de grito. Você não pode escolher talentos (de grito). Você ganha o talento Investida do Mensageiro como um talento bônus. Você não pode possuir este talento e Barbarismo.
+
+\page

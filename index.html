@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Esferas de Magia e Poder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <span class="sidebar-title">Esferas de Magia e Poder</span>
+      <button id="sidebar-close" aria-label="Fechar menu">✕</button>
+    </div>
+    <nav id="toc-nav" aria-label="Índice de conteúdos">
+      <!-- gerado por buildSidebar() -->
+    </nav>
+  </aside>
+
+  <div id="main-area">
+    <header id="top-bar">
+      <button id="menu-toggle" aria-label="Abrir menu">☰</button>
+      <a id="home-link" href="#p1" aria-label="Voltar ao Início" title="Voltar ao Início">⌂</a>
+      <span id="top-title">Esferas de Magia e Poder</span>
+      <button id="search-toggle" aria-label="Buscar" title="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <line x1="15.5" y1="15.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button id="theme-toggle" aria-label="Alternar tema">◐</button>
+    </header>
+
+    <main id="content">
+      <p id="loading">Carregando…</p>
+    </main>
+  </div>
+
+</div>
+
+<!-- Overlay de busca (tela cheia no mobile, modal no desktop) -->
+<div id="search-overlay" class="modal" hidden role="dialog" aria-modal="true" aria-label="Buscar no conteúdo">
+  <div class="modal-panel search-panel">
+    <div class="search-panel-header">
+      <input type="search" id="search-input" placeholder="Buscar no conteúdo…" autocomplete="off" aria-label="Buscar no conteúdo">
+      <button id="search-close" aria-label="Fechar busca">✕</button>
+    </div>
+    <div id="search-status" aria-live="polite"></div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<!-- Painel de glossário (bottom sheet no mobile, popover no desktop) -->
+<div id="glossary-sheet" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="glossary-term-name">
+  <div class="modal-panel sheet-panel">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <button id="glossary-close" class="sheet-close" aria-label="Fechar">✕</button>
+    <h3 id="glossary-term-name" class="sheet-title"></h3>
+    <div id="glossary-def" class="sheet-body"></div>
+    <a id="glossary-more" class="sheet-more" href="#">Ver no glossário →</a>
+  </div>
+</div>
+
+<!-- Guia "Como ler uma esfera" (bottom sheet no mobile, popover no desktop) -->
+<div id="howto-sheet" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="howto-title">
+  <div class="modal-panel sheet-panel">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <button id="howto-close" class="sheet-close" aria-label="Fechar">✕</button>
+    <h3 id="howto-title" class="sheet-title">Como ler uma esfera</h3>
+    <div class="sheet-body">
+      <p>Cada <strong>esfera</strong> é um tema de habilidades. Você a ganha inteira ao adquiri-la, e pode expandi-la com talentos.</p>
+      <p><strong>Habilidade base</strong> (selo <span class="base-badge">base</span>): o que você recebe de graça só por ter a esfera.</p>
+      <p><strong>Talento</strong>: uma opção extra que você compra gastando um talento mágico/marcial. Ficam sob os grupos "Talentos de…".</p>
+      <p>A <strong>ficha</strong> no topo de cada habilidade resume os parâmetros:</p>
+      <ul>
+        <li><strong>Tempo de Conjuração</strong> — a ação necessária (ação, ação bônus, reação…).</li>
+        <li><strong>Alcance</strong> — a que distância você pode mirar o efeito.</li>
+        <li><strong>Duração</strong> — quanto tempo dura (instantânea, concentração, etc.).</li>
+        <li><strong>Alvo / Área</strong> — o que ou quem o efeito atinge.</li>
+        <li><strong>Custo</strong> — quantos <strong>pontos de magia (PM)</strong> gastar.</li>
+        <li><strong>Teste de Resistência</strong> — o teste que o alvo faz para reduzir/anular o efeito.</li>
+      </ul>
+      <p><strong>Aprimoramento X PM</strong>: uma melhoria opcional; gaste mais X pontos de magia para reforçar o efeito. <strong>PM</strong> = pontos de magia; <strong>CD</strong> = classe de dificuldade do teste de resistência.</p>
+      <p>Toque em qualquer termo <em>destacado</em> no texto para ver a definição.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Voltar ao topo -->
+<button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo" hidden>↑</button>
+
+<script src="parser.js"></script>
+<script src="chapters.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
