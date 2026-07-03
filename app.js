@@ -6,6 +6,8 @@ let tocTreesGlobal = []; // árvores do {{toc}}, reusadas pelo índice de capa
 let cardDescriptions = {}; // descrições curadas dos cards (descriptions.json)
 let sphereThemes = {};   // identidade por esfera (sphere-themes.json): título -> {h,s,sig,lLight?}
 let availableSigils = new Set(); // ids de sigilo já presentes no sprite (sigils.svg)
+let talentIndex = new Map();  // normNome -> {name, pageAnchor, slug, chapterTitle, summary}
+let talentRefRegex = null;    // regex dos nomes de talento (p/ linkar pré-requisitos)
 let currentChapterIndex = -1;
 let activeObserver = null;
 
@@ -70,11 +72,14 @@ async function init() {
 
     buildSidebar(tocTrees);
     buildGlossary(pages);
+    buildTalentIndex(pages);
     buildSphereRefIndex(tocTrees);
     buildSearchIndex(pages);
     setupSearch();
     setupGlossary();
     setupHowto();
+    setupPeek();
+    setupFavorites();
     setupMobileMenu();
     setupBackToTop();
 
@@ -455,6 +460,181 @@ function setupHowto() {
 }
 
 /* ============================================================
+   PRÉVIA ("ESPIAR") de talento/esfera referenciados
+   ============================================================ */
+function openPeek({ kind, title, bodyHtml, anchor, slug }) {
+  const sheet = document.getElementById('peek-sheet');
+  document.getElementById('peek-kind').textContent = kind || '';
+  document.getElementById('peek-title').textContent = title || '';
+  document.getElementById('peek-body').innerHTML = bodyHtml || '';
+  const go = document.getElementById('peek-go');
+  go.dataset.anchor = anchor || '';
+  go.dataset.slug = slug || '';
+  openModal(sheet, document.activeElement);
+}
+
+function setupPeek() {
+  const sheet = document.getElementById('peek-sheet');
+  if (!sheet) return;
+  document.getElementById('peek-close').addEventListener('click', () => closeModal(sheet));
+  sheet.addEventListener('click', e => { if (e.target === sheet) closeModal(sheet); });
+
+  document.getElementById('peek-go').addEventListener('click', e => {
+    e.preventDefault();
+    const a = e.currentTarget;
+    const anchor = a.dataset.anchor, slug = a.dataset.slug;
+    closeModal(sheet);
+    if (anchor) {
+      navigate(anchor);
+      if (slug) requestAnimationFrame(() => document.getElementById(slug)?.scrollIntoView({ block: 'start', behavior: 'smooth' }));
+    }
+  });
+
+  // Clique numa referência (talento em pré-requisitos, ou esfera citada) → prévia
+  document.getElementById('content').addEventListener('click', e => {
+    const ref = e.target.closest('.ref-link');
+    if (ref) {
+      e.preventDefault();
+      const t = talentIndex.get(ref.dataset.ref);
+      if (t) openPeek({
+        kind: 'Talento' + (t.chapterTitle ? ' · ' + t.chapterTitle : ''),
+        title: t.name,
+        bodyHtml: t.summary ? `<p>${escapeHtml(t.summary)}</p>` : '<p class="peek-empty">(sem resumo)</p>',
+        anchor: t.pageAnchor, slug: t.slug,
+      });
+      return;
+    }
+    const xref = e.target.closest('.sphere-xref');
+    if (xref) {
+      e.preventDefault();
+      const name = xref.textContent.trim();
+      const href = xref.getAttribute('href');
+      const desc = cardDescriptions[name] || chapterShortDescription(href, 220);
+      openPeek({ kind: 'Esfera', title: name, bodyHtml: desc ? `<p>${escapeHtml(desc)}</p>` : '', anchor: href, slug: '' });
+    }
+  });
+}
+
+/* ============================================================
+   FAVORITOS ("Meu compêndio") + CONTINUAR LENDO (localStorage)
+   ============================================================ */
+const LS_FAVS = 'esferas:favs', LS_RECENT = 'esferas:recent', LS_LAST = 'esferas:last';
+function lsGet(k, def) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (_) { return def; } }
+function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) {} }
+
+function favKey(it) { return normalizeTerm(it.name) + '|' + normalizeTerm(it.sphere || ''); }
+function getFavs() { return lsGet(LS_FAVS, []); }
+function isFav(it) { const k = favKey(it); return getFavs().some(f => favKey(f) === k); }
+function toggleFav(it) {
+  const favs = getFavs(); const k = favKey(it);
+  const i = favs.findIndex(f => favKey(f) === k);
+  if (i >= 0) favs.splice(i, 1); else favs.unshift(it);
+  lsSet(LS_FAVS, favs);
+  return i < 0;
+}
+
+function makeFavButton(item) {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'fav-btn';
+  const on = isFav(item);
+  btn.textContent = on ? '★' : '☆';
+  btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  btn.setAttribute('aria-label', on ? 'Remover dos favoritos' : 'Salvar nos favoritos');
+  btn.dataset.fav = JSON.stringify(item);
+  return btn;
+}
+
+// Estrela em cada talento (dentro da própria .talent-card).
+function addFavoriteStars(root, chapter) {
+  for (const card of root.querySelectorAll('.talent-card')) {
+    const h4 = card.querySelector(':scope > h4, :scope > h5');
+    if (!h4) continue;
+    const section = card.closest('section[id]');
+    const item = { name: h4.textContent.trim(), sphere: chapter.title, anchor: section ? '#' + section.id : chapter.anchor, slug: h4.id || '' };
+    card.appendChild(makeFavButton(item));
+  }
+}
+
+function setupFavorites() {
+  document.getElementById('content').addEventListener('click', e => {
+    const rm = e.target.closest('.fav-remove');
+    if (rm) { e.preventDefault(); toggleFav(JSON.parse(rm.dataset.fav)); renderFavorites(); return; }
+    const btn = e.target.closest('.fav-btn');
+    if (!btn) return;
+    e.preventDefault(); e.stopPropagation();
+    const on = toggleFav(JSON.parse(btn.dataset.fav));
+    btn.textContent = on ? '★' : '☆';
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.setAttribute('aria-label', on ? 'Remover dos favoritos' : 'Salvar nos favoritos');
+  });
+}
+
+// Registra o capítulo lido (último + recentes), exceto a capa.
+function recordVisit(chapter, isCover) {
+  if (!chapter || isCover) return;
+  lsSet(LS_LAST, { anchor: chapter.anchor, title: chapter.title });
+  let recent = lsGet(LS_RECENT, []).filter(r => r.anchor !== chapter.anchor);
+  recent.unshift({ anchor: chapter.anchor, title: chapter.title, sectionLabel: chapter.sectionLabel || '' });
+  lsSet(LS_RECENT, recent.slice(0, 8));
+}
+
+function renderFavorites() {
+  currentChapterIndex = -1;
+  const content = document.getElementById('content');
+  content.removeAttribute('data-section');
+  applySphereTheme(content, null);
+  content.innerHTML = '';
+  const frag = document.createDocumentFragment();
+
+  const h1 = document.createElement('h1');
+  h1.textContent = 'Meu compêndio';
+  frag.appendChild(h1);
+
+  const favs = getFavs();
+  if (favs.length === 0) {
+    const p = document.createElement('p');
+    p.className = 'glossary-intro';
+    p.textContent = 'Toque na ☆ de qualquer talento para salvá-lo aqui e montar a lista das habilidades do seu personagem.';
+    frag.appendChild(p);
+  } else {
+    const intro = document.createElement('p');
+    intro.className = 'glossary-intro';
+    intro.textContent = `${favs.length} talento(s) salvo(s). Toque para ir; use a ★ para remover.`;
+    frag.appendChild(intro);
+
+    const bySphere = new Map();
+    for (const f of favs) { const s = f.sphere || '—'; if (!bySphere.has(s)) bySphere.set(s, []); bySphere.get(s).push(f); }
+    for (const [sphere, items] of bySphere) {
+      const h2 = document.createElement('h2');
+      h2.textContent = sphere;
+      frag.appendChild(h2);
+      const ul = document.createElement('ul');
+      ul.className = 'fav-list';
+      for (const it of items) {
+        const li = document.createElement('li');
+        const rm = document.createElement('button');
+        rm.type = 'button'; rm.className = 'fav-remove'; rm.textContent = '★'; rm.title = 'Remover'; rm.dataset.fav = JSON.stringify(it);
+        const a = document.createElement('a');
+        a.href = it.anchor; a.className = 'fav-go'; if (it.slug) a.dataset.slug = it.slug; a.textContent = it.name;
+        li.appendChild(rm); li.appendChild(a);
+        ul.appendChild(li);
+      }
+      frag.appendChild(ul);
+    }
+  }
+
+  content.appendChild(frag);
+  applyStagger(content);
+  document.getElementById('top-title').textContent = 'Meu compêndio';
+  document.title = 'Meu compêndio — Esferas de Magia e Poder';
+  setupObserver();
+  updateActiveSidebarLink('#favoritos');
+  window.scrollTo(0, 0);
+}
+
+
+/* ============================================================
    ÍNDICE DE CAPA
    A página de capa não leva a apenas um dos dois "caminhos" do
    livro — monta duas colunas (Esferas de Magia / Esferas de Poder)
@@ -512,6 +692,45 @@ function buildOnboarding() {
     '</ol>' +
     '<p class="onboarding-help">Primeira vez lendo uma esfera? <a href="#" class="howto-link">Como ler uma esfera →</a></p>' +
     '<p class="onboarding-help"><a href="#glossario" class="glossary-link">📖 Abrir o glossário completo →</a></p>';
+  return box;
+}
+
+// Banner "Continuar lendo" + capítulos recentes (na capa), se houver histórico.
+function buildContinueBanner() {
+  const last = lsGet(LS_LAST, null);
+  const recent = lsGet(LS_RECENT, []);
+  const coverAnchor = chapters[0] && chapters[0].anchor;
+  const hasLast = last && last.anchor && last.anchor !== coverAnchor;
+  if (!hasLast && recent.length === 0) return null;
+
+  const box = document.createElement('div');
+  box.className = 'continue-box';
+
+  if (hasLast) {
+    const a = document.createElement('a');
+    a.className = 'continue-link';
+    a.href = last.anchor;
+    a.innerHTML = `<span class="continue-kicker">▸ Continuar lendo</span><span class="continue-title">${escapeHtml(last.title)}</span>`;
+    box.appendChild(a);
+  }
+
+  const rec = recent.filter(r => !(hasLast && r.anchor === last.anchor)).slice(0, 6);
+  if (rec.length) {
+    const row = document.createElement('div');
+    row.className = 'recent-row';
+    const lbl = document.createElement('span');
+    lbl.className = 'recent-label';
+    lbl.textContent = 'Recentes:';
+    row.appendChild(lbl);
+    for (const r of rec) {
+      const chip = document.createElement('a');
+      chip.className = 'recent-chip';
+      chip.href = r.anchor;
+      chip.textContent = r.title;
+      row.appendChild(chip);
+    }
+    box.appendChild(row);
+  }
   return box;
 }
 
@@ -594,9 +813,13 @@ function buildCoverIndex(tocTrees) {
    caberia no celular. Só aparece em capítulos com >= 3 seções.
    ============================================================ */
 function buildOnThisPage(sourceFrag, isSphere) {
-  // h2 = esfera, h3 = agrupamento de talentos, h4 = talento/habilidade individual.
-  const heads = [...sourceFrag.querySelectorAll('section[id] h2, section[id] h3, section[id] h4')]
-    .filter(h => h.id && h.textContent.trim());
+  // Hierarquia: h2 (esfera) › h3 (grupo de talentos) › h4-grupo ".talent-group"
+  // (sub-grupo, ex.: "Esfera de Alteração") › talento (heading primário de cada
+  // card). Sub-habilidades h5 DENTRO de um pacote (não :first-child) ficam de fora.
+  const heads = [...sourceFrag.querySelectorAll(
+    'section[id] h2, section[id] h3, section[id] h4.talent-group,' +
+    ' section[id] .talent-card > h4:first-child, section[id] .talent-card > h5:first-child'
+  )].filter(h => h.id && h.textContent.trim());
   if (heads.length < 3) return null;
 
   const details = document.createElement('details');
@@ -643,7 +866,8 @@ function buildOnThisPage(sourceFrag, isSphere) {
     usedIds.add(id);
 
     const li = document.createElement('li');
-    li.className = 'otp-' + h.tagName.toLowerCase();
+    // nível de indentação: h2 › h3 › grupo (h4.talent-group) › talento (h4/h5)
+    li.className = h.classList.contains('talent-group') ? 'otp-group' : 'otp-' + h.tagName.toLowerCase();
     const a = document.createElement('a');
     a.href = '#' + id;
     a.className = 'otp-link';
@@ -787,7 +1011,7 @@ function enhanceTalents(root) {
         dd.textContent = param.value;
         wrapPmTokens(dd);
 
-        if (key === 'pre-requisitos') { dt.classList.add('param-prereq'); dd.classList.add('param-prereq'); }
+        if (key === 'pre-requisitos') { dt.classList.add('param-prereq'); dd.classList.add('param-prereq'); linkTalentRefs(dd); }
 
         dl.appendChild(dt);
         dl.appendChild(dd);
@@ -821,33 +1045,68 @@ function enhanceTalents(root) {
     }
   }
 
-  // 4. Encaixota cada talento (h4 + conteúdo até o próximo h2/h3/h4) num
-  //    .talent-card, dentro da própria <section> (mantém ids/âncoras).
-  let currentGroup = '';
-  for (const section of sections) {
-    let child = section.firstElementChild;
-    while (child) {
-      const tag = child.tagName;
-      if (tag === 'H2') { currentGroup = ''; child = child.nextElementSibling; continue; }
-      if (tag === 'H3') { currentGroup = child.textContent || ''; child = child.nextElementSibling; continue; }
-      if (tag !== 'H4') { child = child.nextElementSibling; continue; }
+  // 4. Encaixota cada talento num .talent-card, respeitando a hierarquia do
+  //    source (h4/h5/h6). Distinção validada estruturalmente:
+  //     - h4 GRUPO  = h4 cujo 1º conteúdo seguinte é um h5 (sem intro). É só um
+  //       divisor (ex.: "Esfera de Alteração"): NÃO vira card; seus h5 filhos
+  //       viram talentos (cards separados).
+  //     - h4 TALENTO/pacote = tem intro antes do h5, ou não tem h5 (ex.: "Arma
+  //       Mortal", "Ar"). Vira card; h5/h6 internos são SUB-PARTES do card.
+  //     - h5 "Tabela:" e todo h6 nunca abrem card (ficam no card atual).
+  //    Trabalha sobre a lista achatada (ordem de leitura) para detectar h4→h5
+  //    e para o conteúdo poder CRUZAR quebras de página (\page): a continuação
+  //    entra no card, que permanece na seção onde o talento começou.
+  const items = [];
+  for (const section of sections)
+    for (let el = section.firstElementChild; el; el = el.nextElementSibling) items.push(el);
 
-      const h4 = child;
-      const move = [];
-      let cursor = h4;
-      while (cursor && !(cursor !== h4 && /^H[234]$/.test(cursor.tagName))) {
-        move.push(cursor);
-        cursor = cursor.nextElementSibling;
-      }
-      const card = document.createElement('div');
-      card.className = 'talent-card';
-      section.insertBefore(card, cursor);
-      move.forEach(node => card.appendChild(node));
-      if (/avan[çc]ad|lend[áa]ri/i.test(currentGroup)) card.classList.add('advanced');
-      decorateCard(card, h4);
-      child = cursor;
+  const isTable = el => /^\s*tabela\s*:/i.test(el.textContent);
+  const nextContent = i => {
+    for (let j = i + 1; j < items.length; j++) {
+      const e = items[j];
+      if (/^H[1-6]$/.test(e.tagName) || e.textContent.trim()) return e;
     }
+    return null;
+  };
+  const isGroupH4 = i => {
+    const nx = nextContent(i);
+    return !!nx && nx.tagName === 'H5' && !isTable(nx);
+  };
+
+  let currentGroup = '';
+  let inGroup = false;   // sob um h4-grupo → h5 são talentos (cards)
+  let openCard = null;
+  const cards = [];
+  const openCardFor = el => {
+    const card = document.createElement('div');
+    card.className = 'talent-card';
+    if (/avan[çc]ad|lend[áa]ri/i.test(currentGroup)) card.classList.add('advanced');
+    el.parentNode.insertBefore(card, el);
+    card.appendChild(el);
+    openCard = card;
+    cards.push(card);
+  };
+
+  for (let i = 0; i < items.length; i++) {
+    const el = items[i];
+    const tag = el.tagName;
+    if (tag === 'H2') { currentGroup = ''; inGroup = false; openCard = null; continue; }
+    if (tag === 'H3') { currentGroup = el.textContent || ''; inGroup = false; openCard = null; continue; }
+    if (tag === 'H4') {
+      if (isGroupH4(i)) { inGroup = true; openCard = null; el.classList.add('talent-group'); }
+      else { inGroup = false; openCardFor(el); }
+      continue;
+    }
+    if (tag === 'H5') {
+      if (!isTable(el) && inGroup) openCardFor(el);   // talento de um grupo → card
+      else if (openCard) openCard.appendChild(el);    // sub-parte OU tabela dentro do card
+      continue;
+    }
+    // Conteúdo (p, ul, table, blockquote, h6…): entra no card aberto (inclui a
+    // continuação vinda da próxima página).
+    if (openCard) openCard.appendChild(el);
   }
+  for (const card of cards) decorateCard(card, card.querySelector(':scope > h4, :scope > h5'));
 }
 
 /* ============================================================
@@ -1045,10 +1304,13 @@ function renderChapter(index) {
   linkGlossaryTerms(sectionsFrag, chapter);
   highlightMechanics(sectionsFrag);
   if (isSphere) injectSphereSigil(sectionsFrag, chapter);
+  if (isSphere) addFavoriteStars(sectionsFrag, chapter);
 
   if (isCover) {
     frag.appendChild(sectionsFrag);
     if (tocTreesGlobal.length > 0) {
+      const cont = buildContinueBanner();
+      if (cont) frag.appendChild(cont);
       frag.appendChild(buildOnboarding());
       frag.appendChild(buildCoverIndex(tocTreesGlobal));
     }
@@ -1086,6 +1348,7 @@ function renderChapter(index) {
   setupObserver();
   setupMiniTocSpy();
   updateActiveSidebarLink(chapter.anchor);
+  recordVisit(chapter, isCover);
 }
 
 /* Tema de seção (accent Magia=oxblood / Marcial=verdete) + carregamento
@@ -1133,6 +1396,92 @@ function injectSphereSigil(sectionsFrag, chapter) {
   if (!t || !t.sig || !availableSigils.has(t.sig)) return;
   const h2 = sectionsFrag.querySelector('section[id] h2');
   if (h2 && h2.parentNode) h2.parentNode.insertBefore(makeSigil(t.sig), h2);
+}
+
+/* ============================================================
+   ÍNDICE DE TALENTOS + REFERÊNCIAS NAVEGÁVEIS
+   Cataloga cada talento (h4) → onde está + um resumo, para linkar
+   pré-requisitos e mostrar uma prévia ("espiar") sem sair da página.
+   ============================================================ */
+function firstSentence(s, maxLen = 160) {
+  s = s.replace(/\s+/g, ' ').trim();
+  const dot = s.indexOf('. ');
+  if (dot >= 24 && dot <= maxLen + 30) return s.slice(0, dot + 1);
+  return s.length > maxLen ? s.slice(0, maxLen).replace(/\s+\S*$/, '') + '…' : s;
+}
+
+function buildTalentIndex(pages) {
+  talentIndex = new Map();
+  const tmp = document.createElement('div');
+  const isTable = el => /^\s*tabela\s*:/i.test(el.textContent);
+  for (const page of pages) {
+    const pageNum = pageNumOfId(page.id);
+    const chapter = chapters[findChapterIndexForPage(pageNum)];
+    tmp.innerHTML = page.html;
+    // Indexa talentos h4 E h5 — pula legendas "Tabela:" e h4-grupo (cujo 1º
+    // conteúdo seguinte é um h5), que são divisores, não talentos.
+    tmp.querySelectorAll('h4, h5').forEach(h => {
+      const name = h.textContent.trim();
+      if (!name || !h.id) return;
+      if (h.tagName === 'H5' && isTable(h)) return;
+      if (h.tagName === 'H4') {
+        let nx = h.nextElementSibling;
+        while (nx && !/^H[1-6]$/.test(nx.tagName) && !nx.textContent.trim()) nx = nx.nextElementSibling;
+        if (nx && nx.tagName === 'H5' && !isTable(nx)) return; // h4-grupo → ignora
+      }
+      const key = normalizeTerm(name);
+      if (talentIndex.has(key)) return; // 1ª ocorrência vence
+      let summary = '';
+      let n = h.nextElementSibling;
+      while (n && !/^H[1-6]$/.test(n.tagName)) {
+        if (n.tagName === 'P' && n.textContent.trim()) { summary = firstSentence(n.textContent.trim()); break; }
+        n = n.nextElementSibling;
+      }
+      talentIndex.set(key, { name, key, pageAnchor: '#' + page.id, slug: h.id, chapterTitle: chapter ? chapter.title : '', summary });
+    });
+  }
+  buildTalentRefRegex();
+}
+
+function buildTalentRefRegex() {
+  const names = [...talentIndex.values()].map(t => t.name).sort((a, b) => b.length - a.length);
+  if (names.length === 0) { talentRefRegex = null; return; }
+  const parts = names.map(escapeRegex);
+  try {
+    talentRefRegex = new RegExp(`(?<![\\p{L}\\p{N}])(?:${parts.join('|')})(?![\\p{L}\\p{N}])`, 'giu');
+  } catch (_) {
+    talentRefRegex = new RegExp(`(?:${parts.join('|')})(?![\\p{L}\\p{N}])`, 'giu');
+  }
+}
+
+// Liga nomes de talento dentro de um nó (usado só no valor de "Pré-requisitos").
+function linkTalentRefs(container) {
+  if (!talentRefRegex || talentIndex.size === 0) return;
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null);
+  const nodes = []; let n;
+  while ((n = walker.nextNode())) if (n.textContent.trim()) nodes.push(n);
+  for (const textNode of nodes) {
+    const text = textNode.textContent;
+    talentRefRegex.lastIndex = 0;
+    let m, last = 0, frag = null;
+    while ((m = talentRefRegex.exec(text)) !== null) {
+      const entry = talentIndex.get(normalizeTerm(m[0]));
+      if (!entry) continue;
+      if (!frag) frag = document.createDocumentFragment();
+      if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+      const a = document.createElement('a');
+      a.className = 'ref-link';
+      a.href = entry.pageAnchor;
+      a.dataset.ref = entry.key;
+      a.textContent = m[0];
+      frag.appendChild(a);
+      last = m.index + m[0].length;
+    }
+    if (frag) {
+      if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      textNode.parentNode.replaceChild(frag, textNode);
+    }
+  }
 }
 
 function applyStagger(content) {
@@ -1220,8 +1569,8 @@ function renderGlossary() {
    NAVEGAÇÃO
    ============================================================ */
 function navigate(hash, opts = {}) {
-  if (hash === '#glossario') {
-    renderGlossary();
+  if (hash === '#glossario' || hash === '#favoritos') {
+    if (hash === '#favoritos') renderFavorites(); else renderGlossary();
     if (!opts.silent) {
       if (opts.replace) history.replaceState(null, '', hash);
       else if (location.hash !== hash) history.pushState(null, '', hash);
@@ -1254,12 +1603,14 @@ function navigate(hash, opts = {}) {
 function handleInternalLinkClick(e) {
   const a = e.target.closest('a[href^="#"]');
   if (!a) return;
+  // Referências (pré-requisito de talento, esfera citada) são tratadas pelo peek
+  if (a.classList.contains('ref-link') || a.classList.contains('sphere-xref')) return;
   const href = a.getAttribute('href');
 
-  // Página do glossário completo
-  if (href === '#glossario') {
+  // Página do glossário completo / favoritos
+  if (href === '#glossario' || href === '#favoritos') {
     e.preventDefault();
-    navigate('#glossario');
+    navigate(href);
     return;
   }
 
@@ -1309,6 +1660,12 @@ function buildSidebar(tocTrees) {
   glossaryLink.className = 'toc-link toc-home';
   glossaryLink.textContent = '📖 Glossário';
   frag.appendChild(glossaryLink);
+
+  const favLink = document.createElement('a');
+  favLink.href = '#favoritos';
+  favLink.className = 'toc-link toc-home';
+  favLink.textContent = '★ Favoritos';
+  frag.appendChild(favLink);
 
   frag.appendChild(document.createElement('hr'));
 
