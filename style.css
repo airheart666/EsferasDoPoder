@@ -1237,12 +1237,49 @@ h4.base-ability::after {
 .fav-btn:hover { color: var(--accent); }
 .fav-btn:active { transform: scale(0.9); }
 
-.fav-list { list-style: none; margin: 0.3rem 0 1.4rem; }
-.fav-list li { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.4rem 0; border-bottom: 1px dotted var(--table-border); }
-.fav-remove { background: none; border: none; cursor: pointer; color: var(--copper); font-size: 1rem; line-height: 1; flex: none; }
+/* Compêndio: cada esfera é um grupo tingido com a cor da esfera; os talentos
+   salvos aparecem como cards completos (clonados), com rodapé de ações. */
+.fav-group { margin: 0 0 2rem; }
+.fav-group.sphere-tinted {
+  --accent: hsl(var(--sphere-h) calc(var(--sphere-s) * 1%) var(--acc-l-default));
+  --accent-light: hsl(var(--sphere-h) calc(var(--sphere-s) * 1%) calc(var(--acc-l-default) + var(--acc-bright-delta)));
+}
+.fav-group-title {
+  color: var(--accent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.8rem;
+}
+.fav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+  padding-top: 0.6rem;
+  border-top: 1px dotted var(--table-border);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+}
+.fav-remove { background: none; border: none; cursor: pointer; color: var(--copper); font-family: var(--font-ui); font-size: 0.82rem; line-height: 1; flex: none; }
 .fav-remove:hover { color: var(--accent); }
-.fav-go { color: var(--text); text-decoration: none; font-family: var(--font-ui); }
-.fav-go:hover { color: var(--accent); }
+.fav-open { color: var(--accent); text-decoration: none; font-weight: 600; }
+.fav-open:hover { text-decoration: underline; }
+.fav-missing { display: flex; align-items: baseline; gap: 0.5rem; color: var(--text-muted); }
+
+/* Card do compêndio recolhível: minimizado mostra só o nome + tags. */
+.fav-toggle { cursor: pointer; position: relative; }
+.fav-toggle::after {
+  content: '▸';
+  position: absolute;
+  right: 0.1rem;
+  top: 0.2em;
+  color: var(--accent);
+  font-size: 0.7em;
+}
+.fav-card:not(.collapsed) > .fav-toggle::after { content: '▾'; }
+.fav-card.collapsed > :not(:first-child):not(.talent-tags) { display: none; }
+.fav-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
 .continue-box { margin: 1.25rem 0 1.5rem; }
 .continue-link {

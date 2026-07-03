@@ -556,8 +556,20 @@ function addFavoriteStars(root, chapter) {
   }
 }
 
+function toggleFavCard(head) {
+  const card = head.parentElement;
+  const nowCollapsed = card.classList.toggle('collapsed');
+  head.setAttribute('aria-expanded', nowCollapsed ? 'false' : 'true');
+}
+
 function setupFavorites() {
-  document.getElementById('content').addEventListener('click', e => {
+  const content = document.getElementById('content');
+  content.addEventListener('click', e => {
+    // Expandir/recolher um card no compêndio (clique no título)
+    const tog = e.target.closest('.fav-toggle');
+    if (tog && tog.parentElement && tog.parentElement.classList.contains('fav-card')) {
+      e.preventDefault(); toggleFavCard(tog); return;
+    }
     const rm = e.target.closest('.fav-remove');
     if (rm) { e.preventDefault(); toggleFav(JSON.parse(rm.dataset.fav)); renderFavorites(); return; }
     const btn = e.target.closest('.fav-btn');
@@ -568,6 +580,12 @@ function setupFavorites() {
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
     btn.setAttribute('aria-label', on ? 'Remover dos favoritos' : 'Salvar nos favoritos');
   });
+  // Teclado: Enter/Espaço no título alterna o card
+  content.addEventListener('keydown', e => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('fav-toggle')) {
+      e.preventDefault(); toggleFavCard(e.target);
+    }
+  });
 }
 
 // Registra o capítulo lido (último + recentes), exceto a capa.
@@ -577,6 +595,44 @@ function recordVisit(chapter, isCover) {
   let recent = lsGet(LS_RECENT, []).filter(r => r.anchor !== chapter.anchor);
   recent.unshift({ anchor: chapter.anchor, title: chapter.title, sectionLabel: chapter.sectionLabel || '' });
   lsSet(LS_RECENT, recent.slice(0, 8));
+}
+
+// Reconstrói os .talent-card de um capítulo (mesmo pipeline do render) e
+// devolve um mapa nomeNormalizado -> card, para o compêndio exibir o talento
+// inteiro (ficha, tags, glossário, dados) sem abrir a esfera.
+function buildChapterCards(chapter) {
+  const frag = document.createDocumentFragment();
+  for (let pn = chapter.start; pn <= chapter.end; pn++) {
+    const page = allPages[pn - 1];
+    if (!page) continue;
+    const section = document.createElement('section');
+    section.id = page.id;
+    section.innerHTML = page.html;
+    frag.appendChild(section);
+  }
+  enhanceTalents(frag);
+  linkSphereCrossRefs(frag, chapter);
+  linkGlossaryTerms(frag, chapter);
+  highlightMechanics(frag);
+  const map = new Map();
+  for (const card of frag.querySelectorAll('.talent-card')) {
+    const h = card.querySelector(':scope > h4, :scope > h5');
+    if (h) map.set(normalizeTerm(h.textContent), card);
+  }
+  return map;
+}
+
+// Rodapé de ações de um card no compêndio: remover + abrir na esfera.
+function buildFavCardActions(item) {
+  const row = document.createElement('div');
+  row.className = 'fav-actions';
+  const rm = document.createElement('button');
+  rm.type = 'button'; rm.className = 'fav-remove'; rm.textContent = '★ Remover'; rm.dataset.fav = JSON.stringify(item);
+  const go = document.createElement('a');
+  go.href = item.anchor; go.className = 'fav-open'; if (item.slug) go.dataset.slug = item.slug;
+  go.textContent = 'Abrir na esfera →';
+  row.appendChild(rm); row.appendChild(go);
+  return row;
 }
 
 function renderFavorites() {
@@ -600,27 +656,58 @@ function renderFavorites() {
   } else {
     const intro = document.createElement('p');
     intro.className = 'glossary-intro';
-    intro.textContent = `${favs.length} talento(s) salvo(s). Toque para ir; use a ★ para remover.`;
+    intro.textContent = `${favs.length} talento(s) salvo(s) — as habilidades do seu personagem, reunidas aqui.`;
     frag.appendChild(intro);
 
     const bySphere = new Map();
     for (const f of favs) { const s = f.sphere || '—'; if (!bySphere.has(s)) bySphere.set(s, []); bySphere.get(s).push(f); }
     for (const [sphere, items] of bySphere) {
-      const h2 = document.createElement('h2');
-      h2.textContent = sphere;
-      frag.appendChild(h2);
-      const ul = document.createElement('ul');
-      ul.className = 'fav-list';
-      for (const it of items) {
-        const li = document.createElement('li');
-        const rm = document.createElement('button');
-        rm.type = 'button'; rm.className = 'fav-remove'; rm.textContent = '★'; rm.title = 'Remover'; rm.dataset.fav = JSON.stringify(it);
-        const a = document.createElement('a');
-        a.href = it.anchor; a.className = 'fav-go'; if (it.slug) a.dataset.slug = it.slug; a.textContent = it.name;
-        li.appendChild(rm); li.appendChild(a);
-        ul.appendChild(li);
+      const chapter = chapters.find(c => c.title === sphere);
+      const cardMap = chapter ? buildChapterCards(chapter) : new Map();
+
+      // Grupo por esfera, tingido com a cor da esfera (como sidebar/capa).
+      const group = document.createElement('section');
+      group.className = 'fav-group';
+      const theme = sphereThemes[sphere];
+      if (theme) {
+        group.classList.add('sphere-tinted');
+        group.style.setProperty('--sphere-h', theme.h);
+        group.style.setProperty('--sphere-s', theme.s);
       }
-      frag.appendChild(ul);
+
+      const h2 = document.createElement('h2');
+      h2.className = 'fav-group-title';
+      h2.textContent = sphere;
+      group.appendChild(h2);
+
+      for (const it of items) {
+        const card = cardMap.get(normalizeTerm(it.name));
+        if (card) {
+          const clone = card.cloneNode(true);
+          clone.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); // evita ids duplicados
+          clone.classList.add('fav-card', 'collapsed'); // começa minimizado
+          const head = clone.querySelector(':scope > h4, :scope > h5');
+          if (head) {
+            head.classList.add('fav-toggle');
+            head.setAttribute('role', 'button');
+            head.setAttribute('tabindex', '0');
+            head.setAttribute('aria-expanded', 'false');
+          }
+          clone.appendChild(buildFavCardActions(it));
+          group.appendChild(clone);
+        } else {
+          // Fallback (ex.: favorito antigo que não é mais um card): link simples.
+          const p = document.createElement('p');
+          p.className = 'fav-missing';
+          const rm = document.createElement('button');
+          rm.type = 'button'; rm.className = 'fav-remove'; rm.textContent = '★'; rm.title = 'Remover'; rm.dataset.fav = JSON.stringify(it);
+          const a = document.createElement('a');
+          a.href = it.anchor; a.className = 'fav-open'; if (it.slug) a.dataset.slug = it.slug; a.textContent = it.name + ' — abrir na esfera →';
+          p.appendChild(rm); p.appendChild(a);
+          group.appendChild(p);
+        }
+      }
+      frag.appendChild(group);
     }
   }
 
