@@ -1,0 +1,1289 @@
+<div class='pageNumber auto'></div>
+
+## Artífice
+Mestres da invenção, os artífices usam engenhosidade e magia para desbloquear capacidades extraordinárias em objetos. Eles veem a magia como um sistema complexo esperando para ser decodificado e então utilizado em suas magias e invenções. Você encontrará tudo o que precisa para interpretar um desses inventores nas próximas seções.
+
+Os artífices usam uma variedade de ferramentas para canalizar seu poder arcano. Para conjurar uma magia, um artífice pode usar suprimentos de alquimista para criar um elixir potente, suprimentos de calígrafo para inscrever um sigilo de poder ou ferramentas de funileiro para criar um amuleto temporário. A magia dos artífices está ligada às suas ferramentas e talentos, e poucos outros personagens conseguem produzir a ferramenta certa para um trabalho tão bem quanto um artífice.
+
+{{classTable,frame,decoration,wide
+##### O Artífice
+| Nível | Bônus de Proficiência | Características | Infusões Conhecidas | Itens Infundidos|Talentos Mágicos | Pontos de Magia|
+|:---:|:---:|:---------------------------------------------------------------|:-:|:-:|:-:|:-:|
+| 1º  | +2  | Manipulação Mágica, Conjuração de Feitiços                     | - | - | 1 | 1 |
+| 2º  | +2  | Infundir Item                                                  | 4 | 2 | 1 | 1 |
+| 3º  | +2  | Especialidade de Artífice, A Ferramenta Certa para o Trabalho  | 4 | 2 | 2 | 2 |
+| 4º  | +2  | Incremento no Valor de Habilidade                              | 4 | 2 | 3 | 2 |
+| 5º  | +3  | Característica de Especialidade de Artífice                    | 4 | 2 | 3 | 3 |
+| 6º  | +3  | Expertise em ferramentas                                       | 6 | 3 | 4 | 3 |
+| 7º  | +3  | Genialidade Súbita                                             | 6 | 3 | 5 | 4 |
+| 8º  | +3  | Incremento no Valor de Habilidade                              | 6 | 3 | 6 | 4 |
+| 9º  | +4  | Característica de Especialidade de Artífice                    | 6 | 3 | 6 | 5 |
+| 10º | +4  | Adepto de Itens Mágicos                                        | 8 | 4 | 7 | 5 |
+| 11º | +4  | Item Armazenador de Magia                                      | 8 | 4 | 8 | 6 |
+| 12º | +4  | Incremento no Valor de Habilidade                              | 8 | 4 | 9 | 6 |
+| 13º | +5  | ─                                                              | 8 | 4 | 9 | 7 |
+| 14º | +5  | Especialista de Itens Mágicos                                  | 10| 5 | 10| 7 |
+| 15º | +5  | Característica de Especialidade de Artífice                    | 10| 5 | 11| 8 |
+| 16º | +5  | Incremento no Valor de Habilidade                              | 10| 5 | 12| 8 |
+| 17º | +6  | -                                                              | 10| 5 | 12| 9 |
+| 18º | +6  | Mestre de Itens Mágicos                                        | 12| 6 | 13| 9 |
+| 19º | +6  | Incremento no Valor de Habilidade                              | 12| 6 | 14| 10|
+| 20º | +6  | Alma do Artifício                                              | 12| 6 | 15| 10|
+}}
+
+### Características de classe
+*Como um artífice, você possui as seguintes características.*
+
+#### Pontos de vida:
+Dado de vida: 1d8 por nível de artífice
+<br>
+Pontos de vida no 1º nível: 8 + modificador de Constituição.
+<br>
+Pontos de vida nos níveis seguintes: 1d8 (ou 5) + modificador de constituição por nível de classe após o 1º.
+
+#### Proficiências
+**Armadura:** Armadura leve, armadura média, escudos
+<br>
+**Armas:** Armas simples
+<br>
+**Ferramentas:** Ferramentas de ladrão, ferramentas de latoeiro, um tipo de ferramentas de artesão de sua escolha
+<br>
+**Testes de Resistência:** Constituição e Inteligência
+<br>
+**Perícias:** Escolha duas das seguintes; Arcanismo, História, Investigação, Medicina, Natureza, Percepção, Prestidigitação
+<br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+
+•	duas armas simples
+
+•	besta leve e 20 virotes
+
+•	(a) armadura de couro batido ou (b) armadura de escamas
+
+•	ferramentas de ladrão e um pacote de explorador
+Alternativamente, você pode começar com 5d4x10 de ouro inicial para comprar seus equipamentos
+
+### Manipulação Mágica
+No 1º nível, você aprendeu a investir uma centelha de magia em objetos mundanos. Para usar esta habilidade, você precisa ter ferramentas de ladrão ou ferramentas de artesão em mãos. Você então toca um objeto não mágico minúsculo como uma ação e concede a ele uma das seguintes propriedades mágicas à sua escolha:
+
+\page
+
+<div class='pageNumber auto'></div>
+
+• :: O objeto emite luz brilhante em um raio de 1,5 metro e luz fraca por mais 1,5 metro.
+
+• :: Sempre que tocado por uma criatura, o objeto emite uma mensagem gravada que pode ser ouvida a até 3 metros de distância. Você profere a mensagem ao conceder esta propriedade ao objeto, e a gravação não pode ter mais de 6 segundos de duração.
+
+• :: O objeto emite continuamente um odor ou um som não verbal à sua escolha (vento, ondas, chilreio ou similar). O fenômeno escolhido é perceptível a até 3 metros de distância.
+
+• :: Um efeito visual estático aparece em uma das superfícies do objeto. Este efeito pode ser uma imagem, até 25 palavras de texto, linhas e formas, ou uma mistura desses elementos, como você preferir.
+
+A propriedade escolhida dura indefinidamente. Com uma ação, você pode tocar o objeto e encerrar a propriedade antecipadamente.
+
+Você pode conceder magia a vários objetos, tocando um objeto cada vez que usar esta habilidade, embora um único objeto só possa possuir uma propriedade por vez. O número máximo de objetos que você pode afetar com esta habilidade ao mesmo tempo é igual ao seu modificador de Inteligência (mínimo de um objeto). Se você tentar exceder o seu máximo, a propriedade mais antiga termina imediatamente e, em seguida, a nova propriedade é aplicada.
+
+### Conjuração
+Você estudou o funcionamento da magia e como conjurar magias, canalizando-a através de objetos. Para observadores, você não parece conjurar magias de forma convencional; você parece produzir maravilhas a partir de itens mundanos e invenções bizarras. 
+
+#### Ferramentas Necessárias
+Você produz os efeitos mágicos de artífice por meio de suas ferramentas. Você deve ter um foco em conjuração — especificamente ferramentas de ladrão ou algum tipo de ferramenta de artesão — em mãos ao conjurar qualquer magia com esta habilidade de Conjuração. Você deve ser proficiente com a ferramenta para usá-la desta forma. Consulte o capítulo sobre equipamentos no Livro do Jogador para obter descrições dessas ferramentas.
+
+Após obter a habilidade Infundir Item no 2º nível, você também pode usar qualquer item que contenha uma de suas infusões como foco de conjuração.
+
+#### Conjuração de Esferas
+Você pode combinar esferas e talentos para criar efeitos mágicos. Você ganha uma reserva de magias, talentos mágicos e uma tradição de conjuração.
+
+#### Reserva de Magias
+Você ganha uma pequena reserva de energia que pode invocar para criar efeitos verdadeiramente maravilhosos, chamada reserva de magias. Essa reserva contém uma quantidade de pontos de magia igual ao seu modificador de Inteligência (mínimo: 1). Você ganha pontos de magia adicionais iguais à metade do seu nível de artífice (arredondado para baixo), como visto na tabela de sua classe. Essa reserva é reabastecida após um descanso longo. (Observação: em multiclasses, os pontos de magia do seu modificador de habilidade chave são ganhos apenas uma vez.)
+
+#### Talentos Mágicos
+A coluna Talentos Mágicos mostra o número de talentos mágicos ganhos com seus níveis de artífice. Além disso, sempre que um nível lhe conceder um novo talento de magia, você pode optar por escolher um talento da esfera marcial de Engenhosidade. Se um talento de Engenhosidade requisitar uma jogada de ataque ou causar um teste de resistência, você pode usar sua habilidade de conjuração para determinar o CD de resistência e o bônus da jogada de ataque.
+
+#### Habilidade de Conjuração
+Inteligência é sua habilidade de conjuração para suas magias de artífice; sua compreensão da teoria por trás da magia permite que você maneje essas magias com habilidade superior. Você usa sua Inteligência sempre que uma magia de artífice se referir à sua habilidade de conjuração. Além disso, você usa seu modificador de Inteligência ao definir a CD de salvaguarda para uma magia de artífice que você conjura e ao fazer uma jogada de ataque com uma.
+<br>
+<br>
+**CD de resistência à magia** = 8 + seu bônus de proficiência + seu modificador de Inteligência
+<br>
+**Modificador de ataque de magia** = seu bônus de proficiência + seu modificador de Inteligência
+
+
+### Infundir Item
+No 2º nível, você ganha a habilidade de imbuir itens mundanos com certas infusões mágicas, transformando-os em itens mágicos.
+
+### Infusões Conhecidas
+Ao ganhar esta habilidade, escolha quatro infusões de artífice para aprender. Você aprende infusões adicionais à sua escolha ao atingir certos níveis nesta classe, conforme mostrado na coluna Infusões Conhecidas da tabela Artífice.
+
+Sempre que você ganha um nível nesta classe, você pode substituir uma das infusões de artífice que aprendeu por uma nova.
+
+### Infundindo um Item
+Sempre que terminar um descanso longo, você pode tocar um objeto não mágico e imbuí-lo com uma de suas infusões de artífice, transformando-o em um item mágico. Uma infusão funciona apenas em certos tipos de objetos, conforme especificado na descrição da infusão. Se o item exigir sintonização, você pode se sintonizar com ele no instante em que o infundir.
+
+\page
+
+<div class='pageNumber auto'></div>
+
+Se decidir se sintonizar com o item posteriormente, você deverá fazê-lo usando o processo normal de sintonização (consulte as regras de sintonização no Guia do Mestre).
+
+Sua infusão permanece em um item indefinidamente, mas quando você morre, a infusão desaparece após um número de dias igual ao seu modificador de Inteligência (mínimo de 1 dia). A infusão também desaparece se você substituir seu conhecimento sobre a infusão.
+
+Você pode infundir mais de um objeto não mágico ao final de um descanso longo; o número máximo de objetos aparece na coluna Itens Infundidos da tabela do Artífice. Você deve tocar em cada um dos objetos, e cada uma de suas infusões pode estar em apenas um objeto por vez. Além disso, nenhum objeto pode suportar mais de uma de suas infusões por vez. Se você tentar exceder o número máximo de infusões, a infusão mais antiga termina e, então, a nova infusão é aplicada.
+
+Se uma infusão termina em um item que contém outras coisas, como uma bolsa de contenção, seu conteúdo aparece inofensivamente dentro e ao redor de seu espaço.
+
+### Especialidade de Artífice
+No 3º nível, você escolhe o tipo de especialista que deseja ser. Sua escolha lhe concede características no 5º nível e novamente no 9º e 15º níveis.
+
+### A Ferramenta Certa para o Trabalho
+No 3º nível, você aprendeu a produzir exatamente a ferramenta que precisa: com ferramentas de ladrão ou de artesão em mãos, você pode criar magicamente um conjunto de ferramentas de artesão em um espaço desocupado a até 1,5 metro de você. Essa criação requer 1 hora de trabalho ininterrupto, que pode coincidir com um descanso curto ou longo. Embora sejam produto de magia, as ferramentas não são mágicas e desaparecem quando você usa essa habilidade novamente.
+
+### Aprimoramento de Valor de Habilidade
+Ao atingir o 4º, 8º, 12º, 16º e 19º níveis, você pode aumentar um valor de habilidade de sua escolha em 2, ou pode aumentar dois valores de habilidade de sua escolha em 1. Como de costume, você não pode aumentar um valor de habilidade acima de 20 usando essa habilidade.
+
+### Expertise em Ferramentas
+No 6º nível, seu bônus de proficiência agora é dobrado para qualquer teste de habilidade que você fizer que use sua proficiência com uma ferramenta.
+
+### Genialidade Súbita
+No 7º nível, você ganha a habilidade de encontrar soluções sob pressão. Quando você ou outra criatura que você possa ver a até 9 metros de você fizer um teste de habilidade ou uma salvaguarda, você pode usar sua reação para adicionar seu modificador de Inteligência à jogada.
+
+Você pode usar esta habilidade um número de vezes igual ao seu modificador de Inteligência (mínimo de uma vez). Você recupera todos os usos gastos ao terminar um descanso longo.
+
+### Adepto de Itens Mágicos
+Ao atingir o 10º nível, você alcança uma compreensão profunda de como usar e fabricar itens mágicos:
+
+Você pode se sintonizar com até quatro itens mágicos de uma vez.
+Se você criar um item mágico com raridade comum ou incomum, levará um quarto do tempo normal e custará metade do ouro usual.
+
+### Item Armazenador de Magia
+No 11º nível, você agora pode armazenar uma magia em um objeto. Sempre que terminar um descanso longo, você pode tocar em uma arma simples ou marcial ou em um item que possa usar como foco de conjuração e armazenar uma magia nele, escolhendo um efeito mágico que custe 2 pontos de magia ou menos das suas magias de artífice e que exija 1 ação para ser conjurada.
+
+Enquanto segura o objeto, uma criatura pode realizar uma ação para produzir o efeito da magia a partir dele, usando seu modificador de atributo de conjuração. Se a magia exigir concentração, a criatura deve se concentrar. A magia permanece no objeto até que seja usada um número de vezes igual ao dobro do seu modificador de Inteligência (mínimo de duas vezes) ou até que você use esta característica novamente para armazenar uma magia em um objeto.
+
+### Especialista de Itens Mágicos
+No 14º nível, sua perícia com itens mágicos se aprofunda mais:
+
+Você pode se sintonizar com até cinco itens mágicos simultaneamente.
+Você ignora todos os requisitos de classe, raça, magia e nível para se sintonizar ou usar um item mágico.
+
+### Mestre de Itens Mágicos
+A partir do 18º nível, você pode sintonizar até seis itens mágicos simultaneamente.
+
+### Alma do Artifício
+No 20º nível, você desenvolve uma conexão mística com seus itens mágicos, da qual pode se valer para proteção:
+
+Você ganha +1 de bônus em todos os testes de resistência por item mágico com o qual esteja sintonizado.
+Se você for reduzido a 0 pontos de vida, mas não for morto imediatamente, você pode usar sua reação para encerrar uma de suas infusões de artífice, fazendo com que você caia para 1 ponto de vida em vez de 0.
+
+
+\page
+
+<div class='pageNumber auto'></div>
+
+## Especialidades de Artífice
+Artífices seguem diversas disciplinas. Aqui estão algumas opções de especialidades que você pode escolher no 3º nível.
+
+### Alquimista
+Um Alquimista é especialista em combinar reagentes para produzir efeitos místicos. Os Alquimistas usam suas criações para dar vida e sugá-la. A Alquimia é a mais antiga das tradições dos artífices, e sua versatilidade tem sido valorizada há muito tempo em tempos de guerra e paz.
+
+#### Proficiência em Ferramentas
+Ao adotar esta especialização no 3º nível, você ganha proficiência com suprimentos de alquimia. Se você já possui esta proficiência, ganha proficiência com outro tipo de ferramenta de artesão à sua escolha.
+
+#### Magias de Alquimista
+A partir do 3º nível, você receberá talentos mágicos adicionais após atingir níveis específicos nesta classe, conforme mostrado na tabela de Magias de Alquimista. Essas magias contam como magias de artífice para você. Se esta magia for de uma esfera de magias que você já possui acesso, você recebe um talento específico, do contrário, você ganha acesso às habilidades iniciais da esfera. Se você já possuir o talento específico, você poderá escolher outro talento da mesma esfera.
+
+Além disso, sempre que um nível nessa classe te conceder um novo talento de magia, você pode optar por escolher um talento da esfera Marcial de Alquimia.
+
+##### Magias de Alquimista
+| Nível de Artífice | Talento (esfera)                                                              |
+|:------------------|:------------------------------------------------------------------------------|
+| 3º                | Revitalizar (Vida), Evenenamento (Morte)                                      | 
+| 5º                | Esfera (forma de explosão, Destruição), Veneno (tipo de explosão, Destruição) |
+| 9º                | Genotipo Elemental (Alteração), Massa (Universal)                             |
+| 13º               | Drenante (tipo de explosão, Destruição), Imortal (Proteção)                   |
+| 17º               | Ressureição (Vida), Nuvem (forma de explosão, Destruição)                     |
+
+#### Elixir Experimental
+A partir do 3º nível, sempre que terminar um descanso longo, você pode magicamente produzir um elixir experimental em um frasco vazio que tocar. Role na tabela Elixir Experimental para ver o efeito do elixir, que é ativado quando alguém bebe o elixir. Com uma ação, uma criatura pode beber o elixir ou administrá-lo a uma criatura incapacitada.
+
+Você pode criar elixires experimentais adicionais gastando 1 ponto de magia para cada um. Ao fazer isso, você usa sua ação para criar o elixir em um frasco vazio que tocar e escolhe o efeito do elixir na tabela Elixir Experimental.
+
+Criar um elixir experimental requer que você tenha suprimentos de alquimia consigo, e qualquer elixir que você criar com esta característica dura até ser bebido ou até o final do seu próximo descanso longo.
+
+Ao atingir certos níveis nesta classe, você pode fazer mais elixires ao final de um descanso longo: dois no 6º nível e três no 15º nível. Role para o efeito de cada elixir separadamente. Cada elixir requer seu próprio frasco.
+
+##### Elixir Experimental
+| d6 | Efeito |
+|:---|:-----|
+| 1  | **Cura.** O bebedor recupera uma quantidade de pontos de vida igual a 2d4 + seu Modificador de Inteligência.     |
+| 2  | **Rapidez.** A velocidade de caminhada do bebedor aumenta em 3 metros por 1 hora.     |
+| 3  | **Resiliência.** O bebedor ganha +1 de bônus na CA por 10 minutos.     |
+| 4  | **Ousadia.** O bebedor pode rolar um d4 e somar o valor obtido a cada jogada de ataque e teste de resistência que fizer no minuto seguinte.|
+| 5  | **Voo.** O bebedor ganha uma velocidade de voo de 3 metros por 10 minutos.     |
+| 6  | **Transformação.** O corpo do bebedor é transformado, recebendo adaptação aquática, mudando de aparência, ou fazendo surgir armas naturais como garras ou presas. O bebedor determina a transformação causada pelo efeito, cujos efeitos duram 10 minutos.|
+
+
+#### Sábio Alquímico
+No 5º nível, você desenvolveu um domínio magistral de substâncias químicas mágicas, aprimorando a cura e o dano delas. Sempre que conjurar uma magia usando os suprimentos de alquimista como foco de conjuração, você ganha um bônus em uma jogada da magia. Essa jogada deve restaurar pontos de vida ou ser uma jogada de dano que cause dano ácido, de fogo, necrótico ou venenoso, e o bônus é igual ao seu modificador de Inteligência.
+
+#### Reagentes Restauradores
+A partir do 9º nível, você pode incorporar reagentes restauradores em algumas de suas obras:
+
+• Sempre que uma criatura bebe um elixir experimental que você criou, a criatura ganha pontos de vida temporários iguais a 2d6 + seu modificador de Inteligência.
+
+• Você pode conjurar a magia Restaurar da esfera de vida sem gastar pontos de magia, desde que use seus suprimentos de alquimista como foco de conjuração. Você pode fazer isso um número de vezes igual ao seu modificador de Inteligência e recupera todos os usos gastos ao terminar um descanso longo.
+
+#### Maestria Química
+Ao atingir o 15º nível, você foi exposto a tantos produtos químicos que eles representam pouco risco para você, e você pode usá-los para eliminar rapidamente certas doenças:
+
+
+\page
+
+<div class='pageNumber auto'></div>
+
+•  Você ganha resistência a dano de ácido e dano de veneno, e agora é imune à condição de envenenamento.
+
+•  Você pode conjurar Restauração Maior, Restaurar Mente, Restaurar Movimento ou Cura maior, da esfera de Vida, sem gastar pontos de magia, desde que use Suprimentos de Alquimista como foco de conjuração. Depois de conjurar qualquer uma das magias com esta característica, você não poderá conjurar aquela magia com ela novamente até terminar um descanso longo.
+
+
+## Infusões de Artífice
+Infusões de Artífice são processos extraordinários que transformam rapidamente um objeto não mágico em um item mágico. A descrição de cada uma das infusões a seguir detalha o tipo de objeto que pode recebê-la, além de indicar se o item mágico resultante requer harmonização.
+
+Algumas infusões especificam um nível mínimo de artífice. Você não pode aprender tal infusão até atingir pelo menos esse nível.
+
+A menos que a descrição de uma infusão indique o contrário, você não pode aprender uma infusão mais de uma vez.
+
+
+### Afiador de Mentes
+**Item: Uma armadura ou túnica**
+
+O item infundido pode enviar um choque ao usuário para reorientar sua mente. O item tem 4 cargas. Quando o usuário falha em um teste de resistência de Constituição para manter a concentração em uma magia, o usuário pode usar sua reação para gastar 1 das cargas do item e obter sucesso. O item recupera 1d4 cargas gastas diariamente ao amanhecer.
+
+### Anel de Reabastecimento de Magia
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Um anel (requer sintonização)**
+
+Enquanto estiver usando este anel, a criatura pode recuperar 1d3 pontos de magia. Uma vez usado, o anel não pode ser usado novamente até o próximo amanhecer.
+
+### Arma Aprimorada
+**Item: Uma arma simples ou marcial**
+
+Esta arma mágica concede um bônus de +1 às jogadas de ataque e dano realizadas com ela.
+O bônus aumenta para +2 ao atingir o 10º nível nesta classe.
+
+
+### Arma Radiante
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Uma arma simples ou marcial (requer sintonização)**
+
+Esta arma mágica concede um bônus de +1 às jogadas de ataque e dano feitas com ela. Enquanto a segura, o portador pode realizar uma ação bônus para fazê-la emitir luz brilhante em um raio de 9 metros e luz fraca por mais 9 metros. O portador pode apagar a luz como uma ação bônus.
+
+A arma possui 4 cargas. Como reação imediata após ser atingido por um ataque, o portador pode gastar 1 carga e cegar o atacante até o final do próximo turno do atacante, a menos que o atacante seja bem-sucedido em um teste de resistência de Constituição contra sua CD de resistência à magia. A arma recupera 1d4 cargas gastas diariamente ao amanhecer.
+
+
+### Arma Retornável
+**Item: Uma arma simples ou marcial com a propriedade de arremesso.**
+
+Esta arma mágica concede um bônus de +1 às jogadas de ataque e dano feitas com ela e retorna à mão do portador imediatamente após ser usada para realizar um ataque à distância.
+
+### Armadura Resistente
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Uma armadura (requer sintonização)**
+
+Ao usar esta armadura, a criatura tem resistência a um dos seguintes tipos de dano, que você escolhe ao infundir o item: ácido, frio, fogo, força, raio, necrótico, venenoso, psíquico, radiante ou trovejante.
+
+### Armadura de Ferramentas
+**Item: Uma armadura**
+
+Com uma ação, uma criatura usando esta armadura infundida pode integrar ferramentas de artesão ou ferramentas de ladrão. As ferramentas permanecem integradas à armadura por 8 horas ou até que o usuário as remova como uma ação. A armadura pode ter apenas uma ferramenta integrada por vez. O usuário pode adicionar seu modificador de Inteligência a qualquer teste de habilidade que fizer com a ferramenta integrada. O usuário deve ter uma mão livre para usar a ferramenta.
+
+### Armadura de Força Mágica
+**Item: Uma armadura (requer sintonização)**
+
+Esta armadura possui 6 cargas. O usuário pode gastar as cargas da armadura das seguintes maneiras:
+
+• :: Quando o usuário realiza um teste de Força ou um teste de resistência de Força, ele pode gastar 1 carga para adicionar um bônus à jogada igual ao seu modificador de Inteligência.
+
+• :: Se a criatura for derrubada, ela pode usar sua reação para gastar 1 carga e evitar ser derrubada.
+:
+A armadura recupera 1d6 cargas gastas diariamente ao amanhecer.
+
+### Armadura de Propulsão Arcana
+**Pré-requisito: Artífice de 14º nível**
+<br>
+**Item: Uma armadura (requer sintonização)**
+
+O portador desta armadura ganha os seguintes benefícios:
+
+\page
+
+<div class='pageNumber auto'></div>
+
+• :: A velocidade de caminhada do portador aumenta em 1,5 metro.
+
+• :: A armadura inclui manoplas, cada uma das quais é uma arma mágica de combate corpo a corpo que só pode ser empunhada quando a mão não está segurando nada. O portador é proficiente com as manoplas, e cada uma causa 1d8 de dano de força ao acertar e possui a propriedade de arremesso, com um alcance normal de 6 metros e um alcance longo de 18 metros. Quando arremessada, a manopla se desprende e voa em direção ao alvo do ataque, retornando imediatamente ao portador e se recolocando.
+
+• :: A armadura não pode ser removida contra a vontade do portador.
+
+• :: Se o portador não tiver membros, a armadura os substitui — mãos, braços, pés, pernas ou apêndices semelhantes. As substituições funcionam de forma idêntica às partes do corpo que substituem.
+
+### Botas do Caminho Sinuoso
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Um par de botas (requer sintonização)**
+
+Enquanto estiver usando estas botas, uma criatura pode se teletransportar até 4,5 metros como uma ação bônus para um espaço desocupado que ela possa ver. A criatura deve ter ocupado esse espaço em algum momento durante o turno atual.
+
+### Defesa Aprimorada
+**Item: Uma armadura ou um escudo**
+
+Uma criatura ganha um bônus de +1 na Classe de Armadura enquanto estiver usando (armadura) ou empunhando (escudo) o item infundido.
+
+O bônus aumenta para +2 quando você atinge o 10º nível nesta classe.
+
+### Elmo da Consciência
+**Pré-requisito: Artífice de 10º nível**
+<br>
+**Item: Um capacete (requer sintonização)**
+
+Enquanto estiver usando este capacete, a criatura tem vantagem nas jogadas de iniciativa. Além disso, o portador não pode ser surpreendido, desde que não esteja incapacitado.
+
+### Escudo de Repulsão
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Um escudo (requer sintonização)**
+
+Uma criatura ganha +1 de bônus na Classe de Armadura enquanto empunha este escudo.
+
+O escudo tem 4 cargas. Enquanto o segura, o portador pode usar uma reação imediatamente após ser atingido por um ataque corpo a corpo para gastar 1 das cargas do escudo e empurrar o atacante a até 4,5 metros de distância. O escudo recupera 1d4 cargas gastas diariamente ao amanhecer.
+
+### Foco Arcano Aprimorado
+Enquanto estiver segurando este item, a criatura ganha +1 de bônus em jogadas de ataque mágico. Além disso, a criatura ignora meia cobertura ao realizar um ataque mágico.
+
+O bônus aumenta para +2 ao atingir o 10º nível nesta classe.
+
+### Replicar Item Mágico
+Usando esta infusão, você replica um item mágico específico. Você pode aprender esta infusão várias vezes; cada vez que fizer isso, escolha um item mágico que você pode fazer com ela, escolhendo nas tabelas de Itens Replicáveis. O título da tabela indica o nível que você precisa estar na classe para escolher um item da tabela. Alternativamente, você pode escolher o item mágico entre os itens mágicos comuns do jogo, excluindo poções ou pergaminhos.
+
+Nas tabelas, a entrada de um item indica se ele requer harmonização. Consulte a descrição do item no Guia do Mestre para obter mais informações sobre ele, incluindo o tipo de objeto necessário para sua criação.
+
+Se você tiver o Guia de Tudo de Xanathar, poderá escolher entre os itens mágicos comuns naquele livro ao escolher um item mágico que possa ser replicado com esta infusão.
+
+### Servo Homúnculo
+**Item: Uma gema ou cristal que valha pelo menos 100 PO**
+
+Você aprende métodos complexos para criar magicamente um homúnculo especial que lhe serve. O item que você infunde serve como o coração da criatura, em torno do qual o corpo da criatura se forma instantaneamente.
+
+Você determina a aparência do homúnculo. Alguns artífices preferem pássaros com aparência mecânica, enquanto outros preferem frascos alados ou caldeirões animados em miniatura.
+
+O homúnculo é amigável com você e seus companheiros e obedece aos seus comandos. Veja as estatísticas de jogo desta criatura no bloco de estatísticas Servo Homúnculo, que usa seu bônus de proficiência (BP) em vários lugares. 
+
+Em combate, o homúnculo compartilha sua contagem de iniciativa, mas ele joga seu turno imediatamente após o seu. Ele pode se mover e usar sua reação por conta própria, mas a única ação que ele realiza em seu turno é a ação de Esquiva, a menos que você use uma ação bônus em seu turno para comandá-lo a realizar outra ação. Essa ação pode estar em seu bloco de estatísticas ou em alguma outra ação. Se você estiver incapacitado, o homúnculo pode realizar qualquer ação à sua escolha, não apenas Esquivar.
+
+O homúnculo recupera 2d6 pontos de vida se a magia de cura for lançada sobre ele. Se você ou o homúnculo morrerem, ele desaparece, deixando seu coração no espaço.
+
+
+\page
+
+<div class='pageNumber auto'></div>
+
+
+### Tiro Repetitivo
+**Item: Uma arma simples ou marcial com a propriedade munição (requer sintonização)**
+
+Esta arma mágica concede um bônus de +1 às jogadas de ataque e dano feitas com ela quando usada para realizar um ataque à distância, e ignora a propriedade de carregamento, se a possuir.
+
+Se a arma não tiver munição, ela produz a sua própria, criando automaticamente uma peça de munição mágica quando o portador realiza um ataque à distância com ela. A munição criada pela arma desaparece no instante em que ela atinge ou erra um alvo.
+
+{{monster,frame
+## Servo Humúnculo
+*Constructo Minúsculo*
+___
+**Classe de Armadura (CA)** :: 13 (armadura natural)
+**Pontos de Vida**  :: 1 + seu modificador de Inteligência + seu nível de artífice (o homúnculo tem um número de Dados de Vida [d4s] igual ao seu nível de artífice)
+**Deslocamento**       :: 6m, voo 9m
+___
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|4 (-3) |15 (+2)|12 (+1)|10 (+0)|10 (+0)|7 (-2) |
+___
+**Testes de Resistência** :: Destreza +2 + BP
+**Perícias** :: Percepção +0 + BP x 2, Furtividade +2 + BP
+**Imunidades de Dano** :: veneno
+**Imunidades de Condições** :: exaustão, envenenado
+**Sentidos** :: visão no escuro 18m, Percepção passiva 10 + (BP x 2)
+**Idiomas** :: Entende os idiomas que você fala
+**Bônus de Proficiência (BP)** :: Igual ao seu bônus
+___
+***Evasão.*** Se o homúnculo for submetido a um efeito que lhe permita fazer um teste de resistência de Destreza para receber apenas metade do dano, ele não sofrerá dano se for bem-sucedido no teste de resistência e apenas metade do dano se falhar. Ele não poderá usar essa característica se estiver incapacitado.
+
+### Ações
+***Ataque de Força.*** *Ataque com Arma de Longo Alcance:* seu modificador de ataque mágico para atingir, alcance de 9 metros, um alvo visível. *Acerto:* 1d4 + PB de dano de força.
+
+### Reações
+***Canalizar Magia.*** O homúnculo lança um feitiço que você conjura com alcance de toque. O homúnculo deve estar a até 36 metros de você.
+}}
+
+\page
+
+<div class='pageNumber auto'></div>
+
+## Feiticeiro
+Os feiticeiros carregam um patrimônio mágico conferido a eles por uma linhagem exótica, alguma influência de outro mundo ou exposição a forças cósmicas desconhecidas. Não é possível estudar feitiçaria como se aprende um idioma, assim como não se aprende a viver
+uma vida lendária. Ninguém escolhe a feitiçaria: os poderes escolhem o feiticeiro.
+
+### Características de classe
+*Como um feiticeiro, você possui as seguintes características.*
+
+#### Pontos de vida:
+Dado de vida: 1d6 por nível de feiticeiro
+<br>
+Pontos de vida no 1º nível: 6 + modificador de Constituição.
+<br>
+Pontos de vida nos níveis seguintes: 1d6 (ou 4) + modificador de constituição por nível de classe após o 1º.
+
+#### Proficiências
+**Armadura:** nenhuma
+<br>
+**Armas:** Adagas, dardos, fundas, bordões e bestas leves
+<br>
+**Ferramentas:** nenhuma
+<br>
+**Testes de Resistência:** Constituição e Carisma
+<br>
+**Perícias:** Escolha duas dentre Arcanismo, Enganação, Intuição, Intimidação, Persuasão e Religião
+<br><br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+<br>
+<br>
+•	(a) uma besta leve e 20 virotes ou (b) qualquer arma simples
+<br>
+•	(a) uma bolsa de componentes ou (b) um foco arcano
+<br>
+•	(a) um pacote de explorador ou (b) um pacote de
+aventureiro
+<br><br>
+Alternativamente, você pode começar com 3d4x10 de ouro inicial para comprar seus equipamentos
+
+### Conjuração
+Um evento do seu passado ou na vida de um parente ou ancestral, deixou uma marca indelével em você, infundindo você com magia arcana. A fonte desse poder, independente da sua origem, flui em suas magias.
+
+#### Conjuração de Esferas
+Você pode combinar esferas e talentos para criar efeitos mágicos. Você ganha uma reserva de magias, talentos mágicos e uma tradição de conjuração.
+
+#### Reserva de Magias
+Você ganha uma pequena reserva de energia que pode invocar para criar efeitos verdadeiramente maravilhosos, chamada reserva de magias. Essa reserva contém uma quantidade de pontos de magia igual ao seu modificador de Carisma (mínimo: 1). Você ganha pontos de magia adicionais iguais ao seu nível de feiticeiro, como visto na tabela de sua classe.
+Essa reserva é reabastecida após um descanso longo.
+
+#### Talentos Mágicos
+A coluna Talentos Mágicos mostra o número de talentos mágicos ganhos com seus níveis de feiticeiro.
+
+{{classTable,frame,decoration
+##### O Feiticeiro
+| Nível| Bônus de Proficiência | Características | Talentos Mágicos | Pontos de Magia |
+|:----:|:--:|:---------------------------------------|:-:|:-:|
+| 1º   | +2 | Conjuração, Origem de Feitiçaria       | 1 | 1 |
+| 2º   | +2 | -                                      | 2 | 2 |
+| 3º   | +2 | Metamágica                             | 3 | 4 |
+| 4º   | +2 | Incremento no Valor de Habilidade      | 4 | 5 |
+| 5º   | +3 | -                                      | 5 | 7 |
+| 6º   | +3 | Característica de Origem de Feitiçaria | 6 | 8 |
+| 7º   | +3 | -                                      | 7 | 10|
+| 8º   | +3 | Incremento no Valor de Habilidade      | 8 | 11|
+| 9º   | +4 | -                                      | 9 | 13|
+| 10º  | +4 | Metamágica                             | 10| 14|
+| 11º  | +4 | -                                      | 11| 16|
+| 12º  | +4 | Incremento no Valor de Habilidade      | 12| 17|
+| 13º  | +5 | ─                                      | 13| 19|
+| 14º  | +5 | Característica de Origem de Feitiçaria | 14| 20|
+| 15º  | +5 | -                                      | 15| 22|
+| 16º  | +5 | Incremento no Valor de Habilidade      | 16| 23|
+| 17º  | +6 | Metamágica                             | 17| 25|
+| 18º  | +6 | Característica de Origem de Feitiçaria | 18| 27|
+| 19º  | +6 | Incremento no Valor de Habilidade      | 19| 28|
+| 20º  | +6 | Restauração Mística                    | 20| 30
+}}
+
+#### Habilidade de Conjuração
+Carisma é a sua habilidade de conjuração para suas magias de feiticeiro, já que o poder da sua magia depende da sua capacidade de projetar sua vontade no mundo. Use seu Carisma sempre que alguma magia se referir à sua habilidade de conjurar magias. Além disso, você usa o seu modificador de Carisma para definir a CD dos testes de resistência para as magias de feiticeiro que você conjura e quando você realiza uma jogada de ataque com uma magia.
+
+**CD de resistência à magia** = 8 + seu bônus de proficiência + seu modificador de Carisma
+
+**Modificador de ataque de magia** = seu bônus de proficiência + seu modificador de Carisma
+
+
+\page
+<div class='pageNumber auto'></div>
+
+
+
+
+#### Foco de Conjuração
+Você pode usar um foco arcano como foco de conjuração das suas magias de feiticeiro.
+
+### Origem de Feitiçaria
+Escolha uma origem de feitiçaria, que descreve a fonte do seu poder mágico inato. Sua escolha lhe confere características quando você aescolhe, no 1° nível e novamente no 6°, 14° e 18° nível.
+
+### Metamágica
+No 3° nível, você adquire a habilidade de distorcer suas magias para se adequarem às suas necessidades. Você ganha duas das seguintes opções de Metamágica, à sua escolha. Você adquire outra no 10° e 17° nível.
+Você pode usar apenas uma opção de Metamágica em uma magia quando a conjura, a não ser que esteja
+descrito o contrário.
+<br>
+Sempre que  puder escolher uma opção de Metamágica como parte dessa classe, você pode, ao invés disso, escolher um talento o tipo Meta da esfera Universal
+
+#### Magia Acelerada
+Quando você conjurar uma magia que tenha um tempo de conjuração de 1 ação, você pode gastar 2 pontos de magia para mudar o tempo de conjuração para 1 ação bônus para essa magia.
+
+#### Magia Aumentada
+Quando você conjura uma magia que obriga uma criatura a realizar um teste de resistência contra o seu efeito, você pode gastar 3 pontos de magia para dar desvantagem a um alvo da magia no primeiro teste de resistência feito contra ela.
+
+#### Magia Cuidadosa
+Quando você conjurar uma magia que obriga outras criaturas a realizarem um teste de resistência, você pode proteger algumas dessas criaturas da força total da magia. Para tanto, você gasta 1 ponto de magia e escolhe um número dessas criaturas até o seu modificador
+de Carisma (mínimo de uma criatura). Uma criatura escolhida passa automaticamente no teste de resistência contra a magia.
+
+#### Magia Distante
+Quando você conjurar uma magia que tenha distância de 1,5 metro ou maior, você pode gastar 1 ponto de magia para dobrar o alcance da magia. Quando você conjura uma magia com alcance de toque, você pode gastar 1 ponto de magia para mudar o alcance da magia para 9 metros.
+
+#### Magia Duplicada
+Quando você conjurar uma magia que seja incapaz de ter mais de uma criatura como alvo no nível atual dela e não possua alcance pessoal, você pode gastar 2 pontos de magia a para ter uma segunda criatura, no alcance da magia, como alvo.
+::
+#### Magia Estendida
+Quando você conjurar uma magia que tenha duração de 1 minuto ou maior, você pode gastar 1 ponto de magia para dobrar sua duração, até uma duração máxima de 24 horas.
+
+#### Magia Perseguidora
+Se você fizer uma jogada de ataque para uma magia e errar, poderá gastar 2 pontos de magia para rolar novamente o d20 e deverá usar a nova jogada.
+
+Você pode usar Buscando Magia mesmo que já tenha usado uma opção de Metamagia diferente durante a conjuração da magia.
+
+#### Magia Potencializada
+Quando você rola o dano de uma magia, você pode gastar 1 ponto de magia para jogar novamente um número de dados de dano, até seu modificador de Carisma. Você deve usar a nova rolagem. Você pode usar Magia Potencializada mesmo que você já tenha usado uma opção diferente de Metamágica durante a conjuração da magia.
+
+#### Magia Sutil
+Quando você conjurar uma magia, você pode gastar 1 ponto de magia para fazê-lo sem qualquer componente somático ou verbal.
+
+#### Magia Transmutada
+Ao conjurar uma magia que causa um tipo de dano da lista a seguir, você pode gastar 1 ponto de magia para mudar esse tipo de dano para um dos outros tipos listados: ácido, frio, fogo, raio, veneno, trovão.
+
+### Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 8°, 12°, 16° e 19° nível, você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.
+
+### Orientação Mágica
+Ao atingir o 5º nível, você pode recorrer à sua fonte interior de magia para tentar conjurar sucesso a partir do fracasso. Ao fazer um teste de habilidade que falhe, você pode gastar 1 ponto de magia para rolar novamente o d20, e deve usar a nova jogada, potencialmente transformando o fracasso em um sucesso.
+
+### Restauração Mística
+No 20° nível, você recupera 4 pontos de magia gastos sempre que você terminar um descanso curto.
+
+## Origens de Feitiçaria
+Diferentes feiticeiros possuem diferentes origens para sua magia inata. Essas origens deifinem a fonte da magia do feiticeiro, seja ela fruto de uma linhagem de 
+
+\page
+<div class='pageNumber auto'></div>
+
+sangue, uma experiência com uma criatura mágica, ou a influência de um ser superior.
+
+### Sangue Feérico
+Como um feiticeiro de Sangue Feérico, sua magia dança com capricho e fascínio. Suas palavras podem encantar ou iludir com a mesma facilidade com que podem invocar chamas ou ilusões. Sua conexão com a Agrestia das Fadas molda seu próprio ser — suas emoções surgem como as estações, sua presença deslumbra aqueles ao seu redor e o próprio ar parece cantar com uma vida invisível. Quer você tenha sido abençoado por uma arquifada, roubado e refeito pelas mãos de uma fada, ou seja descendente de uma antiga linhagem feérica, sua feitiçaria é um reflexo da canção eterna da Agrestia das Fadas — radiante, caprichosa e totalmente encantadora.
+
+#### Visão do Coração
+No 1º nível, sua magia Feérica lhe concede habilidades empáticas elevadas. Você ganha prociência em Intuição, e
+pode adicionar o dobro de seu bônus de proficiência em testes de Intuição que fizer para determinar as intenções de
+uma criatura.
+
+Como uma ação, você pode tocar uma criatura para ler seu coração. Faça um teste de Sabedoria (Intuição), contestado
+por um teste de Carisma (Enganação) da criatura. Se for bem-sucedido, você determina o alinhamento do alvo. Celestiais, Demônios e mortos-vivos falham sem teste. A criatura alvo não percebe sua tentativa de ler seu coração.
+
+##### Magias Feéricas
+| Nível de Feiticeiro | Talento (esfera)               |
+|:------------------|:---------------------------------|
+| 1º| Cativar (Mente), Luz Reveladora (Luz)            | 
+| 3º| Delírio (Mente), Teletransporte Rápido (Distorção) |
+| 5º| Cintilar (Distorção), Terreno Ilusório (Ilusão)  |
+| 7º| Confusão (Mente), Disfarce Ilusório (Ilusão)     |
+| 9º| Paralizar (Mente), Ilusões Potentes (Ilusão      |  
+
+#### Magias Feéricas
+Sua ligação com o Reino das Fadas concede a você uma afinidade com encantos. A partir do 3º nível, você receberá talentos mágicos adicionais após atingir níveis específicos nesta classe, conforme mostrado na tabela de Magias Feéricas. Essas magias contam como magias de feiticeiro para você. Se esta magia for de uma esfera de magias que você já possui acesso, você recebe um talento específico, do contrário, você ganha acesso às habilidades iniciais da esfera. Se você já possuir o talento específico, você poderá escolher outro talento da mesma esfera.
+
+
+#### Sintonização Sazonal
+A partir do 6º nível, você pode se alinhar com uma das estações, como uma verdadeira criatura feérica. No fim de cada descanso longo, escolha uma estação e ganhe os benefícios listados abaixo. Cada estação lhe concede resistência a um tipo de dano e vantagem em determinadas jogadas.
+
+| Estação   | Tipo de Dano | Jogada com Vantagem                |
+|:----------|:------------:|:----------------------------------:|
+| Primavera | Elétrico     | Jogadas de Dados de vida           |
+| Verão     | Fogo         | Jogadas de Iniciativa              |
+| Outono    | Veneno       | Testes de Concentração             |
+| Inverno   | Frio         | Testes de Resistência Contra Morte |
+
+
+#### Magia dos Caminhos
+Sua magia te permite oscilar entre a Agréstia das Fadas e o plano material. Começando no 14º nível, sempre que conjurar uma magia que custe ao menos 1 ponto de magia, você pode escolher se teleportar para um espaço não ocupado que consiga ver a até 9 metros de você.
+
+Quando usar esta característica, você pode gastar pontos de magia adicionais para aumentar a distância em 3 metros para cada ponto de magia.
+
+#### Presença Intoxicante
+Você emana a presença enfeitiçante de um Arquifada. A partir do 18º nível, criaturas à sua escolha a até 4,5 metros de você tem desvantagem em testes de resistências para resistir a suas magias de Mente.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+## Guerreiro
+Cavaleiros em missões, lordes conquistadores, campeões reais, infantaria de elite, mercenários rígidos e bandidos reis, como guerreiros, eles compartilham de uma maestria com armas e armaduras sem precedentes, bem como um vasto conhecimento e habilidades em combate. E eles estão bem familiarizados com a morte, seja simplesmente conhecendo-a ou desafiando-a cara a cara.
+
+{{classTable,frame,decoration
+##### O Guerreiro
+| Nível | Bônus de Proficiência| Características | Talentos Marciais  |
+|:-----:|:-----------------:|:---------|:---------------------:|
+| 1º   | +2 | Estilo de Luta, Retomar o Fôlego, Treinamento Marcial | 1 |
+| 2º   | +2 | Surto de Ação (um uso)                                | 2 |
+| 3º   | +2 | Arquétipo Marcial                                     | 3 |
+| 4º   | +2 | Incremento no Valor de Habilidade                     | 4 |
+| 5º   | +3 | Ataque Extra                                          | 5 |
+| 6º   | +3 | Incremento no Valor de Habilidade                     | 6 |
+| 7º   | +3 | Característica de Arquétipo Marcial                   | 7 |
+| 8º   | +3 | Incremento no Valor de Habilidade                     | 8 |
+| 9º   | +4 | Indomável (um uso)                                    | 9 |
+| 10º  | +4 | Característica de Arquétipo Marcial                   | 10|
+| 11º  | +4 | Ataque Extra (2)                                      | 11|
+| 12º  | +4 | Incremento no Valor de Habilidade                     | 12|
+| 13º  | +5 | Indomável (dois usos)                                 | 13|
+| 14º  | +5 | Incremento no Valor de Habilidade                     | 14|
+| 15º  | +5 | Característica de Arquétipo Marcial                   | 15|
+| 16º  | +5 | Incremento no Valor de Habilidade                     | 16|
+| 17º  | +6 | Surto de Ação (dois usos),Indomável (três usos)       | 17|
+| 18º  | +6 | Característica de Arquétipo Marcial                   | 18|
+| 19º  | +6 | Incremento no Valor de Habilidade                     | 19|
+| 20º  | +6 | Ataque Extra (3)                                      | 20|
+}}      
+
+### Características de classe
+*Como um Guerreiro, você possui as seguintes características.*
+
+#### Pontos de vida:
+**Dado de vida:** 1d10 por nível de Guerreiro
+<br>
+**Pv no 1º nível:** 10 + modificador de Constituição.
+<br>
+**Pontos de vida nos níveis seguintes:** 1d10 (ou 6) + modificador de constituição por nível de classe após o 1º.
+
+#### Proficiências
+**Armadura:** Todas as armaduras, escudos
+<br>
+**Armas:** Armas simples, armas marciais
+<br>
+**Ferramentas:** nenhuma
+<br>
+**Testes de Resistência:** Constituição e Força
+<br>
+**Perícias:** Escolha duas dentre Acrobacia, Adestrar animais, Atletismo, História, Intuição, Intimidação, Percepção e Sobrevivência
+<br><br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+<br>
+<br>
+•	(a) cota de malha ou (b) gibão de peles, arco longo e 20 flechas
+<br>
+•	(a) uma arma marcial e um escudo ou (b) duas armas marciais
+<br>
+•	(a) uma besta leve e 20 virotes ou (b) dois machados de arremesso
+<br>
+•	(a) uma pacote de aventureiro ou (b) um pacote de explorador
+<br><br>
+Alternativamente, você pode começar com 5d4x10 de ouro inicial para comprar seus equipamentos
+
+### Estilo de Luta
+Você adota um estilo de combate particular que será sua especialidade. Escolha uma das opções a seguir. Você não
+pode escolher o mesmo Estilo de Combate mais de uma vez, mesmo se puder escolher de novo.
+
+#### Arquearia
+Você ganha +2 de bônus em jogadas de ataque com armas de longo ance.
+
+#### Luta às Cegas  
+Você tem visão às cegas com ance de 3 metros. Dentro desse ance, você pode ver efetivamente qualquer coisa que não esteja atrás de cobertura total, mesmo se estiver cego ou na escuridão. Além disso, você pode ver uma criatura invisível dentro desse ance, a menos que a criatura se esconda de você com sucesso.
+
+#### Defesa  
+Enquanto estiver usando armadura, você ganha +1 de bônus na CA.
+
+#### Duelismo 
+Quando estiver empunhando uma arma corpo a corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus em jogadas de dano com essa arma.
+
+#### Luta com Armas Grandes  
+Ao rolar 1 ou 2 em um dado de dano para um ataque feito com uma arma corpo a corpo empunhada com as duas mãos, você pode rolar novamente o dado e deve usar a nova jogada, mesmo que a nova jogada seja 1 ou 2. A arma deve ter a propriedade de duas mãos ou versátil para que você obtenha este benefício.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Interceptação  
+Quando uma criatura que você pode ver atinge um alvo, diferente de você, a até 1,5 metro de você com um ataque, você pode usar sua reação para reduzir o dano que o alvo recebe em 1d10 + seu bônus de proficiência (até um mínimo de 0 de dano). Você deve estar empunhando um escudo ou uma arma simples ou marcial para usar esta reação.
+
+#### Proteção  
+Quando uma criatura que você pode ver ataca um alvo diferente de você que esteja a até 1,5 metro de você, você pode usar sua reação para impor desvantagem na jogada de ataque. Você deve estar empunhando um escudo.
+
+#### Técnica Superior  
+Você aprende uma manobra de sua escolha dentre aquelas disponíveis para o arquétipo Mestre de Batalha. Se uma manobra que você usar exigir que seu alvo faça um teste de resistência para resistir aos efeitos da manobra, a CD do teste de resistência será igual a 8 + seu bônus de proficiência + seu modificador de Força ou Destreza (à sua escolha).
+
+•	Você ganha um dado de superioridade, que é um d6 (este dado é adicionado a qualquer dado de superioridade que você tenha de outra fonte). Este dado é usado para alimentar suas manobras. Um dado de superioridade é gasto quando você o usa. Você recupera seus dados de superioridade gastos ao terminar um descanso curto ou longo.
+
+#### Luta com Arma de Arremesso  
+Você pode sacar uma arma que tenha a propriedade de arremesso como parte do ataque que você faz com a arma.
+
+•	Além disso, ao atingir um ataque à distância usando uma arma de arremesso, você ganha um bônus de +2 na jogada de dano.
+
+#### Luta com Duas Armas  
+Ao se envolver em uma luta com duas armas, você pode adicionar seu modificador de habilidade ao dano do segundo ataque.
+
+#### Luta Desarmada  
+Seus ataques desarmados podem causar dano contundente igual a 1d6 + seu modificador de Força em um acerto. Se você não estiver empunhando nenhuma arma ou escudo ao fazer a jogada de ataque, o d6 se torna um d8.
+
+•	No início de cada um dos seus turnos, você pode causar 1d4 de dano contundente a uma criatura agarrada por você.
+
+#### Atirador de Corpo a Corpo  
+Ao realizar um ataque à distância enquanto estiver a até 1,5 metro de uma criatura hostil, você não tem desvantagem na jogada de ataque. Seus ataques à distância ignoram meia cobertura e três quartos de cobertura contra alvos a até 9 metros de você. Você tem um bônus de +1 em jogadas de ataque em ataques à distância.
+
+#### Marinheiro  
+Enquanto não estiver usando armadura pesada ou escudo, você tem deslocamento de nado e deslocamento de escalada iguais ao seu deslocamento normal e ganha um bônus de +1 na classe de armadura.
+
+#### Lutador de Túnel  
+Como uma ação bônus, você pode assumir uma postura defensiva que dura até o início do seu próximo turno. Enquanto estiver em sua postura defensiva, você pode fazer ataques de oportunidade sem usar sua reação, e pode usar sua reação para fazer um ataque corpo a corpo contra uma criatura que se mova mais de 1,5 metro enquanto estiver dentro do seu ance.
+
+### Retomar o Fôlego
+Você possui uma reserva de estamina e pode usá-la para proteger a si mesmo contra danos. No seu turno, você pode usar uma ação bônus para recuperar pontos de vida igual a 1d10 + seu nível de guerreiro.
+
+Uma vez que você use essa característica, você precisa terminar um descanso curto ou longo para usá-la de novo.
+
+### Treinamento Marcial
+Você recebe um talento marcial no 1º nível e em cada nível subsequente, conforme descrito na tabela da classe.
+
+### Surto de Ação
+A partir do 2º nível, você pode forçar o seu limite para além do normal por um momento. Durante o seu turno,
+você pode realizar uma ação adicional juntamente com sua ação e possível ação bônus.
+
+### Arquétipo Marcial
+No 3º nível, você escolhe um arquétipo o qual se esforçará para seguir as técnicas e estilos de combate dele. O arquétipo confere a você características especiais no 3º nível e de novo nos 7º, 10º, 15º e 18º nível.
+
+### Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 6°, 8°, 12°, 14°, 16° e 19° nível, você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade
+acima de 20 com essa característica.
+
+### Versatilidade Marcial
+Sempre que você atingir um nível nesta classe que conceda a habilidade de Melhoria no Valor de Habilidade, você pode fazer uma das seguintes ações, conforme muda o foco da sua prática marcial:
+
+
+\page
+<div class='pageNumber auto'></div>
+
+•	:: Substituir um estilo de luta que você conhece por outro estilo de luta disponível para guerreiros.
+
+•	:: Se você conhece alguma manobra do arquétipo Mestre de Batalha, pode substituir uma manobra que conhece por uma manobra diferente.
+
+### Ataque Extra
+A partir do 5º nível, você pode atacar duas vezes, ao invés de uma, quando usar a ação Atacar durante o seu turno.
+O número de ataques aumenta para três quando você alcançar o 11º nível de guerreiro e para 4 quando alcançar
+o 20º nível de guerreiro.
+
+### Indomável
+A partir do 9º nível, você pode repetir um teste de resistência em que falhou. Se fizer isso, deverá usar o novo teste e não poderá usar essa habilidade novamente até terminar um descanso longo.
+
+Você pode usar essa habilidade duas vezes entre descansos longos a partir do 13º nível e três vezes entre descansos longos a partir do 17º nível.
+
+## Arquétipos Marciais
+Diferentes guerreiros escolhem diferentes caminhos para aperfeiçoar seu poder em combate. O arquétipo marcial
+que você escolhe seguir reflete essa escolha.
+
+### Possuído
+Em seu peito ardem duas almas. Seja por um antigo ritual, acidente divino ou interferência profana, você compartilha seu corpo com o espírito de outro — um guerreiro de eras passadas. Seus instintos, memórias e fúria permanecem logo abaixo da pele, prontos para despertar quando o aço canta e o sangue ferve.
+
+#### Vínculo Espiritual
+No 3º nível, o espírito de um guerreiro ancestral desperta dentro de você, formando uma segunda persona com a qual você compartilha o mesmo corpo. Quando você adquire esta característica, sua segunda persona recebe os seguintes traços:
+
+•	:: Um **Estilo de Luta** da lista de estilos de luta de Guerreiro, que seja diferente de qualquer um que você já tenha escolhido anteriormente
+
+•	:: Dois **Talentos Marciais** de esferas às quais você ainda não tem acesso
+
+•	:: Duas **perícias** que você ainda não possua, uma delas podendo ser com um tipo de ferramenta
+
+Além disso, sua segunda persona ganha 2 talentos adicionais nos níveis 7, 10, 15 e 18.
+
+Como uma ação bônus, você pode alternar entre suas duas personas, substituindo temporariamente seu estilo de luta e talentos pelos da outra. Você mantém seus pontos de vida, equipamentos e valores de habilidade ao trocar de persona.
+
+Você pode alternar de persona um número de vezes igual ao seu bônus de proficiência, e recupera todos os usos gastos após um descanso longo.
+
+Ambas as personas compartilham o mesmo Foco Marcial (se aplicável) e as mesmas proficiências em perícias, salvaguardas e ferramentas.
+
+### Ressonância Espiritual
+A partir do 7º nível, as fronteiras entre suas duas almas tornam-se mais tênues, permitindo que você combine suas forças.
+
+Como uma ação bônus, você pode incorporar temporariamente parte da persona que estiver inativa, escolhendo um dos benefícios a seguir por 1 minuto:
+•	:: O Estilo de Luta da persona inativa
+
+•	:: Um Talento de esfera conhecido pela persona inativa
+
+•	:: Vantagem em testes de uma perícia ou ferramenta com a qual a persona inativa possua proficiência
+
+Você pode usar esta característica uma vez por descanso curto ou longo.
+
+Além disso, sempre que alternar de persona, você manifesta um eco da força da alma anterior. Você recebe pontos de vida temporários iguais ao seu nível de guerreiro, que duram por 1 minuto, e recebe Foco Marcial.
+
+### Golpe Ressonante
+No 10º nível, suas duas almas aprendem a atacar em uníssono, canalizando poder espiritual através de seus golpes.
+
+Uma vez por descanso curto ou longo, quando você alternar de persona, pode liberar um Golpe Ressonante. Até o final do seu próximo turno, o primeiro ataque com arma que acertar causa 1d8 de dano psíquico adicional.
+
+Ao acertar esse ataque, escolha um dos seguintes efeitos de ressonância:
+
+•	:: **Eco Atordoante**. O deslocamento do alvo é reduzido em 3 metros até o fim do próximo turno dele
+
+•	:: •	**Abertura de Guarda**. O próximo ataque que você fizer contra o alvo é com vantagem
+
+•	:: **Memória Dolorosa**. O alvo sofre dano adicional igual ao seu bônus de proficiência no início do próximo turno dele
+
+O dano psíquico aumenta para 2d8 no 15º nível e 3d8 no 18º nível.
+
+### Eco do Caído
+Ao atingir o 15º nível, você aprende a manifestar fisicamente o espírito que habita em você.
+
+Como uma ação, você pode invocar um Eco da sua persona secundária por 1 minuto. O Eco aparece como um guerreiro espectral portando armas e armaduras apropriadas para o espírito, e utiliza as estatísticas, talentos e estilo de luta da persona secundária.
+
+O Eco age na sua iniciativa e pode realizar as ações Atacar, Desengajar, Ajudar ou Disparada, além de se movimentar normalmente.
+
+\page
+<div class='pageNumber auto'></div>
+
+Ele compartilha seus pontos de vida, e qualquer dano sofrido pelo Eco é transferido a você.
+
+Quando o Eco desaparecer, você pode imediatamente alternar para a persona dele sem gastar um uso de Vínculo Ancestral.
+
+Você pode usar esta característica uma vez por descanso longo.
+
+### Um Só Corpo
+No 18º nível, você e a alma dentro de si tornam-se completamente unificadas.
+
+Você pode manter ambas as personas ativas ao mesmo tempo, endo acesso simultâneo a todos os talentos, perícias e estilos de luta de ambas as personas, independentemente de qual esteja ativa. Além disso, você recebe um uso adicional das habilidades Ressonância Espiritual e Golpe Ressonante. 
+
+
+\page
+<div class='pageNumber auto'></div>
+
+## Ladino
+Ladinos contam com sua perícia, furtividade e as vulnerabilidades de seus inimigos para obter vantagem em qualquer situação. Eles possuem uma habilidade especial para encontrar a solução para praticamente qualquer problema, demonstrando desenvoltura e versatilidade, a chave de qualquer grupo aventureiro de sucesso.
+
+### Características de classe
+*Como um Ladino, você possui as seguintes características.*
+
+#### Pontos de vida:
+**Dado de vida:** 1d8 por nível de Ladino
+<br>
+**Pv no 1º nível:** 8 + modificador de Constituição.
+<br>
+**Pontos de vida nos níveis seguintes:** 1d8 (ou 5) + modificador de constituição por nível de classe após o 1º.
+
+#### Proficiências
+**Armadura:** Armaduras leves
+<br>
+**Armas:** Armas simples, bestas de mão, espadas longas, rapieiras, espadas curtas
+<br>
+**Ferramentas:** Ferramentas de ladrão
+<br>
+**Testes de Resistência:** Destreza, Inteligência
+<br>
+**Perícias:** Escolha quatro dentre Acrobacia, Atletismo, Atuação, Enganação, Furtividade, Intimidação, Intuição, Investigação, Percepção, Persuasão e Prestidigitação
+<br><br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+<br>
+<br>
+•	(a) uma rapieira ou (b) uma espada longa
+<br>
+•	(a) um arco curto e uma aljava com 20 flechas ou (b) uma espada curta
+<br>
+•	(a) um pacote de assaltante ou (b) um pacote de aventureiro ou (c) um pacote de explorador
+<br>
+•	Armadura de couro, duas adagas e ferramentas de ladrão
+<br><br>
+Alternativamente, você pode começar com 5d4x10 de ouro inicial para comprar seus equipamentos
+
+### Especialização
+No 1º nível, você escolhe duas de suas perícias que seja proficiente, ou uma perícia que seja proficiente e ferramentas de ladrão. Seu bônus de proficiência é dobrado em qualquer teste de habilidade que fizer com elas.
+
+No 6º nível, você pode escolher outras duas de suas proficiências (em perícias ou ferramentas de ladrão) para ganhar esse benefício.
+
+
+{{classTable,frame,decoration
+##### O Ladino
+| Nível | Bônus de Proficiência|  Ataque Furtivo | Características | Talentos Marciais  |
+|:-----:|:-----------------:|:---------|:---------|:---------------------:|
+| 1º   | +2 | 1d6 | Especialização, Ataque Furtivo, Gíria de Ladrão | 0  |
+| 2º   | +2 | 1d6 | Ação Ardilosa, Treinamento Marcial              | 1  |
+| 3º   | +2 | 2d6 | Arquétipo de Ladino                             | 2  |
+| 4º   | +2 | 2d6 | Incremento no Valor de Habilidade               | 3  |
+| 5º   | +3 | 3d6 | Esquiva Sobrenatural                            | 3  |
+| 6º   | +3 | 3d6 | Especialização                                  | 4  |
+| 7º   | +3 | 4d6 | Evasão                                          | 5  |
+| 8º   | +3 | 4d6 | Incremento no Valor de Habilidade               | 6  |
+| 9º   | +4 | 5d6 | Característica de Arquétipo de Ladino           | 6  |
+| 10º  | +4 | 5d6 | Incremento no Valor de Habilidade               | 7  |
+| 11º  | +4 | 6d6 | Talento Confiável                               | 8  |
+| 12º  | +4 | 6d6 | Incremento no Valor de Habilidade               | 9  |
+| 13º  | +5 | 7d6 | Característica de Arquétipo de Ladino           | 9  |
+| 14º  | +5 | 7d6 | Sentido Cego                                    | 10 |
+| 15º  | +5 | 8d6 | Mente Escorregadia                              | 11 |
+| 16º  | +5 | 8d6 | Incremento no Valor de Habilidade               | 12 |
+| 17º  | +6 | 9d6 | Característica de Arquétipo de Ladino           | 12 |
+| 18º  | +6 | 9d6 | Elusivo                                         | 13 |
+| 19º  | +6 |10d6 | Incremento no Valor de Habilidade               | 14 |
+| 20º  | +6 |10d6 | Golpe de Sorte                                  | 15 |
+}} 
+
+### Ataque Furtivo
+A partir do 1º nível, você sabe como atacar sutilmente e explorar a distração de seus inimigos. Uma vez por turno, você pode adicionar 1d6 nas jogadas de dano contra
+qualquer criatura que acertar, desde que tenha vantagem nas jogadas de ataque. O ataque deve ser com uma arma de acuidade ou à distância.
+
+Você não precisa ter vantagem nas jogadas de ataque se outro inimigo do seu alvo estiver a 1,5 metro de distância dele, desde que este inimigo não esteja incapacitado e você não tenha desvantagem nas jogadas de ataque.
+
+A quantidade de dano extra aumenta conforme você ganha níveis nessa classe, como mostrado na coluna Ataque Furtivo da tabela O Ladino.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+### Gíria de Ladrão
+Durante seu treinamento você aprendeu as gírias de ladrão, um misto de dialeto, jargão e códigos secretos que permitem você passar mensagens secretas durante uma conversa aparentemente normal. Somente outra criatura que conheça essas gírias de ladrão entende as mensagens. Leva-se quatro vezes mais tempo para transmitir essa mensagem do que falar a mesma ideia claramente.
+
+Além disso, você entende um conjunto de sinais secretos e símbolos usados para transmitir mensagens curtas e simples, como saber se uma área é perigosa ou se é território de uma guilda de ladrões, se o saque está próximo, se as pessoas na área são alvos fáceis ou até
+mesmo indicar lugares seguros para ladinos se esconderem.
+
+### Ação Ardilosa
+A partir do 2º nível, seu pensamento rápido e agilidade faz você se mover e agir rapidamente. Você pode usar uma ação bônus durante cada um de seus turnos em
+combate. Esta ação pode ser usada somente para Disparada, Desengajar ou Esconder.
+
+### Arquétipo de Ladino
+No 3º nível, você escolhe um arquétipo que se esforçará para se equiparar através de exercícios de suas habilidades de ladino. Sua escolha garante a você características no 3o nível e de novo no 9º, 13º e 17º nível.
+
+### Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 8°, 10°, 12°, 16° e 19° nível, você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar
+dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.
+
+### Esquiva Sobrenatural
+A partir do 5º nível, quando um inimigo que você possa ver o acerta com um ataque, você pode usar sua reação para reduzir pela metade o dano sofrido.
+
+### Evasão
+A partir do 7º nível, você pode esquivar-se agilmente de certos efeitos em área, como o sopro flamejante de um dragão vermelho ou uma magia tempestade de gelo. Quando você for alvo de um efeito que exige um teste de resistência de Destreza para sofrer metade do dano, você não sofre dano algum se passar, e somente metade do dano se falhar.
+
+### Talento Confiável
+No 11º nível, você refinou suas perícias beirando à perfeição. Toda vez que você fizer um teste de habilidade no qual possa adicionar seu bônus de proficiência, você trata um resultado no d20 de 9 ou menor como um 10.
+
+### Sentido Cego
+No 14º nível, se você for capaz de ouvir, você está ciente da localização de qualquer criatura escondida ou invisível a até 3 metros de você.
+
+### Mente Escorregadia
+No 15º nível, você adquire uma grande força de vontade, adquirindo proficiência nos testes de resistência de Sabedoria.
+
+### Elusivo
+A partir do 18º nível, você se torna tão sagaz que raramente alguém encosta a mão em você. Nenhuma jogada de ataque tem vantagem contra você, desde que você não esteja incapacitado.
+
+### Golpe de Sorte
+No 20º nível, você adquire um dom incrível para ter sucesso nos momentos em que mais precisa. Se um ataque seu falhar contra um alvo ao seu alcance, você pode transformar essa falha em um acerto. Ou se falhar em um teste qualquer, você pode tratar a jogada desse
+mesmo teste como 20 natural.
+
+Uma vez que você use essa característica, você não pode fazê-lo de novo até terminar um descanso curto ou longo.
+
+## Arquétipos de Ladino
+Ladinos possuem muitas características em comum, incluindo a ênfase no aperfeiçoamento de suas perícias, na precisão e aproximação mortal em combate, e nos seus reflexos cada vez mais rápidos. Mas, diferentes ladinos orientam seus talentos em direções variadas, personificadas pelos vários arquétipos de ladino. Seu arquétipo escolhido reflete o seu foco – não necessariamente a indicação de sua profissão, mas adescrição de suas técnicas preferidas.
+
+### Trapaceiro Arcano
+Alguns ladinos aprimoram suas habilidades de furtividade e agilidade através da magia, aprendendo truques de encantamento e ilusão. Esses ladinos incluem batedores de carteira e ladrões, mas também brincalhões, travessos e um número significativo de aventureiros.
+
+#### Conjuração de Esferas
+Você pode combinar esferas e talentos para criar efeitos mágicos. Você ganha uma reserva de magias, talentos mágicos e uma tradição de conjuração.
+
+##### Reserva de Magias
+Você ganha uma pequena reserva de energia que pode invocar para criar efeitos verdadeiramente maravilhosos, chamada reserva de magias. Essa reserva contém uma quantidade de pontos de magia igual ao seu modificador de Inteligência (mínimo: 1). 
+\page
+
+Você ganha pontos de magia adicionais iguais à um terço do seu nível de Ladino (arredondado para baixo), como visto na tabela Conjuração do Trapaceiro Arcano. Essa reserva é reabastecida após um descanso longo. (Observação: em multiclasses, os pontos de magia do seu modificador de habilidade chave são ganhos apenas uma vez.)
+
+##### Talentos Mágicos
+A coluna Talentos Mágicos mostra o número de talentos mágicos ganhos com seus níveis de ladino. 
+
+##### Habilidade de Conjuração
+Inteligência é sua habilidade de conjuração para suas magias de ladino, pois você aprende seus feitiços através de estudo dedicado e memorização. Você usa sua Inteligência sempre que uma magia de artífice se referir à sua habilidade de conjuração. Além disso, você usa seu modificador de Inteligência ao definir a CD de salvaguarda para uma magia de ladino que você conjura e ao fazer uma jogada de ataque com uma.
+:
+**CD de resistência à magia** = 8 + seu bônus de proficiência + seu modificador de Inteligência
+<br>
+**Modificador de ataque de magia** = seu bônus de proficiência + seu modificador de Inteligência
+
+{{classTable,frame,decoration
+##### Conjuração do Trapaceiro Arcano
+| Nível| Talentos Mágicos | Pontos de Magia |
+|:----:|:-:|:-:|
+| 3º   | 2 | 1 |
+| 4º   | 2 | 1 |
+| 5º   | 3 | 1 |
+| 6º   | 3 | 2 |
+| 7º   | 4 | 2 |
+| 8º   | 4 | 2 |
+| 9º   | 5 | 3 |
+| 10º  | 5 | 3 |
+| 11º  | 6 | 3 |
+| 12º  | 6 | 4 |
+| 13º  | 7 | 4 |
+| 14º  | 7 | 4 |
+| 15º  | 8 | 5 |
+| 16º  | 8 | 5 |
+| 17º  | 9 | 5 |
+| 18º  | 9 | 6 |
+| 19º  | 9 | 6 |
+| 20º  | 10| 6 |
+}}
+
+
+#### Prestidigitação da Mão do Mago
+No 3º nível, você ganha acesso à esfera de magia Telecinese, e recebe como bônus o talento Destreza (levitação). Esse talento não conta para seu total de talentos mágicos apresentado na tabela Conjuração do Trapaceiro Arcano. Seu uso refinado de telecinese lhe permite realizar as seguintes tarefas com precisão:
+
+• :: Você pode guardar um objeto que a mão esteja segurando em um recipiente usado ou carregado por outra criatura.
+• :: Você pode recuperar um objeto de um recipiente usado ou carregado por outra criatura.
+• :: Você pode usar ferramentas de ladrão para abrir fechaduras e desarmar armadilhas à distância.
+
+Você pode realizar uma dessas tarefas sem ser notado por uma criatura se obtiver sucesso em um teste de Destreza (Prestidigitação) contestado pelo teste de Sabedoria (Percepção) da criatura.
+
+Além disso, você pode usar a ação bônus concedida pela sua Ação Astuta para controlar a levitação.
+
+#### Emboscada Mágica
+A partir do 9º nível, se você estiver oculto de uma criatura ao conjurar uma magia sobre ela, a criatura terá desvantagem em qualquer teste de resistência que fizer contra a magia neste turno.
+
+#### Trapaceiro Versátil
+No 13º nível, você adquire a habilidade de distrair alvos com sua telecine. Como uma ação bônus em seu turno, você pode designar uma criatura dentro do alcance de Levitar. Fazer isso lhe concede vantagem em jogadas de ataque contra essa criatura até o final do turno.
+
+#### Ladrão de Magias
+No 17º nível, você adquire a habilidade de roubar magicamente o conhecimento de como conjurar uma magia de outro conjurador.
+
+Imediatamente após uma criatura conjurar uma magia que tenha você como alvo ou que o inclua em sua área de efeito, você pode usar sua reação para forçar a criatura a fazer um teste de resistência com seu modificador de habilidade de conjuração. A CD é igual à sua CD de resistência à magia. Em caso de falha no teste de resistência, você nega o efeito da magia contra você e rouba o conhecimento da magia se ela tiver um custo de pelo menos 1PM. Pelas próximas 8 horas, você conhece a magia e pode conjurá-la usando seus pontos de magia. A criatura não poderá conjurar essa magia até que as 8 horas tenham passado.
+
+Uma vez que você use esta habilidade, não poderá usá-la novamente até terminar um descanso longo.
+
+
+\page
+<div class='pageNumber auto'></div>
+
+## Monge 
+Qualquer que seja suas disciplinas, os monges partilha de sua habilidade de aproveitar magicamente da energia que flui em seus corpos. Se canalizada como um exibição impressionante de maestria do combate, ou como um foco mais sutil de habilidade defensiva e velocidade, essa
+energia infunde tudo que um monge faz.
+
+### Características de classe
+*Como um Monge, você possui as seguintes características.*
+
+#### Pontos de vida:
+**Dado de vida:** 1d8 por nível de Monge
+<br>
+**Pv no 1º nível:** 8 + modificador de Constituição.
+<br>
+**Pontos de vida nos níveis seguintes:** 1d8 (ou 5) + modificador de constituição por nível de classe após o 1º.
+::
+#### Proficiências
+**Armadura:** Nenhuma
+<br>
+**Armas:** Armas simples, espadas curtas
+<br>
+**Ferramentas:** Escolha um tipo de ferramenta de artesão ou um instrumento musical
+<br>
+**Testes de Resistência:** Força, Destreza
+<br>
+**Perícias:** Escolha duas dentre Acrobacia, Atletismo, Furtividade, História, Intuição e Religião
+<br><br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+<br>
+<br>
+•	(a) uma espada curta ou (b) qualquer arma simples
+<br>
+•	(a) um pacote de explorador ou (b) um pacote de aventureiro
+<br>
+•	10 dardos
+<br><br>
+Alternativamente, você pode começar com 5d4 de ouro inicial para comprar seus equipamentos
+
+### Defesa Sem Armadura
+A partir do 1° nível, quando você não estiver vestindo nenhuma armadura nem empunhando um escudo, sua Classe de Armadura será 10 + seu modificador de Destreza + seu modificador de Sabedoria.
+
+### Artes Marciais
+No 1° nível, sua pratica nas artes marciais concede a você maestria nos estilos de combate que utilizam golpes desarmados e armas de monge, que são as espadas curtas e quaisquer armas simples corpo-a-corpo que não tenham a propriedade duas mãos ou pesada. 
+
+Você ganha os seguintes benefícios enquanto estiver desarmado ou empunhando uma arma de monge e não estiver vestindo nenhuma armadura ou empunhando um escudo:
+
+{{classTable,frame,decoration,wide
+##### O Monge
+| Nível | Bônus de Proficiência|  Artes Marciais | Pontos de Chi | Deslocamento sem Armadura | Características | Talentos Marciais    |
+|:-----:|:--------------------:|:----------------|:-------------:|:-------------------------:|:----------------|:---------------------:|
+| 1º   | +2 | 1d4 | –  | –     | Defesa sem Armadura, Artes Marciais | 0  |
+| 2º   | +2 | 1d4 | 2  | +3m   | Chi, Movimento sem Armadura | 1  |
+| 3º   | +2 | 1d4 | 3  | +3m   | Tradição Monástica, Defletir Projéteis | 2  |
+| 4º   | +2 | 1d4 | 4  | +3m   | Incremento no Valor de Habilidade, Queda Lenta | 3  |
+| 5º   | +3 | 1d4 | 5  | +3m   | Ataque Extra, Ataque Atordoante | 3  |
+| 6º   | +3 | 1d6 | 6  | +4,5m | Golpes de Chi, Característica de Tradição Monástica | 4  |
+| 7º   | +3 | 1d6 | 7  | +4,5m | Evasão, Mente Tranquila | 5  |
+| 8º   | +3 | 1d6 | 8  | +4,5m | Incremento no Valor de Habilidade | 6  |
+| 9º   | +4 | 1d6 | 9  | +4,5m | Aprimoramento de Movimento sem Armadura | 6  |
+| 10º  | +4 | 1d6 | 10 | +6m   | Pureza Corporal | 7  |
+| 11º  | +4 | 1d8 | 11 | +6m   | Característica de Tradição Monástica | 8  |
+| 12º  | +4 | 1d8 | 12 | +6m   | Incremento no Valor de Habilidade | 9  |
+| 13º  | +5 | 1d8 | 13 | +6m   | Idiomas do Sol e da Lua | 9  |
+| 14º  | +5 | 1d8 | 14 | +7,5m | Alma de Diamante | 10 |
+| 15º  | +5 | 1d8 | 15 | +7,5m | Corpo Atemporal | 11 |
+| 16º  | +5 | 1d8 | 16 | +7,5m | Incremento no Valor de Habilidade | 12 |
+| 17º  | +6 | 1d10| 17 | +7,5m | Característica de Tradição Monástica | 12 |
+| 18º  | +6 | 1d10| 18 | +9m   | Corpo Vazio | 13 |
+| 19º  | +6 | 1d10| 19 | +9m   | Incremento no Valor de Habilidade | 14 |
+| 20º  | +6 | 1d10| 20 | +9m   | Auto Aperfeiçoamento | 15 |
+}} 
+
+
+\page
+<div class='pageNumber auto'></div>
+
+
+
+• :: Você pode usar Destreza ao invés de Força para as jogadas de ataque e dano dos seus golpes desarmados e de suas armas de monge. 
+• :: Você pode rolar um d4 no lugar do dano normal dos seus golpes desarmados e armas de monge. Esse dado muda à medida que você adquire níveis de monge, como mostrado na coluna Artes Marciais na tabela O Monge.
+• :: Quando você usa a ação de Ataque com um golpe desarmado ou uma arma de monge no seu turno, você pode realizar um golpe desarmado com uma ação bônus. Por exemplo, se você realizar a ação de Ataque  com um bastão, você também poderá realizar um golpe desarmado com uma ação bônus, assumindo que você ainda não realizou uma ação bônus nesse turno.
+
+Determinados monastérios usam formas especializadas de armas de monge. Por exemplo, você pode usar uma clava feita por dois pedaços de madeira conectados por uma pequena corrente (chamado de nunchaku) ou uma foice com uma estranha lâmina fina (chamada de kama). Qualquer que seja o nome que você use para uma arma de monge, você pode usar as estatísticas de jogo mostradas para as armas no capítulo 5.
+
+### Chi
+A partir do 2° nível, seu treinamento permitiu que você controlasse a energia mística do chi. Seu acesso a essa energia é representado por um número de pontos de chi. Seu nível de monge determina o número de pontos que você tem, como mostrado na coluna Pontos de Chi da tabela O Monge.
+
+Você pode gastar esses pontos para abastecer várias características de chi. Você começa conhecendo três dessas características: Rajada de Golpes, Defesa Paciente e Passo do Vento. Você aprende mais características de chi à medida que adquire níveis nessa classe.
+
+Quando você gasta um ponto de chi, ele se torna indisponível até você terminar um descanso curto ou longo, no fim deste, todos os pontos de chi gastos volta para você. Você deve gastar, pelo menos, 30 minutos do descanso meditando para recuperar seus pontos de chi.
+
+Algumas das características de chi requerem que seu alvo realize um teste de resistência para resistir ao efeito da característica. A CD do teste de resistência é calculada da seguinte forma:
+
+**CD de resistência de Chi** = 8 + bônus de proficiência + seu modificador de Sabedoria
+
+##### Rajada de Golpes
+Imediatamente após você realizar a ação de Ataque no seu turno, você pode gastar 1 ponto de chi para realizar dois golpes desarmados com uma ação bônus.
+
+##### Defesa Paciente
+Você pode gastar 1 ponto de chi para realizar a ação de Esquivar, com uma ação bônus, no seu turno.
+
+##### Passo do Vento
+Você pode gastar 1 ponto de chi para realizar a Ação de Desengajar ou Disparada, com uma ação bônus, no seu turno, e sua distância de salto é dobrada nesse turno. 
+
+### Movimento Sem Armadura
+A partir do 2° nível, seu deslocamento aumenta em 3 metros enquanto você não estiver usando armadura nem empunhando um escudo. Esse bônus aumenta quando você alcança determinados níveis, como mostrado na tabela O Monge. 
+
+No 9° nível, você ganha a habilidade de se mover através de superfícies verticais e sobre líquidos, no seu turno, sem cair durante o movimento.
+
+### Tradição Monástica
+Quando você alcança o 3° nível, você ingressa numa tradição monástica: o Caminho da Mão Aberta, o Caminho Sombrio e o Caminho dos Quatro Elementos, todas detalhadas no final da descrição dessa classe. Sua tradição concede a você características no 3° nível e
+novamente no 6°, 11° e 17° nível.
+
+### Defletir Projéteis
+A partir do 3° nível, você pode usar sua reação para defletir ou apanhar o projétil quando você é atingido por um ataque de arma à distância. Quando o fizer, o dano que você sofrer do ataque é reduzido em 1d10 + seu modificador de Destreza + seu nível de monge. 
+
+Se o dano for reduzido a 0, você pode apanhar o projétil se ele for pequeno o suficiente para ser segurando em uma mão e você tenha, pelo menos, uma mão livre. Se você apanhar um projétil dessa forma, você pode gastar 1 ponto de chi para realizar uma ataque à distância com a
+arma ou munição que você acabou de pegar, como parte da mesma reação. Você realiza esse ataque com proficiência, independentemente das armas em que você é proficiente, e o projétil conta como uma arma de monge para o ataque. A distância do ataque do monge é de 6/18 metros.
+
+### Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 8°, 12°, 16° e 19° nível, você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.
+
+### Queda Lenta
+Começando no 4° nível, você pode usar sua reação, quando você cai, para reduzir o dano de queda sofrido por um valor igual a cinco vezes seu nível de monge.
+
+
+
+\page
+<div class='pageNumber auto'></div>
+
+
+### Ataque Extra
+A partir do 5° nível, você pode atacar duas vezes, ao invés de uma, sempre que você realizar a ação de Ataque no seu turno.  
+
+### Ataque Atordoante
+A partir do 5° nível, você pode interferir no fluxo de chi do corpo de um oponente. Quando você atingir outra criatura com um ataque corpo-a-corpo com arma, você pode gastar 1 ponto de chi para tentar um ataque atordoante. O alvo deve ser bem sucedido num teste de resistência de Constituição ou ficará atordoado até o final do seu próximo turno.  
+
+### Golpes de Chi
+A partir do 6° nível, seus golpes desarmados contam como armas mágicas com o propósito de ultrapassar a resistência ou imunidade a ataque e danos não-mágicos.  
+
+### Evasão
+A partir do 7º nível, você pode esquivar-se agilmente de certos efeitos em área, como o sopro elétrico de um dragão azul ou uma magia bola de fogo. Quando você for alvo de um efeito que exige um teste de resistência de Destreza para sofrer metade do dano, você não sofre dano algum se passar, e somente metade do dano se falhar.  
+
+### Mente Tranquila
+A partir do 7° nível, você pode usar sua ação para terminar um efeito em si mesmo, que esteja lhe enfeitiçando ou amedrontando.  
+
+### Pureza Corporal
+No 10° nível, sua maestria do chi flui através de você, tornando-o imune a doenças e venenos.  
+
+### Idiomas do Sol e da Lua
+A partir do 13° nível, você aprende a tocar o chi de outras mentes fazendo com que você compreenda todos os idiomas falados. Além do mais, qualquer criatura que possa entender um idioma poderá entender o que você fala.  
+
+### Alma de Diamante
+A partir do 14° nível, sua maestria do chi concede a você proficiência em todos os testes de resistência. 
+
+Além disso, toda vez que você realizar um teste de resistência e falha, você pode gastar 1 ponto de chi para jogar novamente e ficar com o segundo resultado.  
+
+### Corpo Atemporal
+No 15° nível, seu chi sustenta você tanto que você não sofre os efeitos da velhice e não pode envelhecer magicamente. Você ainda morrerá de velhice, no entanto. Além disso, você não precisa mais de comida ou água.  
+
+### Corpo Vazio
+A partir do 18° nível, você pode usar sua ação para gastar 4 pontos de chi e ficar invisível por 1 minuto. Durante esse tempo, você também adquire resistência a todos os danos, exceto dano de energia.
+
+### Eu Superior
+No 20° nível, quando você rolar iniciativa e não tiver nenhum ponto de chi restante, você recupera 4 pontos de chi.
+
+## Tradições Monásticas
+Muitas tradições monásticas são praticadas nos monastérios espalhados pelo multiverso. Cada uma representa um caminho distinto de aperfeiçoamento físico e espiritual, moldando a forma como o monge canaliza seu ki.
+
+Embora os monges compartilhem as mesmas técnicas básicas nos primeiros estágios de treinamento, as tradições passam a divergir conforme o estudante se torna mais experiente. Por isso, um monge escolhe sua tradição monástica ao alcançar o 3º nível.
+
+### Caminho do Dragão Ascendente
+O ensinamento central desta tradição afirma que, ao emular dragões, um monge torna-se mais integrado ao mundo e à sua magia. Ao ajustar seu espírito para ressoar com a força dracônica, monges que seguem este caminho aumentam sua habilidade em combate, fortalecem seus aliados e podem até mesmo voar com asas dracônicas manifestadas. Porém, todo esse poder serve a um objetivo maior: alcançar uma unidade espiritual com a essência do Plano Material.
+
+#### Discípulo Dracônico
+
+A partir do 3º nível, você pode canalizar o poder dracônico para magnificar sua presença e imbuir seus ataques desarmados com a essência do sopro de um dragão. Você ganha os seguintes benefícios: 
+
+• :: **Presença Dracônica.** Se você falhar em um teste de Carisma (Intimidação) ou Carisma (Persuasão), pode usar sua reação para repetir o teste, enquanto canaliza a poderosa presença dos dragões. Depois que esse recurso transformar uma falha em sucesso, você não pode usá-lo novamente até terminar um descanso longo.
+
+• :: **Golpe Dracônico.** Quando você danificar um alvo com um ataque desarmado, pode mudar o tipo de dano para ácido, frio, fogo, relâmpago ou veneno.
+
+• :: **Língua dos Dragões.** Você aprende a falar, ler e escrever Dracônico (ou outra língua de sua escolha, se já conhecer Dracônico). 
+
+\page
+<div class='pageNumber auto'></div>
+
+#### Sopro do Dragão
+A partir do 3º nível, quando você realizar a ação Ataque em seu turno, pode substituir um dos ataques por uma exalação de energia dracônica em um cone de 20 pés ou uma linha de 30 pés que tem 5 pés de largura (sua escolha). Escolha um tipo de dano: ácido, frio, fogo, relâmpago ou veneno. Cada criatura na área deve fazer um teste de resistência de Destreza contra sua CD de ki, sofrendo dano igual a duas vezes o valor do seu dado de Artes Marciais em uma falha, ou metade desse dano em um sucesso. 
+
+No 11º nível, o dano dessa habilidade aumenta para três vezes o valor do seu dado de Artes Marciais. 
+
+Você pode usar essa habilidade um número de vezes igual ao seu bônus de proficiência, recuperando todas as utilizações depois de um descanso longo. Quando não tiver utilizações restantes, pode gastar 2 pontos de ki para usá-la novamente. 
+
+#### Asas Desdobradas
+A partir do 6º nível, quando você usar sua habilidade Passo do Vento, pode desdobrar asas dracônicas espectrais nas suas costas que desaparecem no final do seu turno. Enquanto as asas existirem, você tem velocidade de voo igual à sua velocidade de caminhada. 
+
+Você pode usar essa habilidade um número de vezes igual ao seu bônus de proficiência, recuperando todas as utilizações depois de um descanso longo. 
+
+#### Aspecto da Serpe
+
+A partir do 11º nível, o poder do seu espírito dracônico agora irradia de você, protegendo seus aliados ou inspirando medo nos inimigos. Como uma ação bônus, você pode criar uma aura de poder dracônico de 10 pés ao seu redor, que dura 1 minuto. Durante esse tempo, você escolhe um dos seguintes efeitos: 
+
+• :: **Presença Aterrorizante.** Quando você cria essa aura (e como ação bônus em turnos subsequentes), escolha uma criatura dentro da aura. Ela deve fazer um teste de Sabedoria contra sua CD de ki ou ficar amedrontada por 1 minuto. A criatura pode repetir o teste no final de cada turno para encerrar o efeito.
+
+• :: **Resistência.** Escolha um tipo de dano: ácido, frio, fogo, relâmpago ou veneno. Você e seus aliados dentro da aura têm resistência ao tipo de dano escolhido. 
+
+Uma vez criada, você não pode criar essa aura de novo até terminar um descanso longo, a menos que gaste 3 pontos de ki para ativá-la novamente. 
+
+#### Aspecto Ascendente
+A partir do 17º nível, o espírito dracônico dentro de você alcança seu auge. Você ganha os seguintes benefícios: 
+
+• :: **Respiração Aprimorada.** Quando usa sua habilidade Sopro do Dragão, pode gastar 1 ponto de ki para aumentar sua forma e poder. A exalação de energia dracônica torna-se um cone de 60 pés ou uma linha de 90 pés (5 pés de largura). Cada criatura na área sofre dano igual a quatro vezes o valor do seu dado de Artes Marciais em uma falha, ou metade desse dano em um sucesso.
+
+• :: **Percepção Tremeluzente.** Você ganha visão tremeluzente (blindsight) até 10 pés. Dentro dessa área, você pode perceber tudo que não esteja atrás de cobertura total, mesmo se estiver cego ou em completa escuridão. Você também pode ver criaturas invisíveis, a menos que façam um teste de Furtividade bem-sucedido contra sua percepção.
+
+• :: **Fúria Explosiva.** Quando você ativa sua habilidade Aspecto da Serpe, uma fúria dracônica explode de você. Escolha qualquer número de criaturas que você possa ver dentro da aura. Cada uma deve fazer um teste de resistência de Destreza contra sua CD de ki ou sofrer 3d10 de dano de ácido, frio, fogo, relâmpago ou veneno (sua escolha). 

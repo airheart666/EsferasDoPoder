@@ -1,0 +1,212 @@
+## Monge 
+Qualquer que seja suas disciplinas, os monges partilha de sua habilidade de aproveitar magicamente da energia que flui em seus corpos. Se canalizada como um exibição impressionante de maestria do combate, ou como um foco mais sutil de habilidade defensiva e velocidade, essa
+energia infunde tudo que um monge faz.
+
+### Características de classe
+*Como um Monge, você possui as seguintes características.*
+
+#### Pontos de vida:
+**Dado de vida:** 1d8 por nível de Monge
+<br>
+**Pv no 1º nível:** 8 + modificador de Constituição.
+<br>
+**Pontos de vida nos níveis seguintes:** 1d8 (ou 5) + modificador de constituição por nível de classe após o 1º.
+::
+#### Proficiências
+**Armadura:** Nenhuma
+<br>
+**Armas:** Armas simples, espadas curtas
+<br>
+**Ferramentas:** Escolha um tipo de ferramenta de artesão ou um instrumento musical
+<br>
+**Testes de Resistência:** Força, Destreza
+<br>
+**Perícias:** Escolha duas dentre Acrobacia, Atletismo, Furtividade, História, Intuição e Religião
+<br><br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+<br>
+<br>
+•	(a) uma espada curta ou (b) qualquer arma simples
+<br>
+•	(a) um pacote de explorador ou (b) um pacote de aventureiro
+<br>
+•	10 dardos
+<br><br>
+Alternativamente, você pode começar com 5d4 de ouro inicial para comprar seus equipamentos
+
+### Defesa Sem Armadura
+A partir do 1° nível, quando você não estiver vestindo nenhuma armadura nem empunhando um escudo, sua Classe de Armadura será 10 + seu modificador de Destreza + seu modificador de Sabedoria.
+
+### Artes Marciais
+No 1° nível, sua pratica nas artes marciais concede a você maestria nos estilos de combate que utilizam golpes desarmados e armas de monge, que são as espadas curtas e quaisquer armas simples corpo-a-corpo que não tenham a propriedade duas mãos ou pesada. 
+
+Você ganha os seguintes benefícios enquanto estiver desarmado ou empunhando uma arma de monge e não estiver vestindo nenhuma armadura ou empunhando um escudo:
+
+{{classTable,frame,decoration,wide
+##### O Monge
+| Nível | Bônus de Proficiência|  Artes Marciais | Pontos de Chi | Deslocamento sem Armadura | Características | Talentos Marciais    |
+|:-----:|:--------------------:|:----------------|:-------------:|:-------------------------:|:----------------|:---------------------:|
+| 1º   | +2 | 1d4 | –  | –     | Defesa sem Armadura, Artes Marciais | 0  |
+| 2º   | +2 | 1d4 | 2  | +3m   | Chi, Movimento sem Armadura | 1  |
+| 3º   | +2 | 1d4 | 3  | +3m   | Tradição Monástica, Defletir Projéteis | 2  |
+| 4º   | +2 | 1d4 | 4  | +3m   | Incremento no Valor de Habilidade, Queda Lenta | 3  |
+| 5º   | +3 | 1d4 | 5  | +3m   | Ataque Extra, Ataque Atordoante | 3  |
+| 6º   | +3 | 1d6 | 6  | +4,5m | Golpes de Chi, Característica de Tradição Monástica | 4  |
+| 7º   | +3 | 1d6 | 7  | +4,5m | Evasão, Mente Tranquila | 5  |
+| 8º   | +3 | 1d6 | 8  | +4,5m | Incremento no Valor de Habilidade | 6  |
+| 9º   | +4 | 1d6 | 9  | +4,5m | Aprimoramento de Movimento sem Armadura | 6  |
+| 10º  | +4 | 1d6 | 10 | +6m   | Pureza Corporal | 7  |
+| 11º  | +4 | 1d8 | 11 | +6m   | Característica de Tradição Monástica | 8  |
+| 12º  | +4 | 1d8 | 12 | +6m   | Incremento no Valor de Habilidade | 9  |
+| 13º  | +5 | 1d8 | 13 | +6m   | Idiomas do Sol e da Lua | 9  |
+| 14º  | +5 | 1d8 | 14 | +7,5m | Alma de Diamante | 10 |
+| 15º  | +5 | 1d8 | 15 | +7,5m | Corpo Atemporal | 11 |
+| 16º  | +5 | 1d8 | 16 | +7,5m | Incremento no Valor de Habilidade | 12 |
+| 17º  | +6 | 1d10| 17 | +7,5m | Característica de Tradição Monástica | 12 |
+| 18º  | +6 | 1d10| 18 | +9m   | Corpo Vazio | 13 |
+| 19º  | +6 | 1d10| 19 | +9m   | Incremento no Valor de Habilidade | 14 |
+| 20º  | +6 | 1d10| 20 | +9m   | Auto Aperfeiçoamento | 15 |
+}} 
+
+
+
+
+
+• :: Você pode usar Destreza ao invés de Força para as jogadas de ataque e dano dos seus golpes desarmados e de suas armas de monge. 
+• :: Você pode rolar um d4 no lugar do dano normal dos seus golpes desarmados e armas de monge. Esse dado muda à medida que você adquire níveis de monge, como mostrado na coluna Artes Marciais na tabela O Monge.
+• :: Quando você usa a ação de Ataque com um golpe desarmado ou uma arma de monge no seu turno, você pode realizar um golpe desarmado com uma ação bônus. Por exemplo, se você realizar a ação de Ataque  com um bastão, você também poderá realizar um golpe desarmado com uma ação bônus, assumindo que você ainda não realizou uma ação bônus nesse turno.
+
+Determinados monastérios usam formas especializadas de armas de monge. Por exemplo, você pode usar uma clava feita por dois pedaços de madeira conectados por uma pequena corrente (chamado de nunchaku) ou uma foice com uma estranha lâmina fina (chamada de kama). Qualquer que seja o nome que você use para uma arma de monge, você pode usar as estatísticas de jogo mostradas para as armas no capítulo 5.
+
+### Chi
+A partir do 2° nível, seu treinamento permitiu que você controlasse a energia mística do chi. Seu acesso a essa energia é representado por um número de pontos de chi. Seu nível de monge determina o número de pontos que você tem, como mostrado na coluna Pontos de Chi da tabela O Monge.
+
+Você pode gastar esses pontos para abastecer várias características de chi. Você começa conhecendo três dessas características: Rajada de Golpes, Defesa Paciente e Passo do Vento. Você aprende mais características de chi à medida que adquire níveis nessa classe.
+
+Quando você gasta um ponto de chi, ele se torna indisponível até você terminar um descanso curto ou longo, no fim deste, todos os pontos de chi gastos volta para você. Você deve gastar, pelo menos, 30 minutos do descanso meditando para recuperar seus pontos de chi.
+
+Algumas das características de chi requerem que seu alvo realize um teste de resistência para resistir ao efeito da característica. A CD do teste de resistência é calculada da seguinte forma:
+
+**CD de resistência de Chi** = 8 + bônus de proficiência + seu modificador de Sabedoria
+
+##### Rajada de Golpes
+Imediatamente após você realizar a ação de Ataque no seu turno, você pode gastar 1 ponto de chi para realizar dois golpes desarmados com uma ação bônus.
+
+##### Defesa Paciente
+Você pode gastar 1 ponto de chi para realizar a ação de Esquivar, com uma ação bônus, no seu turno.
+
+##### Passo do Vento
+Você pode gastar 1 ponto de chi para realizar a Ação de Desengajar ou Disparada, com uma ação bônus, no seu turno, e sua distância de salto é dobrada nesse turno. 
+
+### Movimento Sem Armadura
+A partir do 2° nível, seu deslocamento aumenta em 3 metros enquanto você não estiver usando armadura nem empunhando um escudo. Esse bônus aumenta quando você alcança determinados níveis, como mostrado na tabela O Monge. 
+
+No 9° nível, você ganha a habilidade de se mover através de superfícies verticais e sobre líquidos, no seu turno, sem cair durante o movimento.
+
+### Tradição Monástica
+Quando você alcança o 3° nível, você ingressa numa tradição monástica: o Caminho da Mão Aberta, o Caminho Sombrio e o Caminho dos Quatro Elementos, todas detalhadas no final da descrição dessa classe. Sua tradição concede a você características no 3° nível e
+novamente no 6°, 11° e 17° nível.
+
+### Defletir Projéteis
+A partir do 3° nível, você pode usar sua reação para defletir ou apanhar o projétil quando você é atingido por um ataque de arma à distância. Quando o fizer, o dano que você sofrer do ataque é reduzido em 1d10 + seu modificador de Destreza + seu nível de monge. 
+
+Se o dano for reduzido a 0, você pode apanhar o projétil se ele for pequeno o suficiente para ser segurando em uma mão e você tenha, pelo menos, uma mão livre. Se você apanhar um projétil dessa forma, você pode gastar 1 ponto de chi para realizar uma ataque à distância com a
+arma ou munição que você acabou de pegar, como parte da mesma reação. Você realiza esse ataque com proficiência, independentemente das armas em que você é proficiente, e o projétil conta como uma arma de monge para o ataque. A distância do ataque do monge é de 6/18 metros.
+
+### Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 8°, 12°, 16° e 19° nível, você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.
+
+### Queda Lenta
+Começando no 4° nível, você pode usar sua reação, quando você cai, para reduzir o dano de queda sofrido por um valor igual a cinco vezes seu nível de monge.
+
+
+
+
+
+### Ataque Extra
+A partir do 5° nível, você pode atacar duas vezes, ao invés de uma, sempre que você realizar a ação de Ataque no seu turno.  
+
+### Ataque Atordoante
+A partir do 5° nível, você pode interferir no fluxo de chi do corpo de um oponente. Quando você atingir outra criatura com um ataque corpo-a-corpo com arma, você pode gastar 1 ponto de chi para tentar um ataque atordoante. O alvo deve ser bem sucedido num teste de resistência de Constituição ou ficará atordoado até o final do seu próximo turno.  
+
+### Golpes de Chi
+A partir do 6° nível, seus golpes desarmados contam como armas mágicas com o propósito de ultrapassar a resistência ou imunidade a ataque e danos não-mágicos.  
+
+### Evasão
+A partir do 7º nível, você pode esquivar-se agilmente de certos efeitos em área, como o sopro elétrico de um dragão azul ou uma magia bola de fogo. Quando você for alvo de um efeito que exige um teste de resistência de Destreza para sofrer metade do dano, você não sofre dano algum se passar, e somente metade do dano se falhar.  
+
+### Mente Tranquila
+A partir do 7° nível, você pode usar sua ação para terminar um efeito em si mesmo, que esteja lhe enfeitiçando ou amedrontando.  
+
+### Pureza Corporal
+No 10° nível, sua maestria do chi flui através de você, tornando-o imune a doenças e venenos.  
+
+### Idiomas do Sol e da Lua
+A partir do 13° nível, você aprende a tocar o chi de outras mentes fazendo com que você compreenda todos os idiomas falados. Além do mais, qualquer criatura que possa entender um idioma poderá entender o que você fala.  
+
+### Alma de Diamante
+A partir do 14° nível, sua maestria do chi concede a você proficiência em todos os testes de resistência. 
+
+Além disso, toda vez que você realizar um teste de resistência e falha, você pode gastar 1 ponto de chi para jogar novamente e ficar com o segundo resultado.  
+
+### Corpo Atemporal
+No 15° nível, seu chi sustenta você tanto que você não sofre os efeitos da velhice e não pode envelhecer magicamente. Você ainda morrerá de velhice, no entanto. Além disso, você não precisa mais de comida ou água.  
+
+### Corpo Vazio
+A partir do 18° nível, você pode usar sua ação para gastar 4 pontos de chi e ficar invisível por 1 minuto. Durante esse tempo, você também adquire resistência a todos os danos, exceto dano de energia.
+
+### Eu Superior
+No 20° nível, quando você rolar iniciativa e não tiver nenhum ponto de chi restante, você recupera 4 pontos de chi.
+
+\page
+Muitas tradições monásticas são praticadas nos monastérios espalhados pelo multiverso. Cada uma representa um caminho distinto de aperfeiçoamento físico e espiritual, moldando a forma como o monge canaliza seu ki.
+
+Embora os monges compartilhem as mesmas técnicas básicas nos primeiros estágios de treinamento, as tradições passam a divergir conforme o estudante se torna mais experiente. Por isso, um monge escolhe sua tradição monástica ao alcançar o 3º nível.
+
+## Caminho do Dragão Ascendente
+O ensinamento central desta tradição afirma que, ao emular dragões, um monge torna-se mais integrado ao mundo e à sua magia. Ao ajustar seu espírito para ressoar com a força dracônica, monges que seguem este caminho aumentam sua habilidade em combate, fortalecem seus aliados e podem até mesmo voar com asas dracônicas manifestadas. Porém, todo esse poder serve a um objetivo maior: alcançar uma unidade espiritual com a essência do Plano Material.
+
+#### Discípulo Dracônico
+
+A partir do 3º nível, você pode canalizar o poder dracônico para magnificar sua presença e imbuir seus ataques desarmados com a essência do sopro de um dragão. Você ganha os seguintes benefícios: 
+
+• :: **Presença Dracônica.** Se você falhar em um teste de Carisma (Intimidação) ou Carisma (Persuasão), pode usar sua reação para repetir o teste, enquanto canaliza a poderosa presença dos dragões. Depois que esse recurso transformar uma falha em sucesso, você não pode usá-lo novamente até terminar um descanso longo.
+
+• :: **Golpe Dracônico.** Quando você danificar um alvo com um ataque desarmado, pode mudar o tipo de dano para ácido, frio, fogo, relâmpago ou veneno.
+
+• :: **Língua dos Dragões.** Você aprende a falar, ler e escrever Dracônico (ou outra língua de sua escolha, se já conhecer Dracônico). 
+
+
+#### Sopro do Dragão
+A partir do 3º nível, quando você realizar a ação Ataque em seu turno, pode substituir um dos ataques por uma exalação de energia dracônica em um cone de 20 pés ou uma linha de 30 pés que tem 5 pés de largura (sua escolha). Escolha um tipo de dano: ácido, frio, fogo, relâmpago ou veneno. Cada criatura na área deve fazer um teste de resistência de Destreza contra sua CD de ki, sofrendo dano igual a duas vezes o valor do seu dado de Artes Marciais em uma falha, ou metade desse dano em um sucesso. 
+
+No 11º nível, o dano dessa habilidade aumenta para três vezes o valor do seu dado de Artes Marciais. 
+
+Você pode usar essa habilidade um número de vezes igual ao seu bônus de proficiência, recuperando todas as utilizações depois de um descanso longo. Quando não tiver utilizações restantes, pode gastar 2 pontos de ki para usá-la novamente. 
+
+#### Asas Desdobradas
+A partir do 6º nível, quando você usar sua habilidade Passo do Vento, pode desdobrar asas dracônicas espectrais nas suas costas que desaparecem no final do seu turno. Enquanto as asas existirem, você tem velocidade de voo igual à sua velocidade de caminhada. 
+
+Você pode usar essa habilidade um número de vezes igual ao seu bônus de proficiência, recuperando todas as utilizações depois de um descanso longo. 
+
+#### Aspecto da Serpe
+
+A partir do 11º nível, o poder do seu espírito dracônico agora irradia de você, protegendo seus aliados ou inspirando medo nos inimigos. Como uma ação bônus, você pode criar uma aura de poder dracônico de 10 pés ao seu redor, que dura 1 minuto. Durante esse tempo, você escolhe um dos seguintes efeitos: 
+
+• :: **Presença Aterrorizante.** Quando você cria essa aura (e como ação bônus em turnos subsequentes), escolha uma criatura dentro da aura. Ela deve fazer um teste de Sabedoria contra sua CD de ki ou ficar amedrontada por 1 minuto. A criatura pode repetir o teste no final de cada turno para encerrar o efeito.
+
+• :: **Resistência.** Escolha um tipo de dano: ácido, frio, fogo, relâmpago ou veneno. Você e seus aliados dentro da aura têm resistência ao tipo de dano escolhido. 
+
+Uma vez criada, você não pode criar essa aura de novo até terminar um descanso longo, a menos que gaste 3 pontos de ki para ativá-la novamente. 
+
+#### Aspecto Ascendente
+A partir do 17º nível, o espírito dracônico dentro de você alcança seu auge. Você ganha os seguintes benefícios: 
+
+• :: **Respiração Aprimorada.** Quando usa sua habilidade Sopro do Dragão, pode gastar 1 ponto de ki para aumentar sua forma e poder. A exalação de energia dracônica torna-se um cone de 60 pés ou uma linha de 90 pés (5 pés de largura). Cada criatura na área sofre dano igual a quatro vezes o valor do seu dado de Artes Marciais em uma falha, ou metade desse dano em um sucesso.
+
+• :: **Percepção Tremeluzente.** Você ganha visão tremeluzente (blindsight) até 10 pés. Dentro dessa área, você pode perceber tudo que não esteja atrás de cobertura total, mesmo se estiver cego ou em completa escuridão. Você também pode ver criaturas invisíveis, a menos que façam um teste de Furtividade bem-sucedido contra sua percepção.
+
+• :: **Fúria Explosiva.** Quando você ativa sua habilidade Aspecto da Serpe, uma fúria dracônica explode de você. Escolha qualquer número de criaturas que você possa ver dentro da aura. Cada uma deve fazer um teste de resistência de Destreza contra sua CD de ki ou sofrer 3d10 de dano de ácido, frio, fogo, relâmpago ou veneno (sua escolha). 
+
+\page

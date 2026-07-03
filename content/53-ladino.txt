@@ -1,0 +1,195 @@
+## Ladino
+Ladinos contam com sua perícia, furtividade e as vulnerabilidades de seus inimigos para obter vantagem em qualquer situação. Eles possuem uma habilidade especial para encontrar a solução para praticamente qualquer problema, demonstrando desenvoltura e versatilidade, a chave de qualquer grupo aventureiro de sucesso.
+
+### Características de classe
+*Como um Ladino, você possui as seguintes características.*
+
+#### Pontos de vida:
+**Dado de vida:** 1d8 por nível de Ladino
+<br>
+**Pv no 1º nível:** 8 + modificador de Constituição.
+<br>
+**Pontos de vida nos níveis seguintes:** 1d8 (ou 5) + modificador de constituição por nível de classe após o 1º.
+
+#### Proficiências
+**Armadura:** Armaduras leves
+<br>
+**Armas:** Armas simples, bestas de mão, espadas longas, rapieiras, espadas curtas
+<br>
+**Ferramentas:** Ferramentas de ladrão
+<br>
+**Testes de Resistência:** Destreza, Inteligência
+<br>
+**Perícias:** Escolha quatro dentre Acrobacia, Atletismo, Atuação, Enganação, Furtividade, Intimidação, Intuição, Investigação, Percepção, Persuasão e Prestidigitação
+<br><br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+<br>
+<br>
+•	(a) uma rapieira ou (b) uma espada longa
+<br>
+•	(a) um arco curto e uma aljava com 20 flechas ou (b) uma espada curta
+<br>
+•	(a) um pacote de assaltante ou (b) um pacote de aventureiro ou (c) um pacote de explorador
+<br>
+•	Armadura de couro, duas adagas e ferramentas de ladrão
+<br><br>
+Alternativamente, você pode começar com 5d4x10 de ouro inicial para comprar seus equipamentos
+
+### Especialização
+No 1º nível, você escolhe duas de suas perícias que seja proficiente, ou uma perícia que seja proficiente e ferramentas de ladrão. Seu bônus de proficiência é dobrado em qualquer teste de habilidade que fizer com elas.
+
+No 6º nível, você pode escolher outras duas de suas proficiências (em perícias ou ferramentas de ladrão) para ganhar esse benefício.
+
+
+{{classTable,frame,decoration
+##### O Ladino
+| Nível | Bônus de Proficiência|  Ataque Furtivo | Características | Talentos Marciais  |
+|:-----:|:-----------------:|:---------|:---------|:---------------------:|
+| 1º   | +2 | 1d6 | Especialização, Ataque Furtivo, Gíria de Ladrão | 0  |
+| 2º   | +2 | 1d6 | Ação Ardilosa, Treinamento Marcial              | 1  |
+| 3º   | +2 | 2d6 | Arquétipo de Ladino                             | 2  |
+| 4º   | +2 | 2d6 | Incremento no Valor de Habilidade               | 3  |
+| 5º   | +3 | 3d6 | Esquiva Sobrenatural                            | 3  |
+| 6º   | +3 | 3d6 | Especialização                                  | 4  |
+| 7º   | +3 | 4d6 | Evasão                                          | 5  |
+| 8º   | +3 | 4d6 | Incremento no Valor de Habilidade               | 6  |
+| 9º   | +4 | 5d6 | Característica de Arquétipo de Ladino           | 6  |
+| 10º  | +4 | 5d6 | Incremento no Valor de Habilidade               | 7  |
+| 11º  | +4 | 6d6 | Talento Confiável                               | 8  |
+| 12º  | +4 | 6d6 | Incremento no Valor de Habilidade               | 9  |
+| 13º  | +5 | 7d6 | Característica de Arquétipo de Ladino           | 9  |
+| 14º  | +5 | 7d6 | Sentido Cego                                    | 10 |
+| 15º  | +5 | 8d6 | Mente Escorregadia                              | 11 |
+| 16º  | +5 | 8d6 | Incremento no Valor de Habilidade               | 12 |
+| 17º  | +6 | 9d6 | Característica de Arquétipo de Ladino           | 12 |
+| 18º  | +6 | 9d6 | Elusivo                                         | 13 |
+| 19º  | +6 |10d6 | Incremento no Valor de Habilidade               | 14 |
+| 20º  | +6 |10d6 | Golpe de Sorte                                  | 15 |
+}} 
+
+### Ataque Furtivo
+A partir do 1º nível, você sabe como atacar sutilmente e explorar a distração de seus inimigos. Uma vez por turno, você pode adicionar 1d6 nas jogadas de dano contra
+qualquer criatura que acertar, desde que tenha vantagem nas jogadas de ataque. O ataque deve ser com uma arma de acuidade ou à distância.
+
+Você não precisa ter vantagem nas jogadas de ataque se outro inimigo do seu alvo estiver a 1,5 metro de distância dele, desde que este inimigo não esteja incapacitado e você não tenha desvantagem nas jogadas de ataque.
+
+A quantidade de dano extra aumenta conforme você ganha níveis nessa classe, como mostrado na coluna Ataque Furtivo da tabela O Ladino.
+
+
+
+### Gíria de Ladrão
+Durante seu treinamento você aprendeu as gírias de ladrão, um misto de dialeto, jargão e códigos secretos que permitem você passar mensagens secretas durante uma conversa aparentemente normal. Somente outra criatura que conheça essas gírias de ladrão entende as mensagens. Leva-se quatro vezes mais tempo para transmitir essa mensagem do que falar a mesma ideia claramente.
+
+Além disso, você entende um conjunto de sinais secretos e símbolos usados para transmitir mensagens curtas e simples, como saber se uma área é perigosa ou se é território de uma guilda de ladrões, se o saque está próximo, se as pessoas na área são alvos fáceis ou até
+mesmo indicar lugares seguros para ladinos se esconderem.
+
+### Ação Ardilosa
+A partir do 2º nível, seu pensamento rápido e agilidade faz você se mover e agir rapidamente. Você pode usar uma ação bônus durante cada um de seus turnos em
+combate. Esta ação pode ser usada somente para Disparada, Desengajar ou Esconder.
+
+### Arquétipo de Ladino
+No 3º nível, você escolhe um arquétipo que se esforçará para se equiparar através de exercícios de suas habilidades de ladino. Sua escolha garante a você características no 3o nível e de novo no 9º, 13º e 17º nível.
+
+### Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 8°, 10°, 12°, 16° e 19° nível, você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar
+dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.
+
+### Esquiva Sobrenatural
+A partir do 5º nível, quando um inimigo que você possa ver o acerta com um ataque, você pode usar sua reação para reduzir pela metade o dano sofrido.
+
+### Evasão
+A partir do 7º nível, você pode esquivar-se agilmente de certos efeitos em área, como o sopro flamejante de um dragão vermelho ou uma magia tempestade de gelo. Quando você for alvo de um efeito que exige um teste de resistência de Destreza para sofrer metade do dano, você não sofre dano algum se passar, e somente metade do dano se falhar.
+
+### Talento Confiável
+No 11º nível, você refinou suas perícias beirando à perfeição. Toda vez que você fizer um teste de habilidade no qual possa adicionar seu bônus de proficiência, você trata um resultado no d20 de 9 ou menor como um 10.
+
+### Sentido Cego
+No 14º nível, se você for capaz de ouvir, você está ciente da localização de qualquer criatura escondida ou invisível a até 3 metros de você.
+
+### Mente Escorregadia
+No 15º nível, você adquire uma grande força de vontade, adquirindo proficiência nos testes de resistência de Sabedoria.
+
+### Elusivo
+A partir do 18º nível, você se torna tão sagaz que raramente alguém encosta a mão em você. Nenhuma jogada de ataque tem vantagem contra você, desde que você não esteja incapacitado.
+
+### Golpe de Sorte
+No 20º nível, você adquire um dom incrível para ter sucesso nos momentos em que mais precisa. Se um ataque seu falhar contra um alvo ao seu alcance, você pode transformar essa falha em um acerto. Ou se falhar em um teste qualquer, você pode tratar a jogada desse
+mesmo teste como 20 natural.
+
+Uma vez que você use essa característica, você não pode fazê-lo de novo até terminar um descanso curto ou longo.
+
+\page
+Ladinos possuem muitas características em comum, incluindo a ênfase no aperfeiçoamento de suas perícias, na precisão e aproximação mortal em combate, e nos seus reflexos cada vez mais rápidos. Mas, diferentes ladinos orientam seus talentos em direções variadas, personificadas pelos vários arquétipos de ladino. Seu arquétipo escolhido reflete o seu foco – não necessariamente a indicação de sua profissão, mas adescrição de suas técnicas preferidas.
+
+## Trapaceiro Arcano
+Alguns ladinos aprimoram suas habilidades de furtividade e agilidade através da magia, aprendendo truques de encantamento e ilusão. Esses ladinos incluem batedores de carteira e ladrões, mas também brincalhões, travessos e um número significativo de aventureiros.
+
+#### Conjuração de Esferas
+Você pode combinar esferas e talentos para criar efeitos mágicos. Você ganha uma reserva de magias, talentos mágicos e uma tradição de conjuração.
+
+##### Reserva de Magias
+Você ganha uma pequena reserva de energia que pode invocar para criar efeitos verdadeiramente maravilhosos, chamada reserva de magias. Essa reserva contém uma quantidade de pontos de magia igual ao seu modificador de Inteligência (mínimo: 1). 
+
+Você ganha pontos de magia adicionais iguais à um terço do seu nível de Ladino (arredondado para baixo), como visto na tabela Conjuração do Trapaceiro Arcano. Essa reserva é reabastecida após um descanso longo. (Observação: em multiclasses, os pontos de magia do seu modificador de habilidade chave são ganhos apenas uma vez.)
+
+##### Talentos Mágicos
+A coluna Talentos Mágicos mostra o número de talentos mágicos ganhos com seus níveis de ladino. 
+
+##### Habilidade de Conjuração
+Inteligência é sua habilidade de conjuração para suas magias de ladino, pois você aprende seus feitiços através de estudo dedicado e memorização. Você usa sua Inteligência sempre que uma magia de artífice se referir à sua habilidade de conjuração. Além disso, você usa seu modificador de Inteligência ao definir a CD de salvaguarda para uma magia de ladino que você conjura e ao fazer uma jogada de ataque com uma.
+:
+**CD de resistência à magia** = 8 + seu bônus de proficiência + seu modificador de Inteligência
+<br>
+**Modificador de ataque de magia** = seu bônus de proficiência + seu modificador de Inteligência
+
+{{classTable,frame,decoration
+##### Conjuração do Trapaceiro Arcano
+| Nível| Talentos Mágicos | Pontos de Magia |
+|:----:|:-:|:-:|
+| 3º   | 2 | 1 |
+| 4º   | 2 | 1 |
+| 5º   | 3 | 1 |
+| 6º   | 3 | 2 |
+| 7º   | 4 | 2 |
+| 8º   | 4 | 2 |
+| 9º   | 5 | 3 |
+| 10º  | 5 | 3 |
+| 11º  | 6 | 3 |
+| 12º  | 6 | 4 |
+| 13º  | 7 | 4 |
+| 14º  | 7 | 4 |
+| 15º  | 8 | 5 |
+| 16º  | 8 | 5 |
+| 17º  | 9 | 5 |
+| 18º  | 9 | 6 |
+| 19º  | 9 | 6 |
+| 20º  | 10| 6 |
+}}
+
+
+#### Prestidigitação da Mão do Mago
+No 3º nível, você ganha acesso à esfera de magia Telecinese, e recebe como bônus o talento Destreza (levitação). Esse talento não conta para seu total de talentos mágicos apresentado na tabela Conjuração do Trapaceiro Arcano. Seu uso refinado de telecinese lhe permite realizar as seguintes tarefas com precisão:
+
+• :: Você pode guardar um objeto que a mão esteja segurando em um recipiente usado ou carregado por outra criatura.
+• :: Você pode recuperar um objeto de um recipiente usado ou carregado por outra criatura.
+• :: Você pode usar ferramentas de ladrão para abrir fechaduras e desarmar armadilhas à distância.
+
+Você pode realizar uma dessas tarefas sem ser notado por uma criatura se obtiver sucesso em um teste de Destreza (Prestidigitação) contestado pelo teste de Sabedoria (Percepção) da criatura.
+
+Além disso, você pode usar a ação bônus concedida pela sua Ação Astuta para controlar a levitação.
+
+#### Emboscada Mágica
+A partir do 9º nível, se você estiver oculto de uma criatura ao conjurar uma magia sobre ela, a criatura terá desvantagem em qualquer teste de resistência que fizer contra a magia neste turno.
+
+#### Trapaceiro Versátil
+No 13º nível, você adquire a habilidade de distrair alvos com sua telecine. Como uma ação bônus em seu turno, você pode designar uma criatura dentro do alcance de Levitar. Fazer isso lhe concede vantagem em jogadas de ataque contra essa criatura até o final do turno.
+
+#### Ladrão de Magias
+No 17º nível, você adquire a habilidade de roubar magicamente o conhecimento de como conjurar uma magia de outro conjurador.
+
+Imediatamente após uma criatura conjurar uma magia que tenha você como alvo ou que o inclua em sua área de efeito, você pode usar sua reação para forçar a criatura a fazer um teste de resistência com seu modificador de habilidade de conjuração. A CD é igual à sua CD de resistência à magia. Em caso de falha no teste de resistência, você nega o efeito da magia contra você e rouba o conhecimento da magia se ela tiver um custo de pelo menos 1PM. Pelas próximas 8 horas, você conhece a magia e pode conjurá-la usando seus pontos de magia. A criatura não poderá conjurar essa magia até que as 8 horas tenham passado.
+
+Uma vez que você use esta habilidade, não poderá usá-la novamente até terminar um descanso longo.
+
+\page

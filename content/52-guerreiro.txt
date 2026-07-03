@@ -1,0 +1,229 @@
+## Guerreiro
+Cavaleiros em missões, lordes conquistadores, campeões reais, infantaria de elite, mercenários rígidos e bandidos reis, como guerreiros, eles compartilham de uma maestria com armas e armaduras sem precedentes, bem como um vasto conhecimento e habilidades em combate. E eles estão bem familiarizados com a morte, seja simplesmente conhecendo-a ou desafiando-a cara a cara.
+
+{{classTable,frame,decoration
+##### O Guerreiro
+| Nível | Bônus de Proficiência| Características | Talentos Marciais  |
+|:-----:|:-----------------:|:---------|:---------------------:|
+| 1º   | +2 | Estilo de Luta, Retomar o Fôlego, Treinamento Marcial | 1 |
+| 2º   | +2 | Surto de Ação (um uso)                                | 2 |
+| 3º   | +2 | Arquétipo Marcial                                     | 3 |
+| 4º   | +2 | Incremento no Valor de Habilidade                     | 4 |
+| 5º   | +3 | Ataque Extra                                          | 5 |
+| 6º   | +3 | Incremento no Valor de Habilidade                     | 6 |
+| 7º   | +3 | Característica de Arquétipo Marcial                   | 7 |
+| 8º   | +3 | Incremento no Valor de Habilidade                     | 8 |
+| 9º   | +4 | Indomável (um uso)                                    | 9 |
+| 10º  | +4 | Característica de Arquétipo Marcial                   | 10|
+| 11º  | +4 | Ataque Extra (2)                                      | 11|
+| 12º  | +4 | Incremento no Valor de Habilidade                     | 12|
+| 13º  | +5 | Indomável (dois usos)                                 | 13|
+| 14º  | +5 | Incremento no Valor de Habilidade                     | 14|
+| 15º  | +5 | Característica de Arquétipo Marcial                   | 15|
+| 16º  | +5 | Incremento no Valor de Habilidade                     | 16|
+| 17º  | +6 | Surto de Ação (dois usos),Indomável (três usos)       | 17|
+| 18º  | +6 | Característica de Arquétipo Marcial                   | 18|
+| 19º  | +6 | Incremento no Valor de Habilidade                     | 19|
+| 20º  | +6 | Ataque Extra (3)                                      | 20|
+}}      
+
+### Características de classe
+*Como um Guerreiro, você possui as seguintes características.*
+
+#### Pontos de vida:
+**Dado de vida:** 1d10 por nível de Guerreiro
+<br>
+**Pv no 1º nível:** 10 + modificador de Constituição.
+<br>
+**Pontos de vida nos níveis seguintes:** 1d10 (ou 6) + modificador de constituição por nível de classe após o 1º.
+
+#### Proficiências
+**Armadura:** Todas as armaduras, escudos
+<br>
+**Armas:** Armas simples, armas marciais
+<br>
+**Ferramentas:** nenhuma
+<br>
+**Testes de Resistência:** Constituição e Força
+<br>
+**Perícias:** Escolha duas dentre Acrobacia, Adestrar animais, Atletismo, História, Intuição, Intimidação, Percepção e Sobrevivência
+<br><br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+<br>
+<br>
+•	(a) cota de malha ou (b) gibão de peles, arco longo e 20 flechas
+<br>
+•	(a) uma arma marcial e um escudo ou (b) duas armas marciais
+<br>
+•	(a) uma besta leve e 20 virotes ou (b) dois machados de arremesso
+<br>
+•	(a) uma pacote de aventureiro ou (b) um pacote de explorador
+<br><br>
+Alternativamente, você pode começar com 5d4x10 de ouro inicial para comprar seus equipamentos
+
+### Estilo de Luta
+Você adota um estilo de combate particular que será sua especialidade. Escolha uma das opções a seguir. Você não
+pode escolher o mesmo Estilo de Combate mais de uma vez, mesmo se puder escolher de novo.
+
+#### Arquearia
+Você ganha +2 de bônus em jogadas de ataque com armas de longo ance.
+
+#### Luta às Cegas  
+Você tem visão às cegas com ance de 3 metros. Dentro desse ance, você pode ver efetivamente qualquer coisa que não esteja atrás de cobertura total, mesmo se estiver cego ou na escuridão. Além disso, você pode ver uma criatura invisível dentro desse ance, a menos que a criatura se esconda de você com sucesso.
+
+#### Defesa  
+Enquanto estiver usando armadura, você ganha +1 de bônus na CA.
+
+#### Duelismo 
+Quando estiver empunhando uma arma corpo a corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus em jogadas de dano com essa arma.
+
+#### Luta com Armas Grandes  
+Ao rolar 1 ou 2 em um dado de dano para um ataque feito com uma arma corpo a corpo empunhada com as duas mãos, você pode rolar novamente o dado e deve usar a nova jogada, mesmo que a nova jogada seja 1 ou 2. A arma deve ter a propriedade de duas mãos ou versátil para que você obtenha este benefício.
+
+
+
+#### Interceptação  
+Quando uma criatura que você pode ver atinge um alvo, diferente de você, a até 1,5 metro de você com um ataque, você pode usar sua reação para reduzir o dano que o alvo recebe em 1d10 + seu bônus de proficiência (até um mínimo de 0 de dano). Você deve estar empunhando um escudo ou uma arma simples ou marcial para usar esta reação.
+
+#### Proteção  
+Quando uma criatura que você pode ver ataca um alvo diferente de você que esteja a até 1,5 metro de você, você pode usar sua reação para impor desvantagem na jogada de ataque. Você deve estar empunhando um escudo.
+
+#### Técnica Superior  
+Você aprende uma manobra de sua escolha dentre aquelas disponíveis para o arquétipo Mestre de Batalha. Se uma manobra que você usar exigir que seu alvo faça um teste de resistência para resistir aos efeitos da manobra, a CD do teste de resistência será igual a 8 + seu bônus de proficiência + seu modificador de Força ou Destreza (à sua escolha).
+
+•	Você ganha um dado de superioridade, que é um d6 (este dado é adicionado a qualquer dado de superioridade que você tenha de outra fonte). Este dado é usado para alimentar suas manobras. Um dado de superioridade é gasto quando você o usa. Você recupera seus dados de superioridade gastos ao terminar um descanso curto ou longo.
+
+#### Luta com Arma de Arremesso  
+Você pode sacar uma arma que tenha a propriedade de arremesso como parte do ataque que você faz com a arma.
+
+•	Além disso, ao atingir um ataque à distância usando uma arma de arremesso, você ganha um bônus de +2 na jogada de dano.
+
+#### Luta com Duas Armas  
+Ao se envolver em uma luta com duas armas, você pode adicionar seu modificador de habilidade ao dano do segundo ataque.
+
+#### Luta Desarmada  
+Seus ataques desarmados podem causar dano contundente igual a 1d6 + seu modificador de Força em um acerto. Se você não estiver empunhando nenhuma arma ou escudo ao fazer a jogada de ataque, o d6 se torna um d8.
+
+•	No início de cada um dos seus turnos, você pode causar 1d4 de dano contundente a uma criatura agarrada por você.
+
+#### Atirador de Corpo a Corpo  
+Ao realizar um ataque à distância enquanto estiver a até 1,5 metro de uma criatura hostil, você não tem desvantagem na jogada de ataque. Seus ataques à distância ignoram meia cobertura e três quartos de cobertura contra alvos a até 9 metros de você. Você tem um bônus de +1 em jogadas de ataque em ataques à distância.
+
+#### Marinheiro  
+Enquanto não estiver usando armadura pesada ou escudo, você tem deslocamento de nado e deslocamento de escalada iguais ao seu deslocamento normal e ganha um bônus de +1 na classe de armadura.
+
+#### Lutador de Túnel  
+Como uma ação bônus, você pode assumir uma postura defensiva que dura até o início do seu próximo turno. Enquanto estiver em sua postura defensiva, você pode fazer ataques de oportunidade sem usar sua reação, e pode usar sua reação para fazer um ataque corpo a corpo contra uma criatura que se mova mais de 1,5 metro enquanto estiver dentro do seu ance.
+
+### Retomar o Fôlego
+Você possui uma reserva de estamina e pode usá-la para proteger a si mesmo contra danos. No seu turno, você pode usar uma ação bônus para recuperar pontos de vida igual a 1d10 + seu nível de guerreiro.
+
+Uma vez que você use essa característica, você precisa terminar um descanso curto ou longo para usá-la de novo.
+
+### Treinamento Marcial
+Você recebe um talento marcial no 1º nível e em cada nível subsequente, conforme descrito na tabela da classe.
+
+### Surto de Ação
+A partir do 2º nível, você pode forçar o seu limite para além do normal por um momento. Durante o seu turno,
+você pode realizar uma ação adicional juntamente com sua ação e possível ação bônus.
+
+### Arquétipo Marcial
+No 3º nível, você escolhe um arquétipo o qual se esforçará para seguir as técnicas e estilos de combate dele. O arquétipo confere a você características especiais no 3º nível e de novo nos 7º, 10º, 15º e 18º nível.
+
+### Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 6°, 8°, 12°, 14°, 16° e 19° nível, você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade
+acima de 20 com essa característica.
+
+### Versatilidade Marcial
+Sempre que você atingir um nível nesta classe que conceda a habilidade de Melhoria no Valor de Habilidade, você pode fazer uma das seguintes ações, conforme muda o foco da sua prática marcial:
+
+
+
+•	:: Substituir um estilo de luta que você conhece por outro estilo de luta disponível para guerreiros.
+
+•	:: Se você conhece alguma manobra do arquétipo Mestre de Batalha, pode substituir uma manobra que conhece por uma manobra diferente.
+
+### Ataque Extra
+A partir do 5º nível, você pode atacar duas vezes, ao invés de uma, quando usar a ação Atacar durante o seu turno.
+O número de ataques aumenta para três quando você alcançar o 11º nível de guerreiro e para 4 quando alcançar
+o 20º nível de guerreiro.
+
+### Indomável
+A partir do 9º nível, você pode repetir um teste de resistência em que falhou. Se fizer isso, deverá usar o novo teste e não poderá usar essa habilidade novamente até terminar um descanso longo.
+
+Você pode usar essa habilidade duas vezes entre descansos longos a partir do 13º nível e três vezes entre descansos longos a partir do 17º nível.
+
+\page
+Diferentes guerreiros escolhem diferentes caminhos para aperfeiçoar seu poder em combate. O arquétipo marcial
+que você escolhe seguir reflete essa escolha.
+
+## Possuído
+Em seu peito ardem duas almas. Seja por um antigo ritual, acidente divino ou interferência profana, você compartilha seu corpo com o espírito de outro — um guerreiro de eras passadas. Seus instintos, memórias e fúria permanecem logo abaixo da pele, prontos para despertar quando o aço canta e o sangue ferve.
+
+#### Vínculo Espiritual
+No 3º nível, o espírito de um guerreiro ancestral desperta dentro de você, formando uma segunda persona com a qual você compartilha o mesmo corpo. Quando você adquire esta característica, sua segunda persona recebe os seguintes traços:
+
+•	:: Um **Estilo de Luta** da lista de estilos de luta de Guerreiro, que seja diferente de qualquer um que você já tenha escolhido anteriormente
+
+•	:: Dois **Talentos Marciais** de esferas às quais você ainda não tem acesso
+
+•	:: Duas **perícias** que você ainda não possua, uma delas podendo ser com um tipo de ferramenta
+
+Além disso, sua segunda persona ganha 2 talentos adicionais nos níveis 7, 10, 15 e 18.
+
+Como uma ação bônus, você pode alternar entre suas duas personas, substituindo temporariamente seu estilo de luta e talentos pelos da outra. Você mantém seus pontos de vida, equipamentos e valores de habilidade ao trocar de persona.
+
+Você pode alternar de persona um número de vezes igual ao seu bônus de proficiência, e recupera todos os usos gastos após um descanso longo.
+
+Ambas as personas compartilham o mesmo Foco Marcial (se aplicável) e as mesmas proficiências em perícias, salvaguardas e ferramentas.
+
+### Ressonância Espiritual
+A partir do 7º nível, as fronteiras entre suas duas almas tornam-se mais tênues, permitindo que você combine suas forças.
+
+Como uma ação bônus, você pode incorporar temporariamente parte da persona que estiver inativa, escolhendo um dos benefícios a seguir por 1 minuto:
+•	:: O Estilo de Luta da persona inativa
+
+•	:: Um Talento de esfera conhecido pela persona inativa
+
+•	:: Vantagem em testes de uma perícia ou ferramenta com a qual a persona inativa possua proficiência
+
+Você pode usar esta característica uma vez por descanso curto ou longo.
+
+Além disso, sempre que alternar de persona, você manifesta um eco da força da alma anterior. Você recebe pontos de vida temporários iguais ao seu nível de guerreiro, que duram por 1 minuto, e recebe Foco Marcial.
+
+### Golpe Ressonante
+No 10º nível, suas duas almas aprendem a atacar em uníssono, canalizando poder espiritual através de seus golpes.
+
+Uma vez por descanso curto ou longo, quando você alternar de persona, pode liberar um Golpe Ressonante. Até o final do seu próximo turno, o primeiro ataque com arma que acertar causa 1d8 de dano psíquico adicional.
+
+Ao acertar esse ataque, escolha um dos seguintes efeitos de ressonância:
+
+•	:: **Eco Atordoante**. O deslocamento do alvo é reduzido em 3 metros até o fim do próximo turno dele
+
+•	:: •	**Abertura de Guarda**. O próximo ataque que você fizer contra o alvo é com vantagem
+
+•	:: **Memória Dolorosa**. O alvo sofre dano adicional igual ao seu bônus de proficiência no início do próximo turno dele
+
+O dano psíquico aumenta para 2d8 no 15º nível e 3d8 no 18º nível.
+
+### Eco do Caído
+Ao atingir o 15º nível, você aprende a manifestar fisicamente o espírito que habita em você.
+
+Como uma ação, você pode invocar um Eco da sua persona secundária por 1 minuto. O Eco aparece como um guerreiro espectral portando armas e armaduras apropriadas para o espírito, e utiliza as estatísticas, talentos e estilo de luta da persona secundária.
+
+O Eco age na sua iniciativa e pode realizar as ações Atacar, Desengajar, Ajudar ou Disparada, além de se movimentar normalmente.
+
+
+Ele compartilha seus pontos de vida, e qualquer dano sofrido pelo Eco é transferido a você.
+
+Quando o Eco desaparecer, você pode imediatamente alternar para a persona dele sem gastar um uso de Vínculo Ancestral.
+
+Você pode usar esta característica uma vez por descanso longo.
+
+### Um Só Corpo
+No 18º nível, você e a alma dentro de si tornam-se completamente unificadas.
+
+Você pode manter ambas as personas ativas ao mesmo tempo, endo acesso simultâneo a todos os talentos, perícias e estilos de luta de ambas as personas, independentemente de qual esteja ativa. Além disso, você recebe um uso adicional das habilidades Ressonância Espiritual e Golpe Ressonante. 
+
+\page

@@ -98,5 +98,26 @@ ___
   - #### [{{ Retribuição}}{{ 290}}](#p290)
 }}
 
+{{toc
+- ### [{{ Classes}}{{ 292}}](#p292)
+  - #### [{{ Artífice}}{{ 293}}](#p293)
+    - ##### [{{ Especialidades de Artífice}}{{ }}](#grp-especialidades-artifice)
+      - ###### [{{ Alquimista}}{{ 294}}](#p294)
+    - ##### [{{ Infusões de Artífice}}{{ 295}}](#p295)
+    - ##### [{{ Servo Humúnculo}}{{ 296}}](#p296)
+  - #### [{{ Feiticeiro}}{{ 297}}](#p297)
+    - ##### [{{ Origens de Feitiçaria}}{{ }}](#grp-origens-feiticaria)
+      - ###### [{{ Sangue Feérico}}{{ 298}}](#p298)
+  - #### [{{ Guerreiro}}{{ 299}}](#p299)
+    - ##### [{{ Arquétipos Marciais}}{{ }}](#grp-arquetipos-marciais)
+      - ###### [{{ Possuído}}{{ 300}}](#p300)
+  - #### [{{ Ladino}}{{ 301}}](#p301)
+    - ##### [{{ Arquétipos de Ladino}}{{ }}](#grp-arquetipos-ladino)
+      - ###### [{{ Trapaceiro Arcano}}{{ 302}}](#p302)
+  - #### [{{ Monge}}{{ 303}}](#p303)
+    - ##### [{{ Tradições Monásticas}}{{ }}](#grp-tradicoes-monasticas)
+      - ###### [{{ Caminho do Dragão Ascendente}}{{ 304}}](#p304)
+}}
+
 
 \page

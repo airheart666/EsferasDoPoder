@@ -9,16 +9,25 @@ const Chapters = (() => {
      CHAPTERS — segmentação do documento por Esfera/seção
      ============================================================ */
   function buildChapters(pages, tocTrees) {
-    const labels = ['Esferas de Magia', 'Esferas de Poder'];
+    const labels = ['Esferas de Magia', 'Esferas de Poder', 'Classes'];
     const flatEntries = [];
+    // Não descer nos filhos do glossário (os termos são âncoras na página,
+    // não capítulos). As classes recorrem (classe › subclasses/blocos).
+    const GLOSS = 'Regras e Termos Relevantes';
 
     tocTrees.forEach((tree, ti) => {
-      for (const root of tree) {
-        flatEntries.push({ text: root.text, pageNum: pageNumOfAnchor(root.anchor), sectionLabel: labels[ti] || `Seção ${ti + 1}` });
-        for (const child of root.children) {
-          flatEntries.push({ text: child.text, pageNum: pageNumOfAnchor(child.anchor), sectionLabel: labels[ti] || `Seção ${ti + 1}` });
+      const label = labels[ti] || `Seção ${ti + 1}`;
+      const walk = nodes => {
+        for (const node of nodes) {
+          // Nós de grupo (âncora #grp-…, sem página) não viram capítulo, mas
+          // seus filhos (subclasses) sim.
+          if (/^#p\d+$/.test(node.anchor)) {
+            flatEntries.push({ text: node.text, pageNum: pageNumOfAnchor(node.anchor), sectionLabel: label });
+          }
+          if (node.children && node.children.length && node.text.trim() !== GLOSS) walk(node.children);
         }
-      }
+      };
+      walk(tree);
     });
 
     const entryByPage = new Map();

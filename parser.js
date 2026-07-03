@@ -9,6 +9,14 @@ const HBParser = (() => {
      Máquina de estados de 4 modos
      ========================================================== */
   function tokenize(source) {
+    // Junta linhas separadas por <br> em uma só (herança do Homebrewery: as
+    // seções tipo "Pontos de vida"/"Proficiências" usam <br> em linha própria,
+    // que sem isto viram parágrafos separados com espaçamento excessivo).
+    // (a) <br> logo antes de heading/lista/tabela/bloco/linha em branco é só um
+    //     separador — descarta (senão o <br> "engoliria" o heading seguinte).
+    source = source.replace(/\r?\n[ \t]*<br\s*\/?>[ \t]*(?=\r?\n[ \t]*(?:#|\||\{\{|\}\}|[-*•][ \t]|<|\r?\n|$))/gi, '');
+    // (b) <br> entre duas linhas de conteúdo → junta no mesmo parágrafo.
+    source = source.replace(/\r?\n[ \t]*<br\s*\/?>[ \t]*\r?\n/gi, '<br>');
     const lines = source.split('\n');
     const tokens = [];
 
@@ -67,7 +75,7 @@ const HBParser = (() => {
       }
 
       // Generic block types (ordem importa — wide,note antes de wide)
-      const genericMatch = line.match(/^\{\{(wide,note|wide|note|table,wide|imageMaskCenter[^,}]*(?:,[^}]*)?|footnote|imageMask[^}]*)\b/i);
+      const genericMatch = line.match(/^\{\{(classTable[\w,]*|wide,note|wide|note|table,wide|imageMaskCenter[^,}]*(?:,[^}]*)?|footnote|imageMask[^}]*)\b/i);
       if (genericMatch) {
         state = IN_GENERIC;
         blockType = normalizeBlockType(genericMatch[1]);
@@ -109,6 +117,7 @@ const HBParser = (() => {
   function normalizeBlockType(s) {
     const t = s.toLowerCase();
     if (t.startsWith('imagemask')) return 'imageMask';
+    if (t.startsWith('classtable')) return 'class-table';
     if (t === 'wide,note') return 'wide-note';
     if (t === 'table,wide') return 'table-wide';
     return t;
@@ -170,19 +179,19 @@ const HBParser = (() => {
     const widthPrefix = trimmed.match(/^\{\{width:\d+px\}\}\s*(.*)/);
     if (widthPrefix) return parseListItem(widthPrefix[1]);
 
-    // Direct bullet without width prefix
-    if (/^[•○◦]\s*::?/.test(trimmed)) return parseListItem(trimmed);
+    // Direct bullet without width prefix (aceita "• :: texto", "• texto" e "•\ttexto")
+    if (/^[•○◦]\s/.test(trimmed)) return parseListItem(trimmed);
 
     // Paragraph
     return { type: 'paragraph', text: trimmed };
   }
 
   function parseListItem(rest) {
-    // Level 1: • :: text or • text
-    const l1 = rest.match(/^•\s*::?\s*(.*)/);
+    // Level 1: "• :: texto", "• texto" ou "•\ttexto" (:: é opcional)
+    const l1 = rest.match(/^•\s*(?::{1,2})?\s*(.*)/);
     if (l1) return { type: 'list_item', level: 1, text: l1[1].trim() };
-    // Level 2: ○ :: text (U+25CB) or ◦ :: text (U+25E6)
-    const l2 = rest.match(/^[○◦]\s*::?\s*(.*)/);
+    // Level 2: ○ / ◦ (U+25CB / U+25E6)
+    const l2 = rest.match(/^[○◦]\s*(?::{1,2})?\s*(.*)/);
     if (l2) return { type: 'list_item', level: 2, text: l2[1].trim() };
     // Fallback: treat as paragraph
     return { type: 'paragraph', text: rest.trim() };
@@ -256,7 +265,8 @@ const HBParser = (() => {
   function parseTocBlock(raw) {
     const entries = [];
     const lines = raw.split('\n');
-    const re = /^\s*-\s*(#{3,5})\s+\[\{\{\s*(.+?)\s*\}\}\{\{\s*\d+\s*\}\}\]\(#(p\d+)\)/;
+    // Nível 3–6; âncora pode ser página (#pN) ou grupo sem página (#grp-…).
+    const re = /^\s*-\s*(#{3,6})\s+\[\{\{\s*(.+?)\s*\}\}\{\{\s*\d*\s*\}\}\]\(#([\w-]+)\)/;
 
     for (const line of lines) {
       const m = line.match(re);
@@ -412,6 +422,7 @@ const HBParser = (() => {
       case 'wide-note':return renderNote(tok.raw, false, true);
       case 'wide':     return renderWide(tok.raw);
       case 'table-wide': return renderTableWide(tok.raw);
+      case 'class-table': return renderWide(tok.raw, 'class-table');
       case 'imageMask':  return ''; // image handled by cover assembly
       case 'footnote':   return ''; // handled by cover assembly
       case 'banner':     return ''; // handled by cover assembly
@@ -433,11 +444,12 @@ const HBParser = (() => {
   /* ==========================================================
      WIDE BLOCKS
      ========================================================== */
-  function renderWide(raw) {
+  function renderWide(raw, extraClass) {
     const lines = raw.split('\n');
     const toks = groupTableRows(lines.map(processLine));
     const inner = toks.map(renderToken).join('');
-    return `<div class="wide">${inner}</div>`;
+    const cls = extraClass ? 'wide ' + extraClass : 'wide';
+    return `<div class="${cls}">${inner}</div>`;
   }
 
   function renderTableWide(raw) {

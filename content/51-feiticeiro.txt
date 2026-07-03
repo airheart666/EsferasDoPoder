@@ -1,0 +1,194 @@
+## Feiticeiro
+Os feiticeiros carregam um patrimônio mágico conferido a eles por uma linhagem exótica, alguma influência de outro mundo ou exposição a forças cósmicas desconhecidas. Não é possível estudar feitiçaria como se aprende um idioma, assim como não se aprende a viver
+uma vida lendária. Ninguém escolhe a feitiçaria: os poderes escolhem o feiticeiro.
+
+### Características de classe
+*Como um feiticeiro, você possui as seguintes características.*
+
+#### Pontos de vida:
+Dado de vida: 1d6 por nível de feiticeiro
+<br>
+Pontos de vida no 1º nível: 6 + modificador de Constituição.
+<br>
+Pontos de vida nos níveis seguintes: 1d6 (ou 4) + modificador de constituição por nível de classe após o 1º.
+
+#### Proficiências
+**Armadura:** nenhuma
+<br>
+**Armas:** Adagas, dardos, fundas, bordões e bestas leves
+<br>
+**Ferramentas:** nenhuma
+<br>
+**Testes de Resistência:** Constituição e Carisma
+<br>
+**Perícias:** Escolha duas dentre Arcanismo, Enganação, Intuição, Intimidação, Persuasão e Religião
+<br><br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+<br>
+<br>
+•	(a) uma besta leve e 20 virotes ou (b) qualquer arma simples
+<br>
+•	(a) uma bolsa de componentes ou (b) um foco arcano
+<br>
+•	(a) um pacote de explorador ou (b) um pacote de
+aventureiro
+<br><br>
+Alternativamente, você pode começar com 3d4x10 de ouro inicial para comprar seus equipamentos
+
+### Conjuração
+Um evento do seu passado ou na vida de um parente ou ancestral, deixou uma marca indelével em você, infundindo você com magia arcana. A fonte desse poder, independente da sua origem, flui em suas magias.
+
+#### Conjuração de Esferas
+Você pode combinar esferas e talentos para criar efeitos mágicos. Você ganha uma reserva de magias, talentos mágicos e uma tradição de conjuração.
+
+#### Reserva de Magias
+Você ganha uma pequena reserva de energia que pode invocar para criar efeitos verdadeiramente maravilhosos, chamada reserva de magias. Essa reserva contém uma quantidade de pontos de magia igual ao seu modificador de Carisma (mínimo: 1). Você ganha pontos de magia adicionais iguais ao seu nível de feiticeiro, como visto na tabela de sua classe.
+Essa reserva é reabastecida após um descanso longo.
+
+#### Talentos Mágicos
+A coluna Talentos Mágicos mostra o número de talentos mágicos ganhos com seus níveis de feiticeiro.
+
+{{classTable,frame,decoration
+##### O Feiticeiro
+| Nível| Bônus de Proficiência | Características | Talentos Mágicos | Pontos de Magia |
+|:----:|:--:|:---------------------------------------|:-:|:-:|
+| 1º   | +2 | Conjuração, Origem de Feitiçaria       | 1 | 1 |
+| 2º   | +2 | -                                      | 2 | 2 |
+| 3º   | +2 | Metamágica                             | 3 | 4 |
+| 4º   | +2 | Incremento no Valor de Habilidade      | 4 | 5 |
+| 5º   | +3 | -                                      | 5 | 7 |
+| 6º   | +3 | Característica de Origem de Feitiçaria | 6 | 8 |
+| 7º   | +3 | -                                      | 7 | 10|
+| 8º   | +3 | Incremento no Valor de Habilidade      | 8 | 11|
+| 9º   | +4 | -                                      | 9 | 13|
+| 10º  | +4 | Metamágica                             | 10| 14|
+| 11º  | +4 | -                                      | 11| 16|
+| 12º  | +4 | Incremento no Valor de Habilidade      | 12| 17|
+| 13º  | +5 | ─                                      | 13| 19|
+| 14º  | +5 | Característica de Origem de Feitiçaria | 14| 20|
+| 15º  | +5 | -                                      | 15| 22|
+| 16º  | +5 | Incremento no Valor de Habilidade      | 16| 23|
+| 17º  | +6 | Metamágica                             | 17| 25|
+| 18º  | +6 | Característica de Origem de Feitiçaria | 18| 27|
+| 19º  | +6 | Incremento no Valor de Habilidade      | 19| 28|
+| 20º  | +6 | Restauração Mística                    | 20| 30
+}}
+
+#### Habilidade de Conjuração
+Carisma é a sua habilidade de conjuração para suas magias de feiticeiro, já que o poder da sua magia depende da sua capacidade de projetar sua vontade no mundo. Use seu Carisma sempre que alguma magia se referir à sua habilidade de conjurar magias. Além disso, você usa o seu modificador de Carisma para definir a CD dos testes de resistência para as magias de feiticeiro que você conjura e quando você realiza uma jogada de ataque com uma magia.
+
+**CD de resistência à magia** = 8 + seu bônus de proficiência + seu modificador de Carisma
+
+**Modificador de ataque de magia** = seu bônus de proficiência + seu modificador de Carisma
+
+
+
+
+
+
+#### Foco de Conjuração
+Você pode usar um foco arcano como foco de conjuração das suas magias de feiticeiro.
+
+### Origem de Feitiçaria
+Escolha uma origem de feitiçaria, que descreve a fonte do seu poder mágico inato. Sua escolha lhe confere características quando você aescolhe, no 1° nível e novamente no 6°, 14° e 18° nível.
+
+### Metamágica
+No 3° nível, você adquire a habilidade de distorcer suas magias para se adequarem às suas necessidades. Você ganha duas das seguintes opções de Metamágica, à sua escolha. Você adquire outra no 10° e 17° nível.
+Você pode usar apenas uma opção de Metamágica em uma magia quando a conjura, a não ser que esteja
+descrito o contrário.
+<br>
+Sempre que  puder escolher uma opção de Metamágica como parte dessa classe, você pode, ao invés disso, escolher um talento o tipo Meta da esfera Universal
+
+#### Magia Acelerada
+Quando você conjurar uma magia que tenha um tempo de conjuração de 1 ação, você pode gastar 2 pontos de magia para mudar o tempo de conjuração para 1 ação bônus para essa magia.
+
+#### Magia Aumentada
+Quando você conjura uma magia que obriga uma criatura a realizar um teste de resistência contra o seu efeito, você pode gastar 3 pontos de magia para dar desvantagem a um alvo da magia no primeiro teste de resistência feito contra ela.
+
+#### Magia Cuidadosa
+Quando você conjurar uma magia que obriga outras criaturas a realizarem um teste de resistência, você pode proteger algumas dessas criaturas da força total da magia. Para tanto, você gasta 1 ponto de magia e escolhe um número dessas criaturas até o seu modificador
+de Carisma (mínimo de uma criatura). Uma criatura escolhida passa automaticamente no teste de resistência contra a magia.
+
+#### Magia Distante
+Quando você conjurar uma magia que tenha distância de 1,5 metro ou maior, você pode gastar 1 ponto de magia para dobrar o alcance da magia. Quando você conjura uma magia com alcance de toque, você pode gastar 1 ponto de magia para mudar o alcance da magia para 9 metros.
+
+#### Magia Duplicada
+Quando você conjurar uma magia que seja incapaz de ter mais de uma criatura como alvo no nível atual dela e não possua alcance pessoal, você pode gastar 2 pontos de magia a para ter uma segunda criatura, no alcance da magia, como alvo.
+::
+#### Magia Estendida
+Quando você conjurar uma magia que tenha duração de 1 minuto ou maior, você pode gastar 1 ponto de magia para dobrar sua duração, até uma duração máxima de 24 horas.
+
+#### Magia Perseguidora
+Se você fizer uma jogada de ataque para uma magia e errar, poderá gastar 2 pontos de magia para rolar novamente o d20 e deverá usar a nova jogada.
+
+Você pode usar Buscando Magia mesmo que já tenha usado uma opção de Metamagia diferente durante a conjuração da magia.
+
+#### Magia Potencializada
+Quando você rola o dano de uma magia, você pode gastar 1 ponto de magia para jogar novamente um número de dados de dano, até seu modificador de Carisma. Você deve usar a nova rolagem. Você pode usar Magia Potencializada mesmo que você já tenha usado uma opção diferente de Metamágica durante a conjuração da magia.
+
+#### Magia Sutil
+Quando você conjurar uma magia, você pode gastar 1 ponto de magia para fazê-lo sem qualquer componente somático ou verbal.
+
+#### Magia Transmutada
+Ao conjurar uma magia que causa um tipo de dano da lista a seguir, você pode gastar 1 ponto de magia para mudar esse tipo de dano para um dos outros tipos listados: ácido, frio, fogo, raio, veneno, trovão.
+
+### Incremento no Valor de Habilidade
+Quando você atinge o 4° nível e novamente no 8°, 12°, 16° e 19° nível, você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha, em 1. Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.
+
+### Orientação Mágica
+Ao atingir o 5º nível, você pode recorrer à sua fonte interior de magia para tentar conjurar sucesso a partir do fracasso. Ao fazer um teste de habilidade que falhe, você pode gastar 1 ponto de magia para rolar novamente o d20, e deve usar a nova jogada, potencialmente transformando o fracasso em um sucesso.
+
+### Restauração Mística
+No 20° nível, você recupera 4 pontos de magia gastos sempre que você terminar um descanso curto.
+
+\page
+Diferentes feiticeiros possuem diferentes origens para sua magia inata. Essas origens deifinem a fonte da magia do feiticeiro, seja ela fruto de uma linhagem de 
+
+
+sangue, uma experiência com uma criatura mágica, ou a influência de um ser superior.
+
+## Sangue Feérico
+Como um feiticeiro de Sangue Feérico, sua magia dança com capricho e fascínio. Suas palavras podem encantar ou iludir com a mesma facilidade com que podem invocar chamas ou ilusões. Sua conexão com a Agrestia das Fadas molda seu próprio ser — suas emoções surgem como as estações, sua presença deslumbra aqueles ao seu redor e o próprio ar parece cantar com uma vida invisível. Quer você tenha sido abençoado por uma arquifada, roubado e refeito pelas mãos de uma fada, ou seja descendente de uma antiga linhagem feérica, sua feitiçaria é um reflexo da canção eterna da Agrestia das Fadas — radiante, caprichosa e totalmente encantadora.
+
+#### Visão do Coração
+No 1º nível, sua magia Feérica lhe concede habilidades empáticas elevadas. Você ganha prociência em Intuição, e
+pode adicionar o dobro de seu bônus de proficiência em testes de Intuição que fizer para determinar as intenções de
+uma criatura.
+
+Como uma ação, você pode tocar uma criatura para ler seu coração. Faça um teste de Sabedoria (Intuição), contestado
+por um teste de Carisma (Enganação) da criatura. Se for bem-sucedido, você determina o alinhamento do alvo. Celestiais, Demônios e mortos-vivos falham sem teste. A criatura alvo não percebe sua tentativa de ler seu coração.
+
+##### Magias Feéricas
+| Nível de Feiticeiro | Talento (esfera)               |
+|:------------------|:---------------------------------|
+| 1º| Cativar (Mente), Luz Reveladora (Luz)            | 
+| 3º| Delírio (Mente), Teletransporte Rápido (Distorção) |
+| 5º| Cintilar (Distorção), Terreno Ilusório (Ilusão)  |
+| 7º| Confusão (Mente), Disfarce Ilusório (Ilusão)     |
+| 9º| Paralizar (Mente), Ilusões Potentes (Ilusão      |  
+
+#### Magias Feéricas
+Sua ligação com o Reino das Fadas concede a você uma afinidade com encantos. A partir do 3º nível, você receberá talentos mágicos adicionais após atingir níveis específicos nesta classe, conforme mostrado na tabela de Magias Feéricas. Essas magias contam como magias de feiticeiro para você. Se esta magia for de uma esfera de magias que você já possui acesso, você recebe um talento específico, do contrário, você ganha acesso às habilidades iniciais da esfera. Se você já possuir o talento específico, você poderá escolher outro talento da mesma esfera.
+
+
+#### Sintonização Sazonal
+A partir do 6º nível, você pode se alinhar com uma das estações, como uma verdadeira criatura feérica. No fim de cada descanso longo, escolha uma estação e ganhe os benefícios listados abaixo. Cada estação lhe concede resistência a um tipo de dano e vantagem em determinadas jogadas.
+
+| Estação   | Tipo de Dano | Jogada com Vantagem                |
+|:----------|:------------:|:----------------------------------:|
+| Primavera | Elétrico     | Jogadas de Dados de vida           |
+| Verão     | Fogo         | Jogadas de Iniciativa              |
+| Outono    | Veneno       | Testes de Concentração             |
+| Inverno   | Frio         | Testes de Resistência Contra Morte |
+
+
+#### Magia dos Caminhos
+Sua magia te permite oscilar entre a Agréstia das Fadas e o plano material. Começando no 14º nível, sempre que conjurar uma magia que custe ao menos 1 ponto de magia, você pode escolher se teleportar para um espaço não ocupado que consiga ver a até 9 metros de você.
+
+Quando usar esta característica, você pode gastar pontos de magia adicionais para aumentar a distância em 3 metros para cada ponto de magia.
+
+#### Presença Intoxicante
+Você emana a presença enfeitiçante de um Arquifada. A partir do 18º nível, criaturas à sua escolha a até 4,5 metros de você tem desvantagem em testes de resistências para resistir a suas magias de Mente.
+
+\page

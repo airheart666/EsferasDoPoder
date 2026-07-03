@@ -731,6 +731,7 @@ function renderFavorites() {
 const SECTION_DESCRIPTIONS = {
   'Esferas de Magia': 'Um sistema de magia alternativo para D&D 5ª edição, baseado em Esferas temáticas de habilidades e Pontos de Magia, no lugar de magias e espaços de magia tradicionais.',
   'Esferas de Poder': 'Um suplemento de combate para D&D 5ª edição: expande o que personagens marciais podem fazer, combinando esferas e talentos marciais em vez de ficar preso a uma única classe.',
+  'Classes': 'Classes de D&D 5ª edição adaptadas ao sistema de Esferas — cada uma com progressão de nível, características e opções de subclasse. Escolha uma para montar seu personagem.',
 };
 
 function findChapterAnchorByTitle(title) {
@@ -821,6 +822,45 @@ function buildContinueBanner() {
   return box;
 }
 
+// Grade de cards de acesso (esferas na capa / classes na landing de Classes).
+function buildAccessCards(children) {
+  const grid = document.createElement('div');
+  grid.className = 'sphere-card-grid';
+  for (const child of children) {
+    const card = document.createElement('a');
+    card.href = child.anchor;
+    card.className = 'sphere-card';
+
+    const theme = sphereThemes[child.text];
+    let sig = null;
+    if (theme) {
+      card.classList.add('themed');
+      card.style.setProperty('--sphere-h', theme.h);
+      card.style.setProperty('--sphere-s', theme.s);
+      if (theme.sig && availableSigils.has(theme.sig)) sig = makeSigil(theme.sig, 'card-sig');
+    }
+
+    const text = document.createElement('div');
+    text.className = 'sphere-card-text';
+    const name = document.createElement('span');
+    name.className = 'sphere-card-name';
+    name.textContent = child.text;
+    text.appendChild(name);
+    const cd = cardDescription(child);
+    if (cd) {
+      const d = document.createElement('span');
+      d.className = 'sphere-card-desc';
+      d.textContent = cd;
+      text.appendChild(d);
+    }
+
+    if (sig) card.appendChild(sig);
+    card.appendChild(text);
+    grid.appendChild(card);
+  }
+  return grid;
+}
+
 function buildCoverIndex(tocTrees) {
   const wrap = document.createElement('div');
   wrap.className = 'cover-index';
@@ -832,7 +872,7 @@ function buildCoverIndex(tocTrees) {
     const col = document.createElement('div');
     col.className = 'cover-index-col';
     // cor de seção nos cards não-esfera (0 = magia, 1 = marcial)
-    col.dataset.section = ti === 1 ? 'martial' : 'magic';
+    col.dataset.section = ti === 2 ? 'classes' : ti === 1 ? 'martial' : 'magic';
 
     const heading = document.createElement('h2');
     const headingLink = document.createElement('a');
@@ -849,45 +889,7 @@ function buildCoverIndex(tocTrees) {
       col.appendChild(p);
     }
 
-    const grid = document.createElement('div');
-    grid.className = 'sphere-card-grid';
-    for (const child of root.children) {
-      const card = document.createElement('a');
-      card.href = child.anchor;
-      card.className = 'sphere-card';
-
-      // Identidade da esfera: matiz próprio + sigilo (herdando a cor via CSS).
-      const theme = sphereThemes[child.text];
-      let sig = null;
-      if (theme) {
-        card.classList.add('themed');
-        card.style.setProperty('--sphere-h', theme.h);
-        card.style.setProperty('--sphere-s', theme.s);
-        if (theme.sig && availableSigils.has(theme.sig)) sig = makeSigil(theme.sig, 'card-sig');
-      }
-
-      const text = document.createElement('div');
-      text.className = 'sphere-card-text';
-
-      const name = document.createElement('span');
-      name.className = 'sphere-card-name';
-      name.textContent = child.text;
-      text.appendChild(name);
-
-      const cd = cardDescription(child);
-      if (cd) {
-        const d = document.createElement('span');
-        d.className = 'sphere-card-desc';
-        d.textContent = cd;
-        text.appendChild(d);
-      }
-
-      if (sig) card.appendChild(sig);
-      card.appendChild(text);
-      grid.appendChild(card);
-    }
-    col.appendChild(grid);
-
+    col.appendChild(buildAccessCards(root.children));
     wrap.appendChild(col);
   });
 
@@ -903,10 +905,13 @@ function buildOnThisPage(sourceFrag, isSphere) {
   // Hierarquia: h2 (esfera) › h3 (grupo de talentos) › h4-grupo ".talent-group"
   // (sub-grupo, ex.: "Esfera de Alteração") › talento (heading primário de cada
   // card). Sub-habilidades h5 DENTRO de um pacote (não :first-child) ficam de fora.
-  const heads = [...sourceFrag.querySelectorAll(
-    'section[id] h2, section[id] h3, section[id] h4.talent-group,' +
-    ' section[id] .talent-card > h4:first-child, section[id] .talent-card > h5:first-child'
-  )].filter(h => h.id && h.textContent.trim());
+  // Esferas: talentos vêm de cards. Classes (leitura limpa, sem cards): usa os
+  // headings crus h3/h4 (características e sub-características) para o índice.
+  const sel = isSphere
+    ? 'section[id] h2, section[id] h3, section[id] h4.talent-group,' +
+      ' section[id] .talent-card > h4:first-child, section[id] .talent-card > h5:first-child'
+    : 'section[id] h2, section[id] h3, section[id] h4';
+  const heads = [...sourceFrag.querySelectorAll(sel)].filter(h => h.id && h.textContent.trim());
   if (heads.length < 3) return null;
 
   const details = document.createElement('details');
@@ -1385,13 +1390,15 @@ function renderChapter(index) {
   }
   // Post-processos de compreensão (ordem importa: cada um pula o que o outro
   // já marcou). Só nas esferas para a ficha/aprimoramentos/base.
-  const isSphere = !isCover && chapter.title !== PARAMS_CHAPTER_TITLE && chapter.title !== GLOSSARY_CHAPTER_TITLE;
+  const isSphere = !isCover && chapter.sectionLabel !== 'Classes'
+    && chapter.title !== PARAMS_CHAPTER_TITLE && chapter.title !== GLOSSARY_CHAPTER_TITLE;
   if (isSphere) enhanceTalents(sectionsFrag);
   linkSphereCrossRefs(sectionsFrag, chapter);
   linkGlossaryTerms(sectionsFrag, chapter);
   highlightMechanics(sectionsFrag);
   if (isSphere) injectSphereSigil(sectionsFrag, chapter);
   if (isSphere) addFavoriteStars(sectionsFrag, chapter);
+  injectSubclassTable(sectionsFrag, chapter);
 
   if (isCover) {
     frag.appendChild(sectionsFrag);
@@ -1405,6 +1412,11 @@ function renderChapter(index) {
     const miniToc = buildOnThisPage(sectionsFrag, isSphere);
     if (miniToc) frag.appendChild(miniToc);
     frag.appendChild(sectionsFrag);
+    // Landing da seção Classes: mostra cards de acesso a cada classe.
+    if (chapter.sectionLabel === 'Classes' && chapter.title === 'Classes'
+        && tocTreesGlobal[2] && tocTreesGlobal[2][0]) {
+      frag.appendChild(buildAccessCards(tocTreesGlobal[2][0].children));
+    }
   }
 
   if (chapter.leadInHtml) {
@@ -1432,7 +1444,8 @@ function renderChapter(index) {
    escalonado dos blocos de topo (revelação "sangria de tinta"). */
 function applySectionTheme(content, sectionLabel) {
   const sec = sectionLabel === 'Esferas de Poder' ? 'martial'
-            : sectionLabel === 'Esferas de Magia' ? 'magic' : '';
+            : sectionLabel === 'Esferas de Magia' ? 'magic'
+            : sectionLabel === 'Classes' ? 'classes' : '';
   if (sec) content.dataset.section = sec; else content.removeAttribute('data-section');
 }
 
@@ -1473,6 +1486,55 @@ function injectSphereSigil(sectionsFrag, chapter) {
   if (!t || !t.sig || !availableSigils.has(t.sig)) return;
   const h2 = sectionsFrag.querySelector('section[id] h2');
   if (h2 && h2.parentNode) h2.parentNode.insertBefore(makeSigil(t.sig), h2);
+}
+
+// Característica de classe que introduz as subclasses (recebe a tabela de subclasses).
+const SUBCLASS_FEATURE = {
+  'Artífice': 'Especialidade de Artífice',
+  'Feiticeiro': 'Origem de Feitiçaria',
+  'Guerreiro': 'Arquétipo Marcial',
+  'Ladino': 'Arquétipo de Ladino',
+  'Monge': 'Tradição Monástica',
+};
+
+// Nos capítulos-base de classe, insere na característica de subclasse uma tabela
+// com as subclasses disponíveis (nome com link + descrição).
+function injectSubclassTable(sectionsFrag, chapter) {
+  const featureText = SUBCLASS_FEATURE[chapter.title];
+  if (!featureText || !tocTreesGlobal[2] || !tocTreesGlobal[2][0]) return;
+  const classNode = tocTreesGlobal[2][0].children.find(c => c.text === chapter.title);
+  if (!classNode) return;
+  const subs = [];
+  for (const child of classNode.children) {
+    if (child.anchor.startsWith('#grp-') && child.children) subs.push(...child.children);
+  }
+  if (subs.length === 0) return;
+  const heading = [...sectionsFrag.querySelectorAll('h3')]
+    .find(h => normalizeTerm(h.textContent) === normalizeTerm(featureText));
+  if (!heading) return;
+
+  const table = document.createElement('table');
+  table.className = 'subclass-table';
+  table.innerHTML = '<thead><tr><th>Subclasse</th><th>Descrição</th></tr></thead>';
+  const tbody = document.createElement('tbody');
+  for (const sub of subs) {
+    const tr = document.createElement('tr');
+    const tdName = document.createElement('td');
+    const a = document.createElement('a');
+    a.href = sub.anchor;
+    a.className = 'subclass-link';
+    a.textContent = sub.text;
+    tdName.appendChild(a);
+    const tdDesc = document.createElement('td');
+    tdDesc.textContent = cardDescriptions[sub.text] || '';
+    tr.appendChild(tdName);
+    tr.appendChild(tdDesc);
+    tbody.appendChild(tr);
+  }
+  table.appendChild(tbody);
+  const next = heading.nextElementSibling;
+  const after = next && !/^H[1-6]$/.test(next.tagName) ? next : heading;
+  after.insertAdjacentElement('afterend', table);
 }
 
 /* ============================================================
@@ -1682,6 +1744,13 @@ function handleInternalLinkClick(e) {
   if (!a) return;
   // Referências (pré-requisito de talento, esfera citada) são tratadas pelo peek
   if (a.classList.contains('ref-link') || a.classList.contains('sphere-xref')) return;
+  // Nó de grupo na sidebar (ex.: "Especialidades de Artífice"): só alterna a lista.
+  if (a.classList.contains('toc-grp')) {
+    e.preventDefault();
+    const li = a.closest('li.toc-has-children');
+    if (li) li.classList.toggle('toc-collapsed');
+    return;
+  }
   const href = a.getAttribute('href');
 
   // Página do glossário completo / favoritos
@@ -1748,8 +1817,8 @@ function buildSidebar(tocTrees) {
 
   tocTrees.forEach((tree, i) => {
     const list = buildTocList(tree);
-    // 0 = Esferas de Magia (oxblood), 1 = Esferas de Poder (verdete)
-    list.dataset.section = i === 1 ? 'martial' : 'magic';
+    // 0 = Esferas de Magia (oxblood), 1 = Esferas de Poder (verdete), 2 = Classes (índigo)
+    list.dataset.section = i === 2 ? 'classes' : i === 1 ? 'martial' : 'magic';
     frag.appendChild(list);
     if (i < tocTrees.length - 1) {
       frag.appendChild(document.createElement('hr'));
@@ -1766,8 +1835,11 @@ function buildTocList(entries) {
     li.className = `toc-l${entry.level}`;
 
     const a = document.createElement('a');
-    a.href = entry.anchor;
     a.className = 'toc-link';
+    // Nó de grupo (âncora #grp-…, sem página): só expande/recolhe, não navega.
+    const isGroup = entry.anchor.startsWith('#grp-');
+    if (isGroup) { a.href = '#'; a.classList.add('toc-grp'); }
+    else a.href = entry.anchor;
 
     // Item de esfera: tinge pelo matiz da esfera + mini-sigilo (se houver).
     const theme = sphereThemes[entry.text];

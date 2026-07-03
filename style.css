@@ -15,6 +15,7 @@
   --oxblood:          #7c2b23;  --oxblood-light:  #96382c;
   --verdigris:        #356f5f;  --verdigris-light:#2c6152;
   --copper:           #a4692f;
+  --indigo:           #41498a;  --indigo-light:   #4d57a0;
   --accent:           var(--oxblood);
   --accent-light:     var(--oxblood-light);
   --acc-l-default:    36%;   /* luminosidade do accent por esfera (claro) */
@@ -61,6 +62,7 @@
   --oxblood:          #c06152;  --oxblood-light:  #d5715f;
   --verdigris:        #6fae98;  --verdigris-light:#8ac9b3;
   --copper:           #cf9257;
+  --indigo:           #8e99d8;  --indigo-light:   #a6b0e6;
   --acc-l-default:    64%;   /* accent por esfera mais claro no tema escuro */
   --acc-bright-delta: 10%;
   --sidebar-bg:       #1b150d;
@@ -92,6 +94,7 @@
 
 /* Distinção de seção: a metade marcial re-tinge o accent para verdete */
 [data-section="martial"] { --accent: var(--verdigris); --accent-light: var(--verdigris-light); }
+[data-section="classes"] { --accent: var(--indigo); --accent-light: var(--indigo-light); }
 
 /* Identidade por esfera: quando #content tem tema de esfera, o accent vem do
    matiz/saturação (inline) via HSL, com L fixa por tema (Escuridão/Morte podem
@@ -179,6 +182,7 @@ body::after {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 0; /* permite encolher: tabelas largas rolam dentro do .wide/.table-wrap em vez de alargar a página */
 }
 
 /* ============================================================
@@ -483,6 +487,7 @@ body.modal-open { overflow: hidden; }
    ============================================================ */
 #content {
   flex: 1;
+  min-width: 0; /* idem: contém conteúdo largo (tabelas) sem esticar a coluna */
   padding: 2rem 2.5rem;
   max-width: 860px;
   margin: 0 auto;
@@ -619,6 +624,21 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
   padding: 0 1.5rem;
 }
 .wide table { min-width: 600px; }
+
+/* Tabela de progressão de classe (bloco {{classTable}}) — legenda + compacta */
+/* Legenda "O X" da tabela de progressão fica deslocada da tabela — ocultamos. */
+.class-table > h5 { display: none; }
+.class-table table { font-size: 0.82rem; }
+.class-table th { text-align: center; }
+.class-table td { vertical-align: top; }
+.class-table td:first-child,
+.class-table th:first-child { text-align: center; font-weight: 700; white-space: nowrap; }
+
+/* Tabela de subclasses (injetada na característica de subclasse de cada classe) */
+.subclass-table { margin: 1rem 0 1.5rem; }
+.subclass-table td:first-child { white-space: nowrap; }
+.subclass-link { color: var(--accent); font-weight: 600; text-decoration: none; }
+.subclass-link:hover { color: var(--accent-light); text-decoration: underline; }
 
 /* ============================================================
    CALLOUT / NOTE
@@ -787,7 +807,7 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
    ============================================================ */
 .cover-index {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2.5rem;
   margin: 1.5rem 0 2.5rem;
 }
@@ -900,6 +920,7 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 /* selo de seção: arcano (❧) × marcial (⚔) */
 [data-section="magic"] .chapter-breadcrumb::before { content: '❧ '; }
 [data-section="martial"] .chapter-breadcrumb::before { content: '⚔ '; }
+[data-section="classes"] .chapter-breadcrumb::before { content: '✦ '; }
 
 /* sigilo da esfera (acima do título) — herda a cor da esfera */
 .sphere-sigil {
@@ -1367,6 +1388,12 @@ h4.base-ability::after {
 }
 .glossary-term:hover { color: var(--accent-light); }
 .glossary-term:active { background: var(--mark-bg); color: var(--mark-text); border-radius: 2px; }
+
+/* No cabeçalho da tabela (fundo escuro, texto claro), realces herdam a cor clara
+   do cabeçalho — o accent da seção (ex.: índigo das classes) conflitaria. */
+th .glossary-term,
+th .glossary-term:hover { color: inherit; }
+th .dice, th .dc { color: inherit; background: transparent; }
 
 #glossary-sheet { display: flex; align-items: flex-end; justify-content: center; }
 

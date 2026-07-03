@@ -1,0 +1,418 @@
+## Artífice
+Mestres da invenção, os artífices usam engenhosidade e magia para desbloquear capacidades extraordinárias em objetos. Eles veem a magia como um sistema complexo esperando para ser decodificado e então utilizado em suas magias e invenções. Você encontrará tudo o que precisa para interpretar um desses inventores nas próximas seções.
+
+Os artífices usam uma variedade de ferramentas para canalizar seu poder arcano. Para conjurar uma magia, um artífice pode usar suprimentos de alquimista para criar um elixir potente, suprimentos de calígrafo para inscrever um sigilo de poder ou ferramentas de funileiro para criar um amuleto temporário. A magia dos artífices está ligada às suas ferramentas e talentos, e poucos outros personagens conseguem produzir a ferramenta certa para um trabalho tão bem quanto um artífice.
+
+{{classTable,frame,decoration,wide
+##### O Artífice
+| Nível | Bônus de Proficiência | Características | Infusões Conhecidas | Itens Infundidos|Talentos Mágicos | Pontos de Magia|
+|:---:|:---:|:---------------------------------------------------------------|:-:|:-:|:-:|:-:|
+| 1º  | +2  | Manipulação Mágica, Conjuração de Feitiços                     | - | - | 1 | 1 |
+| 2º  | +2  | Infundir Item                                                  | 4 | 2 | 1 | 1 |
+| 3º  | +2  | Especialidade de Artífice, A Ferramenta Certa para o Trabalho  | 4 | 2 | 2 | 2 |
+| 4º  | +2  | Incremento no Valor de Habilidade                              | 4 | 2 | 3 | 2 |
+| 5º  | +3  | Característica de Especialidade de Artífice                    | 4 | 2 | 3 | 3 |
+| 6º  | +3  | Expertise em ferramentas                                       | 6 | 3 | 4 | 3 |
+| 7º  | +3  | Genialidade Súbita                                             | 6 | 3 | 5 | 4 |
+| 8º  | +3  | Incremento no Valor de Habilidade                              | 6 | 3 | 6 | 4 |
+| 9º  | +4  | Característica de Especialidade de Artífice                    | 6 | 3 | 6 | 5 |
+| 10º | +4  | Adepto de Itens Mágicos                                        | 8 | 4 | 7 | 5 |
+| 11º | +4  | Item Armazenador de Magia                                      | 8 | 4 | 8 | 6 |
+| 12º | +4  | Incremento no Valor de Habilidade                              | 8 | 4 | 9 | 6 |
+| 13º | +5  | ─                                                              | 8 | 4 | 9 | 7 |
+| 14º | +5  | Especialista de Itens Mágicos                                  | 10| 5 | 10| 7 |
+| 15º | +5  | Característica de Especialidade de Artífice                    | 10| 5 | 11| 8 |
+| 16º | +5  | Incremento no Valor de Habilidade                              | 10| 5 | 12| 8 |
+| 17º | +6  | -                                                              | 10| 5 | 12| 9 |
+| 18º | +6  | Mestre de Itens Mágicos                                        | 12| 6 | 13| 9 |
+| 19º | +6  | Incremento no Valor de Habilidade                              | 12| 6 | 14| 10|
+| 20º | +6  | Alma do Artifício                                              | 12| 6 | 15| 10|
+}}
+
+### Características de classe
+*Como um artífice, você possui as seguintes características.*
+
+#### Pontos de vida:
+Dado de vida: 1d8 por nível de artífice
+<br>
+Pontos de vida no 1º nível: 8 + modificador de Constituição.
+<br>
+Pontos de vida nos níveis seguintes: 1d8 (ou 5) + modificador de constituição por nível de classe após o 1º.
+
+#### Proficiências
+**Armadura:** Armadura leve, armadura média, escudos
+<br>
+**Armas:** Armas simples
+<br>
+**Ferramentas:** Ferramentas de ladrão, ferramentas de latoeiro, um tipo de ferramentas de artesão de sua escolha
+<br>
+**Testes de Resistência:** Constituição e Inteligência
+<br>
+**Perícias:** Escolha duas das seguintes; Arcanismo, História, Investigação, Medicina, Natureza, Percepção, Prestidigitação
+<br>
+#### Equipamento
+*Você começa com o seguinte equipamento, além do equipamento concedido pelo seu antecedente:*
+
+•	duas armas simples
+
+•	besta leve e 20 virotes
+
+•	(a) armadura de couro batido ou (b) armadura de escamas
+
+•	ferramentas de ladrão e um pacote de explorador
+Alternativamente, você pode começar com 5d4x10 de ouro inicial para comprar seus equipamentos
+
+### Manipulação Mágica
+No 1º nível, você aprendeu a investir uma centelha de magia em objetos mundanos. Para usar esta habilidade, você precisa ter ferramentas de ladrão ou ferramentas de artesão em mãos. Você então toca um objeto não mágico minúsculo como uma ação e concede a ele uma das seguintes propriedades mágicas à sua escolha:
+
+
+
+• :: O objeto emite luz brilhante em um raio de 1,5 metro e luz fraca por mais 1,5 metro.
+
+• :: Sempre que tocado por uma criatura, o objeto emite uma mensagem gravada que pode ser ouvida a até 3 metros de distância. Você profere a mensagem ao conceder esta propriedade ao objeto, e a gravação não pode ter mais de 6 segundos de duração.
+
+• :: O objeto emite continuamente um odor ou um som não verbal à sua escolha (vento, ondas, chilreio ou similar). O fenômeno escolhido é perceptível a até 3 metros de distância.
+
+• :: Um efeito visual estático aparece em uma das superfícies do objeto. Este efeito pode ser uma imagem, até 25 palavras de texto, linhas e formas, ou uma mistura desses elementos, como você preferir.
+
+A propriedade escolhida dura indefinidamente. Com uma ação, você pode tocar o objeto e encerrar a propriedade antecipadamente.
+
+Você pode conceder magia a vários objetos, tocando um objeto cada vez que usar esta habilidade, embora um único objeto só possa possuir uma propriedade por vez. O número máximo de objetos que você pode afetar com esta habilidade ao mesmo tempo é igual ao seu modificador de Inteligência (mínimo de um objeto). Se você tentar exceder o seu máximo, a propriedade mais antiga termina imediatamente e, em seguida, a nova propriedade é aplicada.
+
+### Conjuração
+Você estudou o funcionamento da magia e como conjurar magias, canalizando-a através de objetos. Para observadores, você não parece conjurar magias de forma convencional; você parece produzir maravilhas a partir de itens mundanos e invenções bizarras. 
+
+#### Ferramentas Necessárias
+Você produz os efeitos mágicos de artífice por meio de suas ferramentas. Você deve ter um foco em conjuração — especificamente ferramentas de ladrão ou algum tipo de ferramenta de artesão — em mãos ao conjurar qualquer magia com esta habilidade de Conjuração. Você deve ser proficiente com a ferramenta para usá-la desta forma. Consulte o capítulo sobre equipamentos no Livro do Jogador para obter descrições dessas ferramentas.
+
+Após obter a habilidade Infundir Item no 2º nível, você também pode usar qualquer item que contenha uma de suas infusões como foco de conjuração.
+
+#### Conjuração de Esferas
+Você pode combinar esferas e talentos para criar efeitos mágicos. Você ganha uma reserva de magias, talentos mágicos e uma tradição de conjuração.
+
+#### Reserva de Magias
+Você ganha uma pequena reserva de energia que pode invocar para criar efeitos verdadeiramente maravilhosos, chamada reserva de magias. Essa reserva contém uma quantidade de pontos de magia igual ao seu modificador de Inteligência (mínimo: 1). Você ganha pontos de magia adicionais iguais à metade do seu nível de artífice (arredondado para baixo), como visto na tabela de sua classe. Essa reserva é reabastecida após um descanso longo. (Observação: em multiclasses, os pontos de magia do seu modificador de habilidade chave são ganhos apenas uma vez.)
+
+#### Talentos Mágicos
+A coluna Talentos Mágicos mostra o número de talentos mágicos ganhos com seus níveis de artífice. Além disso, sempre que um nível lhe conceder um novo talento de magia, você pode optar por escolher um talento da esfera marcial de Engenhosidade. Se um talento de Engenhosidade requisitar uma jogada de ataque ou causar um teste de resistência, você pode usar sua habilidade de conjuração para determinar o CD de resistência e o bônus da jogada de ataque.
+
+#### Habilidade de Conjuração
+Inteligência é sua habilidade de conjuração para suas magias de artífice; sua compreensão da teoria por trás da magia permite que você maneje essas magias com habilidade superior. Você usa sua Inteligência sempre que uma magia de artífice se referir à sua habilidade de conjuração. Além disso, você usa seu modificador de Inteligência ao definir a CD de salvaguarda para uma magia de artífice que você conjura e ao fazer uma jogada de ataque com uma.
+<br>
+<br>
+**CD de resistência à magia** = 8 + seu bônus de proficiência + seu modificador de Inteligência
+<br>
+**Modificador de ataque de magia** = seu bônus de proficiência + seu modificador de Inteligência
+
+
+### Infundir Item
+No 2º nível, você ganha a habilidade de imbuir itens mundanos com certas infusões mágicas, transformando-os em itens mágicos.
+
+### Infusões Conhecidas
+Ao ganhar esta habilidade, escolha quatro infusões de artífice para aprender. Você aprende infusões adicionais à sua escolha ao atingir certos níveis nesta classe, conforme mostrado na coluna Infusões Conhecidas da tabela Artífice.
+
+Sempre que você ganha um nível nesta classe, você pode substituir uma das infusões de artífice que aprendeu por uma nova.
+
+### Infundindo um Item
+Sempre que terminar um descanso longo, você pode tocar um objeto não mágico e imbuí-lo com uma de suas infusões de artífice, transformando-o em um item mágico. Uma infusão funciona apenas em certos tipos de objetos, conforme especificado na descrição da infusão. Se o item exigir sintonização, você pode se sintonizar com ele no instante em que o infundir.
+
+
+
+Se decidir se sintonizar com o item posteriormente, você deverá fazê-lo usando o processo normal de sintonização (consulte as regras de sintonização no Guia do Mestre).
+
+Sua infusão permanece em um item indefinidamente, mas quando você morre, a infusão desaparece após um número de dias igual ao seu modificador de Inteligência (mínimo de 1 dia). A infusão também desaparece se você substituir seu conhecimento sobre a infusão.
+
+Você pode infundir mais de um objeto não mágico ao final de um descanso longo; o número máximo de objetos aparece na coluna Itens Infundidos da tabela do Artífice. Você deve tocar em cada um dos objetos, e cada uma de suas infusões pode estar em apenas um objeto por vez. Além disso, nenhum objeto pode suportar mais de uma de suas infusões por vez. Se você tentar exceder o número máximo de infusões, a infusão mais antiga termina e, então, a nova infusão é aplicada.
+
+Se uma infusão termina em um item que contém outras coisas, como uma bolsa de contenção, seu conteúdo aparece inofensivamente dentro e ao redor de seu espaço.
+
+### Especialidade de Artífice
+No 3º nível, você escolhe o tipo de especialista que deseja ser. Sua escolha lhe concede características no 5º nível e novamente no 9º e 15º níveis.
+
+### A Ferramenta Certa para o Trabalho
+No 3º nível, você aprendeu a produzir exatamente a ferramenta que precisa: com ferramentas de ladrão ou de artesão em mãos, você pode criar magicamente um conjunto de ferramentas de artesão em um espaço desocupado a até 1,5 metro de você. Essa criação requer 1 hora de trabalho ininterrupto, que pode coincidir com um descanso curto ou longo. Embora sejam produto de magia, as ferramentas não são mágicas e desaparecem quando você usa essa habilidade novamente.
+
+### Aprimoramento de Valor de Habilidade
+Ao atingir o 4º, 8º, 12º, 16º e 19º níveis, você pode aumentar um valor de habilidade de sua escolha em 2, ou pode aumentar dois valores de habilidade de sua escolha em 1. Como de costume, você não pode aumentar um valor de habilidade acima de 20 usando essa habilidade.
+
+### Expertise em Ferramentas
+No 6º nível, seu bônus de proficiência agora é dobrado para qualquer teste de habilidade que você fizer que use sua proficiência com uma ferramenta.
+
+### Genialidade Súbita
+No 7º nível, você ganha a habilidade de encontrar soluções sob pressão. Quando você ou outra criatura que você possa ver a até 9 metros de você fizer um teste de habilidade ou uma salvaguarda, você pode usar sua reação para adicionar seu modificador de Inteligência à jogada.
+
+Você pode usar esta habilidade um número de vezes igual ao seu modificador de Inteligência (mínimo de uma vez). Você recupera todos os usos gastos ao terminar um descanso longo.
+
+### Adepto de Itens Mágicos
+Ao atingir o 10º nível, você alcança uma compreensão profunda de como usar e fabricar itens mágicos:
+
+Você pode se sintonizar com até quatro itens mágicos de uma vez.
+Se você criar um item mágico com raridade comum ou incomum, levará um quarto do tempo normal e custará metade do ouro usual.
+
+### Item Armazenador de Magia
+No 11º nível, você agora pode armazenar uma magia em um objeto. Sempre que terminar um descanso longo, você pode tocar em uma arma simples ou marcial ou em um item que possa usar como foco de conjuração e armazenar uma magia nele, escolhendo um efeito mágico que custe 2 pontos de magia ou menos das suas magias de artífice e que exija 1 ação para ser conjurada.
+
+Enquanto segura o objeto, uma criatura pode realizar uma ação para produzir o efeito da magia a partir dele, usando seu modificador de atributo de conjuração. Se a magia exigir concentração, a criatura deve se concentrar. A magia permanece no objeto até que seja usada um número de vezes igual ao dobro do seu modificador de Inteligência (mínimo de duas vezes) ou até que você use esta característica novamente para armazenar uma magia em um objeto.
+
+### Especialista de Itens Mágicos
+No 14º nível, sua perícia com itens mágicos se aprofunda mais:
+
+Você pode se sintonizar com até cinco itens mágicos simultaneamente.
+Você ignora todos os requisitos de classe, raça, magia e nível para se sintonizar ou usar um item mágico.
+
+### Mestre de Itens Mágicos
+A partir do 18º nível, você pode sintonizar até seis itens mágicos simultaneamente.
+
+### Alma do Artifício
+No 20º nível, você desenvolve uma conexão mística com seus itens mágicos, da qual pode se valer para proteção:
+
+Você ganha +1 de bônus em todos os testes de resistência por item mágico com o qual esteja sintonizado.
+Se você for reduzido a 0 pontos de vida, mas não for morto imediatamente, você pode usar sua reação para encerrar uma de suas infusões de artífice, fazendo com que você caia para 1 ponto de vida em vez de 0.
+
+
+
+
+\page
+Artífices seguem diversas disciplinas. Aqui estão algumas opções de especialidades que você pode escolher no 3º nível.
+
+## Alquimista
+Um Alquimista é especialista em combinar reagentes para produzir efeitos místicos. Os Alquimistas usam suas criações para dar vida e sugá-la. A Alquimia é a mais antiga das tradições dos artífices, e sua versatilidade tem sido valorizada há muito tempo em tempos de guerra e paz.
+
+#### Proficiência em Ferramentas
+Ao adotar esta especialização no 3º nível, você ganha proficiência com suprimentos de alquimia. Se você já possui esta proficiência, ganha proficiência com outro tipo de ferramenta de artesão à sua escolha.
+
+#### Magias de Alquimista
+A partir do 3º nível, você receberá talentos mágicos adicionais após atingir níveis específicos nesta classe, conforme mostrado na tabela de Magias de Alquimista. Essas magias contam como magias de artífice para você. Se esta magia for de uma esfera de magias que você já possui acesso, você recebe um talento específico, do contrário, você ganha acesso às habilidades iniciais da esfera. Se você já possuir o talento específico, você poderá escolher outro talento da mesma esfera.
+
+Além disso, sempre que um nível nessa classe te conceder um novo talento de magia, você pode optar por escolher um talento da esfera Marcial de Alquimia.
+
+##### Magias de Alquimista
+| Nível de Artífice | Talento (esfera)                                                              |
+|:------------------|:------------------------------------------------------------------------------|
+| 3º                | Revitalizar (Vida), Evenenamento (Morte)                                      | 
+| 5º                | Esfera (forma de explosão, Destruição), Veneno (tipo de explosão, Destruição) |
+| 9º                | Genotipo Elemental (Alteração), Massa (Universal)                             |
+| 13º               | Drenante (tipo de explosão, Destruição), Imortal (Proteção)                   |
+| 17º               | Ressureição (Vida), Nuvem (forma de explosão, Destruição)                     |
+
+#### Elixir Experimental
+A partir do 3º nível, sempre que terminar um descanso longo, você pode magicamente produzir um elixir experimental em um frasco vazio que tocar. Role na tabela Elixir Experimental para ver o efeito do elixir, que é ativado quando alguém bebe o elixir. Com uma ação, uma criatura pode beber o elixir ou administrá-lo a uma criatura incapacitada.
+
+Você pode criar elixires experimentais adicionais gastando 1 ponto de magia para cada um. Ao fazer isso, você usa sua ação para criar o elixir em um frasco vazio que tocar e escolhe o efeito do elixir na tabela Elixir Experimental.
+
+Criar um elixir experimental requer que você tenha suprimentos de alquimia consigo, e qualquer elixir que você criar com esta característica dura até ser bebido ou até o final do seu próximo descanso longo.
+
+Ao atingir certos níveis nesta classe, você pode fazer mais elixires ao final de um descanso longo: dois no 6º nível e três no 15º nível. Role para o efeito de cada elixir separadamente. Cada elixir requer seu próprio frasco.
+
+##### Elixir Experimental
+| d6 | Efeito |
+|:---|:-----|
+| 1  | **Cura.** O bebedor recupera uma quantidade de pontos de vida igual a 2d4 + seu Modificador de Inteligência.     |
+| 2  | **Rapidez.** A velocidade de caminhada do bebedor aumenta em 3 metros por 1 hora.     |
+| 3  | **Resiliência.** O bebedor ganha +1 de bônus na CA por 10 minutos.     |
+| 4  | **Ousadia.** O bebedor pode rolar um d4 e somar o valor obtido a cada jogada de ataque e teste de resistência que fizer no minuto seguinte.|
+| 5  | **Voo.** O bebedor ganha uma velocidade de voo de 3 metros por 10 minutos.     |
+| 6  | **Transformação.** O corpo do bebedor é transformado, recebendo adaptação aquática, mudando de aparência, ou fazendo surgir armas naturais como garras ou presas. O bebedor determina a transformação causada pelo efeito, cujos efeitos duram 10 minutos.|
+
+
+#### Sábio Alquímico
+No 5º nível, você desenvolveu um domínio magistral de substâncias químicas mágicas, aprimorando a cura e o dano delas. Sempre que conjurar uma magia usando os suprimentos de alquimista como foco de conjuração, você ganha um bônus em uma jogada da magia. Essa jogada deve restaurar pontos de vida ou ser uma jogada de dano que cause dano ácido, de fogo, necrótico ou venenoso, e o bônus é igual ao seu modificador de Inteligência.
+
+#### Reagentes Restauradores
+A partir do 9º nível, você pode incorporar reagentes restauradores em algumas de suas obras:
+
+• Sempre que uma criatura bebe um elixir experimental que você criou, a criatura ganha pontos de vida temporários iguais a 2d6 + seu modificador de Inteligência.
+
+• Você pode conjurar a magia Restaurar da esfera de vida sem gastar pontos de magia, desde que use seus suprimentos de alquimista como foco de conjuração. Você pode fazer isso um número de vezes igual ao seu modificador de Inteligência e recupera todos os usos gastos ao terminar um descanso longo.
+
+#### Maestria Química
+Ao atingir o 15º nível, você foi exposto a tantos produtos químicos que eles representam pouco risco para você, e você pode usá-los para eliminar rapidamente certas doenças:
+
+
+
+
+•  Você ganha resistência a dano de ácido e dano de veneno, e agora é imune à condição de envenenamento.
+
+•  Você pode conjurar Restauração Maior, Restaurar Mente, Restaurar Movimento ou Cura maior, da esfera de Vida, sem gastar pontos de magia, desde que use Suprimentos de Alquimista como foco de conjuração. Depois de conjurar qualquer uma das magias com esta característica, você não poderá conjurar aquela magia com ela novamente até terminar um descanso longo.
+
+
+\page
+## Infusões de Artífice
+Infusões de Artífice são processos extraordinários que transformam rapidamente um objeto não mágico em um item mágico. A descrição de cada uma das infusões a seguir detalha o tipo de objeto que pode recebê-la, além de indicar se o item mágico resultante requer harmonização.
+
+Algumas infusões especificam um nível mínimo de artífice. Você não pode aprender tal infusão até atingir pelo menos esse nível.
+
+A menos que a descrição de uma infusão indique o contrário, você não pode aprender uma infusão mais de uma vez.
+
+
+### Afiador de Mentes
+**Item: Uma armadura ou túnica**
+
+O item infundido pode enviar um choque ao usuário para reorientar sua mente. O item tem 4 cargas. Quando o usuário falha em um teste de resistência de Constituição para manter a concentração em uma magia, o usuário pode usar sua reação para gastar 1 das cargas do item e obter sucesso. O item recupera 1d4 cargas gastas diariamente ao amanhecer.
+
+### Anel de Reabastecimento de Magia
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Um anel (requer sintonização)**
+
+Enquanto estiver usando este anel, a criatura pode recuperar 1d3 pontos de magia. Uma vez usado, o anel não pode ser usado novamente até o próximo amanhecer.
+
+### Arma Aprimorada
+**Item: Uma arma simples ou marcial**
+
+Esta arma mágica concede um bônus de +1 às jogadas de ataque e dano realizadas com ela.
+O bônus aumenta para +2 ao atingir o 10º nível nesta classe.
+
+
+### Arma Radiante
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Uma arma simples ou marcial (requer sintonização)**
+
+Esta arma mágica concede um bônus de +1 às jogadas de ataque e dano feitas com ela. Enquanto a segura, o portador pode realizar uma ação bônus para fazê-la emitir luz brilhante em um raio de 9 metros e luz fraca por mais 9 metros. O portador pode apagar a luz como uma ação bônus.
+
+A arma possui 4 cargas. Como reação imediata após ser atingido por um ataque, o portador pode gastar 1 carga e cegar o atacante até o final do próximo turno do atacante, a menos que o atacante seja bem-sucedido em um teste de resistência de Constituição contra sua CD de resistência à magia. A arma recupera 1d4 cargas gastas diariamente ao amanhecer.
+
+
+### Arma Retornável
+**Item: Uma arma simples ou marcial com a propriedade de arremesso.**
+
+Esta arma mágica concede um bônus de +1 às jogadas de ataque e dano feitas com ela e retorna à mão do portador imediatamente após ser usada para realizar um ataque à distância.
+
+### Armadura Resistente
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Uma armadura (requer sintonização)**
+
+Ao usar esta armadura, a criatura tem resistência a um dos seguintes tipos de dano, que você escolhe ao infundir o item: ácido, frio, fogo, força, raio, necrótico, venenoso, psíquico, radiante ou trovejante.
+
+### Armadura de Ferramentas
+**Item: Uma armadura**
+
+Com uma ação, uma criatura usando esta armadura infundida pode integrar ferramentas de artesão ou ferramentas de ladrão. As ferramentas permanecem integradas à armadura por 8 horas ou até que o usuário as remova como uma ação. A armadura pode ter apenas uma ferramenta integrada por vez. O usuário pode adicionar seu modificador de Inteligência a qualquer teste de habilidade que fizer com a ferramenta integrada. O usuário deve ter uma mão livre para usar a ferramenta.
+
+### Armadura de Força Mágica
+**Item: Uma armadura (requer sintonização)**
+
+Esta armadura possui 6 cargas. O usuário pode gastar as cargas da armadura das seguintes maneiras:
+
+• :: Quando o usuário realiza um teste de Força ou um teste de resistência de Força, ele pode gastar 1 carga para adicionar um bônus à jogada igual ao seu modificador de Inteligência.
+
+• :: Se a criatura for derrubada, ela pode usar sua reação para gastar 1 carga e evitar ser derrubada.
+:
+A armadura recupera 1d6 cargas gastas diariamente ao amanhecer.
+
+### Armadura de Propulsão Arcana
+**Pré-requisito: Artífice de 14º nível**
+<br>
+**Item: Uma armadura (requer sintonização)**
+
+O portador desta armadura ganha os seguintes benefícios:
+
+
+
+• :: A velocidade de caminhada do portador aumenta em 1,5 metro.
+
+• :: A armadura inclui manoplas, cada uma das quais é uma arma mágica de combate corpo a corpo que só pode ser empunhada quando a mão não está segurando nada. O portador é proficiente com as manoplas, e cada uma causa 1d8 de dano de força ao acertar e possui a propriedade de arremesso, com um alcance normal de 6 metros e um alcance longo de 18 metros. Quando arremessada, a manopla se desprende e voa em direção ao alvo do ataque, retornando imediatamente ao portador e se recolocando.
+
+• :: A armadura não pode ser removida contra a vontade do portador.
+
+• :: Se o portador não tiver membros, a armadura os substitui — mãos, braços, pés, pernas ou apêndices semelhantes. As substituições funcionam de forma idêntica às partes do corpo que substituem.
+
+### Botas do Caminho Sinuoso
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Um par de botas (requer sintonização)**
+
+Enquanto estiver usando estas botas, uma criatura pode se teletransportar até 4,5 metros como uma ação bônus para um espaço desocupado que ela possa ver. A criatura deve ter ocupado esse espaço em algum momento durante o turno atual.
+
+### Defesa Aprimorada
+**Item: Uma armadura ou um escudo**
+
+Uma criatura ganha um bônus de +1 na Classe de Armadura enquanto estiver usando (armadura) ou empunhando (escudo) o item infundido.
+
+O bônus aumenta para +2 quando você atinge o 10º nível nesta classe.
+
+### Elmo da Consciência
+**Pré-requisito: Artífice de 10º nível**
+<br>
+**Item: Um capacete (requer sintonização)**
+
+Enquanto estiver usando este capacete, a criatura tem vantagem nas jogadas de iniciativa. Além disso, o portador não pode ser surpreendido, desde que não esteja incapacitado.
+
+### Escudo de Repulsão
+**Pré-requisito: Artífice de 6º nível**
+<br>
+**Item: Um escudo (requer sintonização)**
+
+Uma criatura ganha +1 de bônus na Classe de Armadura enquanto empunha este escudo.
+
+O escudo tem 4 cargas. Enquanto o segura, o portador pode usar uma reação imediatamente após ser atingido por um ataque corpo a corpo para gastar 1 das cargas do escudo e empurrar o atacante a até 4,5 metros de distância. O escudo recupera 1d4 cargas gastas diariamente ao amanhecer.
+
+### Foco Arcano Aprimorado
+Enquanto estiver segurando este item, a criatura ganha +1 de bônus em jogadas de ataque mágico. Além disso, a criatura ignora meia cobertura ao realizar um ataque mágico.
+
+O bônus aumenta para +2 ao atingir o 10º nível nesta classe.
+
+### Replicar Item Mágico
+Usando esta infusão, você replica um item mágico específico. Você pode aprender esta infusão várias vezes; cada vez que fizer isso, escolha um item mágico que você pode fazer com ela, escolhendo nas tabelas de Itens Replicáveis. O título da tabela indica o nível que você precisa estar na classe para escolher um item da tabela. Alternativamente, você pode escolher o item mágico entre os itens mágicos comuns do jogo, excluindo poções ou pergaminhos.
+
+Nas tabelas, a entrada de um item indica se ele requer harmonização. Consulte a descrição do item no Guia do Mestre para obter mais informações sobre ele, incluindo o tipo de objeto necessário para sua criação.
+
+Se você tiver o Guia de Tudo de Xanathar, poderá escolher entre os itens mágicos comuns naquele livro ao escolher um item mágico que possa ser replicado com esta infusão.
+
+### Servo Homúnculo
+**Item: Uma gema ou cristal que valha pelo menos 100 PO**
+
+Você aprende métodos complexos para criar magicamente um homúnculo especial que lhe serve. O item que você infunde serve como o coração da criatura, em torno do qual o corpo da criatura se forma instantaneamente.
+
+Você determina a aparência do homúnculo. Alguns artífices preferem pássaros com aparência mecânica, enquanto outros preferem frascos alados ou caldeirões animados em miniatura.
+
+O homúnculo é amigável com você e seus companheiros e obedece aos seus comandos. Veja as estatísticas de jogo desta criatura no bloco de estatísticas Servo Homúnculo, que usa seu bônus de proficiência (BP) em vários lugares. 
+
+Em combate, o homúnculo compartilha sua contagem de iniciativa, mas ele joga seu turno imediatamente após o seu. Ele pode se mover e usar sua reação por conta própria, mas a única ação que ele realiza em seu turno é a ação de Esquiva, a menos que você use uma ação bônus em seu turno para comandá-lo a realizar outra ação. Essa ação pode estar em seu bloco de estatísticas ou em alguma outra ação. Se você estiver incapacitado, o homúnculo pode realizar qualquer ação à sua escolha, não apenas Esquivar.
+
+O homúnculo recupera 2d6 pontos de vida se a magia de cura for lançada sobre ele. Se você ou o homúnculo morrerem, ele desaparece, deixando seu coração no espaço.
+
+
+
+
+
+### Tiro Repetitivo
+**Item: Uma arma simples ou marcial com a propriedade munição (requer sintonização)**
+
+Esta arma mágica concede um bônus de +1 às jogadas de ataque e dano feitas com ela quando usada para realizar um ataque à distância, e ignora a propriedade de carregamento, se a possuir.
+
+Se a arma não tiver munição, ela produz a sua própria, criando automaticamente uma peça de munição mágica quando o portador realiza um ataque à distância com ela. A munição criada pela arma desaparece no instante em que ela atinge ou erra um alvo.
+
+\page
+{{monster,frame
+## Servo Humúnculo
+*Constructo Minúsculo*
+___
+**Classe de Armadura (CA)** :: 13 (armadura natural)
+**Pontos de Vida**  :: 1 + seu modificador de Inteligência + seu nível de artífice (o homúnculo tem um número de Dados de Vida [d4s] igual ao seu nível de artífice)
+**Deslocamento**       :: 6m, voo 9m
+___
+|  FOR  |  DES  |  CON  |  INT  |  SAB  |  CAR  |
+|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+|4 (-3) |15 (+2)|12 (+1)|10 (+0)|10 (+0)|7 (-2) |
+___
+**Testes de Resistência** :: Destreza +2 + BP
+**Perícias** :: Percepção +0 + BP x 2, Furtividade +2 + BP
+**Imunidades de Dano** :: veneno
+**Imunidades de Condições** :: exaustão, envenenado
+**Sentidos** :: visão no escuro 18m, Percepção passiva 10 + (BP x 2)
+**Idiomas** :: Entende os idiomas que você fala
+**Bônus de Proficiência (BP)** :: Igual ao seu bônus
+___
+***Evasão.*** Se o homúnculo for submetido a um efeito que lhe permita fazer um teste de resistência de Destreza para receber apenas metade do dano, ele não sofrerá dano se for bem-sucedido no teste de resistência e apenas metade do dano se falhar. Ele não poderá usar essa característica se estiver incapacitado.
+
+### Ações
+***Ataque de Força.*** *Ataque com Arma de Longo Alcance:* seu modificador de ataque mágico para atingir, alcance de 9 metros, um alvo visível. *Acerto:* 1d4 + PB de dano de força.
+
+### Reações
+***Canalizar Magia.*** O homúnculo lança um feitiço que você conjura com alcance de toque. O homúnculo deve estar a até 36 metros de você.
+}}
+
+\page
