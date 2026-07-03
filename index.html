@@ -31,6 +31,7 @@
           <line x1="15.5" y1="15.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </button>
+      <button id="reading-toggle" aria-label="Ajustes de leitura" title="Ajustes de leitura" aria-expanded="false">Aa</button>
       <button id="theme-toggle" aria-label="Alternar tema">◐</button>
     </header>
 
@@ -99,6 +100,27 @@
     <div id="peek-body" class="sheet-body"></div>
     <a id="peek-go" class="sheet-more" href="#">Ir para →</a>
   </div>
+</div>
+
+<!-- Ajustes de leitura (tamanho do texto + largura) -->
+<div id="reading-panel" class="reading-panel" hidden role="dialog" aria-label="Ajustes de leitura">
+  <div class="rp-row">
+    <span class="rp-label">Texto</span>
+    <div class="rp-stepper">
+      <button id="rp-font-dec" type="button" aria-label="Diminuir o texto">A−</button>
+      <span id="rp-font-val" aria-live="polite">100%</span>
+      <button id="rp-font-inc" type="button" aria-label="Aumentar o texto">A+</button>
+    </div>
+  </div>
+  <div class="rp-row rp-row-stack">
+    <span class="rp-label">Largura</span>
+    <div id="rp-width" class="rp-seg" role="group" aria-label="Largura de leitura">
+      <button type="button" data-w="narrow">Estreita</button>
+      <button type="button" data-w="normal">Padrão</button>
+      <button type="button" data-w="wide">Larga</button>
+    </div>
+  </div>
+  <button id="rp-reset" type="button" class="rp-reset">Restaurar padrão</button>
 </div>
 
 <!-- Voltar ao topo -->

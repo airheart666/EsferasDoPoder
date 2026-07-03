@@ -117,14 +117,16 @@
    Sem isto, os modais ficam invisíveis mas capturando todos os cliques. */
 [hidden] { display: none !important; }
 
-html { scroll-behavior: smooth; }
+/* font-size do html é a base (rem) e a alavanca única do controle de leitura;
+   JS sobrescreve com inline style. O corpo é relativo a ela (1.125rem = 18px). */
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   line-height: 1.62;
-  font-size: 18px;
+  font-size: 1.125rem;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -205,7 +207,7 @@ body::after {
 
 #top-title { flex: 1; font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; letter-spacing: 0.01em; }
 
-#menu-toggle, #theme-toggle, #home-link, #search-toggle {
+#menu-toggle, #theme-toggle, #home-link, #search-toggle, #reading-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -221,8 +223,10 @@ body::after {
   opacity: 0.85;
   transition: opacity 0.15s, background 0.15s;
 }
-#menu-toggle:hover, #theme-toggle:hover, #home-link:hover, #search-toggle:hover { opacity: 1; background: var(--chrome-hover); color: var(--accent); }
-#menu-toggle:active, #theme-toggle:active, #home-link:active, #search-toggle:active { background: var(--chrome-hover); }
+#menu-toggle:hover, #theme-toggle:hover, #home-link:hover, #search-toggle:hover, #reading-toggle:hover { opacity: 1; background: var(--chrome-hover); color: var(--accent); }
+#menu-toggle:active, #theme-toggle:active, #home-link:active, #search-toggle:active, #reading-toggle:active { background: var(--chrome-hover); }
+#reading-toggle { font-family: var(--font-display); font-size: 1rem; font-weight: 500; }
+#reading-toggle[aria-expanded="true"] { background: var(--chrome-hover); color: var(--accent); opacity: 1; }
 #menu-toggle { display: none; }
 #home-link { text-decoration: none; line-height: 1; }
 #search-toggle svg { display: block; }
@@ -489,7 +493,7 @@ body.modal-open { overflow: hidden; }
   flex: 1;
   min-width: 0; /* idem: contém conteúdo largo (tabelas) sem esticar a coluna */
   padding: 2rem 2.5rem;
-  max-width: 860px;
+  max-width: var(--read-width, 860px);
   margin: 0 auto;
   width: 100%;
 }
@@ -1477,6 +1481,71 @@ th .dice, th .dc { color: inherit; background: transparent; }
 /* ============================================================
    VOLTAR AO TOPO (FAB)
    ============================================================ */
+/* ============================================================
+   AJUSTES DE LEITURA (tamanho do texto + largura)
+   ============================================================ */
+.reading-panel {
+  position: fixed;
+  top: calc(3.5rem + env(safe-area-inset-top));
+  right: 0.75rem;
+  z-index: 130;
+  width: 240px;
+  max-width: calc(100vw - 1.5rem);
+  background: var(--bg-content);
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  padding: 0.85rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+.rp-row { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin-bottom: 0.7rem; }
+/* Linha da largura empilha (rótulo em cima) p/ o segmento caber inteiro. */
+.rp-row-stack { flex-direction: column; align-items: stretch; gap: 0.4rem; }
+.rp-row-stack .rp-seg { width: 100%; }
+.rp-row-stack .rp-seg button { flex: 1; text-align: center; }
+.rp-label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.rp-stepper { display: flex; align-items: center; gap: 0.3rem; }
+.rp-stepper button {
+  min-width: 34px; min-height: 34px;
+  border: 1px solid var(--table-border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+.rp-stepper button:hover { border-color: var(--accent); color: var(--accent); }
+.rp-stepper button:disabled { opacity: 0.4; cursor: default; }
+#rp-font-val { min-width: 3.2ch; text-align: center; font-variant-numeric: tabular-nums; }
+.rp-seg { display: inline-flex; border: 1px solid var(--table-border); border-radius: var(--border-radius); overflow: hidden; }
+.rp-seg button {
+  border: none;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.35rem 0.5rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  border-left: 1px solid var(--table-border);
+}
+.rp-seg button:first-child { border-left: none; }
+.rp-seg button:hover { color: var(--accent); }
+.rp-seg button.active { background: var(--accent); color: #fff; }
+.rp-reset {
+  width: 100%;
+  margin-top: 0.2rem;
+  padding: 0.4rem;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  cursor: pointer;
+  border-top: 1px dotted var(--table-border);
+}
+.rp-reset:hover { color: var(--accent); }
+
 #back-to-top {
   position: fixed;
   right: 1rem;

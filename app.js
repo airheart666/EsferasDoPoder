@@ -13,6 +13,7 @@ let activeObserver = null;
 
 async function init() {
   setupDarkMode();
+  setupReadingControls();
 
   try {
     const manifestRes = await fetch('manifest.json');
@@ -2149,6 +2150,85 @@ function setupBackToTop() {
 /* ============================================================
    DARK MODE
    ============================================================ */
+/* ============================================================
+   AJUSTES DE LEITURA — tamanho do texto (base rem) + largura
+   ============================================================ */
+const READ_FONT_STEPS = [14, 16, 18, 20, 22]; // px na base (html)
+const READ_FONT_DEFAULT = 16;
+const READ_WIDTHS = { narrow: '720px', normal: '860px', wide: '1040px' };
+const READ_WIDTH_DEFAULT = 'normal';
+
+function applyReadingFont(px) {
+  document.documentElement.style.fontSize = px + 'px';
+  const val = document.getElementById('rp-font-val');
+  if (val) val.textContent = Math.round((px / READ_FONT_DEFAULT) * 100) + '%';
+  const dec = document.getElementById('rp-font-dec'), inc = document.getElementById('rp-font-inc');
+  if (dec) dec.disabled = px <= READ_FONT_STEPS[0];
+  if (inc) inc.disabled = px >= READ_FONT_STEPS[READ_FONT_STEPS.length - 1];
+}
+
+function applyReadingWidth(key) {
+  const w = READ_WIDTHS[key] || READ_WIDTHS[READ_WIDTH_DEFAULT];
+  document.documentElement.style.setProperty('--read-width', w);
+  document.querySelectorAll('#rp-width button').forEach(b =>
+    b.classList.toggle('active', b.dataset.w === key));
+}
+
+function currentReadFont() {
+  const px = parseInt(localStorage.getItem('esferas:fontpx'), 10);
+  return READ_FONT_STEPS.includes(px) ? px : READ_FONT_DEFAULT;
+}
+function currentReadWidth() {
+  const k = localStorage.getItem('esferas:readwidth');
+  return READ_WIDTHS[k] ? k : READ_WIDTH_DEFAULT;
+}
+
+function setupReadingControls() {
+  // Aplica preferências salvas o quanto antes (evita flash).
+  applyReadingFont(currentReadFont());
+  applyReadingWidth(currentReadWidth());
+
+  const btn = document.getElementById('reading-toggle');
+  const panel = document.getElementById('reading-panel');
+  if (!btn || !panel) return;
+
+  const open = () => { panel.hidden = false; btn.setAttribute('aria-expanded', 'true'); };
+  const close = () => { panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); };
+  const toggle = () => (panel.hidden ? open() : close());
+
+  btn.addEventListener('click', e => { e.stopPropagation(); toggle(); });
+  // fecha ao clicar fora ou com Escape
+  document.addEventListener('click', e => {
+    if (!panel.hidden && !panel.contains(e.target) && e.target !== btn) close();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) close(); });
+
+  const stepFont = dir => {
+    const cur = currentReadFont();
+    const i = READ_FONT_STEPS.indexOf(cur);
+    const ni = Math.min(READ_FONT_STEPS.length - 1, Math.max(0, i + dir));
+    const px = READ_FONT_STEPS[ni];
+    localStorage.setItem('esferas:fontpx', px);
+    applyReadingFont(px);
+  };
+  document.getElementById('rp-font-dec').addEventListener('click', () => stepFont(-1));
+  document.getElementById('rp-font-inc').addEventListener('click', () => stepFont(1));
+
+  document.getElementById('rp-width').addEventListener('click', e => {
+    const b = e.target.closest('button[data-w]');
+    if (!b) return;
+    localStorage.setItem('esferas:readwidth', b.dataset.w);
+    applyReadingWidth(b.dataset.w);
+  });
+
+  document.getElementById('rp-reset').addEventListener('click', () => {
+    localStorage.removeItem('esferas:fontpx');
+    localStorage.removeItem('esferas:readwidth');
+    applyReadingFont(READ_FONT_DEFAULT);
+    applyReadingWidth(READ_WIDTH_DEFAULT);
+  });
+}
+
 function setupDarkMode() {
   const saved = localStorage.getItem('theme');
   const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
