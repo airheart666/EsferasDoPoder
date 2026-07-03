@@ -1414,16 +1414,6 @@ function renderChapter(index) {
     frag.appendChild(leadIn);
   }
 
-  const nav = document.createElement('nav');
-  nav.className = 'chapter-nav';
-  const prev = chapters[index - 1];
-  const next = chapters[index + 1];
-  nav.innerHTML = `
-    ${prev ? `<a class="chapter-nav-btn prev" href="${prev.anchor}"><span>← Anterior</span>${escapeHtml(prev.title)}</a>` : '<span></span>'}
-    ${next ? `<a class="chapter-nav-btn next" href="${next.anchor}"><span>Próximo →</span>${escapeHtml(next.title)}</a>` : '<span></span>'}
-  `;
-  frag.appendChild(nav);
-
   applySectionTheme(content, chapter.sectionLabel);
   applySphereTheme(content, chapter);
   content.appendChild(frag);

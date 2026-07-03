@@ -928,42 +928,6 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 }
 #toc-nav a.toc-sphere:hover, #toc-nav a.toc-sphere.active { color: var(--accent); }
 
-.chapter-nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 3rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--hr-color);
-}
-
-.chapter-nav-btn {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  max-width: 48%;
-  padding: 0.6rem 0.9rem;
-  border: 1px solid var(--hr-color);
-  border-radius: var(--border-radius);
-  font-family: var(--font-ui);
-  text-decoration: none;
-  color: var(--text);
-  transition: background 0.15s, border-color 0.15s;
-}
-.chapter-nav-btn:hover { background: var(--note-bg); border-color: var(--accent); color: var(--text); }
-.chapter-nav-btn.next { text-align: right; align-items: flex-end; margin-left: auto; }
-.chapter-nav-btn span {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-}
-
-@media (max-width: 480px) {
-  .chapter-nav-btn { max-width: 100%; font-size: 0.85rem; }
-}
-
 /* ============================================================
    NESTA PÁGINA (mini-índice do capítulo)
    ============================================================ */
@@ -1551,7 +1515,6 @@ mark.hl.current {
 
   /* Alvos de toque confortáveis (>= 44px) na navegação */
   #toc-nav a { padding-top: 0.65rem; padding-bottom: 0.65rem; }
-  .chapter-nav-btn { min-height: 44px; }
 
   .cover-hero { margin: -0.5rem -1rem 1.5rem; }
 
