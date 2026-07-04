@@ -5,6 +5,9 @@ let chapters = [];       // { start, end, title, sectionLabel, anchor }[]
 let tocTreesGlobal = []; // árvores do {{toc}}, reusadas pelo índice de capa
 let cardDescriptions = {}; // descrições curadas dos cards (descriptions.json)
 let sphereThemes = {};   // identidade por esfera (sphere-themes.json): título -> {h,s,sig,lLight?}
+let classesData = {};    // progressão das classes (classes.json): nome -> {type,keyAbility,resource,progression[]}
+let sphereRules = {};    // regras de aquisição por esfera (sphere-rules.json): título -> {freeGroup,freeLabel,freePicks}
+let sphereModelCache = new Map(); // título -> modelo classificado (getSphereModel), cache do pipeline pesado
 let availableSigils = new Set(); // ids de sigilo já presentes no sprite (sigils.svg)
 let talentIndex = new Map();  // normNome -> {name, pageAnchor, slug, chapterTitle, summary}
 let talentRefRegex = null;    // regex dos nomes de talento (p/ linkar pré-requisitos)
@@ -52,6 +55,19 @@ async function init() {
       if (stRes.ok) sphereThemes = await stRes.json();
     } catch (_) { /* mantém {} → esferas usam a cor da seção */ }
 
+    // Dados das classes (progressão de nível → PM/talentos/CD). Opcional.
+    try {
+      const clRes = await fetch('classes.json');
+      if (clRes.ok) classesData = await clRes.json();
+    } catch (_) { /* sem dados → companheiro de personagem fica indisponível */ }
+
+    // Regras de aquisição por esfera (bases + grupo da escolha grátis). Opcional:
+    // sem entrada curada, cada esfera cai no fallback (1 grátis de qualquer não-base).
+    try {
+      const srRes = await fetch('sphere-rules.json');
+      if (srRes.ok) sphereRules = await srRes.json();
+    } catch (_) { /* mantém {} → fallback por esfera */ }
+
     // Sprite de sigilos (SVG injetado uma vez; referenciado por <use>). Opcional.
     try {
       const sigRes = await fetch('sigils.svg');
@@ -81,6 +97,7 @@ async function init() {
     setupHowto();
     setupPeek();
     setupFavorites();
+    setupCharacter();
     setupMobileMenu();
     setupBackToTop();
 
@@ -546,14 +563,227 @@ function makeFavButton(item) {
   return btn;
 }
 
-// Estrela em cada talento (dentro da própria .talent-card).
+// Controle de personagem de um card, conforme o papel na esfera (base/free/extra/
+// ignore) e o estado do personagem ativo. Base → chip; ignore → nada; demais → +/✓.
+function makeCharControl(item, role, active, entry) {
+  if (role === 'ignore') return null; // não é talento (feature de pacote/regras)
+  if (role === 'base') {
+    const chip = document.createElement('span');
+    chip.className = 'base-included';
+    chip.textContent = '✦ incluída';
+    chip.title = 'Habilidade-base — vem junto ao adquirir a esfera';
+    return chip;
+  }
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'char-btn';
+  btn.dataset.char = JSON.stringify(item);
+  btn.dataset.sphere = item.sphere;
+  btn.dataset.role = role; // 'free' | 'extra' → decide grátis vs +1 no clique
+  if (!active) { // sem personagem → clique leva à página de personagem
+    btn.textContent = '+';
+    btn.title = 'Adicionar ao personagem';
+    btn.setAttribute('aria-label', 'Adicionar ao personagem');
+    return btn;
+  }
+  if (!entry) { // esfera ainda não adquirida → desabilitado
+    btn.textContent = '+';
+    btn.disabled = true;
+    btn.classList.add('needs-sphere');
+    btn.title = 'Adquira a esfera primeiro';
+    btn.setAttribute('aria-label', 'Adquira a esfera primeiro');
+    return btn;
+  }
+  const k = favKey(item);
+  const isFree = (entry.freePicks || []).some(f => favKey(f) === k);
+  const isExtra = (entry.talents || []).some(t => favKey(t) === k);
+  if (isFree) {
+    btn.textContent = '✓ grátis';
+    btn.classList.add('on', 'is-free');
+    btn.title = 'Escolha grátis da esfera — clique para remover';
+    btn.setAttribute('aria-label', 'Remover escolha grátis');
+  } else if (isExtra) {
+    btn.textContent = '✓';
+    btn.classList.add('on');
+    btn.title = 'No personagem (custa 1) — clique para remover';
+    btn.setAttribute('aria-label', 'Remover do personagem');
+  } else {
+    btn.textContent = '+';
+    btn.title = 'Adicionar ao personagem';
+    btn.setAttribute('aria-label', 'Adicionar ao personagem');
+  }
+  return btn;
+}
+
+// Estrela (favorito) + controle de personagem em cada talento (na própria .talent-card).
 function addFavoriteStars(root, chapter) {
+  const active = getActiveChar();
+  const entry = active ? sphereEntry(active, chapter.title) : null;
+  const cs = classSpec(chapter.title, entry && entry.choices ? entry.choices.pkg : null);
   for (const card of root.querySelectorAll('.talent-card')) {
     const h4 = card.querySelector(':scope > h4, :scope > h5');
     if (!h4) continue;
     const section = card.closest('section[id]');
     const item = { name: h4.textContent.trim(), sphere: chapter.title, anchor: section ? '#' + section.id : chapter.anchor, slug: h4.id || '' };
-    card.appendChild(makeFavButton(item));
+    const role = cardRole(card, cs);
+    const actions = document.createElement('div');
+    actions.className = 'talent-actions';
+    const ctl = makeCharControl(item, role, active, entry);
+    if (ctl) actions.appendChild(ctl);
+    actions.appendChild(makeFavButton(item));
+    card.appendChild(actions);
+  }
+}
+
+// Barra de aquisição sob o título da esfera. Só aparece quando já existe pelo
+// menos um personagem; o alvo é escolhido num seletor visível (nunca presumido).
+function renderSphereAcquireBar(chapter) {
+  const chars = getCharacters();
+  if (!chars.length) return null;
+  let active = getActiveChar();
+  if (!active) { setActiveCharId(chars[0].id); active = chars[0]; }
+  const entry = sphereEntry(active, chapter.title);
+  const bar = document.createElement('div');
+  bar.className = 'sphere-acquire';
+  bar.dataset.sphere = chapter.title;
+
+  // Seletor do personagem-alvo (sempre visível → sem presumir o último)
+  const who = document.createElement('label');
+  who.className = 'acquire-who';
+  who.textContent = 'Personagem: ';
+  const whoSel = document.createElement('select');
+  whoSel.className = 'char-target-select';
+  whoSel.dataset.sphere = chapter.title;
+  for (const c of chars) {
+    const o = document.createElement('option');
+    o.value = c.id;
+    o.textContent = c.name || '(sem nome)';
+    if (c.id === active.id) o.selected = true;
+    whoSel.appendChild(o);
+  }
+  who.appendChild(whoSel);
+  bar.appendChild(who);
+
+  if (!entry) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'acquire-btn';
+    btn.dataset.acquire = chapter.title;
+    btn.textContent = `+ Adquirir ${chapter.title} (1 talento)`;
+    bar.appendChild(btn);
+    return bar;
+  }
+
+  const spec = resolveSpec(active, chapter.title, entry.choices);
+  const model = getSphereModel(chapter.title, spec.pkg);
+
+  const status = document.createElement('span');
+  status.className = 'acquire-status';
+  status.textContent = `✓ ${chapter.title} adquirida`;
+  bar.appendChild(status);
+
+  // Seletor de pacote-base (Alquimia)
+  if (spec.packages) {
+    const lbl = document.createElement('label');
+    lbl.className = 'pkg-l';
+    lbl.textContent = `${spec.packages.label || 'Pacote'}: `;
+    const sel = document.createElement('select');
+    sel.className = 'pkg-select';
+    sel.dataset.sphere = chapter.title;
+    const none = document.createElement('option');
+    none.value = ''; none.textContent = '— escolher —';
+    sel.appendChild(none);
+    for (const opt of spec.packages.options) {
+      const o = document.createElement('option');
+      o.value = opt.id; o.textContent = opt.label;
+      if (spec.pkg === opt.id) o.selected = true;
+      sel.appendChild(o);
+    }
+    lbl.appendChild(sel);
+    bar.appendChild(lbl);
+  }
+
+  // Notas das condicionais de proficiência (resolvidas automaticamente)
+  for (const c of spec.conditionals) {
+    const note = document.createElement('span');
+    note.className = 'acquire-cond' + (c.satisfied ? ' on' : '');
+    const reqTxt = Array.isArray(c.requires) ? c.requires.join(' e ') : c.requires;
+    note.textContent = c.satisfied
+      ? `✓ proficiente em ${reqTxt} → +${c.addPicks} grátis`
+      : `a esfera concede proficiência em ${reqTxt}`;
+    bar.appendChild(note);
+  }
+
+  // Seletores de escolha grátis (N = capacidade resolvida)
+  if (spec.freePicks > 0 && model.freeGroup.length) {
+    const picks = (entry.freePicks || []).slice(0, spec.freePicks);
+    for (let i = 0; i < spec.freePicks; i++) {
+      const lbl = document.createElement('label');
+      lbl.className = 'freepick-l';
+      lbl.textContent = spec.freePicks > 1 ? `Grátis (${spec.freeLabel}) ${i + 1}: ` : `Grátis — 1 ${spec.freeLabel}: `;
+      const sel = document.createElement('select');
+      sel.className = 'freepick-select';
+      sel.dataset.sphere = chapter.title;
+      sel.dataset.i = String(i);
+      const none = document.createElement('option');
+      none.value = ''; none.textContent = '—';
+      sel.appendChild(none);
+      const chosenKeys = new Set(picks.filter(Boolean).map(favKey));
+      for (const it of model.freeGroup) {
+        const kk = favKey(it);
+        // esconde os já escolhidos em OUTROS slots
+        if (chosenKeys.has(kk) && !(picks[i] && favKey(picks[i]) === kk)) continue;
+        const opt = document.createElement('option');
+        opt.value = kk; opt.textContent = it.name;
+        if (picks[i] && favKey(picks[i]) === kk) opt.selected = true;
+        sel.appendChild(opt);
+      }
+      lbl.appendChild(sel);
+      bar.appendChild(lbl);
+    }
+  }
+
+  const cost = document.createElement('span');
+  cost.className = 'acquire-cost';
+  cost.textContent = `${sphereCost(entry)} talento(s)`;
+  bar.appendChild(cost);
+
+  const rm = document.createElement('button');
+  rm.type = 'button';
+  rm.className = 'sphere-remove';
+  rm.dataset.removesphere = chapter.title;
+  rm.textContent = 'Remover esfera';
+  bar.appendChild(rm);
+  return bar;
+}
+
+// Atualiza in-place a barra e os controles dos cards da esfera após uma operação
+// (evita re-renderizar o capítulo e perder a rolagem do leitor).
+function refreshSphereUI(title) {
+  const content = document.getElementById('content');
+  const active = getActiveChar();
+  const entry = active ? sphereEntry(active, title) : null;
+  const cs = classSpec(title, entry && entry.choices ? entry.choices.pkg : null);
+  const chapter = chapters.find(c => c.title === title);
+
+  content.querySelectorAll('.sphere-acquire').forEach(bar => {
+    if (bar.dataset.sphere !== title || !chapter) return;
+    const fresh = renderSphereAcquireBar(chapter);
+    if (fresh) bar.replaceWith(fresh); else bar.remove();
+  });
+
+  for (const card of content.querySelectorAll('.talent-card')) {
+    const h = card.querySelector(':scope > h4, :scope > h5');
+    if (!h) continue;
+    const section = card.closest('section[id]');
+    const item = { name: h.textContent.trim(), sphere: title, anchor: section ? '#' + section.id : (chapter ? chapter.anchor : ''), slug: h.id || '' };
+    const role = cardRole(card, cs);
+    const actions = card.querySelector('.talent-actions');
+    if (!actions) continue;
+    const oldCtl = actions.querySelector(':scope > .char-btn, :scope > .base-included');
+    const newCtl = makeCharControl(item, role, active, entry);
+    if (oldCtl) { if (newCtl) oldCtl.replaceWith(newCtl); else oldCtl.remove(); }
+    else if (newCtl) actions.insertBefore(newCtl, actions.firstChild);
   }
 }
 
@@ -573,6 +803,49 @@ function setupFavorites() {
     }
     const rm = e.target.closest('.fav-remove');
     if (rm) { e.preventDefault(); toggleFav(JSON.parse(rm.dataset.fav)); renderFavorites(); return; }
+    // Barra de aquisição: adquirir esfera
+    const ab = e.target.closest('.acquire-btn');
+    if (ab) {
+      e.preventDefault();
+      const active = getActiveChar();
+      if (!active) { navigate('#personagem'); return; }
+      acquireSphere(active, ab.dataset.acquire);
+      refreshSphereUI(ab.dataset.acquire);
+      return;
+    }
+    // Barra de aquisição: remover esfera
+    const rs = e.target.closest('.sphere-remove');
+    if (rs) {
+      e.preventDefault();
+      const active = getActiveChar();
+      if (active) { removeSphere(active, rs.dataset.removesphere); refreshSphereUI(rs.dataset.removesphere); }
+      return;
+    }
+    // Adicionar/remover do personagem ativo (botão +/✓ em cada talento)
+    const cbtn = e.target.closest('.char-btn');
+    if (cbtn) {
+      e.preventDefault(); e.stopPropagation();
+      const active = getActiveChar();
+      if (!active) { navigate('#personagem'); return; } // sem personagem → leva à página p/ criar
+      const title = cbtn.dataset.sphere;
+      const entry = sphereEntry(active, title);
+      if (!entry) return; // esfera não adquirida (botão desabilitado)
+      const item = JSON.parse(cbtn.dataset.char);
+      const k = favKey(item);
+      const isFree = (entry.freePicks || []).some(f => favKey(f) === k);
+      const isExtra = (entry.talents || []).some(t => favKey(t) === k);
+      if (isFree) removeFreePick(active, title, item);
+      else if (isExtra) toggleExtraTalent(active, title, item);
+      else {
+        // card elegível ao grátis + slot livre → vira grátis; senão, extra (+1)
+        const cap = resolveSpec(active, title, entry.choices).freePicks;
+        const room = (entry.freePicks || []).length < cap;
+        if (cbtn.dataset.role === 'free' && room) addFreePick(active, title, item);
+        else toggleExtraTalent(active, title, item);
+      }
+      refreshSphereUI(title);
+      return;
+    }
     const btn = e.target.closest('.fav-btn');
     if (!btn) return;
     e.preventDefault(); e.stopPropagation();
@@ -580,6 +853,29 @@ function setupFavorites() {
     btn.textContent = on ? '★' : '☆';
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
     btn.setAttribute('aria-label', on ? 'Remover dos favoritos' : 'Salvar nos favoritos');
+  });
+  content.addEventListener('change', e => {
+    // Trocar o personagem-alvo na barra de aquisição (sem presumir o último)
+    const who = e.target.closest('.char-target-select');
+    if (who) { setActiveCharId(who.value); refreshSphereUI(who.dataset.sphere); return; }
+    // Escolher o pacote-base (Alquimia)
+    const pkg = e.target.closest('.pkg-select');
+    if (pkg) {
+      const active = getActiveChar();
+      if (active) { setPackage(active, pkg.dataset.sphere, pkg.value || null); refreshSphereUI(pkg.dataset.sphere); }
+      return;
+    }
+    // Seletor de escolha grátis (por slot) na barra de aquisição
+    const sel = e.target.closest('.freepick-select');
+    if (!sel) return;
+    const active = getActiveChar();
+    if (!active) return;
+    const title = sel.dataset.sphere;
+    const entry = sphereEntry(active, title);
+    const model = getSphereModel(title, entry && entry.choices ? entry.choices.pkg : null);
+    const item = sel.value ? model.freeGroup.find(it => favKey(it) === sel.value) : null;
+    setFreePickAt(active, title, parseInt(sel.dataset.i || '0', 10), item || null);
+    refreshSphereUI(title);
   });
   // Teclado: Enter/Espaço no título alterna o card
   content.addEventListener('keydown', e => {
@@ -601,7 +897,10 @@ function recordVisit(chapter, isCover) {
 // Reconstrói os .talent-card de um capítulo (mesmo pipeline do render) e
 // devolve um mapa nomeNormalizado -> card, para o compêndio exibir o talento
 // inteiro (ficha, tags, glossário, dados) sem abrir a esfera.
-function buildChapterCards(chapter) {
+// Fragmento com os .talent-card do capítulo (ordem de leitura, SEM deduplicar).
+// getSphereModel precisa de todos os cards — nomes repetidos (ex.: Conjuração tem
+// uma habilidade-base "Invocação" e um talento avançado homônimo) colidiriam no mapa.
+function buildChapterCardFrag(chapter) {
   const frag = document.createDocumentFragment();
   for (let pn = chapter.start; pn <= chapter.end; pn++) {
     const page = allPages[pn - 1];
@@ -615,8 +914,11 @@ function buildChapterCards(chapter) {
   linkSphereCrossRefs(frag, chapter);
   linkGlossaryTerms(frag, chapter);
   highlightMechanics(frag);
+  return frag;
+}
+function buildChapterCards(chapter) {
   const map = new Map();
-  for (const card of frag.querySelectorAll('.talent-card')) {
+  for (const card of buildChapterCardFrag(chapter).querySelectorAll('.talent-card')) {
     const h = card.querySelector(':scope > h4, :scope > h5');
     if (h) map.set(normalizeTerm(h.textContent), card);
   }
@@ -719,6 +1021,663 @@ function renderFavorites() {
   setupObserver();
   updateActiveSidebarLink('#favoritos');
   window.scrollTo(0, 0);
+}
+
+
+/* ============================================================
+   COMPANHEIRO DE PERSONAGEM (A2/A3) — modelo, storage e cálculos
+   Um personagem = { id, name, className, level, keyMod, talents[] }.
+   talents reusa a forma dos favoritos ({name, sphere, anchor, slug}).
+   ============================================================ */
+const LS_CHARS = 'esferas:characters', LS_ACTIVE = 'esferas:activechar';
+
+function getCharacters() { return lsGet(LS_CHARS, []); }
+function saveCharacters(list) { lsSet(LS_CHARS, list); }
+function getActiveCharId() { return lsGet(LS_ACTIVE, null); }
+function setActiveCharId(id) { lsSet(LS_ACTIVE, id); }
+function getActiveChar() {
+  const id = getActiveCharId();
+  return getCharacters().find(c => c.id === id) || null;
+}
+function uid() { return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+
+function createCharacter(patch) {
+  const chars = getCharacters();
+  const char = Object.assign({ id: uid(), name: 'Novo personagem', className: '', level: 1, keyMod: 0, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [] }, patch);
+  chars.push(char);
+  saveCharacters(chars);
+  setActiveCharId(char.id);
+  return char;
+}
+function updateCharacter(id, patch) {
+  const chars = getCharacters();
+  const c = chars.find(x => x.id === id);
+  if (c) { Object.assign(c, patch); saveCharacters(chars); }
+  return c;
+}
+function deleteCharacter(id) {
+  let chars = getCharacters().filter(c => c.id !== id);
+  saveCharacters(chars);
+  if (getActiveCharId() === id) setActiveCharId(chars[0] ? chars[0].id : null);
+}
+
+/* ---- Proficiências (perícias 5e + ferramentas citadas por condicionais) ------ */
+const SKILLS_5E = ['Acrobacia', 'Arcanismo', 'Atletismo', 'Atuação', 'Enganação', 'Furtividade',
+  'História', 'Intimidação', 'Intuição', 'Investigação', 'Lidar com Animais', 'Medicina',
+  'Natureza', 'Percepção', 'Persuasão', 'Prestidigitação', 'Religião', 'Sobrevivência'];
+const TOOLS_COND = ['Ferramentas de ladrão', 'Suprimentos de alquimista', 'Kit de envenenador',
+  'Ferramentas do consertador'];
+function charProfs(char) {
+  const p = (char && char.proficiencies) || {};
+  return new Set([].concat(p.skills || [], p.tools || []).map(normalizeTerm));
+}
+// req = string ou array (todas exigidas). Compara normalizado.
+function isProficient(char, req) {
+  if (!req) return false;
+  const set = charProfs(char);
+  const reqs = Array.isArray(req) ? req : [req];
+  return reqs.every(r => set.has(normalizeTerm(r)));
+}
+
+/* ---- Esferas adquiridas (custo real + escolha grátis condicional) ------------
+   entry = { sphere, section, choices:{pkg?}, freePicks:[item…], talents:[item…] }.
+   Custo = 1 (acesso) + talentos-extra; bases e os freePicks são grátis. -------- */
+function sphereEntry(char, title) {
+  return char && Array.isArray(char.spheres) ? char.spheres.find(s => s.sphere === title) : null;
+}
+function sphereCost(entry) { return 1 + (entry && entry.talents ? entry.talents.length : 0); }
+
+function acquireSphere(char, title) {
+  if (!char) return null;
+  if (!Array.isArray(char.spheres)) char.spheres = [];
+  let e = sphereEntry(char, title);
+  if (!e) {
+    e = { sphere: title, section: sphereSection(title), choices: {}, freePicks: [], talents: [] };
+    char.spheres.push(e);
+    updateCharacter(char.id, { spheres: char.spheres });
+  }
+  return e;
+}
+function removeSphere(char, title) {
+  if (!char || !Array.isArray(char.spheres)) return;
+  char.spheres = char.spheres.filter(s => s.sphere !== title);
+  updateCharacter(char.id, { spheres: char.spheres });
+}
+// Escolhe o pacote-base (Alquimia). Muda o grupo-grátis → limpa os grátis atuais.
+function setPackage(char, title, pkgId) {
+  const e = acquireSphere(char, title);
+  e.choices = e.choices || {};
+  e.choices.pkg = pkgId || null;
+  e.freePicks = [];
+  updateCharacter(char.id, { spheres: char.spheres });
+}
+// Define/limpa o grátis do slot `index` (usado pelos seletores da barra).
+function setFreePickAt(char, title, index, item) {
+  const e = acquireSphere(char, title);
+  const cap = resolveSpec(char, title, e.choices).freePicks;
+  const picks = (e.freePicks || []).slice(0, cap);
+  while (picks.length < cap) picks.push(null);
+  if (item) {
+    const k = favKey(item);
+    e.talents = e.talents.filter(t => favKey(t) !== k);             // grátis e extra são exclusivos
+    for (let i = 0; i < picks.length; i++) if (i !== index && picks[i] && favKey(picks[i]) === k) picks[i] = null;
+    if (index < cap) picks[index] = item;
+  } else if (index < picks.length) {
+    picks[index] = null;
+  }
+  e.freePicks = picks.filter(Boolean);
+  updateCharacter(char.id, { spheres: char.spheres });
+}
+// Adiciona um grátis no próximo slot livre (clique no + de um card elegível).
+function addFreePick(char, title, item) {
+  const e = acquireSphere(char, title);
+  const cap = resolveSpec(char, title, e.choices).freePicks;
+  if (!Array.isArray(e.freePicks)) e.freePicks = [];
+  const k = favKey(item);
+  if (e.freePicks.length >= cap || e.freePicks.some(f => favKey(f) === k)) return false;
+  e.talents = e.talents.filter(t => favKey(t) !== k);
+  e.freePicks.push(item);
+  updateCharacter(char.id, { spheres: char.spheres });
+  return true;
+}
+function removeFreePick(char, title, item) {
+  const e = sphereEntry(char, title);
+  if (!e) return;
+  const k = favKey(item);
+  e.freePicks = (e.freePicks || []).filter(f => favKey(f) !== k);
+  updateCharacter(char.id, { spheres: char.spheres });
+}
+// Alterna um talento-extra (+1). Não adiciona algo que já é grátis.
+function toggleExtraTalent(char, title, item) {
+  const e = acquireSphere(char, title);
+  const k = favKey(item);
+  if ((e.freePicks || []).some(f => favKey(f) === k)) return false;
+  const i = e.talents.findIndex(t => favKey(t) === k);
+  if (i >= 0) { e.talents.splice(i, 1); updateCharacter(char.id, { spheres: char.spheres }); return false; }
+  e.talents.push(item);
+  updateCharacter(char.id, { spheres: char.spheres });
+  return true;
+}
+
+/* ---- Classificação e resolução das regras de aquisição ----------------------- */
+function sphereTags(name) {
+  const m = String(name).match(/\(([^)]*)\)\s*$/);
+  if (!m) return [];
+  return m[1].split(/[,;/]|\be\b|\bou\b/i).map(s => normalizeTerm(s.trim())).filter(Boolean);
+}
+function matchesFreeGroup(card, name, fg) {
+  if (!fg) return true; // fallback: qualquer não-base é elegível ao grátis
+  if (fg.tag || fg.tags) {
+    const tags = sphereTags(name);
+    const want = (fg.tags || [fg.tag]).map(normalizeTerm);
+    return want.some(w => tags.includes(w));
+  }
+  if (fg.h3) { try { return new RegExp(fg.h3, 'i').test(card.dataset.group || ''); } catch (_) { return false; } }
+  return false;
+}
+// Spec de CLASSIFICAÇÃO (independe do personagem/proficiência): grupo-grátis,
+// tags de talento válidas e se a esfera/pacote pode conceder grátis. Depende só
+// do título + pacote escolhido → base do cache do getSphereModel.
+function classSpec(title, pkg) {
+  const rule = sphereRules[title] || {};
+  let fg = rule.freeGroup || null, freeLabel = rule.freeLabel || 'talento', talentTags = rule.talentTags || null;
+  let baseFree = rule.freePicks != null ? rule.freePicks : 1;
+  let conds = rule.conditionals || [];
+  if (rule.packages) {
+    const opt = rule.packages.options.find(o => o.id === pkg);
+    if (opt) {
+      fg = opt.freeGroup || null; freeLabel = opt.freeLabel || freeLabel;
+      talentTags = opt.talentTags || talentTags; baseFree = opt.freePicks != null ? opt.freePicks : 0;
+      conds = opt.conditionals || [];
+    } else { baseFree = 0; conds = []; } // pacote ainda não escolhido
+  }
+  return { fg, freeLabel, talentTags, baseFree, conds, canFree: baseFree > 0 || conds.length > 0, packages: rule.packages || null };
+}
+// Spec RESOLVIDO (com o personagem): capacidade de grátis = base + condicionais
+// satisfeitas por proficiência.
+function resolveSpec(char, title, choices) {
+  choices = choices || {};
+  const cs = classSpec(title, choices.pkg);
+  let freePicks = cs.baseFree;
+  const conditionals = cs.conds.map(c => {
+    const satisfied = isProficient(char, c.requires);
+    if (satisfied) freePicks += (c.addPicks != null ? c.addPicks : 1);
+    return { requires: c.requires, addPicks: c.addPicks != null ? c.addPicks : 1, satisfied };
+  });
+  return { fg: cs.fg, freeLabel: cs.freeLabel, talentTags: cs.talentTags, canFree: cs.canFree, freePicks, conditionals, packages: cs.packages, pkg: choices.pkg || null };
+}
+// Papel de UM card (classifica o elemento, não o nome). 'ignore' = não é talento
+// (ex.: features de pacote/regras da Alquimia, sem a tag exigida).
+function cardRole(card, cs) {
+  if (cs.talentTags && cs.talentTags.length) {
+    const h0 = card.querySelector(':scope > h4, :scope > h5');
+    const tags = sphereTags(h0 ? h0.textContent.trim() : '');
+    const want = cs.talentTags.map(normalizeTerm);
+    if (!want.some(w => tags.includes(w))) return 'ignore';
+  }
+  if (card.classList.contains('base-ability')) return 'base';
+  if (!cs.canFree) return 'extra';
+  const h = card.querySelector(':scope > h4, :scope > h5');
+  const name = h ? h.textContent.trim() : '';
+  return matchesFreeGroup(card, name, cs.fg) ? 'free' : 'extra';
+}
+// Classifica os cards da esfera (para o pacote escolhido). Cacheado por título|pacote.
+function getSphereModel(title, pkg) {
+  const key = title + '|' + (pkg || '');
+  if (sphereModelCache.has(key)) return sphereModelCache.get(key);
+  const cs = classSpec(title, pkg);
+  const model = { bases: [], freeGroup: [], extras: [], freeLabel: cs.freeLabel, roleByKey: new Map(), frag: null };
+  const chapter = chapters.find(ch => ch.title === title);
+  if (chapter) {
+    const frag = buildChapterCardFrag(chapter);
+    for (const card of frag.querySelectorAll('.talent-card')) {
+      const h = card.querySelector(':scope > h4, :scope > h5');
+      if (!h) continue;
+      const role = cardRole(card, cs);
+      if (role === 'ignore') continue;
+      const name = h.textContent.trim();
+      const section = card.closest('section[id]');
+      const item = { name, sphere: title, anchor: section ? '#' + section.id : chapter.anchor, slug: h.id || '' };
+      model.roleByKey.set(favKey(item), role);
+      (role === 'base' ? model.bases : role === 'free' ? model.freeGroup : model.extras).push(item);
+    }
+    model.frag = frag; // guardado p/ clonar cards completos na ficha (não inserir!)
+  }
+  sphereModelCache.set(key, model);
+  return model;
+}
+// Acha o card completo de um item na esfera, desambiguando homônimos por seção
+// (ex.: Conjuração tem duas "Invocação" em páginas diferentes, mesmo slug).
+function findCardInFrag(frag, item) {
+  if (!frag) return null;
+  const secId = (item.anchor || '').replace(/^#/, '');
+  let fallback = null;
+  for (const card of frag.querySelectorAll('.talent-card')) {
+    const h = card.querySelector(':scope > h4, :scope > h5');
+    if (!h || h.textContent.trim() !== item.name) continue;
+    if (!fallback) fallback = card;
+    const sec = card.closest('section[id]');
+    if (sec && sec.id === secId) return card;
+  }
+  return fallback;
+}
+
+// Linha da progressão da classe no nível dado (fallback: nível mais próximo abaixo).
+function classRow(className, level) {
+  const cls = classesData[className];
+  if (!cls || !cls.progression) return null;
+  const lv = Math.max(1, Math.min(20, level || 1));
+  let row = null;
+  for (const r of cls.progression) { if (r.level <= lv) row = r; }
+  return row || cls.progression[0] || null;
+}
+// Valores derivados: proficiência, CD, recurso (PM/Chi) e orçamento de talentos.
+function characterStats(char) {
+  const cls = char && classesData[char.className];
+  const row = char && classRow(char.className, char.level);
+  if (!cls || !row) return null;
+  const prof = row.prof || 0;
+  return {
+    type: cls.type,
+    keyAbility: cls.keyAbility,
+    resourceName: cls.resource,
+    resource: cls.resource === 'PM' ? (row.pm || 0) : cls.resource === 'Chi' ? (row.chi || 0) : null,
+    prof,
+    cd: 8 + prof + (char.keyMod || 0),
+    attack: prof + (char.keyMod || 0),
+    magicTalents: row.magicTalents || 0,
+    martialTalents: row.martialTalents || 0,
+  };
+}
+
+/* ---- Tradições (Conjurador / Marcial) ---------------------------------------
+   Por ora só a opção "Base" (+2 talentos do tipo da classe). Estrutura pronta
+   para tradições reais (bônus/desvantagens) no futuro. O tipo do seletor segue
+   o tipo da classe: magic → Tradição de Conjurador; martial → Tradição Marcial. */
+const TRADITIONS = {
+  magic:   { label: 'Tradição de Conjurador', options: [{ id: 'base', label: 'Base', bonus: 2 }] },
+  martial: { label: 'Tradição Marcial',       options: [{ id: 'base', label: 'Base', bonus: 2 }] },
+};
+function traditionBonus(char) {
+  const cls = char && classesData[char.className];
+  const t = cls && TRADITIONS[cls.type];
+  if (!t) return 0;
+  const opt = t.options.find(o => o.id === char.tradition);
+  return opt ? opt.bonus : 0;
+}
+// Campo <select> da tradição no formulário (só quando a classe define um tipo).
+function traditionField(char) {
+  const cls = classesData[char.className];
+  const t = cls && TRADITIONS[cls.type];
+  if (!t) return '';
+  const opts = ['<option value="">— nenhuma —</option>']
+    .concat(t.options.map(o => `<option value="${o.id}"${char.tradition === o.id ? ' selected' : ''}>${escapeHtml(o.label)} (+${o.bonus} talentos)</option>`))
+    .join('');
+  return `<label class="char-field-l">${t.label}
+       <select class="char-field" data-field="tradition">${opts}</select>
+     </label>`;
+}
+
+// Seção de proficiências: chips alternáveis de perícias + ferramentas.
+// Gravadas em char.proficiencies.{skills,tools} como ids normalizados.
+function buildProficiencies(char) {
+  const wrap = document.createElement('section');
+  wrap.className = 'char-profs';
+  const h2 = document.createElement('h2');
+  h2.className = 'char-profs-title';
+  h2.textContent = 'Proficiências';
+  wrap.appendChild(h2);
+  const hint = document.createElement('p');
+  hint.className = 'char-profs-hint';
+  hint.textContent = 'Marque as perícias e ferramentas em que você já é proficiente (classe/antecedente). Isso libera as escolhas grátis condicionais de algumas esferas.';
+  wrap.appendChild(hint);
+
+  const prof = char.proficiencies || {};
+  const has = (kind, label) => ((prof[kind] || []).map(normalizeTerm)).includes(normalizeTerm(label));
+  const row = (title, kind, labels) => {
+    const r = document.createElement('div');
+    r.className = 'char-profs-row';
+    const cap = document.createElement('span');
+    cap.className = 'char-profs-cap';
+    cap.textContent = title;
+    r.appendChild(cap);
+    for (const label of labels) {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'prof-chip' + (has(kind, label) ? ' on' : '');
+      chip.dataset.kind = kind;
+      chip.dataset.prof = normalizeTerm(label);
+      chip.setAttribute('aria-pressed', has(kind, label) ? 'true' : 'false');
+      chip.textContent = label;
+      r.appendChild(chip);
+    }
+    wrap.appendChild(r);
+  };
+  row('Perícias', 'skills', SKILLS_5E);
+  row('Ferramentas', 'tools', TOOLS_COND);
+  return wrap;
+}
+
+function renderCharacter() {
+  currentChapterIndex = -1;
+  const content = document.getElementById('content');
+  content.removeAttribute('data-section');
+  applySphereTheme(content, null);
+  content.innerHTML = '';
+  const frag = document.createDocumentFragment();
+
+  const h1 = document.createElement('h1');
+  h1.textContent = 'Meu Personagem';
+  frag.appendChild(h1);
+
+  if (Object.keys(classesData).length === 0) {
+    const p = document.createElement('p');
+    p.className = 'glossary-intro';
+    p.textContent = 'Os dados das classes não puderam ser carregados. Recarregue a página para tentar de novo.';
+    frag.appendChild(p);
+    content.appendChild(frag);
+    finishCharRender();
+    return;
+  }
+
+  const chars = getCharacters();
+  let active = getActiveChar();
+
+  // Seletor de personagens + "novo"
+  const sel = document.createElement('div');
+  sel.className = 'char-selector';
+  for (const c of chars) {
+    const tab = document.createElement('button');
+    tab.type = 'button';
+    tab.className = 'charsel-tab' + (active && c.id === active.id ? ' active' : '');
+    tab.dataset.id = c.id;
+    tab.textContent = c.name || '(sem nome)';
+    sel.appendChild(tab);
+  }
+  const add = document.createElement('button');
+  add.type = 'button';
+  add.id = 'char-new';
+  add.className = 'char-new';
+  add.textContent = '+ Novo personagem';
+  sel.appendChild(add);
+  frag.appendChild(sel);
+
+  if (!active) {
+    const p = document.createElement('p');
+    p.className = 'glossary-intro';
+    p.textContent = 'Crie um personagem para reunir seus talentos e ver PM, CD e orçamento de talentos por nível. Depois, use o botão + em qualquer talento para adicioná-lo aqui.';
+    frag.appendChild(p);
+    content.appendChild(frag);
+    finishCharRender();
+    return;
+  }
+
+  // Formulário de identidade
+  const form = document.createElement('div');
+  form.className = 'char-form';
+  form.innerHTML =
+    `<label class="char-field-l">Nome
+       <input type="text" class="char-field" data-field="name" value="${escapeHtml(active.name || '')}" maxlength="40">
+     </label>
+     <label class="char-field-l">Classe
+       <select class="char-field" data-field="className">
+         <option value="">—</option>
+         ${Object.keys(classesData).map(k => `<option value="${escapeHtml(k)}"${k === active.className ? ' selected' : ''}>${escapeHtml(k)}</option>`).join('')}
+       </select>
+     </label>
+     <label class="char-field-l">Nível
+       <input type="number" class="char-field" data-field="level" min="1" max="20" value="${active.level || 1}">
+     </label>
+     <label class="char-field-l">Mod. de ${escapeHtml((classesData[active.className] && classesData[active.className].keyAbility) || 'habilidade-chave')}
+       <input type="number" class="char-field" data-field="keyMod" min="-5" max="10" value="${active.keyMod || 0}">
+     </label>
+     ${traditionField(active)}`;
+  frag.appendChild(form);
+
+  // Proficiências (perícias + ferramentas) — resolvem as condicionais das esferas
+  frag.appendChild(buildProficiencies(active));
+
+  // Painel de valores derivados
+  const stats = characterStats(active);
+  if (stats) {
+    const spheres = active.spheres || [];
+    const usedMagic = spheres.filter(s => s.section === 'magic').reduce((n, s) => n + sphereCost(s), 0);
+    const usedMartial = spheres.filter(s => s.section === 'martial').reduce((n, s) => n + sphereCost(s), 0);
+    const panel = document.createElement('div');
+    panel.className = 'char-stats';
+    const stat = (label, val, hint) => `<div class="char-stat"><span class="cs-val">${val}</span><span class="cs-label">${label}</span>${hint ? `<span class="cs-hint">${hint}</span>` : ''}</div>`;
+    let cells = '';
+    cells += stat('Proficiência', '+' + stats.prof);
+    cells += stat('CD', stats.cd, '8 + prof + mod');
+    cells += stat('Ataque', (stats.attack >= 0 ? '+' : '') + stats.attack);
+    if (stats.resourceName) cells += stat(stats.resourceName, stats.resource);
+    const bonus = traditionBonus(active); // +N da tradição (aplica ao tipo da classe)
+    const magicBudget = stats.magicTalents + (stats.type === 'magic' ? bonus : 0);
+    const martialBudget = stats.martialTalents + (stats.type === 'martial' ? bonus : 0);
+    const budgetHint = b => (b ? `inclui +${b} da tradição` : 'usados/disponíveis');
+    if (stats.type === 'magic') cells += stat('Talentos mágicos', `${usedMagic}/${magicBudget}`, budgetHint(stats.type === 'magic' ? bonus : 0));
+    if (stats.type === 'martial' || usedMartial > 0) cells += stat('Talentos marciais', `${usedMartial}/${martialBudget}`, budgetHint(stats.type === 'martial' ? bonus : 0));
+    panel.innerHTML = cells;
+    frag.appendChild(panel);
+
+    // Aviso de orçamento estourado
+    const over = [];
+    if (usedMagic > magicBudget) over.push('mágicos');
+    if (usedMartial > martialBudget) over.push('marciais');
+    if (over.length) {
+      const warn = document.createElement('p');
+      warn.className = 'char-warn';
+      warn.textContent = `Atenção: você tem mais talentos ${over.join(' e ')} do que o nível ${active.level} permite.`;
+      frag.appendChild(warn);
+    }
+  }
+
+  // Esferas adquiridas: incluído (bases + grátis) vs. talentos-extra, por esfera
+  const spheresList = active.spheres || [];
+  const h2 = document.createElement('h2');
+  h2.textContent = 'Esferas e talentos';
+  frag.appendChild(h2);
+  if (spheresList.length === 0) {
+    const p = document.createElement('p');
+    p.className = 'glossary-intro';
+    p.textContent = 'Nenhuma esfera ainda. Abra uma esfera e use “Adquirir esta esfera” para começar — depois escolha o grátis e adicione talentos com o +.';
+    frag.appendChild(p);
+  } else {
+    // Card recolhível de um talento (clona o card completo da esfera → lê a
+    // descrição inteira sem sair da ficha; reusa .fav-card/.fav-toggle).
+    const charTalentCard = (fr, item, kind, title) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'char-talent' + (kind === 'extra' ? ' char-talent-extra' : '');
+      if (kind === 'extra') {
+        const rm = document.createElement('button');
+        rm.type = 'button'; rm.className = 'char-talent-remove'; rm.textContent = '✕';
+        rm.title = 'Remover do personagem'; rm.dataset.char = JSON.stringify(item); rm.dataset.sphere = title;
+        wrap.appendChild(rm);
+      }
+      const src = findCardInFrag(fr, item);
+      if (!src) { // fallback: link simples (card não encontrado)
+        const a = document.createElement('a');
+        a.href = item.anchor; a.className = 'fav-go'; if (item.slug) a.dataset.slug = item.slug; a.textContent = item.name;
+        wrap.appendChild(a);
+        return wrap;
+      }
+      const clone = src.cloneNode(true);
+      clone.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); // evita ids duplicados
+      clone.classList.add('fav-card', 'collapsed');
+      const head = clone.querySelector(':scope > h4, :scope > h5');
+      if (head) {
+        head.classList.add('fav-toggle');
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', 'false');
+        if (kind !== 'extra') {
+          const tag = document.createElement('span');
+          tag.className = 'char-card-tag' + (kind === 'free' ? ' char-tag-free' : '');
+          tag.textContent = kind === 'free' ? 'grátis' : 'base';
+          head.appendChild(tag);
+        }
+      }
+      wrap.appendChild(clone);
+      return wrap;
+    };
+
+    for (const entry of spheresList) {
+      const model = getSphereModel(entry.sphere, entry.choices && entry.choices.pkg);
+      const fr = model.frag;
+      const freePicks = entry.freePicks || [];
+      const group = document.createElement('section');
+      group.className = 'char-sphere';
+      const h3 = document.createElement('h3');
+      h3.className = 'char-sphere-title';
+      h3.textContent = `${entry.sphere} — ${sphereCost(entry)} talento(s)`;
+      group.appendChild(h3);
+
+      if (model.bases.length || freePicks.length) {
+        const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Incluído com a esfera';
+        group.appendChild(sub);
+        const box = document.createElement('div'); box.className = 'char-cards';
+        for (const it of model.bases) box.appendChild(charTalentCard(fr, it, 'base', entry.sphere));
+        for (const it of freePicks) box.appendChild(charTalentCard(fr, it, 'free', entry.sphere));
+        group.appendChild(box);
+      }
+
+      if (entry.talents.length) {
+        const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Talentos';
+        group.appendChild(sub);
+        const box = document.createElement('div'); box.className = 'char-cards';
+        for (const t of entry.talents) box.appendChild(charTalentCard(fr, t, 'extra', entry.sphere));
+        group.appendChild(box);
+      }
+
+      const rm = document.createElement('button');
+      rm.type = 'button'; rm.className = 'char-sphere-remove'; rm.dataset.removesphere = entry.sphere;
+      rm.textContent = 'Remover esfera';
+      group.appendChild(rm);
+
+      frag.appendChild(group);
+    }
+  }
+
+  const del = document.createElement('button');
+  del.type = 'button';
+  del.id = 'char-delete';
+  del.className = 'char-delete';
+  del.textContent = 'Excluir este personagem';
+  frag.appendChild(del);
+
+  content.appendChild(frag);
+  finishCharRender();
+}
+
+function finishCharRender() {
+  applyStagger(document.getElementById('content'));
+  document.getElementById('top-title').textContent = 'Meu Personagem';
+  document.title = 'Meu Personagem — Esferas de Magia e Poder';
+  setupObserver();
+  updateActiveSidebarLink('#personagem');
+  window.scrollTo(0, 0);
+}
+
+// Seção (magic/martial) de uma esfera pelo título — para contar orçamento.
+function sphereSection(title) {
+  for (let ti = 0; ti < tocTreesGlobal.length; ti++) {
+    for (const root of tocTreesGlobal[ti]) {
+      if (root.children.some(c => c.text === title)) return ti === 1 ? 'martial' : ti === 0 ? 'magic' : 'classes';
+    }
+  }
+  return 'magic';
+}
+
+// Migração única (roda no setupCharacter, após o parse): talents[] plano → spheres[];
+// freePick único → freePicks[]; garante choices e proficiências.
+function migrateCharacters() {
+  const chars = getCharacters();
+  let changed = false;
+  for (const c of chars) {
+    if (!c.proficiencies) { c.proficiencies = { skills: [], tools: [] }; changed = true; }
+    if (!('tradition' in c)) { c.tradition = 'base'; changed = true; } // regra da mesa: +2 talentos a todos
+    if (Array.isArray(c.spheres)) {
+      for (const e of c.spheres) {
+        if ('freePick' in e) { e.freePicks = e.freePick ? [e.freePick] : []; delete e.freePick; changed = true; }
+        if (!Array.isArray(e.freePicks)) { e.freePicks = []; changed = true; }
+        if (!e.choices) { e.choices = {}; changed = true; }
+      }
+      continue;
+    }
+    if (!Array.isArray(c.talents)) { c.spheres = []; changed = true; continue; }
+    const bySphere = new Map();
+    for (const t of c.talents) { const s = t.sphere || '—'; if (!bySphere.has(s)) bySphere.set(s, []); bySphere.get(s).push(t); }
+    c.spheres = [];
+    for (const [title, items] of bySphere) {
+      const model = getSphereModel(title, null);
+      const nonBase = items.filter(it => model.roleByKey.get(favKey(it)) !== 'base');
+      c.spheres.push({ sphere: title, section: sphereSection(title), choices: {}, freePicks: nonBase[0] ? [nonBase[0]] : [], talents: nonBase.slice(1) });
+    }
+    delete c.talents;
+    changed = true;
+  }
+  if (changed) saveCharacters(chars);
+}
+
+function setupCharacter() {
+  migrateCharacters();
+  const content = document.getElementById('content');
+  content.addEventListener('click', e => {
+    const tab = e.target.closest('.charsel-tab');
+    if (tab) { setActiveCharId(tab.dataset.id); renderCharacter(); return; }
+    if (e.target.closest('#char-new')) {
+      const c = createCharacter({ name: 'Personagem ' + (getCharacters().length + 1) });
+      renderCharacter(); return;
+    }
+    // Alternar uma proficiência (perícia/ferramenta) — sem re-render (só afeta esferas)
+    const chip = e.target.closest('.prof-chip');
+    if (chip) {
+      const active = getActiveChar();
+      if (!active) return;
+      const prof = active.proficiencies || (active.proficiencies = { skills: [], tools: [] });
+      const kind = chip.dataset.kind;
+      const id = chip.dataset.prof;
+      const list = prof[kind] || (prof[kind] = []);
+      const i = list.indexOf(id);
+      let on;
+      if (i >= 0) { list.splice(i, 1); on = false; } else { list.push(id); on = true; }
+      chip.classList.toggle('on', on);
+      chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+      updateCharacter(active.id, { proficiencies: prof });
+      return;
+    }
+    // Remover talento-extra de uma esfera (na ficha)
+    const rm = e.target.closest('.char-talent-remove');
+    if (rm) {
+      const active = getActiveChar();
+      if (active) { toggleExtraTalent(active, rm.dataset.sphere, JSON.parse(rm.dataset.char)); renderCharacter(); }
+      return;
+    }
+    // Remover esfera inteira (na ficha)
+    const rs = e.target.closest('.char-sphere-remove');
+    if (rs) {
+      const active = getActiveChar();
+      if (active) { removeSphere(active, rs.dataset.removesphere); renderCharacter(); }
+      return;
+    }
+    if (e.target.closest('#char-delete')) {
+      const active = getActiveChar();
+      if (active && confirm(`Excluir "${active.name}"? Isso não pode ser desfeito.`)) { deleteCharacter(active.id); renderCharacter(); }
+      return;
+    }
+  });
+  content.addEventListener('change', e => {
+    const field = e.target.closest('.char-field');
+    if (!field) return;
+    const active = getActiveChar();
+    if (!active) return;
+    const key = field.dataset.field;
+    let val = field.value;
+    if (key === 'level') val = Math.max(1, Math.min(20, parseInt(val, 10) || 1));
+    if (key === 'keyMod') val = Math.max(-5, Math.min(10, parseInt(val, 10) || 0));
+    updateCharacter(active.id, { [key]: val });
+    renderCharacter();
+  });
 }
 
 
@@ -1173,6 +2132,8 @@ function enhanceTalents(root) {
   const openCardFor = el => {
     const card = document.createElement('div');
     card.className = 'talent-card';
+    if (el.classList.contains('base-ability')) card.classList.add('base-ability'); // passo 3 já marcou o h4
+    if (currentGroup) card.dataset.group = currentGroup;                            // h3 de origem (p/ detecção de grupo-grátis)
     if (/avan[çc]ad|lend[áa]ri/i.test(currentGroup)) card.classList.add('advanced');
     el.parentNode.insertBefore(card, el);
     card.appendChild(el);
@@ -1399,6 +2360,14 @@ function renderChapter(index) {
   highlightMechanics(sectionsFrag);
   if (isSphere) injectSphereSigil(sectionsFrag, chapter);
   if (isSphere) addFavoriteStars(sectionsFrag, chapter);
+  if (isSphere) {
+    const bar = renderSphereAcquireBar(chapter);
+    if (bar) {
+      const firstH2 = sectionsFrag.querySelector('section h2');
+      if (firstH2) firstH2.insertAdjacentElement('afterend', bar);
+      else sectionsFrag.insertBefore(bar, sectionsFrag.firstChild);
+    }
+  }
   injectSubclassTable(sectionsFrag, chapter);
 
   if (isCover) {
@@ -1709,8 +2678,10 @@ function renderGlossary() {
    NAVEGAÇÃO
    ============================================================ */
 function navigate(hash, opts = {}) {
-  if (hash === '#glossario' || hash === '#favoritos') {
-    if (hash === '#favoritos') renderFavorites(); else renderGlossary();
+  if (hash === '#glossario' || hash === '#favoritos' || hash === '#personagem') {
+    if (hash === '#favoritos') renderFavorites();
+    else if (hash === '#personagem') renderCharacter();
+    else renderGlossary();
     if (!opts.silent) {
       if (opts.replace) history.replaceState(null, '', hash);
       else if (location.hash !== hash) history.pushState(null, '', hash);
@@ -1754,8 +2725,8 @@ function handleInternalLinkClick(e) {
   }
   const href = a.getAttribute('href');
 
-  // Página do glossário completo / favoritos
-  if (href === '#glossario' || href === '#favoritos') {
+  // Páginas sintéticas (glossário / favoritos / personagem)
+  if (href === '#glossario' || href === '#favoritos' || href === '#personagem') {
     e.preventDefault();
     navigate(href);
     return;
@@ -1813,6 +2784,12 @@ function buildSidebar(tocTrees) {
   favLink.className = 'toc-link toc-home';
   favLink.textContent = '★ Favoritos';
   frag.appendChild(favLink);
+
+  const charLink = document.createElement('a');
+  charLink.href = '#personagem';
+  charLink.className = 'toc-link toc-home';
+  charLink.textContent = '🛡 Meu personagem';
+  frag.appendChild(charLink);
 
   frag.appendChild(document.createElement('hr'));
 

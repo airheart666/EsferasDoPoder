@@ -1216,7 +1216,7 @@ h4.base-ability::after {
    FAVORITOS ("Meu compêndio") + CONTINUAR LENDO
    ============================================================ */
 .talent-card { position: relative; }
-.talent-card > h4, .talent-card > h5 { padding-right: 1.9rem; } /* espaço p/ a estrela */
+.talent-card > h4, .talent-card > h5 { padding-right: 3.4rem; } /* espaço p/ + e ★ */
 .fav-btn {
   position: absolute;
   top: 0.55rem;
@@ -1298,6 +1298,365 @@ h4.base-ability::after {
 
 .onboarding-help { margin-top: 0.75rem; font-size: 0.9rem; }
 .onboarding-help .howto-link { font-weight: 700; color: var(--accent); }
+
+/* ============================================================
+   COMPANHEIRO DE PERSONAGEM (#personagem)
+   Botão + em cada talento, seletor, ficha e painel de valores.
+   ============================================================ */
+/* Estrela + botão de personagem agrupados no topo do card. */
+.talent-actions {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+.talent-actions .fav-btn { position: static; top: auto; right: auto; }
+.char-btn {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--text-muted);
+  padding: 0 0.28rem;
+  border-radius: var(--border-radius);
+  transition: color 0.15s, transform 0.1s, border-color 0.15s;
+}
+.char-btn:hover { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+.char-btn:active { transform: scale(0.9); }
+.char-btn.on { color: var(--verdigris); font-size: 1rem; }
+
+/* Seletor de personagens (abas) + novo */
+.char-selector { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.3rem; }
+.charsel-tab, .char-new {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid var(--table-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+  background: var(--bg-content);
+  color: var(--text);
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.charsel-tab:hover, .char-new:hover { border-color: var(--accent); color: var(--accent); }
+.charsel-tab.active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  font-weight: 700;
+}
+.char-new { border-style: dashed; color: var(--text-muted); }
+
+/* Ficha de identidade */
+.char-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.9rem;
+  margin: 0 0 1.4rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  background: var(--stat-bg);
+}
+.char-field-l {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.char-field {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text);
+  background: var(--bg-content);
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  padding: 0.4rem 0.55rem;
+}
+.char-field:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+
+/* Painel de valores derivados */
+.char-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.7rem;
+  margin: 0 0 1.2rem;
+}
+.char-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  text-align: center;
+  padding: 0.7rem 0.5rem;
+  border: 1px solid var(--stat-border);
+  border-radius: var(--border-radius);
+  background: var(--stat-bg);
+}
+.cs-val { font-family: var(--font-display); font-size: 1.7rem; line-height: 1; color: var(--accent); }
+.cs-label { font-family: var(--font-ui); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); }
+.cs-hint { font-family: var(--font-ui); font-size: 0.65rem; color: var(--text-muted); }
+.char-warn {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: var(--oxblood);
+  border: 1px solid color-mix(in srgb, var(--oxblood) 45%, transparent);
+  background: color-mix(in srgb, var(--oxblood) 8%, transparent);
+  border-radius: var(--border-radius);
+  padding: 0.55rem 0.8rem;
+  margin: 0 0 1.2rem;
+}
+[data-theme="dark"] .char-warn { color: var(--oxblood-light); }
+
+/* Talentos escolhidos: remover ✕ inline */
+.char-talent-remove {
+  background: none; border: none; cursor: pointer;
+  color: var(--copper); font-family: var(--font-ui);
+  font-size: 0.85rem; line-height: 1; flex: none; margin-right: 0.4rem;
+}
+.char-talent-remove:hover { color: var(--accent); }
+.char-delete {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: var(--oxblood);
+  background: none;
+  border: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
+  border-radius: var(--border-radius);
+  padding: 0.35rem 0.9rem;
+  transition: background 0.15s;
+}
+.char-delete:hover { background: color-mix(in srgb, var(--oxblood) 12%, transparent); }
+[data-theme="dark"] .char-delete { color: var(--oxblood-light); }
+
+/* ---- Aquisição de esferas (leitura) ---------------------------------------- */
+/* Barra sob o título da esfera: adquirir / status + escolha grátis + remover. */
+.sphere-acquire {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+  margin: 0.4rem 0 1.4rem;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--table-border));
+  border-left: 3px solid var(--accent);
+  border-radius: var(--border-radius);
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg-content));
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+.acquire-btn {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius);
+  padding: 0.4rem 1rem;
+  transition: background 0.15s, transform 0.1s;
+}
+.acquire-btn:hover { background: var(--accent-light); }
+.acquire-btn:active { transform: scale(0.98); }
+.acquire-status { font-weight: 700; color: var(--accent); }
+.acquire-who {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding-right: 0.6rem;
+  margin-right: 0.2rem;
+  border-right: 1px solid var(--table-border);
+}
+.char-target-select {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--bg-content);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--table-border));
+  border-radius: var(--border-radius);
+  padding: 0.2rem 0.4rem;
+}
+.char-target-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.acquire-empty { color: var(--text-muted); font-family: var(--font-ui); font-size: 0.88rem; }
+.acquire-empty a { color: var(--accent); }
+/* Seletor de pacote-base (Alquimia) e notas de condicional */
+.pkg-l { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); }
+.pkg-select {
+  font-family: var(--font-body); font-size: 0.92rem; font-weight: 700;
+  color: var(--accent); background: var(--bg-content);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--table-border));
+  border-radius: var(--border-radius); padding: 0.2rem 0.4rem;
+}
+.acquire-cond {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border: 1px dashed var(--table-border);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+}
+.acquire-cond.on { color: var(--verdigris); border-style: solid; border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
+
+/* Proficiências na ficha (chips alternáveis) */
+.char-profs { margin: 0 0 1.4rem; }
+.char-profs-title { font-size: 1.15rem; margin: 0 0 0.2rem; }
+.char-profs-hint { font-family: var(--font-ui); font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.6rem; }
+.char-profs-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; margin-bottom: 0.5rem; }
+.char-profs-cap {
+  flex: 0 0 100%;
+  font-family: var(--font-ui); font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.1rem;
+}
+.prof-chip {
+  font-family: var(--font-ui); font-size: 0.82rem; cursor: pointer;
+  color: var(--text); background: var(--bg-content);
+  border: 1px solid var(--table-border); border-radius: 999px;
+  padding: 0.18rem 0.7rem; transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.prof-chip:hover { border-color: var(--accent); }
+.prof-chip.on {
+  color: var(--accent); font-weight: 700;
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.freepick-l { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); }
+.freepick-select {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg-content);
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.4rem;
+  max-width: 16rem;
+}
+.freepick-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.acquire-cost {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border: 1px solid var(--table-border);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+}
+.sphere-remove {
+  margin-left: auto;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--copper);
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+.sphere-remove:hover { color: var(--accent); }
+
+/* Chip "✦ incluída" no lugar do + nos cards de habilidade-base. */
+.base-included {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+/* Estados do botão de personagem nos cards. */
+.char-btn.is-free { font-size: 0.78rem; padding: 0.1rem 0.4rem; }
+.char-btn.needs-sphere, .char-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ---- Ficha: esferas adquiridas --------------------------------------------- */
+.char-sphere { margin: 0 0 1.6rem; }
+.char-sphere-title {
+  color: var(--accent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+.char-subhead {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin: 0.6rem 0 0.25rem;
+}
+.char-tag {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  border: 1px solid var(--table-border);
+  border-radius: 999px;
+  padding: 0 0.4rem;
+  margin-left: 0.4rem;
+}
+.char-tag-free { color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
+.char-included .fav-go { color: var(--text); }
+.char-sphere-remove {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: var(--copper);
+  background: none;
+  border: 1px solid color-mix(in srgb, var(--copper) 40%, transparent);
+  border-radius: var(--border-radius);
+  padding: 0.2rem 0.7rem;
+  margin-top: 0.5rem;
+}
+.char-sphere-remove:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Talentos da ficha como cards recolhíveis (reusa .fav-card/.fav-toggle). */
+.char-cards { margin: 0.3rem 0 0.6rem; }
+.char-talent { margin-bottom: 0.55rem; }
+.char-talent .fav-card { margin: 0; }
+.char-talent-extra { display: flex; align-items: flex-start; gap: 0.35rem; }
+.char-talent-extra > .char-talent-remove {
+  flex: none;
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--copper) 35%, transparent);
+  border-radius: var(--border-radius);
+  padding: 0.05rem 0.35rem;
+}
+.char-talent-extra > .fav-card { flex: 1; min-width: 0; }
+/* Etiqueta base/grátis no cabeçalho do card (visível mesmo recolhido). */
+.char-card-tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  color: var(--text-muted);
+  border: 1px solid var(--table-border);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+  margin-left: 0.55rem;
+}
+.char-card-tag.char-tag-free { color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
 
 /* Notação mecânica: dados e CD em chips discretos e escaneáveis */
 .dice, .dc {

@@ -1,0 +1,597 @@
+{
+  "Artífice": {
+    "type": "magic",
+    "keyAbility": "Inteligência",
+    "resource": "PM",
+    "progression": [
+      {
+        "level": 1,
+        "prof": 2,
+        "magicTalents": 1,
+        "pm": 1
+      },
+      {
+        "level": 2,
+        "prof": 2,
+        "magicTalents": 1,
+        "pm": 1
+      },
+      {
+        "level": 3,
+        "prof": 2,
+        "magicTalents": 2,
+        "pm": 2
+      },
+      {
+        "level": 4,
+        "prof": 2,
+        "magicTalents": 3,
+        "pm": 2
+      },
+      {
+        "level": 5,
+        "prof": 3,
+        "magicTalents": 3,
+        "pm": 3
+      },
+      {
+        "level": 6,
+        "prof": 3,
+        "magicTalents": 4,
+        "pm": 3
+      },
+      {
+        "level": 7,
+        "prof": 3,
+        "magicTalents": 5,
+        "pm": 4
+      },
+      {
+        "level": 8,
+        "prof": 3,
+        "magicTalents": 6,
+        "pm": 4
+      },
+      {
+        "level": 9,
+        "prof": 4,
+        "magicTalents": 6,
+        "pm": 5
+      },
+      {
+        "level": 10,
+        "prof": 4,
+        "magicTalents": 7,
+        "pm": 5
+      },
+      {
+        "level": 11,
+        "prof": 4,
+        "magicTalents": 8,
+        "pm": 6
+      },
+      {
+        "level": 12,
+        "prof": 4,
+        "magicTalents": 9,
+        "pm": 6
+      },
+      {
+        "level": 13,
+        "prof": 5,
+        "magicTalents": 9,
+        "pm": 7
+      },
+      {
+        "level": 14,
+        "prof": 5,
+        "magicTalents": 10,
+        "pm": 7
+      },
+      {
+        "level": 15,
+        "prof": 5,
+        "magicTalents": 11,
+        "pm": 8
+      },
+      {
+        "level": 16,
+        "prof": 5,
+        "magicTalents": 12,
+        "pm": 8
+      },
+      {
+        "level": 17,
+        "prof": 6,
+        "magicTalents": 12,
+        "pm": 9
+      },
+      {
+        "level": 18,
+        "prof": 6,
+        "magicTalents": 13,
+        "pm": 9
+      },
+      {
+        "level": 19,
+        "prof": 6,
+        "magicTalents": 14,
+        "pm": 10
+      },
+      {
+        "level": 20,
+        "prof": 6,
+        "magicTalents": 15,
+        "pm": 10
+      }
+    ]
+  },
+  "Feiticeiro": {
+    "type": "magic",
+    "keyAbility": "Carisma",
+    "resource": "PM",
+    "progression": [
+      {
+        "level": 1,
+        "prof": 2,
+        "magicTalents": 1,
+        "pm": 1
+      },
+      {
+        "level": 2,
+        "prof": 2,
+        "magicTalents": 2,
+        "pm": 2
+      },
+      {
+        "level": 3,
+        "prof": 2,
+        "magicTalents": 3,
+        "pm": 4
+      },
+      {
+        "level": 4,
+        "prof": 2,
+        "magicTalents": 4,
+        "pm": 5
+      },
+      {
+        "level": 5,
+        "prof": 3,
+        "magicTalents": 5,
+        "pm": 7
+      },
+      {
+        "level": 6,
+        "prof": 3,
+        "magicTalents": 6,
+        "pm": 8
+      },
+      {
+        "level": 7,
+        "prof": 3,
+        "magicTalents": 7,
+        "pm": 10
+      },
+      {
+        "level": 8,
+        "prof": 3,
+        "magicTalents": 8,
+        "pm": 11
+      },
+      {
+        "level": 9,
+        "prof": 4,
+        "magicTalents": 9,
+        "pm": 13
+      },
+      {
+        "level": 10,
+        "prof": 4,
+        "magicTalents": 10,
+        "pm": 14
+      },
+      {
+        "level": 11,
+        "prof": 4,
+        "magicTalents": 11,
+        "pm": 16
+      },
+      {
+        "level": 12,
+        "prof": 4,
+        "magicTalents": 12,
+        "pm": 17
+      },
+      {
+        "level": 13,
+        "prof": 5,
+        "magicTalents": 13,
+        "pm": 19
+      },
+      {
+        "level": 14,
+        "prof": 5,
+        "magicTalents": 14,
+        "pm": 20
+      },
+      {
+        "level": 15,
+        "prof": 5,
+        "magicTalents": 15,
+        "pm": 22
+      },
+      {
+        "level": 16,
+        "prof": 5,
+        "magicTalents": 16,
+        "pm": 23
+      },
+      {
+        "level": 17,
+        "prof": 6,
+        "magicTalents": 17,
+        "pm": 25
+      },
+      {
+        "level": 18,
+        "prof": 6,
+        "magicTalents": 18,
+        "pm": 27
+      },
+      {
+        "level": 19,
+        "prof": 6,
+        "magicTalents": 19,
+        "pm": 28
+      },
+      {
+        "level": 20,
+        "prof": 6,
+        "magicTalents": 20,
+        "pm": 30
+      }
+    ]
+  },
+  "Guerreiro": {
+    "type": "martial",
+    "keyAbility": "Força ou Destreza",
+    "resource": null,
+    "progression": [
+      {
+        "level": 1,
+        "prof": 2,
+        "martialTalents": 1
+      },
+      {
+        "level": 2,
+        "prof": 2,
+        "martialTalents": 2
+      },
+      {
+        "level": 3,
+        "prof": 2,
+        "martialTalents": 3
+      },
+      {
+        "level": 4,
+        "prof": 2,
+        "martialTalents": 4
+      },
+      {
+        "level": 5,
+        "prof": 3,
+        "martialTalents": 5
+      },
+      {
+        "level": 6,
+        "prof": 3,
+        "martialTalents": 6
+      },
+      {
+        "level": 7,
+        "prof": 3,
+        "martialTalents": 7
+      },
+      {
+        "level": 8,
+        "prof": 3,
+        "martialTalents": 8
+      },
+      {
+        "level": 9,
+        "prof": 4,
+        "martialTalents": 9
+      },
+      {
+        "level": 10,
+        "prof": 4,
+        "martialTalents": 10
+      },
+      {
+        "level": 11,
+        "prof": 4,
+        "martialTalents": 11
+      },
+      {
+        "level": 12,
+        "prof": 4,
+        "martialTalents": 12
+      },
+      {
+        "level": 13,
+        "prof": 5,
+        "martialTalents": 13
+      },
+      {
+        "level": 14,
+        "prof": 5,
+        "martialTalents": 14
+      },
+      {
+        "level": 15,
+        "prof": 5,
+        "martialTalents": 15
+      },
+      {
+        "level": 16,
+        "prof": 5,
+        "martialTalents": 16
+      },
+      {
+        "level": 17,
+        "prof": 6,
+        "martialTalents": 17
+      },
+      {
+        "level": 18,
+        "prof": 6,
+        "martialTalents": 18
+      },
+      {
+        "level": 19,
+        "prof": 6,
+        "martialTalents": 19
+      },
+      {
+        "level": 20,
+        "prof": 6,
+        "martialTalents": 20
+      }
+    ]
+  },
+  "Ladino": {
+    "type": "martial",
+    "keyAbility": "Destreza",
+    "resource": null,
+    "progression": [
+      {
+        "level": 1,
+        "prof": 2,
+        "martialTalents": 0
+      },
+      {
+        "level": 2,
+        "prof": 2,
+        "martialTalents": 1
+      },
+      {
+        "level": 3,
+        "prof": 2,
+        "martialTalents": 2
+      },
+      {
+        "level": 4,
+        "prof": 2,
+        "martialTalents": 3
+      },
+      {
+        "level": 5,
+        "prof": 3,
+        "martialTalents": 3
+      },
+      {
+        "level": 6,
+        "prof": 3,
+        "martialTalents": 4
+      },
+      {
+        "level": 7,
+        "prof": 3,
+        "martialTalents": 5
+      },
+      {
+        "level": 8,
+        "prof": 3,
+        "martialTalents": 6
+      },
+      {
+        "level": 9,
+        "prof": 4,
+        "martialTalents": 6
+      },
+      {
+        "level": 10,
+        "prof": 4,
+        "martialTalents": 7
+      },
+      {
+        "level": 11,
+        "prof": 4,
+        "martialTalents": 8
+      },
+      {
+        "level": 12,
+        "prof": 4,
+        "martialTalents": 9
+      },
+      {
+        "level": 13,
+        "prof": 5,
+        "martialTalents": 9
+      },
+      {
+        "level": 14,
+        "prof": 5,
+        "martialTalents": 10
+      },
+      {
+        "level": 15,
+        "prof": 5,
+        "martialTalents": 11
+      },
+      {
+        "level": 16,
+        "prof": 5,
+        "martialTalents": 12
+      },
+      {
+        "level": 17,
+        "prof": 6,
+        "martialTalents": 12
+      },
+      {
+        "level": 18,
+        "prof": 6,
+        "martialTalents": 13
+      },
+      {
+        "level": 19,
+        "prof": 6,
+        "martialTalents": 14
+      },
+      {
+        "level": 20,
+        "prof": 6,
+        "martialTalents": 15
+      }
+    ]
+  },
+  "Monge": {
+    "type": "martial",
+    "keyAbility": "Sabedoria",
+    "resource": "Chi",
+    "progression": [
+      {
+        "level": 1,
+        "prof": 2,
+        "martialTalents": 0,
+        "chi": 0
+      },
+      {
+        "level": 2,
+        "prof": 2,
+        "martialTalents": 1,
+        "chi": 2
+      },
+      {
+        "level": 3,
+        "prof": 2,
+        "martialTalents": 2,
+        "chi": 3
+      },
+      {
+        "level": 4,
+        "prof": 2,
+        "martialTalents": 3,
+        "chi": 4
+      },
+      {
+        "level": 5,
+        "prof": 3,
+        "martialTalents": 3,
+        "chi": 5
+      },
+      {
+        "level": 6,
+        "prof": 3,
+        "martialTalents": 4,
+        "chi": 6
+      },
+      {
+        "level": 7,
+        "prof": 3,
+        "martialTalents": 5,
+        "chi": 7
+      },
+      {
+        "level": 8,
+        "prof": 3,
+        "martialTalents": 6,
+        "chi": 8
+      },
+      {
+        "level": 9,
+        "prof": 4,
+        "martialTalents": 6,
+        "chi": 9
+      },
+      {
+        "level": 10,
+        "prof": 4,
+        "martialTalents": 7,
+        "chi": 10
+      },
+      {
+        "level": 11,
+        "prof": 4,
+        "martialTalents": 8,
+        "chi": 11
+      },
+      {
+        "level": 12,
+        "prof": 4,
+        "martialTalents": 9,
+        "chi": 12
+      },
+      {
+        "level": 13,
+        "prof": 5,
+        "martialTalents": 9,
+        "chi": 13
+      },
+      {
+        "level": 14,
+        "prof": 5,
+        "martialTalents": 10,
+        "chi": 14
+      },
+      {
+        "level": 15,
+        "prof": 5,
+        "martialTalents": 11,
+        "chi": 15
+      },
+      {
+        "level": 16,
+        "prof": 5,
+        "martialTalents": 12,
+        "chi": 16
+      },
+      {
+        "level": 17,
+        "prof": 6,
+        "martialTalents": 12,
+        "chi": 17
+      },
+      {
+        "level": 18,
+        "prof": 6,
+        "martialTalents": 13,
+        "chi": 18
+      },
+      {
+        "level": 19,
+        "prof": 6,
+        "martialTalents": 14,
+        "chi": 19
+      },
+      {
+        "level": 20,
+        "prof": 6,
+        "martialTalents": 15,
+        "chi": 20
+      }
+    ]
+  }
+}

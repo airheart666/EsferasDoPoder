@@ -1,0 +1,54 @@
+{
+  "Natureza":   { "freeGroup": { "h3": "pacote" },                              "freeLabel": "pacote",      "freePicks": 1 },
+  "Alteração":  { "freeGroup": { "tag": "genótipo" },                           "freeLabel": "genótipo",    "freePicks": 1 },
+  "Conjuração": { "freeGroup": { "tag": "base" },                              "freeLabel": "companheiro", "freePicks": 1 },
+  "Destino":    { "freeGroup": { "tags": ["consagração", "motivo", "palavra"] }, "freeLabel": "carta",       "freePicks": 1 },
+
+  "Criação":    { "freePicks": 0 },
+  "Distorção":  { "freePicks": 0 },
+  "Escuridão":  { "freePicks": 0 },
+  "Ilusão":     { "freePicks": 0 },
+  "Luz":        { "freePicks": 0 },
+  "Proteção":   { "freePicks": 0 },
+  "Telecinese": { "freePicks": 0 },
+  "Universal":  { "freePicks": 0 },
+  "Vida":       { "freePicks": 0 },
+
+  "Atirador":         { "freePicks": 0 },
+  "Barragem":         { "freePicks": 0 },
+  "Batedor":          { "freePicks": 0 },
+  "Brigão":           { "freePicks": 0 },
+  "Duas Armas":       { "freePicks": 0 },
+  "Duelismo":         { "freePicks": 0 },
+  "Escudo":           { "freePicks": 0 },
+  "General":          { "freePicks": 0 },
+  "Gladiador":        { "freePicks": 0 },
+  "Guardião":         { "freePicks": 0 },
+  "Retribuição":      { "freePicks": 0 },
+
+  "Armadilha":        { "freePicks": 0, "conditionals": [ { "requires": "Ferramentas de ladrão", "addPicks": 1 } ] },
+  "Atletismo":        { "freePicks": 0, "conditionals": [ { "requires": ["Atletismo", "Acrobacia"], "addPicks": 1 } ] },
+  "Bruto":            { "freePicks": 0, "conditionals": [ { "requires": "Atletismo", "addPicks": 1 } ] },
+  "Domínio das Feras": { "freePicks": 0, "conditionals": [ { "requires": "Lidar com Animais", "addPicks": 1 } ] },
+  "Canalha":          { "freePicks": 0, "conditionals": [ { "requires": "Prestidigitação", "addPicks": 1 } ] },
+  "Liderança":        { "freePicks": 0, "conditionals": [ { "requires": "Persuasão", "addPicks": 1 } ] },
+
+  "Engenhosidade": {
+    "freeGroup": { "tag": "dispositivo" }, "freeLabel": "dispositivo", "freePicks": 1,
+    "conditionals": [ { "requires": "Ferramentas do consertador", "addPicks": 1 } ]
+  },
+
+  "Alquimia": {
+    "packages": {
+      "label": "Pacote base",
+      "options": [
+        { "id": "formula", "label": "Fórmula", "freeGroup": { "tag": "fórmula" }, "freeLabel": "fórmula",
+          "freePicks": 1, "talentTags": ["fórmula"],
+          "conditionals": [ { "requires": "Suprimentos de alquimista", "addPicks": 1 } ] },
+        { "id": "veneno", "label": "Veneno", "freeGroup": { "tag": "veneno" }, "freeLabel": "veneno",
+          "freePicks": 1, "talentTags": ["veneno"],
+          "conditionals": [ { "requires": "Kit de envenenador", "addPicks": 1 } ] }
+      ]
+    }
+  }
+}
