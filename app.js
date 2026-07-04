@@ -565,7 +565,7 @@ function makeFavButton(item) {
 
 // Controle de personagem de um card, conforme o papel na esfera (base/free/extra/
 // ignore) e o estado do personagem ativo. Base → chip; ignore → nada; demais → +/✓.
-function makeCharControl(item, role, active, entry) {
+function makeCharControl(item, role, active, entry, multi) {
   if (role === 'ignore') return null; // não é talento (feature de pacote/regras)
   if (role === 'base') {
     const chip = document.createElement('span');
@@ -586,12 +586,17 @@ function makeCharControl(item, role, active, entry) {
     btn.setAttribute('aria-label', 'Adicionar ao personagem');
     return btn;
   }
-  if (!entry) { // esfera ainda não adquirida → desabilitado
+  if (!entry) { // esfera não adquirida p/ o personagem ativo
     btn.textContent = '+';
-    btn.disabled = true;
-    btn.classList.add('needs-sphere');
-    btn.title = 'Adquira a esfera primeiro';
-    btn.setAttribute('aria-label', 'Adquira a esfera primeiro');
+    if (multi) { // vários personagens → clique abre o seletor de alvo
+      btn.title = 'Escolher personagem';
+      btn.setAttribute('aria-label', 'Escolher personagem');
+    } else {     // um só → guia a adquirir a esfera
+      btn.disabled = true;
+      btn.classList.add('needs-sphere');
+      btn.title = 'Adquira a esfera primeiro';
+      btn.setAttribute('aria-label', 'Adquira a esfera primeiro');
+    }
     return btn;
   }
   const k = favKey(item);
@@ -620,6 +625,7 @@ function addFavoriteStars(root, chapter) {
   const active = getActiveChar();
   const entry = active ? sphereEntry(active, chapter.title) : null;
   const cs = classSpec(chapter.title, entry && entry.choices ? entry.choices.pkg : null);
+  const multi = getCharacters().length > 1;
   for (const card of root.querySelectorAll('.talent-card')) {
     const h4 = card.querySelector(':scope > h4, :scope > h5');
     if (!h4) continue;
@@ -628,7 +634,7 @@ function addFavoriteStars(root, chapter) {
     const role = cardRole(card, cs);
     const actions = document.createElement('div');
     actions.className = 'talent-actions';
-    const ctl = makeCharControl(item, role, active, entry);
+    const ctl = makeCharControl(item, role, active, entry, multi);
     if (ctl) actions.appendChild(ctl);
     actions.appendChild(makeFavButton(item));
     card.appendChild(actions);
@@ -764,6 +770,7 @@ function refreshSphereUI(title) {
   const active = getActiveChar();
   const entry = active ? sphereEntry(active, title) : null;
   const cs = classSpec(title, entry && entry.choices ? entry.choices.pkg : null);
+  const multi = getCharacters().length > 1;
   const chapter = chapters.find(c => c.title === title);
 
   content.querySelectorAll('.sphere-acquire').forEach(bar => {
@@ -781,10 +788,67 @@ function refreshSphereUI(title) {
     const actions = card.querySelector('.talent-actions');
     if (!actions) continue;
     const oldCtl = actions.querySelector(':scope > .char-btn, :scope > .base-included');
-    const newCtl = makeCharControl(item, role, active, entry);
+    const newCtl = makeCharControl(item, role, active, entry, multi);
     if (oldCtl) { if (newCtl) oldCtl.replaceWith(newCtl); else oldCtl.remove(); }
     else if (newCtl) actions.insertBefore(newCtl, actions.firstChild);
   }
+}
+
+// Aplica o clique de um talento ao personagem `active`: alterna grátis/extra
+// (recomputa o papel a partir do card, robusto a pacotes por personagem).
+function applyTalentToggle(active, title, item, cardEl) {
+  const entry = sphereEntry(active, title);
+  if (!entry) return false; // esfera não adquirida p/ este personagem
+  const k = favKey(item);
+  if ((entry.freePicks || []).some(f => favKey(f) === k)) { removeFreePick(active, title, item); return true; }
+  if ((entry.talents || []).some(t => favKey(t) === k)) { toggleExtraTalent(active, title, item); return true; }
+  const cs = classSpec(title, entry.choices && entry.choices.pkg);
+  const role = cardEl ? cardRole(cardEl, cs) : 'extra';
+  const cap = resolveSpec(active, title, entry.choices).freePicks;
+  const room = (entry.freePicks || []).length < cap;
+  if (role === 'free' && room) addFreePick(active, title, item);
+  else toggleExtraTalent(active, title, item);
+  return true;
+}
+
+// Popover "Adicionar a…": escolhe explicitamente o personagem-alvo do talento.
+function closeCharPicker() {
+  const p = document.querySelector('.char-picker');
+  if (p) p.remove();
+}
+function showCharPicker(btn, title, item) {
+  closeCharPicker();
+  const chars = getCharacters();
+  const activeId = getActiveCharId();
+  const pop = document.createElement('div');
+  pop.className = 'char-picker';
+  pop.__title = title; pop.__item = item; pop.__card = btn.closest('.talent-card');
+  const head = document.createElement('div');
+  head.className = 'char-picker-head';
+  head.textContent = 'Adicionar a…';
+  pop.appendChild(head);
+  for (const c of chars) {
+    const entry = sphereEntry(c, title);
+    let state;
+    if (!entry) state = 'adquira a esfera';
+    else {
+      const k = favKey(item);
+      if ((entry.freePicks || []).some(f => favKey(f) === k)) state = '✓ grátis';
+      else if ((entry.talents || []).some(t => favKey(t) === k)) state = '✓ no personagem';
+      else state = '+ adicionar';
+    }
+    const row = document.createElement('button');
+    row.type = 'button';
+    row.className = 'char-picker-row' + (c.id === activeId ? ' active' : '');
+    row.dataset.id = c.id;
+    row.innerHTML = `<span class="cp-name">${escapeHtml(c.name || '(sem nome)')}</span><span class="cp-state">${escapeHtml(state)}</span>`;
+    pop.appendChild(row);
+  }
+  document.body.appendChild(pop);
+  const r = btn.getBoundingClientRect();
+  const w = pop.offsetWidth || 200;
+  pop.style.top = (window.scrollY + r.bottom + 4) + 'px';
+  pop.style.left = (window.scrollX + Math.max(8, Math.min(r.left, window.innerWidth - w - 8))) + 'px';
 }
 
 function toggleFavCard(head) {
@@ -821,28 +885,17 @@ function setupFavorites() {
       if (active) { removeSphere(active, rs.dataset.removesphere); refreshSphereUI(rs.dataset.removesphere); }
       return;
     }
-    // Adicionar/remover do personagem ativo (botão +/✓ em cada talento)
+    // Adicionar/remover em cada talento — com ≥2 personagens, pergunta o alvo
     const cbtn = e.target.closest('.char-btn');
     if (cbtn) {
       e.preventDefault(); e.stopPropagation();
-      const active = getActiveChar();
-      if (!active) { navigate('#personagem'); return; } // sem personagem → leva à página p/ criar
+      const chars = getCharacters();
+      if (!chars.length) { navigate('#personagem'); return; } // sem personagem → cria
       const title = cbtn.dataset.sphere;
-      const entry = sphereEntry(active, title);
-      if (!entry) return; // esfera não adquirida (botão desabilitado)
       const item = JSON.parse(cbtn.dataset.char);
-      const k = favKey(item);
-      const isFree = (entry.freePicks || []).some(f => favKey(f) === k);
-      const isExtra = (entry.talents || []).some(t => favKey(t) === k);
-      if (isFree) removeFreePick(active, title, item);
-      else if (isExtra) toggleExtraTalent(active, title, item);
-      else {
-        // card elegível ao grátis + slot livre → vira grátis; senão, extra (+1)
-        const cap = resolveSpec(active, title, entry.choices).freePicks;
-        const room = (entry.freePicks || []).length < cap;
-        if (cbtn.dataset.role === 'free' && room) addFreePick(active, title, item);
-        else toggleExtraTalent(active, title, item);
-      }
+      if (chars.length > 1) { showCharPicker(cbtn, title, item); return; }
+      setActiveCharId(chars[0].id);
+      applyTalentToggle(chars[0], title, item, cbtn.closest('.talent-card'));
       refreshSphereUI(title);
       return;
     }
@@ -883,6 +936,28 @@ function setupFavorites() {
       e.preventDefault(); toggleFavCard(e.target);
     }
   });
+
+  // Popover "Adicionar a…" fica no <body> → tratado no nível do documento.
+  document.addEventListener('click', e => {
+    const row = e.target.closest('.char-picker-row');
+    if (row) {
+      e.preventDefault();
+      const pop = row.closest('.char-picker');
+      const title = pop.__title, item = pop.__item, card = pop.__card;
+      setActiveCharId(row.dataset.id);
+      applyTalentToggle(getActiveChar(), title, item, card);
+      closeCharPicker();
+      refreshSphereUI(title);
+      // se o alvo não tem a esfera, traz a barra de aquisição dele à vista
+      if (!sphereEntry(getActiveChar(), title)) {
+        const barEl = [...document.querySelectorAll('#content .sphere-acquire')].find(b => b.dataset.sphere === title);
+        if (barEl) barEl.scrollIntoView({ block: 'center' });
+      }
+      return;
+    }
+    if (!e.target.closest('.char-picker') && !e.target.closest('.char-btn')) closeCharPicker();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCharPicker(); });
 }
 
 // Registra o capítulo lido (último + recentes), exceto a capa.

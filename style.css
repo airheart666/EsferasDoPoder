@@ -1498,6 +1498,48 @@ h4.base-ability::after {
 .char-target-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .acquire-empty { color: var(--text-muted); font-family: var(--font-ui); font-size: 0.88rem; }
 .acquire-empty a { color: var(--accent); }
+
+/* Popover "Adicionar a…" (escolha explícita do personagem-alvo no + do talento) */
+.char-picker {
+  position: absolute;
+  z-index: 1200;
+  min-width: 12rem;
+  max-width: 18rem;
+  background: var(--bg-content);
+  border: 1px solid var(--stat-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 22px rgba(20, 14, 8, 0.35);
+  padding: 0.3rem;
+  font-family: var(--font-ui);
+}
+.char-picker-head {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0.2rem 0.5rem 0.35rem;
+}
+.char-picker-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+  width: 100%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+.char-picker-row:hover { background: var(--chrome-hover); }
+.char-picker-row.active { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.char-picker-row .cp-name { font-weight: 700; }
+.char-picker-row.active .cp-name { color: var(--accent); }
+.char-picker-row .cp-state { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; }
 /* Seletor de pacote-base (Alquimia) e notas de condicional */
 .pkg-l { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); }
 .pkg-select {
