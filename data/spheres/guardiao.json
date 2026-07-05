@@ -342,7 +342,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "guardia"
+          "id": "guardiao"
         },
         {
           "type": "level",
@@ -351,10 +351,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Uma criatura afetada pelo seu desafio deve fazer um teste de resistência de Sabedoria sempre que tentar se afastar de você (inclusive por teletransporte ou outros efeitos mágicos) ou perderá a ação ou o movimento tentado. A criatura não perde nenhum uso de magia, pontos de magia ou item mágico em um teste de resistência falho se isso impedir o efeito de uma magia ou esfera. A criatura pode ser movida normalmente por outras criaturas.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Guardiã"
-      ]
+      "body": "Uma criatura afetada pelo seu desafio deve fazer um teste de resistência de Sabedoria sempre que tentar se afastar de você (inclusive por teletransporte ou outros efeitos mágicos) ou perderá a ação ou o movimento tentado. A criatura não perde nenhum uso de magia, pontos de magia ou item mágico em um teste de resistência falho se isso impedir o efeito de uma magia ou esfera. A criatura pode ser movida normalmente por outras criaturas."
     },
     {
       "id": "m-guardiao-desafio-punitivo",
@@ -391,7 +388,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "guardia"
+          "id": "guardiao"
         },
         {
           "type": "talent",
@@ -404,10 +401,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Quando reduzido a 0 pontos de vida, você pode gastar seu foco marcial (nenhuma ação necessária) para agir normalmente até o final do seu próximo turno. Você não fica inconsciente devido à perda de pontos de vida e não está sujeito a testes de resistência contra morte durante esse período. Você pode receber cura durante esse turno para recuperar seus pontos de vida.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Guardiã"
-      ]
+      "body": "Quando reduzido a 0 pontos de vida, você pode gastar seu foco marcial (nenhuma ação necessária) para agir normalmente até o final do seu próximo turno. Você não fica inconsciente devido à perda de pontos de vida e não está sujeito a testes de resistência contra morte durante esse período. Você pode receber cura durante esse turno para recuperar seus pontos de vida."
     },
     {
       "id": "m-guardiao-eu-irei",
@@ -453,7 +447,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "guardia"
+          "id": "guardiao"
         },
         {
           "type": "talent",
@@ -462,10 +456,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode formar um vínculo com uma criatura como uma ação. Não há limite de alcance para com quem você pode se vincular, nem você precisa de linha de visão ou linha de efeito para formar um vínculo com uma criatura; você deve, no entanto, conhecer pessoalmente a criatura com a qual está se vinculando, mesmo que tenha sido uma apresentação casual. Uma criatura vinculada não toma conhecimento automaticamente deste vínculo, do seu nome ou de como chamá-lo; ela precisa ser informada.\n\nUma criatura vinculada pode chamar seu nome como uma reação; se você estiver a 1,6 km por nível, você toma conhecimento imediatamente do chamado e da direção para aquela criatura. No 5º nível, esse alcance aumenta para 16 km por nível. No 11º nível, o alcance se torna ilimitado, contanto que ambos estejam no mesmo plano.\n\nNo 17º nível, você pode ouvir o chamado através dos planos e obter conhecimento de em qual plano a criatura que o chama está. Você pode manter um número desses vínculos igual ao seu bônus de proficiência. Este é um efeito mágico.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Guardiã"
-      ]
+      "body": "Você pode formar um vínculo com uma criatura como uma ação. Não há limite de alcance para com quem você pode se vincular, nem você precisa de linha de visão ou linha de efeito para formar um vínculo com uma criatura; você deve, no entanto, conhecer pessoalmente a criatura com a qual está se vinculando, mesmo que tenha sido uma apresentação casual. Uma criatura vinculada não toma conhecimento automaticamente deste vínculo, do seu nome ou de como chamá-lo; ela precisa ser informada.\n\nUma criatura vinculada pode chamar seu nome como uma reação; se você estiver a 1,6 km por nível, você toma conhecimento imediatamente do chamado e da direção para aquela criatura. No 5º nível, esse alcance aumenta para 16 km por nível. No 11º nível, o alcance se torna ilimitado, contanto que ambos estejam no mesmo plano.\n\nNo 17º nível, você pode ouvir o chamado através dos planos e obter conhecimento de em qual plano a criatura que o chama está. Você pode manter um número desses vínculos igual ao seu bônus de proficiência. Este é um efeito mágico."
     },
     {
       "id": "m-guardiao-punicao",
@@ -504,7 +495,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "guardia"
+          "id": "guardiao"
         },
         {
           "type": "level",
@@ -513,10 +504,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "No início de seus turnos, criaturas hostis dentro da área de sua patrulha devem ser bem-sucedidas em um teste de resistência de Força ou serão movidas 1,5 metro para mais perto de você, embora parem quando se tornarem adjacentes. Esse movimento não provoca ataques de oportunidade.\n\nCriaturas hostis dentro da área de sua patrulha contam cada 1,5 metro de movimento direcionado para longe de você como 3 metros ao determinar seu movimento para a rodada. Isso se acumula com os efeitos de terreno difícil. No 11º nível, tanto a distância percorrida em sua direção quanto o custo adicional de movimento para longe de você aumentam em 1,5 metro. Este é um efeito mágico.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Guardiã"
-      ]
+      "body": "No início de seus turnos, criaturas hostis dentro da área de sua patrulha devem ser bem-sucedidas em um teste de resistência de Força ou serão movidas 1,5 metro para mais perto de você, embora parem quando se tornarem adjacentes. Esse movimento não provoca ataques de oportunidade.\n\nCriaturas hostis dentro da área de sua patrulha contam cada 1,5 metro de movimento direcionado para longe de você como 3 metros ao determinar seu movimento para a rodada. Isso se acumula com os efeitos de terreno difícil. No 11º nível, tanto a distância percorrida em sua direção quanto o custo adicional de movimento para longe de você aumentam em 1,5 metro. Este é um efeito mágico."
     },
     {
       "id": "m-guardiao-resiliente",

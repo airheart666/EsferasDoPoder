@@ -586,7 +586,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "temporal"
+          "id": "tempo"
         },
         {
           "type": "text",
@@ -606,7 +606,6 @@
       ],
       "body": "",
       "_needsReview": [
-        "prereq:sphere-unknown:Temporal",
         "prereq:unresolved:Imagem Fraturada"
       ]
     },
@@ -637,7 +636,7 @@
         },
         {
           "type": "sphere",
-          "id": "temporal"
+          "id": "tempo"
         },
         {
           "type": "level",
@@ -655,10 +654,7 @@
           "text": "O tempo de conjuração desta habilidade aumenta para 1 hora e você visualiza um ano. Você pode se concentrar por até 8 horas, visualizando 1 ano a cada hora."
         }
       ],
-      "body": "Você enxerga não apenas através do espaço, mas também através do tempo. Você pode visualizar o passado de um local dentro do alcance, visualizando a última hora. Você obtém informações sensoriais completas com base nos sentidos que possui. Você pode se concentrar neste efeito, visualizando uma hora adicional para cada minuto de concentração, até um máximo de 10 minutos. Todos os ataques direcionados a você têm vantagem e você tem desvantagem em todos os testes de Força e Destreza e em todos os testes de resistência enquanto conjura e se concentra nesta habilidade.\n\nSe você possuir o talento Massa (metaesfera) da esfera Universal, poderá aprimorar esta habilidade para compartilhar esta visão com um número de alvos dentro do seu alcance de alteração temporal, conforme definido por esse talento. Tais criaturas sofrem as mesmas penalidades, embora possam optar por sair da visão a qualquer momento, mas não possam retornar a ela.\n\nNo 11º nível, você pode obter o seguinte aprimoramento:\n\nNo 17º nível, você pode obter o seguinte aprimoramento:",
-      "_needsReview": [
-        "prereq:sphere-unknown:Temporal"
-      ]
+      "body": "Você enxerga não apenas através do espaço, mas também através do tempo. Você pode visualizar o passado de um local dentro do alcance, visualizando a última hora. Você obtém informações sensoriais completas com base nos sentidos que possui. Você pode se concentrar neste efeito, visualizando uma hora adicional para cada minuto de concentração, até um máximo de 10 minutos. Todos os ataques direcionados a você têm vantagem e você tem desvantagem em todos os testes de Força e Destreza e em todos os testes de resistência enquanto conjura e se concentra nesta habilidade.\n\nSe você possuir o talento Massa (metaesfera) da esfera Universal, poderá aprimorar esta habilidade para compartilhar esta visão com um número de alvos dentro do seu alcance de alteração temporal, conforme definido por esse talento. Tais criaturas sofrem as mesmas penalidades, embora possam optar por sair da visão a qualquer momento, mas não possam retornar a ela.\n\nNo 11º nível, você pode obter o seguinte aprimoramento:\n\nNo 17º nível, você pode obter o seguinte aprimoramento:"
     },
     {
       "id": "tempo-consulta-ao-eu",
@@ -804,7 +800,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "temporal"
+          "id": "tempo"
         },
         {
           "type": "level",
@@ -813,10 +809,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode criar um clone temporal do alvo, fazendo-o aparecer em um espaço desocupado dentro do seu alcance. Este clone temporal é uma imagem mágica e translúcida do alvo que dura pela duração da habilidade, até ser destruído, até você dispensá-lo como uma ação bônus ou até você usar Clone Temporal novamente.\n\nTodos os clones temporais têm CA 14 + seu bônus de proficiência, 1 ponto de vida e imunidade a todas as condições. Se um clone temporal precisar fazer um teste de resistência, ele usa o bônus de teste de resistência do alvo para a rolagem. Ele tem o mesmo tamanho que o alvo e ocupa seu próprio espaço.\n\nO alvo, em seu turno, pode comandar mentalmente seu clone temporal para se mover 9 metros em qualquer direção (nenhuma ação necessária). Se qualquer clone temporal estiver a mais de 9 metros de você do que o seu alcance da Esfera Temporal ao final do turno do alvo, ele é destruído.\n\nO alvo pode usar seu clone temporal das seguintes maneiras:\n\nComo uma ação bônus, o alvo pode se teletransportar, trocando magicamente de lugar com seu clone temporal ao custo de seu movimento, independentemente da distância entre eles.\n\nQuando o alvo realiza a ação Atacar em seu turno, qualquer ataque que ele fizer com essa ação pode se originar de seu espaço ou do espaço de seu clone temporal. O alvo faz essa escolha para cada ataque.\n\nQuando o alvo conjura um truque ou uma habilidade de esfera com custo de 0 pontos de magia em seu turno, o efeito mágico pode se originar de seu espaço ou do espaço de seu clone temporal.\n\nQuando uma criatura que o alvo possa ver a até 1,5 metro de seu clone temporal se move pelo menos 1,5 metro para longe dele, ele pode usar sua reação para fazer um ataque de oportunidade contra essa criatura como se estivesse no espaço de seu clone temporal.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Temporal"
-      ]
+      "body": "Você pode criar um clone temporal do alvo, fazendo-o aparecer em um espaço desocupado dentro do seu alcance. Este clone temporal é uma imagem mágica e translúcida do alvo que dura pela duração da habilidade, até ser destruído, até você dispensá-lo como uma ação bônus ou até você usar Clone Temporal novamente.\n\nTodos os clones temporais têm CA 14 + seu bônus de proficiência, 1 ponto de vida e imunidade a todas as condições. Se um clone temporal precisar fazer um teste de resistência, ele usa o bônus de teste de resistência do alvo para a rolagem. Ele tem o mesmo tamanho que o alvo e ocupa seu próprio espaço.\n\nO alvo, em seu turno, pode comandar mentalmente seu clone temporal para se mover 9 metros em qualquer direção (nenhuma ação necessária). Se qualquer clone temporal estiver a mais de 9 metros de você do que o seu alcance da Esfera Temporal ao final do turno do alvo, ele é destruído.\n\nO alvo pode usar seu clone temporal das seguintes maneiras:\n\nComo uma ação bônus, o alvo pode se teletransportar, trocando magicamente de lugar com seu clone temporal ao custo de seu movimento, independentemente da distância entre eles.\n\nQuando o alvo realiza a ação Atacar em seu turno, qualquer ataque que ele fizer com essa ação pode se originar de seu espaço ou do espaço de seu clone temporal. O alvo faz essa escolha para cada ataque.\n\nQuando o alvo conjura um truque ou uma habilidade de esfera com custo de 0 pontos de magia em seu turno, o efeito mágico pode se originar de seu espaço ou do espaço de seu clone temporal.\n\nQuando uma criatura que o alvo possa ver a até 1,5 metro de seu clone temporal se move pelo menos 1,5 metro para longe dele, ele pode usar sua reação para fazer um ataque de oportunidade contra essa criatura como se estivesse no espaço de seu clone temporal."
     },
     {
       "id": "tempo-parar-o-tempo",
@@ -835,7 +828,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "temporal"
+          "id": "tempo"
         },
         {
           "type": "talent",
@@ -848,10 +841,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você interrompe brevemente o fluxo do tempo para todos, exceto para você. O tempo não passa para outras criaturas enquanto você realiza 1d4 + 1 turnos consecutivos, durante os quais você pode usar ações e se mover normalmente.\n\nEste efeito termina se uma das ações que você usar durante este período, ou quaisquer efeitos que você criar durante este período, afetar uma criatura que não seja você ou um objeto que esteja sendo usado ou carregado por alguém que não seja você. Além disso, a magia termina se você se mover para um local a mais de 300 metros do local onde a conjurou.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Temporal"
-      ]
+      "body": "Você interrompe brevemente o fluxo do tempo para todos, exceto para você. O tempo não passa para outras criaturas enquanto você realiza 1d4 + 1 turnos consecutivos, durante os quais você pode usar ações e se mover normalmente.\n\nEste efeito termina se uma das ações que você usar durante este período, ou quaisquer efeitos que você criar durante este período, afetar uma criatura que não seja você ou um objeto que esteja sendo usado ou carregado por alguém que não seja você. Além disso, a magia termina se você se mover para um local a mais de 300 metros do local onde a conjurou."
     },
     {
       "id": "tempo-tempo-pessoal",

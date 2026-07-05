@@ -840,7 +840,6 @@
       "enhancements": [],
       "body": "Escolha uma das seguintes perícias nas quais você seja proficiente: Investigação, Percepção, Furtividade ou Sobrevivência.\n\nAdicione o dobro do seu modificador de proficiência a essa perícia.\n\nEste talento pode ser escolhido múltiplas vezes, cada vez que uma perícia diferente for selecionada.",
       "_needsReview": [
-        "prereq:unresolved:Percepção",
         "prereq:unresolved:Furtividade ou Sobrevivência"
       ]
     },

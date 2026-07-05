@@ -8,9 +8,11 @@
 **Active step:** Phase 3 — builder on structured data + rules engine (next)
 **Last cleared:** Phase 2 — validator — 2026-07-05 (validate + typecheck both green)
 **Pending deploy:** NO (feature branch `structured-mechanics-layer`, not merging until proven)
-**Open for Owner:** 100 talents flagged `_needsReview` (mostly ambiguous prereqs needing game knowledge:
-OR-alternatives, subclass/variant sphere names like Berserker/Esgrima/Guardiã, 2 real `pp`-cost typos).
-Decide who curates them before/alongside Phase 3.
+**Open for Owner:** 84 talents flagged `_needsReview`, catalogued in `data/CURATION-NOTES.md`. Confident
+sphere variants (Domínio de Feras→das Feras, Guardiã→Guardião, Temporal→Tempo, Climática→Clima) and 5e
+skills auto-resolved. Remaining need game knowledge (Esgrima/Berserker/Taverna sphere aliases) OR are
+rules-engine design inputs (OR-alternatives, descriptive prereqs like "qualquer talento que conceda
+resistência a ácido"). 2 real `pp`→`PM` source typos to fix in content.
 
 ---
 

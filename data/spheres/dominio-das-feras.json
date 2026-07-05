@@ -362,7 +362,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "dominio-de-feras"
+          "id": "dominio-das-feras"
         },
         {
           "type": "level",
@@ -371,10 +371,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode gastar foco marcial como uma ação para forçar uma criatura que você possa domar a até 9 metros de distância a fazer um teste de resistência de Carisma ou servi-lo como uma criatura domesticada por 10 minutos. A criatura ainda conta para o seu limite de criaturas domesticadas.\n\nCriaturas que não sejam do tipo besta recebem um bônus de +2 em seus testes de resistência. Se uma criatura for bem-sucedida em seu teste de resistência contra o uso dessa habilidade ou se você ou seus aliados a atacarem ou causarem dano a ela, ela fica imune a novos usos dessa habilidade por você até que você complete um descanso longo. Quando a duração do efeito de domesticação termina, a criatura retorna à sua disposição anterior, modificada por quaisquer outros efeitos que a tenham alterado nesse meio tempo.\n\nTentar fazer a criatura realizar uma ação obviamente suicida encerra a domesticação.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Domínio de Feras"
-      ]
+      "body": "Você pode gastar foco marcial como uma ação para forçar uma criatura que você possa domar a até 9 metros de distância a fazer um teste de resistência de Carisma ou servi-lo como uma criatura domesticada por 10 minutos. A criatura ainda conta para o seu limite de criaturas domesticadas.\n\nCriaturas que não sejam do tipo besta recebem um bônus de +2 em seus testes de resistência. Se uma criatura for bem-sucedida em seu teste de resistência contra o uso dessa habilidade ou se você ou seus aliados a atacarem ou causarem dano a ela, ela fica imune a novos usos dessa habilidade por você até que você complete um descanso longo. Quando a duração do efeito de domesticação termina, a criatura retorna à sua disposição anterior, modificada por quaisquer outros efeitos que a tenham alterado nesse meio tempo.\n\nTentar fazer a criatura realizar uma ação obviamente suicida encerra a domesticação."
     },
     {
       "id": "m-dominio-das-feras-chamar-fera",
@@ -387,7 +384,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "dominio-de-feras"
+          "id": "dominio-das-feras"
         },
         {
           "type": "level",
@@ -396,10 +393,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Como uma ação bônus, você pode chamar todos os seus aliados animais para o seu lado. Eles devem estar a até 1,6 km por nível e vir na sua velocidade máxima, evitando perigos e riscos aparentes da melhor maneira possível. Esse movimento ocorre usando as ações normais da criatura em seu turno. No 11º nível, os aliados animais precisam apenas estar no mesmo plano.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Domínio de Feras"
-      ]
+      "body": "Como uma ação bônus, você pode chamar todos os seus aliados animais para o seu lado. Eles devem estar a até 1,6 km por nível e vir na sua velocidade máxima, evitando perigos e riscos aparentes da melhor maneira possível. Esse movimento ocorre usando as ações normais da criatura em seu turno. No 11º nível, os aliados animais precisam apenas estar no mesmo plano."
     },
     {
       "id": "m-dominio-das-feras-domador-distante",
@@ -414,7 +408,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "dominio-de-feras"
+          "id": "dominio-das-feras"
         },
         {
           "type": "talent",
@@ -427,10 +421,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "O alcance da sua habilidade Domador de Feras aumenta para 36 metros.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Domínio de Feras"
-      ]
+      "body": "O alcance da sua habilidade Domador de Feras aumenta para 36 metros."
     },
     {
       "id": "m-dominio-das-feras-controle-duradouro",
@@ -445,7 +436,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "dominio-de-feras"
+          "id": "dominio-das-feras"
         },
         {
           "type": "talent",
@@ -458,10 +449,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "A duração da sua habilidade Domador de Feras aumenta para 8 horas.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Domínio de Feras"
-      ]
+      "body": "A duração da sua habilidade Domador de Feras aumenta para 8 horas."
     },
     {
       "id": "m-dominio-das-feras-dominio-em-massa",
@@ -476,7 +464,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "dominio-de-feras"
+          "id": "dominio-das-feras"
         },
         {
           "type": "talent",
@@ -489,10 +477,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar sua habilidade Domador de Feras, você pode afetar várias criaturas simultaneamente, até o seu bônus de proficiência. Todas as criaturas devem estar dentro do alcance. Seus limites de Dados de Vida ainda se aplicam ao número total de criaturas que você pode afetar de uma vez com esta habilidade.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Domínio de Feras"
-      ]
+      "body": "Ao usar sua habilidade Domador de Feras, você pode afetar várias criaturas simultaneamente, até o seu bônus de proficiência. Todas as criaturas devem estar dentro do alcance. Seus limites de Dados de Vida ainda se aplicam ao número total de criaturas que você pode afetar de uma vez com esta habilidade."
     },
     {
       "id": "m-dominio-das-feras-controle-permanente",
@@ -507,7 +492,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "dominio-de-feras"
+          "id": "dominio-das-feras"
         },
         {
           "type": "talent",
@@ -524,10 +509,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "A duração da sua habilidade Domador de Feras torna-se permanente.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Domínio de Feras"
-      ]
+      "body": "A duração da sua habilidade Domador de Feras torna-se permanente."
     },
     {
       "id": "m-dominio-das-feras-mestre-de-enxames",
@@ -540,7 +522,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "dominio-de-feras"
+          "id": "dominio-das-feras"
         },
         {
           "type": "talent",
@@ -553,10 +535,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Aumente o número de criaturas que você pode ter domadas simultaneamente pelo seu nível. Isso não aumenta o Nível de Desafio total das criaturas que você pode ter domadas de uma vez.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Domínio de Feras"
-      ]
+      "body": "Aumente o número de criaturas que você pode ter domadas simultaneamente pelo seu nível. Isso não aumenta o Nível de Desafio total das criaturas que você pode ter domadas de uma vez."
     },
     {
       "id": "m-dominio-das-feras-orador-selvagem",
@@ -571,7 +550,7 @@
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "dominio-de-feras"
+          "id": "dominio-das-feras"
         },
         {
           "type": "level",
@@ -580,10 +559,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode falar com animais. Você pode fazer perguntas e receber respostas de criaturas do tipo besta, mas essa habilidade não as torna mais amigáveis ​​do que o normal. Bestas cautelosas e astutas provavelmente serão lacônicas e evasivas, enquanto as mais estúpidas farão comentários sem sentido. Se uma besta for amigável com você, ela poderá lhe prestar algum favor ou serviço.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Domínio de Feras"
-      ]
+      "body": "Você pode falar com animais. Você pode fazer perguntas e receber respostas de criaturas do tipo besta, mas essa habilidade não as torna mais amigáveis ​​do que o normal. Bestas cautelosas e astutas provavelmente serão lacônicas e evasivas, enquanto as mais estúpidas farão comentários sem sentido. Se uma besta for amigável com você, ela poderá lhe prestar algum favor ou serviço."
     },
     {
       "id": "m-dominio-das-feras-companheiro-bestial",

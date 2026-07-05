@@ -45,6 +45,22 @@ const PARAM_FIELD = {
 };
 const slugify = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-');
+
+// Confident sphere-name variants seen in prereq prose → canonical sphere id.
+// (spelling/gender/adjective forms of an EXISTING sphere; not game guesses).
+// Ambiguous ones (Esgrima, Berserker, Taverna, Bar) are intentionally NOT here —
+// they stay flagged for Owner curation. See data/CURATION-NOTES.md.
+const SPHERE_ALIAS = {
+  'dominio-de-feras': 'dominio-das-feras',
+  'guardia': 'guardiao',
+  'temporal': 'tempo',
+  'climatica': 'clima',
+};
+// D&D 5e perícias (PT-BR) that appear as bare prereqs — proficiency requirements,
+// not talents. Excludes "Atletismo"/"Natureza" (also sphere names) to avoid clashes.
+const SKILLS = new Set(['percepcao', 'furtividade', 'sobrevivencia', 'investigacao', 'intuicao',
+  'persuasao', 'enganacao', 'intimidacao', 'acrobacia', 'prestidigitacao', 'medicina',
+  'historia', 'religiao', 'arcanismo', 'atuacao', 'lidar com animais'].map(s => s));
 const baseName = s => String(s).replace(/\s*\([^)]*\)\s*$/, '').trim();
 const tagsOf = name => {
   const m = String(name).match(/\(([^)]*)\)\s*$/);
@@ -102,7 +118,7 @@ function parsePrereqs(text) {
       if (n) { out.push({ type: 'level', min: Number(n[1]) }); continue; }
     }
     // proficiency / skill / package requirements — recognized, kept as text (not talents)
-    if (/^proficiente\b|^pacote\b|^per[íi]cia\b/i.test(clause)) { out.push({ type: 'text', text: clause }); continue; }
+    if (/^proficiente\b|^pacote\b|^per[íi]cia\b/i.test(clause) || SKILLS.has(normalizeTerm(clause))) { out.push({ type: 'text', text: clause }); continue; }
     // sphere access: "Esfera [da] X (talent list)" — manual split handles nested parens
     const sm = clause.match(/^esferas?\s+(?:d[aeo]s?\s+)?(.+)$/i);
     if (sm) {
@@ -271,7 +287,7 @@ function resolvePrereqs(allTalents, sphereIds) {
       if (pr.type === 'level') { resolved.push({ type: 'level', min: pr.min }); continue; }
       if (pr.type === 'text') { resolved.push({ type: 'text', text: pr.text }); continue; }
       if (pr.type === 'sphere') {
-        const id = slugify(pr.name);
+        const id = SPHERE_ALIAS[slugify(pr.name)] || slugify(pr.name);
         resolved.push({ type: 'sphere', id });
         if (!sphereIds.has(id)) (t._needsReview = t._needsReview || []).push('prereq:sphere-unknown:' + pr.name);
         continue;
