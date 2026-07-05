@@ -5,11 +5,13 @@
 
 ## Where We Stopped
 
-Structured-mechanics-layer refactor, branch `structured-mechanics-layer`. **Phases 0–2 complete**:
-schema + dev tooling, migration extractor (1595 talents across 42 spheres, 94% clean), and validator
-(`npm run validate` → 0 errors; `npm run typecheck` green). Next action: **Phase 3** — rewire the
-character builder to read `data/spheres/*` instead of scraping the DOM, and add the `src/rules.js` rules
-engine (enforce prereqs, budget PM, block illegal picks). Nothing committed yet.
+Structured-mechanics-layer refactor, branch `structured-mechanics-layer`, 5 commits (master untouched).
+**Phases 0–2 + curation + Phase 3 step 1 complete**: schema/tooling, extractor (1595 talents, 42 spheres),
+validator (0 errors), curation notes, and the **pure rules engine `src/rules.js`** (typed + `npm test`
+12/12 — blocks illegal picks, budgets talent slots, resolves granted spheres). Live `app.js` NOT yet
+touched. Next: **Phase 3 steps 2–4** — migrate classes/class-features into `data/` with talent ids,
+`src/data.js` browser loader, wire app.js to rules.js + id-based character state + block in UI, then
+Richard's review + deploy gate.
 
 ---
 
