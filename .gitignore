@@ -1,1 +1,13 @@
 .claude/settings.local.json
+
+# Dev tooling (offline only — the browser app ships zero deps)
+node_modules/
+
+# Three Man Team scaffolding carries its own nested git repo; local-only
+.claude/
+_temp/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
