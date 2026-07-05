@@ -1,0 +1,1456 @@
+{
+  "id": "morte",
+  "name": "Morte",
+  "section": "magic",
+  "summary": "Comandar os poderes da não-vida, com ataques fantasmas e mortos-vivos.",
+  "theme": {
+    "h": 290,
+    "s": 18,
+    "sig": "morte",
+    "lLight": 30
+  },
+  "acquisition": null,
+  "talents": [
+    {
+      "id": "morte-golpe-fantasma",
+      "name": "Golpe Fantasma",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Instantânea",
+      "target": "uma criatura",
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Em vez de durar 10 minutos, a duração do nível de exaustão torna-se instantânea, tornando-se um aumento real na exaustão do alvo."
+        }
+      ],
+      "body": "Você pode realizar um golpe fantasma, invocando energia negativa e lançando-a contra um alvo dentro do alcance. Um golpe fantasma não tem efeito sobre criaturas do tipo morto-vivo ou constructo (embora alguns talentos prevejam exceções). Os efeitos do golpe fantasma não se acumulam, a menos que indicado.\n\nVocê ganha o seguinte golpe fantasma ao obter a esfera da Morte:\n\nGolpe Exaustivo\n\nO alvo do seu golpe fantasma tem seu nível de exaustão aumentado em um por 10 minutos. Um teste de resistência de Constituição bem-sucedido anula esse aumento. Múltiplas aplicações deste golpe fantasma se acumulam, mas não podem aumentar o nível de exaustão de uma criatura acima do seu bônus de proficiência."
+    },
+    {
+      "id": "morte-reanimar",
+      "name": "Reanimar",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Concentração, até 10 minutos",
+      "target": "1 criatura morta",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação."
+        }
+      ],
+      "body": "Você pode escolher como alvo os restos mortais de uma aberração, besta, dragão, humanoide, gigante ou monstruosidade para reanimá-los como um tipo de morto-vivo escolhido dentre quaisquer talentos (de morto-vivo) que você possua. A criatura reanimada não possui nenhuma de suas estatísticas ou habilidades originais, exceto tamanho, pontos de vida e modos de movimento (embora o talento também possa modificá-los).\n\nEm cada um dos seus turnos, você pode usar uma ação bônus para comandar mentalmente qualquer morto-vivo que você tenha criado com esta habilidade, se a criatura estiver dentro do alcance de reanimação (se você controlar múltiplas criaturas, você pode comandar qualquer uma ou todas elas ao mesmo tempo, emitindo o mesmo comando para cada uma). Você decide qual ação a criatura realizará e para onde ela se moverá durante seu próximo turno, ou você pode emitir um comando geral, como guardar uma câmara ou corredor específico. Se você não der nenhuma ordem, a criatura apenas se defenderá contra criaturas hostis. Uma vez que uma ordem seja dada, a criatura continuará a segui-la até que sua tarefa seja concluída.\n\nA maioria dos mortos-vivos reanimados básicos não consegue falar, não tem memória de seu passado ou não possui a capacidade de raciocínio complexo. Isso torna difícil ou impossível para o morto-vivo responder a perguntas ou revelar qualquer coisa que soubesse em vida. Por outro lado, os mortos-vivos reanimados escolhidos entre talentos avançados (de mortos-vivos) geralmente têm a capacidade de falar e possuem algumas memórias fragmentadas de quem eram em vida, mas não são obrigados a compartilhar o que sabem ou lembram. Quando a duração expira, o corpo colapsa (ou desaparece, se for um espírito) até ser reanimado novamente. Ele não recupera pontos de vida entre as reanimações. Se reduzido a 0 pontos de vida, o morto-vivo é destruído; ele não pode ser reanimado novamente.\n\nVocê pode ter um número total de criaturas reanimadas ativas a qualquer momento igual ao seu bônus de proficiência. Se você tentar reanimar criaturas que elevem seu total além desse limite, você deve liberar o controle das criaturas reanimadas de sua escolha até que o total esteja baixo o suficiente para permitir as novas criaturas reanimadas. Você não pode reanimar um alvo com um Nível de Desafio maior que um quarto do seu nível."
+    },
+    {
+      "id": "morte-comandar-mortos-vivos",
+      "name": "Comandar Mortos-Vivos (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Carisma",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": ": Durante a duração, a cada rodada você pode dar uma ordem ao morto-vivo como uma ação bônus. A ordem pode conter um número de palavras não maior que seu bônus de proficiência. O"
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem exigir uma ação."
+        },
+        {
+          "pm": 2,
+          "text": "A duração aumenta para 24 horas."
+        }
+      ],
+      "body": "Golpe Fantasma 0PM: Você pode realizar um golpe fantasma que lhe concede certo controle sobre uma criatura morta-viva. Se uma criatura morta-viva falhar em um teste de resistência de Carisma, ela ficará enfeitiçada por você enquanto você se concentrar, até 10 minutos ou até que você ou seus aliados façam algo prejudicial a ela.\n\nalvo deve ser bem-sucedido em um teste de resistência de Carisma ou deve tentar obedecer à ordem da melhor maneira possível até o início do seu próximo turno. Se o alvo receber uma ordem que ele não seja capaz de cumprir, a ação bônus é desperdiçada. Você precisa ser capaz de se comunicar com o morto-vivo para dar ordens (comandos visuais exigem que o morto-vivo possa vê-lo, comandos verbais exigem que o morto-vivo possa ouvi-lo, etc.)."
+    },
+    {
+      "id": "morte-maldicao-golpe-fantasma-maldicao",
+      "name": "Maldição (golpe fantasma) [maldição]",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Teste de Resistência:: Sabedoria\n\nGolpe Fantasma 1PM: Você pode realizar um golpe fantasma que inflige uma maldição permanente ao alvo. Um teste de resistência de Sabedoria bem-sucedido anula este efeito. Maldições podem ser removidas com o talento da esfera Quebrar Encantamento Vida, após a sua morte ou por sua escolha, sem exigir uma ação, mas, caso contrário, não podem ser dissipadas. Escolha um dos seguintes efeitos para infligir ao alvo (com a permissão do Mestre, você pode criar sua própria maldição, mas ela não deve ser mais poderosa do que estas): o alvo sofre 3 (1d6) pontos de dano radiante a cada minuto gasto em luz intensa; o alvo fica cego, exceto em áreas de penumbra ou escuridão; o alvo deve comer e beber o dobro do normal ou começará a sofrer de inanição; O alvo se torna vulnerável a um único tipo de dano (isso não afeta uma criatura já imune a esse tipo de dano; criaturas com resistência perdem essa resistência)."
+    },
+    {
+      "id": "morte-infligir-doenca",
+      "name": "Infligir Doença (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração da doença aumenta para 1 dia. Essa duração aumenta em 2 dias no 5º (3 dias), 11º (5 dias) e 17º níveis (7 dias)."
+        }
+      ],
+      "body": "Golpe Fantasma 2PM: Seu golpe fantasma faz com que o alvo faça um teste de resistência de Constituição ou contraia uma doença, sofrendo seus efeitos no início do seu próximo turno. Ao final de cada turno do alvo, ele deve fazer um teste de resistência de Constituição. Após falhar em três desses testes de resistência, os efeitos da doença duram 10 minutos e a criatura para de fazer esses testes.\n\nApós ser bem-sucedido em três desses testes de resistência, a criatura se recupera da doença e o efeito termina. Com a permissão do Mestre, você pode escolher induzir uma doença não listada abaixo. Como este golpe fantasma induz uma doença natural em seu alvo, qualquer efeito que remova uma doença ou alivie seus efeitos se aplica a ela.\n\nDoença Cegante. A dor domina a mente da criatura e seus olhos ficam brancos como leite. A criatura tem desvantagem em testes de Sabedoria e em testes de resistência de Sabedoria e fica cega.\n\nFebre da Imundície. Uma febre intensa se espalha pelo corpo da criatura. A criatura tem desvantagem em testes de Força, em testes de resistência de Força e em jogadas de ataque que usam Força.\n\nPeste da Carne. A carne da criatura apodrece. A criatura tem desvantagem em testes de Carisma e é vulnerável a todos os tipos de dano.\n\nFogo Mental. A mente da criatura fica febril. A criatura tem desvantagem em testes de Inteligência e em testes de resistência de Inteligência, e se comporta como se estivesse sob o efeito da magia Confusão durante o combate.\n\nConvulsão. A criatura é tomada por tremores. A criatura tem desvantagem em testes de Destreza, em testes de resistência de Destreza e em jogadas de ataque que usam Destreza."
+    },
+    {
+      "id": "morte-golpe-de-lich",
+      "name": "Golpe de Lich (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Golpe Fantasma 2PM: Você pode realizar um golpe fantasma que paralisa o alvo por 1 rodada caso falhe em um teste de resistência de Constituição. Uma criatura que obtiver sucesso em seu teste de resistência fica imune a este efeito originado por você até que complete um descanso longo. Qualquer um paralisado por um golpe de lich parece morto, embora um teste de Sabedoria (Percepção) CD 20 ou um teste de Sabedoria (Medicina) CD 15 revele que a vítima ainda está viva. A duração da paralisia aumenta em 1 rodada no 5º nível (2 rodadas), depois novamente no 11º nível (3 rodadas) e no 17º nível (4 rodadas)."
+    },
+    {
+      "id": "morte-manipular-a-morte",
+      "name": "Manipular a Morte (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Em vez disso, você cura o morto-vivo por esta quantidade."
+        }
+      ],
+      "body": "Golpe Fantasma 0PM: Você pode realizar um golpe fantasma que fere mortos-vivos, causando 1d12 de dano necrótico, aumentando em 1d12 no 5º (2d12), 11º (3d12) e 17º nível (4d12). Este dano ignora toda resistência e imunidade a dano necrótico possuída por criaturas do tipo morto-vivo. Alvos afetados podem evitar este dano com um teste de resistência de Sabedoria bem-sucedido, mas se o custo final em pontos de magia do seu golpe fantasma for 1 ou mais, um teste bem-sucedido reduz o dano pela metade."
+    },
+    {
+      "id": "morte-alimentacao-necrotica",
+      "name": "Alimentação Necrótica (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Golpe Fantasma 1PM: Você pode realizar um golpe fantasma que, ao atingir um alvo com 0 pontos de vida, o mata instantaneamente; um teste de resistência de Constituição nega este efeito. Se o alvo falhar no teste de resistência, você cura um número de pontos de vida igual ao dobro dos Dados de Vida do alvo. Se o ND (Nível de Desafio) do alvo for igual ou superior à metade do seu nível, você também ganha vantagem em um teste de Força ou Destreza por Dado de Vida da criatura morta, realizado nos próximos 10 minutos."
+    },
+    {
+      "id": "morte-envenenamento",
+      "name": "Envenenamento (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O alvo fica envenenado por 10 minutos em caso de falha no teste de resistência e sofre desvantagem em testes de resistência de Constituição até o final do seu próximo turno, caso obtenha sucesso."
+        }
+      ],
+      "body": "Golpe Fantasma 0PM: Você pode realizar um golpe fantasma que envenena o alvo por um número de rodadas igual ao seu bônus de proficiência. Um teste de resistência de Constituição bem-sucedido anula esse efeito."
+    },
+    {
+      "id": "morte-golpe-vampirico",
+      "name": "Golpe Vampírico (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O dano necrótico causado muda para 1d6 + 1d6 a cada 2 níveis (mínimo 2d6)."
+        },
+        {
+          "pm": 1,
+          "text": "Em vez de ganhar pontos de vida temporários, você cura uma quantidade de pontos de vida igual ao dano causado."
+        }
+      ],
+      "body": "Golpe Fantasma 1PM: Você pode realizar um golpe fantasma que causa 1d6 de dano necrótico, com um teste de resistência de Constituição reduzindo o dano pela metade. Você ganha um número igual de pontos de vida temporários. Você não pode ganhar mais pontos de vida temporários dessa maneira do que os pontos de vida atuais do alvo. Se você afetar vários alvos ao mesmo tempo com o mesmo golpe vampírico (por exemplo, através do talento Golpe Fantasma Maior), apenas o valor mais alto se aplica. A quantidade de dano necrótico causado pelo seu golpe fantasma aumenta em 1d6 no 5º nível (2d6), no 11º nível (3d6) e no 17º nível (4d6)."
+    },
+    {
+      "id": "morte-vulnerabilidade",
+      "name": "Vulnerabilidade (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Golpe Fantasma",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Este efeito dura 1 minuto sem necessidade de concentração."
+        }
+      ],
+      "body": "Golpe Fantasma 0PM: Você pode realizar um golpe fantasma que força o alvo a ser bem-sucedido em um teste de resistência de Constituição ou se tornará vulnerável a dano de concussão, perfuração e corte enquanto você se concentrar, até 1 minuto. Se a criatura possuir imunidade, ela será reduzida a resistência. Se possuir resistência, ela a perderá. Além disso, durante a duração do ataque fantasma, criaturas que falharem em seu teste de resistência contra o efeito sofrerão 1d6 de dano adicional de qualquer ataque com arma."
+    },
+    {
+      "id": "morte-ataques-adicionais",
+      "name": "Ataques Adicionais (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ataques Múltiplos. Seu morto-vivo pode realizar dois ataques com armas, corpo a corpo ou à distância, como uma ação."
+        }
+      ],
+      "body": "Seu morto-vivo ganha uma das ações abaixo, escolhida no momento de usar reanimar. Você pode selecionar este talento várias vezes, concedendo uma ação adicional a cada vez.\n\n•Mordida. Ataque com Arma Corpo a Corpo: Força ou Destreza mais seu bônus de proficiência para acertar, um alvo. Acerto: 1d6 + Força ou Destreza de dano perfurante. Se o morto-vivo já possuir um ataque de mordida, aumente o dano para 1d10 + Força ou Destreza de dano perfurante; enxames ou tropas com este dano aumentado causam 4d8 + Força ou Destreza de dano perfurante, ou 2d8 + Força ou Destreza de dano perfurante se estiverem com metade dos pontos de vida ou menos.\n\n•Garras. Ataque com Arma Corpo a Corpo: Força ou Destreza mais seu bônus de proficiência para acertar, um alvo. Acerto: 1d6 + Força ou Destreza de dano cortante. Se o morto-vivo já possuir um ataque de garras, aumente o dano para 1d10 + Força ou Destreza de dano cortante; Enxames ou tropas com esse dano aumentado causam 4d8 + For ou Des de dano cortante, ou 2d8 + For ou Des de dano cortante se estiverem com metade dos pontos de vida ou menos.\n\n•Pancada. Ataque com Arma Corpo a Corpo: For ou Des mais seu bônus de proficiência para acertar, um alvo. Acerto: 1d6 + For ou Des de dano de impacto. Se o morto-vivo já possuir um ataque de golpe, aumente o dano para 1d10 + For ou Des de dano de impacto; enxames ou tropas com esse dano aumentado causam 4d8 + For ou Des de dano de impacto, ou 2d8 + For ou Des de dano de impacto se estiverem com metade dos pontos de vida ou menos."
+    },
+    {
+      "id": "morte-aterrorizante",
+      "name": "Aterrorizante (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Seus mortos-vivos ganham uma das seguintes habilidades ou características de medo:\n\nOlhar Aterrorizante. Como uma ação, o morto-vivo escolhe como alvo uma criatura que possa ver dentro do alcance de reanimação do morto-vivo. Se o alvo puder ver o morto-vivo, ele deve ser bem-sucedido em um teste de resistência de Sabedoria ou ficará amedrontado até o final do seu próximo turno. Um alvo que for bem-sucedido no teste de resistência fica imune ao Olhar Aterrorizante deste morto-vivo pelas próximas 24 horas.\n\n•Aprimoramento 1PM: Se o alvo falhar no teste de resistência por 5 ou mais, ele também fica paralisado pela mesma duração.\n\nLamento Aterrorizante. Como uma ação, cada criatura não morta-viva dentro do alcance de reanimação do morto-vivo (exceto você) que puder ouvi-lo deve ser bem-sucedida em um teste de resistência de Sabedoria ou ficará amedrontada até o final do seu próximo turno. Um alvo que for bem-sucedido no teste de resistência fica imune ao Lamento Aterrorizante deste morto-vivo pelas próximas 24 horas.\n\n•Aprimoramento 1PM: Se o alvo falhar no teste de resistência por 5 ou mais, ele também sofre 1d6 de dano psíquico e fica surdo por 1 minuto. A quantidade de dano psíquico aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).\n\nVisão Horripilante. Como uma ação, cada criatura não morta-viva dentro do alcance de reanimação do morto-vivo (exceto você) que puder vê-lo deve ser bem-sucedida em um teste de resistência de Sabedoria ou ficará amedrontada por 1 minuto. Uma criatura amedrontada pode repetir o teste de resistência no final de cada um de seus turnos, encerrando a condição de amedrontada em si mesma em caso de sucesso. Se o teste de resistência de um alvo for bem-sucedido ou o efeito terminar para ele, o alvo fica imune à Visagem Horripilante deste morto-vivo pelas próximas 24 horas.\n\n•Aprimoramento 1PM: Se o teste de resistência falhar por 5 ou mais, o alvo também envelhece 1d4 x 10 anos. O efeito de envelhecimento pode ser revertido com uma Restauração Maior da esfera da Vida (ou um efeito similar, como uma magia de restauração maior), mas apenas dentro de 24 horas após sua ocorrência."
+    },
+    {
+      "id": "morte-grotesco",
+      "name": "Grotesco (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Os mortos-vivos que você reanima ganham uma das seguintes habilidades ou características, escolhida no momento da reanimação:\n\nBile. Ataque Mágico à Distância: Inteligência, Sabedoria ou Carisma mais seu bônus de proficiência para acertar, alcance de 9 m, um alvo. Acerto: 1d6 de dano de veneno. A quantidade de dano de veneno aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6). Enxames ou tropas com este ataque mágico não têm seu dano aumentado, nem reduzido se o enxame ou tropa tiver metade de seus pontos de vida ou menos.\n\nFedor. Qualquer criatura que começar seu turno ao alcance do morto-vivo deve ser bem-sucedida em um teste de resistência de Constituição ou ficará envenenada até o início do seu próximo turno. Em um teste de resistência bem-sucedido, a criatura fica imune à habilidade Fedor dos mortos-vivos por 24 horas."
+    },
+    {
+      "id": "morte-horda-dos-mortos",
+      "name": "Horda dos Mortos (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em vez de reanimar mortos-vivos individualmente, você pode reanimar um alvo como um enxame ou tropa. Você não pode reanimar um alvo como um enxame ou tropa com um Nível de Desafio maior que um oitavo do seu nível. Você pode reanimar qualquer enxame ou tropa de mortos-vivos para o qual você possua o talento (mortos-vivos). Ao reanimar mortos-vivos como um enxame ou tropa, você deve estar dentro do alcance de reanimação de uma catacumba, cripta, cemitério, vala comum, mausoléu ou local similar com uma grande quantidade de alvos para a habilidade de reanimar."
+    },
+    {
+      "id": "morte-incorporeo",
+      "name": "Incorpóreo (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Visão Etérea. O morto-vivo pode enxergar até 18 metros no Plano Etéreo quando estiver no Plano Material, e vice-versa."
+        },
+        {
+          "pm": 2,
+          "text": "Movimento Incorpóreo. Mortos-vivos criados com reanimar podem se tornar incorpóreos enquanto se movem e atravessar outras criaturas e objetos como se fossem terreno difícil. Se terminar seu turno dentro de um objeto, ele é deslocado para o espaço desocupado mais próximo e sofre 1d10 de dano de força para cada 1,5 metro percorrido."
+        },
+        {
+          "pm": 3,
+          "text": "Possessão. (requer Movimento Incorpóreo) Uma criatura que o morto-vivo possa ver a até 1,5 metro dele deve ser bem-sucedida em um teste de resistência de Carisma ou será possuída pelo morto-vivo; o morto-vivo então desaparece, e o alvo fica incapacitado e perde o controle de seu corpo. O morto-vivo agora controla o corpo, mas não priva o alvo da consciência."
+        }
+      ],
+      "body": "Você pode aprimorar mortos-vivos que reanima, concedendo-lhes características e atributos incorpóreos.\n\nO morto-vivo não pode ser alvo de nenhum ataque, magia ou outro efeito, exceto aqueles que expulsam mortos-vivos ou que visam explicitamente criaturas que estejam possuindo outra criatura ou objeto, e mantém seu alinhamento, Inteligência, Sabedoria, Carisma e imunidades.\n\nFora isso, ele usa as estatísticas do alvo possuído, mas não ganha acesso ao conhecimento, às características de classe ou às proficiências do alvo.\n\nUma vez por rodada durante a possessão, o alvo pode gastar um Dado de Vida sem gastar uma ação para fazer um teste de resistência de Carisma adicional para encerrar o efeito; criaturas que não são controladas por jogadores geralmente têm um número de Dados de Vida determinado por sua ficha de estatísticas.\n\nA possessão dura até que o corpo chegue a 0 pontos de vida, o morto-vivo a encerre como uma ação bônus ou seja expulso ou forçado a sair por um efeito como o talento Exorcismo (palavra) da esfera Destino. Quando a possessão termina, o morto-vivo reaparece em um espaço desocupado a até 1,5 metro do corpo. O alvo fica imune à Possessão deste morto-vivo por 24 horas após ser bem-sucedido no teste de resistência ou após o término da possessão.\n\nCriaturas como enxames ou tropas são imunes ao efeito da Possessão do morto-vivo."
+    },
+    {
+      "id": "morte-monstruoso",
+      "name": "Monstruoso (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha um talento (característica) ou (genótipo) da esfera de Alteração. Cada vez que você reanimar, poderá aplicar um número de características desse talento igual à metade do seu bônus de proficiência. Características que têm custo em pontos de magia devem ser pagas como um aumento para sua reanimação. Você pode escolher este talento várias vezes, selecionando a cada vez um talento (característica) ou (genótipo) adicional para aplicar características."
+    },
+    {
+      "id": "morte-fisico",
+      "name": "Físico (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aumente em 6 metros qualquer deslocamento que seus mortos-vivos reanimados possuam."
+        },
+        {
+          "pm": 1,
+          "text": "Seus mortos-vivos reanimados ganham um deslocamento de escalada de 9 metros."
+        },
+        {
+          "pm": 1,
+          "text": "Seus mortos-vivos reanimados ganham um deslocamento de natação de 9 metros."
+        },
+        {
+          "pm": 2,
+          "text": "Seus mortos-vivos reanimados ganham um deslocamento de escavação de 6 metros."
+        },
+        {
+          "pm": 2,
+          "text": "Seus mortos-vivos reanimados ganham uma velocidade de voo de 6 metros."
+        }
+      ],
+      "body": "Os mortos-vivos que você reanima ganham uma das seguintes habilidades ou características, escolhida no momento da reanimação:\n\nÁgil e Flexível. Aumenta o alcance do morto-vivo em 1,5 metro. Esse alcance aumenta em 1,5 metro no 5º nível (3 metros), no 11º nível (4,5 metros) e no 17º nível (6 metros).\n\nMúsculos e Tendões. O morto-vivo ganha um bônus nas jogadas de ataque e dano igual à metade do seu bônus de proficiência e torna-se proficiente em testes de resistência de Força, adicionando seu bônus de proficiência a essas jogadas.\n\nTerminações Nervosas Estimuladas. O morto-vivo ganha um bônus na classe de armadura e na iniciativa igual à metade do seu bônus de proficiência e torna-se proficiente em testes de resistência de Destreza, adicionando seu bônus de proficiência a essas jogadas.\n\nCostura Resistente. O morto-vivo ganha 10 pontos de vida adicionais e torna-se proficiente em testes de resistência de Constituição, adicionando seu bônus de proficiência a essas jogadas. O número de pontos de vida adicionais aumenta em 10 no 5º nível (20 pontos de vida), no 11º nível (30 pontos de vida) e no 17º nível (40 pontos de vida).\n\nFortitude dos Mortos-Vivos. Se o dano reduzir os pontos de vida do morto-vivo a 0, você pode fazer um teste de ataque mágico contra uma CD de 5 + o dano sofrido, a menos que o dano seja radiante ou proveniente de um acerto crítico. Em caso de sucesso, o morto-vivo fica com 1 ponto de vida.\n\nAlém disso, você recebe os seguintes aprimoramentos para os mortos-vivos que você reanima:"
+    },
+    {
+      "id": "morte-resistente",
+      "name": "Resistente (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Escolha um tipo de dano ao qual seu morto-vivo seja vulnerável; ele deixará de possuir essa vulnerabilidade."
+        },
+        {
+          "pm": 1,
+          "text": "Os mortos-vivos que você reanima ganham uma das seguintes resistências a dano: ácido, frio, fogo, força, relâmpago, necrótico, veneno, psíquico ou trovão. Alternativamente, você pode escolher resistência a dano não mágico de concussão, perfuração e corte. Você não pode escolher um tipo de dano ao qual seu morto-vivo seja vulnerável atualmente. Você pode selecionar uma resistência a dano adicional no 5º nível (2 tipos de dano), 11º nível (3 tipos de dano) e 17º nível (4 tipos de dano)."
+        },
+        {
+          "pm": 1,
+          "text": "Resistência à Expulsão. Os mortos-vivos que você reanima têm vantagem em testes de resistência contra os efeitos da habilidade Expulsar Mortos-Vivos e habilidades similares."
+        }
+      ],
+      "body": "Você pode aprimorar mortos-vivos que reanima, concedendo-lhes certas resistências."
+    },
+    {
+      "id": "morte-habilidoso",
+      "name": "Habilidoso (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Mortos-vivos que você reanima ganham um número de proficiências (armaduras individuais, idiomas, escudos, perícias, ferramentas, veículos ou armas) igual ao seu bônus de proficiência. Mortos-vivos adicionam seu bônus de proficiência a"
+        }
+      ],
+      "body": "Você pode aprimorar mortos-vivos que reanima, concedendo-lhes uma pequena aparência de sapiência.\n\nquaisquer testes ou rolagens relevantes com essas proficiências."
+    },
+    {
+      "id": "morte-treinado",
+      "name": "Treinado (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Reanimar",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se você reanimar uma criatura com níveis de classe, seu morto-vivo ganha todas as características não mágicas desses níveis. Este talento não tem efeito sobre enxames ou tropas que você reanima."
+    },
+    {
+      "id": "morte-garra-rastejante",
+      "name": "Garra Rastejante (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Morto-Vivo",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "O membro decepado de uma criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar reanimar, você pode criar uma garra rastejante. O tamanho da garra rastejante é duas vezes menor que o da criatura à qual o membro decepado pertencia. Use a ficha de estatísticas abaixo para a garra rastejante:\n\nGarra Rastejante\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais a um quarto dos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 6 metros.\n\nFORDESCONINTSABCAR14 (+2)14 (+2)12 (+1)4 (-3)10 (+0)6 (-2)\n\nPerícias Furtividade +2 mais seu bônus de proficiência\n\nImunidades a Dano: veneno\n\nImunidades a Condições: envenenado\n\nSentidos visão às cegas 9 m (cego além deste raio), Percepção passiva 10\n\nIdiomas Compreende os idiomas que você fala\n\nAções\n\nGarra. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 4 (1d4+2) de dano cortante."
+    },
+    {
+      "id": "morte-carnical",
+      "name": "Carniçal (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Morto-Vivo",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Um cadáver fresco",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao reanimar, você pode criar um carniçal, usando a ficha de estatísticas abaixo.\n\nCarniçal\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR14 (+2)16 (+3)10 (+0)6 (-2)10 (+0)4 (-3)\n\nImunidades a Dano: veneno\n\nImunidades a Condições: exaustão, envenenado\n\nSentidos: visão no escuro 18 metros, Percepção passiva 10\n\nIdiomas: Compreende os idiomas que você fala\n\nAções\n\nGarras. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano cortante."
+    },
+    {
+      "id": "morte-poltergeist",
+      "name": "Poltergeist (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Morto-Vivo",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Um objeto do falecido",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao reanimar, você pode criar um poltergeist, usando a ficha de estatísticas abaixo.\n\nPoltergeist\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR2 (-4)16 (+3)12 (+1)4 (-3)12 (+1)14 (+2)\n\nVulnerabilidades a Dano radiante\n\nImunidades a Dano necrótico\n\nImunidades a Condições agarrado, petrificado, restringido\n\nSentidos visão no escuro 18 metros, Percepção passiva 11\n\nIdiomas Compreende os idiomas que você fala\n\nFraqueza à luz solar. Enquanto estiver sob a luz do sol, o poltergeist tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nImpulso Telecinético. Ataque com Arma à Distância: +3 mais seu bônus de proficiência para acertar, alcance 9 m, um alvo. Acerto: 7 (1d6+3) de dano de concussão.\n\nInvisibilidade. Como uma ação, o poltergeist torna-se magicamente invisível até atacar, usar magia ou até que sua concentração termine (como se estivesse se concentrando em uma magia ou efeito de esfera)."
+    },
+    {
+      "id": "morte-sombra",
+      "name": "Sombra (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Morto-Vivo",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Um objeto valioso de um falecido",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você usa reanimar, você pode criar uma sombra, usando a ficha de estatísticas abaixo.\n\nSombra\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 m.\n\nFORDESCONINTSABCAR6 (-2)16 (+3)14 (+2)4 (-3)12 (+1)8 (-1)\n\nVulnerabilidades a Dano: radiante\n\nImunidades a Dano: necrótico\n\nImunidades a Condições: agarrado, petrificado, restringido\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: Compreende os idiomas que você fala\n\nAmorfo. A sombra pode se mover por um espaço com apenas 2,5 cm de largura sem se espremer.\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz solar, a sombra tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGolpe. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano de impacto."
+    },
+    {
+      "id": "morte-esqueleto",
+      "name": "Esqueleto (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Morto-Vivo",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Os ossos de uma criatura morta",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar reanimar, você pode criar um esqueleto utilizando a ficha de estatísticas abaixo:\n\nEsqueleto\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR16 (+3)12 (+1)14 (+2)4 (-3)8 (-1)6 (-2)\n\nVulnerabilidades a Dano: concussão\n\nImunidades a Dano: veneno\n\nImunidades a Condições: exaustão, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 9\n\nIdiomas: Compreende os idiomas que você fala\n\nAções\n\nGolpe. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano de concussão."
+    },
+    {
+      "id": "morte-espectro",
+      "name": "Espectro (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Morto-Vivo",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Um objeto do falecido",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao reanimar, você pode criar um espectro, usando a ficha de estatísticas abaixo.\n\nEspectro\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento 0 m, voo 6 m (pairar)\n\nFORDESCONINTSABCAR2 (-4)16 (+3)12 (+1)4 (-3)12 (+1)14 (+2)\n\nVulnerabilidades a Dano radiante\n\nImunidades a Dano necrótico\n\nImunidades a Condições agarrado, petrificado, restringido\n\nSentidos visão no escuro 18 m, Percepção passiva 11\n\nIdiomas Compreende os idiomas que você fala\n\nMovimento Incorpóreo. O espectro pode se tornar incorpóreo enquanto se move e atravessar outras criaturas e objetos como se fossem terreno difícil. Se terminar seu turno dentro de um objeto, ele é deslocado para o espaço desocupado mais próximo e sofre 1d10 de dano de força para cada 1,5 metro percorrido.\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz solar, o espectro tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGarras. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano cortante."
+    },
+    {
+      "id": "morte-fogo-fatuo",
+      "name": "Fogo-Fátuo (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Morto-Vivo",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Uma criatura com 0 pontos de vida",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O alvo deve fazer um teste de resistência de Constituição ou morrer. Se o alvo morrer, você pode criar um Fogo-Fátuo, usando a ficha de estatísticas abaixo:\n\nFogo-Fátuo\n\nMorto-vivo minúsculo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento 0 m, voo 12 m (pairar)\n\nFORDESCONINTSABCAR2 (-4)16 (+3)12 (+1)4 (-3)14 (+2)12 (+1)\n\nImunidades a Dano: relâmpago\n\nSentidos: visão no escuro 18 m, Percepção passiva 12\n\nIdiomas: Compreende os idiomas que você fala\n\nEfêmero. O fogo-fátuo não pode vestir ou carregar nada.\n\nIluminação variável. O fogo-fátuo emite luz brilhante em um raio de 1,5 a 6 metros e luz fraca por um número adicional de metros igual ao raio escolhido. O fogo-fátuo pode alterar o raio como uma ação bônus.\n\nAções\n\nChoque. Ataque Mágico Corpo a Corpo: +1 (Car) mais seu bônus de proficiência para acertar, alcance 1,5 m, um alvo. Acerto: 5 (1d8) de dano elétrico.\n\nEsse dano elétrico aumenta em 1d8 no 5º nível (2d8), 11º nível (3d8) e 17º nível (4d8).\n\nInvisibilidade. O fogo-fátuo e sua luz tornam-se magicamente invisíveis até que ataquem, usem magia ou até que sua concentração termine (como se estivesse se concentrando em uma magia ou efeito de esfera)."
+    },
+    {
+      "id": "morte-zumbi",
+      "name": "Zumbi (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Morto-Vivo",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "O cadáver de uma criatura morta",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar reanimar, você pode criar um zumbi utilizando a ficha de estatísticas abaixo:\n\nZumbi\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os mesmos modos de movimento da criatura original, mas é reduzida para 6 metros.\n\nFORDESCONINTSABCAR14 (+2)10 (+0)16 (+3)4 (-3)10 (+0)6 (-2)\n\nImunidades a Dano: veneno\n\nImunidades a Condição: envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 10\n\nIdiomas: Compreende os idiomas que você fala\n\nAções\n\nMordida. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 6 (1d6+2) de dano perfurante."
+    },
+    {
+      "id": "morte-bomba-de-cadaver",
+      "name": "Bomba de Cadáver",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar qualquer um de seus ataques fantasmas contra qualquer cadáver que possa ser ressuscitado como um esqueleto ou zumbi, ou contra qualquer morto-vivo corpóreo sob seu controle. O alvo explode em um raio de 6 metros, afetando todas as criaturas no alcance como se tivessem sido atingidas pelo ataque fantasma escolhido; se o ataque fantasma não permitir um teste de resistência, as criaturas afetadas têm direito a um teste de resistência de Destreza para negar seus efeitos. O cadáver ou morto-vivo desmorona e é destruído; ele não pode ser reanimado ou alvo de outra Bomba de Cadáver."
+    },
+    {
+      "id": "morte-manipulacao-de-cadaver",
+      "name": "Manipulação de Cadáver",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM, a menos que indicado"
+      },
+      "action": "1 ação",
+      "range": "Toque",
+      "duration": "Instantânea, a menos que indicado",
+      "target": "1 cadáver",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode tocar um cadáver morto-vivo colapsado ou destruído, consertando-o para que seja um alvo válido para ser reanimado novamente."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode preservar os restos mortais de uma criatura morta por 1 dia por nível, impedindo sua decomposição. Fazer isso efetivamente estende o limite de tempo para ressuscitar essa criatura. O tempo gasto sob a influência deste efeito não conta para o limite de tempo. Além disso, isso torna o transporte de um camarada morto (e, portanto, em decomposição) menos desagradável. Esta habilidade também funciona com partes do corpo decepadas e similares."
+        }
+      ],
+      "body": "Você pode alterar um cadáver de uma das seguintes maneiras:\n\n•Você faz crescer carne em um cadáver decomposto ou esqueletizado, fornecendo-lhe carne suficiente para que ele possa ser animado como um zumbi em vez de um esqueleto. O cadáver fica com a aparência que tinha pouco antes da morte. A nova carne não é comestível.\n\n•Você decompõe a carne de um cadáver, deixando para trás um esqueleto perfeitamente limpo.\n\nVocê pode remodelar o cadáver para que se pareça com outra criatura ou até mesmo com uma pessoa específica, desde que tenha conhecimento em primeira mão de como essa criatura ou pessoa realmente se parece. Você pode alterar seu tipo aparente, gênero ou idade. Criaturas que interagem com o cadáver podem fazer um teste de Inteligência (Investigação) contra a CD da sua esfera para detectar o engano. Se você optar por fazer o cadáver se parecer com um indivíduo específico, qualquer um que conheça esse indivíduo pode fazer um teste de Inteligência (Investigação) contra a CD da sua esfera para perceber que o cadáver não é realmente dessa pessoa. No entanto, se uma criatura obtiver sucesso no teste por 5 ou menos, ela acreditará que o cadáver é de alguém que se parecia muito com a pessoa que conhecia, em vez de uma falsificação deliberada."
+    },
+    {
+      "id": "morte-sacrificio-sombrio",
+      "name": "Sacrifício Sombrio",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 reação",
+      "range": "9 metros",
+      "duration": "Instantânea",
+      "target": "1 criatura morta-viva sob seu controle",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você sofrer dano a pontos de vida que o reduziria a 0 pontos de vida, você pode sacrificar uma criatura morta-viva que você controla dentro do alcance (ou o alcance da Presença do seu Mestre, o que for maior), destruindo-a instantaneamente; reduzindo o dano que você sofre pelos pontos de vida atuais da criatura morta-viva sacrificada (até um mínimo de 0)."
+    },
+    {
+      "id": "morte-lingua-da-sepultura",
+      "name": "Língua da Sepultura",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "10 minutos",
+      "target": "1 cadáver ou criatura morta-viva",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire a habilidade de falar com mortos-vivos e cadáveres. Você pode se comunicar com eles, fazer perguntas e receber respostas. Um morto-vivo ou cadáver comum com quem se fala com Língua da Sepultura não mantém nenhuma memória de sua vida ou morte — apenas do tempo decorrido desde sua morte. A percepção de um cadáver normal sobre o ambiente ao seu redor é limitada, portanto, ele não será capaz de fornecer (ou reconhecer) descrições detalhadas de criaturas ou responder a perguntas sobre eventos fora de sua vizinhança imediata. A magia não torna as criaturas mortas-vivas mais amigáveis ​​ou cooperativas do que o normal. Mortos-vivos que você controla sempre responderão com sinceridade, embora sua capacidade de responder a perguntas mais complexas seja limitada. Você não precisa compartilhar um idioma com o alvo."
+    },
+    {
+      "id": "morte-ataque-fantasma-maior",
+      "name": "Ataque Fantasma Maior",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você forma seu ataque fantasma em um cone de 9 metros."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "morte-aperto-gelido",
+      "name": "Aperto Gélido",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você usa um golpe fantasma, em vez de desferir um ataque você mesmo, você pode fazer com que um morto-vivo que você controla dentro do alcance execute o ataque como parte de um ataque com arma corpo a corpo antes do início do seu próximo turno. O primeiro ataque corpo a corpo bem-sucedido que o morto-vivo realizar antes do início do seu próximo turno causa dano normalmente, além de aplicar os efeitos do golpe fantasma."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode conceder o uso deste golpe fantasma a um número de mortos-vivos que você controla dentro do alcance, não excedendo seu bônus de proficiência. Vários mortos-vivos não podem afetar a mesma criatura com o mesmo golpe fantasma naquela rodada."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "morte-presenca-do-mestre",
+      "name": "Presença do Mestre",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode dar ordens telepaticamente e se comunicar com criaturas mortas-vivas que você controla a até 90 metros de distância. Você não precisa ver ou ter um caminho livre para manter essa conexão."
+    },
+    {
+      "id": "morte-sentidos-necroticos",
+      "name": "Sentidos Necróticos",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "duration": "Concentração, até 10 minutos",
+      "target": "1 morto-vivo que você controla a até 36 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você percebe o ambiente da criatura alvo como se estivesse no lugar dela. Embora você possa usar o sentido especial da criatura (por exemplo, Visão no Escuro, etc.), você deve usar seus próprios atributos e proficiências se fizer um teste de Sabedoria (Intuição), Inteligência (Investigação) ou Sabedoria (Percepção). Apenas alvos completamente sob seu controle são válidos; mortos-vivos enfeitiçados não estão verdadeiramente sob seu controle e, portanto, não se qualificam. Ao usar esta habilidade, até o início do seu próximo turno, qualquer criatura que o atacar terá vantagem no ataque e você terá desvantagem em testes de resistência de Destreza."
+    },
+    {
+      "id": "morte-projecao-astral",
+      "name": "Projeção Astral",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar o talento avançado Projeção Espiritual, você pode projetar seu espírito para o Plano Astral em vez do Plano Etéreo. Você pode levar consigo até 1 criatura voluntária adicional por 2 níveis, desde que essas criaturas estejam ligadas a você em um círculo no momento. Esses companheiros de viagem dependem de você e devem acompanhá-lo o tempo todo. Se algo acontecer com você durante a jornada, seus companheiros ficarão presos onde você os deixou."
+        }
+      ],
+      "body": "Pré-requisitos:: Esfera da Morte (Projeção Espiritual), 11º nível ou superior.\n\nEnquanto você estiver no Plano Astral, seu corpo astral estará conectado o tempo todo ao seu corpo físico por um cordão prateado incorpóreo. Se o cordão for rompido, você morrerá, astral e fisicamente. Felizmente, poucas coisas podem destruir um cordão prateado. Diferentemente do uso regular do talento Projeção Espiritual, você e seus companheiros podem viajar pelo Plano Astral dessa maneira indefinidamente, até que você escolha encerrar o efeito (o que o retorna ao seu corpo) ou ele seja encerrado por algum meio externo. Este efeito pode ser dissipado como qualquer outro efeito de esfera, tendo como alvo sua forma astral ou seu corpo físico. Dissipar este efeito retorna você imediatamente ao seu corpo."
+    },
+    {
+      "id": "morte-viagem-astral",
+      "name": "Viagem Astral",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao projetar a si mesmo e/ou seus aliados para o Plano Astral, você pode permitir que você e seus aliados viajem astralmente para qualquer um dos outros planos que fazem fronteira com o Plano Astral. Se você escolher entrar em um desses planos, você forma um novo corpo físico (e equipamento) nesse plano de existência, exatamente como sua forma verdadeira, embora o cordão prateado permaneça invisivelmente ligado a este novo corpo, e os itens mágicos usados ainda contem para o total de usos do item. Você ainda está sujeito às fraquezas de uma forma"
+        }
+      ],
+      "body": "Pré-requisitos:: Esfera da Morte (Projeção Astral, Projeção Espiritual), 15º nível ou superior.\n\nastral (você pode ser dissipado, seu cordão pode ser rompido, etc.). Se sua nova forma for morta, você retorna ao seu corpo original."
+    },
+    {
+      "id": "morte-ataques-mortais",
+      "name": "Ataques Mortais (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-ataques-adicionais"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Toque Paralisante. (requer Garras) Criaturas atingidas pelo seu ataque de garras devem ser bem-sucedidas em um teste de resistência de Constituição ou ficarão paralisadas por 1 rodada."
+        },
+        {
+          "pm": 1,
+          "text": "Alimentação Sanguínea. (requer Mordida) O morto-vivo recupera um número de pontos de vida igual à metade do dano causado pelo seu ataque de mordida."
+        }
+      ],
+      "body": "Você pode modificar um dos ataques do seu morto-vivo, escolhido ao usar reanimar:\n\n•Toque Necrótico. (requer Mordida, Garras ou Pancada) O ataque de mordida, garras ou pancada causa dano necrótico.\n\nToque Enjoativo. (requer Pancada) Criaturas atingidas pelo seu ataque de pancada devem ser bem-sucedidas em um teste de resistência de Constituição ou ficarão envenenadas por 1 minuto."
+    },
+    {
+      "id": "morte-cranio-flamejante",
+      "name": "Crânio Flamejante (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "A cabeça decepada de um conjurador ou lançador de esferas",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-habilidoso"
+        },
+        {
+          "type": "talent",
+          "id": "morte-garra-rastejante"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar reanimar, você pode criar um crânio flamejante. O tamanho do crânio flamejante é duas vezes menor que o da criatura à qual a cabeça decepada pertencia. Use a ficha de estatísticas abaixo para o Crânio Flamejante:\n\nCrânio Flamejante\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais a um quarto dos pontos de vida máximos originais do alvo\n\nDeslocamento 0 m, voo 6 m (pairar)\n\nFORDESCONINTSABCAR2 (-4)18 (+4)14 (+2)16 (+3)10 (+0)12 (+1)\n\nImunidades a Dano: fogo, veneno\n\nImunidades a Condições: envenenado, propenso\n\nSentidos: visão no escuro 18 m, Percepção passiva 10\n\nIdiomas: fala qualquer idioma que conhecia em vida, entende os idiomas que você fala\n\nIluminação. O Crânio Flamejante emite luz fraca em um raio de 4,5 m, ou luz brilhante em um raio de 4,5 m e luz fraca por mais 4,5 m. Ele pode alternar entre as opções como uma ação. Resistência à Magia. O crânio flamejante tem vantagem em testes de resistência contra efeitos de esfera mágica, magias e outros efeitos mágicos.\n\nAções\n\nRaio de Fogo. Ataque Mágico à Distância: +3 mais seu bônus de proficiência para acertar, alcance 9 m, um alvo. Acerto: 4 (1d6) de dano de fogo. Esse dano de fogo aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6)."
+    },
+    {
+      "id": "morte-ghast",
+      "name": "Ghast (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Um cadáver fresco",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-habilidoso"
+        },
+        {
+          "type": "talent",
+          "id": "morte-carnical"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao reanimar, você pode criar um Ghast.\n\nGhast\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os mesmos modos de movimento da criatura original, mas é reduzida para 12 metros.\n\nFORDESCONINTSABCAR16 (+3)16 (+3)10 (+0)12 (+1)10 (+0)8 (-1)\n\nResistências a Dano: necrótico\n\nImunidades a Dano: veneno\n\nImunidades a Condições: enfeitiçado, exaustão, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 10\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala.\n\nResistência à Expulsão. O ghast, e quaisquer ghouls e tropas de ghouls dentro do alcance de reanimação de um ghast sob seu controle têm vantagem em testes de resistência contra efeitos que expulsam mortos-vivos (e efeitos similares).\n\nAções\n\nGarras. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano cortante."
+    },
+    {
+      "id": "morte-fantasma",
+      "name": "Fantasma (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Um objeto do falecido",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-habilidoso"
+        },
+        {
+          "type": "talent",
+          "id": "morte-poltergeist"
+        },
+        {
+          "type": "text",
+          "text": "Sombra (morto-vivo) ou Espectro (morto-vivo)"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao reanimar, você pode criar um fantasma.\n\nFantasma\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento mantém os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR8 (-1)14 (+2)10 (+0)10 (+0)12 (+1)18 (+4)\n\nResistências a Dano: concussão, perfuração e corte de ataques não mágicos\n\nImunidades a Dano: necrótico\n\nImunidades a Condições: agarrado, paralisado, envenenado, restringido\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nMovimento Incorpóreo. O fantasma pode se tornar incorpóreo enquanto se move e atravessar outras criaturas e objetos como se fossem terreno difícil. Se terminar seu turno dentro de um objeto, ele é deslocado para o espaço desocupado mais próximo e sofre 1d10 de dano de força para cada 1,5 m percorridos.\n\nFraquezas do Fantasma. O fantasma possui uma das seguintes falhas, escolhida pelo conjurador de esferas quando é reanimado:\n\nAssombração. Um fantasma está ligado a um local, criatura ou objeto específico que teve significado para ele em vida. Um fantasma não pode viajar mais de 150 metros de sua assombração. Se a assombração for destruída, o fantasma não estará mais ligado e desaparece em direção à sua respectiva vida após a morte. O Mestre deve determinar quem, o quê ou onde um fantasma assombra.\n\nInstrumentos de sua Morte. Um fantasma tem vulnerabilidade a qualquer dano causado por aquilo que o matou em vida. Por exemplo, se uma criatura morreu queimada na fogueira, o fantasma teria vulnerabilidade a dano de fogo. O Mestre deve determinar como tal criatura morreu antes de se tornar um fantasma e o que qualifica para a vulnerabilidade a dano.\n\nAssuntos Pendentes. Um fantasma anseia por concluir alguma tarefa inacabada de sua vida. Assim que essa tarefa for concluída, ele desaparece em direção à sua respectiva vida após a morte. O Mestre deve determinar quais pendências o fantasma possui.\n\nAções\n\nToque Murchante. Ataque Mágico Corpo a Corpo: +4 (Car) mais seu bônus de proficiência para acertar, um alvo. Acerto: 4 (1d6) de dano necrótico. Esse dano necrótico aumenta em 1d6 no 5º nível (2d6), no 11º nível (3d6) e no 17º nível (4d6).",
+      "_needsReview": [
+        "prereq:unresolved:Sombra (morto-vivo) ou Espectro (morto-vivo)"
+      ]
+    },
+    {
+      "id": "morte-imortal-reanimar-maldicao",
+      "name": "Imortal (reanimar) [maldição]",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-vigor"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Rejuvenescimento. Se o morto-vivo for reduzido a 0 pontos de vida, ele não é destruído, mas simplesmente entra em colapso (ou desaparece, se for um espírito). O morto-vivo não pode ser reanimado novamente até que você complete um descanso longo, mas durante esse período ele recupera todos os pontos de vida entre as reanimações. Além de magias e talentos ou habilidades de esfera que podem remover maldições, aspergir água benta sobre os restos mortais do morto-vivo amaldiçoado libertará seu corpo ou alma da maldição."
+        }
+      ],
+      "body": "Você pode amaldiçoar mortos-vivos que reanima, impedindo que seus corpos ou almas alcancem a paz, mesmo que sua forma de morto-vivo seja destruída."
+    },
+    {
+      "id": "morte-imunidade",
+      "name": "Imunidade (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-resistente"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Os mortos-vivos que você reanima ganham uma das seguintes imunidades a condições à sua escolha: enfeitiçado, exaustão, amedrontado, agarrado, paralisado, petrificado, envenenado, caído, restringido, inconsciente. Você pode selecionar uma imunidade a condição adicional no 5º nível (2 condições), 11º nível (3 condições) e 17º nível (4 condições)."
+        },
+        {
+          "pm": 1,
+          "text": "Cada vez que você usar reanimar, escolha um tipo de dano ao qual seu morto-vivo tenha resistência; seu morto-vivo agora terá imunidade a esse tipo de dano. Se seu morto-vivo tiver resistência a dano contundente, perfurante e cortante não mágico, você pode, em vez disso, escolher imunidade a esses tipos de dano."
+        },
+        {
+          "pm": 2,
+          "text": "Os mortos-vivos que você reanima ganham resistência a dano radiante."
+        },
+        {
+          "pm": 2,
+          "text": "Imunidade a Expulsão. Mortos-vivos que você reanima e que possuam as habilidades ou características Desafio à Expulsão ou Resistência à Expulsão também se tornam imunes aos efeitos da característica Expulsar Mortos-Vivos e efeitos similares."
+        }
+      ],
+      "body": "Você pode aprimorar mortos-vivos que reanima, concedendo-lhes certas imunidades a condições ou danos."
+    },
+    {
+      "id": "morte-maldicao-da-morte",
+      "name": "Maldição da Morte (golpe fantasma)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "golpe fantasma"
+      ],
+      "save": "Constituição",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Seu golpe fantasma mata instantaneamente aqueles que falharem no teste de resistência, desde que tenham pontos de vida iguais ou inferiores ao limite do golpe fantasma. Se múltiplas criaturas falharem no teste de resistência contra o seu golpe fantasma, aprimorar com este talento visa a criatura com o menor total de pontos de vida.\n\nEste golpe fantasma só pode ser aprimorado por um único aprimoramento de limite.\n\nGolpe Fantasma 2PM: (Limite) A maldição da morte tem um limite de 5 pontos de vida.\n\nGolpe Fantasma 3PM: (Limite) A maldição da morte tem um limite de 10 pontos de vida.\n\nGolpe Fantasma 4PM: (Limite) A maldição da morte tem um limite de 40 pontos de vida.\n\nGolpe Fantasma 5PM: (Limite) A maldição da morte tem um limite de 70 pontos de vida.\n\nGolpe Fantasma 6PM: (Limite) A maldição da morte tem um limite de 100 pontos de vida."
+    },
+    {
+      "id": "morte-mumia",
+      "name": "Múmia (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "O cadáver preservado de uma criatura morta",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-habilidoso"
+        },
+        {
+          "type": "text",
+          "text": "Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar reanimar, você pode criar uma múmia utilizando a ficha de estatísticas abaixo:\n\nMúmia\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os mesmos modos de movimento da criatura original, mas é reduzida para 6 metros.\n\nFORDESCONINTSABCAR16 (+3)8 (-1)14 (+2)6 (-2)16 (+3)12 (+1)\n\nVulnerabilidades a Dano: fogo\n\nImunidades a Dano: necrótico, veneno\n\nImunidades a Condições: exaustão, amedrontado, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 13\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala.\n\nAções\n\nGolpe. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano de concussão.",
+      "_needsReview": [
+        "prereq:unresolved:Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
+      ]
+    },
+    {
+      "id": "morte-morto-vivo-permanente",
+      "name": "Morto-vivo Permanente",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Estendida (metaesfera)"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 3,
+          "text": "Quando você reanima um morto-vivo, você pode tornar a reanimação um efeito instantâneo. A criatura morta-viva existe independentemente da sua concentração, não tem duração e não pode ser dissipada. Esses mortos-vivos ainda contam para o número total de mortos-vivos que você pode ter reanimados a qualquer momento. Se você criar mais mortos-vivos do que o seu total, os mortos-vivos permanentes antigos não são destruídos; em vez disso, eles são simplesmente liberados do serviço e se comportarão como é normal para os mortos-vivos do seu tipo (a maioria simplesmente atacará você ou qualquer outra criatura viva próxima). Seu total máximo de pontos de magia é reduzido pelo número de pontos de magia gastos na criação desses mortos-vivos; essa redução desaparece quando os mortos-vivos criados são destruídos, embora os pontos de magia não sejam recuperados até o momento em que você os recuperaria normalmente."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Estendida (metaesfera)"
+      ]
+    },
+    {
+      "id": "morte-praga-dos-mortos",
+      "name": "Praga dos Mortos (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-horda-dos-mortos"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao reanimar enxames ou tropas de mortos-vivos com o talento Horda dos Mortos-Vivos, cada enxame ou tropa conta como um único morto-vivo para fins de contagem de quantos mortos-vivos você pode ter animados."
+    },
+    {
+      "id": "morte-possessao",
+      "name": "Possessão",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-projecao-espiritual"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Quando você projeta seu espírito usando o talento avançado Projeção Espiritual, você pode, como uma ação, mover-se para o mesmo espaço que uma criatura material e tentar possuí-la. O alvo tem direito a um teste de resistência de Carisma para negar a tentativa. Se o teste falhar, a alma do alvo é reprimida e a sua assume o controle do corpo. Você só pode possuir uma criatura física com alma (isso inclui a maioria das criaturas vivas e mortos-vivos inteligentes, mas não constructos ou mortos-vivos não inteligentes (aqueles com um valor de Inteligência de 4 ou inferior)). O alvo fica imune a qualquer tentativa futura de possessão feita por você usando o talento avançado Projeção Espiritual por 24 horas após o sucesso no teste de resistência ou após o término da possessão."
+        }
+      ],
+      "body": "Você só pode tentar possuir uma criatura uma vez durante qualquer projeção individual do seu espírito. Se for bem-sucedido, sua força vital ocupa o corpo hospedeiro. Você mantém sua Inteligência, Sabedoria, Carisma, nível, classe, proficiências, bônus de proficiência, alinhamento, habilidades mentais e habilidades mágicas, como magias e habilidades de esfera. O corpo retém sua Força, Destreza, Constituição, pontos de vida, habilidades naturais e habilidades automáticas. Você não pode escolher ativar as habilidades especiais do corpo. As magias e outras habilidades de conjuração da criatura não permanecem com o corpo. Uma vez por rodada durante uma possessão, o alvo pode gastar um Dado de Vida sem gastar uma ação para fazer um teste de resistência de Carisma adicional para encerrar o efeito; criaturas que não são controladas por jogadores geralmente têm um número de Dados de Vida determinado por sua ficha de estatísticas. Você pode possuir um corpo por até 1 hora por nível, mas sempre pode encerrar o efeito antecipadamente como uma ação. Se o corpo hospedeiro for reduzido a 0 pontos de vida, você retorna ao seu corpo. Como é usual ao projetar seu espírito, este efeito pode ser dissipado em seu corpo ou no corpo do hospedeiro."
+    },
+    {
+      "id": "morte-treinamento-de-praticante",
+      "name": "Treinamento de Praticante (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-treinado"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao reanimar uma criatura que possuía esferas marciais ou talentos de Esferas de Poder, seu morto-vivo ganha um número desses talentos que não exceda o dobro do seu bônus de proficiência e pode adquirir foco marcial. Este talento não tem efeito em mortos-vivos reanimados como enxames ou tropas."
+    },
+    {
+      "id": "morte-projecao-espiritual",
+      "name": "Projeção Espiritual",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "action": "1 ação",
+      "duration": "1 minuto",
+      "target": "você mesmo",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode projetar seu espírito para fora do seu corpo. Durante esse tempo, seu corpo entra em um estado de animação suspensa; ele não precisa de comida nem água e não envelhece, embora possa ser morto por meios normais.\n\nSeu espírito se manifesta como uma versão etérea de você com seus pontos de vida e habilidades, e carrega uma cópia de todos os seus equipamentos. Ele é invisível, insubstancial e capaz de se mover em qualquer direção, inclusive para cima ou para baixo, embora com metade da velocidade normal.\n\nEle pode atravessar objetos sólidos, incluindo criaturas vivas, e pode ver e ouvir seus arredores, embora, por estar no Plano Etéreo, só possa ver e ouvir o Plano Material a uma distância de 18 metros. Quando o limite de tempo expira, seu espírito retorna imediatamente ao seu corpo. O uso de itens mágicos (como pergaminhos, varinhas, poções e outros itens com um número limitado de cargas ou usos por dia) enquanto estiver em estado etéreo conta como um dos usos restantes do item quando você retornar ao seu corpo.\n\nSeu espírito não pode atacar ou afetar criaturas e objetos no Plano Material, nem ser afetado por eles em geral, embora alguns efeitos (como dano de força) afetem criaturas etéreas quando usados ​​por criaturas materiais. Certas criaturas ou objetos materiais também possuem ataques ou efeitos que podem afetar especificamente criaturas no Plano Etéreo. Esses efeitos não funcionam ao contrário, permitindo que seu espírito afete criaturas materiais.\n\nSeu espírito trata outras criaturas e objetos etéreos como se fossem materiais. Seu espírito pode usar qualquer magia que você possua, mas essa magia só pode afetar outras coisas etéreas. Se seu espírito for morto, ele retorna instantaneamente ao seu corpo, revivendo-o de seu estado de animação suspensa."
+    },
+    {
+      "id": "morte-prolifico",
+      "name": "Prolífico (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Cada vez que você usa reanimar, seus mortos-vivos ganham a habilidade Criar Prole e sua escolha entre Drenagem de Vida ou Drenagem de Força.\n\n•Criar Prole. Como uma ação, seus mortos-vivos podem escolher como alvo uma criatura não morta-viva que tenha morrido como resultado das habilidades Drenagem de Vida ou Drenagem de Força. A criatura é reanimada como um tipo de morto-vivo escolhido entre quaisquer talentos básicos (mortos-vivos) que você possua. Este morto-vivo está sob seu controle, a menos que você tenha atingido seu limite de mortos-vivos controlados. Mortos-vivos criados desta forma permanecem enquanto a criatura que usou Criar Prole permanecer reanimada.\n\n•Drenagem de Vida. (Apenas para Ghast, Ghoul, Múmia, Esqueleto, Vampiro, Wight ou Zumbi) Sempre que seus mortos-vivos causarem dano com um ataque corpo a corpo, a criatura danificada deve ser bem-sucedida em um teste de resistência de Constituição ou terá seu máximo de pontos de vida reduzido em uma quantidade igual ao dano sofrido. Essa redução dura até que o alvo termine um descanso longo. O alvo morre se esse efeito reduzir seu máximo de pontos de vida a 0.\n\n•Drenagem de Força. (Apenas para Fantasma, Poltergeist, Sombra, Espectro, Fogo-Fátuo ou Aparição) Sempre que seu morto-vivo causar dano com um ataque corpo a corpo, a criatura danificada deve ser bem-sucedida em um teste de resistência de Força ou terá sua Força reduzida em 1d4. Essa redução dura até que o alvo termine um descanso longo. O alvo morre se esse efeito reduzir sua Força a 0."
+    },
+    {
+      "id": "morte-armadilha-da-alma",
+      "name": "Armadilha da Alma",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "action": "1 ação",
+      "range": "Toque",
+      "duration": "Instantânea",
+      "target": "1 criatura que morreu no último minuto e que você possa ver",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando adjacente a uma criatura que morreu recentemente, você pode aprisionar sua alma em uma gema. O alvo tem direito a um teste de resistência de Carisma para negar o efeito, e o valor da gema deve ser de pelo menos 1.000 po por Dado de Vida da criatura que você está tentando aprisionar. Se bem-sucedido, a alma da criatura fica aprisionada dentro da gema. Uma criatura aprisionada não pode ser ressuscitada ou ter seu espírito invocado, a menos que o conjurador esteja de posse desta gema. A criatura aprisionada dentro da gema sempre falha em seus testes de resistência se o portador da gema usar o talento avançado de Morte Invocar Espírito nela. Se a gema for quebrada, o espírito é libertado. Se o espírito for invocado através do talento avançado de Morte Invocar Espírito, o\n\nconjurador pode optar por libertá-lo, caso em que ele viaja para a vida após a morte, deixando a gema vazia e reutilizável."
+    },
+    {
+      "id": "morte-treinamento-de-conjurador",
+      "name": "Treinamento de Conjurador (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-treinado"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Escolha uma das seguintes características ao usar reanimar em uma criatura com habilidades mágicas.\n\nConjuração Inata. Ao reanimar uma criatura que possuía poderes psíquicos ou conjuração inatos, seu morto-vivo adquire todas essas habilidades como se ainda fosse a criatura base.\n\nConjurador. Ao reanimar uma criatura que conjura magias a partir de espaços de magia, sua criatura morta-viva adquire quaisquer magias conhecidas ou preparadas cujo nível não exceda seu bônus de proficiência, e um número de espaços de magia igual à metade do seu bônus de proficiência. Este talento não tem efeito sobre mortos-vivos reanimados como enxames ou tropas.\n\nConjurador de Esferas. Ao reanimar uma criatura que possuía esferas ou talentos mágicos, seu morto-vivo ganha um número desses talentos que não exceda seu bônus de proficiência, e um número de pontos de magia igual ao seu bônus de proficiência. Este talento não tem efeito sobre mortos-vivos reanimados como enxames ou tropas."
+    },
+    {
+      "id": "morte-invocar-espirito",
+      "name": "Invocar Espírito",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "action": "1 hora",
+      "duration": "Variável",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Uma vez que uma alma tenha sido invocada, você pode fazer qualquer uma das seguintes ações:"
+        }
+      ],
+      "body": "Você pode invocar a alma de uma criatura morta em forma espiritual. Você deve saber exatamente qual criatura está tentando invocar e ser capaz de designá-la (como seu nome, local e hora da morte, etc.). Quanto mais familiarizado você estiver com o espírito e quanto mais recente for sua morte, maior a probabilidade de ele aparecer. A alma que você está tentando invocar tem direito a um teste de resistência de Carisma com os seguintes modificadores, dependendo do seu conhecimento e conexão com o alvo, bem como da hora de sua morte:\n\nTabela: Familiaridade (Espírito)\n\nConhecimentoModificador de Salvaguarda de CarismaNenhum¹+10De segunda mão (você já ouviu falar do alvo)+5De primeira mão (você já conheceu o alvo)+0Familiar (você conhece bem o alvo)-5\n\n¹: Você deve ter algum tipo de conexão (veja abaixo) com uma criatura da qual você não tem conhecimento.\n\nTabela: Conexão (espírito)\n\nConexãoModificador de Salvaguarda de CarismaSemelhança ou imagem-2Pertences ou vestimentas-4Cadáver/restos mortais-10\n\nTabela: Tempo que a criatura está morta\n\nTempo mortoModificador de Salvaguarda de Carisma1 ano+210 anos+4100 anos+61000 anos+8\n\nEm um teste de resistência bem-sucedido, o alvo não aparece e pode optar por retaliar espiritualmente, aumentando seu nível de exaustão em 1. Embora amigos possam optar por falhar propositalmente no teste de resistência e vir voluntariamente, na maioria dos outros casos, ser arrancado da vida após a morte é uma experiência horrível e pode tornar até mesmo os espíritos mais benevolentes hostis. Se uma alma for bem-sucedida no teste de resistência contra esse efeito, ela não poderá ser invocada novamente pelo mesmo conjurador por 1 mês. Às vezes, as almas de heróis, reis e outros são protegidas por uma divindade e simplesmente não podem ser invocadas.\n\nAlmas invocadas geralmente permanecem enquanto você se concentrar, até 8 horas. Se você possuir um receptáculo adequado para a alma, como uma filacteria especialmente preparada, e se a alma entrar voluntariamente, ela poderá permanecer indefinidamente até ser libertada ou o receptáculo ser quebrado.\n\nVocê pode fazer uma pergunta a cada dois níveis. O conhecimento do cadáver se limita ao que ele sabia em vida, incluindo os idiomas que falava. As respostas podem ser breves, enigmáticas ou repetitivas. Uma criatura que teria se oposto a você em vida pode fazer um novo teste de resistência de Carisma para se recusar a responder ou mentir usando a perícia Carisma (Enganação).\n\nVocê pode usar o espírito como um componente ao criar um objeto animado ou uma criatura morta-viva (um teste de resistência de Carisma anula o resultado se o espírito não estiver disposto; se o espírito for bem-sucedido no teste, ele retorna imediatamente à vida após a morte como se tivesse sido bem-sucedido no teste original). Você deve criar a\n\ncriatura morta-viva ou o objeto animado normalmente, mas ao colocar o espírito no alvo, o espírito é trazido de volta à vida dentro deste novo corpo. O objeto ou a criatura morta-viva adquire os atributos mentais, a personalidade, as memórias, etc., do espírito selecionado, mas, fora isso, é normal para seu novo tipo de criatura. (A critério do Mestre, um espírito ligado a um objeto animado permanente ou criatura morta-viva pode recuperar ou ganhar níveis de classe ao longo do tempo, mas perde pelo menos 1 nível por ND de sua nova forma.) Uma criatura morta-viva ou objeto animado criado desta forma não está automaticamente sob seu controle.\n\nSe você possuir o talento avançado de Vida Ressurreição, poderá colocar o espírito em um novo corpo, trazendo a alma de volta à vida, mesmo que você não tenha o corpo do alvo, que ele esteja faltando componentes vitais ou que o alvo esteja morto há até 1 ano por nível. Você deve possuir um corpo sem alma (como um criado através dos talentos avançados de Criação Moldar Carne e Criar Materiais) ou um corpo montado a partir de outros corpos recentemente mortos. (A montagem requer o corpo do alvo com um corpo adicional para cada componente vital substituído, ou então um mínimo de seis corpos diferentes — um para cada membro, o torso incluindo a cabeça e o cérebro. Em alguns casos, mais corpos podem ser necessários. Unguentos e ataduras especiais no valor de 500 po também são necessários.) Você pode trazer o alvo de volta à vida com o talento avançado de Vida Ressurreição. O alvo mantém seus atributos e níveis de classe, mas sua raça e aparência dependem do corpo possuído."
+    },
+    {
+      "id": "morte-prole-vampirica",
+      "name": "Prole Vampírica (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Uma criatura com 0 pontos de vida",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-habilidoso"
+        },
+        {
+          "type": "text",
+          "text": "Carniçal (morto-vivo) ou Zumbi (morto-vivo)"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "O alvo deve fazer um teste de resistência de Constituição ou morrer. Se o alvo morrer, você pode criar uma prole vampírica, usando a ficha de estatísticas abaixo:\n\nProle Vampírica\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR16 (+3)16 (+3)10 (+0)10 (+0)8 (-1)12 (+1)\n\nResistências a Dano: necrótico; Ataques contundentes, perfurantes e cortantes de fontes não mágicas\n\nSentidos: visão no escuro 18 m, Percepção passiva 10\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nEscalada de Aranha. O vampiro pode escalar superfícies difíceis, inclusive de cabeça para baixo em tetos, sem precisar fazer um teste de habilidade.\n\nFraquezas Vampíricas. O vampiro possui as seguintes fraquezas:\n\nProibição. O vampiro não pode entrar em uma residência sem um convite de um dos ocupantes.\n\nFerido por Água Corrente. O vampiro sofre 20 de dano ácido quando termina seu turno em água corrente.\n\nEstaca no Coração. O vampiro é destruído se uma arma perfurante de madeira for cravada em seu coração enquanto ele estiver incapacitado em seu local de repouso.\n\nHipersensibilidade à Luz Solar. O vampiro sofre 20 de dano radiante quando inicia seu turno sob a luz do sol. Enquanto estiver sob a luz do sol, ele tem desvantagem em jogadas de ataque e testes de habilidade.\n\nAções\n\nMordida. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano perfurante.",
+      "_needsReview": [
+        "prereq:unresolved:Carniçal (morto-vivo) ou Zumbi (morto-vivo)"
+      ]
+    },
+    {
+      "id": "morte-vigor",
+      "name": "Vigor (reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Consumir Vida. Como uma ação bônus, seu morto-vivo pode escolher como alvo uma criatura ao seu alcance com 0 pontos de vida e que ainda esteja viva. O alvo deve ser bem-sucedido em um teste de resistência de Constituição ou morrer. Se o alvo morrer, o morto-vivo recupera 2d6 pontos de vida. A quantidade de pontos de vida recuperados aumenta em 1d6 no 11º nível (3d6) e no 17º nível (4d6)."
+        },
+        {
+          "pm": 2,
+          "text": "Regeneração. Escolha um tipo de dano diferente de radiante ao qual seu morto-vivo não tenha resistência ou imunidade. O morto-vivo recupera 5 pontos de vida no início do seu turno se tiver pelo menos 1 ponto de vida. Se o morto-vivo sofrer dano radiante ou o tipo de dano escolhido, esta característica não funciona no início do próximo turno do morto-vivo. A regeneração aumenta em 5 pontos de vida recuperados no 11º nível (10 pontos de vida) e no 17º nível (15 pontos de vida)."
+        }
+      ],
+      "body": "Pré-requisitos: Esfera da Morte, 5º nível ou superior\n\nVocê pode aprimorar mortos-vivos que reanima, concedendo-lhes características e habilidades que lhes permitam se curar."
+    },
+    {
+      "id": "morte-inumano",
+      "name": "Inumano (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Um cadáver fresco",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "text",
+          "text": "Profissional (reanimar)"
+        },
+        {
+          "type": "text",
+          "text": "Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao reanimar, você pode criar um inumano.\n\nInumano\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR14 (+2)14 (+2)14 (+2)10 (+0)12 (+1)8 (-1)\n\nResistências a Dano: necrótico; dano de concussão, perfuração e corte de ataques não mágicos que não sejam feitos com armas de prata\n\nImunidades a Dano: veneno\n\nImunidades a Condições: exaustão, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz do sol, o Inumano tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGarras. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 6 (1d6+2) de dano cortante.",
+      "_needsReview": [
+        "prereq:unresolved:Profissional (reanimar)",
+        "prereq:unresolved:Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
+      ]
+    },
+    {
+      "id": "morte-aparicao",
+      "name": "Aparição (morto-vivo)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Morte",
+      "tags": [
+        "morto-vivo"
+      ],
+      "target": "Um objeto do falecido",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "talent",
+          "id": "morte-habilidoso"
+        },
+        {
+          "type": "talent",
+          "id": "morte-poltergeist"
+        },
+        {
+          "type": "text",
+          "text": "Sombra (morto-vivo) ou Aparição (morto-vivo)"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao reanimar, você pode criar uma aparição.\n\nAparição\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento 0 m, voo 6 m (pairar)\n\nFORDESCONINTSABCAR6 (-2)14 (+2)16 (+3)10 (+0)12 (+1)14 (+2)\n\nImunidades a Dano: necrótico\n\nImunidades a Condições: agarrado, paralisado, envenenado, restringido\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nMovimento Incorpóreo. O aparição pode se tornar incorpóreo enquanto se move e atravessar outras criaturas e objetos como se fossem terreno difícil. Se terminar seu turno dentro de um objeto, ele é deslocado para o espaço desocupado mais próximo e sofre 1d10 de dano de força para cada 1,5 metro percorrido.\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz solar, o aparição tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGolpe. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 6 (1d6+2) de dano de impacto.",
+      "_needsReview": [
+        "prereq:unresolved:Sombra (morto-vivo) ou Aparição (morto-vivo)"
+      ]
+    },
+    {
+      "id": "morte-limite-necromantico",
+      "name": "Limite Necromântico",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha entre Golpe Fantasma ou Reanimar. Você não pode usar esta habilidade, nem escolher talentos que apenas a aprimorem. Se optar por perder a habilidade da esfera Reanimar, você também não ganha o talento gratuito (Morto-vivo), mas se posteriormente comprar esta variante, você recupera o talento (Morto-vivo). Você ganha um talento bônus da esfera Morte."
+    },
+    {
+      "id": "morte-guardiao-da-alma",
+      "name": "Guardião da Alma (requer Reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [
+        "requer reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode reanimar uma criatura morta-viva por vez e só pode escolher almas contidas em uma filacteria.\n\nAo obter esta variante pela primeira vez, você adquire uma filacteria contendo uma única alma com um ND não superior a um quarto do seu nível, bem como o conhecimento de como criar uma nova filacteria como um ritual de uma hora, caso ela seja perdida ou quebrada.\n\nAo escolher uma alma em uma filacteria, você pode reanimá-la como qualquer tipo de morto-vivo para o qual você possua o talento (Morto-vivo); Se reanimado como um morto-vivo corpóreo e não houver um corpo adequado disponível, seu corpo será criado a partir de uma combinação de energia negativa e materiais próximos. O morto-vivo reanimado sempre terá um máximo de pontos de vida igual ao modificador de Constituição do morto-vivo + cinco vezes o seu nível. Ao contrário de outros mortos-vivos, se a criatura reanimada for reduzida a 0 pontos de vida, você sempre poderá usar a filacteria novamente para reanimar a alma através dela. Você recebe o talento avançado Invocar Espírito como um talento bônus. Você não pode ter este talento e a variante Limite Necromântico (reanimar) simultaneamente."
+    },
+    {
+      "id": "morte-treinador-de-mortos-vivos",
+      "name": "Treinador de Mortos-Vivos (requer reanimar)",
+      "sphere": "morte",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [
+        "requer reanimar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha um tipo de criatura: aberração, besta, dragão, gigante ou monstruosidade, ou duas raças humanoides. Você só pode reanimar criaturas mortas do tipo (ou raças) escolhido(s). Você recebe um talento (reanimar) ou (morto-vivo) à sua escolha como um talento bônus. Você não pode ter esta variante e a variante Limite Necromântico (reanimar) ao mesmo tempo."
+    }
+  ],
+  "_reviewed": false
+}

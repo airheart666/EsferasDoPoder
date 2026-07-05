@@ -1,0 +1,306 @@
+{
+  "id": "escudo",
+  "name": "Escudo",
+  "section": "martial",
+  "summary": "Extrair defesa e ataque máximos do escudo como equipamento.",
+  "theme": {
+    "h": 210,
+    "s": 44,
+    "sig": "escudo"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "m-escudo-defesa-ativa",
+      "name": "Defesa Ativa",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se você estiver usando um escudo e for atacado por uma criatura da qual você tenha consciência, você pode usar sua reação para aumentar seu bônus de CA contra esse ataque em +2.\n\nTalentos com o descritivo (defletir) concedem efeitos adicionais a esta habilidade. Cada uso de defesa ativa só pode se beneficiar de um talento (defletir). Você pode gastar seu foco marcial para usar defesa ativa sem gastar uma reação."
+    },
+    {
+      "id": "m-escudo-aparar-lamina",
+      "name": "Aparar Lâmina (defletir)",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Defletir",
+      "tags": [
+        "defletir"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se o ataque que desencadeou a habilidade errar e tiver sido feito com uma arma corpo a corpo, você pode fazer uma tentativa de desarmar essa arma sem ação adicional. Escudos mágicos adicionam seu bônus a este teste."
+    },
+    {
+      "id": "m-escudo-contra-ataque-esmagador",
+      "name": "Contra-Ataque Esmagador (defletir)",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Defletir",
+      "tags": [
+        "defletir"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se o ataque que desencadeou a habilidade errar e tiver sido feito por uma criatura adjacente, você pode empurrar a criatura atacante sem ação adicional."
+    },
+    {
+      "id": "m-escudo-escudo-redirecionador",
+      "name": "Escudo Redirecionador (defletir)",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Defletir",
+      "tags": [
+        "defletir"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que um ataque com arma (exceto armas de cerco ou outras armas maciças) errar uma criatura que se beneficia da sua defesa ativa, você pode gastar seu foco marcial para escolher um novo alvo para o ataque dentro do seu alcance original (para ataques à distância) ou alcance (para ataques corpo a corpo), comparando a rolagem de ataque original com a CA do novo alvo."
+    },
+    {
+      "id": "m-escudo-escudo-sacrificial",
+      "name": "Escudo Sacrificial (defletir)",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Defletir",
+      "tags": [
+        "defletir"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se o ataque que desencadeou a habilidade acertar e for um acerto crítico, você pode quebrar seu escudo para transformar o acerto crítico em um acerto normal. Escudos quebrados geralmente podem ser reparados durante um descanso longo."
+    },
+    {
+      "id": "m-escudo-bloqueio",
+      "name": "Bloqueio",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar defesa ativa contra efeitos que permitem fazer um teste de resistência de Destreza para reduzir o dano à metade. Quando usada dessa forma, você adiciona o bônus de CA do seu escudo ao seu teste de resistência de Destreza, em vez de obter os benefícios usuais da defesa ativa. Se você for bem-sucedido no teste de resistência, não sofrerá dano algum pelo efeito."
+    },
+    {
+      "id": "m-escudo-proteger-aliado",
+      "name": "Proteger Aliado",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder sua defesa ativa a um aliado dentro do seu alcance natural quando um ataque tiver esse aliado como alvo."
+    },
+    {
+      "id": "m-escudo-defesa-abrangente",
+      "name": "Defesa Abrangente",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar foco marcial sem uma ação, mesmo quando não for seu turno, para aplicar sua defesa ativa contra todos os ataques válidos que a ativarem até o início do seu próximo turno, sem gastar uma reação. Se você possuir o talento Proteger Aliado, poderá aplicar esse benefício a si mesmo e a todos os aliados dentro do alcance."
+    },
+    {
+      "id": "m-escudo-cobertura-flexivel",
+      "name": "Cobertura Flexível",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como uma ação, você pode usar seu escudo para criar cobertura. Ao usar um escudo dessa forma, você deve escolher uma das bordas do seu espaço para criar essa cobertura. Isso cria cobertura de três quartos (+5 na CA e nos testes de resistência de Destreza) até o início do seu próximo turno para quaisquer ataques que passem por essa borda.\n\nA cobertura concedida desta forma é insuficiente para permitir que você faça um teste de Destreza (Furtividade) para se esconder. Você pode gastar seu foco marcial para usar este talento como uma ação bônus. Como uma reação, você pode alterar a borda selecionada do seu espaço."
+    },
+    {
+      "id": "m-escudo-desvio-maior",
+      "name": "Desvio Maior",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar defesa ativa, você pode gastar foco marcial para aplicar dois talentos (desvio) em vez de um."
+    },
+    {
+      "id": "m-escudo-postura-protegida",
+      "name": "Postura Protegida",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar defesa ativa quando não estiver equipado com um escudo. Você pode considerar uma arma que estiver empunhando como um escudo para fins de talentos que façam referência ao seu escudo."
+    },
+    {
+      "id": "m-escudo-escudo-interposto",
+      "name": "Escudo Interposto",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "As criaturas que se beneficiam do seu bônus de defesa ativa (incluindo você) reduzem o dano recebido de ataques que acertam apesar da defesa ativa pelo seu bônus de proficiência. Isso é aplicado antes da resistência."
+    },
+    {
+      "id": "m-escudo-bloqueio-de-soco",
+      "name": "Bloqueio de Soco",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você usa sua defesa ativa, você pode optar por fazer uma jogada de ataque com um golpe desarmado e usar o resultado desse ataque em vez da sua CA para resolver o ataque que desencadeou a defesa, mesmo que seja menor."
+    },
+    {
+      "id": "m-escudo-defesa-reativa",
+      "name": "Defesa Reativa",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar a ação Esquivar enquanto empunha um escudo, você pode realizar um ataque como reação contra uma criatura que errar o ataque."
+    },
+    {
+      "id": "m-escudo-deslizamento-com-escudo",
+      "name": "Deslizamento com Escudo",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao se mover em uma ladeira ou usar a ação Disparada, você pode gastar uma ação bônus para jogar seu escudo no chão à sua frente e usá-lo para deslizar pelo solo. Isso aumenta sua velocidade de deslocamento em +6 metros (20 pés) durante aquela rodada. Você não se beneficia do bônus de CA do seu escudo durante o seu movimento enquanto usa esta habilidade. Você pode recuperar e equipar seu escudo novamente ao final do seu movimento."
+    },
+    {
+      "id": "m-escudo-redirecionamento-perfeito",
+      "name": "Redirecionamento Perfeito",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Escudo",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escudo"
+        },
+        {
+          "type": "talent",
+          "id": "m-escudo-escudo-redirecionador"
+        },
+        {
+          "type": "level",
+          "min": 7
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode usar seu talento Escudo Redirecionador contra ataques de magia."
+    },
+    {
+      "id": "m-escudo-escudo-da-alma",
+      "name": "Escudo da Alma",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Escudo",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escudo"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você recebe um bônus em todos os testes de resistência igual ao bônus de CA do seu escudo. Isso não se acumula com efeitos que permitem adicionar um modificador de habilidade a testes de resistência, como a aura de proteção do paladino."
+    },
+    {
+      "id": "m-escudo-destemido",
+      "name": "Destemido",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sua defesa ativa não concede bônus à CA. Você recebe um talento (defletir) como talento bônus."
+    },
+    {
+      "id": "m-escudo-bloqueador-passivo",
+      "name": "Bloqueador Passivo",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não recebe a habilidade de defesa ativa e não pode escolher talentos (defletir) ou outros talentos que exijam o uso de defesa ativa. Você recebe Cobertura Flexível como talento bônus. Você não pode possuir este talento e Destemido ou Sem Escudo simultaneamente."
+    },
+    {
+      "id": "m-escudo-destemido-2",
+      "name": "Destemido",
+      "sphere": "escudo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode usar defesa ativa com um escudo. Você recebe Postura Guardada como talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

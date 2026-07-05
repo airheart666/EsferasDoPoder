@@ -1,0 +1,452 @@
+{
+  "id": "canalha",
+  "name": "Canalha",
+  "section": "martial",
+  "summary": "Astúcia e trapaça para baixar a guarda do oponente antes de golpear.",
+  "theme": {
+    "h": 308,
+    "s": 30,
+    "sig": "canalha"
+  },
+  "acquisition": {
+    "freePicks": 0,
+    "conditionals": [
+      {
+        "requires": "Prestidigitação",
+        "addPicks": 1
+      }
+    ]
+  },
+  "talents": [
+    {
+      "id": "m-canalha-truque-sujo",
+      "name": "Truque Sujo",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes das Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como uma ação, você pode tentar arrancar os olhos de uma criatura, chutar terra em seu rosto, dar um soco em suas orelhas, emaranhar seus membros, dar um nó em suas roupas ou qualquer outra manobra dissimulada semelhante. Você deve fazer um teste de habilidade de Destreza (Prestidigitação) contestado pelo teste de Força (Atletismo) ou Destreza (Acrobacia) daquela criatura. O Mestre determina os truques sujos exatos disponíveis dependendo da roupa do alvo, do que está por perto ou de como você planeja inibi-lo. Dependendo do truque sujo exato realizado, se você tiver sucesso, poderá deixar a criatura surda por 1 minuto, derrubar o alvo, reduzir a velocidade de movimento do alvo pela metade por 1 minuto, agarrar o alvo por 1 rodada ou cegar o alvo por 1 rodada, ou algo semelhante. Normalmente, um alvo pode gastar uma ação para esfregar os olhos, desamarrar suas roupas ou desfazer o truque sujo e encerrar este efeito mais cedo."
+    },
+    {
+      "id": "m-canalha-desarmar",
+      "name": "Desarmar",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes das Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma criatura pode usar um ataque com arma para derrubar uma arma ou outro item das mãos de um alvo. O atacante faz uma jogada de ataque contestada pelo teste de Força (Atletismo) ou Destreza (Acrobacia) do alvo. Se o atacante vencer a disputa, o ataque não causa dano ou outro efeito negativo, mas o defensor derruba o item.\n\nO atacante tem desvantagem em sua jogada de ataque se o alvo estiver segurando o item com duas ou mais mãos. O alvo tem vantagem em seu teste de habilidade se for maior que a criatura atacante ou desvantagem se for menor."
+    },
+    {
+      "id": "m-canalha-prestidigitacao",
+      "name": "Prestidigitação",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes das Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você tentar um ato de prestidigitação ou truque manual, como plantar algo em alguém ou esconder um objeto consigo mesmo, faça um teste de Destreza (Prestidigitação). O Mestre também pode solicitar um teste de Destreza (Prestidigitação) para determinar se você consegue roubar uma bolsa de moedas de outra pessoa ou tirar algo do bolso dela."
+    },
+    {
+      "id": "m-canalha-roubar",
+      "name": "Roubar",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes das Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode fazer um teste de Destreza (Prestidigitação) como uma ação para tomar algo de um alvo. Isso é contestado pela perícia Sabedoria (Percepção) do alvo se ele não estiver ciente de você, ou pela perícia Força (Atletismo) ou Destreza (Acrobacia) se ele estiver ciente de você. Você tem desvantagem neste teste se o objeto alvo estiver preso com segurança (como uma mochila que ele esteja usando ou uma espada dentro da bainha no cinto). Você pode plantar um item em vez de pegar um item com um teste semelhante."
+    },
+    {
+      "id": "m-canalha-rapelar",
+      "name": "Rapelar (truque)",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Truque",
+      "tags": [
+        "truque"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que usar roubar com sucesso, você pode roubar até dois itens do alvo da sua manobra em vez de um."
+    },
+    {
+      "id": "m-canalha-em-dobro",
+      "name": "Em Dobro (truque)",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Truque",
+      "tags": [
+        "truque"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que usar truque sujo com sucesso, você pode gastar seu foco marcial para realizar dois truques sujos neles em vez de apenas um. Isso significa que você pode amarrar suas roupas e jogar areia em seus olhos, esbofetear suas orelhas e prendê-los em suas roupas, etc. O alvo sofre os efeitos de ambos os truques sujos, e remover ambas as penalidades geralmente requer ações separadas."
+    },
+    {
+      "id": "m-canalha-gingado",
+      "name": "Gingado (truque)",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Truque",
+      "tags": [
+        "truque"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você força o alvo a se mover 1,5 metro em qualquer direção de sua escolha."
+    },
+    {
+      "id": "m-canalha-trapaca-a-distancia",
+      "name": "Trapaça à Distância (truque)",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Truque",
+      "tags": [
+        "truque"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto você tiver foco marcial, você pode usar truque sujo contra uma criatura em um raio de 3 metros."
+    },
+    {
+      "id": "m-canalha-troca",
+      "name": "Troca (truque)",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Truque",
+      "tags": [
+        "truque"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que roubar de um alvo com sucesso, você pode substituir o que roubou por um item diferente sem testes ou ações adicionais, colocando-o na mão ou no bolso vazio da criatura. Se o item que você colocou na pessoa for de alguma forma volátil (como um frasco de fogo de alquimia ou uma fórmula de esfera de alquimia), você pode preparar esse item para explodir no final do seu turno, como se tivesse feito um ataque bem-sucedido com ele."
+    },
+    {
+      "id": "m-canalha-torcer-a-faca",
+      "name": "Torcer a Faca (truque)",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Truque",
+      "tags": [
+        "truque"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode realizar um único ataque contra o alvo. Você só pode usar este truque uma vez por rodada."
+    },
+    {
+      "id": "m-canalha-manobra-de-esquiva",
+      "name": "Manobra de Esquiva",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto tiver um aliado adjacente, você pode gastar uma ação bônus para que esse aliado lhe forneça cobertura parcial (concedendo um bônus de +2 em testes de resistência de CA e Destreza) até o início do seu próximo turno, ou até que esse aliado não esteja mais adjacente, o que ocorrer primeiro."
+    },
+    {
+      "id": "m-canalha-desarme-rapido",
+      "name": "Desarme Rápido",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que uma criatura ao seu alcance natural fizer um ataque contra você com uma arma branca fabricada, você pode gastar seu foco marcial como reação para tentar roubar essa criatura e desarmá-la da arma antes que o ataque possa ser resolvido. Se for bem-sucedido, ela perde o ataque e a arma."
+    },
+    {
+      "id": "m-canalha-cortar-e-correr",
+      "name": "Cortar e Correr",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto tiver foco marcial, sempre que usar uma ação para roubar com sucesso de um alvo ou usar um truque sujo nele, você poderá se mover até metade do seu deslocamento. Este movimento não provoca um ataque de oportunidade do alvo da sua habilidade."
+    },
+    {
+      "id": "m-canalha-truque-de-distracao",
+      "name": "Truque de Distração",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você realizar com sucesso um truque sujo ou roubar contra uma criatura, o alvo não poderá realizar ataques de oportunidade contra ninguém, exceto você, por 1 rodada."
+    },
+    {
+      "id": "m-canalha-distracao-suja",
+      "name": "Distração Suja",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você realizar com sucesso um truque sujo contra uma criatura desavisada, o alvo sofrerá desvantagem em testes de Percepção por 1 minuto, além dos outros efeitos do truque sujo."
+    },
+    {
+      "id": "m-canalha-foco-ladino",
+      "name": "Foco Ladino",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você realizar com sucesso um truque sujo ou roubar, você poderá gastar uma ação bônus para recuperar seu foco marcial."
+    },
+    {
+      "id": "m-canalha-trapaca-aprimorada",
+      "name": "Trapaça Aprimorada",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adiciona o dobro do seu bônus de proficiência em testes de Prestidigitação."
+    },
+    {
+      "id": "m-canalha-ladrao-mestre",
+      "name": "Ladrão Mestre",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial como parte do roubo de um alvo para não sofrer mais desvantagem se ele estiver segurando o objeto com as duas mãos ou se o objeto estiver firmemente preso. Se você desarmar o alvo com sucesso, poderá imediatamente pegar o objeto desarmado antes que ele possa ser derrubado."
+    },
+    {
+      "id": "m-canalha-ataque-mal-direcionado",
+      "name": "Ataque Mal Direcionado",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você provocar um ataque de oportunidade por movimento, poderá realizar uma tentativa de truque sujo contra a criatura atacante como reação. Em caso de sucesso, em vez de infligir uma penalidade, você pode redirecionar o ataque para uma criatura dentro do alcance do atacante, usando o resultado original da jogada de ataque para determinar o resultado. Você não sofre dano nem quaisquer efeitos adicionais do ataque."
+    },
+    {
+      "id": "m-canalha-roubo-rapido",
+      "name": "Roubo Rápido",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para realizar um truque sujo ou roubar como uma ação bônus."
+    },
+    {
+      "id": "m-canalha-roubar-encanto",
+      "name": "Roubar Encanto",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários do Canalha",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "canalha"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar roubar, você pode gastar seu foco marcial para roubar o Carisma dela em vez de roubar um item. Se for bem-sucedido, a criatura sofre desvantagem em todos os testes de Carisma por 10 minutos. Ela não tem conhecimento dessa penalidade. No 11º nível, essa penalidade dura uma hora. Este é um efeito mágico."
+    },
+    {
+      "id": "m-canalha-roubar-equipamento",
+      "name": "Roubar Equipamento",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários do Canalha",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "canalha"
+        },
+        {
+          "type": "talent",
+          "id": "m-canalha-ladrao-mestre"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao gastar seu foco marcial com o talento Ladrão Mestre, você pode tentar roubar a armadura ou as roupas usadas do alvo. Você tem desvantagem nesta jogada, que não é mitigada pelo talento Ladrão Mestre."
+    },
+    {
+      "id": "m-canalha-roubar-coracao",
+      "name": "Roubar Coração",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários do Canalha",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "canalha"
+        },
+        {
+          "type": "level",
+          "min": 7
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Se você gastar seu foco marcial ao usar roubar, em vez de roubar um objeto, você pode forçar o alvo a realizar um teste de resistência de Sabedoria bem-sucedido. Se falharem, serão enfeitiçados por você por 1 minuto. Uma vez que uma criatura tenha sido afetada ou tenha feito um teste de resistência contra este talento, ela não poderá ser afetada por ele novamente até que você complete um descanso longo."
+    },
+    {
+      "id": "m-canalha-roubar-identidade",
+      "name": "Roubar Identidade",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários do Canalha",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "canalha"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar roubar, em vez de roubar um item, você pode gastar seu foco marcial para obter uma compreensão da aparência e do comportamento da criatura. Você ganha vantagem em testes de Disfarce para se disfarçar como aquela criatura por 1 hora. Este é um efeito mágico."
+    },
+    {
+      "id": "m-canalha-roubar-pericia",
+      "name": "Roubar Perícia",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários do Canalha",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "canalha"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar roubar, em vez de roubar um item, você pode gastar seu foco marcial para tentar roubar uma proficiência de perícia que o alvo possui. Isso não lhe concede conhecimento de quais proficiências o alvo possui; você deve conhecê-las ou adivinhá-las para roubá-las. Se for bem-sucedido, o alvo perde sua proficiência e você a ganha por 1 minuto. Se a criatura receber o dobro do seu bônus de proficiência na perícia\n\nescolhida, você também ganha este benefício. Este é um efeito mágico."
+    },
+    {
+      "id": "m-canalha-roubar-magias",
+      "name": "Roubar Magias",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários do Canalha",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "canalha"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar roubar, em vez de roubar um item, você pode tentar transferir um efeito de magia em andamento daquele alvo para si mesmo por 1 minuto. Se a magia estiver sendo mantida por meio de concentração, você assume a concentração no efeito. Ao final dessa duração, o efeito termina em você e retorna para a criatura da qual foi roubado. O tempo gasto roubando ainda conta para a duração do efeito e, se a duração do efeito expirar enquanto ele estiver sendo roubado, ele termina normalmente.\n\nIsso funciona com efeitos de magia cujo alvo seja \"próprio\", mas não funciona com efeitos de magia que o considerariam um alvo inválido (por exemplo, se o efeito tiver como alvo apenas tipos específicos de criatura). Este é um efeito mágico."
+    },
+    {
+      "id": "m-canalha-roubar-talento",
+      "name": "Roubar Talento",
+      "sphere": "canalha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários do Canalha",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "canalha"
+        },
+        {
+          "type": "text",
+          "text": "Perícia Roubar"
+        },
+        {
+          "type": "level",
+          "min": 7
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que usar Roubar Perícia, você pode escolher roubar um talento (mágico ou marcial) em vez de uma proficiência em perícia. Se tentar roubar uma esfera base para a qual o alvo possua talentos adicionais além do básico, você recebe desvantagem no seu teste. Criaturas afetadas não podem usar habilidades para as quais o talento pré-requisito foi roubado, e se você roubar talentos com pré-requisitos que você não atende, não poderá usá-los. Este é um efeito mágico.",
+      "_needsReview": [
+        "prereq:unresolved:Perícia Roubar"
+      ]
+    }
+  ],
+  "_reviewed": false
+}

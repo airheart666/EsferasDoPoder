@@ -1,0 +1,508 @@
+{
+  "id": "duelismo",
+  "name": "Duelismo",
+  "section": "martial",
+  "summary": "Combate ágil de fintas e jogo de pés para abrir a guarda do alvo.",
+  "theme": {
+    "h": 342,
+    "s": 44,
+    "sig": "duelismo"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "m-duelismo-estocada-fatal",
+      "name": "Estocada Fatal",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao realizar um ataque corpo a corpo, incluindo ataques com magia, que tenha vantagem, você pode rolar novamente um dos dois dados de ataque uma vez. Este benefício não se acumula com outros benefícios semelhantes de talentos ou habilidades."
+    },
+    {
+      "id": "m-duelismo-finta",
+      "name": "Finta",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você usa a ação Ajudar para auxiliar uma criatura aliada a atacar uma criatura a até 1,5 metro de você, você pode optar por ajudar a si mesmo em vez de um aliado, caso em que sua próxima jogada de ataque contra esse alvo será feita com vantagem antes do final do seu próximo turno.\n\nQualquer uso de Ajudar para conceder vantagem a alguém em uma jogada de ataque, seja um aliado ou você mesmo, é chamado de \"finta\".\n\nAlguns talentos são marcados (explorar). Uma vez por rodada, ao realizar um ataque bem-sucedido que tenha vantagem, ou que não tenha desvantagem e seja contra um alvo que esteja a 1,5 metro de um aliado seu que não esteja incapacitado, você pode aplicar um talento (explorar) a esse ataque."
+    },
+    {
+      "id": "m-duelismo-desarmar",
+      "name": "Desarmar",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes das Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma criatura pode usar um ataque com arma para derrubar uma arma ou outro item das mãos de um alvo. O atacante faz uma jogada de ataque contestada pelo teste de Força (Atletismo) ou Destreza (Acrobacia) do alvo. Se o atacante vencer a contestação, o ataque não causa dano ou outro efeito negativo, mas o defensor deixa cair o item.\n\nO atacante tem desvantagem na sua jogada de ataque se o alvo estiver segurando o item com duas ou mais mãos. O alvo tem vantagem no seu teste de habilidade se for maior que a criatura atacante, ou desvantagem se for menor."
+    },
+    {
+      "id": "m-duelismo-ajudar",
+      "name": "Ajudar",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes das Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar a ação Ajudar, você pode auxiliar uma criatura aliada a atacar uma criatura a até 1,5 metro de você. Você finge um ataque, distrai o alvo ou, de alguma outra forma, trabalha em conjunto para tornar o ataque do seu aliado mais eficaz. Se o seu aliado atacar o alvo antes do seu próximo turno, a primeira jogada de ataque é feita com vantagem."
+    },
+    {
+      "id": "m-duelismo-golpe-no-tornozelo",
+      "name": "Golpe no Tornozelo (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Explorar",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "A criatura deve passar em um teste de resistência de Destreza ou cairá no chão."
+    },
+    {
+      "id": "m-duelismo-golpe-no-braco",
+      "name": "Golpe no Braço (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Explorar",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Seu ataque atinge um membro em um ponto crítico. O alvo sofre uma penalidade de -2 em todas as jogadas de ataque e testes de habilidade feitos com esse membro por um número de rodadas igual ao seu bônus de proficiência."
+    },
+    {
+      "id": "m-duelismo-golpe-no-peito",
+      "name": "Golpe no Peito (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Explorar",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Seu ataque atinge o peito do alvo. O alvo deve passar em um teste de resistência de Constituição ou ficará envenenado por 1 rodada."
+    },
+    {
+      "id": "m-duelismo-laminas-distrativas",
+      "name": "Lâminas Distrativas (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Explorar",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O alvo perde a capacidade de fazer ataques de oportunidade por 1 rodada."
+    },
+    {
+      "id": "m-duelismo-golpe-no-rosto",
+      "name": "Golpe no Rosto (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Explorar",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para atingir o rosto do alvo, prejudicando sua visão. O alvo deve passar em um teste de resistência de Destreza ou ficará cego por um minuto. Limpar o sangue como uma Ação encerra esse efeito antecipadamente."
+    },
+    {
+      "id": "m-duelismo-corte-na-perna",
+      "name": "Corte na Perna (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Explorar",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "A velocidade de movimento do alvo é reduzida à metade por 1 rodada. Golpe de Reposicionamento (explorar)\n\nVocê faz o alvo tropeçar, permitindo que você passe por ele. Você pode mover imediatamente o alvo 1,5 metro para um espaço diferente dentro do seu alcance."
+    },
+    {
+      "id": "m-duelismo-ate-o-cabo",
+      "name": "Até o Cabo (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Explorar",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para criar um grande ferimento no alvo que outros podem explorar. Por um número de rodadas igual à metade do seu bônus de proficiência, a resistência do alvo a dano de concussão, perfuração e corte é suprimida."
+    },
+    {
+      "id": "m-duelismo-ataque-desarmado",
+      "name": "Ataque Desarmado (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Explorar",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha um aliado que não seja você. O primeiro ataque desse aliado contra o alvo desta explorar, feito antes do início do seu próximo turno, terá vantagem."
+    },
+    {
+      "id": "m-duelismo-prender-arma",
+      "name": "Prender Arma",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao realizar um desarme, em vez de fazer o alvo soltar o item, você pode prender a arma dele à sua. Isso pode ser feito com a mão ou o ataque natural do alvo, como se fosse uma arma empunhada.\n\nEnquanto o item da criatura estiver preso, ela não poderá usá-lo para realizar ataques e será considerada agarrada por você. Ela pode soltar o item para se libertar da agarrada, mas, caso contrário, deve se libertar da agarrada normalmente para recuperar o uso do item e poder se mover."
+    },
+    {
+      "id": "m-duelismo-finta-perfeita",
+      "name": "Finta Perfeita",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode realizar uma finta como uma ação bônus."
+    },
+    {
+      "id": "m-duelismo-abertura-fatal",
+      "name": "Abertura Fatal",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ataques que você realizar com a vantagem obtida pelo uso da finta causam um acerto crítico com um resultado de 19 ou 20 no dado."
+    },
+    {
+      "id": "m-duelismo-foco-do-duelista",
+      "name": "Foco do Duelista",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você desarmar ou fintar um alvo com sucesso, você poderá recuperar seu foco marcial como uma ação bônus."
+    },
+    {
+      "id": "m-duelismo-jogo-de-pes",
+      "name": "Jogo de Pés",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar foco marcial para se mover até 3 metros. Você pode fazer isso mesmo quando não for seu turno, sem precisar gastar uma reação, e isso não provoca ataques de oportunidade. Se feito em resposta a uma jogada de ataque declarada contra você, você impõe desvantagem nessa jogada. Se feito em resposta a um efeito que permite um teste de resistência de Destreza, você tem vantagem nesse teste de resistência."
+    },
+    {
+      "id": "m-duelismo-finta-maior",
+      "name": "Finta Maior",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao realizar uma finta, você pode gastar seu foco marcial para forçar o alvo a fazer um teste de resistência de Sabedoria. Em caso de falha, o primeiro ataque de qualquer criatura contra esse alvo terá vantagem até o final do seu próximo turno."
+    },
+    {
+      "id": "m-duelismo-cobertura-em-grupo",
+      "name": "Cobertura em Grupo",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Seus movimentos rápidos permitem que você use temporariamente um inimigo como cobertura contra outro. Se uma criatura hostil atacar você, qualquer outra criatura hostil adjacente a essa criatura sofrerá desvantagem nas jogadas de ataque contra você até o início do seu próximo turno."
+    },
+    {
+      "id": "m-duelismo-investida",
+      "name": "Investida",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto você tiver foco marcial, você pode aumentar o alcance dos seus ataques corpo a corpo em 1,5 metro até o final do seu turno, mas sofrerá uma penalidade de -2 nas jogadas de ataque contra alvos adjacentes até o início do seu próximo turno."
+    },
+    {
+      "id": "m-duelismo-aparar-e-contra-atacar",
+      "name": "Aparar e Contra-atacar",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando uma criatura o atacar corpo a corpo, você pode gastar seu foco marcial como uma reação para tentar aparar esse ataque.\n\nFaça uma jogada de dano com arma ou ataque desarmado e subtraia o resultado do dano do ataque. Se isso reduzir o dano do ataque para 0 ou menos, você pode imediatamente fazer um único ataque contra a criatura atacante; você pode adicionar um talento (explorar) a este ataque, desde que não tenha desvantagem nele."
+    },
+    {
+      "id": "m-duelismo-espeto",
+      "name": "Espeto",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar foco marcial para aplicar dois talentos diferentes (explorar) a um ataque em vez de um."
+    },
+    {
+      "id": "m-duelismo-ler-o-inimigo",
+      "name": "Ler o Inimigo",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você aprendeu a ler as sutilezas do seu inimigo. Você ganha proficiência em Intuição. Se você já possui proficiência em Intuição, pode adicionar o dobro do seu modificador de proficiência à Intuição. Você pode escolher este talento duas vezes. Se você já adiciona o dobro do seu modificador de proficiência à Intuição, não pode escolher este talento."
+    },
+    {
+      "id": "m-duelismo-lamina-traicoeira",
+      "name": "Lâmina Traiçoeira",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar desarmar com sucesso, você pode imediatamente pegar o objeto desarmado, contanto que tenha pelo menos uma mão livre. Se assim desejar, você pode imediatamente fazer um único ataque com esse item como uma ação bônus."
+    },
+    {
+      "id": "m-duelismo-aparar-qualquer-coisa",
+      "name": "Aparar Qualquer Coisa",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Esgrima",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "esgrima"
+        },
+        {
+          "type": "talent",
+          "id": "m-duelismo-aparar-e-contra-atacar"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode usar seu talento Aparar e Contra-atacar contra ataques de magia e arma à distância, bem como contra ataques corpo a corpo. Você ainda não pode fazer um ataque retaliatório contra o alvo, a menos que ele esteja ao seu alcance (para uma arma corpo a corpo) ou dentro do alcance normal (para uma arma à distância ou uma arma com a propriedade de arremesso).",
+      "_needsReview": [
+        "prereq:sphere-unknown:Esgrima"
+      ]
+    },
+    {
+      "id": "m-duelismo-golpe-da-alma",
+      "name": "Golpe da Alma (exploração)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Esgrima",
+      "tags": [
+        "exploracao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "esgrima"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você mira na psique do inimigo. O alvo sofre uma penalidade de -2 em todos os testes de resistência por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Esgrima"
+      ]
+    },
+    {
+      "id": "m-duelismo-golpe-sombrio",
+      "name": "Golpe Sombrio (exploração)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Esgrima",
+      "tags": [
+        "exploracao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "esgrima"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Seu ataque corta a essência. Uma criatura atingida pelo seu ataque deve ser bem-sucedida em um teste de resistência de Constituição ou terá seu nível de exaustão aumentado em 1 por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica e pode acumular com outras habilidades.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Esgrima"
+      ]
+    },
+    {
+      "id": "m-duelismo-sangrar-ar",
+      "name": "Sangrar Ar (explorar)",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Esgrima",
+      "tags": [
+        "explorar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "esgrima"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Se você atacar uma criatura com menos pontos de vida do que o máximo que ela possui, você pode gastar seu foco marcial para girar sua lâmina e perfurar um pulmão ou órgão similar, fazendo com que o alvo comece a sufocar 1d4 rodadas depois, a menos que seja\n\nbem-sucedido em um teste de resistência de Constituição. Assim que a sufocação começar, o alvo cai para 0 pontos de vida e começa a fazer testes de resistência contra a morte.\n\nCriaturas que não precisam respirar são imunes a este efeito. Se o alvo for curado completamente antes do início da sufocação, ela é evitada",
+      "_needsReview": [
+        "prereq:sphere-unknown:Esgrima"
+      ]
+    },
+    {
+      "id": "m-duelismo-vacuo-cortante",
+      "name": "Vácuo Cortante",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Esgrima",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "esgrima"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que você usar a ação de ataque para fazer um ataque corpo a corpo na mesma rodada em que sacar uma arma embainhada, você pode gastar seu foco marcial para aumentar o alcance do seu ataque para 9 metros.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Esgrima"
+      ]
+    },
+    {
+      "id": "m-duelismo-vacuo-rasgante",
+      "name": "Vácuo Rasgante",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Esgrima",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "esgrima"
+        },
+        {
+          "type": "talent",
+          "id": "m-duelismo-vacuo-cortante"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que usar o talento Vácuo Cortante, você pode gastar uma ação bônus para aumentar o efeito, tendo como alvo todas as criaturas em uma linha de 9 metros. Faça uma única jogada de ataque e compare o resultado com o de cada criatura na área afetada; todas as criaturas atingidas pelo ataque sofrem dano como se você as tivesse atingido diretamente com o ataque corpo a corpo. Apenas o dano é causado; nenhum outro efeito concedido pelo ataque é aplicado.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Esgrima"
+      ]
+    },
+    {
+      "id": "m-duelismo-lamina-imprecisa",
+      "name": "Lâmina Imprecisa",
+      "sphere": "duelismo",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não ganha a habilidade Estocada Fatal. Você ganha um talento (explorar) como talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

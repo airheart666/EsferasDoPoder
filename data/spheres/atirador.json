@@ -1,0 +1,332 @@
+{
+  "id": "atirador",
+  "name": "Atirador",
+  "section": "martial",
+  "summary": "Especialista em disparos precisos e certeiros, mesmo a longa distância.",
+  "theme": {
+    "h": 202,
+    "s": 26,
+    "sig": "atirador"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "m-atirador-mira-mortal",
+      "name": "Mira Mortal",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao realizar um ataque à distância, incluindo ataques com magia, que tenha vantagem, você pode rolar novamente um dos dois dados de ataque uma vez. Este benefício não se acumula com outros benefícios semelhantes de talentos ou habilidades."
+    },
+    {
+      "id": "m-atirador-tiro-preciso",
+      "name": "Tiro Preciso",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Alguns talentos são marcados com (atirar). Como um ataque especial, você pode adicionar os efeitos de um único talento (atirar) que você possua a um ataque à distância realizado com uma arma de arremesso ou de ataque à distância."
+    },
+    {
+      "id": "m-atirador-tiro-ricochete",
+      "name": "Tiro Ricochete (atirar)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Tiro Preciso",
+      "tags": [
+        "atirar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para ricochetear seu ataque no teto, chão ou parede para atingir um alvo protegido. Isso permite que seu ataque gire uma vez na superfície da qual ricocheteou e atinja o alvo. Uma superfície de ricochete não sofre dano, e você usa a distância total percorrida (incluindo a distância até a superfície de ricochete e entre as superfícies de ricochete) para determinar o alcance."
+    },
+    {
+      "id": "m-atirador-tiro-na-cabeca",
+      "name": "Tiro na Cabeça (atirar)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Tiro Preciso",
+      "tags": [
+        "atirar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você mira cuidadosamente em um ponto fraco do alvo e o explora.\n\nAo realizar um tiro na cabeça, você não pode fazer ataques adicionais com o recurso de classe Ataque Extra. Em vez disso, aumente o dano deste ataque em +1d8 para cada ataque adicional que você poderia ter feito com o recurso de classe Ataque Extra. Ataques Múltiplos contam como Ataque Extra para o propósito de tiro na cabeça; apenas os ataques à distância após o primeiro são calculados ao determinar o dano adicional. Se este ataque causar pelo menos 50% dos pontos de vida atuais da criatura, você pode gastar seu foco marcial para forçar o alvo a fazer um teste de resistência de Constituição bem-sucedido ou cair imediatamente para 0 pontos de vida."
+    },
+    {
+      "id": "m-atirador-projeteis-obstrutivos",
+      "name": "Projéteis Obstrutivos (atirar)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Tiro Preciso",
+      "tags": [
+        "atirar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Seu ataque à distância bem-sucedido deixa a arma ou munição alojada na ferida, dificultando o movimento e a reação do alvo. O alvo deve fazer um teste de resistência de Destreza ou sofrerá desvantagem em todas as jogadas de ataque até que use uma ação para remover a arma ou munição."
+    },
+    {
+      "id": "m-atirador-tiro-perfurante",
+      "name": "Tiro Perfurante (atirar)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Tiro Preciso",
+      "tags": [
+        "atirar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Seu ataque perfura o alvo e pode atingir outra criatura em linha reta atrás dele. Você deve ser capaz de traçar uma linha a partir do seu espaço e passando por ambos os alvos para realizar este ataque adicional. A jogada de ataque secundária é feita com desvantagem e não pode se estender a longo alcance. Se o ataque secundário também causar dano ao seu alvo, o projétil pode continuar atingindo um terceiro alvo."
+    },
+    {
+      "id": "m-atirador-tiro-imobilizador",
+      "name": "Tiro Imobilizador (atirar)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Tiro Preciso",
+      "tags": [
+        "atirar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em um ataque bem-sucedido, o alvo deve ser bem-sucedido em um teste de resistência de Destreza ou ficará agarrado até gastar uma ação para remover a arma ou munição."
+    },
+    {
+      "id": "m-atirador-tiro-empurrao",
+      "name": "Tiro Empurrão (atirar à distância)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Tiro Preciso",
+      "tags": [
+        "atirar a distancia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em um ataque bem-sucedido, o alvo é empurrado 1,5 metro para trás. Se esse movimento forçar uma criatura contra um objeto sólido, ela cai no chão."
+    },
+    {
+      "id": "m-atirador-ataque-direcionado",
+      "name": "Ataque Direcionado (atirar)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Tiro Preciso",
+      "tags": [
+        "atirar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para ignorar a resistência do alvo a dano de concussão, perfuração e corte."
+    },
+    {
+      "id": "m-atirador-tiro-desarmante",
+      "name": "Tiro Desarmante (atirar)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Tiro Preciso",
+      "tags": [
+        "atirar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em um ataque bem-sucedido, o alvo deve ser bem-sucedido em um teste de resistência de Força ou Destreza (à sua escolha) ou soltará uma arma ou outro item que você esteja segurando. O alvo tem vantagem nesse teste de resistência se o objeto estiver sendo segurado com as duas mãos. O item cai a até 3 metros de distância em uma direção à sua escolha.\n\nAo executar um arremesso rápido contra um objeto desacompanhado com esse talento, você pode movê-lo 3 metros em qualquer direção, em vez de apenas para longe de você, podendo até mesmo pegá-lo se tiver uma mão livre e estiver perto o suficiente."
+    },
+    {
+      "id": "m-atirador-mudar-de-posicao",
+      "name": "Mudar de Posição",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se você se mover no máximo 1,5 metro (5 pés) no seu turno, você pode recuperar seu foco marcial como uma ação bônus."
+    },
+    {
+      "id": "m-atirador-tecnico-de-armadilhas",
+      "name": "Técnico de Armadilhas",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para tentar desarmar uma armadilha com um ataque à distância como se estivesse usando ferramentas de ladrão, substituindo sua jogada de ataque por um teste de habilidade."
+    },
+    {
+      "id": "m-atirador-tiro-de-longo-alcance",
+      "name": "Tiro de Longo Alcance",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Atacar a longa distância não impõe desvantagem nas suas jogadas de ataque com armas de longo alcance."
+    },
+    {
+      "id": "m-atirador-tiro-mortal",
+      "name": "Tiro Mortal",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao realizar um tiro de precisão, você pode optar por sofrer uma penalidade de -5 na jogada de ataque. Se o fizer e o ataque acertar, ele causa +10 de dano."
+    },
+    {
+      "id": "m-atirador-tiro-interceptador",
+      "name": "Tiro Interceptador",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode preparar um ataque à distância para interceptar outro ataque à distância. Você não pode interceptar ataques de magia ou armas de longo alcance massivas, como pedregulhos ou virotes de balista, a menos que você mesmo esteja usando uma arma massiva desse tipo. Faça um ataque normalmente. Se sua jogada de ataque for maior que a jogada de ataque do ataque que você está interceptando, o ataque dele é anulado.\n\nVocê pode gastar foco marcial para usar esta habilidade como uma reação."
+    },
+    {
+      "id": "m-atirador-tiro-perfeito",
+      "name": "Tiro Perfeito",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar foco marcial como uma ação bônus para conceder a si mesmo vantagem no seu próximo ataque com arma de longo alcance antes do final do seu turno."
+    },
+    {
+      "id": "m-atirador-tiro-fragmentado",
+      "name": "Tiro Fragmentado",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Atirador",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "atirador"
+        },
+        {
+          "type": "talent",
+          "id": "m-atirador-tiro-na-cabeca"
+        },
+        {
+          "type": "level",
+          "min": 7
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Se você reduzir os pontos de vida do alvo a 0 com o talento Tiro na Cabeça, ele deve ser bem-sucedido em um teste de resistência de Constituição ou morrerá instantaneamente, pois sua cabeça (ou parte equivalente do corpo) explodirá em uma chuva de sangue. Cada criatura a até 3 metros do alvo deve ser bem-sucedida em um teste de resistência de Destreza ou ficará cega por 1 minuto ou até gastar uma ação limpando as vísceras dos olhos."
+    },
+    {
+      "id": "m-atirador-tiro-fasico",
+      "name": "Tiro Fásico",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Atirador",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "atirador"
+        },
+        {
+          "type": "talent",
+          "id": "m-atirador-tiro-perfeito"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Seu disparo é feito com tamanha força e precisão mortal que atravessa os próprios laços da realidade, ignorando qualquer cobertura (incluindo cobertura total) entre você e o alvo, inclusive efeitos que dificultam ataques à distância, como a magia Parede de Vento ou a habilidade Desviar Mísseis do monge. Se você possuir o talento lendário Raspador Estelar, poderá atacar um alvo em qualquer lugar dentro de seu alcance avançado, mesmo que ele esteja completamente cercado por superfícies protetoras. No entanto, você ainda precisa ter um meio confiável de determinar a localização exata do seu alvo. Este é um efeito mágico."
+    },
+    {
+      "id": "m-atirador-raspador-estelar",
+      "name": "Raspador Estelar (atirar)",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Atirador",
+      "tags": [
+        "atirar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "atirador"
+        },
+        {
+          "type": "talent",
+          "id": "m-atirador-tiro-perfeito"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Como uma ação bônus, você pode impor desvantagem em um ataque à distância para aumentar o alcance base da sua arma para 1,6 km. Você pode atacar um alvo sem ter linha de visão ou linha de efeito até ele, ignorando qualquer cobertura que ele possua, desde que haja pelo menos algum tipo de caminho reto e aberto entre você e ele, mesmo que esse caminho precise passar por cima de uma montanha ou algum outro tipo de grande obstáculo. No entanto, você precisa ter uma ideia precisa da localização do alvo, seja por meio de um sinal de um aliado voador ou por meio de uma magia que indique a localização e os movimentos do alvo. Criaturas completamente protegidas por superfícies, como criaturas dentro de uma sala de castelo sem janelas, não podem ser alvo deste efeito."
+    },
+    {
+      "id": "m-atirador-atirador-de-curto-alcance",
+      "name": "Atirador de Curto Alcance",
+      "sphere": "atirador",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode aplicar talentos (de precisão) a ataques contra alvos a até 9 metros de distância. Você recebe o talento Tiro Perfeito como um talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

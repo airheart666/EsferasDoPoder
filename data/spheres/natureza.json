@@ -1,0 +1,1233 @@
+{
+  "id": "natureza",
+  "name": "Natureza",
+  "section": "magic",
+  "summary": "Comandar o próprio terreno e os elementos naturais ao seu redor.",
+  "theme": {
+    "h": 134,
+    "s": 52,
+    "sig": "natureza"
+  },
+  "acquisition": {
+    "freeGroup": {
+      "h3": "pacote"
+    },
+    "freeLabel": "pacote",
+    "freePicks": 1
+  },
+  "talents": [
+    {
+      "id": "natureza-protomancia",
+      "name": "Protomancia",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 pm"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Instantâneo ou concentração; até 1 minuto",
+      "target": "Especial, veja talentos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser conjurado no seu turno sem uma ação."
+        }
+      ],
+      "body": "Você pode criar ou manipular os elementos e forças da natureza ao seu redor. Escolha uma habilidade de protomancoia que você possua."
+    },
+    {
+      "id": "natureza-espirito",
+      "name": "Espírito",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 PM"
+      },
+      "action": "1 ação",
+      "range": "próprio",
+      "duration": "Concentração, até 10 minutos.",
+      "target": "uma criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração é reduzido para 1 ação bônus."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser lançado no seu turno sem uma ação."
+        }
+      ],
+      "body": "Você pode extrair poder dos espíritos da natureza, aproveitando sua energia residual para imbuir-se de poder. Escolha e ganhe uma habilidade espiritual que você possua. Talentos (Espírito) concedem habilidades espirituais adicionais."
+    },
+    {
+      "id": "natureza-ar",
+      "name": "Ar",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacotes de Esfera da Natureza",
+      "tags": [],
+      "target": "1 criatura ou objeto que você possa ver",
+      "area": "cubo de 3 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Todas as criaturas e objetos de tamanho Pequeno ou menor dentro dessa linha devem ser bem-sucedidos em um teste de resistência de Força ou serão empurrados 3 metros para trás. Criaturas afetadas na linha devem gastar 60 centímetros de movimento para cada 30 centímetros que se movem ao se aproximarem de você. A distância empurrada para trás aumenta em 3 metros no 5º nível (6 metros), 11º nível (9 metros) e 17º nível (12 metros)."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode dispersar ou extinguir fogos, gases ou vapores mágicos com um teste bem-sucedido de habilidade de conjuração contra a CD de resistência à magia."
+        },
+        {
+          "pm": 1,
+          "text": "O tamanho máximo das criaturas e chamas afetadas aumenta em 1 categoria de tamanho (tamanho médio), aumentando novamente no 5º nível (tamanho grande), 11º nível (tamanho enorme) e 17º nível (tamanho gigantesco)."
+        },
+        {
+          "pm": 1,
+          "text": "A área afetada aumenta para 6 metros cúbicos, aumentando em 3 metros no 5º nível (9 metros cúbicos), 11º nível (12 metros cúbicos) e 17º nível (15 metros cúbicos)."
+        }
+      ],
+      "body": "Possuir o pacote de ar concede a você as seguintes habilidades de protomancia:\n\nBrisa\n\n(concentração; requer ar) Você cria um vento leve que permanece girando ao redor do alvo. A brisa concede ao alvo vantagem em testes de resistência de Constituição contra condições muito quentes, calor intenso e em todos os testes de resistência contra nuvens, vapores e gases (como nuvem mortal, nuvem fedorenta e venenos inalados).\n\nRajada de Vento\n\n(concentração; requer ar) Você pode criar uma rajada de vento em forma de linha que emana de você, afetando todos os alvos válidos dentro da área. O vento dispersa gás ou vapor não mágico e apaga velas, tochas e outras chamas não mágicas desprotegidas de pequeno ou grande porte na área. Ela faz com que chamas não mágicas protegidas, como as de lanternas, dancem descontroladamente e tem 50% de chance de extingui-las. Você pode mudar a direção em que a linha explode uma vez por turno.\n\nPurificar Ar\n\n(concentração; requer ar, gás ou substância vaporosa) Você pode converter ar poluído ou um gás ou vapor não respirável em uma nuvem de ar respirável em uma área dentro do alcance. Se o alvo for uma nuvem de ar, gás\n\nou vapor criada magicamente (como por uma magia de nuvem mortal ou nuvem fedorenta), um teste de habilidade de conjuração contra a CD de resistência à magia é necessário para criar a nuvem de ar respirável. Durante a duração, criaturas que estiverem inteiramente dentro da área da nuvem são capazes de respirar com ar suficiente para sustentá-las. A área aumenta em 1,5 metro ao atingir o 5º nível (4,5 metros cúbicos), 11º nível (6 metros cúbicos) e 17º nível (7,5 metros cúbicos)."
+    },
+    {
+      "id": "natureza-terra",
+      "name": "Terra",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacotes de Esfera da Natureza",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1 PM"
+      },
+      "area": "3 metros quadrados",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Possuir o pacote terra concede a você as seguintes habilidades de protomancia:\n\nEnterrar\n\n(concentração; requer areia ou terra) Você desloca a areia ou terra, engolindo alvos em uma área dentro do alcance. Enquanto durar, a área se torna terreno difícil.\n\nUma criatura na área desta protomancia de terra deve ser bem-sucedida em um teste de resistência de Força ou afundar 30 centímetros na areia, ficando restringida até que o efeito da esfera termine. Uma criatura restringida pode usar sua ação para fazer um teste de Força contra sua CD de esfera. Em caso de sucesso, ele se liberta; em caso de falha, afunda 30 cm mais fundo. Assim que a criatura estiver completamente enterrada, ela começa a sufocar. A área aumenta em 1,5 m ao atingir o 5º nível (4,5 m quadrados), 11º nível (6 m quadrados) e 17º nível (7,5 m quadrados).\n\nJato de Areia\n\n(instantâneo; requer areia ou terra solta) Você pode levantar areia ou terra, criando uma nuvem dentro de uma área dentro do alcance. Qualquer criatura completamente dentro da nuvem deve realizar um teste de resistência de Destreza ou ficará cega até o início do próximo turno. A área aumenta em 1,5 m ao atingir o 5º nível (4,5 m quadrados), 11º nível (6 m quadrados) e 17º nível (7,5 m quadrados).\n\nTremor\n\n(instantâneo; requer terra, areia ou pedra) Você pode causar um tremor no chão, afetando uma área dentro do alcance. Criaturas na área devem realizar um teste de resistência de Destreza ou serão derrubadas. A área aumenta em 1,5 metro ao atingir o 5º nível (4,5 metros quadrados), 11º nível (6 metros quadrados) e 17º nível (7,5 metros quadrados)."
+    },
+    {
+      "id": "natureza-fogo",
+      "name": "Fogo",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacotes de Esfera da Natureza",
+      "tags": [],
+      "action": "1 ação bônus",
+      "target": "um objeto inflamável",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Possuir o pacote de fogo concede a você as seguintes habilidades de protomancia:\n\nAfetar Fogo\n\n(concentração; requer fogo) Você pode aumentar ou diminuir o tamanho de um fogo dentro do alcance. O tamanho máximo de fogo que você pode afetar é um cubo de 1,5 metro, que aumenta quando você atinge o 5º nível (3 metros cúbicos), 11º nível (4,5 metros cúbicos) e 17º nível (6 metros cúbicos). Você pode aumentar o tamanho até o seu máximo ou diminuí-lo até o tamanho desejado, até mesmo extinguindo-o completamente, se desejar.\n\nMover Fogo\n\n(concentração; requer fogo) Você pode pegar um fogo e movê-lo para outro local dentro do alcance. O fogo movido não pode ser maior que um cubo de 1,5 metro. Um fogo movido dessa forma continua a queimar, mesmo sem combustível (embora possa ser apagado ou apagado normalmente), e morre assim que a duração termina se não for movido para uma nova fonte de combustível. Se você aprimorou Mover Fogo para manter o efeito sem concentração, você pode mover fogos como uma ação bônus. Ao mover fogo para um espaço ocupado por uma criatura, essa criatura deve realizar um teste de resistência de Destreza ou sofrer 1d8 de dano de fogo. Se uma criatura entrar ou começar seu turno em um espaço ocupado pelo fogo, ela deve realizar um teste de resistência adicional ou sofrer o dano de fogo novamente.\n\nO dano de fogo e o tamanho máximo dos fogos que você pode mover aumentam quando você atinge o 5º nível (2d8, 3 metros cúbicos), 11º nível (3d8, 4,5 metros cúbicos) e 17º nível (4d8, 6 metros cúbicos).\n\nLuz Rápida\n\n(instantâneo) Você pode acender uma fogueira, vela, lampião, lanterna, tocha ou outro objeto Pequeno ou Minúsculo próximo projetado para ser aceso. Este efeito de esfera acenderá objetos mesmo que estejam encharcados ou molhados. Se o alvo for um objeto vigiado, a criatura vigiada pode optar por realizar um teste de resistência de Destreza para negar o efeito. Uma criatura pode optar por extinguir o objeto aceso interagindo com ele."
+    },
+    {
+      "id": "natureza-metal",
+      "name": "Metal",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacotes de Esfera da Natureza",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1 PM"
+      },
+      "target": "um objeto de metal",
+      "area": "cubo de 3 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O metal extraído se transforma em um objeto com formato mais fino e resistente. O minério é considerado feito de um material resiliente para fins de pontos de vida. Armas ou ferramentas que você moldar usando a habilidade de recuperar minério não são mais consideradas armas ou ferramentas improvisadas e funcionam em todos os aspectos como o objeto formado; você ainda não pode formar objetos com partes móveis complexas."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode recuperar minério 2 tamanhos maior. Se isso permitir que você recupere um pedaço de minério do tamanho Enorme, você pode mirar em uma área cúbica de 9 metros. Se isso permitir que você recupere um pedaço de minério do tamanho Gargantuano, você pode mirar em uma área cúbica de 10,6 metros."
+        }
+      ],
+      "body": "Possuir o pacote de metal concede a você as seguintes habilidades de protomancia:\n\nMagnetizar\n\n(instantâneo, requer metal) Você pode fazer com que um objeto desprotegido, composto principalmente de metal (cujo tamanho não seja maior que o seu tamanho máximo de minério recuperado), voe em direção a uma criatura ou objeto à sua escolha dentro do alcance. Você pode optar por arremessar o item inofensivamente (nesse caso, ele pode ser pego pelo alvo sem nenhuma ação necessária, desde que ele tenha um membro apropriado disponível ou então caia em um quadrado adjacente), ou você pode usar isso como um ataque mágico à distância. Se for bem-sucedido, você causa o \"dano de minério\" do objeto ou, se for uma arma, o dano da arma (flechas e virotes com pontas de metal contam como adagas para esse propósito, causando 1d4 de dano). Apesar do nome desta habilidade, o objeto ou criatura alvo não precisa ser feito de metal.\n\nRecuperar Minério\n\n(instantâneo, requer terra ou areia) Você pode criar um pedaço minúsculo de minério metálico a partir do solo; seja combinando partículas metálicas existentes ou transmutando elementos existentes na área. Você deve ter um pedaço de terra grande o suficiente (areia ou terra) para extrair o minério. Este pedaço de minério pode ser latão, bronze, cobre ou estanho.\n\nO pedaço de minério que você recupera é formado na superfície da área afetada e pode ter qualquer formato básico (uma bola, uma haste, uma folha, até mesmo uma cadeira), mas não pode ser nada complexo ou com partes móveis. Você também pode extrair vários pedaços de minério colocados em diferentes quadrados adjacentes, desde que o tamanho combinado deles não exceda o seu máximo, e cada pedaço de minério recuperado deve ser do mesmo tipo (como cobre ou estanho). Para esses propósitos, 2 pedaços de minério de tamanho minúsculo equivalem a 1 pedaço de tamanho pequeno, e assim por diante.\n\nEmbora esse efeito seja instantâneo e, portanto, não possa ser dissipado, o minério recuperado se desfaz em pó após 8 horas. O minério é considerado feito de material frágil para fins de pontos de vida. Se um pedaço de minério for usado como arma, ele conta como uma arma improvisada, causando dano contundente, perfurante ou cortante, escolhido no momento da recuperação. O dano que tal arma causa é listado como \"dano de minério\" na Tabela: Recuperar Minério.\n\nA área máxima que você pode afetar e o tamanho máximo do minério que você pode recuperar aumentam no 5º nível (4,5 metros cúbicos; Pequeno), 11º (6 metros cúbicos; Médio) e 17º nível (7,5 metros cúbicos; Grande).\n\nTabela: Recuperar Minério\n\nTerra necessária para extrairtamanho do minérioDanoPeso do minério (máximo)Cubo de 3 metrosMinúsculo1d44 quilosCubo de 4,5 metrosPequeno1d630 quilosCubo de 6 metrosMédio1d8250 quilosCubo de 7,6 metrosGrande1d102 toneladasCubo de 9 metrosEnorme2d616 toneladasCubo de 10,6 metrosImenso3d6125 toneladas\n\nO Valor do Minério Recuperado\n\nO minério recuperado através do pacote de metal da Esfera da Natureza é de baixa qualidade e se degrada rapidamente, tornando impossível sua simples criação e venda. No entanto, jogadores que possuam proficiência com ferramentas apropriadas podem aquecer e purificar esse minério para torná-lo trabalhável. Isso permite que tal personagem faça testes para criae uma quantidade de matéria-prima, que pode ser vendida posteriormente ou usada como matéria-prima para qualquer criação baseada em metal.\n\nReforjar\n\n(instantâneo, requer metal) Você pode fazer com que um objeto abandonado (ou um objeto que você esteja segurando), composto principalmente de metal, cujo tamanho não seja maior que o seu tamanho máximo de Recuperar Minério, seja remodelado em um objeto diferente do mesmo tamanho. Por exemplo, você pode remodelar uma espada longa em uma maça. Você não pode remodelar objetos de metal em formas com partes móveis complexas. Se o alvo for um item mágico, o efeito não é instantâneo, mas dura apenas 1 minuto\n\nantes que o objeto retorne à sua forma original. Se remodelar um item mágico o tornar inelegível para aprimoramentos específicos, esses aprimoramentos serão suprimidos pela duração do efeito. Reforjar não funciona em artefatos."
+    },
+    {
+      "id": "natureza-planta",
+      "name": "Planta",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacotes de Esfera da Natureza",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1 PM"
+      },
+      "target": "um galho ou árvore",
+      "area": "3 metros quadrados",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Possuir o pacote de plantas concede a você as seguintes habilidades de protomancia:\n\nAmarrar\n\n(concentração; requer grama, ervas daninhas, trepadeiras ou arbustos) Você faz com que a vegetação próxima cresça rapidamente em uma área dentro do alcance. Enquanto durar, essas plantas transformam o solo da área em terreno difícil.\n\nUma criatura que entrar ou iniciar seu turno na área de protomancia desta planta deve ser bem-sucedida em um teste de resistência de Força ou será restringida pelas plantas emaranhadas até que o efeito da esfera termine. Uma criatura restringida pelas plantas pode usar sua ação para fazer um teste de Força contra sua CD de protomancia da planta. Com um sucesso, ela se liberta.\n\nA área aumenta em 1,5 metro no 5º nível (4,5 metros quadrados), 11º nível (6 metros quadrados) e 17º nível (7,5 metros quadrados).\n\nColheita\n\n(instantâneo; requer árvores frutíferas, arbustos de frutas vermelhas ou plantações) Você pode fazer uma planta brotar alimento espontaneamente. Cada planta afetada produz alimento suficiente para abastecer 3 criaturas de tamanho médio ou 1 criatura de tamanho grande por um dia. Você pode afetar uma planta adicional ao atingir o 5º nível (2 plantas), 11º nível (3 plantas) e 17º nível (4 plantas).\n\nGolpe de Árvore\n\n(concentração; requer uma árvore) Você concede vida e mobilidade a um galho ou árvore dentro do alcance, não maior que o tamanho Médio. Durante a duração, a vegetação afetada realiza um ataque de pancada a cada rodada contra o alvo designado ou até que o alvo morra ou se mova para fora de alcance. Você pode usar uma ação bônus para designar um novo alvo. A pancada usa sua jogada de ataque mágico e causa 1d12 de dano contundente (independentemente do tamanho).\n\nUma árvore ou galho individual não pode estar sob o efeito de mais de um Despertar por vez. Enquanto estiver sob o efeito de Despertar, a CA de uma árvore é igual a 10 + seu modificador de habilidade chave; o alcance e os pontos de vida de uma árvore são determinados pelo seu tamanho, conforme mostrado na tabela abaixo.\n\nO tamanho máximo da árvore e o dano de Despertar aumentam em 1d12 ao atingir o 5º nível (2d12, Grande), 11º nível (3d12, Enorme) e 17º nível (4d12, Imenso).\n\nTamanho e Pontos de Vida da Árvore\n\nTamanho da ÁrvoreAlcancePontos de VidaMinúscula30 cm5 (2d4)Pequena75 cm10 (3d6)Média1,5 m18 (4d8)Grande3 m27 (5d10)Grande4,5 m39 (6d12)Gigantesca6 m52 (8d12)"
+    },
+    {
+      "id": "natureza-agua",
+      "name": "Água",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacotes de Esfera da Natureza",
+      "tags": [],
+      "target": "uma criatura",
+      "area": "3 metros cúbicos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode designar um padrão simples para o vórtice se mover, que pode ser alterado com uma ação bônus. Criaturas no meio do vórtice são carregadas junto com ele conforme ele se move. O vórtice deve permanecer dentro do seu alcance de protomancia."
+        }
+      ],
+      "body": "Possuir o pacote de água concede a você as seguintes habilidades de protomancia:\n\nNévoa\n\n(concentração, requer água) Você pode criar uma nuvem de neblina, cortando a visão das pessoas dentro de uma área centralizada dentro do alcance. A nuvem se espalha pelos cantos e sua área é fortemente obscurecida. Ela dura enquanto durar ou até que um vento moderado (pelo menos 16 quilômetros por hora) a disperse. Criaturas com sentido de água não têm sua visão obscurecida pela nuvem. A área aumenta em 1,5 metro no 5º nível (raio de 4,5 metros), 11º nível (raio de 6 metros) e 17º nível (raio de 7,5 metros).\n\nCongelar\n\n(instantâneo, requer pelo menos 1,5 metro cúbico de água) Você pode congelar instantaneamente a água em uma área ou criatura. Você pode congelar a superfície de uma área de água ou cobrir uma criatura molhada com gelo. Quadrados congelados suportarão criaturas que ocupem menos espaço do que a área afetada. As criaturas devem ser bem-sucedidas em um teste de resistência de Destreza ou serão restringidas. Em caso de falha, os alvos sofrem 1d4 de dano de frio a cada rodada em que estiverem restringidos.\n\nAo final de cada um de seus turnos, os alvos afetados podem realizar um teste de resistência de Força para escapar do gelo. Alvos afetados também podem escapar do gelo se outra criatura usar uma ação para quebrar o gelo ao redor da criatura presa. O gelo derrete naturalmente após um minuto em um dia normal. Se você mirar em um enxame em vez de congelar uma área ou criaturas individuais, o enxame não ficará imune à condição de restringido concedida por Congelar.\n\nA área aumenta em 1,5 metro no 5º nível (quadrado de 4,5 metros), 11º nível (quadrado de 6 metros) e 17º nível (quadrado de 7,5 metros).\n\nAumentar 2 pm: Em um teste bem-sucedido, o alvo ainda fica preso por 1 rodada.\n\nVórtice\n\n(concentração, requer 1,5 metro cúbico de água) Você pode criar um vórtice giratório na área que suga criaturas e objetos para o seu centro. Qualquer criatura que entrar nesta área deve passar por um teste de resistência de Força ou sofrer 1d8 de dano contundente. Se a criatura for menor que o vórtice, ela deve passar por um segundo teste de resistência de Força ou será puxada para o meio do vórtice. Criaturas no meio do vórtice sofrem dano contundente uma vez por rodada sem teste de resistência e devem passar por um teste de resistência de Força a cada rodada ou serão presas pela rodada, e em um sucesso podem se mover apenas com metade do seu deslocamento. Um vórtice não pode conter mais criaturas do que caberia em seu espaço (consulte a tabela: Tamanho e Espaço da Criatura).\n\nVocê pode mover o vórtice até 9 metros por rodada como parte da manutenção por meio de concentração. A área aumenta em 1,5 metro e o dano aumenta em 1d8 no 5º nível (4,5 metros cúbicos; 2d8), 11º nível (6 metros cúbicos; 3d8) e 17º nível (7,5 metros cúbicos; 4d8).\n\nTabela: Tamanho e Espaço da Criatura\n\nTamanhoEspaço: QuadradosEspaço: HexágonosPequeno4 por quadrado4 por hexágonoPequeno1 quadrado1 hexágonoMédio1 quadrado1 hexágonoGrande4 quadrados (2 por 2)3 hexágonosEnorme9 quadrados (3 por 3)7 hexágonosGigantesco16 quadrados (4 por 4) ou mais12 hexágonos ou mais"
+    },
+    {
+      "id": "natureza-maestria-do-ar",
+      "name": "Maestria do Ar (protomancia, ar)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "ar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode usar Inalação Absorvedora como reação, permitindo que você afete nuvens com durações instantâneas (como armas de sopro)."
+        },
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração desta opção é reduzido para 1 reação."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode escolher um número de criaturas adicionais igual ao seu bônus de proficiência."
+        }
+      ],
+      "body": "Ao usar a habilidade Rajada de Vento, você pode criar uma área de efeito cônica em vez de uma linha. Além disso, você ganha as seguintes habilidades de protomancia:\n\nInalação Absorvedora\n\nCusto: 1 pm\n\n(concentração) Você pode conceder aos seus pulmões força e capacidade sobre-humanas, permitindo que você inale de forma inofensiva e completa um gás, névoa, fumaça, névoa ou efeito semelhante a uma nuvem durante a duração do talento. O efeito semelhante a uma nuvem pode ter um raio de efeito não maior que 3 metros. Se a nuvem alvo for um efeito mágico, você deve ser bem-sucedido em um teste de habilidade de conjuração contra a CD de resistência à magia ou CD de esfera do efeito para inalá-la. Inalar a nuvem a remove da área, deixando ar respirável normal em seu lugar. Criaturas gasosas recebem um teste de resistência de Destreza para evitar serem inaladas. Este talento só pode afetar uma nuvem com duração não instantânea.\n\nVocê pode manter a nuvem inofensivamente contida dentro de você enquanto o talento permanecer ativo, mas você deve prender a respiração para fazer isso (mesmo que normalmente não precise respirar). Se a nuvem tiver uma duração, o tempo em que a nuvem estiver contida dentro de você conta para essa duração (criaturas gasosas são exaladas imediata e inofensivamente caso sua forma gasosa expire no espaço vazio mais próximo).\n\nCom uma ação, você pode exalar, liberando a nuvem armazenada como um sopro, preenchendo um cone de 18 metros (ou a área original da nuvem, se menor). Qualquer criatura na área do sopro está sujeita aos seus efeitos normais, tentando testes de resistência conforme apropriado contra a CD original da nuvem. A nuvem exalada retoma sua duração, se houver.\n\nExalar a nuvem armazenada encerra imediatamente a duração deste talento. Se você não exalar a nuvem antes que a duração deste talento expire, você sofre os efeitos da nuvem, falha automaticamente em qualquer teste de resistência feito para resistir a ela e exala quaisquer criaturas gasosas inaladas no espaço vazio mais próximo. O raio máximo da nuvem inalada aumenta em 1,5 metro no 5º nível (raio de 4,5 metros), 11º nível (raio de 6 metros) e 17º nível (raio de 7,5 metros).\n\nQueda Suave\n\n(concentração, requer ar) Uma criatura e seu equipamento caem lentamente, alterando a taxa de queda para apenas 18 metros por rodada (equivalente ao fim de uma queda de alguns metros), e não sofre dano ao pousar. Quando a duração expira, a taxa normal de queda é retomada."
+    },
+    {
+      "id": "natureza-criar-natureza",
+      "name": "Criar Natureza (protomancia)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1 PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você cria um material natural como Criar Natureza para fornecer o material necessário para a habilidade de protomancia."
+        }
+      ],
+      "body": "(instantâneo) Você pode criar um volume de um material correspondente a um pacote de protomancia que você possua em qualquer lugar dentro do alcance. Isso cria o volume listado de um material correspondente a um pacote de protomancia que você possua, conforme a Tabela: Criar Natureza. O material criado deslocará imediatamente gases, líquidos e vapores na área, mas logo em seguida se comportará como um material normal de seu tipo. Por exemplo, se este talento for usado debaixo d'água, uma nuvem de ar criada formará uma bolha que começará a subir à superfície.\n\nVocê ganha o seguinte aprimoramento que pode ser aplicado a qualquer habilidade de protomancia que exija um material:\n\nTabela: Criar NaturezaPacote de ProtomanciaMaterialTamanho (1º nível)Tamanho (5º nível)Tamanho (11º nível)Tamanho (17º nível)ÁguaÁguacubo de 1,5mDois cubos de 1,5 m (contíguos)Quatro cubos de 1,5 m (contíguos)Oito cubos de 1,5 m (contíguos)ArAr Respirávelcubo de 3mcubo de 4,5mcubo de 6mcubo de 7,5mFogoFogo¹cubo de 1,5m (1d8 de dano)Dois cubos de 1,5 m (contíguos) (dano de 2d8)Quatro cubos de 1,5 m (contíguos) (3d8 de dano)Oito cubos de 1,5 m (contíguos) (4d8 de dano)MetalMetal Básico²Objeto PequenoObjeto MédioObjeto GrandeObjeto EnormePlantaPlantas Básicas³Uma árvore de médio porte ou um campo de plantas cobrindo um quadrado de 3 metros.Uma árvore de grande porte ou um quadrado de 4,5mUma árvore de porte enrome ou um quadrado de 6mUma árvore de porte gigantesco ou um quadrado de 7,5mTerraSolo solto ou areiaquadrado de 3m, 1,5m de profundidadequadrado de 4,5m, 1,5m de profundidadequadrado de 6m, 1,5m de profundidadequadrado de 7,5m, 1,5m de profundidade\n\n¹: Qualquer criatura no espaço do fogo ao ser criada deve ser bem-sucedida em um teste de resistência de Destreza ou sofrer o dano de fogo listado. Em caso de sucesso, a criatura sofre apenas metade do dano. Uma criatura também deve realizar o teste de resistência ao se mover para o espaço do fogo pela primeira vez em um turno ou ao terminar seu turno lá. O fogo incendeia objetos inflamáveis em sua área que não estejam sendo usados ou carregados.²: Escolhido de um tipo de metal que você pode recuperar usando a habilidade de protomancia \"Recuperar Minério\". Possuir o talento Maestria em Metal também expande os tipos de metal que você pode criar com Criar Natureza (metal).³: (grãos, arbustos, hera), não raros ou com qualidades inerentes (ou seja, você não pode criar ervas raras, plantas mágicas, etc.)"
+    },
+    {
+      "id": "natureza-destruir-elementos",
+      "name": "Destruir Elementos (Protomancia)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1 PM"
+      },
+      "target": "1 criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode remover e desconstruir seus elementos. Você pode usar as seguintes habilidades de protomancia dependendo dos pacotes que possuir.\n\nRoubar Sopro (ar)\n\n(concentração) Você suga o fôlego dos pulmões de uma criatura viva dentro do alcance, deixando-a incapaz de falar, usar armas de sopro, conjurar magias com componentes verbais ou qualquer outra coisa que exija respiração. Ao final de cada turno, a criatura afetada pode fazer um teste de resistência de Constituição. Em caso de sucesso, o efeito termina para aquela criatura. Estar sob os efeitos deste talento conta como prender a respiração, mas cada rodada conta como duas rodadas (12 segundos) ao determinar por quanto tempo você pode prender a respiração. Este talento não tem efeito em criaturas que não precisam respirar ar.\n\nVocê pode, em vez disso, escolher como alvo uma criatura composta principalmente de ar (como elementais do ar). Criaturas de ar devem ser bem-sucedidas em um teste de resistência de Constituição a cada rodada ou sofrer 1d12 de dano de força. Um teste de resistência de Constituição bem-sucedido reduz o dano pela metade. A quantidade de dano de força aumenta em 1d12 no 5º nível (2d12), no 11º nível (3d12) e no 17º nível (4d12).\n\nEstilhaçar (terra)\n\n(Concentração) Uma vez por rodada, você pode escolher como alvo um objeto não mágico e desacompanhado, independentemente de sua composição, de até 4,5 kg por nível e estilhaçá-lo em pedaços. Isso pode ser usado para atingir objetos presos a outros objetos (por exemplo, uma porta ou janela), mas não pode atingir uma seção de um objeto maior (por exemplo, uma parte de uma parede de pedra).\n\nVocê pode, em vez disso, escolher como alvo uma criatura composta principalmente de pedra, cristal ou metal, uma vez por rodada, causando 1d12 de dano trovejante ao alvo. Um teste de resistência de Constituição bem-sucedido reduz esse dano à metade. A quantidade de dano trovejante aumenta em 1d12 no 5º nível (2d12), no 11º nível (3d12) e no 17º nível (4d12).\n\nExtinguir (fogo)\n\n(Instantâneo) Você pode extinguir qualquer fogo dentro do seu alcance de protomancia. Criaturas nesta área compostas principalmente de fogo (como um elemental do fogo) devem ser bem-sucedidas em um teste de resistência de Constituição ou sofrerão 1d12 de dano de frio. Um teste de resistência de Constituição bem-sucedido reduz o dano pela metade. A quantidade de dano de frio aumenta em 1d12 no 5º nível (2d12), 11º nível (3d12) e 17º nível (4d12).\n\nOxidar (metal)\n\n(Concentração) Você pode escolher como alvo um equipamento de metal não mágico, como uma arma ou armadura, ou uma criatura composta principalmente de metal. Ataques feitos com a arma sofrem desvantagem, enquanto a classe de armadura da armadura ou da criatura de metal é reduzida em 2, sendo ainda mais reduzida no 5º (3), 11º (4) ou 17º nível (5).\n\nDecompor (planta)\n\n(concentração) Uma vez por rodada, você faz com que a carne viva apodreça, podendo até mesmo gerar mofo e cogumelos, causando 1d6 de dano de veneno a todas as criaturas e matéria vegetal em um cubo de 3 metros. Esse dano é dobrado contra plantas e criaturas do tipo planta. Um teste de resistência de Constituição bem-sucedido reduz o dano pela metade. A área afetada aumenta em 1,5 metro e o dano aumenta em 1d6 no 5º nível (cubo de 4,5 metros, 2d6), 11º nível (cubo de 6 metros, 3d6) e 17º nível (cubo de 7,5 metros, 4d6).\n\nDesidratação (água)\n\n(concentração) Uma vez por rodada, você extrai água de criaturas e plantas em um cubo de 3 metros, secando superfícies úmidas e causando 1d6 de dano necrótico a criaturas e plantas. Esse dano é dobrado contra criaturas aquáticas e criaturas compostas inteiramente de líquido (como a maioria dos lodos e elementais da água). Um teste de resistência de Constituição bem-sucedido reduz o dano pela metade. Se usado em um volume de água, o volume é reduzido em até 10 pés cúbicos. A área afetada aumenta em cinco pés e o dano aumenta em 1d6 no 5º nível (cubo de 15 pés, 2d6), no 11º nível (cubo de 20 pés, 3d6) e no 17º nível (cubo de 25 pés, 4d6)."
+    },
+    {
+      "id": "natureza-dominio-da-terra",
+      "name": "Domínio da Terra (protomancia, terra)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "terra"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1 PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode usar granulação em uma pedra dentro do alcance para fornecer a areia ou terra necessária para o efeito que você está aprimorando."
+        },
+        {
+          "pm": 0,
+          "text": "Você pode usar arenito na areia dentro do alcance para fornecer a rocha ou pedra necessária para o efeito que você está aprimorando."
+        }
+      ],
+      "body": "Você adquire as seguintes habilidades de protomancia.\n\nGranulação\n\n(instantânea; requer rocha ou pedra) Você pode causar 1d10 de dano de impacto a um objeto de rocha ou pedra desacompanhado dentro do alcance, ignorando o limite de dano de alvos não mágicos, criando grandes quantidades de poeira e areia à medida que o objeto é desgastado. O dano de impacto aumenta em 1d10 no 5º nível (2d10), 11º nível (3d10) e 17º nível (4d10).\n\nVocê adquire o seguinte aprimoramento para qualquer habilidade de protomancia que exija areia ou terra solta:\n\nArenito\n\n(instantânea; requer terra ou areia) Você pode transformar terra ou areia em uma área dentro do alcance em uma rocha ou pedra de tamanho Médio. O tamanho da rocha ou pedra criada aumenta em um nível no 5º nível (Grande), 11º nível (Enorme) e 17º nível (Gargantuesco), mas ainda é limitado pela quantidade de terra ou pedra dentro do alcance.\n\nAlternativamente, você pode envolver um alvo coberto de terra ou areia em arenito com 2,5 cm de espessura. Criaturas e objetos têm direito a um teste de resistência de Destreza para evitar ficarem presos no arenito. Em caso de falha, criaturas ou objetos presos na área ficam imobilizados; para escapar, eles devem passar em um teste de Destreza (Acrobacia) ou Força (Atletismo) contra a CD da sua esfera como uma ação, ou causar dano suficiente ao arenito. O arenito tem CA 15 e 10 pontos de vida. Você recebe o seguinte aprimoramento para qualquer habilidade de protomancia que exija rocha ou pedra:\n\nDesenterrar\n\n(concentração; requer terra, areia ou pedra) Você pode manipular a terra ao redor de uma criatura ou objeto, forçando-o a ser empurrado ou puxado 1,5 metro a cada rodada em direção à superfície; um teste de resistência de Força bem-sucedido anula esse movimento a cada rodada. Enquanto afetado, o alvo não pode cavar ou deslizar na terra, mas não é impedido de outras ações. Você só pode escolher como alvo uma criatura ou objeto cuja localização você tenha determinado com precisão (como com um teste de Sabedoria (Percepção) bem-sucedido ou com tremor).\n\nA menos que o alvo possua Deslizar na Terra, a criatura não pode ser movida à força através de pedra ou lava, mas apenas através de areia ou terra."
+    },
+    {
+      "id": "natureza-natureza-elevada",
+      "name": "Natureza Elevada (protomancia)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Rajada de Vento não emana mais de você, mas sim de qualquer lugar dentro do alcance da protomancia."
+        },
+        {
+          "pm": 1,
+          "text": "As rochas ricocheteiam no ar, afetando criaturas voando até 3 metros acima da área afetada. Criaturas voadoras que falharem no teste de resistência contra o Tremor caem no chão, sofrendo dano de queda normalmente. Essa altura aumenta em 3 metros no 5º (6 metros), 11º (9 metros) e 17º (12 metros) nível."
+        },
+        {
+          "pm": 1,
+          "text": "O fogo afetado se torna uma coluna de fogo que se eleva no ar, afetando criaturas voando até 3 metros acima da área afetada. Essa altura aumenta em 3 metros no 5º (6 metros), 11º (9 metros) e 17º (12 metros) nível."
+        },
+        {
+          "pm": 1,
+          "text": "Dobre o alcance de protomancia que você pode magnetizar um alvo."
+        },
+        {
+          "pm": 1,
+          "text": "Seu vórtice atinge novas alturas e profundidades, aumentando a altura do vórtice em 3 metros. Essa altura aumenta em 3 metros no 5º (6 metros), 11º (9 metros) e 17º (12 metros) nível."
+        }
+      ],
+      "body": "Suas habilidades básicas de protomancia agora podem afetar maiores profundidades e alturas; rochas voam, vinhas se estendem e o fogo arde de forma a afetar criaturas em altitudes muito maiores ou menores do que o normal.\n\nRajada de Vento (ar)\n\nTremor (terra)\n\nAfetar Fogo (fogo)\n\nMagnetizar (metal)\n\nAmarrar (planta)\n\nAprimoramento 1 sp: As plantas se estendem pelo ar, afetando criaturas voadoras a até 3 metros acima da área afetada. Criaturas voadoras que falharem em seu teste de resistência contra o enredar são puxadas para o chão e imobilizadas normalmente. Essa altura aumenta em 3 metros no 5º (6 metros), 11º (9 metros) e 17º (12 metros) nível.\n\nVórtice (água)"
+    },
+    {
+      "id": "natureza-dominio-do-fogo",
+      "name": "Domínio do Fogo (protomancia, fogo)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "fogo"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1 PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração de lampejo é reduzido para 1 reação."
+        }
+      ],
+      "body": "Você adquire as seguintes habilidades.\n\nAlterar Luz\n\n(concentração, requer fogo) Você pode alterar a luz produzida por um fogo dentro do seu máximo de Afetar Fogo. Você pode reduzir pela metade ou dobrar o raio da sua luz, bem como alterar a luz concedida de uma emanação para um cone com o dobro do raio. Você também pode aumentar a luz concedida para uma luz brilhante ou diminuí-la para uma luz fraca.\n\nClarão\n\n(instantâneo) Você pode fazer com que um fogo dentro do alcance emita uma esfera de chamas com raio de 3 metros, causando 1d8 de dano de fogo e fazendo com que criaturas e objetos inflamáveis que sofrerem dano peguem fogo, sofrendo 1d8 de dano de fogo por rodada até que as chamas se extingam. As criaturas podem tentar um novo teste de resistência de Destreza para extinguir as chamas no final de cada um de seus turnos. Usar uma ação para rolar no chão ou usar um cobertor para abafar as chamas extingue-as automaticamente. Um teste de resistência de Destreza bem-sucedido reduz o dano pela metade e impede que as criaturas peguem fogo. Use esta habilidade para reacender um fogo não mágico dentro do alcance que tenha sido extinto (por meios mágicos ou mundanos) desde o final do seu último turno. Isso pode ser usado para reacender uma criatura que pegou fogo e extinguiu as chamas. O dano inicial e o dano ao fogo aumentam em 1d8 e o raio aumenta em 1,5 metro no 5º (2d8, 4,5 metros), 11º (3d8, 6 metros) e 17º (4d8, 7,5 metros) nível."
+    },
+    {
+      "id": "natureza-dominio-da-nevoa",
+      "name": "Domínio da Névoa (água, protomancia)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "agua",
+        "protomancia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas que entram ou começam seu turno dentro da nuvem devem fazer um teste de resistência de Constituição ou sofrer 1d10 de dano ácido. Em caso de sucesso, elas sofrem metade do dano. O dano ácido aumenta em 1d10 no 5º (2d10), 11º (3d10) e 17º (4d10) níveis."
+        }
+      ],
+      "body": "Ao usar a habilidade Névoa do pacote de água, você pode adicionar um dos seguintes efeitos adicionais, dependendo dos outros pacotes que possuir.\n\nLâminas de Vento (ar)\n\n(requer ar em vez de água) Sua nuvem ataca aqueles que estiverem dentro dela com lâminas de vento. Qualquer criatura ou objeto desacompanhado que se mova através da nuvem deve ser bem-sucedido em um teste de resistência de Destreza ou sofrerá 1d6 pontos de dano cortante para cada 1,5 metro de movimento gasto entrando ou se movendo através da nuvem.\n\nTempestade de Areia (terra)\n\n(requer areia ou terra solta em vez de água) Você cria uma tempestade de areia. Além da névoa, ela também funciona como um Vórtice, exceto que se desloca sobre a terra e se estende pelo ar, podendo até mesmo deixar o solo e viajar pelo ar. O efeito de obscurecimento se aplica apenas à área real do vórtice, e criaturas que possuem visão terrestre ou tremor não têm sua visão obscurecida por este efeito.\n\nCortina de Fumaça (fogo)\n\n(requer fogo em vez de água) Sua nuvem expele cinzas e fumaça, preenchendo a área. Qualquer criatura completamente dentro da nuvem no início de seu turno deve fazer um teste de resistência de Constituição ou ficará cega até o início de seu próximo turno. Criaturas que possuem visão de fogo são automaticamente bem-sucedidas neste teste de resistência.\n\nChuva Ácida (metal)\n\nEsporos (planta)\n\n(requer plantas ou fungos em vez de água) Sua nuvem faz com que plantas e fungos próximos floresçam e liberem pólen e esporos. Cada criatura que entra ou começa seu turno dentro da nuvem deve fazer um teste de resistência de Constituição contra veneno. Em caso de falha no teste de resistência, a criatura fica envenenada até o início do seu próximo turno. Criaturas que não precisam respirar ou que são imunes a veneno passam automaticamente neste teste de resistência. Criaturas com visão vegetal não têm sua visão obscurecida pela nuvem.\n\nNévoa Sólida (água)\n\n(requer chuva, neblina ou pelo menos 10 pés cúbicos de água) Sua nuvem se torna tão densa que se torna efetivamente sólida. Criaturas dentro da nuvem têm sua velocidade reduzida à metade, sofrem uma penalidade de -2 nas jogadas de ataque e não podem usar reações. Isso não se acumula com o efeito de lentidão. Criaturas e objetos que caem dentro da área da nuvem são desacelerados de forma que cada 10 pés da nuvem reduza o dano de impacto da queda em 1d6. Se usar um corpo d'água como componente necessário, a névoa deve estar pelo menos parcialmente sobre a própria água. Criaturas com percepção aquática não têm sua visão obscurecida pela nuvem."
+    },
+    {
+      "id": "natureza-forjar-a-terra",
+      "name": "Forjar a Terra (terra, protomancia)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "terra",
+        "protomancia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Você pode usar a habilidade Escavar em pedras soltas ou não trabalhadas."
+        }
+      ],
+      "body": "Você adquire as seguintes habilidades de protomancia.\n\nEscavar\n\n(instantâneo, requer terra ou areia) Você pode mover um cubo de terra ou areia de 1,5 metro e depositá-lo em um espaço desocupado em qualquer lugar dentro do alcance. Este movimento não envolve força suficiente para causar dano. A área afetada aumenta em 1,5 metro no 5º nível (cubo de 3 metros), no 11º nível (cubo de 4,5 metros) e no 17º nível (cubo de 6 metros).\n\nInscrever\n\n(instantâneo, requer areia ou pedra) Você esculpe imagens, formas ou palavras em areia ou pedra dentro de um cubo de 3 metros. A área afetada aumenta em 1,5 metro no 5º nível (cubo de 4,5 metros), no 11º nível (cubo de 6 metros) e no 17º nível (cubo de 7,5 metros).\n\nPaisagem\n\n(instantâneo, requer terra ou pedra) Você pode transformar uma área de terra ou pedra em terreno difícil, ou remover o terreno difícil de uma área de terra e pedra. Cada conjuração afeta um cubo de 3 metros. A área afetada aumenta em 1,5 metro no 5º nível (cubo de 4,5 metros), no 11º nível (cubo de 6 metros) e no 17º nível (cubo de 7,5 metros)."
+    },
+    {
+      "id": "natureza-terreno-perigoso",
+      "name": "Terreno Perigoso (protomancia)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Em vez de purificar o ar, você pode estancá-lo. Criaturas que entrarem ou iniciarem seu turno na área devem ser bem-sucedidas em um teste de resistência de Constituição ou ficarão envenenadas por 1 minuto. Criaturas que não precisam respirar são automaticamente bem-sucedidas neste teste de resistência."
+        },
+        {
+          "pm": 0,
+          "text": "Em vez de derrubar criaturas, o solo forma formações rochosas irregulares na área, agindo como espinhos. Esses espinhos usam a CD da sua esfera da Natureza e causam dano perfurante igual ao seu nível."
+        },
+        {
+          "pm": 0,
+          "text": "O fogo afetado também cria uma aura de calor insuportável. Sempre que uma criatura entrar ou começar seu turno a 1,5 metro da área afetada, ela deve ser bem-sucedida em um teste de resistência de Constituição ou sofrer uma quantidade de dano de fogo igual ao seu nível. Uma criatura só faz um único teste de resistência contra a aura a cada turno, não importa quantas vezes ela entre ou saia da aura. O tamanho dessa aura aumenta em 1,5 metro no 5º (3 metros), 11º (4,5 metros) e 17º nível (6 metros)."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode usar Magnetizar como um efeito de concentração, afetando um raio de 1,5 metro dentro do alcance. Qualquer criatura que entrar ou começar seu turno dentro da área é atacada pelo objeto de metal. Uma criatura só pode ser atacada por Magnetizar uma vez por rodada, independentemente de quantas vezes ela entre ou saia da área. O tamanho desta área Magnetizada aumenta em 1,5 metro no 5º nível (raio de 3 metros), 11º nível (raio de 4,5 metros) e 17º nível (raio de 6 metros)."
+        },
+        {
+          "pm": 0,
+          "text": "Em vez de restringir criaturas, as plantas criam espinhos, causando 1d6 de dano perfurante para cada 1,5 metro de movimento pela área afetada. Um teste de resistência de Destreza bem-sucedido reduz esse dano à metade. Apenas 1 teste de resistência é feito por turno, independentemente da distância percorrida. Se uma criatura optar por reduzir sua velocidade de movimento pela metade, ela ganha vantagem neste teste de resistência."
+        },
+        {
+          "pm": 0,
+          "text": "Em vez de restringir criaturas, o gelo forma espinhos de gelo perfurantes na área, agindo como caltrops. Esses caltrops usam a CD da sua esfera da Natureza e causam dano de frio, em vez de dano perfurante, igual ao seu nível."
+        }
+      ],
+      "body": "Você sabe como tornar muitas de suas habilidades de protomancia particularmente perigosas.\n\nPurificar Ar (ar)\n\nTremor (terra)\n\nAfetar Fogo (fogo)\n\nMagnetizar (metal)\n\nAmarrar (planta)\n\nCongelamento (água)"
+    },
+    {
+      "id": "natureza-dominio-da-lava",
+      "name": "Domínio da Lava (protomancia, terra ou fogo)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "terra",
+        "fogo"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "area": "quadrado de 3 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Sempre que uma habilidade de pacote de terra exigiria terra, areia ou pedra, você pode usar lava para cumprir esse requisito."
+        },
+        {
+          "pm": 0,
+          "text": "Sempre que uma habilidade de pacote de terra causar dano, você pode optar por alterar o tipo de dano para concussão ou fogo."
+        }
+      ],
+      "body": "Você também adquire as seguintes habilidades de protomancia:\n\nForno de Terra\n\n(concentração; requer terra, areia ou pedra) Você aquece o interior de uma área de terra com calor intenso. Criaturas enterradas ou escavando que iniciarem seu turno dentro deste cubo sofrem 1d6 de dano de fogo. Um teste de resistência de Constituição bem-sucedido reduz esse dano à metade. A área aumenta em 1,5 metro e o dano aumenta em 1d6 no 5º nível (cubo de 4,5 metros, 2d6), 11º nível (cubo de 6 metros, 3d6) e 17º nível (cubo de 7,5 metros, 4d6).\n\nManipular Lava\n\n(concentração ou instantâneo, requer lava) Você pode manipular lava. Esta habilidade é exatamente igual às habilidades Congelar e Vórtice do pacote de água, exceto que você precisa gastar um ponto de magia adicional para cada habilidade e deve escolher a lava como alvo. A lava congelada se transforma em obsidiana, com um limite de dano de 6 e um valor de pontos de vida frágil, apropriado para seu tamanho (veja a esfera Criação), e não causa dano por rodada a criaturas presas.\n\nDerreter Terra\n\n(concentração, requer areia, terra ou pedra) Você pode escolher uma área de terra, areia ou pedra dentro do alcance, transmutando a parte superior em lava. Criaturas que tocarem ou entrarem no quadrado com lava criada por Derreter Terra sofrem 1d6 de dano de fogo. Um teste de resistência de Constituição bem-sucedido reduz esse dano à metade. Uma criatura só pode ser danificada por uma área afetada por Derreter Terra uma vez por rodada, não importa quantas vezes ela entre na área. Mesmo depois de uma criatura sair da lava, ela continua sofrendo dano de fogo por 1d4 rodadas.\n\nSe esse efeito terminar enquanto uma criatura estiver dentro do espaço afetado por essa habilidade, a terra ao redor dela esfria instantaneamente. A criatura deve ser bem-sucedida em um teste de resistência de Destreza ou ficará restringida. Como uma ação, uma criatura restringida por Derreter Terra pode se libertar da condição com um teste bem-sucedido de Força (Atletismo) ou Destreza (Acrobacia) contra a CD da esfera Natureza. Alternativamente, a terra resfriada pode ser quebrada reduzindo seus pontos de vida a zero. A terra resfriada tem CA 5, um limite de dano de 8 e 10 pontos de vida. A área aumenta em 1,5 metro e o dano de fogo aumenta em 1d6 quando você atinge o 5º nível (quadrado de 4,5 metros; 2d6), o 11º nível (quadrado de 6 metros; 3d6) e o 17º nível (quadrado de 7,5 metros; 4d6)."
+    },
+    {
+      "id": "natureza-manipular-a-natureza",
+      "name": "Manipular a Natureza (protomancia)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 ação bônus",
+      "target": "uma criatura ou objeto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode manipular os elementos para que assumam diferentes formas. As habilidades de protomancia que você adquire são determinadas pelos seus pacotes de Natureza, conforme descrito abaixo:\n\nGêiser de Ar (ar)\n\n(instantâneo, requer ar) Você pode arremessar um alvo de tamanho Médio ou menor dentro do alcance da protomancia para cima. Se o alvo falhar em seu teste de resistência de Destreza, a força do ar o arremessa para cima 3 metros. Se um objeto sólido (como um teto) for encontrado, o alvo colide com o objeto da mesma forma que colidiria durante uma queda normal. Após a rajada de ar cessar, o alvo cai (a menos que estivesse voando), sofrendo dano de queda normalmente. A altura do arremesso aumenta em 3 metros no 5º nível (6 metros), 11º nível (9 metros) e 17º nível (12 metros).\n\nEsculpir Pedra (terra)\n\n(instantâneo, requer pedra) Você pode escolher um objeto de pedra de tamanho Médio ou menor dentro do alcance, ou uma seção de pedra com no máximo 1,5 metro em qualquer dimensão. A pedra é então remodelada e moldada de acordo com sua necessidade. Por exemplo, você pode moldar uma grande rocha em uma arma, ídolo ou cofre, ou criar uma pequena passagem através de uma parede, desde que a parede tenha menos de 1,5 metro de espessura. Você também pode moldar uma porta de pedra ou sua moldura para selá-la. O objeto criado pode ter até duas dobradiças e uma trava, mas detalhes mecânicos mais finos não são possíveis.\n\nChamas Seletivas (fogo)\n\n(concentração, requer fogo) Você pode optar por extinguir temporariamente um cubo de chamas ou lava de 1,5 metro de diâmetro dentro do alcance, permitindo que criaturas dentro do cubo não sofram dano de fogo causado por efeitos ambientais (incluindo habilidades de protomancia do pacote Fogo) durante a duração. Você pode escolher um cubo adicional de 1,5 metro no 5º nível (dois cubos de 1,5 metro), no 11º nível (três cubos de 1,5 metro) e no 17º nível (quatro cubos de 1,5 metro).\n\nRebote (metal)\n\n(instantâneo, requer Magnetizar ativo) Ao usar a habilidade de protomancia Magnetizar, se o ataque acertar, você pode magnetizar outra criatura dentro do alcance e fazer um ataque mágico à distância adicional contra essa criatura. Você pode fazer um número máximo de ataques adicionais dessa maneira igual ao seu bônus de proficiência, mas se errar uma vez, a habilidade termina sem mais ataques. Você não pode fazer dois ataques seguidos contra o mesmo alvo.\n\nAbrigo (planta)\n\n(instantâneo, requer Magnetizar ativo) (Tântea, requer árvore ou galho) Você pode remodelar uma árvore para criar um abrigo. Use a tabela de Tamanho da Árvore e Pontos de Vida da habilidade Golpe Poderoso para determinar os pontos de vida e o tamanho de um abrigo com base na árvore usada (o raio do abrigo é o alcance da árvore ou galho usado); Criaturas só podem se beneficiar de um abrigo cuja categoria de tamanho seja igual ou maior que a sua. Criaturas e equipamentos sob o abrigo não sofrem danos por estarem em um ambiente quente ou frio e podem existir confortavelmente em condições entre -50 e 140 graus Fahrenheit (-45,5 e 60 graus Celsius) sem precisar fazer testes de resistência de Constituição. Além disso, o abrigo fornece proteção contra outros perigos ambientais, como fumaça, falta de ar e assim por diante; no entanto, o abrigo não protege contra danos ambientais, como frio ou fogo. O abrigo também fornece cobertura de três quartos (+5 na CA e nos testes de resistência de Destreza) para dentro e para fora, e criaturas hostis não podem entrar no abrigo sem primeiro destruí-lo. Contudo, se a árvore ou o galho usado para criar o abrigo for destruído, os efeitos do abrigo terminam imediatamente.\n\nOnda (água)\n\n(instantânea; requer pelo menos 10 pés cúbicos de água) Você pode criar uma onda na água que empurra os alvos em seu rastro. Essa onda pode ser criada em qualquer lugar dentro do alcance e pode estar voltada para qualquer direção, mas, uma vez criada, viaja em linha reta por uma distância de 60 pés. Essa área pode se estender para fora da água e para a terra até um máximo de 20 pés. A onda criada tem 5 pés de largura. A largura pode ser dobrada reduzindo o comprimento pela metade. Isso pode ser feito várias vezes, mas o comprimento não pode ser menor que 5 pés. Um alvo não pode ser empurrado para trás além do comprimento da onda.\n\nTodas as criaturas dentro da área afetada devem fazer um teste de resistência de Força ou serão empurradas para trás 10 pés e devem ser bem-sucedidas em um teste de resistência de Destreza ou serão derrubadas.\n\nA distância que o alvo é empurrado aumenta em 1,5 metro (5 pés) quando você atinge o 5º nível (4,5 metros/15 pés), o 11º nível (6 metros/20 pés) e o 17º nível (7,5 metros/25 pés)."
+    },
+    {
+      "id": "natureza-dominio-dos-metais",
+      "name": "Domínio dos Metais (protomancia, metal)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "metal"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sempre que usar Recuperar Minério, você adquire a habilidade de Recuperar Minério de ferro, chumbo ou aço. Você pode expandir os tipos de minério que pode recuperar no 5º nível (prata), 11º nível (mithril) e 17º nível (adamantium)."
+        },
+        {
+          "pm": 1,
+          "text": "Ao usar Recuperar Minério, você pode escolher uma criatura viva e corpórea como alvo desta habilidade, eliminando a necessidade de terra ou areia. Fazer isso inflige 1d12 de dano necrótico e extrai um volume de minério duas categorias de tamanho menor que o alvo (mínimo Minúsculo). Um teste de resistência de Constituição bem-sucedido reduz esse dano à metade. Esse dano aumenta em 1d12 no 5º nível (2d12), 11º nível (3d12) e 17º nível (4d12)."
+        },
+        {
+          "pm": 1,
+          "text": "Ao usar Magnetizar, você também pode afetar o objeto de metal com Reforjar com a mesma ação, transformando-o em uma forma mais perigosa. O objeto pode assumir a forma de uma arma específica de sua escolha ou simplesmente uma forma perigosa que causa dano de concussão, corte e perfuração, além de causar o dobro do dano normal de minério para seu tamanho."
+        }
+      ],
+      "body": "Você também ganha a seguinte habilidade de protomancia:\n\nFortificar\n\n(instantâneo) Você pode fortificar um objeto desacompanhado (mesmo objetos que não sejam de metal) dentro do alcance. O alvo se funde com metal, aumentando ou diminuindo permanentemente o limite de dano e a CA do objeto pelo seu bônus de proficiência. Um objeto só pode estar sob o efeito de uma fortificação por vez, pois cada conjuração subsequente descarta e substitui a anterior. Isso não concede nenhum benefício ou penalidade adicional devido aos metais usados."
+    },
+    {
+      "id": "natureza-dominio-das-plantas",
+      "name": "Domínio das Plantas (protomancia, planta)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "planta"
+      ],
+      "target": "uma criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar Enredar, o tamanho do quadrado afetado é dobrado. Por exemplo, no 1º nível, seu Enredar afetaria um quadrado de 6 metros em vez de um quadrado de 3 metros."
+        },
+        {
+          "pm": 0,
+          "text": "Ao usar Colheita, você pode produzir um número de bagas mágicas igual ao seu modificador de habilidade principal (mínimo 1), juntamente com a comida usual. Qualquer criatura que consumir uma dessas bagas é curada em um número de pontos de vida igual ao seu bônus de proficiência. Essas bagas perdem sua potência mágica após um descanso longo."
+        },
+        {
+          "pm": 1,
+          "text": "Ao usar Golpear, você pode afetar um número de galhos adicionais igual à metade do seu bônus de proficiência."
+        }
+      ],
+      "body": "Você também ganha a seguinte habilidade de protomancia:\n\nVideira Agarradora (planta)\n\n(concentração; requer hera, videiras ou vegetação similar) Você faz com que videiras próximas ataquem uma criatura dentro do alcance. Essa criatura deve ser bem-sucedida em um teste de resistência de Destreza ou será puxada 3 metros diretamente em direção à trepadeira. Até o efeito terminar, você pode direcionar a trepadeira para atacar a mesma criatura ou outra como uma ação bônus em cada um dos seus turnos.\n\nA distância que a trepadeira puxa uma criatura aumenta em 1,5 metro no 5º nível (4,5 metros), no 11º nível (6 metros) e no 17º nível (7,5 metros)."
+    },
+    {
+      "id": "natureza-dominio-de-golpe-de-arvore",
+      "name": "Domínio de Golpe de Árvore (protomancia, planta)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "planta"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar Golpe de Árvore, você pode adicionar seu modificador de habilidade chave ao dano causado pelo ataque de pancada de Golpe."
+        },
+        {
+          "pm": 1,
+          "text": "Ao usar Golpe de Árvore, os galhos da árvore podem lançar vegetação como um ataque à distância em vez de apenas realizar ataques corpo a corpo. O alcance é igual ao dobro do alcance do galho. A jogada de ataque e o dano permanecem inalterados."
+        },
+        {
+          "pm": 1,
+          "text": "Ao usar Golpe de Árvore, em vez de realizar um ataque de pancada, você pode fazer com que um galho de árvore tente desafiar uma criatura que você possa ver. O desafio pode ser auditivo (ranger da madeira ou farfalhar da folhagem) ou visual (galhos se agitando ou frutas sendo arremessadas), contanto que o alvo possa perceber o desafio. Criaturas relutantes podem fazer um teste de resistência de Carisma para resistir, e criaturas sem mente não podem ser desafiadas."
+        }
+      ],
+      "body": "Uma criatura afetada pelo seu galho sofre desvantagem em jogadas de ataque que não incluam o galho como alvo e ganha vantagem em jogadas de ataque que tenham como alvo apenas o galho. Se a criatura não puder atacar o galho (por exemplo, se o galho estiver escondido), ela não sofre desvantagem ao atacar outra coisa.\n\nO desafio dura 1 minuto. Quando você faz com que um galho de árvore tente um novo desafio, qualquer desafio anterior que esse galho tenha ativo termina. Uma criatura pode ser afetada por múltiplos desafios, mas ganha vantagem contanto que esteja atacando pelo menos um alvo que a tenha desafiado."
+    },
+    {
+      "id": "natureza-dominio-em-reforjar",
+      "name": "Domínio em Reforjar (protomancia, metal)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "metal"
+      ],
+      "target": "um objeto de metal",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire as seguintes habilidades. Se um pacote adicional estiver listado, você precisa possuí-lo para usar essa habilidade.\n\nGume Alterado\n\n(concentração) Você pode escolher uma arma de metal dentro do alcance. A arma acerta um golpe crítico com um resultado de 19 ou 20 no dado, ou torna-se incapaz de acertar um golpe crítico.\n\nResfriar Metal (água)\n\n(concentração; requer metal) Escolha um objeto de metal manufaturado, como uma arma de metal ou uma armadura de metal pesada ou média, que você possa ver dentro do alcance. Você faz com que o objeto fique extremamente frio. Qualquer criatura em contato físico com o objeto sofre 1d8 de dano de frio. Enquanto o efeito persistir, você pode usar uma ação bônus em cada um dos seus turnos subsequentes para causar esse dano novamente.\n\nSe uma criatura estiver segurando ou vestindo o objeto e sofrer dano dele, ela deve ser bem-sucedida em um teste de resistência de Constituição ou ficará impossibilitada de soltar ou guardar o objeto, pois ele congelará em seu corpo. Se não soltar o objeto, terá desvantagem em jogadas de ataque e testes de habilidade até o início do seu próximo turno. Esse dano aumenta em 1d8 no 5º (2d8), 11º (3d8) e 17º (4d8) níveis.\n\nResfriar Metal pode ser usado para dissipar Aquecer Metal.\n\nAlcance Forjado\n\n(concentração; requer arma de metal) Você pode aumentar o alcance de uma arma de metal dentro do alcance em até 1,5 metro. Esse alcance aumenta para 3 metros no 11º nível.\n\nAquecer Metal (fogo)\n\n(concentração; requer metal) Escolha um objeto de metal fabricado, como uma arma de metal ou uma armadura de metal pesada ou média, que você possa ver dentro do alcance. Você faz com que o objeto brilhe em brasa. Qualquer criatura em contato físico com o objeto sofre 1d8 de dano de fogo. Enquanto o efeito persistir, você pode usar uma ação bônus em cada um dos seus turnos subsequentes para causar esse dano novamente.\n\nSe uma criatura estiver segurando ou vestindo o objeto e sofrer o dano, ela deve ser bem-sucedida em um teste de resistência de Constituição ou soltar o objeto, se puder. Se não soltar o objeto, ela terá desvantagem em jogadas de ataque e testes de habilidade até o início do seu próximo turno.\n\nEsse dano aumenta em 1d8 no 5º (2d8), 11º (3d8) e 17º (4d8) níveis.\n\nA magia Aquecer Metal pode ser usada para dissipar Resfriar Metal."
+    },
+    {
+      "id": "natureza-termoturgia",
+      "name": "Termoturgia (protomancia, fogo)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "fogo"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Alvos atingidos pelo golpe de cinzas devem passar em um teste de resistência de Destreza ou ficarão cegos até o início do seu próximo turno."
+        }
+      ],
+      "body": "Você adquire as seguintes habilidades. Se um pacote adicional estiver listado, você precisa possuí-lo para usar essa habilidade.\n\nGolpe de Cinzas\n\n(instantâneo; requer fogo) Você pode gerar um cone de cinzas que se estende de você até o limite do seu alcance de protomancia. Essas cinzas revelam personagens invisíveis até que eles possam se livrar delas ou removê-las como uma ação, e revelam o espaço em que criaturas invisíveis estão se elas caminharem no chão, pois deixam pegadas nas cinzas.\n\nFerver Água (água)\n\n(concentração, requer água) Você pode fazer com que um cubo de água de 1,5 metro de lado dentro do alcance aqueça e ferva, causando 1d8 de dano de Fogo a qualquer criatura dentro dele. A cada rodada, no início do seu turno, qualquer criatura que ainda estiver dentro da água fervente sofre dano novamente. Se uma criatura entrar na água fervente, ela sofrerá dano imediatamente, mas apenas uma vez durante seu movimento, independentemente de quantas vezes esse movimento a leve para dentro e para fora da água fervente. O dano de fogo e o tamanho máximo da área que você pode afetar aumentam quando você atinge o 5º nível (2d8, cubo de 3 metros), o 11º nível (3d8, cubo de 4,5 metros) e o 17º nível (4d8, cubo de 6 metros).\n\nTrilha de Fogo\n\n(instantâneo, requer fogo) Você pode criar uma onda de cinzas, ar quente e fumaça em uma linha de 36 metros que revela um caminho seguro para atravessar, permitindo que as criaturas ignorem terreno difícil dentro da área afetada por 1 minuto. Criaturas que forem atingidas pela área de efeito ao conjurar a habilidade pela primeira vez devem ser bem-sucedidas em um teste de resistência de Constituição ou sofrerão 1 nível de exaustão."
+    },
+    {
+      "id": "natureza-dominio-da-agua",
+      "name": "Domínio da Água (protomancia, água)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Protomancia",
+      "tags": [
+        "protomancia",
+        "agua"
+      ],
+      "area": "cubo de 3 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Sempre que uma habilidade de pacote de água exigir água, você pode usar neve para atender a esse requisito. Você também adquire as seguintes habilidades de protomancia:"
+        },
+        {
+          "pm": 2,
+          "text": "A duração muda de concentrada para instantânea, convertendo permanentemente água suja ou poluída em água potável."
+        }
+      ],
+      "body": "Onda de Frio\n\n(concentração) Você cria um cubo de 3 metros de diâmetro de frio intenso. Criaturas que começam seu turno dentro deste cubo sofrem 1d6 de dano de frio. Um teste de resistência de Constituição bem-sucedido reduz esse dano à metade. A área afetada aumenta em 1,5 metro e o dano aumenta em 1d6 no 5º nível (cubo de 4,5 metros, 2d6), no 11º nível (cubo de 6 metros, 3d6) e no 17º nível (cubo de 7,5 metros, 4d6).\n\nMover Água\n\n(concentração; requer água) Você pode mover água. Você pode fazer com que um volume de água equivalente ao tamanho de um objeto Médio se mova até o seu alcance de protomancia. A água pode ser movida pelo ar e não cai no chão até que o efeito termine. Se você possuir a esfera de Telecinese, poderá usar sua velocidade de telecinese, caso seja maior. O volume de água que você pode mover aumenta no 5º nível (tamanho Grande), 11º nível (tamanho Enorme) e 17º nível (tamanho Gargantuesco).\n\nSe estiver movendo um volume de água de tamanho Pequeno ou superior, você pode tentar empurrar uma criatura em seu caminho, fazendo uma jogada de ataque mágico em vez de um teste de Força (Atletismo). Se o volume de água for duas ou mais vezes menor que a criatura, você sofre desvantagem neste teste. Se for duas ou mais vezes maior, você ganha vantagem.\n\nPurificar Água\n\n(concentração; requer água) Você pode converter água suja ou poluída em água potável em uma área dentro do alcance. Durante a duração, a água fica limpa, respirável para criaturas aquáticas e segura para beber. A água purificada que for usada (consumida ou usada para cozinhar) enquanto a duração estiver ativa não volta a ficar suja ou poluída quando o efeito terminar. A área aumenta em 1,5 metro (5 pés) ao atingir o 5º nível (cubo de 4,5 metros), o 11º nível (cubo de 6 metros) e o 17º nível (cubo de 7,5 metros)."
+    },
+    {
+      "id": "natureza-amigo-das-feras",
+      "name": "Amigo das Feras (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode fazer com que criaturas do tipo fera o tratem como um amigo. Isso significa que tais criaturas não atacarão a menos que sejam provocadas e você pode fazer pedidos a elas, desde que consiga se comunicar com elas (se não puder se comunicar com uma criatura, apenas comandos básicos como \"vá\", \"venha\", \"lute\" ou \"fique\"). Isso não tem efeito sobre criaturas hostis a você (como aquelas que já estão em combate), e uma criatura com um mestre (como uma fera invocada) ainda atacará se comandada por seu mestre.\n\nUma vez durante a duração desta habilidade, você pode chamar a fera mais próxima de um tipo específico que você designar (desde que seu ND seja igual ou menor que o seu nível) para procurá-lo. A fera se move em sua direção por conta própria, então o tempo que leva para chegar depende de quão perto uma fera do tipo desejado estiver quando você conjurar o efeito. Se não houver nenhuma fera desse tipo capaz de alcançá-lo durante a duração deste efeito, você está ciente desse fato."
+    },
+    {
+      "id": "natureza-pulmao-de-dragao",
+      "name": "Pulmão de Dragão (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha uma arma de sopro [Recarga 5-6], que cria uma linha de 18 metros ou um cone de 9 metros (escolhido no momento da conjuração), causando 2d6 de dano. Criaturas afetadas podem fazer um teste de resistência de Destreza para reduzir o dano pela metade. O tipo de dano é escolhido quando o efeito é conjurado, com opções baseadas nos pacotes que você possui. O dano da arma de sopro aumenta em 1d6 no 5º nível (3d6), 11º nível (4d6) e 17º nível (5d6).\n\n•Pacote de Ar: dano trovejante\n\n•Pacote de Terra: dano contundente, perfurante ou cortante\n\n•Pacote de Fogo: dano de fogo\n\n•Pacote de Metal: dano elétrico\n\n•Pacote de Planta: dano ácido\n\n•Pacote de Água: dano de frio"
+    },
+    {
+      "id": "natureza-fundir-se-com-a-natureza",
+      "name": "Fundir-se com a Natureza (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Enquanto estiver imerso na substância, você pode gastar dados de vida para se curar como se estivesse fazendo um descanso curto."
+        }
+      ],
+      "body": "Você entra em um objeto ou superfície de planta, metal, pedra ou madeira grande o suficiente para conter completamente seu corpo, fundindo-se e a todos os seus equipamentos com o objeto durante a duração. As substâncias com as quais você pode se fundir são determinadas pelos pacotes que você possui; veja a tabela abaixo. Usando seu movimento, você entra no objeto em um ponto que você pode tocar.\n\nNada da sua presença permanece visível ou detectável por sentidos não mágicos.\n\nEnquanto fundido com o objeto, você não pode ver o que acontece fora dele, e quaisquer testes de Sabedoria (Percepção) que você fizer para ouvir sons externos serão feitos com desvantagem. Você permanece ciente da passagem do tempo e pode conjurar magias em si mesmo enquanto fundido. Você pode usar seu movimento para sair do objeto onde entrou, o que encerra o efeito. Caso contrário, você não pode se mover.\n\nDanos físicos menores ao objeto não lhe causam dano, mas sua destruição parcial ou uma mudança em sua forma (a ponto de você não caber mais dentro dele) o expulsa e causa 6d6 de dano de impacto a você. A destruição completa do objeto (ou transmutação em uma substância diferente à qual o uso desta habilidade não se aplica) o expulsa e causa 50 de dano de impacto a você. Se for expelido, você cai de bruços em um espaço desocupado mais próximo de onde entrou inicialmente.\n\nTabela: Fundir-se com a Natureza\n\nPacote de NaturezaSubstânciaTerraAreia ou PedraMetalMetal ou MinérioPlantaPlantas ou MadeiraÁguaGelo"
+    },
+    {
+      "id": "natureza-carapaca-da-natureza",
+      "name": "Carapaça da Natureza (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire as seguintes habilidades espirituais. Você precisa possuir o pacote de protomancia listado para usar cada habilidade.\n\nVentos Impetuosos (ar)\n\nVentos fortes giram ao seu redor. Durante a duração, ataques à distância feitos contra você sofrem desvantagem.\n\nPele de Pedra (terra)\n\nVocê pode tornar sua carne tão dura quanto pedra ou aço. Durante a duração, você ganha resistência a dano não mágico de concussão, perfuração e corte.\n\nManto de Chamas (fogo)\n\nVocê adquire a habilidade de revidar ataques corpo a corpo com retaliação flamejante. Sempre que qualquer criatura a até 1,5 metro de você o atingir com um ataque corpo a corpo, o atacante sofre 1d4 de dano de fogo. A quantidade de dano de fogo aumenta em 1d4 quando você atinge o 5º nível (2d4), o 11º nível (3d4) e o 17º nível (4d4).\n\nCorpo de Ferro (metal)\n\nSe você estiver usando uma armadura de metal, você se funde temporariamente com ela. Você ganha 5 pontos de vida temporários durante a duração do efeito e não sofre mais desvantagem em testes de Furtividade nem penalidade de movimento devido à sua armadura, caso venha a sofrer alguma dessas penalidades. Seu número de pontos de vida temporários aumenta em 10 no 5º nível (15 PV temporários), no 11º nível (25 PV temporários) e no 17º nível (35 PV temporários).\n\nPele de Casca (planta)\n\nVocê adquire uma aparência áspera semelhante à casca de uma árvore; sua CA não pode ser menor que 15, independentemente do tipo de armadura que você estiver usando. Sua CA mínima aumenta em um no 5º nível (16 CA), no 11º nível (17 CA) e no 17º nível (18 CA).\n\nManto Marinho (água)\n\nSeu corpo fica escorregadio como gelo molhado; você ganha vantagem em todos os testes de Força (Atletismo) ou Destreza (Acrobacia) feitos para contestar ou escapar de uma manobra de agarrar."
+    },
+    {
+      "id": "natureza-movimento-da-natureza",
+      "name": "Movimento da Natureza (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a si mesmo uma das seguintes habilidades. Você precisa possuir o pacote listado (protomancia) para usar cada habilidade.\n\nCaminhada Aérea (ar)\n\nVocê pode se mover em um ângulo vertical de até 45 graus sempre que se mover horizontalmente, subindo 30 centímetros de altura para cada 60 centímetros de movimento. Você também pode optar por permanecer na mesma altura ou, se já estiver no ar, mover-se em um ângulo de até 45 graus para baixo. Se você for derrubado, cairá no chão, assim como uma criatura com velocidade de voo que não pode pairar, embora caia a uma velocidade de 18 metros por rodada, sem sofrer dano de queda.\n\nSe você possuir a habilidade de conceder este talento a outra pessoa, poderá concedê-lo a uma montaria, mas deverá fazer um teste de Adestramento de Animais CD 20 para montá-la com sucesso e voar. Você pode dispensar a necessidade deste teste se dedicar tempo ao treinamento do animal no qual pretende conjurar Caminhar no Ar. Esse treinamento leva 1 semana e um teste de Adestramento de Animais CD 25.\n\nPasso de Pedra (terra)\n\nVocê pode adquirir a habilidade de ignorar terrenos difíceis naturais causados por terra, rocha e areia. Você pode realizar um teste de habilidade de conjuração contra a CD de resistência da magia ou a CD da esfera dos efeitos de terreno difícil causados ​​pela manipulação mágica desses materiais para ignorá-los. Você pode caminhar com segurança sobre areia movediça e outros perigos semelhantes como se fossem solo firme.\n\nCaminhar na Fumaça (fogo)\n\nVocê pode adquirir a habilidade de caminhar sobre fogo ou fumaça. O fogo e seus subprodutos (como a fumaça) tornam-se sólidos para você, permitindo que você se mova sobre eles como se fossem solo normal.\n\nVocê sempre pode optar por afundar no fogo ou na fumaça, se desejar, ficando fortemente obscurecido. Caminhar na Fumaça não concede resistência ou imunidade a dano de fogo, mas concede a habilidade de enxergar através da fumaça e respirá-la sem sofrer danos.\n\nPé de Ferro (metal)\n\nVocê se torna difícil de ser impedido por armadilhas, perigos e terreno difícil. Você ganha resistência a danos causados ​​por terreno difícil, perigos e armadilhas, incluindo espinhos e efeitos similares.\n\nPasso Verde (planta)\n\nVocê pode adquirir a habilidade de ignorar terreno difícil causado por plantas naturais. Você pode realizar um teste de habilidade de conjuração contra a CD de resistência da magia ou a CD da esfera dos efeitos de terreno difícil causados pelo crescimento e manipulação de plantas mágicas para ignorá-los.\n\nCaminhar sobre a Água (água)\n\nVocê adquire a habilidade de andar sobre a água. A água e todos os outros líquidos se tornam sólidos para você, permitindo que você se mova sobre eles como se fossem terra normal. Água especialmente turbulenta (como durante uma tempestade) pode ser considerada terreno difícil. Você sempre pode optar por afundar na água e nadar, se desejar, caso em que você é considerado como tendo uma velocidade de Natação igual à sua velocidade de caminhada, concedendo-lhe todos os benefícios usuais de uma velocidade de Natação. Isso não lhe concede, no entanto, a habilidade de respirar debaixo d'água."
+    },
+    {
+      "id": "natureza-arma-da-natureza",
+      "name": "Arma da Natureza (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a si mesmo uma das seguintes habilidades. Você deve possuir o pacote (protomancia) listado para usar cada habilidade.\n\nCacofonia (ar)\n\nUma vez por rodada, como uma ação, você pode criar uma torrente de vento que forma um cone que se estende de você até a borda do seu alcance de protomancia. Criaturas atingidas pela área devem fazer um teste de resistência de Constituição ou sofrer 1d4 de dano trovejante. Em caso de sucesso, as criaturas afetadas não sofrem dano. Criaturas atingidas pela cacofonia ficam surdas por 1 rodada. O dano de trovão aumenta em 1d4 no 5º nível (2d4), 11º nível (3d4) e 17º nível (4d4).\n\nPunho de Pedra (terra)\n\nUma vez por rodada, você pode escolher se deseja ou não envolver seu punho (ou apêndice similar) em pedra por 1 rodada. Enquanto estiver envolvido, você não pode segurar nada nessa mão, mas recebe um bônus de escudo de +2 na CA e seus ataques desarmados com essa mão causam 1d6 + seu modificador de Força de dano. O dano do punho envolvido aumenta no 5º nível (1d8), 11º nível (1d10) e 17º nível (1d12). Este efeito não se acumula com níveis de monge ou outros efeitos que aumentam o dano de ataques desarmados.\n\nManipulador de Fogo (fogo)\n\nUma vez por rodada, você pode escolher se deseja ou não envolver suas armas em chamas por 1 rodada. Seus ataques com armas corpo a corpo e golpes desarmados causam 1d4 de dano de fogo adicional. A quantidade de dano de fogo aumenta quando você atinge o 5º nível (1d6), o 11º nível (1d8) e o 17º nível (1d10).\n\nChicote de Lâmina (metal)\n\n(requer arma de metal) Em vez de um ataque, você pode escolher uma arma de metal que esteja empunhando, transformando-a em um cabo e lançando-o para empurrar uma criatura dentro do alcance da protomancia, fazendo-a cair. Se a arma conceder algum bônus nas jogadas de ataque, esse bônus se aplica a este empurrão. Após o efeito do empurrão ser resolvido, a arma retorna à sua forma original.\n\nGolpe de Espinhos (planta)\n\n(requer arma de madeira) Uma vez por rodada, você pode escolher se deseja ou não fazer com que espinhos irrompam de qualquer arma que esteja empunhando, principalmente de madeira (como um porrete, bastão ou lança), ou de munições também de madeira, como flechas ou virotes, disparadas por uma arma de ataque à distância que você esteja usando, durante uma rodada. Se você acertar uma criatura com uma arma de madeira, ela deve ser bem-sucedida em um teste de resistência de Destreza ou ficará agarrada por 1 rodada. Se ela já estiver agarrada e falhar no teste de resistência, ficará impedida de prosseguir por 1 rodada.\n\nEstalactites (água)\n\nUma vez por rodada, você pode criar, a partir da umidade residual, uma adaga de gelo. Essas adagas de gelo derretem se saírem da sua mão por mais de 1 rodada. Em vez de causar dano perfurante, essas adagas causam dano de frio e são consideradas mágicas para fins de ignorar imunidade e resistência. As adagas recebem um bônus de +1 no ataque e no dano no 5º nível (+1), no 11º nível (+2) e no 17º nível (+3)."
+    },
+    {
+      "id": "natureza-visao-da-natureza",
+      "name": "Visão da Natureza (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire um sentido extraordinário dependendo dos pacotes de protomancia que possui. Cada sentido tem um alcance igual ao seu alcance de protomancia.\n\nVisão das Nuvens (ar)\n\nVocê pode ver através de nuvens de neblina, bruma e fumaça como se fossem transparentes.\n\nVisão da Terra (terra)\n\nVocê adquire percepção sísmica, exceto que só permite detectar qualquer coisa em contato com o mesmo solo que você.\n\nVisão do Fogo (fogo)\n\nVocê pode ver através de chamas, lava e fumaça como se fossem transparentes.\n\nVisão dos Metais (metal)\n\nVocê adquire a habilidade de farejar, exceto que só permite detectar objetos de metal (incluindo criaturas que usam ou carregam objetos de metal). Considere isso como um teste de Sabedoria (Percepção) baseado em sua capacidade de sentir cheiros, com uma CD de 10 para encontrar metal, permitindo que você localize metal a até 18 metros (isso muda para 9 metros se estiver contra o vento ou 36 metros se estiver a favor do vento).\n\nVisão das Plantas (planta)\n\nVocê consegue enxergar através de folhas, trepadeiras, vegetação, mato e madeira viva como se fossem transparentes (você ainda não consegue enxergar através de madeira morta).\n\nSensação Aquática (água)\n\nVocê adquire percepção sísmica, mas só consegue detectar qualquer coisa em contato com o mesmo corpo d'água que você."
+    },
+    {
+      "id": "natureza-resistencia-a-elementos",
+      "name": "Resistência a Elementos (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode usar Resistência a Elementos como uma reação, mas, se o fizer, a duração é reduzida para 1 rodada."
+        }
+      ],
+      "body": "Você adquire resistência a um tipo específico de dano escolhido na lista de pacotes de protomancia aos quais você tem acesso.\n\n•Pacote Ar: dano de trovão\n\n•Pacote Terra: dano de concussão, perfuração ou corte\n\n•Pacote Fogo: dano de fogo\n\n•Pacote Metal: dano de raio\n\n•Pacote Planta: dano ácido\n\n•Pacote Água: dano de frio\n\nAprimoramento 1PM: Quando você resiste com sucesso ao dano do elemento escolhido, você também recupera 1d6 pontos de vida. Um indivíduo só pode se beneficiar da cura deste efeito uma vez por descanso curto ou longo. A quantidade de cura aumenta em 1d6 quando você atinge o 5º nível (2d6), o 11º nível (3d6) e o 17º nível (4d6)."
+    },
+    {
+      "id": "natureza-falar-com-feras",
+      "name": "Falar com Feras (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire a habilidade de compreender e se comunicar verbalmente com feras durante a duração. O conhecimento e a percepção de muitas feras são limitados por sua inteligência, mas, no mínimo, as feras podem lhe dar informações sobre locais e monstros próximos, incluindo tudo o que elas podem perceber ou perceberam no último dia. Você pode ser capaz de persuadir uma fera a lhe fazer um pequeno favor, a critério do Mestre."
+    },
+    {
+      "id": "natureza-falar-com-os-elementos",
+      "name": "Falar com os Elementos (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Espíritos da Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire uma habilidade extraordinária para falar com elementais e outros materiais, dependendo dos pacotes de protomancia que você possui.\n\nFalar com as Nuvens (ar)\n\nDurante a duração, você adquire o idioma Primordial e pode falar com nuvens de neblina ou bruma. Isso não é realmente feito com a fala, mas sim interagindo com a nuvem para descobrir o que mais a tocou, passou por ela, está escondido embaixo dela, etc. Você pode saber a profundidade, o peso, o tamanho e o número de pessoas que passaram por perto, mas não informações mais detalhadas.\n\nFalar com Pedra (terra)\n\nDurante a duração, você adquire o idioma Primordial e pode falar com pedras naturais ou trabalhadas. Isso não é realmente feito com a fala, mas sim tocando uma pedra para descobrir o que mais a tocou, passou por perto, o que está escondido embaixo dela, etc.\n\nVocê pode saber a profundidade, o peso, o tamanho e o número de pessoas que passaram por perto, mas não informações mais detalhadas.\n\nFalar com Fogo (fogo)\n\nDurante a duração, você adquire o idioma Primordial e pode falar com fogo ou fumaça. Isso não é realmente realizado através da fala, mas sim observando as chamas e a fumaça, você pode descobrir o que mais as tocou, passou por elas, o que é responsável por sua criação, etc. Você pode determinar o peso, o tamanho e o número de pessoas que passaram por perto, mas não informações mais detalhadas.\n\nFalar com Metal (metal)\n\nDurante a duração, você adquire o idioma Primordial e pode falar com minério natural ou metal trabalhado. Isso não é realmente realizado através da fala, mas sim tocando um pedaço de metal, você pode descobrir o que mais o tocou, o que o desgastou, passou por perto, o que está escondido dentro dele, detalhes de sua forja, etc. Você pode determinar a profundidade, o peso, o tamanho e o número de pessoas que passaram por perto, mas não informações mais detalhadas.\n\nFalar com Plantas (planta)\n\nDurante a duração, você adquire o idioma Primordial e pode falar com plantas e criaturas vegetais comuns. Você pode se comunicar com plantas e criaturas vegetais comuns, fazer perguntas e receber respostas delas. A percepção que uma planta normal tem do ambiente ao seu redor é limitada, portanto ela não será capaz de fornecer (ou reconhecer) descrições detalhadas de criaturas ou responder a perguntas sobre eventos fora de sua vizinhança imediata.\n\nFalar com a Água (água)\n\nDurante a duração, você adquire o idioma Primordial e pode falar com poças ou corpos d'água. Isso não é feito propriamente por meio da fala, mas sim mergulhando um membro na água para descobrir o que mais a tocou, passou por ela, o que está escondido dentro dela, etc. Você pode determinar a profundidade, o peso, o tamanho e o número de pessoas que passaram por perto, mas não informações mais detalhadas. Você pode falar com corpos d'água doce ou salgada e, se tentar conversar com corpos d'água particularmente grandes, como oceanos, só poderá obter informações de uma porção do corpo d'água, a uma distância máxima de 300 metros + 30 metros por nível."
+    },
+    {
+      "id": "natureza-protomancia-expandida",
+      "name": "Protomancia Expandida",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos de Natureza",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha e adquira um pacote de Natureza que você ainda não possua. Você pode selecionar este talento várias vezes, ganhando um novo pacote a cada vez."
+    },
+    {
+      "id": "natureza-mestre-dos-elementos",
+      "name": "Mestre dos Elementos",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos de Natureza",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você conta como possuindo três pacotes de Natureza adicionais à sua escolha ao determinar quais talentos (espírito) você pode adquirir e usar. Você pode escolher este talento duas vezes, o que permite que você conte como possuindo todos os pacotes. Se você posteriormente adquirir todos os pacotes de Natureza, exceto um, por vez que tiver adquirido este talento, você imediatamente o reconfigura para Protomancia Expandida. Habilidades de talentos (espírito) que escalam com habilidades de protomancia (como uma habilidade que causa dano ou determina o tamanho referenciando uma habilidade específica) funcionam normalmente de acordo com as estatísticas que essa habilidade teria se você a possuísse.\n\nPara fins de reconfiguração, possuir qualquer pacote de Natureza conta como possuir Mestre dos Elementos."
+    },
+    {
+      "id": "natureza-terremoto",
+      "name": "Terremoto (protomancia, terra)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "protomancia",
+        "terra"
+      ],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "text",
+          "text": "Forjar Terra"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "(concentração; requer terra, areia ou pedra) Você cria uma perturbação sísmica em um ponto no solo que você possa ver dentro do alcance. Durante a duração, um tremor intenso atravessa o solo em um círculo de até 30 metros de raio centrado nesse ponto e sacode criaturas e estruturas em contato com o solo nessa área.\n\nO solo na área torna-se terreno difícil. Cada criatura no solo que estiver concentrando-se deve fazer um teste de resistência de Constituição. Em caso de falha, a concentração da criatura é quebrada.\n\nAo conjurar esta magia e ao final de cada turno em que você se concentra nela, cada criatura no solo na área deve fazer um teste de resistência de Destreza. Em caso de falha, a criatura é derrubada.\n\nEsta magia pode ter efeitos adicionais dependendo do terreno na área, conforme determinado pelo Mestre.\n\nFissuras: Fissuras se abrem por toda a área da magia no início do seu próximo turno após conjurá-la. Um total de 1d6 dessas fissuras se abrem em locais escolhidos pelo Mestre. Cada uma tem 1d10 × 3 metros de profundidade, 3 metros de largura e se estende de uma borda da área da magia até o lado oposto. Uma criatura parada em um ponto onde uma fissura se abre deve ser bem-sucedida em um teste de resistência de Destreza\n\nou cairá dentro dela. Uma criatura que obtiver sucesso no teste se move com a borda da fissura à medida que ela se abre. Uma fissura que se abre sob uma estrutura faz com que ela desmorone automaticamente (veja abaixo).\n\nEstruturas: O tremor causa 50 pontos de dano de concussão a qualquer estrutura em contato com o solo na área quando você conjura a magia e no início de cada um dos seus turnos até o término da magia. Se uma estrutura cair para 0 pontos de vida, ela desaba e pode causar dano a criaturas próximas. Uma criatura a uma distância igual à metade da altura de uma estrutura deve fazer um teste de resistência de Destreza. Em caso de falha no teste de resistência, a criatura sofre 5d6 de dano de impacto, é derrubada e soterrada nos escombros, necessitando de um teste de Força (Atletismo) CD 20 como uma ação para escapar.\n\nO Mestre pode ajustar a CD para mais ou para menos, dependendo da natureza dos escombros. Em caso de sucesso no teste de resistência, a criatura sofre metade do dano e não cai nem é soterrada.",
+      "_needsReview": [
+        "prereq:unresolved:Forjar Terra"
+      ]
+    },
+    {
+      "id": "natureza-geiser-congelante",
+      "name": "Gêiser Congelante (protomancia, fogo e água)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "protomancia",
+        "fogo",
+        "agua"
+      ],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Pré-requisito: Esfera da Natureza (Criar Natureza, Termoturgia), 15º nível ou superior.\n\n(Concentração) Você cria uma explosão de água fervente que congela instantaneamente ao atingir seus alvos. Você cria uma erupção que surge de uma área de 3 metros quadrados de solo sólido dentro do alcance, estendendo-se por 9 metros no ar. Isso causa 5d6 de dano de fogo por rodada a todas as criaturas que iniciarem seu turno dentro da área afetada. Um teste de resistência de Destreza bem-sucedido reduz o dano à metade.\n\nA partir da segunda rodada da erupção do gêiser, a água que esfria rapidamente começa a cair sobre todos os alvos em um raio de 9 metros do gêiser (mas não no espaço onde o gêiser causa dano de fogo), durando o tempo do efeito de 1d4 rodadas. Qualquer criatura atingida por essa chuva congelante sofre 2d6 pontos de dano de frio a cada rodada e deve ser bem-sucedida em um teste de resistência de Força ou ficará presa pela camada de gelo que se forma sobre ela. Mesmo criaturas afetadas pelo gêiser principal que falharam em seu teste de resistência de Destreza, mas saíram da área da chuva congelante, ficam presas, pois a água sobre elas congela.\n\nCriaturas presas podem tentar um teste de resistência de Força como uma ação para escapar do gelo, ou outra criatura pode usar uma ação para quebrar o gelo ao redor da criatura presa. O gelo derrete naturalmente após um minuto em um dia normal."
+    },
+    {
+      "id": "natureza-aliado-natural",
+      "name": "Aliado Natural (espírito)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "espirito"
+      ],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "talent",
+          "id": "natureza-amigo-das-feras"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "(instantâneo) Você pode invocar criaturas específicas do tipo besta, elemental, fada ou planta de uma espécie que você designar (desde que o ND total combinado das criaturas seja igual ou menor que metade do seu nível), que então aparecerão em um local dentro do alcance no início do seu próximo turno e permanecerão por até 8 horas. Você não pode invocar mais criaturas do que o seu bônus de proficiência. Diferentemente de Amigo das Feras, este talento avançado não exige que haja criaturas desses tipos na área. As criaturas o ajudarão da melhor maneira possível, mas, a menos que o conjurador fale o idioma da criatura, apenas a comunicação básica será possível (atacar um inimigo, defender o conjurador, etc.). As criaturas também devem ser tratadas com justiça e não prestarão auxílio que seja obviamente suicida. Se maltratadas, elas podem se voltar contra você e atacá-lo.\n\nVocê não pode usar Aliado Natural mais de uma vez por descanso longo."
+    },
+    {
+      "id": "natureza-nuvem-persistente",
+      "name": "Nuvem Persistente (protomancia, água)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "protomancia",
+        "agua"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "talent",
+          "id": "natureza-dominio-da-nevoa"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Estendida (metaesfera)"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Aprimoramento 2PM: A duração das habilidades concedidas pelo talento Domínio da Névoa torna-se permanente. Você pode gastar uma ação para que o efeito se mova até 4,5 metros em qualquer direção. Se for alvo de uma habilidade da esfera do Clima ou estiver na área de efeito dela, o conjurador que usa a esfera do Clima deve fazer um teste de habilidade de conjuração contra a CD de resistência da sua esfera. Se o usuário da esfera do Clima for bem-sucedido, a névoa é neutralizada. Caso contrário, ela não está sujeita aos efeitos de clima não criado por magia. Você pode dissipar um efeito tornado permanente por este aprimoramento como uma ação.",
+      "_needsReview": [
+        "prereq:unresolved:Estendida (metaesfera)"
+      ]
+    },
+    {
+      "id": "natureza-ressurgimento-da-fenix",
+      "name": "Ressurgimento da Fênix (espírito, fogo)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "espirito",
+        "fogo"
+      ],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "action": "1 Reação",
+      "duration": "Instantânea",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "talent",
+          "id": "natureza-carapaca-da-natureza"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando seus pontos de vida forem reduzidos a 0, você pode explodir em uma bola de fogo, causando 1d6 de dano de fogo para cada dois níveis em uma esfera de 4,5 metros de raio. Um teste de resistência de Destreza bem-sucedido reduz esse dano à metade. No início do seu próximo turno, você retorna à vida com um número de pontos de vida igual ao seu nível.\n\nO raio aumenta em 1,5 metro no 11º nível (6 metros) e no 17º nível (7,5 metros)."
+    },
+    {
+      "id": "natureza-crescimento-rapido",
+      "name": "Crescimento Rápido (protomancia, planta)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "protomancia",
+        "planta"
+      ],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "talent",
+          "id": "natureza-criar-natureza"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "(instantâneo) Você pode criar um crescimento massivo de plantas. Isso afeta uma área de até 1,6 quilômetros de uma das seguintes maneiras:\n\nAlterar Terreno: Você pode alterar o terreno nesta área para floresta ou selva. Isso não faz com que animais nativos da floresta ou selva apareçam, nem garante que o tipo de terreno permanecerá assim indefinidamente (algumas áreas, como desertos ou altas montanhas, não suportam florestas ou selvas, e uma floresta ou selva criada nesses locais pode desaparecer com o tempo), mas, em todos os outros aspectos, o terreno muda para o tipo selecionado.\n\nAprimorar Floresta: Se usado em uma área que já contém uma floresta ou selva, você pode fazer com que a área cresça rapidamente. Árvores comuns se tornam árvores gigantescas, todas as áreas ficam cobertas por vegetação rasteira e áreas já cobertas por vegetação rasteira ganham vegetação rasteira densa.\n\nUma criatura parada no mesmo quadrado que uma árvore comum ganha cobertura parcial, o que concede um bônus de +2 na Classe de Armadura e nos testes de resistência de Destreza. A presença de uma árvore não afeta o espaço de combate de uma criatura, pois presume-se que a criatura esteja usando a árvore a seu favor quando possível.\n\nÁrvores gigantescas ocupam um quadrado inteiro e fornecem cobertura de três quartos (+5 na CA e nos testes de resistência de Destreza) para qualquer criatura atrás delas. Espaços cobertos por vegetação rasteira são terrenos difíceis e criaturas parcialmente escondidas neles. Quadrados com vegetação rasteira geralmente estão agrupados. Vegetação rasteira e árvores não são mutuamente exclusivas; é comum um quadrado de 1,5 metro conter tanto uma árvore quanto vegetação rasteira.\n\nAumentar a Produção: Se usado em uma área de cultivo, você dobra a produção agrícola nessa área pelo restante da temporada de colheita. Isso não tem efeito se usado no inverno ou em outras épocas em que as plantações não estão sendo cuidadas."
+    },
+    {
+      "id": "natureza-tsunami",
+      "name": "Tsunami (protomancia, água)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "protomancia",
+        "agua"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "talent",
+          "id": "natureza-dominio-da-agua"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "(concentração; requer água) Você cria uma onda de água dentro do alcance. Você pode criar uma onda de até 90 metros de comprimento, 90 metros de altura e 15 metros de espessura. A onda dura pelo tempo especificado.\n\nQuando a onda aparece, cada criatura dentro de sua área deve fazer um teste de resistência de Força. Em caso de falha no teste de resistência, a criatura sofre 6d10 de dano de impacto, ou metade disso em caso de sucesso.\n\nAo criar a onda, escolha uma direção. No início de cada um dos seus turnos após o surgimento da onda, ela se move 15 metros na direção escolhida. Qualquer criatura Enorme ou menor dentro da parede, ou cujo espaço a parede atravesse ao se mover, deve ser bem-sucedida em um teste de resistência de Força ou sofrer 5d10 de dano de impacto. Uma criatura só pode sofrer esse dano uma vez por rodada. Ao final do turno, a altura da onda é reduzida em 15 metros, e o dano que as criaturas sofrem pelo efeito nas rodadas subsequentes é reduzido em 1d10. Quando a onda atinge 0 metros de altura, o efeito termina.\n\nUma criatura atingida pela onda pode se mover nadando. Devido à força da onda, porém, a criatura deve ser bem-sucedida em um teste de Força (Atletismo) contra a CD da sua esfera para conseguir se mover. Se falhar no teste, ela não poderá se mover. Uma criatura que se move para fora da área cai no chão."
+    },
+    {
+      "id": "natureza-vulcao",
+      "name": "Vulcão (protomancia, fogo)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "protomancia",
+        "fogo"
+      ],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "talent",
+          "id": "natureza-termoturgia"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "(concentração) Você pode invocar lava das profundezas da terra. Essa lava irrompe de um buraco de 3 metros de largura no chão, centralizado dentro do alcance, e cria um jato de até 30 metros de altura. Qualquer criatura nesta área ou que entre nela sofre 10d6 pontos de dano de fogo e é arremessada para o ar e depois jogada ao chão. Um teste de resistência de Destreza bem-sucedido reduz o dano de fogo à metade e a criatura não é arremessada para o ar, mas sim se move para o quadrado adjacente mais próximo ao gêiser (criaturas de tamanho Grande ou maiores se movem o suficiente para não ficarem em cima do gêiser, mas ainda adjacentes a ele).\n\nEsse movimento não provoca ataques de oportunidade e não conta para o movimento normal da criatura. Se a criatura falhar no teste de resistência, ela sofre o dano total de fogo e também sofre dano de queda com base na altura do jato vulcânico (10d6 ou menos, dependendo da altura que o jato pode alcançar) e cai de bruços em um quadrado aleatório adjacente ao jato.\n\nAlém disso, o vulcão expele lava, fumaça e gás venenoso em um cilindro ao seu redor. O raio desse\n\ncilindro é igual à metade da altura do vulcão (por exemplo, um jato de 30 metros tem um cilindro com raio de 15 metros). Todas as criaturas dentro dessa área, incluindo você, ficam fortemente obscurecidas e sofrem 2d6 pontos de dano de fogo a cada rodada enquanto a lava cai sobre elas. Eles também devem ser bem-sucedidos em um teste de resistência de Constituição ou serão envenenados até que iniciem seu turno fora da área afetada. Mesmo depois que uma criatura deixa a área cheia de lava, ela sofre 1d6 pontos de dano de fogo no início de cada turno por 1d3 rodadas, enquanto a lava que já a atingiu esfria.\n\nUm vulcão deve ser criado no solo e não pode ser criado em outros lugares, como no segundo andar de um prédio. Você pode optar por criar um vulcão menor se uma obstrução o impedir de atingir sua altura máxima, ou se simplesmente quiser criar uma área de lava menor que a sua altura máxima."
+    },
+    {
+      "id": "natureza-vento-sussurrante",
+      "name": "Vento Sussurrante (espírito, ar)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "espirito",
+        "ar"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "duration": "Instantânea",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "(Requer ar) Você pode enviar uma mensagem ou som pelo vento para um local designado dentro de 1,6 km por nível. A mensagem tem 1 hora por nível para chegar ao seu destino. A mensagem viaja até o destino, desde que o local seja familiar para você e que você consiga chegar lá. No momento da conjuração, você pode preparar o efeito para transmitir uma mensagem de no máximo 20 + seu nível de palavras, fazer com que o talento emita outros sons por 1 rodada, ou simplesmente fazer com que a mensagem pareça ser um leve movimento do ar. Você também pode fazer com que o vento que carrega a mensagem se mova a uma velocidade de até 1,6 km por hora, ou a uma velocidade de até 1,6 km a cada 10 minutos.\n\nQuando a mensagem atinge seu objetivo, ela gira e permanece no mesmo lugar até ser entregue, momento em que a magia é dissipada. A mensagem não pode falar componentes verbais, usar palavras de comando ou ativar efeitos mágicos.\n\nA mensagem é tão suave e imperceptível quanto uma brisa até atingir o local. Ela então transmite sua mensagem sussurrada ou outro som para todas as criaturas a até 3 metros do destino. Observe que a mensagem é entregue independentemente de haver alguém presente para ouvi-la. O vento então se dissipa.\n\nA área afetada aumenta em pés no 5º nível (15 pés), 11º nível (20 pés) e 17º nível (25 pés)."
+    },
+    {
+      "id": "natureza-incendio-florestal",
+      "name": "Incêndio Florestal (protomancia, fogo)",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Natureza",
+      "tags": [
+        "protomancia",
+        "fogo"
+      ],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Alcance (metasfera) (3)"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 3,
+          "text": "Ao usar afetar fogo, você pode emitir uma rajada de calor que atinge tudo em um raio de até 1000 pés. Criaturas e objetos inflamáveis atingidos pelo raio de efeito sofrem 2d8 de dano de fogo e pegam fogo. Um teste de resistência de Destreza bem-sucedido reduz o dano à metade e impede que o objeto pegue fogo. Esse dano aumenta em 1d8 no 11º nível (3d8) e no 17º nível (4d8)."
+        },
+        {
+          "pm": 2,
+          "text": "O dano causado aumenta para 1d8 + 1d8 a cada dois níveis."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Alcance (metasfera) (3)"
+      ]
+    },
+    {
+      "id": "natureza-espirito-da-natureza",
+      "name": "Espírito da Natureza",
+      "sphere": "natureza",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode usar habilidades de protomancia, apenas talentos (espírito). Você deve escolher um pacote normalmente, mas não ganha nenhuma de suas habilidades de protomancia, contando apenas como possuindo o pacote para fins de qualificação para talentos (espírito). Você ganha um talento (espírito) de sua escolha como talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

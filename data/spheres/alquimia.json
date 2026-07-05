@@ -1,0 +1,1388 @@
+{
+  "id": "alquimia",
+  "name": "Alquimia",
+  "section": "martial",
+  "summary": "Combinar substâncias voláteis para criar fórmulas, bombas e venenos.",
+  "theme": {
+    "h": 158,
+    "s": 52,
+    "sig": "alquimia"
+  },
+  "acquisition": {
+    "packages": {
+      "label": "Pacote base",
+      "options": [
+        {
+          "id": "formula",
+          "label": "Fórmula",
+          "freeGroup": {
+            "tag": "fórmula"
+          },
+          "freeLabel": "fórmula",
+          "freePicks": 1,
+          "talentTags": [
+            "fórmula"
+          ],
+          "conditionals": [
+            {
+              "requires": "Suprimentos de alquimista",
+              "addPicks": 1
+            }
+          ]
+        },
+        {
+          "id": "veneno",
+          "label": "Veneno",
+          "freeGroup": {
+            "tag": "veneno"
+          },
+          "freeLabel": "veneno",
+          "freePicks": 1,
+          "talentTags": [
+            "veneno"
+          ],
+          "conditionals": [
+            {
+              "requires": "Kit de envenenador",
+              "addPicks": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "talents": [
+    {
+      "id": "m-alquimia-receita-alquimica",
+      "name": "Receita Alquímica",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Pacote de Fórmula",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha um talento de (fórmula) à sua escolha."
+    },
+    {
+      "id": "m-alquimia-afinidade-com-ferramentas-suprimentos-de-alquimista",
+      "name": "Afinidade com Ferramentas: Suprimentos de Alquimista",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Pacote de Fórmula",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha proficiência com suprimentos de alquimista. Se você já for proficiente com suprimentos de alquimista, ganha um talento adicional de (fórmula) à sua escolha."
+    },
+    {
+      "id": "m-alquimia-receita-de-veneno",
+      "name": "Receita de Veneno",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Pacote de Veneno",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Adquira um talento de veneno à sua escolha."
+    },
+    {
+      "id": "m-alquimia-afinidade-com-ferramentas-kits-de-envenenador",
+      "name": "Afinidade com Ferramentas: Kits de Envenenador",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Pacote de Veneno",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha proficiência com kits de envenenador. Se você já for proficiente com kits de envenenador, ganha um talento de veneno adicional à sua escolha."
+    },
+    {
+      "id": "m-alquimia-ferramentas-necessarias",
+      "name": "Ferramentas Necessárias",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Criação de Fórmulas ou Venenos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Desde que você possua suprimentos de alquimista (para fórmulas) ou um kit de envenenador (para venenos) e seja proficiente, presume-se que você tenha todas as ferramentas e materiais necessários para criar fórmulas ou venenos da esfera de Alquimia; o restante dos ingredientes é facilmente coletado ou armazenado durante suas viagens e não tem custo padrão."
+    },
+    {
+      "id": "m-alquimia-numero-maximo-de-formulas-ou-venenos-criados",
+      "name": "Número Máximo de Fórmulas ou Venenos Criados",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Criação de Fórmulas ou Venenos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Devido à natureza volátil dos itens, você não pode ter mais fórmulas e venenos criados ao mesmo tempo do que um número igual ao seu bônus de proficiência + o número de talentos da esfera de Alquimia que você possui; fórmulas e venenos se tornam inertes após um dia se não forem usados."
+    },
+    {
+      "id": "m-alquimia-conjuntos",
+      "name": "Conjuntos",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Criação de Fórmulas ou Venenos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Existem várias fórmulas e venenos que devem ser criados em conjuntos. Um conjunto conta como uma única fórmula ou veneno, independentemente de quantas fórmulas ou venenos o compõem. Por exemplo, um conjunto contendo 3 poções conta como apenas uma fórmula ao determinar quantas fórmulas você pode ter criadas ao mesmo tempo."
+    },
+    {
+      "id": "m-alquimia-usando-formulas",
+      "name": "Usando Fórmulas",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Criação de Fórmulas ou Venenos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "As fórmulas podem ser bebidas ou aplicadas a um aliado adjacente disposto como uma Ação. Algumas fórmulas também podem ser arremessadas como uma arma improvisada com um alcance normal de 6 metros e um alcance longo de 18 metros. Fórmulas arremessadas como armas improvisadas não causam dano, a menos que especificado de outra forma, mas se quebram ao impacto, aplicando seus efeitos ao alvo ou objeto contra o qual são arremessadas."
+    },
+    {
+      "id": "m-alquimia-usando-venenos",
+      "name": "Usando Venenos",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Criação de Fórmulas ou Venenos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Todos os venenos funcionam como venenos ingeríveis ou de contato, a menos que modificados por outro talento. Aplicar um veneno de contato ou de ferimento a uma arma é uma Ação, e a próxima criatura que sofrer dano dessa arma (dentro de 1 minuto) sofrerá seus efeitos."
+    },
+    {
+      "id": "m-alquimia-aplicando-a-uma-arma",
+      "name": "Aplicando a uma Arma",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Criação de Fórmulas ou Venenos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Algumas fórmulas também podem ser aplicadas a armas, conforme indicado no talento relevante. Você só pode ter uma única fórmula ou veneno aplicado a uma arma por vez; aplicar outro faz com que o item aplicado anteriormente se torne inerte."
+    },
+    {
+      "id": "m-alquimia-potencia",
+      "name": "Potência",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Criação de Fórmulas ou Venenos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar um item alquímico ou um veneno cujo nome corresponda a um talento que você possui, qualquer teste de resistência que ele exija usa sua CD de Esfera em vez de sua CD normal, se for maior.\n\nVocê pode gastar seu foco marcial para aumentar os efeitos de certos venenos e itens alquímicos ao usá-los, arremessá-los ou aplicá-los a uma arma. Os efeitos dessa potência aumentada são listados para cada item individualmente. Você pode usar essa habilidade não apenas com itens que você criou, mas também com itens comprados ou fabricados com o mesmo nome."
+    },
+    {
+      "id": "m-alquimia-potencia-com-venenos",
+      "name": "Potência com Venenos",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Criação de Fórmulas ou Venenos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você aplica potência a um veneno, o veneno também inflige a condição envenenado por 1 rodada. Criaturas envenenadas devem, no início de cada rodada, fazer um novo teste de resistência. Se obtiverem sucesso no teste de resistência, não estarão mais envenenadas.\n\nFalhar no teste de resistência resulta na criatura mantendo quaisquer efeitos negativos do veneno que já sofreu por mais uma rodada, além de sofrer os efeitos do veneno novamente (incluindo a condição envenenado)."
+    },
+    {
+      "id": "m-alquimia-bomba-de-luz",
+      "name": "Bomba de Luz (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria uma bomba de luz. Ao atingir o alvo, ele deve fazer um teste de resistência de Constituição ou ficará cego por 1 rodada. Ao final de cada um de seus turnos, o alvo pode fazer um novo teste de resistência de Constituição para encerrar o efeito mais cedo.\n\nPotência: Gaste Foco Marcial. A duração da cegueira aumenta para 1 minuto."
+    },
+    {
+      "id": "m-alquimia-graxa",
+      "name": "Graxa (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de graxa. Alvos afetados pela graxa têm vantagem em testes de habilidade para escapar de amarras, restrições ou agarrões, mas desvantagem em testes de Atletismo, Acrobacia e em testes de resistência de Destreza contra efeitos que causam dano de fogo ou que fazem uma criatura pegar fogo. Se aplicada em terreno aberto, cria um quadrado de 1,5 m que conta como terreno difícil. Qualquer criatura que entrar na área ou terminar seu turno nela deve ser bem-sucedida em um teste de resistência de Destreza ou cairá no chão.\n\nA graxa dura 1 rodada, mas uma criatura pode encerrar esse efeito gastando uma ação para remover a graxa.\n\nPotência: Gaste Foco Marcial. Ao jogar ou aplicar a graxa, a duração da graxa aumenta para 1 minuto."
+    },
+    {
+      "id": "m-alquimia-resina-de-madeira-de-ferro",
+      "name": "Resina de Madeira de Ferro (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Esta resina alquímica de secagem rápida pode ser usada para criar objetos sólidos, despejando-a em um molde adequado. Um único frasco de resina de madeira de ferro é capaz de preencher um molde para um objeto não maior que o tamanho Mínimo.\n\nO tempo de secagem e endurecimento depende do material do molde; a resina de madeira de ferro não reage ao vidro e, portanto, é frequentemente transportada em recipientes de vidro.\n\nMolde Orgânico: Leva aproximadamente 1 hora para secar e endurecer completamente.\n\nMolde de Matéria Vegetal: Requer cerca de 10 minutos para secar e endurecer.\n\nMolde de Metal: Endurece em cerca de 1 minuto.\n\nMolde de Pedra ou Argila: Seca e endurece em 1 rodada (cerca de 6 segundos).\n\nMolde de Espuma: Seca e endurece instantaneamente ao ser despejada."
+    },
+    {
+      "id": "m-alquimia-po-de-coceira",
+      "name": "Pó de Coceira (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de pó de coceira. Ao atingir o alvo, ele fica com uma coceira intensa por 1 rodada. Sempre que o alvo fizer uma jogada de ataque, teste de resistência ou teste de habilidade, ele deve rolar um d4 e subtrair o número rolado. Uma criatura pode encerrar esta penalidade usando sua ação para fazer um teste de Sabedoria (Medicina) contra a CD da sua esfera de Alquimia para limpar a criatura do pó, usando a habilidade de restauração da esfera da Vida ou conjurando uma restauração menor. Mergulhar o corpo do alvo em água também remove este efeito. Isso conta como envenenamento para fins de remoção ou imunidade.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\nAplicar a uma arma como veneno. A próxima criatura que sofrer dano da arma dentro de 1 minuto estará sujeita aos efeitos do pó irritante por 1 rodada.\n\nLançar. A duração das penalidades do pó irritante aumenta para 1 minuto."
+    },
+    {
+      "id": "m-alquimia-espuma-moldavel",
+      "name": "Espuma Moldável (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Esta substância alquímica, embora originalmente destinada a artesãos, foi adotada por indivíduos astutos para criar moldes falsificados de obras de arte e chaves. A espuma não é permanentemente flexível e seca e endurece após oito horas. Além disso, não deixa resíduos em criaturas ou objetos. Depois de moldada, ela mantém sua forma, mas pode ser facilmente remodelada posteriormente, desde que não tenha secado."
+    },
+    {
+      "id": "m-alquimia-estimulante-de-desempenho",
+      "name": "Estimulante de Desempenho (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar esta fórmula, escolha um atributo; o alvo ganha vantagem em testes de habilidade com esse atributo por 1 minuto. O alvo sofre desvantagem em testes de habilidade e testes de resistência com o atributo correspondente pela mesma duração. Força corresponde a Inteligência, Destreza a Sabedoria e Constituição a Carisma. Depois que alguém se beneficia deste estimulante, não pode fazê-lo novamente até completar um descanso curto ou longo. Ao arremessar um estimulante de desempenho, um aliado ciente de você pode optar por não evitar o ataque, caso em que você acerta automaticamente.\n\nPotência: Gaste Foco Marcial. O estimulante de desempenho não impõe desvantagem ao alvo afetado em testes de habilidade e testes de resistência com o atributo correspondente."
+    },
+    {
+      "id": "m-alquimia-bomba-de-fumaca",
+      "name": "Bomba de Fumaça (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria uma bomba de fumaça que explode em uma nuvem de fumaça densa. Ao arremessar a bomba de fumaça, ela cria uma nuvem de 3 metros de raio centrada em um ponto dentro do alcance. A nuvem se espalha pelos cantos e sua área fica fortemente obscurecida. Dura 1 rodada ou até que um vento de velocidade moderada ou superior (pelo menos 16 km/h) a disperse.\n\nPotência: Gaste Foco Marcial. A duração da nuvem aumenta para 1 minuto."
+    },
+    {
+      "id": "m-alquimia-po-de-espirro",
+      "name": "Pó de Espirro (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de pó de espirro. Em caso de acerto, o alvo deve ser bem-sucedido em um teste de resistência de Constituição ou sucumbir a espirros incontroláveis, ficando incapacitado por 1 rodada.\n\nEnquanto o alvo estiver consciente, ele pode repetir o teste de resistência no final de cada um de seus turnos, encerrando o efeito em caso de sucesso. Além disso, outra criatura pode encerrar essas penalidades usando sua ação para fazer um teste de Sabedoria (Medicina) contra a CD da sua esfera de Alquimia para limpar a criatura do pó, usando a habilidade de restauração da esfera da Vida ou conjurando uma restauração menor. Mergulhar a cabeça do alvo na água também remove esse efeito. Isso conta como veneno para fins de remoção e resistência a venenos.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\nAplicar a uma arma como veneno. A próxima criatura que sofrer dano dessa arma em até 1 minuto estará sujeita aos efeitos do pó de espirro por 1 rodada.\n\nArremessar. A duração das penalidades do pó de espirro aumenta para 1 minuto."
+    },
+    {
+      "id": "m-alquimia-bomba-de-mau-cheiro",
+      "name": "Bomba de Mau Cheiro (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um óleo que libera um gás fétido ao ser quebrado. A maioria dos humanoides consegue sentir o cheiro a até 30 metros de distância, mas só precisa fazer um teste de resistência de Constituição se entrar ou começar seu turno a até 3 metros do ponto de impacto. Uma falha resulta em 1 ponto de dano de veneno e envenenamento até o início do seu próximo turno.\n\nCriaturas com olfato apurado podem detectar a nuvem a 300 metros de distância e são afetadas em um raio de 30 metros do ponto de impacto. A nuvem permanece por 1 minuto.\n\nCriaturas com visão às cegas ou percepção às cegas baseada em olfato perdem essa percepção enquanto puderem detectar a nuvem.\n\nPotência: Gaste Foco Marcial. Aumente o dano de veneno em caso de falha no teste de resistência em 1 (2 de dano). Esse dano aumenta novamente nos níveis 5 (3 de dano), 11 (4 de dano) e 17 (5 de dano)."
+    },
+    {
+      "id": "m-alquimia-pintura-de-guerra",
+      "name": "Pintura de Guerra (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "A Pintura de Guerra não pode ser bebida, aplicada por arremesso ou aumentada por Aplicação Gasosa.\n\nVocê adquire o conhecimento de duas cores de pintura de guerra ao obter este talento; você pode criar um pigmento de pintura de guerra a partir de uma lista de cores que você conhece, escolhida no momento da criação da fórmula. A pintura de guerra pode ser aplicada em qualquer parte visível do corpo — geralmente no rosto, ombros, pernas ou braços, ou até mesmo em armaduras ou roupas.\n\nUma criatura só pode se beneficiar de uma cor de pintura de guerra por vez — aplicar uma dose de uma cor diferente substitui os efeitos da aplicação anterior. Uma vez aplicada, os efeitos da pintura de guerra duram 1 hora. Você pode selecionar este talento várias vezes; a cada vez, você adquire o conhecimento de mais duas cores de pintura de guerra. A pintura de guerra tem os seguintes efeitos, dependendo da cor:\n\n•Preto: Vantagem em testes de Destreza (Furtividade).\n\n•Azul: Aumenta sua velocidade de movimento em 3 metros.\n\n•Marrom: Ganha resistência a dano cortante não mágico.\n\n•Cromado: Ganha um bônus de +1 em jogadas de ataque.\n\n•Diamante: Ganha resistência a dano de força.\n\n•Verde: Ganha resistência a dano necrótico.\n\n•Dourado: Vantagem em testes de resistência contra a morte.\n\n•Índigo: Ganha resistência a dano elétrico.\n\n•Bordô: Ganha resistência a dano perfurante não mágico.\n\n•Menta: Vantagem em testes de Carisma (Intimidação).\n\n•Azul-marinho: Ganha resistência a dano trovejante.\n\n•Oliva: Ganha resistência a dano de veneno.\n\n•Laranja: Ganha resistência a dano de concussão não mágico.\n\n•Rosa: Ganha resistência a dano psíquico.\n\n•Roxo: Ganha resistência a dano ácido.\n\n•Vermelho: Ganha resistência a dano de fogo.\n\n•Prata: Ganha um bônus de +1 na CA.\n\n•Turquesa: Ganha resistência a dano de frio.\n\n•Branco: Ganha resistência a dano radiante.\n\n•Amarelo: Vantagem em testes de Sabedoria (Percepção)."
+    },
+    {
+      "id": "m-alquimia-saco-de-cola",
+      "name": "Saco de Cola (fórmula, contrabando)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (contrabando)",
+      "tags": [
+        "formula",
+        "contrabando"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de cola que prende o alvo. Ao acertar, a velocidade do alvo é reduzida a 0. Uma criatura voadora (assumindo que use asas para voar) cai no chão. Um saco de cola não funciona debaixo d'água.\n\nO efeito dura 1 rodada, mas uma criatura pode encerrar o efeito gastando uma ação para remover a cola.\n\nPotência: Gaste Foco Marcial. A duração do efeito do saco de cola aumenta para 1 minuto."
+    },
+    {
+      "id": "m-alquimia-antitoxina",
+      "name": "Antitoxina (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma criatura que bebe este frasco de líquido ganha vantagem em testes de resistência contra veneno por 1 hora. Não confere nenhum benefício a Mortos-Vivos ou Construtos.\n\nPotência: Gaste Foco Marcial. A criatura também ganha vantagem em testes de resistência contra maldições e doenças. Além disso, os efeitos aumentam em duração em 1 hora nos níveis 5 (2 horas), 11 (3 horas) e 17 (4 horas)."
+    },
+    {
+      "id": "m-alquimia-formula-de-concentracao",
+      "name": "Fórmula de Concentração (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria uma poção que restaura o vigor em combate. Qualquer um que beba a poção ou que ela seja aplicada a ele recupera o foco marcial. Criaturas que não possuem a característica foco marcial ganham temporariamente a característica por 1 minuto.\n\nUma criatura pode gastar seu foco marcial antes de fazer qualquer teste de resistência de Força, Destreza ou Constituição para tratar o dado como se tivesse rolado um 10. Este foco marcial conta como possuindo a característica Esferas de Poder de mesmo nome para fins de interação com outros talentos, características e habilidades marciais."
+    },
+    {
+      "id": "m-alquimia-kit-de-curandeiro",
+      "name": "Kit de Curandeiro (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Este kit é um uso único do kit de mesmo nome. Como uma ação, você pode estabilizar uma criatura que tenha 0 pontos de vida, sem precisar fazer um teste de Sabedoria (Medicina).\n\nPotência: Gaste Foco Marcial. A criatura pode então gastar imediatamente um de seus Dados de Vida para recuperar um número de pontos de vida igual ao valor máximo desse Dado de Vida + seu modificador de Constituição."
+    },
+    {
+      "id": "m-alquimia-panaceia",
+      "name": "Panaceia (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Um personagem que tenha este óleo aplicado pode repetir um teste de resistência para encerrar uma das seguintes condições: Cegueira, encantamento, surdez, medo ou envenenamento. Administrar uma panaceia leva uma ação.\n\nPotência: Gaste Foco Marcial. Encerre a condição escolhida."
+    },
+    {
+      "id": "m-alquimia-sangue-potente",
+      "name": "Sangue Potente (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um substituto artificial não mágico para a substância vital de uma criatura, seja sangue, seiva, icor, substâncias elementais ou similares. Qualquer pessoa que consumir o sangue potente recupera 1d4 dos seus pontos de vida máximos perdidos;\n\nIsso não aumenta seus pontos de vida atuais, nem pode elevar os pontos de vida de uma criatura além do seu máximo normal.\n\nPotência: Gaste Foco Marcial. O alvo recupera 1d4 pontos de vida máximos adicionais (2d4), aumentando em mais 1d4 no 5º nível (3d4), 11º nível (4d4) e 17º nível (5d4)."
+    },
+    {
+      "id": "m-alquimia-conservante",
+      "name": "Conservante (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Objetos perecíveis podem ser revestidos com esta substância para evitar que estraguem por 1 hora. Se aplicada a um membro decepado ou corpo morto, impedirá a necrose, a progressão de doenças, bem como a reanimação durante esse período.\n\nPotência: Gaste Foco Marcial. A duração aumenta para 2 horas. A duração aumenta em mais 2 horas nos níveis 5 (4 horas), 11 (6 horas) e 17 (8 horas)."
+    },
+    {
+      "id": "m-alquimia-pomada",
+      "name": "Pomada (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Um personagem que tenha esta pomada aplicada pode gastar um de seus Dados de Vida. A criatura então rola o dado e adiciona seu modificador de Constituição ao resultado. A criatura recupera pontos de vida iguais ao total (mínimo de 1).\n\nUma criatura sem Dados de Vida restantes não pode se beneficiar da pomada. Administrar a pomada leva uma ação.\n\nPotência: Gaste Foco Marcial. Uma criatura que gasta um de seus Dados de Vida para cura recupera pontos de vida equivalentes a dois Dados de Vida, com o modificador de Constituição aplicado duas vezes. Essa cura extra aumenta em um Dado de Vida nos níveis 5 (3 Dados de Vida), 11 (4 Dados de Vida) e 17 (5 Dados de Vida), com o modificador de Constituição aplicado a cada vez."
+    },
+    {
+      "id": "m-alquimia-desinfetante",
+      "name": "Desinfetante (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aplicar esta substância em objetos removerá quaisquer doenças ou venenos que estejam contaminando o objeto.\n\nAplicar esta substância em criaturas impedirá que elas contaminem ou infectem outras criaturas ou objetos com doenças por 1 minuto, mas não tem nenhum outro efeito em uma criatura doente ou envenenada.\n\nPotência: Gaste Foco Marcial. Aplicar esta substância em criaturas impedirá que elas contaminem ou infectem outras criaturas ou objetos por 1 hora."
+    },
+    {
+      "id": "m-alquimia-sais-aromaticos",
+      "name": "Sais Aromáticos (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria uma bolsa de pó com um odor forte e pungente. Ao jogar os sais aromáticos, cria-se uma nuvem de 3 metros de raio centrada em um ponto dentro do alcance. Criaturas que inalarem o pó devem ser bem-sucedidas em um teste de resistência de Constituição ou serão forçadas a ficar conscientes e sofrerão de anosmia por 1 minuto.\n\nUma criatura com anosmia não pode se beneficiar de um olfato aguçado e não pode rastrear uma criatura pelo cheiro. Uma criatura que está inconsciente por ter sido reduzida a 0 pontos de vida ainda é despertada pelos sais aromáticos em caso de falha no teste de resistência, mas ainda permanece incapacitada.\n\nPotência: Gaste Foco Marcial. Além disso, criaturas moribundas dentro da nuvem se estabilizam. Criaturas afetadas podem optar por resistir à estabilização com um teste de resistência de Constituição bem-sucedido."
+    },
+    {
+      "id": "m-alquimia-guloseimas",
+      "name": "Guloseimas (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "As guloseimas são sempre criadas em conjuntos iguais ao seu bônus de proficiência. Uma criatura pode usar uma ação bônus para comer uma dessas guloseimas e ganhar pontos de vida temporários iguais ao seu bônus de proficiência por 8 horas."
+    },
+    {
+      "id": "m-alquimia-sangue-de-troll",
+      "name": "Sangue de Troll (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (médico)",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aplicar esta substância sobre uma amputação recente permitirá que o membro decepado seja reimplantado. Uma vez aplicada, o membro decepado deve ser reimplantado em até 1 minuto.\n\nApenas membros frescos ou preservados podem ser reimplantados, e tentar reimplantar membros que não sejam do próprio corpo geralmente resulta na rejeição do membro pelo hospedeiro ou em outros efeitos colaterais graves.\n\nPotência: Gaste Foco Marcial. A cada rodada, durante a duração do efeito, o alvo ganha um número de pontos de vida temporários igual à metade do seu bônus de proficiência. Esses pontos de vida temporários não se acumulam."
+    },
+    {
+      "id": "m-alquimia-acido-formula-arma-acido",
+      "name": "Ácido (fórmula, arma) [ácido]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de ácido que causa 2d6 de dano de ácido ao atingir um alvo. O ácido também pode ser lançado em uma criatura a até 1,5 metro de você como um ataque corpo a corpo com uma arma improvisada.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como Veneno. A arma causa 1d6 de dano de ácido adicional por 1 minuto.\n\n•Lançar ou Espirrar. O dano do frasco de ácido aumenta em 1d6 (3d6) e novamente em 1d6 nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
+    },
+    {
+      "id": "m-alquimia-fogo-alquimico-formula-arma-fogo",
+      "name": "Fogo Alquímico (fórmula, arma) [fogo]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de fogo alquímico que causa 1d4 de dano de fogo. Qualquer criatura danificada pelo fogo alquímico sofre 1d4 de dano adicional no início de cada um de seus turnos. Uma criatura pode encerrar esse dano usando sua ação para fazer um teste de resistência de Destreza contra a CD da sua esfera de Alquimia para apagar as chamas; rolar no chão concede vantagem no teste de resistência. Saltar em um grande corpo de água ou apagar as chamas magicamente extingue o fogo automaticamente.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como Veneno. A arma causa 1d6 de dano de fogo adicional por 1 minuto.\n\n•Lançar. Tanto o dano inicial quanto o dano subsequente a cada turno aumentam em 1d4 (2d4) e novamente em 1d4 nos níveis 5 (3d4), 11 (4d4) e 17 (5d4)."
+    },
+    {
+      "id": "m-alquimia-gelo-alquimico-formula-arma-frio",
+      "name": "Gelo Alquímico (fórmula, arma) [frio]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de gelo alquímico que causa 1d6 de dano de frio a um alvo quando lançado. Criaturas danificadas pelo gelo alquímico têm sua velocidade de movimento reduzida em 3 metros por 1 rodada.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como Veneno. A arma causa 1d6 de dano de frio adicional por 1 minuto.\n\n•Lançar. O dano do gelo alquímico aumenta em 1d6 (2d6) e novamente em 1d6 nos níveis 5 (3d6), 11 (4d6) e 17 (5d6)."
+    },
+    {
+      "id": "m-alquimia-relampago-engarrafado-formula-arma-eletrico",
+      "name": "Relâmpago Engarrafado (fórmula, arma) [elétrico]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de relâmpago engarrafado que causa 1d8 de dano elétrico. Você tem vantagem em jogadas de ataque com relâmpago engarrafado contra criaturas feitas de metal ou que estejam usando armadura de metal.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como veneno. A arma causa 1d6 de dano elétrico adicional por 1 minuto.\n\n•Arremessar. O dano do relâmpago engarrafado aumenta em 1d8 (2d8) e novamente em 1d8 nos níveis 5 (3d8), 11 (4d8) e 17 (5d8)."
+    },
+    {
+      "id": "m-alquimia-bombas-de-cereja-formula-arma-forca",
+      "name": "Bombas de Cereja (fórmula, arma) [força]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "As bombas de cereja são sempre criadas em conjuntos iguais ao seu bônus de proficiência, chamados de aglomerado. Bombas de cereja individuais podem ser separadas do aglomerado, sem necessidade de ação, mas tornam-se inertes se não forem usadas em 1 rodada.\n\nQuando lançadas individualmente, as bombas de cereja criam uma explosão de 1,5 metro de raio, causando 1 de dano de força a qualquer criatura dentro da área (sem direito a teste de resistência). Testes de resistência de Concentração feitos em resposta a danos causados por uma bomba de cereja são feitos com desvantagem.\n\nAs bombas de cereja também podem ser lançadas em aglomerado, tendo o mesmo efeito, mas causando dano de força igual ao dobro do número de bombas de cereja no aglomerado (sem direito a teste de resistência).\n\nPotência: Gaste Foco Marcial. O raio da área aumenta em 1,5 metro (3 metros), e aumenta novamente nos níveis 5 (4,5 metros), 11 (6 metros) e 17 (7,5 metros)."
+    },
+    {
+      "id": "m-alquimia-desfolhante-formula-arma-corte",
+      "name": "Desfolhante (fórmula, arma) [corte]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um óleo que destrói quimicamente a vegetação viva. Quando lançado, plantas vivas e criaturas vegetais em um raio de 1,5 metro do impacto devem fazer um teste de resistência de Destreza bem-sucedido ou sofrer 2d6 de dano de corte do desfolhante.\n\nPotência: Gaste Foco Marcial. Você pode aplicar o desfolhante a uma arma como se fosse um veneno. A arma causa 1d6 de dano de corte adicional contra plantas vivas e criaturas vegetais por 1 minuto. Se você gastar seu foco marcial ao lançar o desfolhante, o dano aumenta em 1d6 (3d6), aumentando novamente nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
+    },
+    {
+      "id": "m-alquimia-bile-demoniaca-formula-arma-necrotico",
+      "name": "Bile Demoníaca (fórmula, arma) [necrótico]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um ichor preto e fétido que drena a vontade dos mortais e se alimenta da carne dos celestiais. Quando lançado, celestiais em um raio de 1,5 metro do impacto devem fazer um teste de resistência de Destreza bem-sucedido ou sofrer 2d6 de dano necrótico da bile demoníaca.\n\nHumanoides e feras que consomem ou tocam a bile demoníaca sofrem desvantagem em testes de resistência contra as condições de encantamento, dominação e possessão por 1 hora; isso é considerado um efeito de maldição.\n\nPotência: Gaste Foco Marcial. Você pode aplicar bile demoníaca a uma arma como se fosse um veneno. A arma causa 1d6 de dano necrótico adicional contra seres celestiais por 1 minuto. Se você gastar seu foco marcial ao arremessar a bile demoníaca, o dano aumenta em 1d6 (3d6), aumentando novamente nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
+    },
+    {
+      "id": "m-alquimia-maldicao-da-bruxa-formula-arma-psiquico",
+      "name": "Maldição da Bruxa (fórmula, arma) [psíquico]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de Maldição da Bruxa que causa 2d6 de dano psíquico a aberrações ou fadas em um acerto. A Maldição da Bruxa também pode ser lançada em uma criatura a até 1,5 metro de você como um ataque corpo a corpo com uma arma improvisada.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como veneno. A arma causa 1d6 de dano psíquico adicional contra aberrações e fadas por 1 minuto.\n\n•Salpicar. Ao salpicar uma criatura enfeitiçada, confusa ou amedrontada a até 1,5 metro de você com um ataque corpo a corpo, a criatura recebe uma jogada de salvamento adicional para encerrar o efeito.\n\n•Arremessar. O dano da Maldição da Bruxa aumenta em 1d6 (3d6), e novamente em 1d6 nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
+    },
+    {
+      "id": "m-alquimia-agua-benta-formula-arma-radiante",
+      "name": "Água Benta (fórmula, arma) [radiante]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um frasco de água benta que causa 2d6 de dano radiante a demônios ou mortos-vivos em um acerto. A água benta também pode ser espirrada em uma criatura a até 1,5 metro de você como um ataque corpo a corpo com uma arma improvisada.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como um veneno. A arma causa 1d6 de dano radiante adicional contra demônios e mortos-vivos por 1 minuto.\n\n•Salpicar. Ao salpicar uma criatura dominada ou possuída a até 1,5 metro de você como um ataque corpo a corpo, a criatura recebe uma jogada de salvamento adicional para encerrar o efeito.\n\n•Arremessar. O dano da água benta aumenta em 1d6 (3d6) e novamente em 1d6 nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
+    },
+    {
+      "id": "m-alquimia-oxidante-formula-arma-perfurante",
+      "name": "Oxidante (fórmula, arma) [perfurante]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um corrosivo que oxida a maioria dos metais, perfurando sua estrutura e armação. Quando arremessado, construtos e objetos de metal não mágicos em um raio de 1,5 metro do impacto devem fazer uma jogada de salvamento de Destreza bem-sucedida ou sofrer 2d6 de dano perfurante do oxidante.\n\nPotência: Gaste Foco Marcial. Você pode aplicar o oxidante a uma arma como se fosse um veneno. A arma causa 1d6 de dano perfurante adicional contra construtos e objetos de metal não mágicos por 1 minuto. Se você gastar seu foco marcial ao arremessar o oxidante, seu dano aumenta em 1d6 (3d6), aumentando novamente nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
+    },
+    {
+      "id": "m-alquimia-pedra-trovejante-formula-arma-trovao",
+      "name": "Pedra Trovejante (fórmula, arma) [trovão]",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Fórmula (arma)",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria uma pedra que explode ao impacto quando arremessada com um estrondo alto e reverberante. Em um acerto, o alvo deve fazer uma jogada de salvamento de Constituição ou sofrer 1d10 de dano de trovão e ficar surdo por 1 minuto. Aqueles que obtiverem sucesso na jogada de salvamento sofrem metade do dano e não ficam surdos.\n\nPotência: Gaste Foco Marcial. Um alvo que falha na sua jogada de resistência também fica atordoado por 1 rodada, e o dano de trovão aumenta em 1d10 ao atingir o 5º nível (2d10), o 11º nível (3d10) e o 17º nível (4d10)."
+    },
+    {
+      "id": "m-alquimia-alcool",
+      "name": "Álcool (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": ""
+    },
+    {
+      "id": "m-alquimia-teste-de-resistencia-de-constituicao",
+      "name": "Teste de Resistência de Constituição (veja o texto)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veja o texto"
+      ],
+      "duration": "1 hora",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire o conhecimento de dois tipos de bebidas alcoólicas ao obter este talento. A potência não pode ser aplicada a bebidas alcoólicas.\n\nO álcool é criado em conjuntos iguais ao seu bônus de proficiência. Todas as bebidas alcoólicas criadas em um único conjunto devem ser do mesmo tipo; você cria um conjunto de bebidas que conhece, escolhido no momento da criação do veneno.\n\nVocê pode selecionar este talento várias vezes; a cada vez, você adquire o conhecimento de mais dois tipos de bebidas alcoólicas.\n\nO álcool tem os seguintes efeitos, dependendo do seu tipo:\n\n•Sidra Calmante: Criaturas que bebem esta bebida alcoólica ganham vantagem em testes de resistência contra efeitos que alterariam seu estado emocional por 1 hora.\n\n•Licor Invisível: Criaturas que bebem esta bebida alcoólica não percebem que é alcoólica, mas é tão potente quanto duas bebidas alcoólicas. Esta bebida também mascara venenos misturados a ela, frustrando completamente os testes de Percepção e até mesmo a magia, a menos que o conjurador obtenha sucesso em um teste de habilidade contra a CD da sua esfera de Alquimia.\n\n•Cerveja Sonífera: Criaturas que bebem esta bebida alcoólica adormecem 10 minutos após o consumo. Quando usada como parte de um descanso curto, as criaturas recuperam o máximo de pontos de vida dos dados de vida gastos.\n\n•Hidromel Alucinógeno: Criaturas que bebem esta bebida alcoólica ficam sujeitas a alucinações, que aplicam desvantagem em testes de Percepção e Sobrevivência, mas as ajudam a enxergar além das ilusões, concedendo-lhes vantagem em testes de Intuição e Investigação e em todos os testes de resistência contra ilusões.\n\n•Sidra Analgésica: Criaturas que bebem esta bebida alcoólica ficam insensíveis à dor, ganhando vantagem em todos os testes de resistência contra exaustão e efeitos baseados em dor durante a duração.\n\n•Rum Revitalizante: Criaturas que bebem esta bebida alcoólica recuperam um número de pontos de vida igual ao seu bônus de proficiência.\n\n•Schnapps Revigorante: Criaturas que bebem esta bebida alcoólica suprimem o estado de embriaguez e a condição de envenenamento por 1 hora.\n\n•Uísque Estimulante: Criaturas que bebem esta bebida alcoólica podem permanecer acordadas por vinte e quatro horas sem sentir sono, concedendo-lhes vantagem em testes de resistência contra exaustão e inconsciência.\n\nUma criatura que tentar mudar de um tipo de bebida alcoólica para outro antes que a duração tenha expirado deve fazer um teste de resistência ou ficará envenenada por 1 hora.\n\nLembrete de Regra: Álcool\n\nIngerir uma bebida alcoólica é considerado uma interação com um objeto. Após 10 minutos de consumo, o álcool induzirá o estado de embriaguez por 10 minutos.\n\nO álcool pode ser abusado e ter efeitos negativos significativos. Em geral, um personagem pode consumir um número de bebidas alcoólicas igual ao dobro do seu modificador de Constituição por descanso longo, mas ficará envenenado por 1 hora para cada bebida acima desse limite. Formas particularmente exóticas ou fortes de álcool podem ser tratadas como drogas. Aqueles que abusam regularmente do álcool podem desenvolver um vício.\n\nEsfera da Alquimia: Álcool e a Esfera da Taverna\n\nPersonagens que possuem a característica Beberrão da Esfera da Taverna não precisam esperar os 10 minutos completos para entrar no estado de embriaguez ao consumir álcool feito com a Esfera da Alquimia; eles podem escolher entrar imediatamente no estado de embriaguez; no entanto, o estado de embriaguez adquirido dessa forma durará apenas 1 minuto, em vez dos 10 minutos normais.\n\nEmbora esses personagens possam escolher a cada vez que consomem álcool se utilizam ou não a característica Beberrão, a maioria dos combates raramente dura mais do que algumas rodadas, muito menos um minuto inteiro; geralmente, recomenda-se que os jogadores utilizem a característica Beberrão, se a possuírem."
+    },
+    {
+      "id": "m-alquimia-amnesico",
+      "name": "Amnésico (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem ser bem-sucedidas em seu teste de resistência ou perderão a memória de tudo o que aconteceu no último minuto.\n\nPotência: Gaste Foco Marcial. Qualquer criatura que falhar no teste de resistência também esquecerá o que acontecerá no próximo minuto. A duração da perda de memória aumenta para 10 minutos (passado e futuro), aumentando novamente nos níveis 5 (1 hora), 11 (8 horas) e 17 (1 dia)."
+    },
+    {
+      "id": "m-alquimia-veneno-basico",
+      "name": "Veneno Básico (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem ser bem-sucedidas em seu teste de resistência ou sofrerão 1d4 de dano de veneno.\n\nPotência: Gaste Foco Marcial. O dano de veneno aumenta em 1d4 (2d4) e aumenta novamente em 1d4 nos níveis 5 (3d4), 11 (4d4) e 17 (5d4)."
+    },
+    {
+      "id": "m-alquimia-palidez",
+      "name": "Palidez (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer seu teste de resistência ou perderão todas as resistências a dano que possuírem até o início de seu próximo turno.\n\nPotência: Gaste Foco Marcial. Qualquer criatura que falhar no teste de resistência também não poderá recuperar pontos de vida durante a duração do efeito."
+    },
+    {
+      "id": "m-alquimia-alucinogeno-confuso",
+      "name": "Alucinógeno Confuso (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer seu teste de resistência ou sofrerão desvantagem em todos os testes de habilidade até o início de seu próximo turno.\n\nPotência: Gaste Foco Marcial. Qualquer criatura que falhar no teste de resistência também ficará confusa durante a duração do efeito."
+    },
+    {
+      "id": "m-alquimia-veneno-sonolento",
+      "name": "Veneno Sonolento (veneno, medicinal)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno",
+        "medicinal"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer seu teste de resistência ou aumentarão seu nível de exaustão em 1 (até um máximo de 2) até o início de seu próximo turno. Criaturas que falharem no teste de resistência enquanto já estiverem no nível 2 de exaustão ficarão inconscientes.\n\nA criatura acorda se sofrer dano ou se outra criatura usar uma ação para acordá-la.\n\nPotência: Gaste Foco Marcial. Aumente o nível máximo de exaustão em 1 (3 níveis de exaustão), aumentando novamente em 1 nos níveis 5 (4 níveis de exaustão), 11 (5 níveis de exaustão) e 17 (6 níveis de exaustão)."
+    },
+    {
+      "id": "m-alquimia-alucinogeno-assustador",
+      "name": "Alucinógeno Assustador (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou sofrer desvantagem em todos os testes de resistência de Inteligência, Sabedoria e Carisma até o início do seu próximo turno.\n\nPotência: Gaste Foco Marcial. Qualquer criatura que falhe no teste de resistência também fica amedrontada pela duração, tratando o espaço em que se encontra como a fonte do seu medo."
+    },
+    {
+      "id": "m-alquimia-alucinogeno-paralitico",
+      "name": "Alucinógeno Paralítico (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou ter sua velocidade de movimento reduzida em 10 até o início do seu próximo turno. Criaturas que falharem no teste de resistência enquanto já estiverem com velocidade de movimento 0 ficam paralisadas pela duração.\n\nPotência: Gaste Foco Marcial. Aumente a redução da velocidade de movimento em 10 pés (20 pés), mais 10 pés adicionais nos níveis 5 (30 pés), 11 (40 pés) e 17 (50 pés)."
+    },
+    {
+      "id": "m-alquimia-septicemia",
+      "name": "Septicemia (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou começarão a sangrar no início do seu próximo turno.\n\nPotência: Gaste Foco Marcial. Criaturas danificadas pela septicemia também têm seus pontos de vida máximos reduzidos pela quantidade de dano necrótico sofrido. A redução dura até que a criatura complete um descanso longo. A criatura morre se a septicemia reduzir seus pontos de vida máximos a 0.\n\nO dano necrótico do sangramento da septicemia aumenta em 1d4 quando você atinge o 5º (2d4), 11º (3d4) e 17º nível (4d4)."
+    },
+    {
+      "id": "m-alquimia-maldicao-do-metamorfo",
+      "name": "Maldição do Metamorfo (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou ficarão incapazes de se metamorfosear ou mudar de forma até o início do seu próximo turno. Se já estiverem metamorfoseadas ou com a forma alterada, elas retornam imediatamente à sua forma original.\n\nPotência: Gaste Foco Marcial. Criaturas que falharem no teste de resistência ficam incapazes de se metamorfosear ou mudar de forma até completarem um descanso curto ou longo."
+    },
+    {
+      "id": "m-alquimia-drenagem-de-habilidade",
+      "name": "Drenagem de Habilidade (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou perderão proficiência em uma língua, perícia, ferramenta ou arma aleatória até o início do seu próximo turno.\n\nPotência: Gaste Foco Marcial. Você pode escolher quais proficiências as criaturas afetadas perdem; Além disso, o número de proficiências perdidas aumenta em 1 no 5º (2 proficiências), 11º (3 proficiências) e 17º nível (4 proficiências)."
+    },
+    {
+      "id": "m-alquimia-soro-da-verdade",
+      "name": "Soro da Verdade (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou ficarão incapazes de mentir até o início do seu próximo turno.\n\nPotência: Gaste Foco Marcial. A criatura afetada exibirá sinais reveladores, deixando claro para você e para aqueles ao seu redor que a criatura está sob os efeitos do veneno."
+    },
+    {
+      "id": "m-alquimia-drenagem-de-vontade",
+      "name": "Drenagem de Vontade (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou terão desvantagem em todos os testes de Intuição, bem como em todos os testes de resistência contra encantamentos, dominações, ilusões, possessões e sugestões até o início do seu próximo turno.\n\nPotência: Gaste Foco Marcial. Qualquer criatura que falhe na sua jogada de resistência também fica sujeita aos efeitos de uma sugestão durante a duração do efeito."
+    },
+    {
+      "id": "m-alquimia-veneno-da-bruxa",
+      "name": "Veneno da Bruxa (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Básicos de Veneno",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou ficarão incapazes de conjurar magias ou usar habilidades mágicas até o início do seu próximo turno.\n\nPotência: Gaste Foco Marcial. Qualquer criatura que falhe na sua jogada de resistência também sofre desvantagem em quaisquer testes de concentração que fizer durante a duração do efeito."
+    },
+    {
+      "id": "m-alquimia-envenenamento-por-contato",
+      "name": "Envenenamento por Contato",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode preparar seus venenos como venenos de contato. Venenos de contato podem ser arremessados como se fossem fórmulas. Criaturas atingidas pelo ataque ficam sujeitas ao veneno. Sempre que você realizar com sucesso uma ação de Truque Sujo ou Roubo, você pode gastar seu foco marcial para sujeitar o alvo ao seu veneno de contato como parte da mesma ação."
+    },
+    {
+      "id": "m-alquimia-ruptura-controlada",
+      "name": "Ruptura Controlada",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar uma fórmula ou veneno, você pode selecionar um número de indivíduos ou quadrados de 1,5 metro (5 pés) igual ao seu bônus de proficiência que não serão afetados. Alvos selecionados ou criaturas dentro dos quadrados selecionados não sofrem os efeitos da fórmula ou veneno.\n\nGastar Foco Marcial: Você pode aumentar o número de indivíduos ou quadrados de 1,5 metro (5 pés) selecionados para um número igual ou inferior ao dobro do seu bônus de proficiência."
+    },
+    {
+      "id": "m-alquimia-aplicacao-atrasada",
+      "name": "Aplicação Atrasada",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você criar uma fórmula ou veneno, você pode optar por atrasar os efeitos por um número de minutos igual à metade do seu nível. Você pode gastar duas doses para, em vez disso, atrasar os efeitos por um número de horas igual à metade do seu nível. Esse atraso ocorre entre o momento em que uma criatura é sujeita à fórmula ou veneno e o momento em que seus efeitos se manifestam, e não influencia o tempo que uma fórmula ou veneno permanece potente após ser aplicado, mas antes que o alvo seja exposto a ele.\n\nGastar Foco Marcial: Como uma reação, você pode ativar imediatamente os efeitos de uma fórmula ou veneno retardado que você criou a até 18 metros (60 pés) de distância."
+    },
+    {
+      "id": "m-alquimia-aplicacao-gasosa",
+      "name": "Aplicação Gasosa",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "duration": "1 minuto; dissipa-se imediatamente com vento de nível 1 ou superior.",
+      "area": "Nuvem de 1,5 metro (5 pés) de raio (veja o texto)",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode preparar fórmulas como gases, que criam uma nuvem dentro do alcance de arremesso (normalmente 6 metros/20 pés) pela duração. Criaturas que entrarem ou começarem seu turno dentro da nuvem devem ser bem-sucedidas em um teste de resistência de Destreza para negar seus efeitos. Essa mudança não afeta fórmulas não arremessáveis, como Tinta de Guerra. Quando aplicada a itens alquímicos já em forma gasosa, como bombas de fumaça, dobra a área afetada.\n\nAlém disso, você pode preparar venenos como venenos inaláveis, contando como duas doses. Venenos inaláveis criam uma nuvem de 1,5 metro (5 pés) de raio dentro do alcance de arremesso (normalmente 6 metros/20 pés), afetando criaturas que entrarem ou começarem seu turno dentro dela."
+    },
+    {
+      "id": "m-alquimia-aplicacao-duradoura",
+      "name": "Aplicação Duradoura",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você aplicar seu veneno a uma arma, o veneno dura por 1 ataque bem-sucedido adicional antes de ser consumido. Nos níveis 5, 11 e 17, o efeito persiste por um ataque bem-sucedido adicional.\n\nAlternativamente, você pode aplicar uma única dose de veneno em até 2 peças de munição com uma única ação, mais uma peça de munição adicional nos níveis 5, 11 e 17.\n\nQuando você cria um veneno para ingestão e o adiciona a qualquer alimento ou bebida, ele permanece potente por até 48 horas e se torna insípido e inodoro. Você pode gastar duas doses para que ele permaneça potente por 1 semana."
+    },
+    {
+      "id": "m-alquimia-mestre-quimico",
+      "name": "Mestre Químico",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha proficiência com suprimentos de alquimista ou kit de envenenador. Se você já for proficiente com as ferramentas escolhidas, em vez disso, adicione o dobro do seu bônus de proficiência. Este talento pode ser adquirido mais de uma vez."
+    },
+    {
+      "id": "m-alquimia-mestre-herbalista",
+      "name": "Mestre Herbalista",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha proficiência com o kit de herborismo e pode usá-lo para criar fórmulas ou venenos da esfera de Alquimia. Se você já for proficiente com o kit de herborismo, em vez disso, adicione o dobro do seu bônus de proficiência."
+    },
+    {
+      "id": "m-alquimia-doses-rapidas",
+      "name": "Doses Rápidas",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O tempo necessário para criar fórmulas ou venenos individualmente é reduzido para 5 minutos."
+    },
+    {
+      "id": "m-alquimia-negocio-arriscado",
+      "name": "Negócio Arriscado",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Gaste Foco Marcial. Você pode impor desvantagem na jogada de salvamento do alvo contra os efeitos iniciais de sua fórmula ou veneno. Além disso, arremessar uma fórmula ou veneno contra uma criatura a menos de 1,5 metro de distância não impõe desvantagem na sua jogada de ataque."
+    },
+    {
+      "id": "m-alquimia-aplicador-habilidoso",
+      "name": "Aplicador Habilidoso",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode aplicar venenos em si mesmo ou em uma arma que esteja empunhando como uma ação bônus; isso também afeta fórmulas que você esteja aplicando a uma arma como se fossem veneno."
+    },
+    {
+      "id": "m-alquimia-veneno-especializado",
+      "name": "Veneno Especializado",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos da Esfera da Alquimia",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Selecione um tipo de criatura (ou duas raças de humanoides) da lista de inimigos favoritos do ranger; seus venenos afetam os tipos ou raças selecionados, mesmo que normalmente sejam imunes à condição de envenenamento. Criaturas normalmente imunes a dano de veneno tornam-se resistentes a ele quando afetadas por seus venenos.\n\nSe você usar a habilidade de potência do veneno, as criaturas serão apenas resistentes a qualquer outro tipo de dano causado pelo veneno (se normalmente imunes) e não serão imunes a quaisquer outras condições impostas pelo veneno.\n\nVocê pode selecionar um tipo adicional (ou duas raças de humanoides) nos níveis 5, 11 e 17."
+    },
+    {
+      "id": "m-alquimia-frasco-universal",
+      "name": "Frasco Universal (fórmula, veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "formula",
+        "veneno"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "text",
+          "text": "qualquer combinação de cinco talentos de (fórmula) ou (veneno)"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Como uma ação bônus, o usuário pode transmutar o conteúdo deste frasco em qualquer item alquímico ou veneno cujo valor seja de 100 gp ou menos. Uma vez que o conteúdo tenha sido transmutado, ele deixa de ser um frasco universal, tornando-se o item em que foi transmutado.\n\nPotência: Gaste Foco Marcial. O valor máximo do item transmutado aumenta em 100 gp (200 gp) e aumenta novamente em 100 gp nos níveis 5 (300 gp), 11 (400 gp) e 17 (500 gp).",
+      "_needsReview": [
+        "prereq:unresolved:qualquer combinação de cinco talentos de (fórmula) ou (veneno)"
+      ]
+    },
+    {
+      "id": "m-alquimia-elixir-da-saude",
+      "name": "Elixir da Saúde (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-antitoxina"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-panaceia"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao beber esta poção, ela cura qualquer doença que o aflija e remove as condições de cegueira, surdez, paralisia e envenenamento. O líquido vermelho transparente contém pequenas bolhas de luz. Beber um elixir da saúde requer uma ação.\n\nCada elixir da saúde conta como três fórmulas para fins de determinação de quantas você pode ter criado simultaneamente."
+    },
+    {
+      "id": "m-alquimia-elixir-da-imortalidade",
+      "name": "Elixir da Imortalidade (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-antitoxina"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-elixir-da-saude"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-panaceia"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-pocao-de-regeneracao"
+        },
+        {
+          "type": "text",
+          "text": "Unguento"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-sangue-de-troll"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode criar um elixir especial que restaura uma criatura à sua idade inicial como um jovem adulto.\n\nCada elixir da imortalidade conta como sete fórmulas para fins de determinação de quantas você pode ter criado simultaneamente.",
+      "_needsReview": [
+        "prereq:unresolved:Unguento"
+      ]
+    },
+    {
+      "id": "m-alquimia-pocao-de-cura",
+      "name": "Poção de Cura (fórmula, médico)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "formula",
+        "medico"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "text",
+          "text": "Unguento"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Um personagem que bebe o líquido vermelho mágico neste frasco recupera 2d4 + 2 pontos de vida. Beber uma poção de cura requer uma ação.\n\nCada poção de cura conta como duas fórmulas para fins de determinação de quantas você pode ter criado simultaneamente.\n\nPotência: Gaste Foco Marcial. O personagem recupera 1d6 pontos de vida adicionais. Os pontos de vida adicionais recuperados aumentam em 1d6 nos níveis 5 (+2d6), 11 (+3d6) e 17 (+4d6).\n\nEspecial: Potência também pode ser aplicada a Poções de Cura Maiores, Poções de Cura Superiores e Poções de Cura Supremas.",
+      "_needsReview": [
+        "prereq:unresolved:Unguento"
+      ]
+    },
+    {
+      "id": "m-alquimia-imposicao-material",
+      "name": "Imposição Material",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-bomba-de-luz"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "As bombas de luz em sua posse também são consideradas armas alquímicas e possuem os subtipos de talento de fórmula (contrabando) e (arma) [contundente].\n\nSempre que você atacar com pó de luz, você pode escolher que qualquer criatura que falhe na sua jogada de salvamento também sofra 1d4 de dano contundente ou um tipo de dano correspondente a qualquer arma alquímica ou veneno que você possua.\n\nO dano do pó de luz aumenta em 1d4 nos níveis 5 (2d4), 11 (3d4) e 17 (4d4)."
+    },
+    {
+      "id": "m-alquimia-oleo-do-necromante",
+      "name": "Óleo do Necromante (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-septicemia"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou sofrer uma penalidade de -1 no bônus de proficiência até o início do seu próximo turno. Se essa penalidade reduzir o bônus de proficiência de uma criatura para +0 ou menos, a criatura morre.\n\nCada óleo do necromante conta como duas doses de veneno para fins de determinação de quantas você pode ter criado de uma vez.\n\nPotência: Gaste Foco Marcial. Criaturas que falharem no teste de resistência sofrem uma penalidade de -2 no bônus de proficiência. A penalidade imposta aumenta nos níveis 5 (-3 de penalidade), 11 (-4 de penalidade) e 17 (-5 de penalidade); Além disso, você pode escolher que qualquer criatura morta pelo veneno seja reanimada como um zumbi de acordo com a Esfera da Morte. Isso não lhe concede controle sobre o zumbi."
+    },
+    {
+      "id": "m-alquimia-pocao-de-regeneracao",
+      "name": "Poção de Regeneração (fórmula, medicinal)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "formula",
+        "medicinal"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "text",
+          "text": "Unguento"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-sangue-de-troll"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando uma criatura bebe esta poção, ela regenera quaisquer membros decepados dentro do próximo minuto. Além disso, a criatura recupera um número de pontos de vida igual à metade do seu bônus de proficiência no início do seu turno a cada rodada durante a duração.\n\nCada poção de regeneração conta como três fórmulas para fins de determinação de quantas você pode ter criado de uma vez.\n\nPotência: Gaste Foco Marcial. A criatura também regenerará membros que foram decepados há 1 hora, aumentando em 1 hora nos níveis 5 (2 horas atrás), 11 (3 horas atrás) e 17 (4 horas atrás).",
+      "_needsReview": [
+        "prereq:unresolved:Unguento"
+      ]
+    },
+    {
+      "id": "m-alquimia-veneno-de-pedra",
+      "name": "Veneno de Pedra (veneno)",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "veneno"
+      ],
+      "save": "Constituição",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-alucinogeno-paralitico"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Criaturas sujeitas a este veneno devem fazer um teste de resistência ou ficarão imobilizadas até o início do seu próximo turno.\n\nCada dose de veneno de pedra conta como duas doses de veneno para fins de determinar quantas você pode ter criado de uma vez.\n\nPotência: Gaste Foco Marcial. Criaturas que falharem no teste de resistência enquanto já estiverem imobilizadas pelo veneno serão permanentemente petrificadas."
+    },
+    {
+      "id": "m-alquimia-alquimia-espontanea",
+      "name": "Alquimia Espontânea",
+      "sphere": "alquimia",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alquimia"
+        },
+        {
+          "type": "talent",
+          "id": "m-alquimia-doses-rapidas"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Como uma ação ou ação bônus, você pode gastar seu foco marcial para criar um item alquímico, veneno ou poção instantaneamente.\n\nComo custo adicional, você deve gastar uma quantidade de material de criação ou ouro cujo valor seja igual ao preço de compra do item; itens sem um preço de compra estabelecido não podem ser criados dessa forma. Para usar este talento, você também deve ter as ferramentas apropriadas à mão ou prontamente disponíveis; itens de alquimia exigem suprimentos de alquimista, venenos exigem kits de envenenador e poções exigem suprimentos de cervejeiro ou um kit de herborismo. Você só pode usar este talento um número de vezes igual ao seu bônus de proficiência. Você recupera os usos gastos ao terminar um descanso longo."
+    }
+  ],
+  "_reviewed": false
+}

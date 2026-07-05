@@ -1,0 +1,327 @@
+{
+  "id": "retribuicao",
+  "name": "Retribuição",
+  "section": "martial",
+  "summary": "Aguardar o momento certo para revidar com ataques preparados.",
+  "theme": {
+    "h": 216,
+    "s": 16,
+    "sig": "retribuicao",
+    "lLight": 30
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "m-retribuicao-contra-ataque",
+      "name": "Contra-ataque",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você prepara uma ação para realizar um ataque corpo a corpo, o ataque causa dano adicional igual ao seu bônus de proficiência.\n\nSe você possuir Ataque Extra ou Ataques Múltiplos, preparar um ataque é considerado um ataque especial; apenas um ataque é preparado, e os demais podem ser realizados normalmente. Seu ataque é resolvido antes da ação que o desencadeou, em vez de depois, e se este ataque for bem-sucedido, você recupera o uso de sua reação.\n\nAo preparar um ataque, você deve escolher um gatilho para esse ataque. Gatilhos comumente aceitáveis são:\n\n•Uma criatura hostil realizando uma jogada de ataque\n\n•Uma criatura hostil tentando um teste de habilidade contestado\n\n•Uma criatura hostil se movendo de seu espaço\n\n•Uma criatura hostil conjurando uma magia ou efeito de esfera\n\n•Uma criatura hostil sacando uma arma\n\n•Uma criatura hostil falando\n\nOutros gatilhos podem ser permitidos com a permissão do Mestre. Você pode selecionar um gatilho adicional desta lista no 5º nível (2 gatilhos), 11º nível (3 gatilhos) e 17º nível (4 gatilhos). Você só pode realizar um contra-ataque por rodada, independentemente do número de gatilhos escolhidos.\n\nVocê pode aplicar um único talento com a etiqueta (contra) a um contra-ataque."
+    },
+    {
+      "id": "m-retribuicao-agarrar",
+      "name": "Agarrar (contra)",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Contra-Ataque",
+      "tags": [
+        "contra"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tentar agarrar uma criatura ferida por este contra-ataque como uma reação."
+    },
+    {
+      "id": "m-retribuicao-golpe-poderoso",
+      "name": "Golpe Poderoso (contra)",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Contra-Ataque",
+      "tags": [
+        "contra"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você mira na boca do alvo ou em um orifício equivalente, impedindo sua capacidade de falar. O alvo deve ser bem-sucedido em um teste de resistência de Destreza ou terá sua boca danificada. Se sua boca for danificada, ele deve ser bem-sucedido em um teste de resistência de Constituição toda vez que desejar falar, morder, usar uma arma de sopro ou conjurar qualquer magia ou efeito de esfera com um componente verbal, ou ficará impossibilitado de fazê-lo. Este efeito termina se o alvo receber pelo menos 1 ponto de cura mágica ou após um descanso curto ou longo."
+    },
+    {
+      "id": "m-retribuicao-gancho-lancador",
+      "name": "Gancho Lançador (contra)",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Contra-Ataque",
+      "tags": [
+        "contra"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para fazer com que criaturas até um tamanho maior que você, feridas por este contra-ataque, sejam lançadas 3 metros para o ar. Seu movimento para a rodada cessa e a criatura cai, sofrendo dano de queda e aterrissando no chão normalmente.\n\nVocê pode usar este talento em um aliado disposto que não seja você mesmo sem gastar seu foco marcial, atingindo-o automaticamente e sem causar dano. Nesse caso, o movimento do alvo não termina e ele pode se mover horizontalmente pelo ar como se tivesse velocidade de voo, embora ainda caia ao final do movimento. Se o aliado atacar um alvo enquanto ele aterrissa no chão, ele não sofre dano de queda nem cai no chão."
+    },
+    {
+      "id": "m-retribuicao-golpe-no-figado",
+      "name": "Golpe no Fígado (contra)",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Contra-Ataque",
+      "tags": [
+        "contra"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "As criaturas atingidas por este contra-ataque têm todas as suas velocidades de movimento reduzidas para 1,5 m até o final do próximo turno delas."
+    },
+    {
+      "id": "m-retribuicao-gancho-aterrorizante",
+      "name": "Gancho Aterrorizante (contra)",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Contra-Ataque",
+      "tags": [
+        "contra"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "As criaturas atingidas por este contra-ataque devem ser bem-sucedidas em um teste de resistência de Sabedoria ou ficarão amedrontadas por você até o final do próximo turno delas."
+    },
+    {
+      "id": "m-retribuicao-foco-de-contra-ataque",
+      "name": "Foco de Contra-Ataque",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você causar dano a uma criatura com seu contra-ataque, você pode gastar uma reação para recuperar seu foco marcial. A criatura deve ter um ND (Nível de Desafio) de pelo menos metade do seu nível de personagem (arredondado para baixo, mínimo 1/2)."
+    },
+    {
+      "id": "m-retribuicao-contra-ataque-cruzado",
+      "name": "Contra-Ataque Cruzado",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que uma criatura ao seu alcance fizer um ataque de oportunidade contra você, você pode gastar seu foco marcial como uma reação para fazer um único ataque contra ela, causando dano normalmente. Resolva esta reação antes do ataque de oportunidade da criatura. Se o seu ataque for bem-sucedido, a criatura sofre desvantagem em seu ataque."
+    },
+    {
+      "id": "m-retribuicao-golpe-enraizado",
+      "name": "Golpe Enraizado",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você fizer um ataque bem-sucedido com seu contra-ataque, você ganha resistência a dano de concussão, perfuração e corte de um ataque feito pelo alvo do contra-ataque antes do início do seu próximo turno."
+    },
+    {
+      "id": "m-retribuicao-finta-de-cabeca",
+      "name": "Finta de Cabeça",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto você tiver foco marcial, sempre que uma criatura tentar fazer um ataque de oportunidade contra você, a jogada de ataque dela sofre desvantagem."
+    },
+    {
+      "id": "m-retribuicao-golpe-interceptador",
+      "name": "Golpe Interceptador",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como gatilho, você pode definir um contra-ataque não contra um alvo, mas contra um ataque realizado dentro do seu alcance ou que passe pelo seu alcance. Você não pode interceptar ataques de magia ou armas de longo alcance massivas, como pedregulhos ou virotes de balista, a menos que você mesmo esteja usando uma arma massiva desse tipo. Faça um ataque normalmente. Se o seu resultado de ataque for maior que o resultado do ataque que você está interceptando, o ataque do oponente é negado. Você pode gastar foco marcial para usar esta habilidade como uma reação."
+    },
+    {
+      "id": "m-retribuicao-contra-ataque-poderoso",
+      "name": "Contra-ataque Poderoso",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se você possuir Ataque Extra ou Ataques Múltiplos, você pode trocar seus ataques extras para tornar seu contra-ataque ainda mais poderoso, causando +1d8 de dano para cada ataque adicional sacrificado. Além disso, ao realizar um contra-ataque, você também pode gastar seu foco marcial para conceder a si mesmo vantagem na jogada de ataque."
+    },
+    {
+      "id": "m-retribuicao-touro-enfurecido",
+      "name": "Touro Enfurecido",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que seu contra-ataque for acionado, você pode se mover até metade do seu deslocamento em linha reta antes de realizar o ataque."
+    },
+    {
+      "id": "m-retribuicao-preparacao",
+      "name": "Preparação",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como parte da preparação de uma ação para realizar um contra-ataque, você pode fazer uma jogada de ataque corpo a corpo contra uma criatura dentro do seu alcance. Se este ataque acertar, ele não causa dano, mas até o início do seu próximo turno, o alvo deste ataque só poderá se mover de forma que o espaço que ocupar seja adjacente a você após o seu movimento. Se o alvo desejar se libertar dessa limitação, ele pode tentar um teste contestado de Força (Atletismo) ou Destreza (Acrobacia) oposto ao seu teste de Força (Atletismo) ou Destreza (Acrobacia) como uma ação bônus."
+    },
+    {
+      "id": "m-retribuicao-quebra-magia",
+      "name": "Quebra-Magia",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você causa dano com um contra-ataque contra uma criatura conjurando uma magia ou efeito de esfera, a criatura danificada deve ser bem-sucedida em um teste de resistência de Constituição como se estivesse sofrendo dano enquanto se concentra em uma magia. Uma falha significa que a conjuração falha, desperdiçando a ação, bem como qualquer espaço de magia ou pontos de magia. Isso conta como concentração para bônus e penalidades que se aplicam a testes de resistência feitos para manter a concentração."
+    },
+    {
+      "id": "m-retribuicao-golpe-surpresa",
+      "name": "Golpe Surpresa",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você realiza um ataque de oportunidade, você pode gastar seu foco marcial para tratar esse ataque de oportunidade como se fosse um contra-ataque. Se fizer isso, você só poderá usar a ação Esquivar ou Desengajar no seu próximo turno."
+    },
+    {
+      "id": "m-retribuicao-guarda-firme",
+      "name": "Guarda Firme",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar as ações Esquivar ou Preparar, você ganha um bônus de +1 na sua CA até o início do seu próximo turno. Esse bônus funciona como o bônus de CA de um escudo e, portanto, não se acumula com o bônus de CA de usar um escudo. Esse bônus aumenta para +2 no 11º nível."
+    },
+    {
+      "id": "m-retribuicao-pressao-violenta",
+      "name": "Pressão Violenta",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você preparar um contra-ataque, você pode gastar uma ação bônus para forçar uma criatura hostil a até 9 metros a fazer um teste de resistência de Sabedoria ou ficar amedrontada por você até o final do próximo turno dela. Você só pode usar esse talento em uma criatura específica uma vez por dia."
+    },
+    {
+      "id": "m-retribuicao-ataque-perseguidor",
+      "name": "Ataque Perseguidor",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Retribuição",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "retribuicao"
+        },
+        {
+          "type": "talent",
+          "id": "m-retribuicao-gancho-lancador"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que você lançar uma criatura hostil ao ar com seu talento Gancho Lançador, você pode saltar ao ar ao lado dela (este movimento não provoca ataques de oportunidade). Você pode fazer um único ataque contra essa criatura, derrubando-a no chão se acertar e dobrando o dano de queda. Você retorna ao chão ao final do turno do alvo e não sofre dano de queda pela distância do salto."
+    },
+    {
+      "id": "m-retribuicao-condicionamento-intenso",
+      "name": "Condicionamento Intenso (contra)",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Retribuição",
+      "tags": [
+        "contra"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "retribuicao"
+        },
+        {
+          "type": "text",
+          "text": "habilidade de contra-ataque"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que você realizar um contra-ataque bem-sucedido, você pode gastar seu foco marcial para fazer com que a criatura atingida pelo seu contra-ataque faça um teste de resistência de Carisma; Se este teste de resistência falhar, durante 1 minuto, sempre que a criatura tentar a ação que desencadeou seu contra-ataque, ela deverá fazer um teste de resistência de Carisma bem-sucedido ou ficará impossibilitada de realizar essa ação, embora ainda possa optar por realizar outra ação em seu lugar. Criaturas imunes à condição amedrontada são imunes a este efeito.",
+      "_needsReview": [
+        "prereq:unresolved:habilidade de contra-ataque"
+      ]
+    },
+    {
+      "id": "m-retribuicao-pugilista",
+      "name": "Pugilista",
+      "sphere": "retribuicao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode contra-atacar usando ataques desarmados. Você recebe um talento (contra) como talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

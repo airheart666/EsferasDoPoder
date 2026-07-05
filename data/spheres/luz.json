@@ -1,0 +1,854 @@
+{
+  "id": "luz",
+  "name": "Luz",
+  "section": "magic",
+  "summary": "Criar e moldar a luz — iluminar, ofuscar e concentrar raios luminosos.",
+  "theme": {
+    "h": 46,
+    "s": 70,
+    "sig": "luz"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "luz-iluminar",
+      "name": "Iluminar",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação bônus",
+      "range": "36 metros",
+      "duration": "Concentração, até 1 minuto",
+      "target": "1 brilho que você criou",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode afetar um número de brilhos igual ao seu bônus de proficiência."
+        }
+      ],
+      "body": "Você pode fazer com que qualquer criatura ou objeto que você tenha feito brilhar, dentro do alcance, brilhe intensamente, criando luz brilhante em um raio de 6 metros e luz fraca em um raio adicional de 6 metros. Alvos involuntários podem fazer um teste de resistência para evitar que seu brilho seja intensificado. Ambos os raios aumentam em 3 metros nos níveis 5 (raio de 9 metros), 11 (raio de 12 metros) e 17 (raio de 15 metros)."
+    },
+    {
+      "id": "luz-brilho",
+      "name": "Brilho",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "36 metros",
+      "duration": "10 minutos",
+      "target": "1 criatura ou objeto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode fazer com que um objeto ou criatura dentro do alcance brilhe durante a duração, emitindo luz brilhante em uma esfera de 1,5 metros de raio e luz fraca em mais 4,5 metros além disso, que pode ser de qualquer cor que você desejar. Isso requer um ataque de magia corpo a corpo ou à distância. O objeto ou criatura fica contornado por luz, concedendo desvantagem em testes de Destreza (Furtividade) e anulando todos os bônus geralmente concedidos por invisibilidade, escuridão ou efeitos semelhantes.\n\nSempre que um efeito de brilho interage com um efeito de escuridão mágica (como o da Esfera de Escuridão), o conjurador do efeito de brilho deve ser bem-sucedido em um teste de habilidade de conjuração contra a CD de resistência de magia do conjurador do efeito de escuridão. Se for bem-sucedido, a escuridão é neutralizada e o efeito de luz funciona normalmente. Se falhar, o efeito de brilho é neutralizado e o efeito de escuridão funciona normalmente (contornos são engolidos, fontes de luz são prejudicadas, etc.).\n\nAlguns talentos são designados como (brilho), que adicionam efeitos adicionais à sua habilidade de brilho. Você só pode aplicar os benefícios de um talento (brilho) a cada efeito de brilho individual. Embora você só possa aplicar um desses talentos a um efeito de brilho individual, as áreas de luz de diferentes efeitos de brilho podem se sobrepor. Ao aprimorar um efeito de brilho com um talento (brilho), o efeito é aplicado uma vez por rodada, no final do turno do conjurador. Por exemplo, se um objeto brilhante for lançado em um grande grupo de inimigos, ele afetará apenas aqueles dentro da área onde aterrissou, e não os alvos pelos quais passou para chegar a essa área.\n\nAlguns talentos são designados como (nimbo), o que permite alterar a aparência da luz emitida pelos seus efeitos de brilho, mudando a área ou a forma em que a luz é intensificada, bem como onde os efeitos dos talentos (brilho) são aplicados. Você só pode aplicar um único talento (nimbo) a um brilho por vez, mas pode alternar entre eles e a área normal do seu brilho como uma ação bônus no início do seu turno, embora qualquer talento (brilho) afete apenas uma área por rodada."
+    },
+    {
+      "id": "luz-lente",
+      "name": "Lente",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "120 pés",
+      "duration": "concentração, até 1 hora",
+      "target": "1 criatura ou objeto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação."
+        }
+      ],
+      "body": "Os talentos de luz listados com a etiqueta (lente) são talentos que não criam luz, mas a desviam ou alteram suas propriedades. Colocar um efeito de (lente) em um alvo involuntário requer um ataque de magia corpo a corpo ou à distância."
+    },
+    {
+      "id": "luz-farol-da-esperanca",
+      "name": "Farol da Esperança (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você aplica um brilho a uma criatura, você pode escolher conceder a essa criatura vantagem em testes de resistência para prevenir ou encerrar a condição de amedrontado."
+        },
+        {
+          "pm": 1,
+          "text": "Quando você intensifica um brilho ao qual o Farol da Esperança está aplicado, todas as criaturas dentro da área de luz intensa ganham vantagem em testes de resistência para prevenir ou encerrar a condição de amedrontado."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-luz-cegante",
+      "name": "Luz Cegante (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você faz com que uma criatura brilhe, você pode escolher dar a esse alvo uma penalidade de -1 nos testes de ataque e testes de Sabedoria (Percepção)."
+        },
+        {
+          "pm": 1,
+          "text": "Quando você intensifica um brilho ao qual a Luz Cegante está aplicada, você pode cegar o alvo brilhante e todas as criaturas dentro da área de luz intensa. Todas as criaturas devem fazer um teste de resistência de Constituição ou ficarão cegas até o final do seu próximo turno. Criaturas que"
+        }
+      ],
+      "body": "obtiverem sucesso no teste de resistência ainda sofrem a penalidade de -1 nos testes de ataque."
+    },
+    {
+      "id": "luz-luz-aprisionadora",
+      "name": "Luz Aprisionadora (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao intensificar esse brilho, você pode aprisionar o alvo em uma prisão de luz. O alvo fica imobilizado. Além disso, o alvo deve passar em um teste de habilidade de conjuração contra a CD da sua esfera para usar qualquer forma de viagem dimensional, como a magia porta dimensional ou a habilidade teletransporte da esfera de Distorção."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-padroes-desorientadores",
+      "name": "Padrões Desorientadores (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você ilumina um brilho, a luz intensa cobre a área com cores e padrões confusos. A área dessa luz intensa é considerada terreno difícil."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode tornar os padrões da luz intensa ainda mais intrincados e confusos. Criaturas dentro da luz intensa devem fazer um teste de resistência de Sabedoria ou cair no chão. Criaturas cegas (ou criaturas que fecharam os olhos¹) e criaturas que não dependem da visão são imunes aos efeitos deste talento."
+        }
+      ],
+      "body": "¹ Para este propósito, a decisão de fechar os olhos deve ser feita no turno da criatura e a torna cega até o início do próximo turno."
+    },
+    {
+      "id": "luz-luz-abrangente",
+      "name": "Luz Abrangente (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você ilumina este brilho, a luz intensa envolve a criatura que brilha, permitindo que ela funcione como se fosse maior do que realmente é. A criatura que brilha causa +1d4 de dano com ataques de arma e aumenta seu alcance em 5 pés. O bônus de dano aumenta em um passo, e o alcance em 5 pés nos níveis 5 (10 pés, +1d6), 11 (15 pés, +1d8) e 17 (20 pés, +1d10)."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-cintilar",
+      "name": "Cintilar (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você ilumina este brilho colocado em uma criatura, a luz intensa assimila parcialmente a criatura que brilha, permitindo que ela momentaneamente se desprenda de sua forma física. Uma criatura sob este efeito pode optar por se mover através de objetos sólidos, contanto que não haja fatores que bloqueiem a visão normal (como escuridão ou neblina). Isso permite que ela atravesse barreiras transparentes, como vidro, ou fendas impossivelmente pequenas (como a fechadura de uma porta)."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-luz-guia",
+      "name": "Luz Guia (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você faz uma criatura brilhar, você pode escolher conceder vantagem a todas as criaturas em jogadas de ataque contra esse alvo."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-luz-hipnotica",
+      "name": "Luz Hipnótica (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você ilumina um brilho, a luz intensa fascina criaturas. Todas as criaturas dentro desta área de luz intensa devem ter sucesso em um teste de resistência de Carisma ou não poderão realizar nenhuma ação em seu turno, exceto olhar para a luz, e sofrerão desvantagem em todos os testes de Sabedoria (Percepção). Um alvo tem direito a um novo teste de resistência no início de cada turno para se livrar do efeito; em um sucesso, pode agir normalmente. Uma vez que o alvo tenha resistido a este efeito, ele se torna imune pelo restante da duração. Ações hostis contra um alvo hipnotizado quebram automaticamente o efeito, como se o alvo tivesse obtido sucesso em seu teste de resistência. Se o alvo já estivesse em combate quando esta habilidade for usada, ele recebe vantagem em seu teste inicial. Criaturas cegas (ou que fecharam os olhos) e criaturas imunes à condição enfeitiçada são imunes a este efeito."
+        },
+        {
+          "pm": 0,
+          "text": "Quando você ilumina um brilho, a luz intensa atrai criaturas para ela. Todas as criaturas na área de sua luz devem fazer um teste de resistência de Sabedoria ou serão compelidas a se mover em direção à fonte do brilho em seus turnos. Uma criatura afetada capaz de se mover deve se deslocar em sua velocidade em direção à fonte do brilho a cada turno e não pode se mover intencionalmente para longe dela, a menos que precise recuar para se aproximar. A criatura pode tentar um novo teste de resistência a cada turno que estiver na luz intensa; após um sucesso, ela se torna imune ao uso deste talento por 24 horas. Se houver múltiplas Luzes Atrativas na área, a criatura se moverá em direção à mais próxima ou à que escolher, se estiverem à mesma distância."
+        }
+      ],
+      "body": "Você ganha os seguintes aprimoramentos:\n\nBrilho Hipnótico\n\nLuz Atrativa\n\nUma criatura não se prejudicará intencionalmente ao se mover em direção à luz. Ela não se lançará de penhascos ou na lava para perseguir o brilho, mas se aproximará o máximo possível sem se colocar em risco. Criaturas cegas (ou que fecharam os olhos) e criaturas imunes à condição enfeitiçada são imunes a este efeito."
+    },
+    {
+      "id": "luz-irradiancia",
+      "name": "Irradiância (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você ilumina este brilho, a luz intensa emite radiação ionizante junto com a luz visível. Criaturas dentro desta luz intensa devem ter sucesso em um teste de resistência de Constituição ou sofrer 1d6 de dano por veneno e serem envenenadas até o início de seu próximo turno cada vez que começarem seu turno na luz intensa. Esse dano aumenta em 1d6 nos níveis 5 (2d6), 11 (3d6) e 17 (4d6). Se uma criatura tiver sucesso em dois testes consecutivos, o efeito termina para ela."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-luz-repelente",
+      "name": "Luz Repelente (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você ilumina este brilho, a luz intensa repele criaturas indesejadas. Escolha um tipo de criatura. No caso de humanoides, você também deve escolher uma tag. Qualquer criatura deste tipo ou com essa tag dentro da área de luz intensa deve passar em um teste de resistência de Constituição ou não poderá se aproximar da fonte da luz. Criaturas afetadas podem se mover lateralmente ou para trás, mas não podem se aproximar, embora a fonte da luz possa se aproximar delas. Criaturas que passam no teste, mas permanecem na área de luz intensa, devem refazer o teste a cada rodada para evitar serem afetadas."
+        }
+      ],
+      "body": "Se uma criatura entrar na área de luz intensa (ou se a fonte da luz se aproximar), ela deve salvar imediatamente ou ser afetada."
+    },
+    {
+      "id": "luz-luz-reveladora",
+      "name": "Luz Reveladora (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você ilumina este brilho, a luz intensa revela todas as criaturas e objetos invisíveis. Essas criaturas e objetos perdem todos os benefícios de invisibilidade enquanto estiverem na área de luz intensa."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-luz-abrasadora",
+      "name": "Luz Abrasadora (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você ilumina este brilho, a luz intensa queima criaturas em sua área. Cada rodada que uma criatura estiver dentro da área de luz intensa, ela sofre 1d4 de dano radiante. Criaturas afetadas podem evitar este dano com um teste de resistência de Constituição; porém, se o custo final em pontos de magia do seu brilho for 1 ou mais, um teste bem-sucedido reduz apenas o dano pela metade. O dano radiante aumenta em 1d4 nos níveis 5 (2d4), 11 (3d4) e 17 (4d4). Você não pode aprimorar este brilho para ter duração diferente de concentração."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-insolacao",
+      "name": "Insolação (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você aplica este efeito de brilho em uma criatura, pode escolher causar 1d4 de dano radiante, aumentando em 1d4 nos níveis 5 (2d4), 11 (3d4) e 17 (4d4). A criatura sofre este dano no início de seus turnos enquanto o brilho estiver ativo. Um teste de resistência de Constituição bem-sucedido anula o dano naquele turno; dois testes consecutivos encerram o efeito."
+        },
+        {
+          "pm": 1,
+          "text": "Quando você ilumina um brilho aprimorado por Golpe de Sol, o alvo também recebe um nível de exaustão na próxima vez que sofrer dano deste efeito. Apenas um nível de exaustão pode ser aplicado por este efeito."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-sobrecarga-visual",
+      "name": "Sobrecarga Visual (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Brilho",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você ilumina este brilho, pode sobrecarregar o alvo com estímulos visuais. O alvo deve fazer um teste de resistência de Sabedoria a cada rodada em que o brilho estiver ativo ou só poderá realizar uma ação ou uma ação bônus, não ambas."
+        },
+        {
+          "pm": 1,
+          "text": "Este efeito afeta todas as criaturas dentro da área de luz intensa."
+        },
+        {
+          "pm": 1,
+          "text": "Quando você ilumina um brilho aprimorado por Sobrecarga Visual, criaturas que falham no teste ficam atordoadas até o início do próximo turno."
+        }
+      ],
+      "body": "Dois testes de resistência de Sabedoria bem-sucedidos consecutivos contra o brilho encerram este efeito para a criatura."
+    },
+    {
+      "id": "luz-camaleao",
+      "name": "Camaleão (lente)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Lente",
+      "tags": [
+        "lente"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode fazer com que a luz e a cor se alterem ao redor de um alvo, concedendo-lhe a habilidade de se camuflar com o ambiente. A criatura sob este efeito ganha vantagem em testes de Destreza (Furtividade). Um objeto escondido dessa forma requer um teste de Sabedoria (Percepção) para ser notado, com CD igual à sua CD de esfera -1 para cada categoria de tamanho acima de minúsculo (-1 para pequeno, -2 para médio, -3 para grande, -4 para enorme, -5 para colossal)."
+        },
+        {
+          "pm": 1,
+          "text": "O alvo ganha a habilidade de se esconder mesmo enquanto é observado e não há onde se ocultar, embora precise se mover no máximo metade de sua velocidade por rodada para usar este benefício."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-luz-fraca",
+      "name": "Luz Fraca (lente)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Lente",
+      "tags": [
+        "lente"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você faz com que um alvo não sofra efeitos negativos das suas habilidades da esfera Luz. O alvo deste talento (lente) é imune aos efeitos negativos dos seus brilhos, incluindo efeitos de quaisquer talentos (brilho) aplicados a ele. Também não sofre penalidades de visibilidade provenientes de seus brilhos."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-visao-infravermelha",
+      "name": "Visão Infravermelha (lente)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Lente",
+      "tags": [
+        "lente"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode alterar levemente o espectro da luz, concedendo ao alvo a habilidade de enxergar calor. Isso permite ignorar desvantagem em ataques contra criaturas vivas com visão obscurecida. Além disso, o alvo é capaz de rastrear criaturas vivas pelo calor deixado em seus rastros. Contanto que o rastro tenha no máximo uma hora de idade, o alvo tem vantagem em testes de habilidade para rastrear criaturas vivas, embora condições de temperatura extremas (como neve no inverno ou deserto ao meio-dia) possam anular esse benefício."
+    },
+    {
+      "id": "luz-obscurecer",
+      "name": "Obscurecer (lente)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Lente",
+      "tags": [
+        "lente"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você permite que a luz passe parcialmente pelo alvo e se mova de formas estranhas ao redor dele, dificultando perceber sua posição exata. Uma vez por rodada, quando o alvo for"
+        }
+      ],
+      "body": "atingido por um ataque, ele pode gastar uma reação para impor desvantagem nesse ataque. A decisão deve ser tomada antes da rolagem do ataque.\n\nOponentes que dependem apenas de sentidos não-visuais (como percepção cega) ou que não conseguem ver o alvo ignoram esta penalidade."
+    },
+    {
+      "id": "luz-periscopio",
+      "name": "Periscópio (lente)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Lente",
+      "tags": [
+        "lente"
+      ],
+      "target": "Um cubo de 5 pés",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Ao alterar o caminho da luz, você pode enxergar de posições incomuns. Pode colocar e ver através de um sensor em qualquer cubo de 5 pés desocupado dentro do seu alcance, com linha desobstruída. Esta linha pode ter um ângulo de até 90°, mais um ângulo adicional de até 90° nos níveis 5 (dois ângulos de 90°), 11 (três ângulos), e 17 (quatro ângulos), mas deve ser reta e ter comprimento não maior que o alcance dos seus talentos (lente). Você enxerga da posição do sensor como se estivesse no espaço que ele ocupa. Uma criatura que vê objetos invisíveis percebe o sensor como um orbe luminoso do tamanho do seu punho."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-telescopio",
+      "name": "Telescópio (lente)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Lente",
+      "tags": [
+        "lente"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você concede ao alvo a habilidade de ampliar a luz recebida. O alvo não sofre desvantagem em ataques à distância feitos na longa distância da arma e ganha vantagem em testes de Sabedoria (Percepção) baseados em visão."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-raio",
+      "name": "Raio (nimbo)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Nimbo",
+      "tags": [
+        "nimbo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você faz um efeito de brilho emitir luz, pode focar essa luz em uma linha, quadruplicando a distância afetada. Para luz normal, cria uma linha de luz intensa de 5 pés de largura por 20 de comprimento, com luz fraca se estendendo mais 15 pés em todas as direções. Isso também quadruplica a distância que iluminar gera luz intensa, criando uma linha de 20 pés de largura por 80 de comprimento, com luz fraca estendendo mais 20 pés. Uma vez por rodada no seu turno, sem gastar ação, você pode mudar instantaneamente a direção da linha de luz; não é possível “varrer” a área com seu brilho."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-iluminar-2",
+      "name": "Iluminar (nimbo)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Nimbo",
+      "tags": [
+        "nimbo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando faz um objeto emitir luz, pode focar essa luz em um cone como ação livre, dobrando a distância afetada. Seu brilho cria um cone de luz intensa de 10 pés, com luz fraca se estendendo mais 30 pés, enquanto iluminar cria um cone de 40 pés, com luz fraca estendendo mais 40 pés. Você pode retornar a luz ao normal ou mudar sua orientação livremente no seu turno."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-rastro",
+      "name": "Rastro (nimbo)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Nimbo",
+      "tags": [
+        "nimbo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode fazer com que seu brilho deixe um rastro de luz em vez de irradiar luz normalmente. O brilho gera luz intensa em qualquer quadrado por onde passe durante a rodada, com luz fraca se estendendo 5 pés além. Se você iluminar o brilho, ele gera luz intensa em raio de 5 pés ao redor de todos os quadrados por onde passa, com luz fraca 5 pés além. Se a área de luz voltar ao normal ou você alternar entre talentos (nimbo), qualquer rastro é removido imediatamente."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-brilho-em-area",
+      "name": "Brilho em Área",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode criar uma erupção de luz, fazendo com que todas as criaturas e objetos dentro de um cilindro de 15 pés de raio e 30 pés de altura centrado no alcance brilhem. Não é necessário ataque à distância contra criaturas na área, mas elas podem fazer um teste de Destreza para evitar o efeito. Cada criatura afetada conta como estando sob um brilho diferente para efeitos de iluminar, lente e nimbo."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-dobra-de-radiacao",
+      "name": "Dobra de Radiação",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode dobrar a luz produzida pelos seus brilhos, criando espaços que permanecem sem luz. Ao criar um brilho, pode escolher cubos de 5 pés dentro da área de luz, até um máximo igual ao seu bônus de proficiência. Eles não precisam ser contíguos. A área selecionada não é afetada pelo brilho; o nível de luz não muda e não sofre efeitos de talentos (brilho) aplicados. Se o brilho se mover, a área omitida se move junto. Você pode alterar quais áreas são afetadas sem gastar ação."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-luz-negra",
+      "name": "Luz Negra",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode fazer qualquer brilho emitir luz não-visível. Enquanto emite luz não-visível, o brilho não contorna criaturas com luz, não impõe desvantagem em Furtividade e não aumenta níveis de luz no raio. Entretanto, talentos (brilho) aplicados ao brilho ainda funcionam como se ele emitisse luz normalmente. Pode ser aplicado ou removido sem ação. Criaturas ainda percebem a área do efeito."
+        }
+      ],
+      "body": "Luz não-visível funciona normalmente em escuridão mágica e não interfere com ela. Nenhum teste mágico é necessário quando o brilho interage com escuridão mágica."
+    },
+    {
+      "id": "luz-luzes-dancantes",
+      "name": "Luzes Dançantes",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode criar um brilho sem precisar de uma criatura ou objeto. Permite criar uma esfera flutuante de luz que pode voar até 60 pés por rodada e ser direcionada sem custo de ação. Pode dar comandos simples, como seguir uma criatura visível ou se mover em um padrão específico."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-luz-dupla",
+      "name": "Luz Dupla",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode aplicar simultaneamente dois talentos (brilho) ao seu brilho. Os efeitos de cada talento são resolvidos separadamente; custos de aprimoramento de cada talento (brilho) devem ser pagos separadamente. Não pode ser usado junto ao talento avançado Luz do Dia."
+        },
+        {
+          "pm": 1,
+          "text": "Pode aplicar dois talentos (nimbo) a um único brilho, fazendo-o iluminar na área definida por ambos. Alternativamente, aplicar um talento (nimbo) e ainda iluminar na área normal do brilho, ou aplicar um talento (nimbo) duas vezes. Criaturas em áreas sobrepostas sofrem efeitos de talentos (brilho) e outros efeitos do brilho apenas uma vez."
+        },
+        {
+          "pm": 1,
+          "text": "Ao aplicar uma lente, pode aplicar uma segunda lente como parte da mesma conjuração. Ambas contam como um único efeito para concentração, duração, dissipação e efeitos similares."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-explosao-de-luz",
+      "name": "Explosão de Luz",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Pode fazer vários brilhos dentro do alcance igual ao seu bônus de proficiência explodirem. Criaturas na área de múltiplos brilhos fazem apenas um teste de resistência. Dano de múltiplos brilhos se acumula."
+        }
+      ],
+      "body": "Como ação bônus, você pode gastar um dos seus brilhos dentro do alcance de sua habilidade de brilho, fazendo-o brilhar intensamente antes de desaparecer, encerrando o efeito. O alvo sofre 1d8 de dano radiante, aumentando em 1d8 nos níveis 5 (2d8), 11 (3d8) e 17 (4d8), enquanto todas as criaturas a 5 pés do alvo sofrem metade desse dano.\n\nAs criaturas podem evitar dano com teste de Destreza, mas se o custo final em pontos de magia do brilho for 1 ou mais, um teste bem-sucedido reduz o dano apenas pela metade. Se o alvo for Grande ou maior, escolha um quadrado do alvo; o dano secundário afeta criaturas a 5 pés desse quadrado.\n\nSe possuir Luz Dupla, pode aplicar o seguinte aprimoramento:"
+    },
+    {
+      "id": "luz-flash",
+      "name": "Flash",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Como ação bônus, pode aplicar efeitos de um talento (brilho) mais uma vez por rodada, ativando separadamente de outras aplicações. Permite afetar outra área caso o brilho se mova ou a área de luz mude, mas não permite afetar a mesma área mais de uma vez por rodada."
+        }
+      ],
+      "body": "Pode aplicar efeitos de talentos (brilho) em qualquer momento do seu turno, não apenas no final. Ainda só pode aplicar os efeitos de talentos (brilho) uma vez por turno."
+    },
+    {
+      "id": "luz-gloria",
+      "name": "Glória",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao iluminar um brilho em si mesmo, dura por toda a duração sem concentração. O raio da luz intensa é reduzido para 5 pés."
+    },
+    {
+      "id": "luz-controle-de-intensidade",
+      "name": "Controle de Intensidade",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Pode adicionar ou subtrair até 10 pés do raio de luz fraca ou intensa. Se possuir talentos que alteram a área da luz, como Iluminar, o aumento/diminuição é aplicado antes da multiplicação da área. Pode alterar a área de luz como ação livre, mas ainda só afeta uma área por rodada para talentos (brilho)."
+        },
+        {
+          "pm": 0,
+          "text": "Contanto que não aplique talentos (brilho), pode dobrar o raio da luz. Não pode alterar a área da luz de Glória com Controle de Intensidade."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-ligacao-de-luz",
+      "name": "Ligação de Luz",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você sempre sabe a direção e distância para qualquer criatura ou objeto sob efeito do seu brilho. Sem efeito se a criatura ou objeto estiver em outro plano."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-estilo",
+      "name": "Estilo",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Seus brilhos podem ter múltiplas cores, permitindo contornar ou destacar partes de um objeto brilhante ou criar arte. Ao iluminar seu brilho, pode criar padrões e cores diferentes, projetando designs complexos em superfícies. Criar arte detalhada requer teste apropriado (normalmente Carisma (Materiais de Pintura)). Você define o padrão ao criar o brilho, podendo alterá-lo uma vez por turno sem gastar ação."
+        }
+      ],
+      "body": "Como ação, pode fazer um brilho que emite luz intensa “manchar” uma superfície com seu padrão atual. A mancha é instantânea, não-mágica, funciona como tinta comum e não pode ser dissipada, embora possa ser limpa ou pintada. Alvos relutantes podem fazer teste de Destreza para evitar manchar. Um cubo de 5 pés pode ser limpo com 1 minuto de trabalho.\n\nSe possuir Luzes Dançantes, pode alterar forma e aparência da luz. Pode ter tamanho de um cubo de 5 pés ou como um grão de poeira, sem impactar a luz emitida. Independente de quão detalhado, não pode ser confundido com algo que não seja luz mágica."
+    },
+    {
+      "id": "luz-luz-do-dia",
+      "name": "Luz do Dia (brilho)",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Luz",
+      "tags": [
+        "brilho"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "luz"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Ao iluminar um brilho, pode fazê-lo emitir luz intensa em raio de 2 milhas e luz fraca mais 5 milhas além. Não pode adicionar efeitos de talentos (brilho) a este brilho."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "luz-corpo-difuso",
+      "name": "Corpo Difuso",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Luz",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "luz"
+        },
+        {
+          "type": "talent",
+          "id": "luz-cintilar"
+        },
+        {
+          "type": "level",
+          "min": 7
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O talento Cintilar se torna mais refinado. Em vez de apenas permitir que alguém se"
+        }
+      ],
+      "body": "torne um único corpo de luz, concede a habilidade de se dividir em múltiplos reflexos. Quando a criatura afetada se move, pode escolher duas direções e terminar o movimento em dois locais diferentes. Ao agir novamente, ou ser atacada/afectada nesses locais, deve decidir qual posição realmente ocupa."
+    },
+    {
+      "id": "luz-foco-de-lente",
+      "name": "Foco de Lente",
+      "sphere": "luz",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Não pode criar brilhos. Apenas seleciona talentos (lente) e talentos que aprimoram efeitos (lente). Ganha um talento (lente) como talento bônus.\n\nBrilho Errante\n\nNão pode colocar brilhos em objetos ou criaturas. Ganha o talento Luzes Dançantes como talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

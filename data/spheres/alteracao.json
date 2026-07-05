@@ -1,0 +1,846 @@
+{
+  "id": "alteracao",
+  "name": "Alteração",
+  "section": "magic",
+  "summary": "Transformar a forma física de criaturas, com metamorfoses e mudanças corporais.",
+  "theme": {
+    "h": 172,
+    "s": 52,
+    "sig": "alteracao"
+  },
+  "acquisition": {
+    "freeGroup": {
+      "tag": "genótipo"
+    },
+    "freeLabel": "genótipo",
+    "freePicks": 1
+  },
+  "talents": [
+    {
+      "id": "alteracao-metamorfose",
+      "name": "Metamorfose",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 PM"
+      },
+      "action": "1 ação",
+      "range": "Toque",
+      "duration": "Concentração, até 10 minutos",
+      "target": "Uma criatura voluntária",
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode ter como alvo criaturas relutantes; elas podem realizar um teste de resistência de Constituição para negar o efeito. Ao final de cada um de seus turnos, uma criatura afetada pode realizar um novo teste de resistência de Constituição. Em caso de sucesso, o efeito termina para aquela criatura."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser lançado no seu turno sem uma ação."
+        }
+      ],
+      "body": "Você muda a sua forma ou a de uma criatura voluntária para uma forma completamente nova.\n\nAo transformar um alvo, você escolhe uma forma concedida por um talento (genótipo) que você possui, bem como uma série de características para ele. As formas constituem a constituição física básica de uma criatura (humanoide, dracônica, animalesca, aviária, etc.), enquanto os traços são características ou alterações especiais (armas naturais, tamanho da criatura, habilidades especiais, etc.).\n\nA constituição física atual do alvo muda completamente para a da nova forma, sua aparência muda para algo à sua escolha que corresponda à sua nova forma e ele perde quaisquer habilidades especiais, armas naturais, habilidade de fala ou tipos de movimento que dependiam da forma antiga, ganhando novos em seu lugar. A menos que sua nova forma impeça o alvo de fornecer os componentes necessários para sua magia, alvos metamorfoseados não perdem a capacidade de usar talentos ou habilidades de esfera mágica, a menos que seja declarado o contrário.\n\nAlém dos benefícios listados no talento (genótipo), você pode conceder ao alvo 1 traço, além de um traço adicional no 5º nível (dois traços), 11º nível (três traços) e 17º nível (quatro traços). Você não pode conceder o mesmo traço mais de uma vez, a menos que o traço indique que pode ser concedido múltiplas vezes.\n\nUm alvo só pode ser afetado por uma transformação por vez. Se um conjurador tentar aplicar uma segunda transformação em um alvo, ele deve ser bem-sucedido em um teste de habilidade de conjuração contra a CD de resistência à magia ou a CD da esfera do conjurador do efeito existente. Se for bem-sucedido, a segunda transformação é aplicada com sucesso no alvo, suprimindo a primeira (que continua a gastar sua duração mesmo enquanto suprimida). O talento Transformação, a habilidade de forma selvagem da classe druida, magias como alterar a si mesmo, formas animais, polimorfia e metamorfose, e outros poderes semelhantes, todos contam como uma transformação para esse propósito, embora fontes alternativas de características físicas específicas (por exemplo, uma característica de classe que permite o crescimento de garras) ainda funcionem.\n\nO alvo escolhe se seu equipamento cai no chão em seu espaço, se funde à sua nova forma ou é usado por ela. Equipamentos usados funcionam normalmente, mas o Mestre decide se é prático para a nova forma usar uma peça de equipamento, com base na forma e no tamanho da criatura. O equipamento não muda de tamanho ou forma para se adequar à nova forma, e qualquer equipamento que a nova forma não possa usar deve cair no chão ou se fundir a ela. Equipamentos que se fundem com a forma não têm efeito até que a mudança de forma termine.\n\nSe um talento ou traço tiver uma CA listada, esta CA não se acumula com nenhuma armadura usada, a menos que indicado; use o valor mais alto. Escudos podem ser aplicados normalmente, embora nem todas as formas tenham os membros necessários para empunhá-los.\n\nArmas Naturais: Alguns traços concedem armas naturais, como mordidas, garras, espinhos, garras, etc. Essas habilidades alteram o ataque desarmado do alvo, permitindo que ele altere o dado de dano e o tipo de dano. Algumas também podem conceder habilidades especiais que aumentam ainda mais seu uso. Algumas armas naturais exigem que o alvo tenha um conjunto específico de membros; uma criatura sem o membro necessário não pode obter as armas naturais e não pode colocar duas armas naturais no mesmo membro."
+    },
+    {
+      "id": "alteracao-animalistico",
+      "name": "Animalístico (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você concede a forma de uma fera terrestre ou monstruosidade com sua transformação.\n\nMembros: 1 cabeça, 4 pernas com todos os benefícios de ser um quadrúpede.\n\nDeslocamento: 12 metros de deslocamento terrestre. O deslocamento terrestre aumenta em 6 metros no 5º nível (18m), 11º nível (24m) e 17º nível (30m).\n\nArmas naturais: mordida [arma natural] (1d6 perfurante)\n\nCA: 13 + modificador de Destreza\n\nSentidos: habilidade Olfato (veja abaixo).\n\nEspecial: O alvo conta como sendo do tipo fera ou monstruosidade (à sua escolha), além do seu tipo normal.\n\nAnimalístico (genótipo) oferece os seguintes traços, que você pode aplicar a qualquer forma:\n\nVelocidade Animal: Uma velocidade terrestre igual à concedida pela forma Animalístico (genótipo) (concede 2 pernas se o alvo não tiver pernas).\n\nCascos: [arma natural] (requer pernas) 1d4 de concussão. Se você atropelar um alvo com sucesso, ele sofre dano dos seus cascos (1d4 + modificador de For).\n\nOlfato: O alvo ganha vantagem em testes de Sabedoria (Percepção) que dependem do olfato."
+    },
+    {
+      "id": "alteracao-antropomorfo",
+      "name": "Antropomorfo (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você concede a forma de uma criatura humanoide com sua transformação.\n\nMembros: 1 cabeça, 2 braços com mãos que podem manipular objetos como os humanos, 2 pernas\n\nDeslocamento: 9 metros de deslocamento terrestre.\n\nCA: 10 + modificador de Destreza (pode se beneficiar de armadura)\n\nEspecial: O alvo pode falar e ganha conhecimento de um idioma que você também fala. Se a Inteligência do alvo for menor que 6, ela é aumentada para 6. O alvo conta como sendo do tipo humanoide, além do seu tipo normal. Você pode escolher que o alvo seja contado como sendo de uma única raça humanoide de sua escolha, além da raça base.\n\nSe preferir, você pode abrir mão da aplicação de traços adicionais ao alvo para permitir que ele mantenha suas armas naturais, habilidades especiais e modos de movimento que dependiam de sua forma anterior, essencialmente tornando o alvo um híbrido entre um humanoide e sua forma anterior.\n\nAntropomorfo (genótipo) oferece os seguintes traços, que você pode aplicar a qualquer forma:\n\nMãos: Os braços do alvo terminam em mãos que podem realizar testes de Destreza com a mesma habilidade de qualquer humanoide.\n\nOlhos: O alvo ganha nariz, olhos e ouvidos, com sentidos humanoides normais, mesmo em uma forma que normalmente impediria isso.\n\nDom da Fala: O alvo pode falar e fornecer componentes de magia verbal normalmente, mesmo em uma forma que normalmente impediria isso."
+    },
+    {
+      "id": "alteracao-aquatico",
+      "name": "Aquático (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você concede a forma de uma fera nadadora ou monstruosidade com sua metamorfose.\n\nMembros: 1 cabeça, barbatanas, cauda\n\nDeslocamento: 1,5 metro de deslocamento em terra, 6 metros de deslocamento de nado. O deslocamento de nado aumenta em 6 metros no 5º nível (12 metros), 11º nível (18 metros) e 17º nível (24 metros).\n\nArmas naturais: mordida [arma natural] (1d6 perfurante)\n\nCA: 13 + modificador de Destreza\n\nEspecial: Ganhe a habilidade anfíbia (veja abaixo). O alvo conta como sendo do tipo fera ou monstruosidade (à sua escolha), além do seu tipo normal.\n\nAquático (genótipo) oferece os seguintes traços, que você pode aplicar a qualquer forma:\n\nAnfíbio: O alvo ganha a habilidade de respirar ar e água.\n\nJato de Tinta: [Recarga 5-6]. O alvo pode disparar um jato de tinta. Na água, isso cria uma esfera de 3 metros de raio que fornece ocultação total e persiste por 1 minuto. Em terra, este é um ataque à distância com alcance de 3/15 metros que força a criatura atingida a realizar um teste de resistência de Destreza ou ficará cega até gastar uma ou duas ações bônus removendo a tinta dos olhos.\n\nJato: [Recarga 4-6]. Enquanto nada, o alvo pode se mover com o dobro de sua velocidade de nado ao usar a ação de avanço. Ele deve se mover em linha reta enquanto dispara e não provoca ataques de oportunidade ao fazê-lo. (Requer velocidade de nado)\n\nOlfato Aguçado: O alvo pode perceber outras criaturas pelo cheiro em um raio de 55 metros debaixo d'água e pode detectar sangue na água a distâncias de até 1,6 km.\n\nChoque: [Recarga 5-6]. Como uma ação, o alvo pode causar 1d8 de dano elétrico com um ataque corpo a corpo. Este dano aumenta em 1d8 nos níveis 5 (2d8), 11 (3d8) e 17 (4d8). Se uma criatura agarrar o alvo com sucesso, o alvo pode usar esta habilidade como reação. Se o alvo estiver na água, esta habilidade funciona como uma esfera de 3 metros de raio centrada no alvo; as criaturas afetadas podem realizar um teste de resistência de Constituição para sofrer metade do dano. O alvo pode se excluir deste dano. Criaturas além de 3 metros, mas dentro de um raio de 9 metros, sofrem metade deste dano, com um teste de resistência de Constituição para sofrer metade do dano.\n\nNatação: Uma velocidade de natação igual à concedida pelo Aquático (genótipo).\n\nVisão na Água: O alvo pode enxergar claramente na água, impedindo-o de sofrer qualquer penalidade em Percepção por estar debaixo d'água."
+    },
+    {
+      "id": "alteracao-aviario",
+      "name": "Aviário (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você concede a forma de uma fera voadora ou monstruosidade com sua metamorfose.\n\nMembros: 1 cabeça, 2 pernas, 2 asas\n\nDeslocamento: 6 metros de deslocamento em terra, 9 metros de deslocamento em planagem (você pode se mover 9 metros em qualquer direção, exceto para cima, mas cai 30 metros a cada 1,5 metro percorrido). Seu deslocamento em planagem aumenta para 6 metros de deslocamento em voo no 5º nível, e seu deslocamento em voo aumenta em mais 6 metros no 11º nível (12 metros) e no 17º nível (18 metros).\n\nArmas naturais: garras [arma natural] (1d4 cortante)\n\nCA: 12 + modificador de Destreza\n\nEspecial: O alvo conta como sendo do tipo fera ou monstruosidade (à sua escolha), além do seu tipo normal.\n\nAviário (genótipo) oferece os seguintes traços, que você pode aplicar a qualquer forma:\n\nBico: [arma natural] (requer cabeça, 1d4 de perfuração).\n\nVoo: (requer asas) ganha a velocidade de planeio e a velocidade de voo concedidas por Aviário (genótipo).\n\nPlanar: Durante o voo, o alvo não cai se for derrubado, tiver sua velocidade reduzida a 0 ou for privado da capacidade de se mover.\n\nGarras: [arma natural] (requer pernas) 1d4 de corte.\n\nAsas: Você ganha um par de asas. A menos que algo o derrube, você cai a uma taxa de 18 metros por rodada e não sofre dano de queda.\n\nGolpe de Asa: [arma natural] (requer asas, 1d4 de concussão)."
+    },
+    {
+      "id": "alteracao-forma-em-branco",
+      "name": "Forma em Branco (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao contrário de outros talentos (genótipo), a Forma em Branco não altera a constituição básica da criatura. Eles não perdem suas habilidades, equipamentos, armas naturais ou qualquer outro aspecto de sua forma inalterada. Em última análise, o talento Forma em Branco permite que um conjurador adicione características a uma criatura sem alterar fundamentalmente o alvo primeiro.\n\nAparência: Você pode alterar a aparência do alvo para que ele pareça algo diferente. Embora não possa alterar a forma do alvo, você tem grande controle sobre as características cosméticas; você pode transformar um homem em uma mulher, um elfo em um orc, alterar a aparência de suas roupas, transformar um cachorro grande em um pônei pequeno, etc. Aplicar esta característica dá ao alvo vantagem em qualquer teste de Enganação feito para parecer com o que quer que esteja disfarçado, e você pode até usar esta característica para aplicar um disfarce para parecer um indivíduo específico. Usar esta característica permite que você faça um teste de Kit de Disfarce sem precisar de disfarce, usando seu modificador de habilidade Chave. Você pode fundir o equipamento do alvo em sua forma e substituí-lo por roupas disfarçadas, como se estivesse aplicando uma transformação diferente também.\n\nMordida: [arma natural] (requer cabeça) 1d6 perfurante.\n\nGarras: [arma natural] (requer braços) 1d4 de corte. Você ganha até uma garra por braço, e suas garras são consideradas armas leves de finesse.\n\nVisão no Escuro: O alvo ganha visão no escuro a 18 metros: O alvo pode enxergar em penumbra a até 18 metros de distância como se fosse luz brilhante, e na escuridão como se fosse luz fraca. O alvo não consegue discernir cores na escuridão, apenas tons de cinza. Você pode conceder esta característica várias vezes, cada vez que aumenta o alcance da Visão no Escuro em mais 18 metros.\n\nDisfarce de Especialista: Adicione seu bônus de proficiência a um teste de Kit de Disfarce feito com a característica Aparência. Se você já for proficiente, pode dobrar seu bônus de proficiência. Isso pode não se beneficiar de múltiplas características, como Perícia, que dobram seu bônus de proficiência.\n\nArmadura Natural: O alvo ganha pele resistente e escamosa. A CA do alvo se torna um mínimo de 13 + seu modificador de Destreza. Os benefícios de um escudo se aplicam normalmente a uma armadura natural.\n\nReter Traço: Como traço ao aplicar uma forma diferente da Forma em Branco, você pode escolher uma habilidade dependendo da forma base do seu alvo (visão no escuro, olfato aguçado, sopro racial, etc.). O alvo retém essa habilidade mesmo sob os efeitos da sua metamorfose. Você pode aplicar esse traço mais de uma vez, selecionando uma habilidade diferente a cada vez."
+    },
+    {
+      "id": "alteracao-dragao",
+      "name": "Dragão (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a forma de um dragão com sua metamorfose.\n\nMembros: 1 cabeça, 2 asas, 4 pernas\n\nDeslocamento: 9 metros de deslocamento terrestre\n\nArmas naturais: mordida [arma natural] (1d6 perfurante)\n\nCA: 13 + modificador de Destreza\n\nSentidos: Visão no escuro 18 metros\n\nEspecial: Ganhe um sopro como característica (veja abaixo). O alvo conta como sendo do tipo dragão, além do seu tipo normal. As formas de dragão são capazes de falar e fornecer componentes verbais.\n\nDragão (genótipo) oferece os seguintes traços, que você pode aplicar a qualquer forma:\n\nSopro: [Recarga 5-6] Uma linha de 18 metros ou um cone de 9 metros, causando 2d6 de dano, causando dano ácido, frio, fogo ou raio, conforme escolhido no momento em que é obtido. As criaturas afetadas podem realizar um teste de resistência de Destreza para reduzir o dano pela metade. Um alvo só pode possuir um sopro por vez. O dano do sopro aumenta em 1d6 no 5º nível (3d6), 11º nível (4d6) e 17º nível (5d6).\n\nSopro Ampliado: Dobra o tamanho de um sopro (linha de 36 metros ou cone de 18 metros) (é necessário possuir um sopro para obter esta característica).\n\nPresença Assustadora: (Aumenta 1 PM) Com uma ação, o alvo pode criar uma aura de 9 metros que emana dele. Todas as criaturas que entram na aura devem ter sucesso em um teste de resistência de Sabedoria ou ficar amedrontado por 1 minuto. Uma criatura pode repetir o teste de resistência ao final de cada um de seus turnos, encerrando o efeito sobre si mesma em caso de sucesso. Se o teste de resistência de uma criatura for bem-sucedido ou o efeito terminar para ela, a criatura fica imune ao uso desta habilidade pelo conjurador de esferas até que o conjurador complete um descanso longo."
+    },
+    {
+      "id": "alteracao-elemental",
+      "name": "Elemental (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a forma de um elemental com sua transformação.\n\nMembros: mutáveis (o alvo não possui membros e não pode ganhar membros ou ataques naturais por meio de traços. Formas semelhantes a membros podem fazer parte da forma, mas não conferem habilidades específicas)\n\nDeslocamento: 9 metros de deslocamento terrestre\n\nArmas naturais: pancada [arma natural] (1d6 de concussão)\n\nCA: 13 + modificador de Destreza\n\nImunidade: cair\n\nSentidos: Visão no Escuro 18 metros\n\nEspecial: O alvo conta como sendo do tipo elemental, além do seu tipo normal. O alvo ganha um dos seguintes pacotes, dependendo de qual elemental está sendo mimetizado.\n\nVocê também pode conceder o seguinte traço às suas formas:\n\n•Resistência Elemental: O alvo ganha resistência a dano de ácido, frio, fogo ou raio. Esta característica pode ser concedida várias vezes, selecionando uma resistência diferente a cada vez.\n\nIvestidura de Ar\n\nO alvo ganha resistência a dano elétrico e a habilidade de criar um redemoinho (veja abaixo). O alvo pode atravessar e ocupar os espaços de outras criaturas e ganha o modo de movimento flutuar (veja abaixo).\n\nFlutuar: O alvo pode flutuar até 3 metros acima do solo, com uma velocidade de movimento horizontal de 9 metros. Ao flutuar dessa forma, o alvo pode pairar. Ao cair, o alvo pode optar por descer em uma velocidade mais lenta para controlar sua queda e anular todo o dano de queda que receberia. A cada rodada, ele desce 9 metros e pode se mover em outra direção por 9 metros. Ele pode optar por flutuar lateralmente, planando para a frente enquanto desce, ou para baixo, aumentando com segurança sua velocidade de descida. Ele pode até optar por flutuar \"para cima\" para reduzir sua velocidade de descida, permitindo-lhe até mesmo anulá-la completamente e pairar no ar. No nível 5, essa velocidade se torna uma velocidade de voo de 9 metros. Este deslocamento de voo aumenta em 6 metros no 11º nível (15 metros) e no 17º nível (21 metros).\n\nRedemoinho: (Recarga 4–6). Com uma ação, o alvo cria um redemoinho com 1,5 metro de diâmetro centrado em si mesmo, que permanece até o início do próximo turno. Além do alvo, todas as criaturas na área devem realizar um teste de resistência de Força. Em caso de falha, as criaturas afetadas sofrem dano de pancada e são arremessadas a até 1,5 metro de distância do elemental na direção escolhida pelo alvo, ficando prostradas. Se uma criatura arremessada atingir um objeto, como uma parede ou o chão, ela sofre 3 (1d6) de dano contundente para cada 3 metros de distância que foi arremessada. Se a criatura for arremessada contra outra criatura, esta deve ser bem-sucedida em um teste de resistência de Destreza contra a CD da sua esfera ou sofrer o mesmo dano e ficar prostrada. Se o teste de resistência for bem-sucedido, a criatura não sofre dano e não é arremessada para longe ou fica prostrada. O diâmetro do redemoinho e a distância das criaturas arremessadas aumentam em 1,5 metro no 5º nível (3 metros de diâmetro, arremesso de 3 metros), 11º nível (4,5 metros de diâmetro, arremesso de 4,5 metros) e 17º nível (6 metros de diâmetro, arremesso de 6 metros).\n\nInvestidura de Terra\n\nO alvo ganha 9 metros de velocidade de escavação e pode escavar rochas sólidas, além de resistência a dano ácido.\n\nInvestidura de Fogo\n\nO alvo emite luz brilhante por 9 metros e luz fraca por 9 metros além. Seu ataque de pancada causa dano de fogo em vez de dano contundente, e criaturas e objetos inflamáveis atingidos por seu ataque de pancada se inflamam. Até que uma criatura realize uma ação para apagar o fogo, o alvo sofre 2 (1d4) de dano de fogo no início de cada um de seus turnos. O dano do efeito de ignição aumenta em um passo no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10). O alvo ganha resistência a dano de fogo.\n\nInvestidura de Água\n\nO alvo pode respirar água e ganha um deslocamento de Nado de 9 metros, que aumenta em 6 metros no 5º nível (15 metros), 11º nível (21 metros) e 17º nível (27 metros). O alvo pode atravessar e ocupar espaços de outras criaturas. O alvo também ganha resistência ao frio, bem como a habilidade de Vórtice.\n\nVórtice: (Recarga 4–6). Com uma ação, o alvo cria um vórtice com 1,5 metro de diâmetro centrado em si mesmo que permanece até o início do próximo turno.\n\nAlém do alvo, todas as criaturas no vórtice devem realizar um teste de resistência de Força contra a CD da sua esfera. Criaturas que não estejam totalmente no vórtice ganham vantagem no teste de resistência. Em caso de falha, as criaturas afetadas sofrem o dano de pancada do alvo. Se não for maior que um tamanho do alvo, também é Agarrada (CD de fuga é a CD da sua esfera). Até que este agarrão termine, a criatura afetada fica Restringida e incapaz de respirar, a menos que possa respirar água. Se o teste de resistência for bem-sucedido, a criatura afetada é empurrada para fora do espaço do vórtice.\n\nOutra criatura que esteja fora do vórtice, mas ainda ao alcance de uma criatura agarrada dentro do vórtice, pode puxá-la para fora dele realizando uma ação para fazer um teste de Força contra a CD da sua esfera e obtendo sucesso.\n\nO diâmetro do vórtice aumenta em 1,5 metro no 5º nível (3 metros de diâmetro), 11º nível (4,5 metros de diâmetro) e 17º nível (6 metros de diâmetro)."
+    },
+    {
+      "id": "alteracao-gosma",
+      "name": "Gosma (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a forma de uma criatura gosma ou limo com sua transformação.\n\nMembros: mutáveis (o alvo não possui membros e não pode ganhar membros ou ataques naturais por meio de características. Formas semelhantes a membros podem fazer parte da forma, mas não conferem habilidades específicas)\n\nDeslocamento: 6 metros de deslocamento terrestre\n\nArmas naturais: pancada [arma natural] (1d6 de concussão + 1d4 de ácido)\n\nCA: CA 16 (não afetado pelo modificador de Destreza)\n\nImunidade: cair\n\nSentidos: visão às cegas a 18 metros (cego além deste raio).\n\nEspecial: Corpo fluido (como a característica abaixo). O alvo é cego (exceto pela visão às cegas) e imune a ataques visuais, efeitos visuais, ilusões visuais e outras formas de ataque que dependem da visão, a menos que ganhe olhos de outra fonte. O alvo conta como sendo do tipo gosma, além do seu tipo normal.\n\nO alvo também ganha um dos seguintes pacotes, dependendo de qual gosma ou lodo está sendo mimetizado:\n\nAmeba Gigante: O alvo ganha deslocamento de nado de 6 metros e a habilidade de respirar debaixo d'água.\n\nCubo Gelatinoso: O alvo é quase transparente, concedendo vantagem em testes de Destreza (Furtividade). Ele também ganha resistência a raios.\n\nGeleia: O alvo ganha deslocamento de escalada de 6 metros e pode escalar superfícies difíceis, incluindo tetos de cabeça para baixo, sem precisar fazer um teste de habilidade.\n\nPudim: Uma criatura que toca o alvo ou o atinge com um ataque corpo a corpo a até 1,5 metro dele sofre 4 (1d8) de dano ácido. Qualquer arma não mágica feita de metal ou madeira que atinja o alvo corrói. Após causar dano, a arma sofre uma penalidade permanente e cumulativa de -1 nas jogadas de dano. Se a penalidade cair para -5, a arma é destruída. Munição não mágica feita de metal ou madeira que atinge o alvo é destruída após causar dano.\n\n•Aprimoramento 1PM: O alvo pode devorar madeira ou metal não mágico de 5 cm de espessura em 1 rodada.\n\nVocê pode adicionar os seguintes traços às suas formas:\n\nEngolfar: Como uma ação, o alvo se move até seu deslocamento. Ao fazer isso, ele pode entrar nos espaços de criaturas menores que ele. Sempre que entrar no espaço de uma criatura, a criatura deve realizar um teste de resistência de Destreza. Em um teste bem-sucedido, a criatura pode escolher ser empurrada 1,5 m para trás ou para o lado do alvo. Uma criatura que escolher não ser empurrada sofre as consequências de um teste de resistência fracassado. Em um teste fracassado, o alvo entra no espaço da criatura e sofre dano de pancada e é engolfada. A criatura engolfada não consegue respirar, fica imobilizada e sofre dano de pancada no início de cada turno do alvo. Quando o alvo se move, a criatura engolfada se move com ele. Uma criatura engolfada pode tentar escapar realizando uma ação para realizar um teste de Força (Atletismo) ou Destreza (Acrobacia) contestado pela Força (Atletismo) do alvo. Em caso de sucesso, a criatura escapa e entra em um espaço à sua escolha a até 1,5 metro do alvo. (Requer a forma de uma gosma ou limo)\n\nCorpo Fluido: O alvo pode se mover por uma área tão pequena quanto um quarto do seu espaço sem se espremer ou um oitavo do seu espaço ao se espremer."
+    },
+    {
+      "id": "alteracao-orbe",
+      "name": "Orbe (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a forma de uma esfera flutuante, capacete ou forma similar com sua metamorfose.\n\nMembros : 1 cabeça\n\nDeslocamento : 1,5 metro de deslocamento em terra, flutuação de 9 metros como a característica Flutuar.\n\nArmas naturais : pancada [arma natural] (1d4 de concussão)\n\nCA : 14 + modificador de Destreza\n\nImunidade : cair, ser decapitado\n\nEspecial : O alvo conta como sendo do tipo aberração, elemental ou planta (à sua escolha; outras podem ser permitidas pelo Mestre), além do seu tipo normal. Uma criatura na forma de orbe conta como um tamanho menor para fins de se espremer em espaços pequenos.\n\nOrbe (genótipo) oferece o seguinte traço, que você pode aplicar a qualquer forma:\n\nFlutuar : O alvo pode flutuar até 3 metros acima do solo, com uma velocidade de movimento horizontal de 9 metros. Ao flutuar dessa forma, o alvo pode pairar. Ao cair, o alvo pode optar por descer a uma velocidade menor para controlar sua queda e anular todo o dano de queda que receberia. A cada rodada, ele desce 9 metros e pode se mover em outra direção por 9 metros. Ele pode escolher flutuar para os lados, planando para a frente enquanto desce, ou para baixo, aumentando sua taxa de descida com segurança. Ele pode até escolher flutuar \"para cima\" para reduzir sua taxa de descida, permitindo-lhe até mesmo anulá-la completamente e pairar no ar. No nível 5, esse deslocamento se torna um deslocamento de voo de 9 metros. Essa levitação e voo são habilidades mágicas. Esse deslocamento de voo aumenta em 6 metros no 11º nível (15 metros) e no 17º nível (21 metros)."
+    },
+    {
+      "id": "alteracao-planta",
+      "name": "Planta (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a forma de uma criatura planta com sua transformação.\n\nMembros : 2 braços\n\nDeslocamento : deslocamento terrestre de 6 metros\n\nArmas naturais : pancada [arma natural] (1d6 de concussão)\n\nCA : 15 + modificador de Destreza (+2 máx.)\n\nSentidos : Visão às Cegas 9 metros\n\nEspecial : O alvo ganha vantagem em todos os testes de Furtividade feitos em vegetação densa. O alvo conta como sendo do tipo planta, além do seu tipo normal.\n\nA planta (genótipo) oferece o seguinte traço, que você pode aplicar a qualquer forma:\n\nCasca : Você pode ao alvo a CA concedida por Planta (genótipo)"
+    },
+    {
+      "id": "alteracao-serpente",
+      "name": "Serpente (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a forma de uma serpente com sua metamorfose.\n\nMembros : 1 cabeça\n\nDeslocamento : 12 metros de deslocamento em terra, 6 metros de escalada\n\nArmas naturais : mordida [arma natural] (1d6 perfurante)\n\nCA : CA 13 + Destreza\n\nEspecial : O alvo conta como sendo do tipo besta ou monstruosidade (à sua escolha), além do seu tipo normal.\n\nAlém disso, o alvo ganha um dos seguintes pacotes, dependendo de qual serpente está sendo mimetizada:\n\n•Constrictor : O alvo ganha a característica Constrição (veja abaixo) para sua mordida [arma natural].\n\n•Peçonhento : Quando o alvo causa dano com um ataque bem-sucedido com sua mordida [arma natural], ele pode tentar envenenar a criatura danificada. Uma criatura danificada deve ser bem-sucedida em um teste de Constituição ou será envenenada por 1 minuto, sofrendo 3 (1d6) de dano de veneno no início de cada um de seus turnos enquanto estiver envenenada. As criaturas podem realizar um novo teste de resistência ao final de cada um de seus turnos para encerrar a condição de envenenamento.\n\nSerpentina (genótipo) oferece os seguintes traços, que podem ser aplicadas a qualquer forma:\n\nRestringir : Escolha uma [arma natural] que o alvo possua; o alvo pode agarrar usando esta [arma natural] mesmo sem ter a mão livre. Ao obter sucesso em um ataque com essa arma, o alvo pode tentar agarrar a criatura atacada como uma ação bônus. Criaturas agarradas pelo alvo são restringidas até escaparem do agarramento. O alvo só pode usar esta habilidade em uma única criatura por vez.\n\nGiro da Morte : Quando o alvo tiver uma criatura agarrada, ele pode tentar empurrá-la para o chão como uma ação bônus. Ele tem vantagem neste teste.\n\nEstrangular : Um oponente agarrado pelo alvo não pode falar ou conjurar magias com componentes verbais.\n\nEngolir Inteiro : O alvo pode tentar um ataque de engolir contra uma criatura que esteja agarrando. Se o ataque acertar, a criatura é engolida e o agarrar termina. A criatura engolida fica cega e restringida, tem cobertura total contra ataques e outros efeitos originados de fora do alvo metamorfoseado e sofre 1d6 de dano ácido no início de cada turno da criatura metamorfoseada. O alvo metamorfoseado pode engolir alvos até um tamanho menor que ele e pode ter apenas um alvo engolido por vez. O dano ácido aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6). O alvo pode escolher soltar inofensivamente uma criatura engolida no espaço disponível mais próximo como uma ação bônus. Se uma metamorfose terminar enquanto ainda houver uma criatura engolida, a criatura engolida é liberada inofensivamente. Se o alvo metamorfoseado morrer, a criatura engolida não estará mais restringida por ela e poderá escapar do cadáver usando 1,5 metro de movimento, saindo caída."
+    },
+    {
+      "id": "alteracao-subterraneo",
+      "name": "Subterrâneo (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a forma de uma besta ou monstruosidade subterrânea com sua metamorfose.\n\nMembros : 1 cabeça, 4 pernas\n\nDeslocamento : 9 metros de deslocamento em terra, 4,5 metros de deslocamento em escavação (o alvo pode escavar areia, terra ou lama). A velocidade de escavação aumenta em 4,5 metros no 5º nível (9 metros), 11º nível (13 metros) e 17º nível (18 metros).\n\nArmas naturais : mordida [arma natural] (1d6 perfurante)\n\nCA : CA 13 + Destreza\n\nEspecial : Visão no Escuro 18 metros, Sentido Trêmulo 6 metros. O alvo conta como sendo do tipo besta ou monstruosidade (à sua escolha), além do seu tipo normal.\n\nSubterrâneo (genótipo) oferece os seguintes traços, que você pode aplicar a qualquer forma:\n\nEscavação : Uma velocidade de escavação concedida pela forma Subterrânea.\n\nSentido Sísmico : Sentido Sísmico em um raio de 6 metros."
+    },
+    {
+      "id": "alteracao-praga",
+      "name": "Praga (genótipo)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Genótipo",
+      "tags": [
+        "genotipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a forma de uma aranha, inseto ou outra criatura semelhante com sua metamorfose.\n\nMembros : 1 cabeça, 6 ou 8 pernas\n\nDeslocamento : 9 metros de deslocamento em terra, 9 metros de deslocamento de escalada. O alvo pode escalar superfícies difíceis, mesmo de cabeça para baixo, sem um teste de habilidade.\n\nArmas naturais : mordida [arma natural] (1d6 perfurante)\n\nCA : 13 + modificador de Destreza\n\nEspecial : Visão no Escuro a 18 metros. O alvo conta como sendo do tipo besta ou monstruosidade (à sua escolha), além do seu tipo normal. O alvo também ganha as características veneno ou escalada.\n\nPraga (genótipo) oferece os seguintes traços, que você pode aplicar a qualquer forma:\n\nEscalar : 9 metros de deslocamento de escalada..\n\nVeneno : Escolha uma arma natural. Quando o alvo causa dano com um ataque bem-sucedido com aquela arma natural, ele pode tentar envenenar a criatura danificada. Uma criatura danificada deve ser bem-sucedida em um teste de Constituição ou será envenenada por 1 minuto, sofrendo 3 (1d6) de dano de veneno no início de cada um de seus turnos enquanto estiver envenenada. As criaturas podem realizar um novo teste de resistência ao final de cada um de seus turnos para encerrar a condição de envenenamento.\n\nTeia : [Recarga 6] Como uma ação, o alvo pode lançar uma teia como uma rede com alcance 30/60, que é eficaz contra alvos até 1 tamanho maior que o alvo. O alvo é proficiente em lançar sua teia. Criaturas atingidas pela teia são restringidas pela teia. Como uma ação, a criatura restringida pode fazer um teste de Força contra a CD da sua Esfera, rompendo a teia em caso de sucesso. A teia também pode ser atacada e destruída (CA 10; PV 5; vulnerabilidade a dano de fogo; imunidade a concussão, veneno e dano psíquico). Uma teia pode suportar até o dobro do peso da criatura que a cria. O alvo ignora as restrições de movimento causadas pela teia e, enquanto estiver em contato com uma teia, o alvo sabe a localização exata de qualquer outra criatura em contato com a mesma teia."
+    },
+    {
+      "id": "alteracao-corpo-aberrante",
+      "name": "Corpo Aberrante (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Corpo Aberrante oferece as seguintes características, que você pode aplicar a qualquer forma.\n\nCuspe Ácido : [arma natural] arma de longo alcance 20/60, 1d6 de dano ácido. Uma criatura atingida por este ataque sofre 1d6 de dano ácido adicional ao final do seu próximo turno.\n\nTagarela : Todas as criaturas em um raio de 9 metros do alvo têm desvantagem em testes de resistência feitos para manter a concentração. Esta habilidade pode ser suprimida ou retomada como uma ação bônus.\n\nMuitos Olhos : O alvo ganha vantagem em testes de Sabedoria (Percepção) baseados em visão. Se usar as regras opcionais de flanqueamento, o alvo não pode ser flanqueado.\n\nMuco : [Recarga 5-6] Como uma ação, o alvo ganha a habilidade de liberar uma nuvem de muco com um raio de 1,5 metro, aumentando em 1,5 metro no 5º (3 metros), 11º (4,5 metros) e 17º níveis (6 metros), que persiste por 1 minuto, a menos que seja dispersada por um vento forte. Qualquer criatura que entre em contato com a nuvem deve realizar um teste de resistência de Constituição ou, por 1 minuto, ficará incapaz de respirar ar, mas capaz de respirar debaixo d'água. As criaturas afetadas podem gastar uma ação removendo o muco para encerrar o efeito sobre si mesmas mais cedo. Uma criatura incapaz de respirar ar que permaneça fora d'água começa a sufocar.\n\nGavinha : [arma natural] O alvo ganha uma gavinha. Esta característica pode ser concedida múltiplas vezes, concedendo uma gavinha por característica, e o alvo pode atacar com cada gavinha como parte do mesmo ataque, desde que cada gavinha tenha como alvo uma criatura diferente. Cada gavinha pode ser atacada (CA 20; 10 pontos de vida; imunidade a veneno e dano psíquico). Destruir uma gavinha não causa dano ao alvo, que pode expelir uma gavinha substituta no próximo turno. Uma gavinha também pode ser quebrada se uma criatura realizar uma ação e for bem-sucedida em um teste de Força contra a CD da sua esfera.\n\n•Gavinha : Ataque com Arma Corpo a Corpo, alcance 15 metros, Acerto: O alvo é Agarrado (CD de fuga igual à CD da sua Esfera). Até que o agarrão termine, o alvo fica Restringido e tem desvantagem em Testes de Força e Testes de Resistência de Força, e o alvo não pode usar a mesma gavinha em outro alvo. Criaturas 2 ou mais tamanhos maiores que o alvo são imunes à gavinha. Como uma ação bônus, o alvo pode puxar criaturas presas em suas gavinhas 7,5 metros em sua direção.\n\nTentáculos : [arma natural] 1d4 de dano contundente e a propriedade de alcance da arma.\n\nAlém disso, você pode escolher que o alvo conte como uma aberração, além do seu tipo normal. Esta escolha nega quaisquer tipos adicionais concedidos por talentos (genótipo)."
+    },
+    {
+      "id": "alteracao-membros-adicionais",
+      "name": "Membros Adicionais (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Membros Adicionais oferece as seguintes características, que você pode aplicar a qualquer forma. Você pode conceder cada característica várias vezes:\n\nBraços: Um braço extra, que pode fazer todas as coisas que um braço normal pode fazer para a sua forma.\n\nCabeça: Uma cabeça. Criaturas com duas ou mais cabeças têm vantagem em testes de resistência contra cegueira, surdez, atordoamento e nocaute.\n\nPernas: Um par de pernas. Isso concede um deslocamento terrestre de 6 metros se o alvo não possuir uma. Se este não for o primeiro par de pernas da forma, o alvo ganha um bônus de +10 em seu deslocamento terrestre por par de pernas adicional.\n\nCauda Preênsil: Uma cauda preênsil, que pode ser usada para segurar objetos como se fosse uma mão e recuperar objetos de um cinto ou bolsa uma vez por rodada sem nenhuma ação.\n\nCauda Ferreante: [arma natural] 1d4 perfurante. Se o alvo estiver agarrando uma criatura, ele pode atacá-la com este ferrão como uma ação bônus.\n\nCauda Poderosa: [arma natural] 1d4 de concussão. Se o alvo atacar uma criatura com uma arma ou ataque desarmado diferente deste tapa de cauda, ele pode atacar uma criatura diferente ao alcance com este tapa de cauda como uma ação bônus."
+    },
+    {
+      "id": "alteracao-corpo-agil",
+      "name": "Corpo Ágil (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Todas as suas armas naturais ganham a propriedade acuidade."
+        }
+      ],
+      "body": "Você pode adicionar as seguintes características adicionais às suas formas:\n\nEvasivo: O alvo ganha reflexos incríveis. Quando o alvo é submetido a um efeito que lhe permite fazer um teste de resistência de Destreza para receber apenas metade do dano, ele não sofre dano se for bem-sucedido no teste de resistência. Se esta característica for concedida uma segunda vez, o alvo sofre apenas metade do dano se falhar.\n\nEsquiva Incrível: Atacantes que o alvo não conhece ou não consegue ver não ganham vantagem em jogadas de ataque feitas contra o alvo.\n\nIniciativa: O alvo ganha reações aceleradas, concedendo vantagem em testes de Destreza para iniciativa.\n\nAlém disso, você pode aplicar o seguinte aprimoramento à sua metamorfose:"
+    },
+    {
+      "id": "alteracao-mente-bestial",
+      "name": "Mente Bestial (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Mente Bestial oferece a seguinte característica, que pode ser aplicada a qualquer forma:\n\nMente Bestial: Além do teste de resistência de Constituição para resistir à metamorfose, o alvo deve ser bem-sucedido em um teste de resistência de Sabedoria ou sua mente se tornará bestial. Sua Inteligência é reduzida a 2, e ele é tratado como uma fera para perícias como Sabedoria (Lidar com Animais) e magias como falar com animais. Ele não pode usar magias e outras habilidades que exijam senciência, embora mantenha outros aspectos de seus níveis de classe, como bônus de proficiência e outras habilidades. O Mestre é o árbitro final sobre quais habilidades uma criatura sob o efeito desta característica pode ou não usar. Esta característica não tem efeito em criaturas que já tenham um valor de Inteligência de 2 ou menos.\n\nAlém disso, você pode escolher que o alvo seja considerado uma fera, além do seu tipo normal. Esta escolha nega quaisquer tipos adicionais concedidos por talentos (genótipo)."
+    },
+    {
+      "id": "alteracao-reflexos-bestiais",
+      "name": "Reflexos Bestiais (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Reflexos Bestiais oferece as seguintes características, que você pode aplicar a qualquer forma:\n\nEstocada: Como uma ação bônus, o alvo pode dobrar seu alcance natural para um ataque corpo a corpo feito antes do final do seu turno.\n\nAtaque Múltiplo: (Requer 5º nível) Quando o alvo realiza uma ação de Ataque, ele pode realizar um ataque com cada arma natural que possuir. Isso não acumula com Ataque Extra.\n\nBota: Quando o alvo usa sua ação para Disparar, ele pode usar uma ação bônus para realizar um ataque com arma corpo a corpo ou para empurrar uma criatura.\n\nAtropelar: Como uma ação, o alvo pode se mover por cima de todas as criaturas menores que ele neste turno, causando 1d6+modificador de For de dano contundente a qualquer criatura sobre a qual se mover. Criaturas no caminho de um atropelamento podem realizar ataques de oportunidade contra o alvo, mas sofrem desvantagem nos ataques e não podem se esquivar. Se, em vez disso, optarem por se esquivar, podem tentar um teste de resistência de Destreza para receber metade do dano.\n\nUma criatura atropeladora só pode causar dano de atropelamento a cada criatura uma vez por rodada, não importa quantas vezes ela se mova sobre aquela criatura."
+    },
+    {
+      "id": "alteracao-espirito-bestial",
+      "name": "Espírito Bestial (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Espírito Bestial oferece as seguintes características, que você pode aplicar a qualquer forma:\n\nLíngua de Besta: O alvo pode falar com bestas.\n\nFerocidade: O alvo ganha vantagem em testes de resistência contra morte.\n\nTáticas de Matilha: O alvo ganha vantagem em jogadas de ataque contra uma criatura se pelo menos um de seus aliados estiver a até 1,5 metro da criatura e não estiver incapacitado.\n\nImplacável: Se o alvo sofrer dano igual ou inferior à metade de seus pontos de vida máximos, o que o reduziria a 0 pontos de vida, ele será reduzido a 1 ponto de vida. Uma vez que uma criatura tenha usado implacável, ela não poderá usá-lo novamente até terminar um Descanso Curto ou Longo, mesmo que concedido novamente por outra transformação.\n\nEmpurrão: Escolha uma [arma natural] que o alvo possua; uma vez por rodada, ao causar dano com essa arma natural como parte de uma ação, o alvo pode tentar empurrar a criatura danificada como uma ação bônus."
+    },
+    {
+      "id": "alteracao-tracos-de-construto",
+      "name": "Traços de Construto (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar os seguintes traços adicionais às suas formas:\n\nRevestimento de Construto: (Aumenta 2 PM) O alvo ganha resistência a dano contundente, perfurante e cortante de armas não mágicas que não sejam feitas de adamantina.\n\nGolpes Metálicos: As armas naturais do alvo são tratadas como prata para o propósito de contornar a resistência. No 10º nível, elas também contam como adamantina.\n\nArmadura Natural: O alvo ganha uma CA base de 16 (não afetada pelo modificador de Destreza). O alvo não ganha nenhum benefício por usar armadura, mas se usar um escudo, pode aplicar o bônus do escudo normalmente. Isso conta como usar armadura para obter os benefícios do estilo de luta de defesa.\n\nResistência à Magia: (Aumenta 2 pp) O alvo ganha vantagem em testes de resistência contra magia.\n\nAlém disso, você pode escolher que o alvo conte como um construto, além do seu tipo normal. Essa escolha nega quaisquer tipos adicionais concedidos por talentos (genótipo)."
+    },
+    {
+      "id": "alteracao-adaptacao-extrema",
+      "name": "Adaptação Extrema (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar as seguintes características adicionais às suas formas:\n\nImunidade à Altitude: O alvo está aclimatado a viver em grandes altitudes e é imune aos efeitos negativos de grandes altitudes.\n\nSem Fôlego: (Aumenta 1 pp) O alvo pode sobreviver sem ar. O alvo se torna imune a efeitos que exigem respiração (como veneno inalado), pode sobreviver debaixo d'água ou mesmo no vácuo (embora não forneça proteção contra frio extremo ou outras condições que possam ser encontradas em tal ambiente). Isso não concede imunidade a ataques de nuvens ou gases que não exijam respiração.\n\nResistir ao Clima: O alvo não sofre dano por estar em um ambiente quente ou frio e pode existir confortavelmente em condições entre -45 e 60 graus Celsius sem precisar realizar testes de resistência de Constituição. O equipamento da criatura também é protegido. Esta característica não fornece proteção contra dano de fogo ou frio, nem protege contra outros perigos ambientais, como fumaça, falta de ar e assim por diante.\n\nImunidade à Pressão: O alvo é imune às pressões do oceano e não sofre dano nem efeitos adversos da pressão da água."
+    },
+    {
+      "id": "alteracao-tracos-feericos",
+      "name": "Traços Feéricos (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você também pode conceder os seguintes traços às suas formas:\n\nPele Feérica: (Aumenta 2 PM) O alvo ganha resistência a danos contundentes, perfurantes e cortantes de armas não mágicas que não sejam feitas de ferro ou ferro frio.\n\nEmpatia Selvagem: O alvo pode melhorar a atitude inicial de uma criatura do tipo fera em um raio de 9 metros usando Carisma (Persuasão). O alvo tem proficiência neste teste. Normalmente, animais domésticos começam como indiferentes e animais selvagens como hostis, e o teste leva 1 minuto. Esta habilidade pode ser usada para influenciar uma monstruosidade com Inteligência 1 ou 2, mas o teste sofre desvantagem.\n\n•Aprimoramento 1PM: Este teste pode ser realizado como uma ação e não sofre desvantagem ao influenciar monstruosidades.\n\nPasso na Floresta: O alvo pode se mover por qualquer tipo de vegetação rasteira (como espinhos naturais, sarças, áreas com vegetação alta e terrenos similares) em sua velocidade normal sem sofrer dano ou debilitação. Isso não tem efeito em terrenos manipulados magicamente.\n\nAlém disso, você pode escolher que o alvo seja considerado uma fada, além de seu tipo normal. Esta escolha nega quaisquer tipos adicionais concedidos por talentos (genótipo)."
+    },
+    {
+      "id": "alteracao-tracos-de-gigante",
+      "name": "Traços de Gigante (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar os seguintes traços adicionais às suas formas:\n\nPegar Pedras: Se uma pedra ou objeto similar for arremessado contra o alvo, este pode, com um teste de resistência bem-sucedido de Destreza CD 10, pegar o projétil e não sofrer dano contundente.\n\nArremesso de Pedras: O alvo pode pegar e arremessar pedras grandes como um ataque à distância (30/90, 2d6 de concussão). Além disso, você pode escolher que o alvo seja considerado um gigante, além do seu tipo normal. Esta escolha nega quaisquer tipos adicionais concedidos por talentos (genótipo)."
+    },
+    {
+      "id": "alteracao-arma-morfica",
+      "name": "Arma Mórfica (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar a seguinte característica às suas formas:\n\nArma Enxertada: Você funde uma arma que o alvo está empunhando em uma das mãos que a empunham. Alternativamente, você pode transformar um dos braços do alvo em uma arma com a qual ele seja proficiente. Armas de longo alcance não vêm com munição. Uma arma enxertada não pode ser desarmada e é considerada uma arma natural e uma arma manufaturada. O alvo perde outros usos deste membro e pode ter desvantagem em alguns testes de habilidade como resultado."
+    },
+    {
+      "id": "alteracao-odorifero",
+      "name": "Odorífero (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar as seguintes características adicionais às suas formas:\n\nEnvenenado: O alvo ganha vantagem em testes de resistência contra efeitos que causam dano de veneno ou a condição envenenada.\n\nSpray Nauseante: [Recarga 6] Com uma ação, o alvo pode borrifar substâncias químicas nocivas em um cone de 4,5 metros. Qualquer criatura neste cone deve realizar um teste de resistência de Constituição ou será envenenada por 1 minuto. As criaturas afetadas podem realizar um novo teste de resistência ao final de cada um de seus turnos para encerrar a condição de envenenamento. O tamanho do cone aumenta em 1,5 metro no 5º (6 metros), 11º (7,5 metros) e 17º nível (9 metros). Uma criatura que obtiver sucesso neste teste de resistência fica imune a qualquer ocorrência do mesmo conjurador por 24 horas.\n\nFedor: O alvo secreta uma substância química fétida que é ofensiva à maioria dos seres vivos. Qualquer criatura adjacente ao alvo deve realizar um teste de resistência de Constituição ou será envenenada até que não esteja mais adjacente. Uma criatura que obtiver sucesso neste teste de resistência fica imune a qualquer ocorrência do mesmo conjurador por 24 horas."
+    },
+    {
+      "id": "alteracao-tracos-sobrenaturais",
+      "name": "Traços Sobrenaturais (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Resistência Celestial: O alvo ganha resistência a dano radiante e ganha o tipo celestial, além do seu tipo normal. Isso nega quaisquer tipos adicionais concedidos por talentos (genótipo).\n\nResistência Demoníaca: O alvo ganha resistência a dano de veneno e ganha o tipo demoníaco e a marcação de demônio, além do seu tipo normal. Isso nega quaisquer tipos adicionais concedidos por talentos (genótipo).\n\nResistência Diabólica: O alvo ganha resistência a dano de fogo e ganha o tipo demoníaco e a marcação de demônio, além do seu tipo normal. Isso nega quaisquer tipos adicionais concedidos por talentos (genótipo)."
+    },
+    {
+      "id": "alteracao-maestria-multiforme",
+      "name": "Maestria Multiforme (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar os seguintes traços às suas formas:\n\nMudança Tardia: (Aumente 1 PM) Se você deixar uma opção de traço sem atribuir, você pode atribuir qualquer traço válido ao qual tenha acesso a este espaço a qualquer momento como uma ação bônus. O custo deste aumento é incorrido quando esta ação bônus é realizada. Uma vez atribuída, a característica persiste por 1 minuto e não pode ser alterada novamente até 1 minuto após expirar. Apenas 1 característica pode ser atribuída por ação bônus com esta habilidade, mesmo que várias características permaneçam sem atribuição. Cada vez que uma característica é atribuída, o custo de aprimoramento conta separadamente para o limite de quantos pontos de magia você pode gastar no efeito.\n\nAprimorar 1 PM: A característica Mudança Tardia pode ser atribuída como uma reação.\n\nCamuflagem: Seu alvo pode mudar de coloração para imitar o ambiente, concedendo vantagem em testes de Destreza (Furtividade).\n\nCouro Licantrópico: (Aprimore 2 PM) O alvo ganha resistência a danos contundentes, perfurantes e cortantes de uma arma não mágica que não seja de prata.\n\nAlém disso, você pode optar por dar ao alvo a marca de metamorfo."
+    },
+    {
+      "id": "alteracao-espinhoso",
+      "name": "Espinhoso (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar as seguintes características às suas formas:\n\nEspinhoso: Seus golpes desarmados e ataques naturais causam +1d4 de dano perfurante adicional.\n\nEspinhos: [arma natural] 1d4 de dano perfurante. Criaturas que tentarem agarrar o alvo sofrem 1d4 de dano perfurante.\n\nLançamento de Espinhos: Seus espinhos causam 1d6 de dano em vez de 1d4 e podem ser lançados como uma arma de arremesso com um alcance de 6/18 metros. Os espinhos crescem novamente conforme são arremessados, garantindo a você um suprimento praticamente indefinido. (Requer espinhos)"
+    },
+    {
+      "id": "alteracao-mudanca-de-tamanho",
+      "name": "Mudança de Tamanho (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Mudança de Tamanho: (Aumenta 1 PM) Como característica, você pode alterar o tamanho de uma criatura. Você pode aumentar ou reduzir o tamanho de uma criatura em uma categoria, além de uma categoria de tamanho adicional no 5º (2 categorias), 11º nível (3 categorias) e 17º nível (4 categorias).\n\nVocê não pode aumentar além do tamanho Enorme, nem reduzir uma criatura além do tamanho Minúsculo. O tamanho de um alvo e o tamanho de seu equipamento dobram/são reduzidos pela metade a cada categoria que ele sobe/desce, e seu peso é multiplicado/dividido por 8.\n\nQuando uma criatura é aumentada, ela causa 1d4 de dano adicional com ataques de arma e ataques desarmados, e quando é reduzida, causa 1d4 a menos de dano com ataques de arma e ataques desarmados; este tamanho de dado aumenta em um para cada categoria adicional, para 1d6 para dois tamanhos, 1d8 para três tamanhos e 1d10 para 4 tamanhos. Você não pode reduzir o dano abaixo de 1. O alcance também é ajustado de acordo com a tabela abaixo:\n\nTabela: Tamanho e Alcance\n\nTamanhoEspaçoAlcanceMinúsculo0,75m0mPequeno1,5m1,5mMédio1,5m1,5mGrande3m3mEnorme4,5m4,5m"
+    },
+    {
+      "id": "alteracao-corpo-de-enxame",
+      "name": "Corpo de Enxame (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar as seguintes características às suas formas:\n\nSer Dividido: O alvo ganha vantagem em testes de resistência contra efeitos que têm como alvo criaturas individuais. (requer a característica forma de enxame)\n\nForma de Enxame: O alvo assume a forma de um enxame de criaturas de sua espécie. O enxame é composto apenas por criaturas minúsculas; este tamanho não pode ser alterado pela característica Mudança de Tamanho, ampliar pessoa ou outros efeitos. O alvo pode se mover através de buracos e aberturas grandes o suficiente para as criaturas individuais. O enxame preenche um quadrado de 3 metros (ou um cubo, se estiver voando) e tem alcance 0, podendo ocupar o espaço de outra criatura e vice-versa. O alvo ganha resistência a danos contundentes, perfurantes e cortantes e vulnerabilidade a efeitos danosos que têm como alvo uma área.\n\nEnxame: O alvo ganha vantagem em ataques contra criaturas que estejam inteiramente dentro de seu espaço. (requer a característica de forma de enxame)"
+    },
+    {
+      "id": "alteracao-corpo-distorcido",
+      "name": "Corpo Distorcido (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Sua metamorfose pode causar 1d8 de dano cortante a todos os alvos que falharem no teste de resistência inicial contra a metamorfose. Este dano aumenta em 1d8 no 5º nível (2d8), 11º nível (3d8) e 17º nível (4d8)."
+        }
+      ],
+      "body": "Você pode adicionar as seguintes características às suas formas:\n\nBolsa de Carne: Você reorganiza órgãos internos e músculos para criar uma bolsa dentro do corpo do alvo, geralmente no abdômen. A abertura da bolsa se assemelha a uma grande cicatriz. A bolsa pode conter criaturas e objetos até dois tamanhos menores que o alvo. O alvo ganha vantagem em testes para ocultar itens em sua bolsa de carne.\n\nSelar Olhos: O alvo deve passar por um teste de resistência de Constituição adicional ou ter seus olhos selados, cegando-o.\n\nDistorcer Pernas: O alvo deve passar por um teste de resistência de Constituição adicional ou ter um deslocamento reduzido para 1,5 metro.\n\nRoubo Vocal: O alvo fica incapaz de falar e não pode fornecer componentes de magia vocal ou realizar testes de habilidade que exijam canto ou fala.\n\nTorcer Estômago: O alvo deve passar por um teste de resistência de Constituição adicional ou sofrer desvantagem em todas as jogadas de ataque.\n\nAlém disso, você pode aplicar o seguinte aprimoramento à sua metamorfose:"
+    },
+    {
+      "id": "alteracao-tracos-mortos-vivos",
+      "name": "Traços Mortos-Vivos (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder os seguintes traços às suas formas:\n\nSede de Sangue: O alvo ganha pontos de vida temporários iguais ao dano causado com uma arma natural à sua escolha. (requer 10º nível.)\n\nIncorpóreo: (Aprimoramento 1 PM) O alvo se torna incorpóreo (requer 15º nível). Enquanto incorpóreo, ele pode se mover através de outras criaturas e objetos como se fossem terrenos acidentados. Ele sofre 5 (1d10) de dano de força se terminar seu turno dentro de um objeto.\n\nResistência dos Mortos-Vivos: O alvo ganha vantagem em testes de resistência contra encantamento, doença, veneno, sono e atordoamento.\n\nAlém disso, você pode escolher que o alvo seja considerado morto-vivo, além do seu tipo normal. Essa escolha nega quaisquer tipos adicionais concedidos por talentos (genótipo)."
+    },
+    {
+      "id": "alteracao-vitalidade",
+      "name": "Vitalidade (traço)",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Traços",
+      "tags": [
+        "traco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "No momento em que o efeito é lançado, o receptor da sua transformação pode gastar um único dado de vida para se curar como se tivesse feito um descanso curto."
+        }
+      ],
+      "body": "Você pode adicionar as seguintes características às suas formas:\n\nBrilho da Saúde: O alvo ganha vantagem em testes de resistência contra efeitos de morte, dano necrótico, veneno e doença.\n\nInsônia: O alvo ganha imunidade a efeitos mágicos de sono.\n\nAlém disso, você pode aplicar o seguinte aprimoramento à sua transformação:"
+    },
+    {
+      "id": "alteracao-ataques-aprimorados",
+      "name": "Ataques Aprimorados",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ataques naturais concedidos por suas transformações contam como mágicos para o propósito de superar resistência e imunidade a ataques e danos não mágicos."
+    },
+    {
+      "id": "alteracao-tracos-de-forma-livre",
+      "name": "Traços de Forma Livre",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha dois talentos (genótipo) que você ainda não possui. Você adiciona os traços disponibilizados por esses talentos aos traços disponíveis ao usar a transformação, mas não ganha a habilidade de usar as formas escolhidas. Se você ganhar um dos talentos (genótipo) escolhidos, poderá substituí-lo, escolhendo outro talento (genótipo) para adicionar traços. Você pode ganhar este talento várias vezes; cada vez escolhendo dois talentos (genótipo) diferentes para extrair traços."
+    },
+    {
+      "id": "alteracao-transformacao-maior",
+      "name": "Transformação Maior",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Aumenta em 1 o número de traços que você pode aplicar com sua metamorfose."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "alteracao-mimetismo",
+      "name": "Mimetismo",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "1 hora ou até ser usado novamente",
+      "target": "Uma criatura",
+      "save": "Nenhum",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Esta habilidade pode ser usada sem nenhuma ação necessária durante o seu turno."
+        }
+      ],
+      "body": "Você pode estudar uma criatura que você possa ver dentro do alcance. Durante a duração do efeito, você ganha um único talento de Alteração correspondente à criatura ou a uma das características aparentes da criatura.\n\nAlém disso, você ganha as seguintes características que podem ser adicionadas às suas metamorfoses:\n\nMimetismo Vocal: O alvo pode imitar perfeitamente vozes e sons com os quais esteja familiarizado. O alvo ganha vantagem em testes de Carisma (Enganação) para imitar um tipo de criatura, indivíduo ou objeto que tenha ouvido por pelo menos 10 minutos. Esses 10 minutos não precisam ter ocorrido durante a mudança de forma. (Deve ser capaz de falar)"
+    },
+    {
+      "id": "alteracao-manipulacao-de-energia",
+      "name": "Manipulação de Energia",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Alteração",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alteracao"
+        },
+        {
+          "type": "text",
+          "text": "qualquer talento que conceda resistência a ácido"
+        },
+        {
+          "type": "talent",
+          "id": "clima-frio"
+        },
+        {
+          "type": "talent",
+          "id": "natureza-fogo"
+        },
+        {
+          "type": "talent",
+          "id": "destruicao-raio"
+        },
+        {
+          "type": "talent",
+          "id": "destruicao-necrotico"
+        },
+        {
+          "type": "text",
+          "text": "radiante ou trovão como opção de traço"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode adicionar o seguinte traço às suas formas:\n\nImunidade à Energia: (Aumente 1 PM) Você pode conceder ao alvo imunidade a um tipo de energia (ácido, frio, fogo, raio, necrótico, radiante ou trovão) ao qual ele tenha resistência.\n\nVulnerabilidade: Você pode conceder ao alvo vulnerabilidade a um dos seguintes tipos de dano: ácido, frio, fogo, raio, necrótico, radiante ou trovão. Se o alvo tiver resistência ao tipo de dano escolhido, ele perde essa resistência. Se o alvo for imune ao tipo de dano, esta característica reduz essa imunidade à resistência.",
+      "_needsReview": [
+        "prereq:unresolved:qualquer talento que conceda resistência a ácido",
+        "prereq:unresolved:radiante ou trovão como opção de traço"
+      ]
+    },
+    {
+      "id": "alteracao-transformacao-extrema",
+      "name": "Transformação Extrema",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Alteração",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alteracao"
+        },
+        {
+          "type": "talent",
+          "id": "alteracao-transformacao-maior"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Aumente em 1 o número de traços que você pode aplicar com sua transformação. Isso acumula com o aumento da Transformação Maior. Este talento pode ser escolhido uma vez e mais uma vez no 11º e no 17º níveis. Seus efeitos acumulam."
+    },
+    {
+      "id": "alteracao-fusao",
+      "name": "Fusão",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Alteração",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alteracao"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Você pode escolher duas criaturas adjacentes uma à outra como alvo de sua transformação e fundi-las em um corpo amalgamado em vez de aplicar um talento (genótipo). Características podem ser concedidas à criatura fundida normalmente para transformação. Caso esta habilidade não afete nenhum dos alvos (seja por um teste de resistência bem-sucedido ou por outra causa), o efeito falha."
+        }
+      ],
+      "body": ": • O corpo amalgamado tem pontos de vida atuais e máximos iguais aos das duas criaturas somadas.\n\n: • Você deve escolher um corpo para ser o corpo dominante.\n\n: • A criatura amalgamada possui as proficiências em testes de resistência física e o bônus de proficiência do corpo dominante, mas ganha o maior valor de Força, Destreza e Constituição entre as duas criaturas combinadas.\n\n: • A critério do conjurador, o corpo dominante também pode ganhar as armas naturais e habilidades especiais do corpo fundido, renunciando a ganhar quaisquer características adicionais.\n\n: • O equipamento do corpo dominante é mantido, e o equipamento da outra criatura é fundido. As mentes de ambas as criaturas base permanecem independentes, mantendo seus valores de habilidade mental e proficiência em testes de resistência, e são capazes de realizar ações puramente mentais, mas agem com a mesma iniciativa.\n\nApenas uma mente pode controlar o corpo amalgamado por vez. No início do turno, se as mentes não concordarem sobre quem deve estar no controle, elas podem fazer testes de Carisma disputados para assumir o controle do corpo naquela rodada, mas o corpo tem todos os seus deslocamentos reduzidos pela metade, sofre desvantagem em testes de resistência de Destreza e concede vantagem em quaisquer ataques que tenham como alvo o corpo amalgamado devido à confusão. Efeitos que permitem um teste de resistência de habilidade mental têm como alvo a mente que atualmente controla o corpo.\n\nOs efeitos contínuos nas criaturas base se sobrepõem. Se qualquer uma das criaturas alvo estiver sofrendo os efeitos de uma doença, veneno ou efeito de magia em andamento, o corpo amalgamado recebe imediatamente um novo teste de resistência com vantagem, a menos que ambas as criaturas estejam sob o mesmo efeito. Se o corpo dominante possuir imunidade a tal efeito, o efeito é suspenso até que a fusão termine. embora sua duração seja gasta normalmente. Qualquer penalidade ou redução nas estatísticas físicas do corpo dominante é mantida, mas aquelas nos valores de habilidade mental continuam a afetar cada criatura individualmente. Se a criatura amalgamada for morta, o efeito termina e ambas as criaturas morrem.\n\nQuando este efeito termina por qualquer outro motivo, qualquer dano em pontos de vida, reduções de\n\nVocê não pode se fundir com criaturas como enxames ou tropas, que geralmente são descritas como compostas por múltiplas criaturas.\n\nhabilidade ou outra penalidade incorrida é dividida igualmente entre as duas criaturas (arredondado para cima). Se este dano exceder o máximo de pontos de vida de qualquer criatura, aquela criatura é reduzida a 0 pontos de vida e fica estável, com o excesso de dano transferido para a outra criatura. Se o dano transferido exceder os pontos de vida restantes daquela criatura, ambas as criaturas são reduzidas a 0 pontos de vida e ficam estáveis. Quaisquer efeitos de magia, venenos, doenças ou outros efeitos que afetaram a criatura amalgamada continuam a afetar ambas as criaturas, mas as durações são reduzidas pela metade e quaisquer testes de resistência subsequentes são feitos com vantagem. Se o espaço disponível ao final deste efeito não puder acomodar ambas as criaturas, elas podem fazer testes de Carisma contestados. O perdedor é deslocado para o espaço vazio mais próximo, recebendo 1d6 dano por 3 metros de material sólido atravessado."
+    },
+    {
+      "id": "alteracao-homogeneizar",
+      "name": "Homogeneizar",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Alteração",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alteracao"
+        },
+        {
+          "type": "text",
+          "text": "Corpo Retorcido (traço)"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 5,
+          "text": "Criaturas que você causar dano com Corpo Retorcido (especialização) e que tenham menos de 100 pontos de vida devem ser bem-sucedidas em um teste de resistência de Constituição ou serão mortas, reduzindo-as a uma poça homogênea de matéria orgânica."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Corpo Retorcido (traço)"
+      ]
+    },
+    {
+      "id": "alteracao-transformacao-permanente-maldicao",
+      "name": "Transformação Permanente [maldição]",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Alteração",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alteracao"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Estendida (metasfera)"
+        },
+        {
+          "type": "level",
+          "min": 17
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 4,
+          "text": "Ao aplicar uma transformação, você pode transformá-la em um efeito instantâneo, transformando a criatura permanentemente na nova forma. Como este é um efeito instantâneo, ele não pode ser dissipado após ser aplicado; no entanto, magias, talentos ou habilidades de esfera que removem maldições explicitamente podem encerrar a transformação com um teste de habilidade de conjuração bem-sucedido. O alvo ainda está sob o efeito de uma transformação, no entanto, e qualquer conjurador que tentar aplicar uma nova transformação ao alvo (exceto o próprio conjurador original) deve passar por um teste de habilidade de conjuração como de costume; a segunda transformação substitui a primeira em vez de aumentá-la. Quando a duração da segunda transformação expira, a primeira retorna. Uma segunda aplicação de uma Permanente (genótipo) pode ser usada para neutralizar a primeira Transformação Permanente, retornando o alvo à sua forma original ou concedendo-lhe uma nova."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Estendida (metasfera)"
+      ]
+    },
+    {
+      "id": "alteracao-distorcedor-de-carne",
+      "name": "Distorcedor de Carne",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode ter como alvo a mudança de forma. Você não pode possuir esta e a variante Licantropo. Você ganha Corpo Distorcido como um bônus de talento."
+    },
+    {
+      "id": "alteracao-licantropo",
+      "name": "Licantropo",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode ter como alvo sua habilidade de mudança de forma. Você não pode combinar mudança de forma com os talentos Massa (metasfera) ou Alcance (metasfera) da Esfera Universal. Você não pode possuir esta e a variante Distorcedor de Carne. Você ganha um talento bônus da esfera de alteração."
+    },
+    {
+      "id": "alteracao-fraqueza-material",
+      "name": "Fraqueza material",
+      "sphere": "alteracao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha prata ou madeira (ou outro material especial com a aprovação explícita do Mestre). Ao ser atingido por uma arma composta principalmente do material escolhido, o alvo da sua mudança de forma deve realizar um teste de resistência de Sabedoria com CD igual a 5 + o dano sofrido ou terá o efeito dissipado. O não pode ser alvo de sua mudança de forma novamente por 1 hora. Se o alvo estiver sob o efeito de uma Transformação Permanente, o efeito é suprimido por 1 hora, em vez de dissipado. Você ganha um talento bônus da esfera de alteração."
+    }
+  ],
+  "_reviewed": false
+}

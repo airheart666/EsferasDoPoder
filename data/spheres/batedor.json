@@ -1,0 +1,1037 @@
+{
+  "id": "batedor",
+  "name": "Batedor",
+  "section": "martial",
+  "summary": "Furtividade e reconhecimento: esconder-se, rastrear e achar fraquezas.",
+  "theme": {
+    "h": 88,
+    "s": 44,
+    "sig": "batedor"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "m-batedor-acao-de-busca",
+      "name": "Ação de Busca",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes de Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ação de Combate\n\nCusto da Ação: 1 Ação\n\nDedique sua atenção a descobrir algo\n\nInteligência (Investigação)\n\n•Ilusões\n\n•Itens que não estão intencionalmente escondidos\n\n•Evidências forenses\n\nSabedoria (Percepção)\n\n•Criaturas que estão escondidas\n\n•Itens que estão intencionalmente escondidos\n\n•Armadilhas\n\nSabedoria (Sobrevivência)\n\n•Riscos ambientais\n\n•Partes coletáveis\n\n•Rastros"
+    },
+    {
+      "id": "m-batedor-escondido",
+      "name": "Escondido",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes de Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma criatura oculta é aquela que não é vista nem ouvida. Após realizar um ataque, você perde a condição de oculto, independentemente de o ataque acertar ou errar. A localização da criatura pode ser detectada por qualquer ruído que ela faça ou por quaisquer rastros que ela deixe.\n\nAs jogadas de ataque contra a criatura têm desvantagem, e as jogadas de ataque da criatura têm vantagem."
+    },
+    {
+      "id": "m-batedor-caracteristicas-analisaveis",
+      "name": "Características Analisáveis",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembretes de Regras de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Abaixo está uma lista de características que podem ser identificadas através da análise de um alvo:\n\n•Classe de Armadura\n\n•Resistências a Condições\n\n•Imunidades a Condições\n\n•Resistências a Dano\n\n•Imunidades a Dano\n\n•Vulnerabilidades a Dano\n\n•Velocidade\n\n•Um Atributo\n\n•Um de seus testes de resistência\n\n•Um de seus sentidos\n\n•Seus pontos de vida máximos\n\n•Seu tipo de criatura.\n\nOutras característica podem ser descobertas com a permissão do Mestre."
+    },
+    {
+      "id": "m-batedor-analisar",
+      "name": "Analisar",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Características da Esfera Batedor",
+      "tags": [],
+      "range": "18 metros",
+      "duration": "24 horas, ou até você fazer um descanso longo",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Custo de Ação: 10 minutos, ou 1 Ação gastando foco marcial.\n\nFaça um teste de Inteligência (Investigação) ou Sabedoria (Percepção) (à sua escolha) contra uma CD 10 + ND do alvo (arredondado para baixo); Para fins da característica Analisar, os PCs têm um ND igual à metade do seu nível.\n\nEm um teste bem-sucedido, você aprende uma característica à sua escolha e o alvo é Analisado.\n\nUma vez que você tenha Analisado um alvo com sucesso, você pode aplicar quaisquer talentos (de pesquisa) que possua contra o alvo durante a duração.\n\nVocê só pode tentar Analisar cada alvo individual uma vez por descanso longo."
+    },
+    {
+      "id": "m-batedor-afinidade-com-pericia-furtividade",
+      "name": "Afinidade com Perícia: Furtividade",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Características da Esfera Batedor",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha proficiência na perícia Furtividade. Se você já for proficiente em Furtividade, poderá selecionar qualquer talento da esfera Batedor como talento bônus."
+    },
+    {
+      "id": "m-batedor-intuicao-biologica",
+      "name": "Intuição Biológica (abordagem)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Abordagem",
+      "tags": [
+        "abordagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tentar Analisar alvos com testes de Inteligência (Natureza).\n\nAlém disso, aprender o tipo de criatura do alvo analisado não conta para o número de características analisáveis ​​que você pode aprender."
+    },
+    {
+      "id": "m-batedor-rastreador-empirico",
+      "name": "Rastreador Empírico (abordagem)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Abordagem",
+      "tags": [
+        "abordagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tentar Analisar alvos com testes de Sabedoria (Sobrevivência).\n\nAlém disso, você não precisa de linha de visão para Analisar um alvo; em vez disso, você pode Analisar um alvo observando pegadas ou um rastro deixado por ele."
+    },
+    {
+      "id": "m-batedor-folclorista",
+      "name": "Folclorista (abordagem)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Abordagem",
+      "tags": [
+        "abordagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tentar Analisar alvos com testes de Inteligência (História).\n\nAlém disso, sempre que você exceder a CD de Análise em 5 ou mais, você aprende uma característica analisável adicional."
+    },
+    {
+      "id": "m-batedor-quebra-partes",
+      "name": "Quebra-Partes (abordagem)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Abordagem",
+      "tags": [
+        "abordagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Gaste Foco Marcial. Como um ataque especial, você pode analisar automaticamente um alvo que você atingir com sucesso (sem precisar de um teste). Se você acertar criticamente com o ataque, você aprende o dobro do número de características."
+    },
+    {
+      "id": "m-batedor-exame-fisico",
+      "name": "Exame Físico (abordagem, pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Abordagem",
+      "tags": [
+        "abordagem",
+        "pesquisa"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tentar analisar alvos com testes de Sabedoria (Medicina).\n\nAlém disso, você sabe constantemente a condição geral de saúde dos alvos analisados, conforme descrito abaixo:\n\n•Normal: Possui pelo menos 90% dos pontos de vida normais.\n\n•Razoável: De 30% a 90% dos pontos de vida normais restantes.\n\n•Ruim: Menos de 30% dos pontos de vida normais restantes ou sofrendo de uma lesão debilitante.\n\n•Fraco: 0 pontos de vida, aleijado ou sofrendo de uma condição grave que ameace sua vida imediatamente."
+    },
+    {
+      "id": "m-batedor-engenharia-social",
+      "name": "Engenharia Social (abordagem)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Abordagem",
+      "tags": [
+        "abordagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tentar analisar alvos com testes de Carisma (Enganação), Carisma (Intimidação) ou Carisma (Persuasão)."
+    },
+    {
+      "id": "m-batedor-acuidade-subita",
+      "name": "Acuidade Súbita (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar a ação Procurar como uma ação bônus."
+    },
+    {
+      "id": "m-batedor-percepcao-cooperativa",
+      "name": "Percepção Cooperativa (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "range": "18 metros",
+      "duration": "1 hora",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Gaste Foco Marcial. Quando você fizer um teste de Sabedoria (noção), você pode compartilhar o resultado total com um número de aliados igual ao seu bônus de proficiência. Esse efeito dura pela duração do teste ou até que você o use novamente, contanto que eles permaneçam dentro do seu alcance."
+    },
+    {
+      "id": "m-batedor-discernir-ilusoes",
+      "name": "Discernir Ilusões (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "range": "9 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto você tiver Foco Marcial, você ganha vantagem em todos os testes de resistência e testes de Inteligência (Investigação) feitos contra magias da escola de Ilusão ou efeitos de esfera da esfera de Ilusão.\n\nGaste Foco Marcial. Como uma ação bônus, você pode conceder essa vantagem a todos os aliados dentro do alcance por um número de rodadas igual ao seu modificador de Habilidade Principal."
+    },
+    {
+      "id": "m-batedor-conhecimento-magico",
+      "name": "Conhecimento Mágico (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "range": "3 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar a ação Procurar para detectar a presença de auras mágicas ativas, como as deixadas por magias como alarme ou invisibilidade.\n\nSe não houver outra CD especificada (como por uma criatura usando Furtividade), a CD é igual à CD da magia original, ou CD 15 se o efeito não se originar de uma fonte que permita determinar a CD da magia. Isso não lhe dá nenhuma informação sobre a natureza exata dos efeitos mágicos detectados dessa maneira; você apenas fica ciente de que um efeito mágico está ativo e da área geral em que ele está ativo.\n\nEnquanto você tiver Foco Marcial, você pode usar Investigação, Percepção ou Sobrevivência passivas para notar a presença de efeitos mágicos ativos (como descrito acima) sempre que passar dentro do alcance deles, esteja você procurando ativamente ou não."
+    },
+    {
+      "id": "m-batedor-interceptar-analise",
+      "name": "Interceptar Análise (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "range": "36 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto você tiver Foco Marcial, você sempre sabe quando uma criatura dentro do alcance aprende uma característica analisável que você possui.\n\nGaste Foco Marcial. Você descobre quais características a criatura aprendeu sobre você naquela rodada, bem como quais criaturas aprenderam essas características."
+    },
+    {
+      "id": "m-batedor-leitor-de-vento",
+      "name": "Leitor de Vento (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar seus sentidos treinados para ler os movimentos do vento e outros fatores do ambiente para melhorar sua precisão com ataques à distância.\n\nEnquanto você tiver Foco Marcial, você pode ignorar a desvantagem em ataques com armas à distância causados ​​por vento, chuva ou outras condições climáticas."
+    },
+    {
+      "id": "m-batedor-percepcao-treinada",
+      "name": "Percepção Treinada (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha proficiência em Inteligência (Investigação), Sabedoria (noção) ou Sabedoria (Sobrevivência)."
+    },
+    {
+      "id": "m-batedor-sentidos-penetrantes",
+      "name": "Sentidos Penetrantes (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "range": "9 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não sofre desvantagem ao realizar um ataque contra um alvo dentro do alcance que esteja fortemente obscurecido ou invisível, embora ainda precise de uma maneira de localizar em que espaço a criatura está. Isso também se aplica a ataques realizados enquanto você estiver cego.\n\nSe o alvo estiver sob o efeito de uma magia de imagem espelhada ou um efeito similar, isso permite que você role duas vezes e escolha o resultado mais favorável ao determinar se o alvo foi atingido."
+    },
+    {
+      "id": "m-batedor-sentir-e-resistir-a-videncia",
+      "name": "Sentir e Resistir à Vidência (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "range": "9 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar a ação Procurar para detectar sensores (como os da magia clarividência) como se fossem criaturas invisíveis, com um teste de Furtividade igual à CD da magia do conjurador.\n\nEnquanto você tiver Foco Marcial, você também fica imediatamente ciente de qualquer tentativa de vidência em você, como com a magia vidência ou o talento avançado de esfera de Adivinhação Vidência. Se essas magias e efeitos se originarem a até 9 metros de você, você também saberá sua localização. Assim que você tomar conhecimento de tal efeito, poderá forçar o conjurador a fazer um teste de habilidade de conjuração contestado pelo seu teste de Destreza (Furtividade). Se você for bem-sucedido, o efeito se torna incapaz de detectar qualquer informação sobre você, a área ou criaturas dentro do alcance."
+    },
+    {
+      "id": "m-batedor-sonambulismo",
+      "name": "Sonambulismo (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não sofre mais desvantagem em testes de Percepção enquanto dorme e cai inconsciente, e dormir não faz mais com que você perca Foco Marcial. Além disso, enquanto inconsciente, você não falha automaticamente em testes de resistência de Força e Destreza, e criaturas não têm vantagem em jogadas de ataque contra você.\n\nVocê pode escolher este talento uma segunda vez; na segunda vez que o escolher, você não sofrerá mais a maioria das limitações negativas de estar dormindo; isso é funcionalmente semelhante à imunidade ao sono, embora, em vez de permanecer acordado quando alvo de um efeito de sono, sua mente subconsciente e seus instintos simplesmente assumam o controle, permitindo que você continue lutando sem impedimentos. No entanto, você ainda não pode realizar testes de habilidade baseados em Carisma, Destreza ou Inteligência, nem qualquer habilidade que exija paciência ou concentração."
+    },
+    {
+      "id": "m-batedor-rastrear-a-cena",
+      "name": "Rastrear a Cena (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha vantagem em testes de habilidade feitos para encontrar e seguir rastros.\n\nAo seguir com sucesso um rastro com menos de 24 horas, você aprende não apenas a direção para onde foram, mas também as ações que os alvos rastreados realizaram antes de deixarem a área e durante seu deslocamento, contanto que você continue seguindo o rastro. As informações obtidas dessa maneira são geralmente bastante gerais, como se os alvos pararam para comer, se separaram, tiveram um desentendimento, etc.\n\nInformações detalhadas, como quais magias eles podem ter lançado ou quais itens podem ter usado, geralmente não estão disponíveis, a menos que os alvos tenham deixado alguma indicação tangível do ato, como um frasco de poção vazio."
+    },
+    {
+      "id": "m-batedor-visao-alem-da-visao",
+      "name": "Visão Além da Visão (noção)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Noção",
+      "tags": [
+        "nocao"
+      ],
+      "duration": "1 rodada",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Custo de Ação: Ação bônus\n\nVocê ganha percepção sísmica em um raio de 3 metros até o início do seu próximo turno.\n\nGaste Foco Marcial. Em vez disso, você ganha visão às cegas em um raio de 3 metros até o início do seu próximo turno.\n\nEm Níveis Superiores. O alcance se estende por mais 3 metros no 5º (6 metros), 11º (9 metros) e 17º nível (12 metros)."
+    },
+    {
+      "id": "m-batedor-foco-agil",
+      "name": "Foco Ágil (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que uma criatura que você analisou for reduzida a 0 pontos de vida, você pode recuperar Foco Marcial como uma ação bônus ou reação."
+    },
+    {
+      "id": "m-batedor-analise-de-assalto",
+      "name": "Análise de Assalto (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao atacar o alvo analisado com armas de precisão ou de ataque à distância, você pode usar sua habilidade principal em vez de Força ou Destreza para as jogadas de ataque e dano.\n\nVocê pode escolher este talento duas vezes. Depois disso, você pode usar sua habilidade principal para quaisquer jogadas de ataque e dano com armas contra o alvo analisado."
+    },
+    {
+      "id": "m-batedor-discernir-indicios",
+      "name": "Discernir Indícios (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha vantagem em testes de Sabedoria (Intuição) que fizer contra alvos analisados.\n\nAlém disso, alvos analisados ​​nunca têm vantagem em jogadas de ataque contra você."
+    },
+    {
+      "id": "m-batedor-explorar-fraqueza",
+      "name": "Explorar Fraqueza (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como um ataque especial, faça um ataque com arma contra um alvo analisado. Se você acertar, o alvo deve ser bem-sucedido no teste de resistência ou sofrerá 1d10 de dano adicional."
+    },
+    {
+      "id": "m-batedor-encontrar-lacuna",
+      "name": "Encontrar Lacuna (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você acerta alvos analisados ​​com um resultado de 19 ou 20 no dado."
+    },
+    {
+      "id": "m-batedor-seguir-movimentos",
+      "name": "Seguir Movimentos (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Custo de Ação: Reação\n\nQuando um alvo que você analisou e que você pode ver se move durante o turno dele, você pode se deslocar até metade do seu deslocamento, seja na direção dele ou diretamente para longe dele.\n\nEsse movimento ocorre ao mesmo tempo que o movimento do seu alvo e provoca ataques de oportunidade normalmente.\n\nGaste Foco Marcial. Você pode se deslocar até o seu deslocamento total."
+    },
+    {
+      "id": "m-batedor-identificar-ritmos",
+      "name": "Identificar Ritmos (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você recebe um bônus na CA igual à metade do seu bônus de proficiência contra alvos analisados.\n\nEnquanto você tiver Foco Marcial, esse bônus também se aplica a testes de resistência feitos contra alvos analisados."
+    },
+    {
+      "id": "m-batedor-prognostico",
+      "name": "Prognóstico (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Inimigos analisados que forem feridos por seus ataques com armas devem fazer um teste de resistência ou ficarão impossibilitados de recuperar pontos de vida até o início do seu próximo turno.\n\nSempre que um aliado Analisado recupera pontos de vida, ele recupera um número adicional de pontos de vida igual ao seu bônus de proficiência. Se você foi quem restaurou os pontos de vida dele, ele também terá vantagem no próximo teste de resistência que fizer antes do início do seu próximo turno. Este talento não se aplica a 'cura natural rápida' ou 'regeneração' que curam ao longo do tempo."
+    },
+    {
+      "id": "m-batedor-sabotagem-da-mobilidade",
+      "name": "Sabotagem da Mobilidade (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa"
+      ],
+      "duration": "1 rodada",
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Na primeira vez em cada rodada em que um alvo Analisado for atingido por um ataque com sua arma, ele deve fazer um teste de resistência ou terá sua velocidade reduzida em um número de metros igual a 5 vezes o seu modificador de Habilidade Principal (mínimo de 1,5 metro). Essa redução de velocidade dura até o início do seu próximo turno."
+    },
+    {
+      "id": "m-batedor-surto-furtivo",
+      "name": "Surto Furtivo (pesquisa, perseguidor)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Pesquisa",
+      "tags": [
+        "pesquisa",
+        "perseguidor"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto oculto, alvos analisados sofrem desvantagem em testes de Sabedoria (Percepção) feitos para detectar sua localização."
+    },
+    {
+      "id": "m-batedor-assassinar",
+      "name": "Assassinar (perseguidor)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Perseguidor",
+      "tags": [
+        "perseguidor"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto oculto, se você matar ou reduzir os pontos de vida de uma criatura a 0 com um ataque corpo a corpo ou à distância, você não perde automaticamente a condição de oculto; em vez disso, sua localização só é detectada por criaturas cuja Percepção passiva seja maior que sua Furtividade passiva."
+    },
+    {
+      "id": "m-batedor-golpe-mortal",
+      "name": "Golpe Mortal (perseguidor)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Perseguidor",
+      "tags": [
+        "perseguidor"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto oculto, seus ataques corpo a corpo e à distância causam dano adicional igual ao seu bônus de proficiência.\n\nGastar Foco Marcial. Seu primeiro ataque corpo a corpo ou à distância realizado nesta rodada causa 1d6 de dano adicional por bônus de proficiência."
+    },
+    {
+      "id": "m-batedor-astucia-acelerada",
+      "name": "Astúcia Acelerada (perseguidor)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Perseguidor",
+      "tags": [
+        "perseguidor"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto oculto, você tem vantagem em testes de Iniciativa.\n\nEnquanto mantiver o Foco Marcial, você pode se mover em velocidade normal enquanto se move furtivamente."
+    },
+    {
+      "id": "m-batedor-foco-oculto",
+      "name": "Foco Oculto (perseguidor)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Perseguidor",
+      "tags": [
+        "perseguidor"
+      ],
+      "range": "36 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto estiver oculto de todos os inimigos dentro do alcance, você pode recuperar seu Foco Marcial como uma ação bônus."
+    },
+    {
+      "id": "m-batedor-espreitador",
+      "name": "Espreitador (perseguidor)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Perseguidor",
+      "tags": [
+        "perseguidor"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Custo de Ação: Reação\n\nGaste Foco Marcial. Imponha desvantagem em quaisquer testes de Sabedoria (Percepção) feitos para localizar sua posição enquanto estiver oculto."
+    },
+    {
+      "id": "m-batedor-envenenador-astuto",
+      "name": "Envenenador Astuto (perseguidor)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Perseguidor",
+      "tags": [
+        "perseguidor"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Alcance: 36 metros\n\nDuração: 1 rodada\n\nQuando você ataca uma criatura da qual você está oculto dentro do alcance, ela sofre desvantagem em testes de resistência contra qualquer doença ou veneno ao qual você a submeta até o início do seu próximo turno."
+    },
+    {
+      "id": "m-batedor-perseguidor-incomum",
+      "name": "Perseguidor Incomum (perseguidor)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Perseguidor",
+      "tags": [
+        "perseguidor"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto oculto, o custo de ação para Analisar um alvo é reduzido em um nível.\n\nCusto de Ação InicialCusto de Ação Final10 Minutos1 Minuto1 Minuto1 Ação1 Ação1 Ação Bônus1 Ação Bônus1 Reação"
+    },
+    {
+      "id": "m-batedor-furtividade-cooperativa",
+      "name": "Furtividade Cooperativa",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "range": "18 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto estiver oculto, você pode compartilhar seu teste de Destreza (Furtividade) com um número de aliados igual ao seu bônus de proficiência. Esse efeito dura enquanto eles permanecerem dentro do seu alcance.\n\nO número de aliados com quem você pode compartilhar seu teste dobra enquanto você tiver Foco Marcial."
+    },
+    {
+      "id": "m-batedor-analise-a-distancia",
+      "name": "Análise à Distância",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aumenta o alcance da sua habilidade Analisar para 36 metros."
+    },
+    {
+      "id": "m-batedor-furtividade-rapida",
+      "name": "Furtividade Rápida",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar a ação Esconder-se como uma ação bônus."
+    },
+    {
+      "id": "m-batedor-perseguidor-aprimorado",
+      "name": "Perseguidor Aprimorado",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você recebe os benefícios de quaisquer talentos (de perseguidor) que possua, mesmo que esteja apenas fortemente obscurecido ou invisível.\n\nEnquanto tiver Foco Marcial, você continua a se beneficiar de quaisquer talentos (de perseguidor) que possua, mesmo que esteja apenas levemente obscurecido."
+    },
+    {
+      "id": "m-batedor-analise-persistente",
+      "name": "Análise Persistente",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tentar Analisar cada alvo individual um número de vezes por descanso longo igual ao seu bônus de proficiência."
+    },
+    {
+      "id": "m-batedor-analise-rapida",
+      "name": "Análise Rápida",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Analisar agora leva apenas 1 minuto ou 1 Ação Bônus ao gastar Foco Marcial.\n\nAlém disso, sempre que você rolar a iniciativa, poderá tentar Analisar um alvo individual sem gastar uma ação ou Foco Marcial."
+    },
+    {
+      "id": "m-batedor-furtividade-reflexiva",
+      "name": "Furtividade Reflexiva",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "duration": "1 rodada",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Custo da Ação: Reação\n\nSempre que você obtiver sucesso em um teste de resistência de Destreza contra um efeito de área, poderá usar a ação Esconder-se. Isso só dura até o final do seu próximo turno se você não conseguir encontrar cobertura ou outra maneira de permanecer escondido."
+    },
+    {
+      "id": "m-batedor-oponente-digno",
+      "name": "Oponente Digno",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você analisar um alvo com sucesso, poderá escolhê-lo como seu rival. Seus rivais não perdem a qualidade Analisado após 24 horas ou se você fizer um descanso longo. Você só pode ter um rival por vez, e escolher um novo rival faz com que o anterior perca essa qualidade. Você não pode escolher um novo rival até terminar um descanso longo ou até que o rival atual seja reduzido a 0 pontos de vida."
+    },
+    {
+      "id": "m-batedor-pesquisador-conselheiro",
+      "name": "Pesquisador Conselheiro",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "talent",
+          "id": "m-batedor-percepcao-cooperativa"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que você analisar um alvo com sucesso, aliados que se beneficiam de Percepção Cooperativa tratam o alvo como Analisado. Esses aliados se beneficiam de um talento (de pesquisa) que você possui (à sua escolha) enquanto permanecerem dentro do alcance do alvo."
+    },
+    {
+      "id": "m-batedor-perseguidor-conselheiro",
+      "name": "Perseguidor Conselheiro",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "talent",
+          "id": "m-batedor-furtividade-cooperativa"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Aliados ocultos que se beneficiam de Furtividade Cooperativa também recebem o benefício de um talento (de perseguidor) que você possui (à sua escolha)."
+    },
+    {
+      "id": "m-batedor-detectar-pensamentos-superficiais",
+      "name": "Detectar Pensamentos Superficiais (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "pesquisa"
+      ],
+      "duration": "1 rodada",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "text",
+          "text": "proficiente em Intuição"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Custo de Ação: 1 ação\n\nVocê pode ouvir os pensamentos superficiais de uma criatura Analisada a até 9 metros de distância durante a duração.\n\nVocê ganha vantagem em todos os testes de resistência e testes de habilidade feitos contra o alvo."
+    },
+    {
+      "id": "m-batedor-batedor-especialista",
+      "name": "Batedor Especialista",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "text",
+          "text": "proficiente em Investigação"
+        },
+        {
+          "type": "text",
+          "text": "Percepção"
+        },
+        {
+          "type": "text",
+          "text": "Furtividade ou Sobrevivência"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Escolha uma das seguintes perícias nas quais você seja proficiente: Investigação, Percepção, Furtividade ou Sobrevivência.\n\nAdicione o dobro do seu modificador de proficiência a essa perícia.\n\nEste talento pode ser escolhido múltiplas vezes, cada vez que uma perícia diferente for selecionada.",
+      "_needsReview": [
+        "prereq:unresolved:Percepção",
+        "prereq:unresolved:Furtividade ou Sobrevivência"
+      ]
+    },
+    {
+      "id": "m-batedor-olhar-inimigo",
+      "name": "Olhar Inimigo",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "talent",
+          "id": "m-batedor-analise-rapida"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Custo de Ação: 1 Ação\n\nGaste Foco Marcial. Você pode tentar Analisar todas as criaturas dentro do seu alcance de Análise."
+    },
+    {
+      "id": "m-batedor-visao-do-cacador-de-magos-abordagem",
+      "name": "Visão do Caçador de Magos Abordagem",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "talent",
+          "id": "m-batedor-conhecimento-magico"
+        },
+        {
+          "type": "level",
+          "min": 3
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sua Percepção passiva de Conhecimento Mágico se estende até onde sua visão alcança, em vez de apenas 3 metros."
+    },
+    {
+      "id": "m-batedor-analise-detalhada",
+      "name": "Análise Detalhada",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao analisar o alvo, você pode discernir um número adicional de características igual à metade do seu bônus de proficiência."
+    },
+    {
+      "id": "m-batedor-modificar-caracteristicas",
+      "name": "Modificar Características (pesquisa)",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [
+        "pesquisa"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "text",
+          "text": "Quebrador de Partes"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que você acertar um golpe crítico contra uma criatura analisada, você pode alterar 1 característica analisada conhecida do alvo de uma das seguintes maneiras por 1 hora:\n\n•: Classe de Armadura. Reduzida em 2.\n\n•: Resistências a Condições. Perde uma resistência a condição.\n\n•: Imunidades a Condições. Uma imunidade a condição é transformada em resistência a condição.\n\n•: Resistências a Dano. Perde uma resistência a dano.\n\n•: Imunidades a Dano. Uma imunidade a dano é transformada em resistência a dano.\n\n•: Vulnerabilidades a Dano. (Requer Resistência a Dano e Imunidades a Dano como características conhecidas) Escolha um tipo de dano para o qual a criatura não tenha Imunidade ou Resistência. Ganha essa vulnerabilidade a dano.\n\n•: Velocidade. Reduz todos os modos de movimento em 3 metros (mínimo 0 m).\n\n•: Um Atributo. Reduz um atributo conhecido em 2 (mínimo 1).\n\n•: Um de seus Testes de Resistência. Reduz um teste de resistência conhecido em 2.\n\n•: Um de seus Sentidos. Reduz um de seus sentidos conhecidos em 3 metros (mínimo 0 m).\n\n•: Pontos de Vida Máximos. Reduz seus Pontos de Vida Máximos em 10 (mínimo 1).\n\n•: Outra Característica. Modificada com a permissão do Mestre.",
+      "_needsReview": [
+        "prereq:unresolved:Quebrador de Partes"
+      ]
+    },
+    {
+      "id": "m-batedor-visao-verdadeira-abordagem",
+      "name": "Visão Verdadeira Abordagem",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários",
+      "tags": [],
+      "range": "36 metros",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "batedor"
+        },
+        {
+          "type": "talent",
+          "id": "m-batedor-discernir-ilusoes"
+        },
+        {
+          "type": "talent",
+          "id": "m-batedor-sentidos-penetrantes"
+        },
+        {
+          "type": "level",
+          "min": 17
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Enquanto você tiver Foco Marcial, você poderá ver através da escuridão normal e mágica, perceber portas secretas ocultas por magia, ver a localização exata de criaturas ou objetos sob efeitos de distorção ou deslocamento, ver criaturas ou objetos invisíveis normalmente, ver através de ilusões e ver a verdadeira forma de coisas polimorfadas, alteradas ou transmutadas. Além disso, você pode focar sua visão para ver o Plano Etéreo (mas não espaços extradimensionais).\n\nEsta habilidade não penetra objetos sólidos. Ela não confere visão de raio-X ou equivalente. Não anula efeitos de obscurecimento, incluindo os causados ​​por neblina e similares. Não permite ver através de disfarces mundanos, detectar criaturas que estão simplesmente escondidas ou perceber portas secretas ocultas por meios mundanos. Este efeito não pode ser aprimorado com magia, portanto, não é possível usar esta habilidade através de uma bola de cristal ou em conjunto com a magia clarividência ou efeitos similares."
+    },
+    {
+      "id": "m-batedor-abordagem-alternativa",
+      "name": "Abordagem Alternativa",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode tentar Analisar um alvo com um teste de Inteligência (Investigação) ou Sabedoria (Percepção). Você ganha um talento (de aproximação) à sua escolha como talento bônus."
+    },
+    {
+      "id": "m-batedor-olhos-ocultos",
+      "name": "Olhos Ocultos",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não ganha a característica Analisar da esfera Batedor. Você não pode escolher talentos (de aproximação) ou (de pesquisa). Você ganha Furtividade Rápida e um talento adicional (de rastreador) à sua escolha como talentos bônus."
+    },
+    {
+      "id": "m-batedor-rivalidade",
+      "name": "Rivalidade",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Os alvos da sua tentativa bem-sucedida de Analisar também o consideram Analisado durante a duração da sua habilidade Analisar. Quaisquer características que você aprenda sobre eles, eles também aprendem sobre você e podem aplicar talentos (de pesquisa) que você possua a você. Você ganha Oponente Digno como talento bônus."
+    },
+    {
+      "id": "m-batedor-buscador",
+      "name": "Buscador",
+      "sphere": "batedor",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não ganha a característica Afinidade de Perícia: Furtividade. Você ganha o talento Percepção Treinada (de percepção) como talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

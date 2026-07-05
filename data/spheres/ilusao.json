@@ -1,0 +1,600 @@
+{
+  "id": "ilusao",
+  "name": "Ilusão",
+  "section": "magic",
+  "summary": "Criar imagens e impressões convincentes de coisas que não existem.",
+  "theme": {
+    "h": 322,
+    "s": 44,
+    "sig": "ilusao"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "ilusao-crenca-vs-incredulidade",
+      "name": "Crença vs. Incredulidade",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Usando Ilusões",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em um mundo de magia, a menos que uma criatura saiba que está lidando com um ilusionista, ela não duvidará automaticamente de nada que vê; um guarda familiarizado com as ruas de uma cidade pode saber que uma parede ilusória não estava dividindo a rua ontem, mas não saberá automaticamente que é uma ilusão; É bem possível que seja uma parede real invocada por um conjurador de Criação. Da mesma forma, um conjurador que parece invocar monstros para auxiliar em uma luta pode estar criando ilusões ou invocando monstros reais.\n\nPortanto, mesmo que um NPC tenha motivos para suspeitar de uma ilusão, ele precisará usar pelo menos uma ação para tentar desacreditar uma parede ilusória antes de atravessá-la, ou gastar uma ação atacando uma criatura ilusória para ver seu ataque atravessá-la (ou, se a ilusão estiver sendo ativamente guiada pelo ilusionista ou possuir o talento Ilusões Inteligentes, gastar algumas rodadas atacando-a antes de suspeitar que a ilusão \"de alguma forma\" continua desviando de todos os ataques). Somente se souberem que estão enfrentando um ilusionista (por exemplo, por terem percebido suas ilusões anteriores) é que podem atravessar a parede sem esperar para examiná-la ou ignorar as criaturas invocadas para atacá-la, mas mesmo assim correm o risco de serem atingidos por um mago astuto que cria ilusões na primeira vez e, em seguida, invoca paredes e criaturas reais na segunda vez, quando os guardas estão preparados para ignorá-las."
+    },
+    {
+      "id": "ilusao-cobrindo-objetos-com-ilusoes",
+      "name": "Cobrindo Objetos com Ilusões",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Usando Ilusões",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Embora o talento Disfarce Ilusório permita alterar a aparência de uma criatura ou objeto, também é possível colocar uma ilusão sobre algo para escondê-lo. Por exemplo, você pode colocar uma ilusão sobre uma criatura para dar a impressão de que ela está se transformando em um monstro, ou esconder uma porta atrás de uma ilusão de uma rocha. Essas ilusões, no entanto, não se movem com a criatura ou objeto sobre o qual são colocadas (elas precisam ser movidas como uma ação do conjurador) e também têm a chance de serem desacreditadas e, portanto, se tornarem transparentes ao serem descobertas."
+    },
+    {
+      "id": "ilusao-cobertura-ilusoria",
+      "name": "Cobertura Ilusória",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Usando Ilusões",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Embora invocar uma ilusão de uma parede possa desencorajar alguém de tentar atacá-lo através dela, a cobertura não é real e, portanto, não oferece cobertura de fato se o alvo tentar atacar. Se o ataque for bem-sucedido, o atacante terá visto seu ataque passar pela ilusão e saberá que a cobertura é falsa."
+    },
+    {
+      "id": "ilusao-descrenca-automatica",
+      "name": "Descrença Automática",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Usando Ilusões",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Lembre-se de que, uma vez que um alvo tenha visto provas de que uma ilusão é falsa (por exemplo, um guarda atira uma flecha através de uma parede ilusória, ou um guarda vê os PCs entrarem na ilusão de uma rocha, ou vê ataques à distância vindos de dentro de uma rocha), ele automaticamente desacredita a ilusão e, portanto, automaticamente consegue vê-la através dela. Uma criatura não precisa estar próxima a uma ilusão para examiná-la, interagir com ela (arremessar ou disparar armas de longo alcance pode fazer isso) ou ver algo passar através dela."
+    },
+    {
+      "id": "ilusao-usos-alternativos",
+      "name": "Usos Alternativos",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Usando Ilusões",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ilusões podem ser usadas de maneiras não relacionadas a enganar alguém. Você pode usar uma ilusão audível para projetar sua voz e sussurrar mensagens à distância. Você pode usar ilusões visíveis para mostrar a alguém a imagem de uma pessoa ou mapa que você viu.\n\nUm Disfarce Ilusório com Ilusão Maior pode ser usado para conceder vantagem em um teste feito com utensílios de cozinha (em essência, encobrindo quaisquer erros na culinária com cheiros e sabores agradáveis), ou uma ilusão pode ser usada para fazer um teste de Performance para entreter."
+    },
+    {
+      "id": "ilusao-figmento",
+      "name": "Figmento",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Habilidades Básicas de Ilusão",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "60 pés",
+      "duration": "Concentração, até 10 minutos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sua ilusão inclui visão e som. Se você possuir talentos (sensoriais), qualquer um ou todos esses talentos também podem ser aplicados ao figmento conforme sua escolha."
+        },
+        {
+          "pm": 1,
+          "text": "Seu figmento aumenta para um cubo de 20 pés. Isso aumenta em 10 pés no 5º nível (cubo de 30 pés), 11º nível (cubo de 40 pés), e 17º nível (cubo de 50 pés)."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste durante o restante da duração sem concentração. Este aprimoramento pode ser aplicado após o efeito ser lançado no seu turno, sem precisar de ação."
+        }
+      ],
+      "body": "Você pode criar a imagem de algo que na verdade não está lá, conhecido como ‘figmento’. Seu figmento tem um tamanho máximo de um cubo de 10 pés, que aumenta em 5 pés no 5º nível (cubo de 15 pés), 11º nível (cubo de 20 pés) e 17º nível (cubo de 25 pés).\n\nAlternativamente, você pode criar um som ilusório, como o rugido de um leão, uma voz falando, etc. Seja criando figmentos ou apenas sons, você não pode criar ilusões que afetem diretamente o mundo ao seu redor; suas imagens não podem afetar objetos e você não pode criar sons altos o suficiente para ensurdecer ou causar dano de trovão, etc.\n\nEnquanto você estiver dentro do alcance de um figmento visual, pode usar sua ação para fazer a imagem se mover para qualquer outro ponto dentro do alcance. À medida que a imagem muda de localização, você pode alterar sua aparência para que seus movimentos pareçam naturais. Por exemplo, se você criar a imagem de uma criatura e movê-la, pode alterar a imagem para que pareça estar andando. No entanto, se você não usar sua ação para controlá-la, a imagem permanece imóvel.\n\nA interação física com um figmento visual revela que ele é uma ilusão, porque objetos podem atravessá-lo. Da mesma forma, criaturas que dependem principalmente de um sentido que sua ilusão não afeta podem muitas vezes ignorar suas ilusões completamente. Por exemplo, um alvo com um olfato aguçado (como um lobo ou cachorro) automaticamente não acreditará em um figmento de uma pessoa se você não possuir o talento Maiores Ilusões.\n\nUma criatura que usa sua ação para examinar a imagem ou o som pode determinar que é uma ilusão com um teste bem-sucedido de Inteligência (Investigação) contra sua CD de salvamento do feitiço. Se uma criatura discernir a ilusão pelo que ela realmente é, pode ver através da imagem, e suas outras qualidades sensoriais tornam-se tênues para a criatura."
+    },
+    {
+      "id": "ilusao-charme",
+      "name": "Charme",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Habilidades Básicas de Ilusão",
+      "tags": [],
+      "action": "1 ação",
+      "range": "60 pés",
+      "duration": "Concentração, até 10 minutos",
+      "target": "uma criatura ou objeto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste durante o restante da duração sem concentração. Este aprimoramento pode ser aplicado após o efeito ser lançado no seu turno, sem precisar de ação."
+        }
+      ],
+      "body": "Se você possuir um talento (charme), pode criar uma ilusão que altera a aparência ou características percebidas de uma criatura ou objeto de alguma forma. Diferentemente de um figmento, você não precisa usar sua ação para mover o charme; em vez disso, o charme se move junto com o alvo ao qual está vinculado. Sempre que você usar essa habilidade, conceda ao alvo os efeitos de um talento (charme) que você possua. Diferentemente dos figmentos, charmes (com algumas exceções indicadas no talento) não podem ser desacreditados; por exemplo, uma criatura invisível é simplesmente invisível, independentemente de o alvo “acreditar” nisso ou não."
+    },
+    {
+      "id": "ilusao-chamariz",
+      "name": "Chamariz (Charme)",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Charme",
+      "tags": [
+        "charme"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode conceder um número de duplicados adicionais igual à metade do seu bônus de proficiência. Se houver quatro duplicados, você deve rolar 4 ou mais para mudar o alvo do ataque para um duplicado. Se houver três duplicados, deve rolar 6 ou mais. Com dois duplicados, deve rolar 8 ou mais."
+        }
+      ],
+      "body": "Você envolve um alvo com cópias enganosas, tornando difícil determinar qual é o verdadeiro. Um duplicado ilusório do alvo aparece em seu espaço. Até que o efeito termine, o duplicado se move junto com o alvo e imita suas ações.\n\nCada vez que um inimigo mira uma criatura sob este efeito com um ataque, role um d20 para determinar se o ataque atinge um dos duplicados em vez do alvo. Você deve rolar 11 ou mais para que o ataque atinja um duplicado em vez do alvo. A CA de um duplicado é igual a 10 + seu modificador de Destreza. Se um ataque atingir um duplicado, ele é destruído. Um duplicado só pode ser destruído por um ataque que o acerte. Ele ignora todos os outros danos e efeitos. O efeito termina quando todos os duplicados forem destruídos."
+    },
+    {
+      "id": "ilusao-disfarce-ilusorio",
+      "name": "Disfarce Ilusório (Charme)",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Charme",
+      "tags": [
+        "charme"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Se você possuir Ilusões Maiores, pode dar um componente tátil ao disfarce ilusório; interagir com a ilusão não revela o engano, embora sua ilusão ainda não tenha substância (ou seja, sentir o chapéu sobre a sua cabeça não faria o alvo desacreditar, mas ele ainda não poderia pegá-lo)."
+        }
+      ],
+      "body": "Você pode criar um charme que altera a aparência de um alvo. Isso pode mudar a aparência de um objeto ou alterar uma criatura para parecer 30 cm mais baixa ou mais alta, fazê-la parecer magra, gorda ou algo intermediário, ou mudar sua espécie aparente, gênero, roupa, etc. Você não pode alterar o tipo de corpo do\n\nalvo, então deve adotar uma forma que mantenha a mesma disposição básica de membros.\n\nFora isso, a extensão da ilusão é determinada por você. Este charme apenas disfarça a aparência e a voz do alvo, mas pode se estender ao cheiro e gosto se você possuir Ilusões Maiores, às suas auras mágicas se você possuir Ilusões Veladas, ou até mesmo à mente do alvo se você possuir Ilusões Inteligentes.\n\nAssim como com um figmento, as mudanças não são reais; se um alvo tentar interagir com a ilusão (por exemplo, pegar um chapéu ilusório em sua cabeça), ele passará direto e sentirá seu cabelo. Além disso, assim como com um kit de disfarce, uma criatura pode usar sua ação para inspecionar a aparência e tentar um teste de Inteligência (Investigação) para ver através do disfarce (contra sua CD de salvamento do feitiço). Embora essas ações possam fazer um alvo desacreditar o disfarce, diferente de figmentos, desacreditar não permite automaticamente ver através do disfarce."
+    },
+    {
+      "id": "ilusao-obscurecer",
+      "name": "Obscurecer (Charme)",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Charme",
+      "tags": [
+        "charme"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O alvo se torna invisível em vez de apenas borrado durante a duração. Tudo que o alvo estiver vestindo ou carregando também se torna invisível enquanto permanecer nele. A invisibilidade termina se o alvo atacar, lançar um feitiço ou usar uma habilidade de esfera."
+        },
+        {
+          "pm": 1,
+          "text": "O efeito de obscure não termina se o alvo atacar, lançar um feitiço ou usar uma habilidade de esfera."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode abafar o alvo, removendo a desvantagem em testes de Destreza (Furtividade) causada por armaduras pesadas, e conceder desvantagem em quaisquer testes de Sabedoria (Percepção) para ouvi-lo."
+        },
+        {
+          "pm": 0,
+          "text": "Se você possuir Ilusões Maiores, pode conceder desvantagem em qualquer teste de Sabedoria (Percepção) para sentir o cheiro do alvo."
+        },
+        {
+          "pm": 1,
+          "text": "Se você possuir Ilusões Veladas, pode suprimir todas as auras do alvo, como auras mágicas de equipamentos ou auras de alinhamento ou tipo de criatura."
+        },
+        {
+          "pm": 1,
+          "text": "Se você possuir Ilusões Maiores, os benefícios de obscure se aplicam até mesmo a alvos com visão cega ou sentido sísmico. Se possuir Ilusões Inteligentes, os benefícios de obscure se aplicam a alvos com percepção mental, e escondem o alvo de talentos e feitiços da escola de adivinhação que leem mentes, como detectar pensamentos ou detecção mágica de mentiras."
+        }
+      ],
+      "body": "Você adquire os seguintes charmes:\n\nO alvo se torna borrado, concedendo desvantagem a qualquer ataque feito contra ele e ficando levemente obscurecido. Este efeito termina se o alvo atacar, lançar um feitiço ou usar uma habilidade de esfera."
+    },
+    {
+      "id": "ilusao-ilusoes-maiores",
+      "name": "Ilusões Maiores (sensoriais)",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Sensoriais",
+      "tags": [
+        "sensoriais"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um cheiro em vez de um som ou imagem ao criar um figmento. Ao aprimorar seus figmentos para incluir visão e som, eles agora também podem afetar os sentidos de olfato, paladar e tato. Espadas ilusórias parecem afiadas, alimentos ilusórios cheiram deliciosos (ou horríveis, conforme sua escolha) e fogo ilusório parece quente, embora o efeito exista apenas na mente do alvo e ele não sofra dano real.\n\nInteragir com seus figmentos ou com um alvo sob seu Disfarce Ilusório não revela mais o engano, embora suas ilusões ainda não possuam substância ou peso (ou seja, um alvo sentindo seu muro ilusório não perceberá imediatamente o engano, mas um alvo que tentar atravessar ou escalar o muro ainda cairá, e ataques à distância ainda o atravessariam).\n\nSeus figmentos cinéticos tornam-se inofensivos, sem graça e incorpóreos para criaturas que desacreditam com sucesso seus figmentos."
+    },
+    {
+      "id": "ilusao-ilusoes-veladas",
+      "name": "Ilusões Veladas (sensoriais)",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Sensoriais",
+      "tags": [
+        "sensoriais"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a seus figmentos ou a criaturas sob seu Disfarce Ilusório uma aura, ou eliminar qualquer aura que já possuam, como alterar como detectam magia, alinhamento, tipos de criatura, etc. Seus poderes de esfera de Ilusão não são detectados como efeitos mágicos a menos que você escolha que sejam.\n\nA aura ilusória de um figmento torna-se óbvia para uma criatura que detecta magia e desacredita a ilusão."
+    },
+    {
+      "id": "ilusao-obstrucao-ilusoria",
+      "name": "Obstrução Ilusória",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sua obstrução torna tudo dentro da área do figmento borrado, tornando levemente obscurecido. Ataques feitos contra qualquer alvo dentro desta área sofrem desvantagem, independentemente de o atacante também estar dentro da área."
+        },
+        {
+          "pm": 1,
+          "text": "Sua obstrução silencia a área. Qualquer criatura ou objeto completamente dentro do figmento é imune a dano de trovão, e criaturas ficam ensurdecidas enquanto estiverem completamente dentro dela. Lançar um feitiço que inclua componente verbal é impossível ali."
+        },
+        {
+          "pm": 1,
+          "text": "Se você possuir Ilusões Maiores, sua obstrução remove toque e fricção da área. Cada criatura que estiver na área quando você criar a obstrução deve passar em um teste de Destreza ou cairá caída. Uma criatura que entrar na área ou terminar seu turno nela também deve passar em um teste de Destreza ou cair. Se uma criatura for atingida por um alvo oculto enquanto estiver dentro da área, ela pode precisar passar em um teste de Sabedoria (Percepção) contra sua CD de esfera para perceber que foi atingida."
+        },
+        {
+          "pm": 1,
+          "text": "Se você possuir Ilusões Maiores, sua obstrução remove gosto e cheiro dentro da área. Nenhuma criatura na área pode cheirar ou emitir cheiro. Testes de Sabedoria (Percepção) que dependem do olfato não podem ser feitos enquanto estiver dentro da obstrução. Isso suprime efeitos dependentes de cheiro ou gosto, como o fedor de um troglodita."
+        },
+        {
+          "pm": 1,
+          "text": "Se você possuir Ilusões Veladas, sua obstrução esconde as auras de todas as criaturas dentro da obstrução, tornando-as indetectáveis por qualquer tipo de magia, a menos que o conjurador tenha sucesso em um teste de habilidade de magia contra sua CD de esfera."
+        },
+        {
+          "pm": 1,
+          "text": "Se você possuir Ilusões Inteligentes, sua obstrução suprime os pensamentos de todas as criaturas dentro da obstrução. Criaturas completamente dentro da obstrução são imunes a dano psíquico, e efeitos que leem ou comunicam com a mente, como telepatia, detectar pensamentos, detecção mágica de mentiras, etc., não podem ser usados por ou em criaturas completamente dentro desta obstrução."
+        }
+      ],
+      "body": "Você pode criar um figmento chamado obstrução que, em vez de criar a impressão de um objeto, bloqueia tudo dentro de sua área. Diferentemente dos figmentos normais, uma obstrução não pode ser desacreditada e não pode ser movida do local onde foi criada."
+    },
+    {
+      "id": "ilusao-ilusoes-complexas",
+      "name": "Ilusões Complexas",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode dividir seus figmentos em múltiplas ilusões independentes. Sempre que você usar sua ação para controlar um figmento, poderá controlar todos os seus figmentos com a mesma ação. Por exemplo, em vez de criar um jantar com um único figmento (onde todos os convidados e a mesa precisariam caber dentro do tamanho do figmento), você poderia criar um figmento para a mesa e outro para cada convidado, cada um podendo se mover independentemente dentro do alcance da ilusão."
+        }
+      ],
+      "body": "Você pode criar até três figmentos, mas cada um só pode ter metade do tamanho de seus figmentos habituais. O número de figmentos que você pode criar aumenta no 5º nível (quatro figmentos), 11º nível (cinco figmentos) e 17º nível (seis figmentos)."
+    },
+    {
+      "id": "ilusao-controlar-figmento",
+      "name": "Controlar Figmento",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "como a ilusão",
+      "duration": "como o efeito do alvo",
+      "target": "um figmento",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode realizar um teste de habilidade de conjuração contra a CD de salvamento do feitiço ou da esfera do controlador de um figmento existente. Se for bem-sucedido, você ganha controle do figmento e pode comandá-lo como se fosse seu efeito. Trate o figmento em todos os aspectos como se tivesse sido lançado por você, exceto que isso não altera nenhuma das variáveis originais relacionadas a nível, talentos de esfera de Ilusão, habilidades de classe ou pontos de feitiço. No entanto, você deve permanecer dentro do alcance da ilusão do figmento para manter este efeito normalmente. Se o figmento estivesse sendo mantido por concentração, você assume a concentração sobre o efeito como se tivesse lançado o feitiço."
+    },
+    {
+      "id": "ilusao-terreno-ilusorio",
+      "name": "Terreno Ilusório",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode criar figmentos que alteram a aparência do terreno ou outras características da área ao seu redor. Por exemplo, antes você poderia cobrir uma parede com outra parede maior ou usar um tapete ilusório para esconder um buraco; agora você pode usar um figmento que faça uma parede de fogo parecer uma parede de névoa inofensiva, ou transformar um terreno de pastagem em floresta. Mudanças extremas (como transformar uma pastagem quente em tundra gelada) podem exigir talentos (sensoriais) adicionais para serem convincentes."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "ilusao-ilusoes-insistentes",
+      "name": "Ilusões Insistentes",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Escolha uma criatura que você possa perceber. Você concede a esse alvo desvantagem no próximo teste de Inteligência (Investigação) feito para examinar ou desacreditar este figmento, realizado dentro de um minuto."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "ilusao-ilusoes-potentes",
+      "name": "Ilusões Potentes",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 3,
+          "text": "Criaturas que começarem o turno dentro da área do seu figmento devem fazer um teste de resistência de Inteligência ou ficar cegadas durante o turno."
+        },
+        {
+          "pm": 1,
+          "text": "Criaturas que começarem o turno dentro da área do seu figmento devem fazer um"
+        },
+        {
+          "pm": 1,
+          "text": "Se você possuir Ilusões Maiores, criaturas que começarem o turno dentro da área do figmento devem fazer um teste de resistência de Inteligência ou sofrer 1d4 de dano psíquico. O dano aumenta em 1d4 no 5º nível (2d4), 11º nível (3d4) e 17º nível (4d4)."
+        },
+        {
+          "pm": 2,
+          "text": "Se você possuir Ilusões Maiores, criaturas que começarem o turno dentro da área do figmento devem fazer um teste de resistência de Inteligência ou ficar envenenadas durante o turno."
+        },
+        {
+          "pm": 2,
+          "text": "Se você possuir Ilusões Veladas, criaturas que começarem o turno dentro da área do figmento devem fazer um teste de resistência de Inteligência ou ficar amedrontadas durante o turno."
+        },
+        {
+          "pm": 2,
+          "text": "Se você possuir Ilusões Inteligentes, criaturas que começarem o turno dentro da área do figmento devem fazer um teste de resistência de Inteligência ou serem encantadas enquanto permanecerem dentro do figmento. Uma criatura que desacreditar o figmento se torna imune ao efeito de charme, e o efeito termina se estava sendo aplicado."
+        }
+      ],
+      "body": "Seus figmentos podem ser tão poderosos que afetam criaturas de várias formas, mesmo que elas desacreditem a ilusão. Dependendo dos talentos (sensoriais) que você possui, isso pode incluir luzes cegantes, ruídos estrondosos, cheiros fortes que induzem náusea ou até fogo que pode matar.\n\nteste de resistência de Inteligência ou ficar surdas por um minuto."
+    },
+    {
+      "id": "ilusao-ilusao-programada",
+      "name": "Ilusão Programada",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao criar um figmento, você pode fazer com que ele não apareça imediatamente, mas espere para se ativar quando uma condição específica ocorrer. A ilusão é imperceptível até então. O gatilho pode ser tão geral ou detalhado quanto desejar, mas deve se basear em condições visuais ou audíveis que ocorram a até 9 metros (30 pés) do local do figmento. Por exemplo, você poderia criar um monstro ilusório que aparece quando alguém abre uma porta, ou uma mensagem que surge no ar quando alguém diz a palavra ou frase correta."
+        }
+      ],
+      "body": "Seu figmento tem duração permanente até ser ativado ou dissipada (embora você ainda deva se concentrar, a menos que use o aprimoramento para permitir que dure sem concentração). Uma vez ativado, executa um conjunto de ações pré-determinadas (definidas por você ao criá-lo) com duração máxima de 5 minutos, após o que desaparece e o efeito termina. Se o figmento também for alterado com Ilusão Permanente, ele será reiniciado após 5 minutos, ativando novamente na próxima vez que seu gatilho ocorrer."
+    },
+    {
+      "id": "ilusao-ilusoes-seletivas",
+      "name": "Ilusões Seletivas",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode escolher um número total de criaturas igual ao seu bônus de proficiência para desacreditar ou serem imunes a esta ilusão."
+        }
+      ],
+      "body": "Você pode designar criaturas que desacreditarão automaticamente seus figmentos ou que serão imunes a talentos (figmento) ou (charme) que você use."
+    },
+    {
+      "id": "ilusao-ilusoes-inteligentes",
+      "name": "Ilusões Inteligentes (sensoriais)",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Ilusão",
+      "tags": [
+        "sensoriais"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "ilusao"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao aprimorar um figmento para incluir imagem e som, você também pode conceder inteligência ao figmento. Isso significa que seu figmento pode enganar magias e habilidades como detectar pensamentos ou telepatia, além de permitir que ele faça cálculos rápidos como se estivesse usando sua pontuação de Inteligência. Seus figmentos podem agir de forma apropriada por conta própria, respondendo a estímulos mesmo que você não esteja presente para direcionar a ilusão.\n\nIsso significa que você não precisa mais usar sua ação para direcionar seus figmentos, embora ainda deva gastar uma ação para dar ordens (por exemplo, se você gastar sua ação para ordenar que a ilusão de um barman converse com os clientes, ele continuará fazendo isso até que você gaste outra ação para dar novas ordens).\n\nAlém disso, se você conceder a um alvo o Disfarce Ilusório (charme), ele poderá enganar magias de detecção de pensamentos e sondagem de memórias, exibindo apenas a mente, memórias e pensamentos que você desejar, a menos que a criatura que tenta a sondagem tenha sucesso em um teste de Inteligência (Investigação) contra sua CD de esfera para perceber que os pensamentos e memórias não são genuínos."
+    },
+    {
+      "id": "ilusao-miragem",
+      "name": "Miragem",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Ilusão",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "ilusao"
+        },
+        {
+          "type": "talent",
+          "id": "ilusao-terreno-ilusorio"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Ao usar Terreno Ilusório, você pode aumentar o tamanho do figmento para um cubo de 1 milha."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "ilusao-ilusao-permanente",
+      "name": "Ilusão Permanente",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Ilusão",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "ilusao"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Estendida [metasfera]"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 4,
+          "text": "Seus figmentos e charmes duram até serem dissipados, sem exigir sua concentração."
+        }
+      ],
+      "body": "Suas ilusões têm longa duração.",
+      "_needsReview": [
+        "prereq:unresolved:Estendida [metasfera]"
+      ]
+    },
+    {
+      "id": "ilusao-infusao-sombria",
+      "name": "Infusão Sombria",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Ilusão",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "ilusao"
+        },
+        {
+          "type": "talent",
+          "id": "ilusao-ilusoes-maiores"
+        },
+        {
+          "type": "talent",
+          "id": "ilusao-ilusoes-potentes"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Qualquer ou todas as criaturas dentro do seu figmento ficam agarradas à sua escolha até desacreditarem o figmento com sucesso. Uma criatura agarrada pela ilusão pode fazer um teste de Inteligência (Investigação) gratuito a cada rodada para desacreditar a ilusão."
+        },
+        {
+          "pm": 3,
+          "text": "Qualquer ou todas as criaturas dentro do seu figmento ficam imobilizadas à sua escolha até desacreditarem o figmento com sucesso. Uma criatura imobilizada pela ilusão pode fazer um teste de Inteligência (Investigação) gratuito a cada rodada para desacreditar a ilusão."
+        }
+      ],
+      "body": "Sempre que você usar um figmento para causar dano psíquico, você pode alterar o tipo de dano para qualquer outro tipo."
+    },
+    {
+      "id": "ilusao-ilusoes-alternativas",
+      "name": "Ilusões Alternativas",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode criar figmentos que incluam elementos visuais; você poderia criar o som de um urso ou o cheiro de um urso, mas não a imagem de um urso. Como suas ilusões não têm aparência, atravessá-las não revela automaticamente que são ilusões (pois não têm substância para atravessar), mas você também não pode cegar alvos ou causar dano com Ilusões Potentes, já que suas ilusões não possuem imagem nem substância para interação. Você recebe Ilusões Maiores como talento bônus."
+    },
+    {
+      "id": "ilusao-sem-imagem",
+      "name": "Sem Imagem",
+      "sphere": "ilusao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode criar figmentos (exceto obstruções através de Obstrução Ilusória). Você recebe um talento (charme) ou Obstrução Ilusória como talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

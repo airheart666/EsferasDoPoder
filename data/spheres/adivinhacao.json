@@ -1,0 +1,1448 @@
+{
+  "id": "adivinhacao",
+  "name": "Adivinhação",
+  "section": "magic",
+  "summary": "Prever o futuro e obter informações além dos cinco sentidos comuns.",
+  "theme": {
+    "h": 248,
+    "s": 46,
+    "sig": "adivinhacao"
+  },
+  "acquisition": null,
+  "talents": [
+    {
+      "id": "adivinhacao-adivinhar",
+      "name": "Adivinhar",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "10 minutos",
+      "range": "pessoal",
+      "duration": "Concentração até 10 minutos",
+      "area": "36 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração de Adivinhar se torna uma ação."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno sem uma ação."
+        }
+      ],
+      "body": "Escolha um talento (adivinhar) que você possua; o efeito de adivinhar é determinado pelo talento escolhido. A menos que seja explicitamente declarado o contrário, você geralmente não pode localizar uma criatura ou objeto oculto simplesmente sentindo a presença ou a direção geral de sua aura. Adivinhar pode penetrar a maioria das barreiras, mas é bloqueado por objetos suficientemente densos, a menos que seja indicado o contrário. Consulte a Tabela: Categorias de Densidade e Substâncias Comuns abaixo para ver quais objetos podem bloquear a adivinhação. Muitos talentos (adivinhar) possuem um aprimoramento de conhecimento de recordação, que permite ao adivinho obter informações adicionais sobre um sujeito ou alvo.\n\nTabela: Categorias de Densidade e Substâncias ComunsDensidadeExemplo de SubstânciaQuantia para bloquear adivinhaçãoSem pesoPenas ou madeira balsa9 metrosLeveCarvão ou madeira90 cmUm pouco densoCarne ou pedra (como granito)30 cmDensoMetal comum (como cobre, ferro e aço)2,5 cmMuito densoMetal incomum ou raro (adamantium, chumbo, ouro, platina)Uma lâmina fina"
+    },
+    {
+      "id": "adivinhacao-sentido",
+      "name": "Sentido",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 pp"
+      },
+      "action": "1 ação",
+      "range": "pessoal",
+      "duration": "Concentração até 1 hora",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Seu sentido se estende a um alcance de 36 metros."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem custo de ação."
+        }
+      ],
+      "body": "Você pode conceder a si mesmo sentidos paranormais com alcance de 9 metros. Escolha e obtenha os efeitos de um talento (sentido) que você possua.",
+      "_needsReview": [
+        "cost:uses-pp-not-PM"
+      ]
+    },
+    {
+      "id": "adivinhacao-detectar-monstruosidade",
+      "name": "Detectar Monstruosidade (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de monstruosidades em sua área. Se uma criatura do tipo monstruosidade falhar em um teste de resistência de Carisma, você pode ver uma tênue aura de monstruosidade ao redor dela, permitindo que você determine se a criatura é ou não uma monstruosidade. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura de monstruosidade visível por 1 minuto e fazer um teste de Inteligência (Natureza) CD 20. Com um teste bem-sucedido, você descobre que tipo de monstruosidade a criatura é. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Monstruosidade, concentrando-se cada vez em uma aura de monstruosidade diferente."
+    },
+    {
+      "id": "adivinhacao-detectar-metamorfo",
+      "name": "Detectar Metamorfo (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de metamorfos em sua área. Se uma criatura com a marca metamorfo, ancestralidade metamorfa (como um metamorfo) ou uma criatura afetada por um efeito de petrificação ou polimorfia (como a habilidade de esfera de Alteração metamorfose) falhar em um teste de resistência de Carisma, você poderá ver uma tênue aura metamorfa ao redor dela, permitindo que você determine se a criatura possui ou não qualidades mórficas. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura metamorfa visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre que tipo de metamorfo a criatura é, qual é sua principal herança metamorfa ou como a criatura foi petrificada ou polimorfada, bem como sua forma original. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Metamorfo, concentrando-se cada vez em uma aura metamorfa diferente."
+    },
+    {
+      "id": "adivinhacao-detectar-aprimoramento",
+      "name": "Detectar Aprimoramento (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar a presença de bônus ou penalidades de curto prazo em criaturas ou objetos dentro de sua área. Se uma criatura (ou um objeto sob os cuidados de uma criatura) que esteja se beneficiando de bônus temporários ou sofrendo penalidades temporárias falhar em um teste de resistência de Carisma, você poderá ver uma tênue aura de aprimoramento ao seu redor. Uma aura só pode ser vista enquanto a criatura ou o objeto também estiver visível; no entanto, mesmo que você não possa ver a criatura ou o objeto, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura de aprimoramento visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você aprende as fontes dos bônus ou penalidades (mágicas, alquímicas, etc.), o que elas estão afetando e suas respectivas durações. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Aprimoramento, concentrando-se em uma aura de aprimoramento diferente a cada vez."
+    },
+    {
+      "id": "adivinhacao-aerologia",
+      "name": "Aerologia (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode ler o ar para coletar informações relacionadas a qualquer coisa em um assentamento em que você esteja. Para assentamentos particularmente grandes, isso pode revelar apenas informações relacionadas a um distrito específico.\n\nAo final de cada um dos seus turnos durante a duração desta adivinhação, faça um teste de habilidade chave para coletar informações como se tivesse passado 1d4 horas conversando com pessoas locais, sem precisar usar uma ação para isso. Vários testes feitos para coletar informações sobre o mesmo tópico sempre concedem as mesmas informações que o primeiro teste. Você só pode fazer um número de testes igual à metade do seu nível (mínimo 1) cada vez que usar este talento."
+    },
+    {
+      "id": "adivinhacao-detectar-o-tempo",
+      "name": "Detectar o Tempo (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar o tempo em sua localização pelas próximas 48 horas, fornecendo um aviso prévio de tempestades, tornados e assim por diante. Isso revela apenas o clima que surgiria naturalmente e não leva em consideração quaisquer ocorrências mágicas que possam alterar o clima."
+    },
+    {
+      "id": "adivinhacao-detectar-aberracoes",
+      "name": "Detectar Aberrações (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de aberrações dentro da área. Se uma criatura do tipo aberração falhar em um teste de resistência de Carisma, você pode ver uma tênue aura de aberração ao redor dela, permitindo que você determine se a criatura é ou não uma aberração. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura de aberração visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre que tipo de aberração a criatura é. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Aberrações, concentrando-se cada vez em uma aura de aberração diferente."
+    },
+    {
+      "id": "adivinhacao-detectar-invocacao",
+      "name": "Detectar Invocação (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de criaturas extraplanares dentro da área. Se uma criatura extraplanar ou invocada falhar em um teste de resistência de Carisma, você poderá ver uma tênue aura de conjuração ao redor dela, permitindo determinar se a criatura é extraplanar ou invocada. Uma aura só pode ser vista enquanto a criatura também estiver visível; contudo, mesmo que você não consiga ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura de conjuração visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre que tipo de criatura extraplanar ou invocada ela é e qual é o seu plano de origem. Você pode\n\naplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Invocações, concentrando-se em uma aura de conjuração diferente a cada vez."
+    },
+    {
+      "id": "adivinhacao-detectar-construtos",
+      "name": "Detectar Construtos (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de construtos e criaturas similares dentro da área. Se uma criatura do tipo construto ou com ancestralidade construto (como um forjado em guerra) falhar em um teste de resistência de Carisma, você pode ver uma tênue aura construto ao redor dela, permitindo que você determine se a criatura possui anatomia construto. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura construto visível por 1 minuto e fazer um teste de Inteligência (História) CD 20. Com um teste bem-sucedido, você descobre que tipo de construto a criatura é ou qual é sua principal herança construto. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Construtos, concentrando-se cada vez em uma aura construto diferente."
+    },
+    {
+      "id": "adivinhacao-detectar-lodos",
+      "name": "Detectar Lodos (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura de lodo visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre que tipo de lodo a criatura é. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Lodos, concentrando-se em uma aura de lodo diferente a cada vez."
+        }
+      ],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de lodos na área. Se uma criatura do tipo lodo falhar em um teste de resistência de Carisma, você pode ver uma tênue aura de lodo ao redor dela, permitindo que você determine se a criatura é ou não um lodo. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras."
+    },
+    {
+      "id": "adivinhacao-leitura-de-objetos",
+      "name": "Leitura de Objetos (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode continuar a adivinhar o objeto, aprendendo informações sobre o dono anterior ao último na mesma velocidade e na mesma ordem. Este aprimoramento é aplicado quando a informação anterior for completamente adivinhada. Caso este efeito seja interrompido por 2 ou mais rodadas consecutivas, você deve recomeçar do início, a menos que gaste 1 ponto de magia por dono anterior."
+        }
+      ],
+      "body": "Você pode realizar psicometria em um objeto alvo que você tocar, obtendo informações sobre sua história ou proprietários anteriores. Além das informações que você adquire abaixo, você ganha vantagem em testes para discernir o valor do objeto enquanto continuar a adivinhar o objeto. A cada 1 minuto que você adivinha o objeto, você ganha uma informação adicional na seguinte ordem: raça do último dono, gênero do último dono, idade do último dono, alinhamento do último dono, como o último dono perdeu ou ganhou o objeto."
+    },
+    {
+      "id": "adivinhacao-detectar-alinhamento",
+      "name": "Detectar Alinhamento (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma criatura individual por 1 minuto, permitindo que você a escolha como alvo uma vez adicional, mas ela ganha vantagem em seu teste de resistência de Carisma contra o efeito. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração, permitindo que você mire em um indivíduo adicional a cada vez."
+        }
+      ],
+      "body": "Durante a duração, você pode usar a adivinhação para descobrir uma parte específica do espectro de alinhamento de uma criatura dentro de sua área: maligno, bom, leal ou caótico. Você descobre se a criatura alvo deste efeito possui o alinhamento escolhido, a menos que ela seja bem-sucedida em um teste de resistência de Carisma. Uma criatura individual só pode ser alvo de Detectar Alinhamento uma vez a cada 24 horas."
+    },
+    {
+      "id": "adivinhacao-detectar-antecedentes",
+      "name": "Detectar Antecedentes (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma criatura que falhou em seu teste de resistência como uma ação bônus, permitindo que você aprenda todos os seus traços de personalidade, ideais, vínculos e defeitos. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Antecedentes, permitindo que você mire em um indivíduo diferente a cada vez."
+        }
+      ],
+      "body": "Durante a duração, você pode adivinhar as características de uma criatura dentro de sua área. Ao conjurar esta habilidade divina, escolha entre: traços de personalidade, ideais, vínculos ou defeitos; você aprende a característica daquela criatura, a menosque ela seja bem-sucedida em um teste de resistência de Carisma. Criaturas com baixa inteligência (7 ou menos) geralmente não possuem mais do que alguns traços de personalidade (se houver)."
+    },
+    {
+      "id": "adivinhacao-detectar-dragoes",
+      "name": "Detectar Dragões (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de dragões, meio-dragões e criaturas similares dentro da área. Se uma criatura do tipo dragão ou com ascendência dracônica (como dracônicos e meio-dragões) falhar em um teste de resistência de Carisma, você poderá ver uma tênue aura dracônica ao redor dela, permitindo que você determine se a criatura possui sangue de dragão.\n\nUma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura dracônica visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre que tipo de dragão a criatura é ou qual é sua principal herança dracônica. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Dragões, concentrando-se em uma aura dracônica diferente a cada vez."
+    },
+    {
+      "id": "adivinhacao-detectar-hostilidade",
+      "name": "Detectar Hostilidade (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura de hostilidade como uma ação bônus e fazer um teste de Inteligência (Investigação) CD 20. Com um teste bem-sucedido, a aura de hostilidade continuará a seguir o movimento da fonte pelo restante da duração, concedendo vantagem a qualquer criatura que possa ver a aura em quaisquer jogadas de ataque feitas contra a fonte. Você pode aplicar esse aprimoramento várias vezes durante a mesma conjuração de Detectar Hostilidade, focando cada vez em uma aura de hostilidade diferente."
+        }
+      ],
+      "body": "Durante a duração, você pode usar a habilidade de adivinhação sempre que uma criatura ou objeto dentro da área de efeito sofrer dano a pontos de vida. Além disso, você obtém conhecimento sobre a quantidade e o tipo de dano causado e a direção de onde o dano foi infligido. Se a fonte do dano for uma criatura dentro da área de efeito adivinhar, ela deve ser bem-sucedida em um teste de resistência de Carisma ou seu espaço terá uma aura de hostilidade fraca que você possa ver. Se a fonte do dano não for uma criatura, mas estiver dentro da área de efeito adivinhar, você pode ver uma aura de hostilidade fraca no espaço da fonte."
+    },
+    {
+      "id": "adivinhacao-detectar-portal",
+      "name": "Detectar Portal (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar a presença de portais, fendas (incluindo espaços extradimensionais) e círculos de teletransporte, ativos ou inativos, dentro de sua área. Além disso, você ganha vantagem em testes de habilidade para identificar as propriedades de portais."
+    },
+    {
+      "id": "adivinhacao-detectar-teletransporte",
+      "name": "Detectar Teletransporte (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar a direção geral e a distância para onde qualquer criatura dentro da sua área se teletransporta ou se teletransportou nos últimos 10 minutos. Se a criatura se teletransportar para um plano diferente, você descobre isso imediatamente, mas não descobre\n\npara qual plano a criatura se teletransportou, a menos que obtenha sucesso em um teste de Inteligência (Arcana) CD 20."
+    },
+    {
+      "id": "adivinhacao-detectar-demonios",
+      "name": "Detectar Demônios (adivinhação)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de demônios, meio-demônios e criaturas similares dentro de sua área. Se uma criatura do tipo demônio ou com ascendência demoníaca (como meio-demônios e tieflings) falhar em um teste de resistência de Carisma, você poderá ver uma tênue aura demoníaca ao seu redor, permitindo determinar se a criatura possui essência demoníaca. Uma aura só pode ser vista enquanto a criatura também estiver visível; contudo, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura demoníaca visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre que tipo de demônio a criatura é, ou qual é sua principal herança demoníaca. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Demônios, concentrando-se cada vez em uma aura demoníaca diferente."
+    },
+    {
+      "id": "adivinhacao-detectar-sombras",
+      "name": "Detectar Sombras (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura sombria visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre se a criatura ou o objeto é nativo do Plano das Sombras ou se está apenas imbuído por ele. Se a criatura for nativa do Plano das Sombras, você descobre que tipo de criatura ela é. Se a criatura ou o objeto estiver apenas imbuído por energia do Plano das Sombras, você descobre quais talentos (fusão) ou efeitos mágicos das sombras o estão afetando. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Sombras, concentrando-se em uma aura sombria diferente a cada vez."
+        }
+      ],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de criaturas ou objetos tocados pelo plano das sombras dentro de sua área. Se uma criatura ou objeto nativo do Plano das Sombras ou sob o efeito de um talento (fusão) da esfera das Sombras (ou efeito mágico das sombras similar) falhar em um teste de resistência de Carisma, você poderá ver uma tênue aura sombria ao seu redor. Uma aura só pode ser vista enquanto a criatura ou o objeto também estiver visível; contudo, mesmo que você não consiga ver a criatura ou o objeto, você sente a presença e a direção geral dessas auras."
+    },
+    {
+      "id": "adivinhacao-detectar-ilusoes",
+      "name": "Detectar Ilusões (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode usar a adivinhação para detectar ilusões. Isso lhe concede um teste gratuito de Inteligência (Investigação) contra a CD de resistência de quaisquer ilusões na área. Um teste bem-sucedido\n\ncontra uma criatura ou objeto invisível também os tornará visíveis para você durante a duração."
+    },
+    {
+      "id": "adivinhacao-detectar-segredos",
+      "name": "Detectar Segredos (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar a adivinhação para detectar coisas projetadas especificamente para serem escondidas. Isso inclui portas secretas, esconderijos ocultos e compartimentos secretos. Além de detectar a presença desses segredos, também lhe dá conhecimento de seus mecanismos de ativação. Isso detecta apenas portas, passagens e aberturas projetadas especificamente para evitar a detecção."
+    },
+    {
+      "id": "adivinhacao-luz",
+      "name": "Luz",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Detectar Celestiais (adivinhar)\n\nDurante a duração, você pode potencialmente adivinhar a presença de celestiais, meio-celestiais e criaturas similares dentro da área. Se uma criatura do tipo celestial ou com ascendência celestial (como aasimar e meio-celestiais) falhar em um teste de resistência de Carisma, você poderá ver uma tênue aura celestial ao seu redor, permitindo que você determine se a criatura possui essência celestial. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura celestial visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre que tipo de celestial a criatura é ou qual é sua principal herança celestial. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Celestiais, concentrando-se em uma aura celestial diferente a cada vez.\n\nUltravisão (adivinhar)\n\nDurante a duração, você pode adivinhar com um nível adicional de percepção. Você ganha vantagem em testes de Sabedoria (Percepção) e pode realizar ativamente um desses testes a cada turno, sem necessidade de ação adicional."
+    },
+    {
+      "id": "adivinhacao-detectar-encantamento",
+      "name": "Detectar Encantamento (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura de encantamento visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre quais efeitos ou habilidades de encantamento, compulsão, dominação, possessão ou esferas da Mente estão afetando a criatura, se houver. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Encantamento, focando cada vez em uma aura de encantamento diferente."
+        }
+      ],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de efeitos de encantamento, compulsão, dominação, possessão e esferas da Mente dentro de sua área. Se uma criatura sob tais efeitos ou habilidades falhar em um teste de resistência de Carisma, você pode ver uma aura de encantamento fraca ao redor dela. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras."
+    },
+    {
+      "id": "adivinhacao-detectar-potencial-psionico",
+      "name": "Detectar Potencial Psiônico (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura psíquica visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você descobre quais habilidades psíquicas ou psiônicas a criatura possui. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Potencial Psiônico, focando cada vez em uma aura psíquica diferente."
+        }
+      ],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de criaturas com habilidades psiônicas e psíquicas dentro da área. Habilidades psiônicas e psíquicas incluem: conjuração inata (psiônica), ki, explosão mental, vínculo mental, defesa psíquica, telepatia ou outras habilidades ou características consideradas apropriadas pelo Mestre ou cenário. Se uma criatura com uma dessas habilidades falhar em um teste de resistência de Carisma, você pode ver uma aura psíquica fraca ao redor dela, permitindo que você determine se a criatura possui potencial psiônico. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras."
+    },
+    {
+      "id": "adivinhacao-detectar-pensamentos",
+      "name": "Detectar Pensamentos (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você não apenas adivinha as emoções daqueles dentro da área, mas também seus pensamentos mais superficiais."
+        }
+      ],
+      "body": "Você pode adivinhar as emoções das criaturas que você consegue ver dentro da área de efeito, ganhando vantagem em testes de Sabedoria (Intuição) feitos em relação àquela criatura. Uma criatura pode tentar um teste de resistência de Carisma; um sucesso impede que você obtenha qualquer informação sobre aquela criatura durante a duração da conjuração atual. Você não sabe a motivação ou a origem da emoção que a criatura está sentindo. Se a emoção de uma criatura mudar enquanto ela estiver dentro da área de efeito durante Detectar Pensamentos, você saberá imediatamente."
+    },
+    {
+      "id": "adivinhacao-detectar-maldicao",
+      "name": "Detectar Maldição (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura de maldição visível por 1 minuto e fazer um teste de Inteligência (Religião) CD 20. Com um teste bem-sucedido, você também pode adivinhar suas propriedades e duração e, se a maldição foi criada por uma magia ou efeito de esfera, você descobre qual magia ou efeito de esfera a criou. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Maldição, concentrando-se em uma aura de maldição diferente a cada vez."
+        }
+      ],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de maldições dentro da área. Objetos ou áreas sob o efeito de uma maldição possuem uma aura de maldição tênue ao seu redor, visível a olho nu. Se uma criatura sob o efeito de uma maldição falhar em um teste de resistência de Carisma, você poderá ver uma aura de maldição tênue ao seu redor, permitindo determinar se a criatura está amaldiçoada ou não. Uma aura só pode ser vista\n\nenquanto a criatura também estiver visível; contudo, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras."
+    },
+    {
+      "id": "adivinhacao-detectar-mortos-vivos",
+      "name": "Detectar Mortos-Vivos (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de mortos-vivos e criaturas similares em sua área. Se uma criatura do tipo morto-vivo ou com ascendência morta-viva falhar em um teste de resistência de Carisma, você pode ver uma tênue aura morta-viva ao redor dela, permitindo que você determine se a criatura está ou não imbuída de energia negativa. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura morta-viva visível por 1 minuto e fazer um teste de Inteligência (Religião) CD 20. Com um teste bem-sucedido, você descobre que tipo  de morto-vivo a criatura é ou qual é sua principal herança morta-viva.\n\nVocê pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Mortos-Vivos, concentrando-se em uma aura morta-viva diferente a cada vez."
+    },
+    {
+      "id": "adivinhacao-detectar-informacao",
+      "name": "Detectar Informação (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 reação",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode usar a adivinhação para obter informações e rolar novamente um teste de Inteligência no qual você já usou esta habilidade."
+        }
+      ],
+      "body": "Você usa a adivinhação para obter informações. Isso lhe concede a habilidade de rolar novamente um teste de Inteligência falho. Você só pode usar a adivinhação para obter informações uma vez por teste de Inteligência."
+    },
+    {
+      "id": "adivinhacao-detectar-elementais",
+      "name": "Detectar Elementais (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar a presença de elementais dentro da área. Se uma criatura do tipo elemental falhar em um teste de resistência de Carisma, você pode ver uma tênue aura elemental ao redor dela, permitindo que você determine se a criatura é ou não um elemental. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nRecordar Conhecimento (Aprimoramento 1PM): Você pode se concentrar em uma aura elemental visível por 1 minuto e fazer um teste de Inteligência (Natureza) CD 20. Com um teste bem-sucedido, você descobre que tipo de elemental a criatura é. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Elementais, concentrando-se em uma aura elemental diferente a cada vez."
+    },
+    {
+      "id": "adivinhacao-detectar-natureza",
+      "name": "Detectar Natureza (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você sente a presença de vários aspectos ou elementos da natureza em sua área. Cada vez que você usa Detectar Natureza, você pode adivinhar criaturas que possuam o tipo de criatura besta ou algo diferente, com base nos pacotes que você possui na esfera Natureza, conforme listado abaixo. Criaturas que seriam adivinhadas com Detectar Natureza podem fazer um teste de resistência de Carisma para evitar a detecção.\n\nSe você possuir o pacote ar, você pode adivinhar e identificar a presença de ar respirável e gases ou vapores tóxicos (ou a ausência deles, se estiver no vácuo).\n\nSe você possuir o pacote terra, você pode adivinhar e identificar a presença de terra, gemas, areia e pedra.\n\nSe você possuir o pacote fogo, você pode adivinhar a presença e a intensidade do fogo.\n\nSe você possuir o pacote metal, você pode adivinhar e identificar a presença de depósitos de minério e metais.\n\nSe você possuir o pacote planta, você pode adivinhar a localização de plantas e criaturas que possuam o tipo de criatura planta.\n\nSe você possuir o pacote água, você pode adivinhar a localização e o tamanho de corpos d'água."
+    },
+    {
+      "id": "adivinhacao-augurio",
+      "name": "Augúrio (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adivinha se uma ação específica trará bons ou maus resultados para você no futuro imediato. Você recebe um presságio sobre os resultados de uma ação específica que planeja realizar nos próximos 30 minutos, independentemente de a ação ocorrer dentro do alcance adivinhar. O Mestre escolhe entre os seguintes presságios possíveis:\n\n•Bem-estar, para bons resultados\n\n•Azar, para maus resultados\n\n•Bem-estar e azar, para resultados bons e ruins\n\n•Nada, para resultados que não são particularmente bons nem ruins\n\nO efeito não leva em consideração quaisquer circunstâncias possíveis que possam alterar o resultado, como o lançamento de magias adicionais ou a perda ou ganho de um companheiro.\n\nSe você lançar o efeito (ou a magia augúrio) duas ou mais vezes antes de completar seu próximo\n\ndescanso longo, há uma chance cumulativa de 25% para cada lançamento após o primeiro de obter uma leitura aleatória. O Mestre faz essa rolagem em segredo."
+    },
+    {
+      "id": "adivinhacao-detectar-protecao",
+      "name": "Detectar Proteção (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar todas as criaturas que consegue ver dentro da área e determinar quais delas têm a menor e a maior classe de armadura. Alternativamente, você pode adivinhar o menor e o maior teste de resistência de cada uma dessas criaturas. No entanto, você não determina os valores de nenhum desses atributos."
+    },
+    {
+      "id": "adivinhacao-detectar-densidade",
+      "name": "Detectar Densidade (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar a densidade e o peso de objetos e criaturas próximos que consegue ver."
+    },
+    {
+      "id": "adivinhacao-visao",
+      "name": "Visão (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode transferir seu ponto de vista para qualquer ponto dentro da sua área (adivinhar). Você pode ver e ouvir a partir desse local. Você não precisa de linha de visão ou linha de efeito, mas o local deve ser conhecido — um lugar familiar ou óbvio, como uma distância e direção.\n\nUma vez selecionado o local, o sensor não se move, mas você pode girá-lo em todas as direções para visualizar a área como desejar, como se estivesse parado onde o sensor está localizado. Esta habilidade cria um sensor de vidência, que pode ser detectado com um teste de Sabedoria (Percepção) contra a CD da sua esfera e pode ser dissipado.\n\nSensor móvel (Aprimoramento 1PM): Você pode mover o sensor 9 metros por rodada em qualquer direção, contanto que permaneça dentro do seu alcance."
+    },
+    {
+      "id": "adivinhacao-previsao",
+      "name": "Previsão (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "duration": "24 horas",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar a adivinhação para vislumbrar o futuro, obtendo insights sobre os acontecimentos daquele dia. A qualquer momento durante esse dia, você pode rolar um d4 e adicionar o número rolado a uma jogada de ataque, teste de resistência ou teste de habilidade que você esteja prestes a fazer. Como uma reação, você pode conceder esse benefício a um aliado que possa vê-lo e ouvi-lo. Você só pode ter um uso dessa habilidade disponível por vez. Você pode adquirir esse talento várias vezes, até um máximo de 5 vezes. Cada vez que você adquire esse talento além da primeira vez, você pode usar essa habilidade uma vez adicional antes de precisar usar a magia de adivinhação novamente. Cada vez que você usa a magia de adivinhação para o futuro, você recupera todos os seus usos dessa habilidade para aquele dia."
+    },
+    {
+      "id": "adivinhacao-retrospectiva",
+      "name": "Retrospectiva (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar os eventos que aconteceram dentro da área. Você só pode adivinhar o que ocorreu até 1 hora por nível atrás. Quando você conjura Retrospectiva, você recebe apenas os seguintes detalhes: o número de criaturas que estavam na área, seu tamanho, quanto tempo elas permaneceram na área e quaisquer movimentos que fizeram enquanto estavam na área. Além disso, se objetos forem deixados sem vigilância ou se objetos desacompanhados forem movidos durante esse período, você aprende o tamanho e a forma aproximada desses objetos."
+    },
+    {
+      "id": "adivinhacao-detectar-magia",
+      "name": "Detectar Magia (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura mágica visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você também pode adivinhar informações adicionais sobre suas propriedades. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Magia, focando cada vez em uma aura mágica diferente."
+        }
+      ],
+      "body": "Durante a duração, você pode potencialmente adivinhar a presença de magia dentro da área. Objetos ou áreas que estejam sob o efeito de uma magia, talento ou habilidade de esfera mágica possuem uma tênue aura mágica ao redor que você pode ver. Se uma criatura sob o efeito de uma magia, talento ou habilidade de esfera mágica falhar em um teste de resistência de Carisma, você pode ver uma tênue aura mágica ao redor dela, permitindo que você determine se a criatura está ou não sob o efeito de magia. Uma aura só pode ser vista enquanto a criatura ou o objeto também estiver visível; no entanto, mesmo que você não possa ver a criatura ou o objeto, você sente a presença e a direção geral dessas auras.\n\nSe a aura estiver em uma área ou criatura, você descobre quais magias ou habilidades de esfera, se houver, estão afetando-a no momento.\n\nSe a aura estiver em um item mágico ou outro objeto imbuído de magia, você descobre suas propriedades e como usá-las, se requer sintonização para ser usado e quantas cargas possui, se houver. Você descobre se alguma magia ou habilidade de esfera está afetando o item e quais são elas. Se o item foi criado por uma habilidade de esfera, você descobre qual habilidade de esfera o criou."
+    },
+    {
+      "id": "adivinhacao-detectar-conjurador",
+      "name": "Detectar Conjurador (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura de conjurador visível por 1 minuto e fazer um teste de Inteligência (Arcana) CD 20. Com um teste bem-sucedido, você pode obter informações adicionais sobre as habilidades de conjuração do alvo, como o tipo de magia (arcana, adivinhar, etc.) e a lista de magias da qual ele extrai suas magias conhecidas (bardo, clérigo, druida, mago, etc.), se aplicável. Se o alvo for um conjurador de esferas com uma tradição de conjuração específica (por exemplo, Suplicante adivinhar, Druídico ou Magia Tradicional), você também obtém esse conhecimento. Criaturas com conjuração inata são exibidas como possuindo a tradição natural. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Conjurador, focando cada vez em uma aura de conjurador diferente."
+        }
+      ],
+      "body": "Você pode adivinhar as capacidades de conjuração de uma criatura que você possa ver dentro de sua área, utilizando a tabela abaixo. Indivíduos alvos que não possuem habilidades mágicas aparecem sem aura de conjuração, enquanto aqueles que possuem esferas de conjuração, magias ou habilidades mágicas devem ser bem-sucedidos em um teste de resistência de Carisma ou mostrar uma aura de conjurador dependendo do\n\nnível de magia mais alto efetivo de uma habilidade que eles possam usar, ou seus níveis totais em classes de esferas de conjuração. Uma aura só pode ser vista enquanto a criatura também estiver visível; no entanto, mesmo que você não possa ver a criatura, você sente a presença e a direção geral dessas auras.\n\nSe você estiver participando de um cenário com outras formas de magia ou sistemas de conjuração, eles são detectados conforme apropriado."
+    },
+    {
+      "id": "adivinhacao-radiestesia",
+      "name": "Radiestesia (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adivinhar a localização de uma criatura ou objeto dentro de sua área. Pode ser uma criatura ou objeto específico, ou um tipo de criatura ou objeto, mas de qualquer forma você precisa ter uma imagem mental clara da criatura ou objeto para adivinhar (portanto, você não pode adivinhar amplamente para armadilhas, criaturas de um tipo amplo, etc.). Se estiver adivinhando para um tipo de criatura ou objeto, você localiza apenas o item mais próximo desse tipo. Este método de usar a adivinhação não é bloqueado por substâncias leves ou materiais um tanto densos (como madeira ou pedra), mas ainda é bloqueado por materiais densos e superdensos (como ferro ou chumbo)."
+    },
+    {
+      "id": "adivinhacao-detectar-aflicao",
+      "name": "Detectar Aflição (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em uma aura de aflição visível por 1 minuto e fazer um teste de Sabedoria (Medicina) CD 20. Com um teste bem-sucedido, você também pode adivinhar seu tipo, propriedades e duração restante. Se a doença ou o veneno foi criado por uma magia ou efeito de esfera, você descobre qual magia ou efeito de esfera o criou. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Aflição, concentrando-se cada vez em uma aura de aflição diferente."
+        }
+      ],
+      "body": "Durante a duração, você pode potencialmente usar a adivinhação para detectar a presença de doenças e venenos na área afetada. Você pode ver uma leve aura de aflição ao redor de objetos ou áreas que estejam envenenadas ou sob os efeitos de uma doença. Se uma criatura envenenada ou sob o efeito de uma doença falhar em um teste de resistência de Carisma, você poderá ver uma tênue aura de aflição ao seu redor. Uma aura só pode ser vista enquanto a criatura ou o objeto também estiver visível; contudo, mesmo que você não consiga ver a criatura ou o objeto, você sente a presença e a direção geral dessas auras."
+    },
+    {
+      "id": "adivinhacao-detectar-vida",
+      "name": "Detectar Vida (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Adivinhar",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode se concentrar em todas as auras de saúde visíveis dentro de sua área como uma ação bônus e fazer um teste de Sabedoria (Medicina) CD 20. Com um teste bem-sucedido, você determina a condição e a vitalidade de cada criatura com uma aura de saúde, conforme descrito abaixo. Você pode aplicar este aprimoramento várias vezes durante a mesma conjuração de Detectar Vida, permitindo cada vez um teste adicional para determinar a condição e a vitalidade das criaturas com auras de saúde."
+        }
+      ],
+      "body": "Durante a duração, você pode adivinhar a localização de criaturas vivas próximas. Se uma criatura viva falhar em um teste de resistência de Carisma, você verá uma tênue aura de saúde ao seu redor. Uma aura só pode ser vista enquanto a criatura também estiver visível; contudo, mesmo que você não consiga ver a criatura, você sente a presença e a direção geral dessas auras.\n\n•Normal: Possui pelo menos 90% dos seus pontos de vida normais.\n\n•Razoável: De 30% a 90% dos seus pontos de vida normais restantes.\n\nRuim: Menos de 30% dos seus pontos de vida normais restantes ou sofrendo de uma lesão debilitante.\n\n•Fraco: 0 pontos de vida, aleijado ou sofrendo de uma condição grave que ameace sua vida imediatamente."
+    },
+    {
+      "id": "adivinhacao-compreender-idiomas",
+      "name": "Compreender Idiomas (Sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você ganha vantagem em testes de Inteligência (Investigação) e Sabedoria (Intuição) feitos para decodificar mensagens secretas ou para entender insinuações verbais."
+        }
+      ],
+      "body": "Durante a duração, você compreende o significado literal de qualquer idioma falado que você possa ouvir, mas você deve estar dentro do alcance sensorial da fonte do idioma falado. Você também compreende qualquer idioma escrito que você possa ver, mas você deve estar dentro do alcance sensorial da superfície na qual as palavras estão escritas. Leva cerca de 1 minuto para ler uma página de texto. Compreender Idiomas não revela insinuações faladas ou decodifica mensagens secretas em um texto ou glifo, como um sigilo arcano, que não façam parte do idioma escrito."
+    },
+    {
+      "id": "adivinhacao-discernir-individuo",
+      "name": "Discernir Indivíduo (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adquirir um sentido que concede vantagem em testes de Inteligência para recordar as habilidades, resistências e fraquezas de criaturas. Se estiver usando Esferas de Poder, esse sentido também concede vantagem em testes de Inteligência (Investigação) e Sabedoria (Percepção) ao usar a habilidade de reconhecimento da esfera de Escoteiro."
+    },
+    {
+      "id": "adivinhacao-discernir-videncia",
+      "name": "Discernir Vidência (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode detectar as tentativas de vidência de outros. Qualquer tentativa de vidência ou adivinhação em um local ou criatura dentro do seu alcance (a menos que você reduza propositalmente essa defesa) torna-se impossível, a menos que o conjurador seja bem-sucedido em um teste de habilidade de conjuração contra a CD da sua esfera. Além disso, você percebe se alguma criatura dentro do alcance está usando a habilidade divina ou uma magia da escola de adivinhação, bem como a localização de quaisquer sensores na área (como com o talento Visão ou a magia clarividência). Você fica ciente de qualquer tentativa de adivinhação, como com a magia vidência ou o talento avançado Vidência. Se essas magias e efeitos se originarem dentro do seu alcance sensorial, você saberá imediatamente a localização deles. Caso contrário, se você igualar ou superar o outro conjurador em uma disputa de teste de habilidade de conjuração, você obtém uma imagem visual do adivinho e sabe sua direção e distância de você. Você pode suprimir ou retomar esse sentido sem uma ação no seu turno."
+    },
+    {
+      "id": "adivinhacao-faro",
+      "name": "Faro (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você obtém vantagem em testes de Sabedoria (Percepção) que dependem do olfato. Você pode localizar uma criatura dentro do alcance do seu sentido pelo seu cheiro como uma ação bônus."
+    },
+    {
+      "id": "adivinhacao-olho-de-atirador",
+      "name": "Olho de Atirador (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode ignorar uma fonte de desvantagem em jogadas de ataque à distância ou efeitos ambientais (vento, visão turva, etc.)."
+    },
+    {
+      "id": "adivinhacao-oraculo-de-olhos-vendados",
+      "name": "Oráculo de Olhos Vendados (Sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você concede a si mesmo Visão Cega dentro do seu alcance sensorial. Você deve fechar os olhos para usar esta habilidade. Para os propósitos desta habilidade, abrir e fechar os olhos não requer nenhuma ação e pode ser feito uma vez por rodada."
+    },
+    {
+      "id": "adivinhacao-percepcao-compartilhada",
+      "name": "Percepção Compartilhada (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder um sentido especial a um número de criaturas dentro do alcance igual ao seu bônus de proficiência. Enquanto os alvos permanecerem a até 90 metros uns dos outros, todas as criaturas afetadas compartilham as percepções sensoriais de todas as outras. Isso concede aos alvos a capacidade de ver, cheirar, ouvir, etc., tudo o que os outros alvos fazem. Este sentido, embora não exija que os alvos vejam uns aos outros, requer linha de efeito e é bloqueado por materiais densos como se fosse um talento ou habilidade divina."
+    },
+    {
+      "id": "adivinhacao-pressagio",
+      "name": "Presságio (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adquirir um sentido que o alerta sobre perigos iminentes. Você ganha vantagem em testes de iniciativa e as criaturas não ganham vantagem em jogadas de ataque contra você quando você não estiver ciente da presença delas."
+    },
+    {
+      "id": "adivinhacao-sentido-da-natureza",
+      "name": "Sentido da Natureza (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire um sentido especial que lhe concede proficiência em testes de Inteligência (Natureza) e Sabedoria (Sobrevivência). Se você já possui proficiência, em vez disso, recebe o dobro do seu bônus de proficiência. Você pode dispensar este sentido a qualquer momento como uma reação para rolar novamente qualquer teste de Sabedoria (Sobrevivência) falho para evitar perigos naturais ou se perder, obtendo vantagem na rolagem."
+    },
+    {
+      "id": "adivinhacao-sentir-magia",
+      "name": "Sentir Magia (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a si mesmo a habilidade de sentir magia, como se estivesse usando a habilidade divina Detectar Magia como uma habilidade constante, mas apenas dentro do seu alcance de sentido."
+    },
+    {
+      "id": "adivinhacao-senso-sismico",
+      "name": "Senso Sísmico (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire o sentido sísmico; você pode detectar e localizar a origem de vibrações dentro do alcance, desde que você e a fonte das vibrações estejam em contato com o mesmo solo ou substância. O sentido sísmico não pode ser usado para detectar criaturas voadoras ou incorpóreas."
+    },
+    {
+      "id": "adivinhacao-ver-perigo",
+      "name": "Ver Perigo (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você recebe um bônus de +5 em testes de Percepção passiva para notar armadilhas e perigos, sejam eles mecânicos (arrastes, lançadores de dardos, etc.), mágicos (feitiços rúnicos, sigilos, etc.) ou naturais (areia movediça, buracos, etc.). Este bônus não se acumula com outros bônus de percepção passiva."
+    },
+    {
+      "id": "adivinhacao-visao-fantasma",
+      "name": "Visão Fantasma (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Sentido",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adquirir um sentido que lhe dá vantagem em testes de Sabedoria (Percepção) feitos para notar criaturas invisíveis ou etéreas. Se você for bem-sucedido neste teste, o contorno da criatura se tornará visível para você. Isso anula tanto as penalidades usuais que você sofreria ao atacar uma criatura invisível, quanto os bônus que a criatura normalmente receberia contra você. Isso continua até que você perca a criatura de vista, caso em que você deverá ser bem-sucedido em um novo teste de Sabedoria (Percepção) para vê-la."
+    },
+    {
+      "id": "adivinhacao-adivinhacoes-expandidas",
+      "name": "Adivinhações Expandidas",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha três adivinhações alternativas quaisquer. Você ganha acesso a essas adivinhações alternativas como se possuísse as esferas necessárias. Se a adivinhação alternativa tiver um pré-requisito adicional, como a Natureza adivinhar da esfera Natureza, você escolhe qual delas terá acesso ao adquiri-la. Se a adivinhação alternativa tiver um efeito aumentado com base no número de vezes que for escolhida, como Previsão (adivinhar), você pode usar Adivinhações Expandidas para escolher essa adivinhação alternativa várias vezes. Este talento pode ser escolhido várias vezes, concedendo três adivinhações alternativas a cada vez. Caso você posteriormente ganhe acesso a uma adivinhação alternativa selecionada ao obter sua esfera, você pode reprogramar a escolha dessa adivinhação alternativa para outra adivinhação alternativa."
+    },
+    {
+      "id": "adivinhacao-adivinhacoes-invasivas",
+      "name": "Adivinhações Invasivas",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "As criaturas têm desvantagem em quaisquer testes de resistência feitos contra seus talentos e habilidades (adivinhar). Além disso, sempre que você usar com sucesso um aprimoramento de recordar conhecimento para obter informações adicionais sobre um alvo, você também aprende suas imunidades, resistências e vulnerabilidades."
+    },
+    {
+      "id": "adivinhacao-adivinhacoes-rapidas",
+      "name": "Adivinhações Rápidas",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "O tempo de conjuração de adivinhar passa a ser de 1 minuto."
+        },
+        {
+          "pm": 0,
+          "text": "Concentrar-se em uma aura requer menos tempo. Se o talento (adivinhar) exigia concentração em uma aura por 1 minuto, agora requer apenas uma ação bônus. Se o talento (adivinhar) exigisse foco em uma aura por uma ação bônus, agora não exige nenhuma ação adicional."
+        },
+        {
+          "pm": 1,
+          "text": "Durante a duração, você pode, como uma ação ou uma ação bônus, alternar entre talentos (adivinhar) em uma conjuração contínua de adivinhar. Auras de talentos (adivinhar) que foram trocados não são visíveis para você, mas voltarão a ser visíveis se você trocar de volta antes do fim da duração. Se estiver trocando para um talento (adivinhar) com custo em pontos de magia, você deve pagá-lo apenas uma vez por uso de adivinhar."
+        }
+      ],
+      "body": "Você pode aprimorar sua habilidade adivinhar das seguintes maneiras:"
+    },
+    {
+      "id": "adivinhacao-sobrecarga-sensorial",
+      "name": "Sobrecarga Sensorial",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 ação",
+      "range": "36 metros",
+      "duration": "Concentração por até 1 minuto",
+      "target": "Uma criatura que você possa ver",
+      "save": "Inteligência",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode escolher como alvo um número de criaturas dentro do alcance igual ao seu bônus de proficiência."
+        },
+        {
+          "pm": 1,
+          "text": "O conjurador pode realizar ações, mover-se e não é mais considerado cego durante o efeito."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação."
+        }
+      ],
+      "body": "Você pode escolher uma criatura dentro do alcance como alvo, causando uma sobrecarga de informações em todos os seus sentidos (e concedendo temporariamente sentidos que ela normalmente não possui). Tanto o conjurador quanto as criaturas sob o efeito de Sobrecarga Sensorial não podem realizar nenhuma ação, não podem se mover e são consideradas cegas. Um teste de resistência de Inteligência bem-sucedido anula esse efeito para as criaturas alvo. Ao conjurar Sobrecarga Sensorial pela primeira vez e ao final de cada rodada em que você continuar se concentrando no efeito, a criatura alvo sofre dano psíquico igual ao seu nível. Ao final de cada um de seus turnos, uma criatura afetada pode fazer um teste de resistência de Inteligência. Em caso de sucesso, o efeito termina para essa criatura. O conjurador permanece cego até o início do turno seguinte ao término da concentração."
+    },
+    {
+      "id": "adivinhacao-adivinhacao-penetrante",
+      "name": "Adivinhação Penetrante",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar talentos ou habilidades da esfera de Adivinhação, quaisquer habilidades adivinhar ou sensoriais normalmente bloqueadas por substâncias densas agora podem penetrar 1,5 metro de pedra, 15 centímetros de metal comum, 1,25 centímetro de chumbo ou 4,5 metros de madeira. Você pode escolher este talento avançado uma segunda vez, aumentando a espessura que pode penetrar para 3 metros de pedra, 30 centímetros de metal comum, 2,5 centímetros de chumbo ou 9 metros de madeira."
+    },
+    {
+      "id": "adivinhacao-adivinhacao-maior",
+      "name": "Adivinhação Maior (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "text",
+          "text": "Adivinhação"
+        },
+        {
+          "type": "talent",
+          "id": "adivinhacao-visao"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "talent",
+          "id": "universal-alcance"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar o talento avançado Adivinhação, você pode mover seu sensor sem seguir um alvo com uma velocidade de 45 metros uma vez por rodada, sem precisar de ação."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Adivinhação"
+      ]
+    },
+    {
+      "id": "adivinhacao-buscar-conhecimento",
+      "name": "Buscar Conhecimento (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "talent",
+          "id": "adivinhacao-ler-pressagios"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Você pode explorar o universo em busca da resposta para uma pergunta específica. Explorar dessa maneira não é uma prática exata, e as únicas respostas que você pode receber são \"sim\", \"não\", \"incerto\" ou \"desconhecido\". Você tem 50% de chance +1% por nível de obter uma resposta verdadeira. Uma falha no teste resulta em uma resposta \"desconhecida\", enquanto um resultado de 90% ou mais resulta em uma mentira. Se você usar esta habilidade para fazer a mesma pergunta duas vezes, a mesma resposta se repetirá."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "adivinhacao-detectar-mudanca-de-plano",
+      "name": "Detectar Mudança de Plano",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "talent",
+          "id": "adivinhacao-detectar-teletransporte"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Ao usar Detectar Teletransporte, você também adivinha o plano exato para onde uma criatura que você viu se teletransportou. Caso você se encontre nesse plano enquanto mantém essa habilidade, você adivinha a direção geral para a qual a criatura se teletransportou e continua a se lembrar da direção geral do teletransporte até que o efeito termine. Você pode usar adivinhar novamente para determinar essa direção enquanto permanecer no plano."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "adivinhacao-encontrar-localizacao",
+      "name": "Encontrar Localização (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "text",
+          "text": "Radiografia"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "talent",
+          "id": "universal-alcance"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Aprimoramento 3PM: Você pode encontrar a localização de qualquer criatura ou objeto. Para encontrar uma criatura, você deve tê-la visto ou possuir algum item que já lhe pertenceu. Para encontrar um objeto, você deve tê-lo tocado pelo menos uma vez. Esta habilidade tem alcance ilimitado e funciona através de fronteiras planares.\n\nEncontrar Localização ignora meios normais de proteção contra vidência ou outros meios de não detecção. De fato, nada além de uma magia de bloqueio mental, o talento avançado de Proteção Indefinível ou a intervenção direta de uma divindade impede que você descubra a localização exata do indivíduo ou objeto alvo. Você descobre o nome da localização da criatura ou objeto (lugar, nome, nome comercial, nome do prédio ou similar), comunidade, condado (ou divisão política similar), país, continente e o plano de existência onde o alvo se encontra.",
+      "_needsReview": [
+        "prereq:unresolved:Radiografia"
+      ]
+    },
+    {
+      "id": "adivinhacao-ler-pressagios",
+      "name": "Ler Presságios (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "talent",
+          "id": "adivinhacao-augurio"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Seu Augúrio permite que você faça previsões mais distantes sobre o futuro. Você recebe conselhos úteis em resposta a uma pergunta sobre um objetivo, evento ou atividade específica que ocorrerá dentro de 1 semana. Este conselho pode ser uma frase útil, um presságio enigmático ou uma rima. Se você não agir de acordo com a informação, as condições podem mudar, tornando-a inútil. A chance base de uma adivinhação correta é de 70% + 1% por nível, até um máximo de 90%. Se a rolagem de dados falhar, você não recebe nenhuma informação e sabe que a tentativa falhou, a menos que magia específica que produza informações falsas esteja em ação. Múltiplas adivinhações sobre o mesmo tópico pelo mesmo conjurador usam o mesmo resultado de dados da primeira tentativa e produzem a mesma resposta a cada vez."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "adivinhacao-rastrear-aura",
+      "name": "Rastrear Aura (adivinhar)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [
+        "adivinhar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Durante a duração, você pode adivinhar a presença de auras individuais pertencentes a criaturas que estiveram recentemente naquela área. Isso não revela nenhuma informação sobre essas criaturas além da intensidade de sua aura, mas cada aura possui uma assinatura única. As auras individuais permanecem por um período de tempo baseado em sua intensidade. Enquanto uma aura individual estiver presente, você pode rastrear a criatura como se ela tivesse deixado rastros. Você ainda precisa fazer testes de Sabedoria (Sobrevivência) para seguir o rastro, mas o terreno e as condições climáticas não afetam sua capacidade de rastreamento. Se você encontrar a mesma aura mais de uma vez durante a adivinhação, com um teste bem-sucedido de Inteligência (Investigação) CD 20, poderá determinar que elas pertencem à mesma criatura.\n\nTabela: Familiaridade (Espírito)\n\nNível (ND)Força da AuraDuração da Aura1-4 (2 ou menos)Turva1 minuto5-8 (3-4)Fraca10 minutos9-12 (5-6)Moderada1 hora13-16 (7-8)Forte24 horas17+ (9 ou superior)Avassaladora1 semana"
+    },
+    {
+      "id": "adivinhacao-sentidos-avancados",
+      "name": "Sentidos Avançados (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [
+        "sentido"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você adquire as seguintes habilidades (sentido) com base nas esferas que possui:\n\n•Sentido Vital: Custo 2PM; Esfera da Vida. Você pode sentir e localizar criaturas vivas dentro do alcance do seu sentido, como se tivesse a habilidade de visão às cegas. Criaturas dos tipos constructo e morto-vivo são indetectáveis com este sentido.\n\n•Visão na Escuridão: Custo 2PM; Esfera da Escuridão. Você pode enxergar perfeitamente na escuridão dentro do seu alcance de sentido. Ao entrar em uma escuridão mágica que você não criou, faça um teste de habilidade de conjuração contra a CD de resistência da magia ou a CD da esfera da escuridão mágica para enxergar nela.\n\n•Sentido Espiritual: Custo 2PM; Esfera da Morte. Você pode saber quando seres imortais ou imortais estão por perto. Você pode sentir a presença de criaturas dos tipos celestial, fada, demônio e morto-vivo, bem como criaturas etéreas ou incorpóreas dentro do alcance do seu sentido, como se tivesse a habilidade de visão às cegas.\n\n•Visão da Tempestade: Custo 0PM; Esfera do Clima. Você adquire um sentido especial que lhe concede a capacidade de negar qualquer ocultação e penalidades (incluindo desvantagem) em Sabedoria (Percepção) causadas diretamente pelo clima (sejam elas mágicas, como talentos e habilidades da esfera Clima, ou naturais), dentro do alcance sensorial.\n\n•Senso Mental: Custo 2PM; Esfera Mente. Você detecta e localiza automaticamente criaturas conscientes dentro do alcance sensorial. Essa habilidade funciona de forma semelhante à visão às cegas. Não detecção, mente em branco e efeitos similares bloqueiam o sentido mental. O sentido mental pode distinguir entre criaturas sencientes (criaturas que podem falar pelo menos um idioma), semi-sencientes (criaturas que podem entender, mas não falar pelo menos um idioma) e não sencientes (criaturas que não falam ou entendem pelo menos um idioma), mas, fora isso, não fornece nenhuma informação sobre as criaturas que detecta.\n\n•Visão Tátil: Custo 3PM; Esfera Telecinese. Você adquire a capacidade de \"sentir\" seus arredores mesmo quando sua visão estaria obscurecida pelo ambiente físico. Seu campo de visão tátil emana de você até o alcance sensorial. Você ignora invisibilidade, escuridão e ocultação, embora precise ter linha de visão até uma criatura ou objeto para discerni-lo. Você não precisa fazer testes de Sabedoria (Percepção) para notar criaturas; você pode detectar e localizar todas as criaturas dentro do alcance. Em muitas circunstâncias, comparar seus sentidos regulares com o que você aprende com a visão tátil é suficiente para diferenciar criaturas visíveis, invisíveis, escondidas e ocultas."
+    },
+    {
+      "id": "adivinhacao-videncia",
+      "name": "Vidência",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "talent",
+          "id": "adivinhacao-visao"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "talent",
+          "id": "universal-alcance"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Você pode aumentar o tempo de conjuração de adivinhação para 1 hora para observar uma criatura como se estivesse usando o talento Visão, mas a qualquer distância. Se o alvo for uma criatura, ela tem direito a um teste de resistência de Sabedoria para resistir a ser observada, sujeito aos seguintes modificadores dependendo do seu conhecimento e conexão com a criatura desejada. Criaturas ou objetos em um plano diferente recebem um bônus extra de +5 em seu teste de resistência de Sabedoria."
+        }
+      ],
+      "body": "Tabela: Familiaridade (Espírito)\n\nConhecimentoModificador de Salvaguarda de SabedoriaNenhum¹+10De segunda mão (você já ouviu falar do alvo)+5De primeira mão (você já conheceu o alvo)+0Familiar (você conhece bem o alvo)-5\n\n¹: Você deve ter algum tipo de conexão (veja abaixo) com uma criatura da qual você não tem conhecimento.\n\nTabela: Conexão (espírito)\n\nConexãoModificador de Salvaguarda de SabedoriaSemelhança ou imagem-2Você possui um dos pertences da criatura, ou há alguém presente que já foi dono do objeto.-4Você possui um pedaço do objeto (parte do corpo, mecha de cabelo, fragmento quebrado, etc.)-10\n\nSe o teste de resistência falhar, você poderá ver e ouvir o alvo e seus arredores como se tivesse o talento Visão. Se o teste de resistência for bem-sucedido, você não poderá usar Vidência no alvo novamente por 24 horas. Se o alvo se mover, o sensor o seguirá a uma velocidade de até 45 metros.\n\nEm vez de escolher uma criatura como alvo, você pode escolher um local que já tenha visto antes como alvo desta magia. Quando fizer isso, o sensor aparecerá nesse local e não se moverá."
+    },
+    {
+      "id": "adivinhacao-visao-desobstruida",
+      "name": "Visão Desobstruída (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [
+        "sentido"
+      ],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "talent",
+          "id": "adivinhacao-visao-fantasma"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode adquirir um sentido especial que lhe concede a habilidade de ver através de matéria sólida. Seu alcance de visão desobstruída é de 9 metros, permitindo que o observador veja como se estivesse olhando para algo sob luz normal, mesmo na ausência de iluminação. Apesar do nome, a Visão Desobstruída pode ser bloqueada por materiais densos, como se fosse um talento ou habilidade de adivinhar."
+    },
+    {
+      "id": "adivinhacao-visao-verdadeira",
+      "name": "Visão Verdadeira (sentido)",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Advinhação",
+      "tags": [
+        "sentido"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "talent",
+          "id": "adivinhacao-sentidos-avancados"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode adquirir a habilidade de ver todas as coisas como elas realmente são. Você vê através da escuridão normal e mágica, percebe portas secretas ocultas por magia, vê a localização exata de criaturas ou objetos sob efeitos de distorção ou deslocamento,\n\nvê criaturas ou objetos invisíveis normalmente, vê através de ilusões e vê a verdadeira forma de coisas polimorfadas, alteradas ou transmutadas. Além disso, você pode focar sua visão para ver o Plano Etéreo (mas não espaços extradimensionais).\n\nEsta habilidade não concede a capacidade de ver através de objetos sólidos e não anula ocultação, incluindo aquela causada por neblina e similares. Visão Verdadeira não ajuda o observador a ver através de disfarces mundanos, detectar criaturas que estão simplesmente se escondendo ou perceber portas secretas ocultas por meios mundanos.\n\nAlém disso, esta visão não funciona em conjunto com outras magias de visão, como os talentos de Vidência ou Adivinhação Visual."
+    },
+    {
+      "id": "adivinhacao-adivinhacao-limitada",
+      "name": "Adivinhação Limitada",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha entre sentido ou adivinhar. Você adquire apenas esta habilidade e não pode escolher talentos que afetem apenas habilidades que você não possui. Você recebe um talento bônus do tipo selecionado."
+    },
+    {
+      "id": "adivinhacao-adivinhacao-moldada",
+      "name": "Adivinhação Moldada",
+      "sphere": "adivinhacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar adivinhar ou sentido, a habilidade funciona apenas dentro de uma área em forma de cone, em vez de uma esfera centrada em você. Esta variante não altera o alcance em que você pode adivinhar alvos. Uma vez por rodada, em seu turno, você pode alterar a direção deste cone; Nenhuma ação é necessária. Você ganha um talento bônus desta esfera."
+    }
+  ],
+  "_reviewed": false
+}

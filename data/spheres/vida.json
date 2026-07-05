@@ -1,0 +1,543 @@
+{
+  "id": "vida",
+  "name": "Vida",
+  "section": "magic",
+  "summary": "Deter os poderes da vida: curar, revigorar e restaurar aliados.",
+  "theme": {
+    "h": 104,
+    "s": 56,
+    "sig": "vida"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "vida-cura",
+      "name": "Cura",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 ação",
+      "range": "toque",
+      "duration": "Instantânea",
+      "target": "1 criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O alvo recupera um número de pontos de vida igual a 1d8 + seu modificador de habilidade principal. A quantidade de cura aumenta em 1d8 no 5º nível (2d8 + MHC), 11º nível (3d8 + MHC) e 17º nível (4d8 + MHC). Esta habilidade não tem efeito em mortos-vivos ou constructos."
+    },
+    {
+      "id": "vida-revigorar",
+      "name": "Revigorar",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "toque",
+      "duration": "1 hora",
+      "target": "1 criatura",
+      "save": "nenhum",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aumenta a duração do efeito para: até que se esgote ou até que você termine um descanso longo. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação."
+        }
+      ],
+      "body": "Você pode revigorar uma criatura, concedendo a ela pontos de vida temporários iguais ao seu bônus de proficiência. Se usado em uma criatura viva que tenha 0 pontos de vida, a criatura se estabiliza antes de receber os pontos de vida temporários. Diferentemente dos pontos de vida temporários normais, esta habilidade só pode ser usada em um alvo ferido e não pode aumentar os pontos de vida atuais do alvo, somados aos seus pontos de vida temporários, para um valor superior aos seus pontos de vida máximos. Se uma criatura revigorada receber cura posteriormente que eleve seus pontos de vida temporários acima dos seus pontos de vida máximos, ela perderá pontos de vida temporários até que a soma dos seus pontos de vida atuais não ultrapasse os seus pontos de vida máximos."
+    },
+    {
+      "id": "vida-restaurar",
+      "name": "Restaurar",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 ação",
+      "range": "toque",
+      "duration": "Instantânea",
+      "target": "1 criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode curar uma doença ou uma condição que esteja afetando o alvo. A condição pode ser cegueira, surdez, paralisia ou envenenamento. Se a condição alvo for causada por um efeito contínuo, este efeito é suprimido por um número de rodadas igual ao seu modificador de habilidade principal. Esta habilidade não pode ser usada para remover maldições ou efeitos instantâneos."
+    },
+    {
+      "id": "vida-surto-de-adrenalina",
+      "name": "Surto de Adrenalina",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você usa uma habilidade da esfera Vida em um aliado (que não seja você mesmo), você também pode conceder a ele um surto de adrenalina. O aliado pode fazer uma das seguintes ações como reação:"
+        }
+      ],
+      "body": "•fazer um único ataque com arma\n\n•mover-se até o seu deslocamento\n\n•fazer um teste de Destreza para escapar de amarras, agarramentos ou outras restrições\n\n•sacar, pegar ou preparar uma arma ou escudo\n\n•levantar-se da posição deitada\n\nSe você possuir o talento Massa (metaesfera) da esfera Universal, você pode gastar um ponto de magia adicional para aplicar este aprimoramento a todas as criaturas afetadas. Os surtos são resolvidos na ordem de iniciativa."
+    },
+    {
+      "id": "vida-quebrar-encantamento",
+      "name": "Quebrar Encantamento",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode permitir que sua habilidade de restauração remova um efeito mágico do alvo que tenha uma duração. Isso pode ser usado contra maldições, incluindo equipamentos amaldiçoados, embora não remova a maldição do equipamento, mas sim suprima o efeito por tempo suficiente para que o item seja removido. Se você não especificar um efeito em particular, um aleatório será selecionado. Você deve ser bem-sucedido em um teste de habilidade de conjuração contra a CD da esfera ou da magia do efeito mágico para removê-lo. Isso conta como usar a magia remover maldição contra aquelas magias e efeitos que especificam que só podem ser removidos por meio dessa magia. Isso não tem efeito sobre efeitos instantâneos."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-contagio",
+      "name": "Contágio",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você restaura uma criatura, pode imediatamente tentar infligir as condições que acabou de remover em outra criatura viva dentro do alcance da sua habilidade de restaurar. A criatura alvo deve ser bem-sucedida em um teste de Constituição contra a CD da sua esfera ou receberá todas as condições que você acabou de restaurar. Imunidade se aplica a essas condições normalmente."
+        }
+      ],
+      "body": "Essas condições duram uma rodada, independentemente da duração original das condições restauradas. Se a criatura for bem-sucedida em seu teste de resistência, a criatura original ainda estará restaurada."
+    },
+    {
+      "id": "vida-diagnosticar",
+      "name": "Diagnosticar",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação bônus",
+      "range": "toque (veja o texto)",
+      "duration": "Instantânea",
+      "target": "1 criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como uma ação bônus, você pode descobrir quaisquer condições que estejam afetando uma criatura viva.\n\nAo aumentar o tempo de conjuração desta habilidade para uma ação, você pode descobrir os detalhes de qualquer condição que a criatura esteja sofrendo, como se ela foi afetada por uma magia ou a natureza de qualquer doença ou veneno que a aflige. Você pode usar esta habilidade em uma criatura morta para determinar como ela morreu, contanto que o alvo esteja morto há no máximo um dia.\n\nVocê também pode usar esta habilidade em qualquer aliado que esteja atualmente sob o efeito de uma de suas habilidades da esfera Vida, independentemente do alcance ou linha de efeito (como aliados que atualmente possuem pontos de vida temporários da sua habilidade Revigorar), contanto que estejam no mesmo plano de existência. Você sempre sabe a direção e a distância até tal aliado."
+    },
+    {
+      "id": "vida-cura-empatica",
+      "name": "Cura Empática",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aprimoramento -1PM: Você pode curar outros absorvendo seus ferimentos. Ao curar uma criatura empaticamente, você adquire quaisquer condições que tenha removido dela, como se você fosse o afetado originalmente. Você não pode transferir condições que o matarão ou condições que resultem de efeitos contínuos.\n\nVocê não pode transferir efeitos que já o afetam, a menos que sejam cumulativos (portanto, você pode curar um nível de exaustão aumentando o seu próprio, mas não pode curar uma doença que já possui). Ao curar múltiplas condições, você pode selecionar quais condições transferir e quais deixar sem tratamento.\n\nSe o efeito causador da condição permitir um teste de resistência, você não terá direito a um novo teste, embora quaisquer efeitos que o protejam da condição ainda funcionem enquanto você os tiver."
+    },
+    {
+      "id": "vida-cura-esoterica",
+      "name": "Cura Esotérica",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Sua habilidade de cura afeta mortos-vivos e constructos."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-fonte-da-vida",
+      "name": "Fonte da Vida",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode armazenar uma cura dentro de si, permitindo que acesse essa cura conforme necessário ao longo do dia. Você gasta um ponto de magia e rola o dano curado normalmente, exceto que, em vez de curar o valor indicado, essa quantidade de cura é armazenada. Você pode armazenar múltiplas curas dessa maneira para aumentar a quantidade de cura armazenada, mas não pode armazenar mais cura do que 10 vezes o seu nível. A cura armazenada é perdida ao completar um descanso longo.\n\nVocê pode usar essa cura armazenada para curar alvos exatamente como se estivesse usando sua habilidade de cura, exceto que não precisa gastar um ponto de magia; você pode escolher a quantidade de cura concedida (até um máximo igual à sua cura armazenada), e qualquer cura concedida a um alvo é subtraída da sua cura armazenada. Uma cura aprimorada com o talento Revitalizar não pode ser usada para adicionar à sua cura armazenada."
+    },
+    {
+      "id": "vida-cura-maior",
+      "name": "Cura Maior",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sua habilidade de cura restaura 5 pontos de vida por nível + seu modificador de habilidade principal em vez da quantidade normal."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-revigorar-maior",
+      "name": "Revigorar Maior",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Seu efeito de revigorar concede 5 pontos de vida temporários em vez da quantidade normal. Além disso, seu revigorar pode aumentar o total de pontos de vida efetivos de um alvo além do seu máximo de pontos de vida, como é normal com pontos de vida temporários. Isso significa que você pode usar este talento para conceder um revigorar a uma criatura que já esteja com seus pontos de vida máximos. O número de pontos de vida temporários concedidos por revigorar aumenta em 5 no 5º nível (10 pontos de vida temporários), no 11º nível (15 pontos de vida temporários) e no 17º nível (20 pontos de vida temporários)."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-restauracao-maior",
+      "name": "Restauração Maior",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sua habilidade de restauração pode reduzir o nível de exaustão do alvo em 1 ou remover qualquer um dos seguintes efeitos:"
+        }
+      ],
+      "body": "Qualquer redução em um dos atributos do alvo\n\nUm efeito que reduza o máximo de pontos de vida do alvo"
+    },
+    {
+      "id": "vida-cura-latente",
+      "name": "Cura Latente",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você usa cura ou revigorar em um alvo, você pode optar por atrasar seus efeitos. Você pode aplicar efeitos que adicionam pontos de vida adicionais de cura no momento da cura inicial, como pontos de vida adicionais da Fonte da Vida. A qualquer momento, o alvo do efeito pode ativar seus efeitos como uma reação. Você pode até mesmo escolher alvos não feridos ao usar suas habilidades dessa forma, embora os efeitos só possam ser ativados quando o alvo estiver ferido. A cura atrasada dessa forma dura até que o alvo complete um descanso curto ou longo. Um alvo só pode estar sob os efeitos de uma Cura Latente por vez."
+        },
+        {
+          "pm": 0,
+          "text": "Quando você usa cura ou revigorar em um alvo, você pode optar por atrasar seus efeitos. Cura Restauradora"
+        },
+        {
+          "pm": 1,
+          "text": "Ao usar suas habilidades de cura ou revigorar em um ou mais alvos, você também pode restaurá-los. Quaisquer custos de aprimoramento incorridos pela restauração devem ser pagos normalmente."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-restaurar-mente",
+      "name": "Restaurar Mente",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sua habilidade de restaurar pode remover qualquer efeito que cause uma das seguintes condições:"
+        }
+      ],
+      "body": "Enfeitiçado,\n\nAmedrontado,\n\nAtordoado,\n\nInconsciente,"
+    },
+    {
+      "id": "vida-restaurar-movimento",
+      "name": "Restaurar Movimento",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sua habilidade de restaurar pode remover qualquer efeito que cause uma das seguintes condições:"
+        }
+      ],
+      "body": "Sua habilidade de restaurar pode permitir que o alvo se levante da posição deitada ou tente um teste de Força (Atletismo) ou Destreza (Acrobacia) para escapar de uma imobilização com vantagem como uma reação.\n\nPetrificado,\n\nImobilizado,\n\nUm efeito que reduz a velocidade de um alvo abaixo do seu valor normal, como um raio de gelo ou a Explosão Impedidora (tipo explosão)."
+    },
+    {
+      "id": "vida-ressuscitar",
+      "name": "Ressuscitar",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Sua habilidade Revigorar funciona em criaturas que morreram em no máximo 1 rodada, trazendo-as de volta à vida. Voltar dos mortos é uma provação. O nível de exaustão do alvo aumenta em 1, até um máximo de 5, e não pode ser reduzido abaixo do nível de exaustão 1 por nenhum meio até completar um descanso longo. Esta habilidade requer um corpo quase intacto para funcionar. Ela não pode trazer de volta à vida uma criatura que morreu de velhice, nem pode restaurar partes do corpo perdidas. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação."
+        },
+        {
+          "pm": 3,
+          "text": "Este funciona como o aprimoramento acima, exceto que você pode escolher criaturas que morreram no último minuto."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-revitalizar",
+      "name": "Revitalizar",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Básicos de Vida",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Ao usar Cura, você pode optar por conceder ao alvo cura natural rápida em vez de curar diretamente o dano. O alvo cura 1 ponto de vida por rodada no início de seu turno enquanto você se concentrar, até 1 minuto. Alvos com 0 pontos de vida não recuperam pontos de vida com uma cura aprimorada por este talento, mas são estabilizados se estiverem morrendo. A quantidade curada a cada rodada aumenta em 1 no 5º nível (2 pontos de vida), 11º nível (3 pontos de vida) e 17º nível (4 pontos de vida)."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-regeneracao",
+      "name": "Regeneração",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Vida",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "vida"
+        },
+        {
+          "type": "talent",
+          "id": "vida-revitalizar"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Estendida (metaesfera)"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Durante a duração, se você possuir a parte decepada e a segurar contra o coto (uma interação com objeto) de uma criatura sob o efeito de Revitalizar, o membro é instantaneamente reconectado. Se Revitalizar também for aprimorado com o talento Estendido (metaesfera) da esfera Universal, os membros decepados do alvo (dedos, pernas, caudas, etc.), se houver, serão restaurados após 2 minutos."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Estendida (metaesfera)"
+      ]
+    },
+    {
+      "id": "vida-restaurar-mente-e-corpo",
+      "name": "Restaurar Mente e Corpo",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Vida",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "vida"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Ao usar Restaurar, você pode remover qualquer número de condições que afetem o alvo."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-ressurreicao",
+      "name": "Ressurreição",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Vida",
+      "tags": [],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "action": "1 hora",
+      "range": "toque",
+      "duration": "instantânea",
+      "target": "1 criatura morta",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "vida"
+        },
+        {
+          "type": "talent",
+          "id": "vida-ressuscitar"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você traz uma criatura morta de volta à vida, desde que ela esteja morta há no máximo 10 dias. Se a alma da criatura estiver disposta e livre para retornar ao corpo, a criatura retorna à vida com 1 ponto de vida.\n\nEste efeito também neutraliza quaisquer venenos e cura doenças não mágicas que afetavam a criatura no momento de sua morte. No entanto, este efeito não remove doenças mágicas, maldições ou efeitos similares; se estes não forem removidos antes de conjurar o efeito, eles entrarão em vigor quando a criatura retornar à vida. O efeito não pode ressuscitar uma criatura morta-viva. Este efeito fecha todos os ferimentos mortais, mas não restaura partes do corpo perdidas. Se a criatura não possuir partes do corpo ou órgãos essenciais para sua sobrevivência (sua cabeça, por exemplo), o efeito falha automaticamente, consumindo todos os pontos de magia e ações usados ​​na conjuração.\n\nRetornar dos mortos é uma provação. O alvo sofre uma penalidade de -4 em todas as jogadas de ataque, testes de resistência e testes de habilidade. A cada descanso longo concluído pelo alvo, a penalidade é reduzida em 1 até desaparecer."
+    },
+    {
+      "id": "vida-ressurreicao-maior",
+      "name": "Ressurreição Maior",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Vida",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "vida"
+        },
+        {
+          "type": "talent",
+          "id": "vida-ressuscitar"
+        },
+        {
+          "type": "talent",
+          "id": "vida-ressurreicao"
+        },
+        {
+          "type": "talent",
+          "id": "vida-regeneracao"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode usar Ressurreição em criaturas que morreram há menos de 100 anos e restaurar todas as partes do corpo perdidas. Usar este aprimoramento para restaurar a vida de uma criatura que morreu há um ano ou mais exige muito de você. Até terminar um descanso longo, você não poderá conjurar magias ou usar efeitos de esfera novamente e terá desvantagem em todas as jogadas de ataque, testes de habilidade e testes de resistência."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "vida-restauracao-limitada",
+      "name": "Restauração Limitada",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha a habilidade de restaurar ou as habilidades de curar e revigorar. Você não pode usar esta habilidade ou habilidades, nem escolher talentos que apenas aprimorem essas habilidades. Você recebe um talento bônus desta esfera."
+    },
+    {
+      "id": "vida-regenerar",
+      "name": "Regenerar",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode usar suas habilidades da esfera da Vida em si mesmo. Você recebe o talento Revitalizar ou o talento Acelerar (metaesfera) da esfera Universal como um talento bônus."
+    },
+    {
+      "id": "vida-simpatico",
+      "name": "Simpático",
+      "sphere": "vida",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode curar os outros absorvendo seus sofrimentos. Você recebe o talento Cura Empática como um talento bônus e deve usá-lo ao usar a habilidade de restaurar. Você não pode combinar esta variante com nenhuma variante que remova a habilidade de restaurar."
+    }
+  ],
+  "_reviewed": false
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "class-features.schema.json",
+  "title": "ClassFeatures",
+  "description": "Map of class name -> features/subclasses that grant talents or budget bonuses (migrated from class-features.json).",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "features": { "type": "array", "items": { "$ref": "#/definitions/feature" } },
+      "subclasses": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "features": { "type": "array", "items": { "$ref": "#/definitions/feature" } },
+            "grants": { "type": "array", "items": { "$ref": "#/definitions/grant" } }
+          }
+        }
+      },
+      "grants": { "type": "array", "items": { "$ref": "#/definitions/grant" } }
+    }
+  },
+  "definitions": {
+    "feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "section": { "enum": ["magic", "martial"] },
+        "bonusByLevel": {
+          "type": "array",
+          "description": "[[level, bonusTalents], ...] cumulative up to character level.",
+          "items": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
+        },
+        "group": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "grant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "talents"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 1, "maximum": 20 },
+        "feature": { "type": "string" },
+        "talents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["sphere"],
+            "properties": {
+              "name": { "type": "string", "description": "Legacy display name; kept for readability." },
+              "id": { "type": "string", "description": "Referenced talent id (added during migration; the rules engine matches by id)." },
+              "sphere": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

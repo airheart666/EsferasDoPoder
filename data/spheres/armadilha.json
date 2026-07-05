@@ -1,0 +1,462 @@
+{
+  "id": "armadilha",
+  "name": "Armadilha",
+  "section": "martial",
+  "summary": "Montar e desarmar armadilhas, dominando ferramentas de ladrão.",
+  "theme": {
+    "h": 70,
+    "s": 50,
+    "sig": "armadilha"
+  },
+  "acquisition": {
+    "freePicks": 0,
+    "conditionals": [
+      {
+        "requires": "Ferramentas de ladrão",
+        "addPicks": 1
+      }
+    ]
+  },
+  "talents": [
+    {
+      "id": "m-armadilha-dardos",
+      "name": "Dardos",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma armadilha de dardos é construída com mola, barbante e, geralmente, uma agulha ou outra lâmina. Quando acionada, o dardo voa em linha reta até 27 metros de um espaço que contém a armadilha e na direção escolhida ao armar a armadilha, antes de cair no chão, parando precocemente se atingir uma superfície sólida. Se o dardo atingir uma criatura, ele realiza um ataque contra essa criatura usando seu bônus de proficiência e seu modificador de habilidade chave. Se for bem-sucedido, o dardo para de se mover e causa 1d6 de dano perfurante. O dano do dardo aumenta em 1d6 quando você atinge o 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).\n\nAlguns talentos possuem o descritor (dardo), que permite modificar seus dardos. Cada armadilha só pode se beneficiar de um talento (dardo)."
+    },
+    {
+      "id": "m-armadilha-lacos",
+      "name": "Laços",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma armadilha de laço é construída com corda, arame e materiais similares. Uma armadilha é ativada na primeira vez que uma criatura entra na área em seu turno. Uma criatura pode evitar o acionamento de uma armadilha com um teste de resistência de Destreza bem-sucedido; isso deixa a armadilha desativada e torna a criatura ciente da armadilha.\n\nAlguns talentos têm o descritor (laço), que permite criar novas armadilhas.\n\nAo ganhar a esfera Armadilha pela primeira vez, você ganha as duas armadilhas a seguir:\n\nArmadilha de Ativação (laço)\n\nVocê pode criar uma armadilha que ativa um item como fogo de alquimista, um frasco de ácido, estrepes, corantes ou perfumes, um item consumível mágico ou um item consumível apropriado das esferas Alquimia ou Consertador. Este item é ativado e, se o item exigir um alvo, tem como alvo a criatura que a ativou. Você pode permitir que esta armadilha seja ativada várias vezes, mas deve adicionar um item para cada ativação, e acionar a armadilha ativa apenas um item incluído. Você pode recuperar itens não utilizados de uma armadilha removida ou expirada.\n\nFio de tropeço (laço)\n\nUma criatura que falhar em sua resistência contra uma armadilha de armadilha cai prostrada. Esta armadilha não é destruída ao ser acionada, mas criaturas cientes desta armadilha ganham vantagem em seu teste de resistência contra ela. Criaturas que já estejam prostradas não podem acionar esta armadilha."
+    },
+    {
+      "id": "m-armadilha-tiro-certo",
+      "name": "Tiro Certo (dardo)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dardo",
+      "tags": [
+        "dardo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em vez de lançar o dardo em uma linha predeterminada, você pode escolher que seu dardo tenha como alvo apenas a criatura que o ativou. O dado de dano do dardo aumenta para d8, e você pode aprimorá-lo com um talento de Esfera de Atirador (atirador) que você possui, escolhido quando a armadilha é armada."
+    },
+    {
+      "id": "m-armadilha-dardo-contundente",
+      "name": "Dardo Contundente (dardo)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dardo",
+      "tags": [
+        "dardo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Este dardo grosso causa dano contundente e aumenta os dados de dano do dardo em d10. Quando um dardo modificado por este talento reduz uma criatura\n\nconsciente e estável a 0 pontos de vida, o dardo apenas deixa a criatura inconsciente e estável."
+    },
+    {
+      "id": "m-armadilha-dardo-mortal",
+      "name": "Dardo Mortal (dardo)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dardo",
+      "tags": [
+        "dardo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Este dardo maior causa dano cortante ou perfurante (à sua escolha) e aumenta os dados de dano do dardo para d10."
+    },
+    {
+      "id": "m-armadilha-rede",
+      "name": "Rede (dardo, laço)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dardo",
+      "tags": [
+        "dardo",
+        "laco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando usado com uma armadilha de dardos, a armadilha não causa dano e os alvos devem passar por um teste de resistência de Destreza em vez de serem atacados.\n\nSe um alvo falhar no teste de resistência contra esta armadilha, ele será imobilizado até se desembaraçar com sucesso, exigindo uma ação por meio de um teste de Força (Atletismo) ou Destreza (Acrobacia) contra a CD da armadilha ou destruindo a armadilha por dano."
+    },
+    {
+      "id": "m-armadilha-armadilha-de-alarme",
+      "name": "Armadilha de Alarme (laço)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Laço",
+      "tags": [
+        "laco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em vez de produzir um efeito na criatura que a ativou, esta armadilha cria um ruído alto quando acionada, claramente audível para todas as criaturas em um raio de 90 metros da armadilha. Em locais particularmente silenciosos, este som pode ser ouvido até 3 vezes mais longe."
+    },
+    {
+      "id": "m-armadilha-armadilha-ofuscante",
+      "name": "Armadilha Ofuscante (laço)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Laço",
+      "tags": [
+        "laco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Todas as criaturas em um raio de 1,5 metro dos espaços desta armadilha devem ser bem-sucedidas em um teste de resistência de Destreza ou ficarão cegas por 2 rodadas."
+    },
+    {
+      "id": "m-armadilha-gatilho-magico",
+      "name": "Gatilho Mágico (laço)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Laço",
+      "tags": [
+        "laco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode equipar qualquer item mágico que exija ativação para ser acionado pela sua armadilha, como varinhas, cajados ou outros itens. O tempo necessário para armar a armadilha aumenta para corresponder ao tempo de ativação do item, se este for maior. Se a ativação do item exigir um teste de habilidade, este teste deve ser feito como parte da preparação da armadilha. Esta armadilha não é destruída quando acionada. Cada vez que é acionada, ela consome uma carga do item (se for um item carregado; itens de uso único são contados como se possuíssem 1 carga para esse propósito), destruindo a armadilha quando as cargas restantes chegarem a 0.\n\nUma vez destruída a armadilha, qualquer item usado pode ser recuperado, menos quaisquer cargas usadas. Se o efeito mágico tiver como alvo uma criatura, a criatura que a ativou é o alvo. Se tiver como alvo uma área, o efeito se origina do espaço onde a armadilha foi acionada. Formas como cones ou linhas devem ter sua orientação determinada quando a armadilha é posicionada."
+    },
+    {
+      "id": "m-armadilha-rede-2",
+      "name": "Rede (dardo, laço)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Laço",
+      "tags": [
+        "dardo",
+        "laco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando usada com uma armadilha de dardo, a armadilha não causa dano e os alvos devem passar em um teste de resistência de Destreza em vez de serem atacados.\n\nSe um alvo falhar em seu teste de resistência contra esta armadilha, ele será imobilizado até se desembaraçar com sucesso, exigindo uma ação por meio de um teste de Força (Atletismo) ou Destreza (Acrobacia) contra a CD da armadilha ou destruindo a armadilha por dano."
+    },
+    {
+      "id": "m-armadilha-forca",
+      "name": "Forca (laço)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Laço",
+      "tags": [
+        "laco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma criatura que acionar este laço deve ser bem-sucedida em um teste de resistência de Destreza ou ficará incapaz de se mover de sua posição atual, de respirar e de falar ou fornecer componentes verbais até obter sucesso em um teste de Força ou Destreza contra a CD da armadilha ou destruí-la por dano."
+    },
+    {
+      "id": "m-armadilha-armadilha-de-terreno",
+      "name": "Armadilha de Terreno (laço)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Laço",
+      "tags": [
+        "laco"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando uma criatura falha em seu teste de resistência de Destreza para evitar este laço, o laço cria uma área de terreno difícil em um raio de 3 metros centralizada em um canto de um dos quadrados que ocupa, conforme determinado quando este laço é armado. Você pode escolher criar tal efeito mesmo sem criar uma armadilha (tratando isso como uma armadilha que é imediatamente acionada).\n\nSe você tiver o talento Gatilho Aéreo, esta área de terreno difícil também se estende para o ar, afetando sua velocidade de voo. Esta área de terreno difícil se dissipa após um minuto."
+    },
+    {
+      "id": "m-armadilha-aereo",
+      "name": "Aéreo (gatilho)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Gatilho",
+      "tags": [
+        "gatilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode dar às suas armadilhas um gatilho que se estende pelo ar para afetar criaturas voadoras. Criaturas a até 3 metros acima da área ocupada por suas armadilhas podem acioná-las normalmente. A altura do gatilho aumenta em 3 metros no 5º nível (6 metros), 11º nível (9 metros) e 17º nível (12 metros).\n\nCriaturas voadoras caem no chão se caírem, a menos que possam pairar. Se sua armadilha enredar ou agarrar uma criatura que possa pairar, ela será puxada inofensivamente para o quadrado de gatilho."
+    },
+    {
+      "id": "m-armadilha-falso",
+      "name": "Falso (gatilho)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Gatilho",
+      "tags": [
+        "gatilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao armar uma armadilha, você pode optar por torná-la uma armadilha com atraso. Uma armadilha com atraso ganha vantagem em suas jogadas de ataque e impõe desvantagem em quaisquer testes de resistência feitos contra ela.\n\nNa primeira vez que uma armadilha seria acionada, ela não aciona e, em vez disso, emite um ruído audível e óbvio (como um clique)."
+    },
+    {
+      "id": "m-armadilha-remoto",
+      "name": "Remoto (gatilho)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Gatilho",
+      "tags": [
+        "gatilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você precisa estar a até 9 metros da armadilha para usar este talento. Como reação, quando uma criatura se aproxima a até 9 metros de uma de suas armadilhas, você pode ativá-la. Além disso, quando uma criatura rola um teste de resistência de Destreza para evitar acionar uma de suas armadilhas de dardo ou laço, você pode dar a ela desvantagem na jogada como reação."
+    },
+    {
+      "id": "m-armadilha-aviso",
+      "name": "Aviso (gatilho)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Gatilho",
+      "tags": [
+        "gatilho"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aliados que podem ver e ouvir você nunca acionam suas armadilhas, a menos que queiram."
+    },
+    {
+      "id": "m-armadilha-armadilha-persistente",
+      "name": "Armadilha Persistente",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao armar uma armadilha, você pode gastar 10 minutos criando-a. Se fizer isso, a duração aumenta para 24 horas."
+    },
+    {
+      "id": "m-armadilha-arame-farpado",
+      "name": "Arame Farpado",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao posicionar a armadilha de arame farpado, você pode escolher que ela cause 1d6 de dano cortante às criaturas que falharem em seus testes de resistência contra ela, aumentando em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6) à criatura que acionou a armadilha."
+    },
+    {
+      "id": "m-armadilha-cacador-furtivo",
+      "name": "Caçador Furtivo",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você sabe como posicionar armadilhas de maneira discreta. Ao posicionar uma armadilha temporária, você pode fazer um teste de Destreza (Prestidigitação) contra a Percepção Passiva de qualquer observador para posicioná-la sem que o observador perceba automaticamente a presença da armadilha."
+    },
+    {
+      "id": "m-armadilha-retirada-estrategica",
+      "name": "Retirada Estratégica",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para colocar uma armadilha como parte de uma ação de desengajar. A armadilha ainda tem sua duração reduzida para 1 minuto e deve ser colocada em um espaço desocupado pelo qual você se move naquele turno."
+    },
+    {
+      "id": "m-armadilha-especialista-em-armadilhas",
+      "name": "Especialista em Armadilhas",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Dobra seu bônus de proficiência ao usar ferramentas de ladrão."
+    },
+    {
+      "id": "m-armadilha-lancador-de-armadilhas",
+      "name": "Lançador de Armadilhas",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você é capaz de armar armadilhas à distância. Ao gastar foco marcial para armar uma armadilha como uma ação, como uma ação bônus, você pode colocar a armadilha dentro do primeiro incremento de alcance de uma arma de longo alcance que esteja empunhando.\n\nVocê pode combinar este talento com Portador de Armadilhas para colocar uma armadilha diretamente em um alvo à distância. Se você também possuir a esfera de Atirador, como um talento (de tiro), você pode gastar seu foco marcial normalmente para aplicar uma armadilha de laço ao seu ataque à distância, colocando-a diretamente abaixo do alvo se o seu ataque acertar."
+    },
+    {
+      "id": "m-armadilha-portador-de-armadilha",
+      "name": "Portador de Armadilha",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Às vezes, o calor da batalha não permite armar e camuflar adequadamente uma armadilha. Ao posicionar uma armadilha, você pode colocá-la diretamente no espaço de outra criatura, fazendo com que ela seja ativada imediatamente, tendo como alvo aquela criatura. Isso geralmente requer o gasto de foco marcial para posicionar a armadilha como uma ação. Se você posicionar uma armadilha dentro do espaço de várias criaturas, todas elas serão afetadas."
+    },
+    {
+      "id": "m-armadilha-escudo-com-armadilha",
+      "name": "Escudo com Armadilha",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao gastar seu foco marcial para posicionar uma armadilha de dardos, você pode colocá-la diretamente sobre um escudo que esteja empunhando, em vez de em espaços. Quando você erra um ataque corpo a corpo, você pode fazer com que a criatura atacante acione a armadilha como uma reação.\n\nSe você possuir a esfera de Escudo, você pode ter a armadilha acionada sem nenhuma ação necessária como uma habilidade (defletir)."
+    },
+    {
+      "id": "m-armadilha-recuperacao-do-armadilhador",
+      "name": "Recuperação do Armadilhador",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando uma criatura falha em um teste de resistência contra ou sofre dano da sua armadilha, e você está ciente de que ela está fazendo isso, você pode ganhar foco marcial como uma reação."
+    },
+    {
+      "id": "m-armadilha-armadilha-penetrante",
+      "name": "Armadilha Penetrante",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Armadilha",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "armadilha"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Suas armadilhas que causam dano são consideradas Mágicas para superar resistências."
+    },
+    {
+      "id": "m-armadilha-anulador-taumatico",
+      "name": "Anulador Taumático (dardo, laço)",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Armadilha",
+      "tags": [
+        "dardo",
+        "laco"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "armadilha"
+        },
+        {
+          "type": "level",
+          "min": 17
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando usado com uma armadilha de dardo, uma criatura atingida por seu dardo é afetada como se estivesse dentro de um campo antimagia, conforme a magia. Este efeito persiste por um número de rodadas igual ao seu bônus de proficiência ou até que uma ação seja gasta removendo o dardo, causando dano igual ao dano mínimo do dardo.\n\nQuando usado com uma armadilha de laço, um raio de 3 metros ao redor do quadrado de ativação é coberto por um campo antimagia, conforme a magia. Este efeito persiste por um número de rodadas igual ao seu bônus de proficiência."
+    },
+    {
+      "id": "m-armadilha-armadilheiro-de-batalha",
+      "name": "Armadilheiro de Batalha",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode armar armadilhas. Você ganha o talento Portador de Armadilhas como talento bônus. Você não pode ter tanto este quanto a variante Trabalhador Lento."
+    },
+    {
+      "id": "m-armadilha-armadilheiro-focado",
+      "name": "Armadilheiro Focado",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha armadilhas de dardo ou laço. Você não pode colocar ou usar armadilhas do tipo escolhido. Você ganha o talento Recuperação do Caçador como talento bônus."
+    },
+    {
+      "id": "m-armadilha-trabalhador-lento",
+      "name": "Trabalhador Lento",
+      "sphere": "armadilha",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você deve levar pelo menos um minuto para armar uma armadilha. Você ganha o talento Armadilha Persistente como talento bônus. Você não pode ter tanto este quanto a variante Trabalhador de Batalha."
+    }
+  ],
+  "_reviewed": false
+}

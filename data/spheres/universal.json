@@ -1,0 +1,1536 @@
+{
+  "id": "universal",
+  "name": "Universal",
+  "section": "magic",
+  "summary": "Habilidades curinga que interagem com várias esferas, como dissipar magia.",
+  "theme": {
+    "h": 40,
+    "s": 12,
+    "sig": "universal"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "universal-dissipar",
+      "name": "Dissipar",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacote de Dissipar",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "10 minutos",
+      "range": "9 m",
+      "duration": "Instantânea",
+      "target": "Uma criatura, objeto ou efeito mágico",
+      "save": "Nenhum",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode tentar dissipar um número de efeitos mágicos adicionais igual à metade do seu bônus de proficiência."
+        },
+        {
+          "pm": 1,
+          "text": "Você dissipa automaticamente efeitos mágicos ativos com um nível de magia ou custo em pontos de magia igual ou inferior ao seu bônus de proficiência. Aprimoramento 1PM: O tempo de conjuração é reduzido para 1 ação. Quando usado desta forma, você pode preparar esta habilidade para interromper a conjuração de uma criatura."
+        }
+      ],
+      "body": "Você tenta dissipar um único efeito mágico ativo. Se a magia ou o efeito de esfera no alvo tiver um nível de magia ou custo em pontos de magia igual ou inferior à metade do seu bônus de proficiência, ele termina. Caso contrário, faça um teste de habilidade de conjuração. A CD é igual a 10 + o nível da magia, ou 10 + o número de pontos de magia envolvidos. Em um teste bem-sucedido, a magia termina."
+    },
+    {
+      "id": "universal-vinculo-de-mana",
+      "name": "Vínculo de Mana",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacote de Mana",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação bônus",
+      "range": "9 m",
+      "duration": "Concentração, até 10 minutos",
+      "target": "Uma criatura ou objeto",
+      "save": "Nenhum",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação."
+        }
+      ],
+      "body": "Faça um ataque mágico à distância contra um alvo dentro do seu alcance de vínculo de mana; a menos que seja especificado o contrário, um efeito mágico tem uma CA igual à sua resistência à magia ou CD da esfera. Se acertar, você forma um vínculo de mana com o alvo.\n\nDuração, em cada um dos seus turnos, você pode usar sua ação para aplicar um talento (vínculo de mana) que você conheça ao alvo. O vínculo de mana termina se você usar sua ação para fazer qualquer outra coisa. O vínculo de mana também termina se o alvo estiver fora do alcance do vínculo ou se estiver totalmente protegido contra você."
+    },
+    {
+      "id": "universal-aura-do-caos",
+      "name": "Aura do Caos",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Pacote de Magia Selvagem",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "pessoal",
+      "duration": "Concentração, até 1 minuto",
+      "area": "esfera de 1,5 metro de raio",
+      "save": "Nenhum",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação."
+        }
+      ],
+      "body": "Você emite uma aura que distorce a estrutura da magia, aumentando a chance de magia selvagem de todas as criaturas na área em 50%. Apenas criaturas com o pacote de magia selvagem, desvantagem geral ou característica de classe similar (como feiticeiros com a origem de feiticeiro de magia selvagem) têm consciência inata desse aumento. A área aumenta em 1,5 metro no 5º nível (raio de 3 metros), 11º\n\nnível (raio de 4,5 metros) e 17º nível (raio de 6 metros)."
+    },
+    {
+      "id": "universal-desorientar",
+      "name": "Desorientar (dissipar)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Dissipar",
+      "tags": [
+        "dissipar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você contra-ataca com sucesso uma magia usando Dissipar, o conjurador deve ser bem-sucedido em um teste de resistência de Inteligência ou sofrerá desvantagem em todas as jogadas de ataque com magia e concederá vantagem em qualquer teste de resistência feito contra suas magias e esferas mágicas por 1 minuto."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-contra-magia-do-tolo",
+      "name": "Contra-magia do Tolo (dissipar)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Dissipar",
+      "tags": [
+        "dissipar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você contra-ataca com sucesso uma magia usando Dissipar, o conjurador deve ser bem-sucedido em um teste de resistência de Inteligência igual à CD da sua esfera ou acreditará que a magia teve o efeito pretendido, mesmo que, de outra forma, estivesse ciente de sua falha. Trate este efeito como uma ilusão com duração igual à da magia contra-atacada e use as regras para interagir e investigar ilusões."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-dissipar-maior",
+      "name": "Dissipar Maior (dissipar)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Dissipar",
+      "tags": [
+        "dissipar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode tentar dissipar qualquer número de efeitos mágicos."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-dissipar-moldado",
+      "name": "Dissipar Moldado (dissipar)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Dissipar",
+      "tags": [
+        "dissipar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tratar sua habilidade Dissipar como um talento (tipo explosão), moldando-a com talentos (formato de explosão) e usando o alcance da sua explosão destrutiva ao fazer isso. Sua dissipação não causa dano de explosão destrutiva quando usada desta forma. Os custos de aprimoramento para usar esses formatos de explosão se aplicam normalmente. Efeitos de magia que precisam viajar até seu alvo através de um espaço ocupado por um formato de explosão com duração não instantânea também estão sujeitos ao efeito de dissipação."
+    },
+    {
+      "id": "universal-ladrao-de-magias",
+      "name": "Ladrão de Magias (dissipar)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Dissipar",
+      "tags": [
+        "dissipar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você anula com sucesso uma magia que tem como alvo uma criatura ou objeto usando dissipar, você pode, em vez disso, escolher reatribuir os alvos do efeito. Se fizer isso, você assume imediatamente a concentração do conjurador original (se o efeito exigir concentração), e o conjurador original não pode escolher encerrar o efeito prematuramente."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-dissipar-vicioso",
+      "name": "Dissipar Vicioso (dissipar)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Dissipar",
+      "tags": [
+        "dissipar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Se você encerrar um efeito com sucesso, o alvo sofre 1d10 de dano de força, aumentando em 1d10 no 5º nível (2d10), 11º nível (3d10) e 17º nível (4d10)."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-aprimoramento-de-liga-esfera-dupla-aprimoramento-natureza-geomancia-metalica",
+      "name": "Aprimoramento de Liga (esfera dupla, Aprimoramento, Natureza (geomancia metálica))",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar uma habilidade de geomancia do pacote de metal para criar ou afetar um objeto de metal, você pode aprimorar o objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-telecinese-de-liga-esfera-dupla-telecinese-natureza-geomancia-metalica",
+      "name": "Telecinese de Liga (esfera dupla, Telecinese, Natureza (geomancia metálica))",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você cria um objeto de metal usando qualquer geomancia, você pode usar uma habilidade de esfera de Telecinese (geralmente levitar ou projétil) no objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-aurora",
+      "name": "Aurora (esfera dupla, Luz, Clima)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "luz",
+        "clima"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto estiver em clima de severidade 1 ou superior, você pode, como um efeito de esfera de Luz, aumentar magicamente o nível de luz em um passo como uma ação bônus (a escuridão se torna penumbra, a penumbra se torna luz brilhante). Essa mudança na luz afeta tudo dentro do seu alcance de brilho. No 11º nível, você pode aumentar o nível de luz em um passo adicional (a escuridão se torna luz brilhante). Áreas de escuridão mágica dentro do alcance deste efeito não são afetadas, seus níveis de luz permanecendo inalterados."
+    },
+    {
+      "id": "universal-controle-oculto",
+      "name": "Controle Oculto (esfera dupla, Aprimoramento, Mente)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "aprimoramento",
+        "mente"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar um encantamento contra uma criatura ou objeto sob os efeitos de sua Conceder Inteligência, os pedidos que você fizer serão considerados 1 passo mais razoáveis. Veja a esfera Mente para detalhes."
+    },
+    {
+      "id": "universal-tempestade-nefasta-esfera-dupla-morte-universal-massa-metaesfera-clima",
+      "name": "Tempestade Nefasta (esfera dupla, Morte, Universal (Massa (metaesfera)), Clima)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Enquanto você estiver em uma categoria de clima Tempestade de severidade 2 ou superior, você pode reanimar até o número de cadáveres igual ao seu bônus de proficiência dentro do alcance de reanimação a cada rodada como uma ação bônus, sem pagar o custo normal de pontos de magia de reanimar. Você ainda não pode ter mais criaturas reanimadas ativas do que seu bônus de proficiência com esta habilidade, e os mortos-vivos reanimados duram apenas enquanto você estiver em uma categoria de clima de Tempestade de pelo menos nível de severidade 2. A reanimação não pode ser aprimorada posteriormente."
+        }
+      ],
+      "body": "Quando o trovão ribomba e o relâmpago corta o céu, seus lacaios se levantam."
+    },
+    {
+      "id": "universal-transformacao-bioluminescente",
+      "name": "Transformação Bioluminescente (esfera dupla, Alteração, Luz)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "alteracao",
+        "luz"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você transforma um alvo, você também pode fazer com que esse alvo brilhe. O brilho termina automaticamente quando a transformação termina. Se o brilho for interrompido por uma escuridão da esfera Escura ou efeito similar, isso não encerra a transformação. A transformação e o brilho contam como um único efeito para fins de concentração. Se você aplicar um talento (de luz) a um brilho criado e mantido desta forma, ele conta contra o número de características que você pode conceder com sua transformação."
+    },
+    {
+      "id": "universal-coalescencia",
+      "name": "Coalescência (esfera dupla, Morte, Vida)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "morte",
+        "vida"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar um golpe fantasma, você pode, antes do final do seu turno, conjurar uma cura, restauração ou revigoramento como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de Golpe Fantasma tenha um custo de pontos de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-explosao-cadaverica-esfera-dupla-forma-de-explosao-morte-bomba-cadaverica-destruicao",
+      "name": "Explosão Cadavérica (esfera dupla, forma de explosão, Morte (Bomba Cadavérica), Destruição)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar uma explosão destrutiva para ativar seu talento Bomba Cadavérica em vez de um Golpe Fantasma. Os alvos afetados têm direito a um teste de resistência de Destreza para reduzir o dano à metade."
+    },
+    {
+      "id": "universal-companheiro-destrutivo-esfera-dupla-conjuracao-companheiro-explosivo-destruicao",
+      "name": "Companheiro Destrutivo (esfera dupla, Conjuração (Companheiro Explosivo), Destruição)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você invoca um companheiro que possui o talento Companheiro Explosivo (forma), você pode aplicar um único talento (tipo explosão) que você possui a esse companheiro. Quando o companheiro explosivo detona, ele usa d8 e o tipo de dano do talento (tipo explosão) e aplica seus efeitos adicionais como se fosse uma explosão destrutiva. Quaisquer custos adicionais de pontos de magia associados ao talento (tipo explosão) escolhido devem ser pagos como parte da conjuração da invocação."
+    },
+    {
+      "id": "universal-radiancia-destrutiva",
+      "name": "Radiância Destrutiva (esfera dupla, Destruição, Luz)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "destruicao",
+        "luz"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar sua explosão destrutiva, você pode optar por fazer com que ela assuma as propriedades da luz. Uma explosão destrutiva modificada dessa forma pode atravessar objetos sólidos transparentes (como vidro), mas não pode afetar nenhuma criatura ou objeto que você não possa ver. Possuir sentidos especiais que lhe permitam ver através de substâncias opacas impede que sua explosão destrutiva atravesse o objeto sólido normalmente opaco."
+    },
+    {
+      "id": "universal-egide-dimensional",
+      "name": "Égide Dimensional (esfera dupla, socorro, Proteção, Distorção)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "socorro",
+        "protecao",
+        "distorcao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você sacrifica uma égide que colocou em outro aliado para trocar de lugar com ele usando teletransporte. Ele deve estar dentro do alcance da sua habilidade de teletransporte. O aliado deve estar disposto ou inconsciente. Isso pode ser feito em resposta a um ataque antes que os resultados do ataque sejam determinados. Nesse caso, o ataque muda o alvo para quem estiver ocupando o espaço anteriormente ocupado pelo alvo original."
+    },
+    {
+      "id": "universal-criacao-aprimorada",
+      "name": "Criação Aprimorada (esfera dupla, Criação, Aprimoramento)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "criacao",
+        "aprimoramento"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você cria um objeto, antes do final do seu turno, você pode aprimorá-lo como uma ação bônus. A criação e o aprimoramento contam como um único efeito para fins de concentração.\n\nQualquer efeito de aprimoramento que se aplicaria a jogadas de ataque ou dano se aplica a quaisquer jogadas de ataque ou dano feitas como parte do ato de colocar o objeto em um alvo. O aprimoramento como ação bônus pode ser aumentado para afetar múltiplos objetos criados, se eles foram criados desde o início do seu turno. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. Você pode usar este talento (esfera dupla) mesmo que seu efeito de criação tenha um custo de pontos de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-aprimoramento-de-telecinese",
+      "name": "Aprimoramento de Telecinese (esfera dupla, Aprimoramento, Telecinese)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "aprimoramento",
+        "telecinese"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você escolhe um objeto com uma habilidade de esfera de Telecinese, você pode aprimorá-lo como uma ação bônus antes do final do seu turno. Ambas as habilidades de esfera contam como um único efeito para fins de concentração, dissipação e remoção. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem.\n\nVocê pode usar este talento (esfera dupla) mesmo que sua habilidade de esfera de Telecinese tenha um custo de pontos de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-criacao-poderosa",
+      "name": "Criação Poderosa (esfera dupla, Criação, Telecinese)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "criacao",
+        "telecinese"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você cria um objeto, antes do final do seu turno, você pode usar uma habilidade de esfera de Telecinese (geralmente projétil ou levitar) nele como uma ação bônus. A habilidade de criação e a habilidade de esfera de Telecinese contam como um único efeito para fins de concentração.\n\nO uso da habilidade de esfera Telecinese como ação bônus pode ser aumentado para afetar múltiplos objetos criados, desde que tenham sido criados desde o início do seu turno. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. Você pode usar este talento (esfera dupla) mesmo que seu efeito de criação tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-escuridao-hipnotica",
+      "name": "Escuridão Hipnótica (esfera dupla, Escuridão, Mente)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "escuridao",
+        "mente"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas dentro da área de sua escuridão sofrem desvantagem em testes de resistência contra as condições encantado, amedrontado e inconsciente, bem como qualquer efeito que cause confusão, como a magia confusão. Isso conta como um efeito negativo da sua escuridão para fins de interação com o talento Visão Clara (fusão)."
+    },
+    {
+      "id": "universal-evacuacao-de-resgate",
+      "name": "Evacuação de Resgate (esfera dupla, Vida, Distorção)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "vida",
+        "distorcao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar um teleporte, você pode, antes do final do seu turno, conjurar uma cura, restauração ou revigoramento como uma ação bônus. Você pode usar esse talento (esfera dupla) mesmo que seu efeito de teletransporte tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-egide-luminosa",
+      "name": "Égide Luminosa (esfera dupla, Luz, Proteção)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "luz",
+        "protecao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como uma ação bônus, você pode fazer um aliado brilhar se ele estiver portando uma égide que você criou. Você deve usar uma ação separada para iluminá-lo. O brilho termina quando a égide termina. Você pode usar este talento (esfera dupla) mesmo se tiver acabado de conjurar a égide em seu aliado neste turno, e a égide tiver um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-chama-luminosa-esfera-dupla-luz-natureza-geomancia-do-fogo-criar-natureza",
+      "name": "Chama Luminosa (esfera dupla, Luz, Natureza (geomancia do fogo; Criar Natureza))",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar Criar Natureza para criar um fogo, você também pode fazer com que o fogo brilhe. Você pode tratar uma habilidade de geomancia que tenha como alvo tal fogo e um efeito de iluminar que tenha como alvo tal brilho como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem."
+    },
+    {
+      "id": "universal-poder-da-sepultura",
+      "name": "Poder da Sepultura (esfera dupla, Morte, Aprimoramento)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "morte",
+        "aprimoramento"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um aprimoramento à criatura criada como uma ação bônus antes do final do seu turno. O aprimoramento e a reanimação contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. O aprimoramento como ação bônus pode ser aumentado para afetar múltiplas criaturas reanimadas com o talento Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-teleporte-enganoso",
+      "name": "Teleporte Enganoso (esfera dupla, Ilusão, Distorção)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "ilusao",
+        "distorcao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sempre que você usar um teleporte, você pode usar um talento ou habilidade da esfera Ilusão (geralmente Obscurecer (glamour) ou criar uma ilusão) como uma reação. Ao usar este talento (esfera dupla), você pode escolher que sua habilidade de Ilusão e teletransporte entrem em vigor simultaneamente."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-janela-unidirecional",
+      "name": "Janela Unidirecional (esfera dupla, Escuridão, Luz)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "escuridao",
+        "luz"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao criar uma área de escuridão, antes do final do seu turno, você pode conjurar um brilho ou uma lente em outra criatura como uma ação bônus. Tanto a habilidade de esfera de escuridão quanto a de Luz contam como um único efeito para fins de concentração. Criaturas sob o efeito da habilidade de esfera de Luz não têm seus sentidos (incluindo a visão) prejudicados pela área de escuridão. Você pode usar este talento (esfera dupla) mesmo que seu efeito de escuridão tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-protecao-precognitiva",
+      "name": "Proteção Precognitiva (esfera dupla, Adivinhação, Proteção)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "adivinhacao",
+        "protecao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao conceder um sentido a uma criatura, você pode conceder a ela uma égide como uma ação bônus antes do final do seu turno. Ambas as habilidades de esfera contam como um único efeito para fins de\n\nconcentração, dissipação e remoção. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. Você pode usar este talento (esfera dupla) mesmo que seu efeito sensorial tenha um custo de pontos de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-rajada-buscadora",
+      "name": "Rajada Buscadora (esfera dupla, Destruição, Adivinhação)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "destruicao",
+        "adivinhacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar uma rajada destrutiva, você ignora quaisquer bônus de CA ou testes de resistência de Destreza que os alvos afetados possam ter por cobertura parcial (+2 CA, testes de resistência de Destreza) e cobertura parcial (+5 CA, testes de resistência de Destreza)."
+    },
+    {
+      "id": "universal-gaiola-sombria",
+      "name": "Gaiola Sombria (esfera dupla, Escuridão, Proteção)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "escuridao",
+        "protecao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao criar uma proteção, você pode conjurar escuridão como uma ação bônus, tendo a mesma área como alvo. A escuridão afeta apenas a área da proteção. Você pode aplicar talentos (de escuridão) a essa escuridão normalmente. A escuridão e a proteção contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. Você pode usar este talento (esfera dupla) mesmo que seu efeito de proteção tenha um custo de pontos de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-manipular-as-cartas",
+      "name": "Manipular as Cartas (esfera dupla, Adivinhação, Destino)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "adivinhacao",
+        "destino"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar divino como uma ação, você pode, antes do final do seu turno, conjurar uma consagração, um motivo ou uma palavra como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito divino tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-armazenamento-em-estase-esfera-dupla-tempo-distorcao-armazenamento-extradimensional",
+      "name": "Armazenamento em Estase (esfera dupla, Tempo, Distorção (Armazenamento Extradimensional))",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao gastar um minuto em concentração, você pode trancar parte do seu armazenamento extradimensional, enviando-o além do tempo e colocando seu conteúdo em estase. Isso torna o conteúdo selecionado inacessível até que você gaste outro minuto destrancando-o, mas enquanto estiver trancado, o conteúdo não sofre desgaste por idade ou por efeitos como ferrugem ou apodrecimento enquanto armazenado desta forma, e o tempo gasto no espaço não conta para a duração de habilidades como talentos (aprimorar) ou limites de tempo, como o limite de tempo para reviver uma criatura morta."
+    },
+    {
+      "id": "universal-morte-rapida",
+      "name": "Morte Rápida (esfera dupla, Morte, Tempo)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "morte",
+        "tempo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um efeito de alterar o tempo que tenha como alvo uma criatura à criatura criada como uma ação bônus antes do final do seu turno. Alterar o tempo e reanimar contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjurar Alterar o Tempo pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-necromancia-silvestre-esfera-dupla-morte-natureza-geomancia-vegetal",
+      "name": "Necromancia Silvestre (esfera dupla, Morte, Natureza (geomancia vegetal))",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sempre que você usar reanimar para criar um morto-vivo corpóreo com um talento básico (morto-vivo), você pode infundi-lo com esporos e vida vegetal. A criatura reanimada perde o tipo de criatura morto-vivo e ganha o tipo de criatura vegetal."
+        }
+      ],
+      "body": "Você pode usar ossos e cadáveres inanimados, em vez de plantas, para cumprir quaisquer pré-requisitos adicionais para talentos e habilidades de geomancia vegetal.\n\nSeus talentos e habilidades de golpe fantasma que normalmente afetam apenas mortos-vivos também podem afetar criaturas vegetais. Você pode usar vegetação morta como alvo para cumprir os pré-requisitos de alvo para qualquer magia de reanimar que você conjure para criar um morto-vivo corpóreo com um talento básico (morto-vivo). O estado da vegetação determina quais tipos de mortos-vivos você pode reanimar; galhos secos e estéreis podem ser reanimados como esqueletos, galhos apodrecidos podem ser reanimados como zumbis, enquanto arbustos recém-cortados podem ser reanimados como carniçais, etc. Simplesmente cortar e desbastar madeira geralmente não desqualifica a vegetação como um alvo válido para reanimar, mas madeira que foi transformada em vigas de madeira serrada não é. O Mestre tem a palavra final sobre qual vegetação é ou não um alvo válido para reanimar, bem como qual criatura base é usada ao determinar seu ND (Nível de Desafio) e estatísticas; por exemplo, um alce de topiaria pode usar as estatísticas base de um alce, enquanto um humanoide de madeira cambaleante pode usar as estatísticas base de um bandido.\n\nAlém disso, sua habilidade de reanimar recebe o seguinte aprimoramento:"
+    },
+    {
+      "id": "universal-transformar-objeto-esfera-dupla-alteracao-aprimoramento-animar-objeto",
+      "name": "Transformar Objeto (esfera dupla, Alteração, Aprimoramento (Animar Objeto))",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você usa Animar Objeto da esfera Aprimoramento, você pode aplicar uma metamorfose ao alvo como uma ação bônus antes do final do seu turno. O aprimoramento e a metamorfose contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de metamorfose\n\npode ser aprimorada para afetar múltiplos alvos com o talento Massa (metaesfera) da esfera Universal, se eles foram aprimorados desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de aprimoramento tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-adepto-do-crepusculo",
+      "name": "Adepto do Crepúsculo (esfera dupla, Escuridão, Luz)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "escuridao",
+        "luz"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Áreas de escuridão criadas por você ou seus aliados podem coexistir dentro de áreas de efeitos de luz mágica criadas por você ou seus aliados; ambos os conjuradores devem concordar em permitir que seus efeitos coexistam para que este talento funcione. Em áreas onde um efeito de escuridão e um efeito de luz mágica criados por aliados se sobrepõem, a área se torna penumbra, enquanto ainda fornece efeitos adicionais como se fosse uma área de escuridão ou luz brilhante, conforme aplicável."
+    },
+    {
+      "id": "universal-reanimacao-distorcida",
+      "name": "Reanimação Distorcida (esfera dupla, Alteração, Morte)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "alteracao",
+        "morte"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar uma metamorfose à criatura criada como uma ação bônus antes do final do seu turno. A reanimação e a metamorfose contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de metamorfose pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-vudu-esfera-dupla-morte-ilusao-disfarce-ilusorio",
+      "name": "Vudu (esfera dupla, Morte, Ilusão (Disfarce Ilusório))",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder aos seus mortos-vivos reanimados os benefícios do talento Disfarce Ilusório, fazendo com que pareçam como eram quando estavam vivos. Você não precisa saber a aparência da criatura quando estava viva para obter esse benefício."
+    },
+    {
+      "id": "universal-ossos-protegidos",
+      "name": "Ossos Protegidos (esfera dupla, Morte, Proteção)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Esfera Dupla",
+      "tags": [
+        "esfera dupla",
+        "morte",
+        "protecao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar uma égide à criatura criada como uma ação bônus antes do final do seu turno. A égide e reanimar contam como um único efeito para fins de concentração.\n\nUse a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de égide pode ser aprimorada para afetar múltiplas criaturas reanimadas com o talento Massa (metaesfera) da esfera Universal, caso elas tenham sido criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimação tenha um custo de pontos de magia de 1 ou mais."
+    },
+    {
+      "id": "universal-controle-de-resistencia",
+      "name": "Controle de Resistência (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O alvo perde ou ganha resistência contra um tipo de dano por 1 rodada. O número de resistências que o alvo perde ou ganha aumenta em 1 no 5º nível (2 resistências), 11º nível (3 resistências) e 17º nível (4 resistências)."
+    },
+    {
+      "id": "universal-expurgar",
+      "name": "Expurgar (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O alvo faz um teste de habilidade de conjuração contra a CD da sua esfera. Em caso de falha, a criatura perde 1 ponto de magia ou espaço de magia do nível de magia mais baixo disponível. Espaços de magia e pontos de magia perdidos por meio de Expurgar podem ser recuperados normalmente com descansos longos ou curtos. O número de espaços de magia ou pontos de magia perdidos aumenta em 1 no 5º nível (2 pontos ou espaços de magia), 11º nível (3 pontos ou espaços de magia) e 17º nível (4 pontos ou espaços de magia)."
+    },
+    {
+      "id": "universal-fluxo",
+      "name": "Fluxo (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma vez durante a rodada, você ou um alvo disposto pode transferir energia mágica para o outro, sacrificando pontos de magia ou espaços de magia. A criatura que sacrifica pode sacrificar 1 ponto de magia ou espaço de magia para conceder à outra criatura um número igual de pontos de magia ou espaços de magia. Os espaços de magia concedidos não podem exceder o máximo normal da criatura e não podem restaurar espaços de magia de um nível superior à metade do bônus de proficiência da criatura que sacrifica. Os pontos de magia concedidos são temporários, não se acumulam entre si (nem com outros efeitos de Fluxo) e duram até 1 minuto ou até serem usados, o que ocorrer primeiro. O número de pontos de magia ou espaços de magia que uma criatura pode sacrificar aumenta em 1 no 5º nível (2 pontos de magia ou espaços de magia), no 11º nível (3 pontos de magia ou espaços de magia) e no 17º nível (4 pontos de magia ou espaços de magia)."
+    },
+    {
+      "id": "universal-incompetencia",
+      "name": "Incompetência (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O alvo do seu vínculo de mana deve ser bem-sucedido em um teste de resistência de Carisma ou sofrerá uma desvantagem geral de tradição de conjuração à sua escolha por 1 rodada. O alvo não ganha pontos de magia bônus por possuir essas desvantagens. O número de desvantagens gerais infligidas por uma falha no teste de resistência aumenta em 1 no 5º nível (2 desvantagens), no 11º nível (3 desvantagens) e no 17º nível (4 desvantagens)."
+    },
+    {
+      "id": "universal-conhecimento",
+      "name": "Conhecimento (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Por 1 rodada, você pode escolher um truque, esfera mágica ou talento mágico que possua e concedê-lo ao alvo. O alvo pode usar essa habilidade concedida como se a possuísse, usando seu próprio bônus de proficiência e modificadores de habilidade-chave. O alvo deve pagar os custos de pontos de magia normalmente. Se você tentar conceder um talento a um alvo que não possua a esfera base ou que já conheça o talento, este efeito falha."
+    },
+    {
+      "id": "universal-queima-de-vida",
+      "name": "Queima de Vida (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que, durante a próxima rodada, o alvo conjurar uma magia ou usar uma habilidade de esfera, ele deverá realizar com sucesso um teste de resistência de Carisma ou sofrer 1d10 de dano de força. Esse dano aumenta em 1d10 no 5º nível (2d10), no 11º nível (3d10) e no 17º nível (4d10)."
+    },
+    {
+      "id": "universal-desvio-de-atencao",
+      "name": "Desvio de Atenção (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Por 1 rodada, sempre que você ou o alvo se tornar alvo de uma magia ou habilidade de esfera hostil ou não inofensiva, você pode, como uma reação, redirecionar o efeito para a outra criatura. Se a outra criatura não quiser, um teste de resistência de Carisma bem-sucedido anula o redirecionamento do efeito."
+    },
+    {
+      "id": "universal-presenca",
+      "name": "Presença (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode revelar a localização e a presença do alvo para todas as criaturas dentro do alcance do vínculo de mana, permitindo que elas sejam vistas e ouvidas automaticamente por 1 rodada. Presença funciona mesmo que elas normalmente sejam invisíveis, etéreas ou estejam usando a ação Esconder-se. Criaturas etéreas parecem fantasmagóricas e translúcidas."
+    },
+    {
+      "id": "universal-alma-gemea",
+      "name": "Alma Gêmea (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Por 1 rodada, sempre que você ou o alvo se tornar alvo de uma magia ou habilidade de esfera inofensiva, você pode, como uma reação, copiá-la e aplicá-la também à outra criatura. Se a outra criatura não quiser, um teste de resistência de Carisma bem-sucedido anula a aplicação do efeito."
+    },
+    {
+      "id": "universal-atados",
+      "name": "Atados (vínculo de mana)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Vínculo de Mana",
+      "tags": [
+        "vinculo de mana"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode aplicar este talento (vínculo de mana) como uma ação bônus. Agora existe um cordão físico real que conecta você e seu alvo por 1 rodada. Esses laços físicos são correntes resistentes e duráveis ​​feitas de energia bruta que inibem o movimento, incluindo teletransporte. Durante essa rodada, você e o alvo não podem se mover além do alcance máximo do vínculo de mana sem destruir o vínculo (pontos de vida iguais a 3 vezes o seu nível + 5, CA 10) ou obter sucesso em um teste de Força (atletismo) contra a CD da sua esfera de mana. Destruir o vínculo não encerra o vínculo de mana, mas faz com que ele perca sua fisicalidade, removendo quaisquer efeitos concedidos por este talento. Enquanto estiverem conectados, você e o alvo ficam impossibilitados de se teletransportar para fora do alcance da ligação de mana, a menos que um teletransporte o outro com sucesso."
+    },
+    {
+      "id": "universal-estendido",
+      "name": "Estendido (metasfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metasfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração máxima das suas habilidades de esfera mágica aumenta em 1 nível."
+        },
+        {
+          "pm": 2,
+          "text": "A duração máxima das suas habilidades de esfera mágica aumenta em 2 níveis."
+        },
+        {
+          "pm": 3,
+          "text": "A duração máxima das suas habilidades de esfera mágica aumenta em 3 níveis."
+        },
+        {
+          "pm": 4,
+          "text": "A duração máxima das suas habilidades de esfera mágica aumenta em 4 níveis."
+        }
+      ],
+      "body": "Você pode aumentar a duração máxima das suas habilidades de esfera mágica. Esses aumentos não podem beneficiar uma habilidade de esfera mágica com duração instantânea, superior a 24 horas ou inferior a 1 minuto, nem podem aumentar a duração máxima das suas habilidades de esfera mágica além de 24 horas.\n\nDuração inicialDuração final1 minuto10 minutos10 minutos30 minutos30 minutos1 hora1 hora4 horas4 horas8 horas8 horas12 horas12 horas24 horas"
+    },
+    {
+      "id": "universal-glifo",
+      "name": "Glifo (metaesfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metaesfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você vincula um efeito de esfera mágica a um cubo desocupado de 1,5 metro dentro do alcance, criando um glifo por 1 hora ou até ser ativado. O efeito da esfera aprimorada deve ter como alvo uma criatura ou área e ter um tempo de conjuração de no máximo 1 ação. Qualquer criatura que entrar no espaço ativa o efeito; se normalmente for uma habilidade direcionada, a criatura é imediatamente afetada por essa habilidade, embora tenha direito a um teste de resistência normal, se apropriado. Se o efeito normalmente cria um efeito de área, o próprio cubo é usado como o centro desse efeito (mesmo que normalmente fosse centrado no conjurador) e todas as criaturas dentro da área são imediatamente afetadas pela habilidade, fazendo testes de resistência normais, se apropriado."
+        },
+        {
+          "pm": 1,
+          "text": "Seu glifo vincula um efeito de esfera mágica a um cubo desocupado de 3 metros, aumentando de tamanho no 5º nível (cubo de 4,5 metros), 11º nível (cubo de 6 metros) e 17º nível (cubo de 7,5 metros)."
+        },
+        {
+          "pm": 2,
+          "text": "Seu glifo dura 24 horas ou até ser ativado."
+        },
+        {
+          "pm": 4,
+          "text": "Seu glifo dura indefinidamente, até ser ativado ou dissipado. Seu total máximo de pontos de magia é reduzido pelo número de pontos de magia gastos na criação do glifo; essa redução desaparece quando o glifo é ativado ou dissipado, embora os pontos de magia não sejam recuperados até o momento em que você os recuperaria normalmente."
+        }
+      ],
+      "body": "Qualquer efeito de esfera mágica vinculado com duração maior que instantânea dura 1 minuto, independentemente de sua duração normal, embora você possa dissipá-lo em seu turno sem precisar de nenhuma ação.\n\nVocê só pode ter 1 glifo ativo por vez; colocar um segundo glifo dispensa o primeiro. No entanto, você pode selecionar este talento várias vezes, aumentando\n\nem 1 o número de glifos que você pode ter ativos simultaneamente a cada vez que o fizer."
+    },
+    {
+      "id": "universal-aprimorado",
+      "name": "Aprimorado (metasfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metasfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode adicionar metade do seu bônus de proficiência ao determinar o nível de magia efetivo do efeito da esfera ou o número efetivo de pontos de magia que ela custa para fins como superar dissipações e atingir criaturas com imunidades à magia."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-persistente",
+      "name": "Persistente (metasfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metasfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se você perder a concentração em um efeito de esfera mágica, o efeito continua a persistir por um número de rodadas igual ao seu bônus de proficiência. Você só pode ter um efeito de esfera persistente por vez; produzir um segundo efeito de esfera persistente faz com que o primeiro termine. Persistente (metasfera) não tem efeito em um efeito de esfera mágica com duração diferente de concentração (incluindo efeitos de esfera que foram aprimorados para persistir sem concentração)."
+    },
+    {
+      "id": "universal-em-massa",
+      "name": "Em Massa (metasfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metasfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode diminuir a duração de uma habilidade de esfera mágica com duração de pelo menos 10 minutos (mas não superior a 24 horas) em 2 níveis para aumentar o número de alvos pelo seu bônus de proficiência. Isso conta como um único efeito para fins de concentração, bem como para talentos ou habilidades que permitem que sejam descartados ou gastos para efeitos adicionais (como efeitos de tema e socorro); no entanto, quando descartados ou gastos, eles afetariam todos os alvos válidos."
+        },
+        {
+          "pm": 2,
+          "text": "Você pode aumentar o número de alvos de uma habilidade de esfera mágica com duração instantânea pelo seu bônus de proficiência, mas todos os alvos devem ser voluntários."
+        },
+        {
+          "pm": 3,
+          "text": "Você pode aumentar o número de alvos de uma habilidade de esfera mágica com duração instantânea pelo seu bônus de proficiência."
+        }
+      ],
+      "body": "Você pode aumentar o número de alvos que seus efeitos de esfera podem afetar por conjuração. Isso só pode ser aplicado a uma habilidade de esfera mágica que tenha como alvo uma única criatura ou objeto. Isso não pode ser usado em uma habilidade de esfera mágica que tenha como alvo uma área e cada alvo do efeito de esfera mágica deve estar dentro do alcance.\n\nAumentar o efeito de uma esfera mágica com Massa (metaesfera) não altera nem remove outras limitações do efeito da esfera (como o tamanho máximo das esferas de Telecinese ou Criação), e todos os alvos afetados devem ter um tamanho combinado menor que esse limite. Se você usar o talento Massa para realizar múltiplos ataques (como usar os aumentos abaixo com o poder de projétil da Telecinese ou soltar múltiplos objetos com a esfera Criação), você ainda não poderá realizar mais de um ataque, o que aumenta em 1 no 5º nível (2 ataques), 11º (3 ataques) e 17º (4 ataques).\n\nApenas um dos seguintes aumentos pode ser usado para aplicar os efeitos do talento Massa (metaesfera) a um único efeito de esfera.\n\nDuração inicialDuração final24 horas8 horas12 horas4 horas8 horas1 hora4 horas30 minutos1 hora10 minutos30 minutos1 minuto10 minutos1 rodada"
+    },
+    {
+      "id": "universal-oportunista",
+      "name": "Oportunista (metaesfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metaesfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando o movimento de uma criatura hostil provocar um ataque de oportunidade seu, você pode usar sua reação para conjurar um efeito de esfera na criatura, em vez de fazer um ataque de oportunidade. O efeito de esfera deve ter um tempo de conjuração de 1 ação ou 1 ação bônus e deve ter como alvo apenas essa criatura. Você só pode aplicar este aprimoramento uma vez até o início do seu próximo turno."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-acelerar",
+      "name": "Acelerar (metaesfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metaesfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Quando você tiver como alvo apenas a si mesmo ou um objeto que você esteja controlando (segurando, vestindo ou empunhando) com um efeito de esfera mágica, você pode reduzir o tempo de conjuração de uma habilidade de esfera mágica de uma ação para uma ação bônus."
+        },
+        {
+          "pm": 2,
+          "text": "Você pode usar o aprimoramento de talento Acelerar (metaesfera) ao escolher como alvo qualquer criatura voluntária, não apenas você mesmo."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-alcance",
+      "name": "Alcance (metaesfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metaesfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Dobre o alcance da sua habilidade de conjuração de esferas. Dobrar o alcance de um efeito de esfera com alcance de toque permite que você atinja criaturas a 1,5 metro a mais de distância."
+        }
+      ],
+      "body": "O alcance de suas habilidades de esfera mágica aumenta em 1 passo. Você pode escolher este talento até três vezes, e seus efeitos se acumulam. Quando você aumenta o alcance de uma habilidade de esfera mágica com um alcance inicial de Si mesmo, o alvo da sua habilidade deve ser um alvo voluntário. Efeitos de esfera cujo alcance aumenta conforme você sobe de nível têm seus aumentos de alcance baseados em nível aplicados após o alcance final.\n\nAlcance inicialAlcance finalAutoToqueToque9 metros9 metros18 metros18 metros36 metros36 metros90 metros90 metros180 metros"
+    },
+    {
+      "id": "universal-ataque",
+      "name": "Ataque (metaesfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metaesfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar um efeito de esfera mágica que tem como alvo uma única criatura ou objeto e é conjurado como uma ação, você pode aplicar o efeito através de um único ataque com arma, que substitui qualquer ataque mágico (se houver) exigido por esse efeito. Qualquer criatura ou objeto danificado pelo ataque também é afetado pelo efeito da esfera. Todas as outras limitações do efeito devem ser atendidas, incluindo custo em pontos de magia e alcance."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-ampliar",
+      "name": "Ampliar (metaesfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos da Metasfera",
+      "tags": [
+        "metaesfera"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar um efeito de esfera mágica que tem como alvo uma área, dobre a área de efeito (um raio de 1,5 metro se torna um raio de 3 metros, um cone de 9 metros se torna um cone de 18 metros, etc.)."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-atenuacao-de-sangue",
+      "name": "Atenuação de Sangue (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você desencadeia um evento de magia selvagem (mas não um evento maior), você pode optar por negar o evento reduzindo seu máximo de pontos de vida em 1 por nível. Essa redução só pode ser removida completando um descanso longo. Essa decisão deve ser tomada antes da rolagem na tabela de magia selvagem. Se você possuir pelo menos 4 talentos de magia selvagem, poderá usar essa habilidade em um evento maior (veja as Regras Variantes) reduzindo seu máximo de pontos de vida em 2 por nível."
+    },
+    {
+      "id": "universal-conjurador-cauteloso",
+      "name": "Conjurador Cauteloso (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar uma ação ou uma ação bônus para reduzir a chance de magia selvagem do próximo efeito de esfera que você conjurar antes do início do seu próximo turno em 25%. Essa habilidade não se acumula. Essa redução aumenta em 5% para cada talento de magia selvagem adicional que você possuir, até uma redução máxima de 50%."
+    },
+    {
+      "id": "universal-contra-ataque-caotico",
+      "name": "Contra-ataque Caótico (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [
+        {
+          "type": "text",
+          "text": "Contra-ataque ou a capacidade de conjurar dissipar magia"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando você encerra com sucesso um efeito de magia ou esfera usando Contrafeitiço ou dissipar magia, o conjurador sofre um aumento de 50% na chance de usar magia selvagem até o final do seu próximo turno. Essa penalidade aumenta em 10% para cada talento de magia selvagem que você possuir, até um máximo de 100%. O conjurador afetado não tem conhecimento desse aumento.",
+      "_needsReview": [
+        "prereq:unresolved:Contra-ataque ou a capacidade de conjurar dissipar magia"
+      ]
+    },
+    {
+      "id": "universal-maldicao-do-caos",
+      "name": "Maldição do Caos (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como uma ação bônus, você pode gastar um ponto de magia para carregar seu próximo ataque com energias disruptivas. A próxima criatura que sofrer dano com um ataque de arma antes do início do seu próximo turno aumenta sua chance de usar magia selvagem em 100% por um número de rodadas igual ao seu modificador de habilidade principal (mínimo 1). As criaturas afetadas não têm conhecimento dessa penalidade."
+    },
+    {
+      "id": "universal-mudanca-de-energia",
+      "name": "Mudança de Energia (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao conjurar uma explosão destrutiva ou uma magia de evocação que cause dano, você pode aumentar sua chance de magia selvagem para essa explosão destrutiva ou magia em 50% para alterar seu tipo de dano para um dos seguintes tipos: ácido, contundente, frio, fogo, relâmpago, perfurante ou cortante. Você também pode aumentar sua chance de magia selvagem em 100% para alterar o tipo de dano para força, necrótico, venenoso, psíquico ou radiante."
+    },
+    {
+      "id": "universal-aura-do-caos-maior",
+      "name": "Aura do Caos Maior (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode escolher excluir qualquer número de criaturas que você possa ver do efeito."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode escolher outra criatura a até 9 metros de distância em vez de si mesmo. Essa criatura emite a aura do caos em vez de você. Um teste de resistência de Carisma bem-sucedido nega o efeito, e o alvo pode fazer um novo teste de resistência no final de cada um de seus turnos para encerrá-lo antecipadamente."
+        },
+        {
+          "pm": 1,
+          "text": "A chance de magia selvagem aumenta para 100%."
+        }
+      ],
+      "body": "Você aprende novas e empolgantes maneiras de aprimorar sua aura do caos."
+    },
+    {
+      "id": "universal-surto-inspirado",
+      "name": "Surto Inspirado (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação bônus",
+      "range": "Pessoal",
+      "duration": "1 minuto",
+      "target": "Pessoal",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder a si mesmo um talento mágico adicional de uma esfera mágica que você possua; você deve atender a todos os pré-requisitos que o talento possua. Você aumenta a chance de magia selvagem em 100% sempre que usar o talento mágico concedido, seja conjurando uma habilidade de esfera concedida pelo talento ou aplicando os efeitos do talento a outro efeito de esfera mágica que você conjurar. Você mantém o conhecimento deste talento pela duração ou até conjurar Surto Inspirado novamente, o que ocorrer primeiro. Você pode conjurar Surto Inspirado duas vezes. Você recupera os usos gastos ao terminar um descanso curto ou longo."
+    },
+    {
+      "id": "universal-manipular-resultado",
+      "name": "Manipular Resultado (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você desencadeia um evento de magia selvagem (mas não um evento maior), você pode gastar uma reação para rolar duas vezes e escolher qual resultado obter. Você pode usar este talento um número de vezes igual ao número de talentos de magia selvagem que você possui. Completar um descanso longo restaura todos esses usos."
+    },
+    {
+      "id": "universal-superar-resistencia",
+      "name": "Superar Resistência (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao conjurar um efeito de esfera, você pode aumentar sua chance de magia selvagem para esse efeito em 100% para impor desvantagem em testes de resistência contra esse efeito."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "universal-custo-de-mudanca",
+      "name": "Custo de Mudança (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode reduzir o custo em pontos de magia e o número máximo de pontos de magia que pode gastar em uma habilidade ou efeito de esfera em 1 ponto de magia, até um custo mínimo de 1 ponto de magia. Aumente sua chance de magia selvagem em 50% para essa habilidade ou efeito.\n\nNo nível de personagem 10, você pode dobrar tanto a redução quanto o aumento da chance de magia selvagem."
+    },
+    {
+      "id": "universal-efeito-de-mudanca",
+      "name": "Efeito de Mudança (magia selvagem)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Magia Selvagem",
+      "tags": [
+        "magia selvagem"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você desencadeia um evento de magia selvagem (mas não um evento maior), você pode gastar um ponto de magia como uma reação após o resultado ser revelado para rolar 1d20. Em um resultado de 1 a 10, subtraia o resultado do resultado da sua rolagem de magia selvagem e fique com o novo resultado, mesmo que seja pior. Em um resultado de 11 a 20, subtraia dez da sua rolagem e adicione esse número ao seu resultado de magia selvagem, ficando com o novo resultado, mesmo que seja pior. Se você possuir pelo menos 6 talentos de magia selvagem, você pode usar esta habilidade ao desencadear um evento maior (se as regras de evento maior estiverem sendo usadas)."
+    },
+    {
+      "id": "universal-contrafeitico",
+      "name": "Contrafeitiço",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "text",
+          "text": "Dissipar ou pacote de mana"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Como uma reação que pode ser usada quando uma criatura dentro do alcance que você possa ver estiver conjurando uma magia ou efeito de esfera, você pode tentar usar Dissipar para interromper a conjuração ou criar um Vínculo de Mana com essa criatura."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Dissipar ou pacote de mana"
+      ]
+    },
+    {
+      "id": "universal-foco-mistico",
+      "name": "Foco Místico",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "text",
+          "text": "Habilidade para obter foco marcial (veja Esferas de Poder)"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que você usar um efeito de esfera mágica como uma ação, você pode gastar 1 ponto de magia como uma ação bônus para recuperar foco marcial.",
+      "_needsReview": [
+        "prereq:unresolved:Habilidade para obter foco marcial (veja Esferas de Poder)"
+      ]
+    },
+    {
+      "id": "universal-pacote-universal",
+      "name": "Pacote Universal",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha e obtenha um pacote universal que você ainda não possua. Você pode selecionar este talento várias vezes, obtendo um novo pacote a cada vez."
+    },
+    {
+      "id": "universal-contingencia",
+      "name": "Contingência (metaesfera)",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados Universais",
+      "tags": [
+        "metaesfera"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode aumentar o tempo de conjuração de uma habilidade de esfera mágica em 3 etapas para criar um efeito de esfera contingente que dura 1 semana. Isso não pode ser usado em uma habilidade de esfera mágica que não possa ter você como alvo, ou com um tempo de conjuração de 1 reação ou 1 minuto ou mais."
+        }
+      ],
+      "body": "Descreva uma circunstância que faça com que o efeito de esfera contingente seja ativado. Por exemplo, aprimorar uma Resistência à Energia (égide) com o talento Contingência (metaesfera) pode estipular que a Resistência à Energia (égide) entre em vigor quando você sofrer dano elemental.\n\nEste efeito entra em vigor imediatamente após a circunstância ser atendida pela primeira vez, quer você queira ou não.\n\nO efeito de esfera contingente só afeta você, mesmo que normalmente possa ter outros como alvo. Você só pode ter um efeito de esfera contingente ativo por vez.\n\nTempo inicial de conjuraçãoTempo final de conjuração1 ação bônus1 minuto1 ação10 minutos1 ação e 1 ação bônus1 hora\n\n¹: Este tempo de conjuração geralmente ocorre apenas com tradições de conjuração que possuem a desvantagem Conjuração Prolongada."
+    },
+    {
+      "id": "universal-duracao-extrema",
+      "name": "Duração Extrema",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados Universais",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Prolongada (metasfera)"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode reduzir o custo em pontos de magia dos aprimoramentos de talento Prolongada (metasfera) em 1 ponto de magia (mínimo 0). Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam; cada vez que o aprimoramento for escolhido, o custo em pontos de magia será reduzido em 1 ponto de magia (mínimo 0).",
+      "_needsReview": [
+        "prereq:unresolved:Prolongada (metasfera)"
+      ]
+    },
+    {
+      "id": "universal-oportunista-extremo",
+      "name": "Oportunista Extremo",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados Universais",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "talent",
+          "id": "universal-oportunista"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode reduzir o custo em pontos de magia do aprimoramento de talento Oportunista (metasfera) em 1 ponto de magia (mínimo 0)."
+    },
+    {
+      "id": "universal-alcance-extremo",
+      "name": "Alcance Extremo",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados Universais",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Alcance (metasfera) (3)"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode aumentar o alcance de suas habilidades de esfera mágica em 1 passo, como se tivesse escolhido o talento Alcance (metaesfera) mais uma vez. Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam. Se o alcance inicial da sua habilidade de esfera mágica for de 600 ou 1.000 pés, use a tabela abaixo para calcular o alcance final.\n\nAlcance inicialAlcance final180m300m300m600m",
+      "_needsReview": [
+        "prereq:unresolved:Alcance (metasfera) (3)"
+      ]
+    },
+    {
+      "id": "universal-golpe-extremo",
+      "name": "Golpe Extremo",
+      "sphere": "universal",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados Universais",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Golpe (metaesfera)"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode reduzir o custo em pontos de magia do aprimoramento de talento Golpe (metaesfera) em 1 ponto de magia (mínimo 0).",
+      "_needsReview": [
+        "prereq:unresolved:Golpe (metaesfera)"
+      ]
+    }
+  ],
+  "_reviewed": false
+}

@@ -1,0 +1,310 @@
+{
+  "id": "engenhosidade",
+  "name": "Engenhosidade",
+  "section": "martial",
+  "summary": "Construir engenhocas, dispositivos e máquinas com ferramentas e materiais.",
+  "theme": {
+    "h": 54,
+    "s": 56,
+    "sig": "engenhosidade"
+  },
+  "acquisition": {
+    "freeGroup": {
+      "tag": "dispositivo"
+    },
+    "freeLabel": "dispositivo",
+    "freePicks": 1,
+    "conditionals": [
+      {
+        "requires": "Ferramentas do consertador",
+        "addPicks": 1
+      }
+    ]
+  },
+  "talents": [
+    {
+      "id": "m-engenhosidade-bateria",
+      "name": "Bateria (acessório)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Acessórios",
+      "tags": [
+        "acessorio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um dispositivo que pode ser acoplado a um dispositivo consumível. Apenas uma bateria pode ser acoplada a um dispositivo individual por vez. Uma bateria é criada com um número de cargas igual ao seu modificador de habilidade chave (mínimo 1). Os dispositivos consumíveis podem gastar uma carga da bateria no lugar de um de seus usos limitados."
+    },
+    {
+      "id": "m-engenhosidade-aprimoramento-de-calcados",
+      "name": "Aprimoramento de Calçados (acessório)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Acessórios",
+      "tags": [
+        "acessorio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode modificar um conjunto de calçados existente com um dispositivo, como botas que fazem parte de um traje ou botas blindadas de uma armadura. Você pode conceder múltiplos benefícios ao mesmo calçado; cada modo concedido conta como um dispositivo separado para fins de complexidade.\n\nApenas um modo pode estar ativo por vez. Ativar, desativar ou alterar um modo é considerado interagir com um objeto.Sapatos Infláveis. As botas têm um modo de andar na água. Enquanto ativas, a velocidade em terra do usuário é reduzida pela metade, mas ele pode andar sobre líquido como se fosse sólido.Sapatos Magnéticos. As botas têm um modo magnético. Enquanto ativas, a velocidade em terra do usuário é reduzida pela metade, mas ele pode andar em superfícies metálicas, como paredes e tetos de metal, com a mesma facilidade com que se estivessem no chão.Passos Motorizados. As botas têm um modo de corredor. Enquanto ativas, a velocidade em terra do usuário é aumentada em 3 metros.Nadadeiras Retráteis. As botas têm um modo de nadador. Enquanto ativas, o usuário se move com metade da velocidade em terra, mas pode se mover em sua velocidade máxima enquanto nada.Garras Retráteis. As botas têm um modo de escalador. Enquanto ativas, o usuário se move com metade da velocidade ao caminhar ou correr, mas pode se mover em sua velocidade máxima enquanto escala.\n\nBotas Foguete. (consumível) As botas têm um modo de voo. Enquanto ativas, a velocidade em terra do usuário é reduzida pela metade, mas ele ganha uma velocidade de voo de 4,5 metros por 1 minuto. Se ativada no meio de um teste de Destreza (Acrobacia), isso concede vantagem a esse teste."
+    },
+    {
+      "id": "m-engenhosidade-arma-integrada",
+      "name": "Arma Integrada (acessório)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Acessórios",
+      "tags": [
+        "acessorio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um dispositivo que conecta dois objetos, como duas armas ou uma arma e um escudo, de forma que empunhar um significa empunhar o outro. Se qualquer um dos itens exigir duas mãos para ser empunhado ou tiver a qualidade pesada, o item combinado inteiro também exigirá duas mãos ou não poderá ser empunhado por criaturas Pequenas. Anexar ou destacar um objeto ao dispositivo conta como interagir com um objeto.\n\nPara +1 de complexidade cada, você pode integrar um objeto adicional ao dispositivo."
+    },
+    {
+      "id": "m-engenhosidade-aprimoramento-de-arma-corpo-a-corpo",
+      "name": "Aprimoramento de Arma Corpo a Corpo (acessório)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Acessórios",
+      "tags": [
+        "acessorio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Empunhadura Balanceada. A arma ganha um dos seguintes benefícios:\n\n•Armas pesadas são tratadas como se não possuíssem essa propriedade de arma.\n\n•Armas de uma mão que não possuem a propriedade leve são tratadas como se possuíssem essa propriedade de arma.\n\n•Armas leves que não possuem a propriedade finesse são tratadas como se possuíssem essa propriedade de arma.\n\nDano Aprimorado. A arma conta como mágica para o propósito de superar resistência.\n\nLâmina Pesada. (consumível) A arma causa +1d4 de dano adicional por 1 minuto."
+    },
+    {
+      "id": "m-engenhosidade-aprimoramento-de-arma-de-alcance",
+      "name": "Aprimoramento de Arma de Alcance (acessório)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Acessórios",
+      "tags": [
+        "acessorio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Cuspidor de Munição. (complexidade 2) Este dispositivo é acoplado a uma única arma com a propriedade munição. A ativação deste dispositivo fornece à arma acoplada um suprimento de munição pronto. Este dispositivo não modifica as ações necessárias para carregar munição na arma acoplada, e esta munição é sempre destruída após um ataque, independentemente de atingir ou não o alvo.\n\nEste dispositivo não pode fornecer munição para armas de alcance excepcionalmente grandes, como armas de cerco, nem pode criar munição exótica para tecnologia alienígena (armas fora da era do cenário). Usar rajada de fogo (ou outra propriedade ou habilidade de arma que exija o gasto de 5 ou mais cartuchos de munição em um único ataque) faz com que este dispositivo seja desativado após o ataque.\n\nMira de Longo Alcance. O alcance da arma (normal e longo) dobra.\n\nTiro Pressurizado. Você pode gastar uma ação para criar pressão dentro do tiro. O próximo ataque feito com a arma em 1 minuto causa 1d10 de dano adicional.\n\nAlavanca de Velocidade. Só pode ser anexada a uma arma com a propriedade de carregamento. A propriedade de carregamento da arma agora permite até 2 ataques por rodada em vez de 1. Para uma complexidade adicional de +1, a arma ignora completamente a propriedade de carregamento."
+    },
+    {
+      "id": "m-engenhosidade-aprimoramento-de-escudo",
+      "name": "Aprimoramento de Escudo (acessório)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Acessórios",
+      "tags": [
+        "acessorio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar qualquer um dos seguintes dispositivos, que podem ser anexados a um escudo.\n\nDispensador. O escudo pode armazenar até 2 objetos que podem ser segurados em uma mão. Você conta como segurar o objeto em sua mão enquanto usa o escudo.\n\nVocê não pode usar isso para fazer um ataque com uma arma contida no escudo, mas pode usá-lo para beber uma poção quando suas mãos estiverem ocupadas, segurar uma arma de arremesso extra (desde que sua outra mão esteja livre para arremessar essa arma), etc. Recarregar um dispensador é uma ação, mas sacar do dispensador nem conta como interagir com um objeto. Para +1 de complexidade cada, você pode aumentar o número de objetos armazenados em 2.\n\nExpansível. O escudo possui um modo de parede. Como uma ação, você pode expandir o escudo para criar uma parede de 1,5 m de largura que fornece três quartos de cobertura para qualquer um atrás dela (concedendo um bônus de +5 em testes de resistência de CA e Destreza). Você não pode mover a parede enquanto ela estiver expandida e deve liberar o escudo ou retorná-lo ao normal como uma interação com um objeto antes de se mover.\n\nMagnetizado. (complexidade 2) Se algo atacar o portador deste escudo com uma arma branca de metal e errar, o portador pode fazer um teste de desarmar contra ele como reação."
+    },
+    {
+      "id": "m-engenhosidade-aprimoramento-de-traje",
+      "name": "Aprimoramento de Traje (acessório)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Acessórios",
+      "tags": [
+        "acessorio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar uma série de dispositivos que aprimoram um traje existente, como um conjunto de Armadura:\n\nBolsa de Ar. (consumível) A roupa concede ao seu portador 1 hora de ar respirável, que pode ser usado para respirar debaixo d'água, evitar os efeitos de gases,\n\netc. Alternar entre o ar da bolsa de ar e o ar da bolsa de ar conta como interação com um objeto.\n\nCamuflagem. (consumível) Você pode ativar este traje para contar como levemente obscurecido por 1 minuto. Enquanto ativo, você pode fazer testes de Furtividade para se Esconder, mesmo se observado.\n\nParaquedas. (consumível) O traje possui um paraquedas que pode ser ativado como reação ao cair. O usuário cai apenas 18 metros por rodada e não sofre dano de queda.\n\nMateriais Lisos. O traje concede ao usuário vantagem em testes de Destreza (Acrobacia) feitos para resistir ou escapar de um agarramento."
+    },
+    {
+      "id": "m-engenhosidade-pacote-de-dano-de-arma",
+      "name": "Pacote de Dano de Arma (acessório)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Acessórios",
+      "tags": [
+        "acessorio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um dispositivo acoplável que altera o dano causado por uma arma existente. Se acoplada a uma arma de longo alcance que não seja de arremesso (como uma besta), o dispositivo é aplicado à munição da arma. Se acoplada a uma arma consumível (como um frasco de ácido), o dispositivo quebra após o uso.\n\nEste dispositivo tem uma complexidade determinada pelo tipo de dano selecionado.\n\n•Complexidade 1: Dano contundente, perfurante ou cortante\n\n•Complexidade 2: Dano ácido, frio, fogo, raio ou veneno\n\n•Complexidade 3: Dano necrótico, psíquico, radiante ou trovejante"
+    },
+    {
+      "id": "m-engenhosidade-dispositivos-de-artilheiro",
+      "name": "Dispositivos de Artilheiro (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar qualquer um dos seguintes dispositivos:\n\nDetonador. Um detonador é um objeto consumível portátil que deve ser armado (considerado como interação com um objeto), após o qual explode após um período de tempo definido (1 rodada, 1 minuto, 10 minutos ou 1 hora) escolhido no momento da ativação.\n\nVocê pode arremessar o detonador a até 18 metros de distância com uma ação. Quando um detonador explode, ele é destruído e causa 1d6 de dano de fogo, +1d6 no 5º (2d6), 11º (3d6) e 17º nível (4d6), a qualquer coisa a até 1,5 metro dele. Os alvos podem realizar um teste de resistência de Destreza para metade do dano. Além disso, ao armar um detonador, você pode anexar um veneno ou item alquímico a ele como parte da mesma ação, como fogo de alquimista, pólvora flamejante ou outros. Quando o detonador explode, qualquer criatura que falhe no teste de resistência de Destreza também é afetada pelo item alquímico ou veneno. Você pode usar sua Potência da esfera de Alquimia para aumentar a CD de um item usado, mas isso não terá nenhum outro efeito mecânico no veneno ou item alquímico. Se você tiver um dispositivo de Controle Remoto, poderá usar uma reação para fazer com que um detonador dentro do alcance do sinal exploda imediatamente.\n\n•Complexidade 2: Você não está mais limitado a anexar apenas itens alquímicos ou venenos ao detonador. Agora você pode anexar consumíveis mágicos, incluindo pós mágicos, óleos, poções e pergaminhos.\n\nGancho e Roldana. Um gancho e uma roldana devem ser segurados em uma mão para serem usados. O usuário pode pegar objetos a até 9 metros de distância que poderiam facilmente segurar com uma mão. O objeto se move em linha reta até a mão do usuário e, se passar ao alcance natural de uma criatura, ela pode tentar um teste de Destreza (Prestidigitação) contra sua CD de Esfera como reação para agarrar o objeto conforme ele passa. Você também pode usar um gancho e uma polia para balançar a corda.\n\n•Complexidade 2: Você pode criar um gancho e uma polia que se prendem a um cinto ou pulso, o que significa que podem ser usados sem precisar ser segurados com uma mão. Você também pode criar um gancho e uma polia que permitem que você, ao balançar a corda, se desloque até o local onde ele está preso.\n\n•Complexidade 3: Você pode criar um gancho e uma polia com ambas as opções de complexidade 2.\n\nLançador. O lançador deve ser segurado com uma mão para ser usado, com o objeto a ser arremessado na outra. Enquanto você estiver segurando um lançador, você dobra a distância que pode arremessar um objeto, incluindo uma arma de arremesso.\n\n•Complexidade 2: Você pode criar um lançador que se prende ao pulso ou cinto, podendo ser usado sem precisar ser segurado com uma mão."
+    },
+    {
+      "id": "m-engenhosidade-armas-dobraveis",
+      "name": "Armas Dobráveis (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um gadget que funciona como qualquer arma simples ou marcial, mas pode se dobrar em um objeto pequeno e discreto de mão (ou até mesmo um anel ou pulseira, no caso de uma arma leve) como parte de outra ação (assim como sacar uma arma como parte de um ataque). A menos que uma criatura gaste ações para esconder o dispositivo propositalmente com um teste de Destreza (Prestidigitação), uma arma dobrada só é considerada passivamente escondida usando a CD da sua esfera e pode ser descoberta com Inteligência passiva (Investigação).\n\nComplexidade 2: O dano mínimo da arma no dado se torna igual ao seu bônus de proficiência (máximo: o maior número no dado).\n\nComplexidade 2: Sempre que você dobrar a arma fora da vista de outros, você pode escondê-la como parte da mesma ação. Encontrar o dispositivo escondido requer\n\num teste de Sabedoria (Percepção) ou um teste de Inteligência (Investigação); ambos os testes são feitos com desvantagem contra a CD da sua esfera +5. Um teste bem-sucedido revela o dispositivo escondido."
+    },
+    {
+      "id": "m-engenhosidade-dispositivos-de-comunicacao",
+      "name": "Dispositivos de Comunicação (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar qualquer um dos seguintes dispositivos:\n\nDispositivo de Correspondência. Você cria um número de dispositivos portáteis igual ao seu bônus de proficiência. Qualquer pessoa que possua um dispositivo pode falar e ouvir qualquer pessoa que possua outro dispositivo. Vários conjuntos de dispositivos de correspondência (criados por você ou por outros) podem ser sincronizados para se comunicarem como se fossem todos do mesmo conjunto, desde que todos os usuários estejam cientes, dispostos e dentro do alcance. O alcance do dispositivo de correspondência é de 3,2 km em terreno plano, mas esse alcance é reduzido pela metade em florestas ou colinas e dividido em quatro partes em terrenos montanhosos ou através da água.\n\nDispositivo de Criptologia. Você cria um conjunto de 2 dispositivos de criptografia/descriptografia. Enquanto alguém estiver usando um desses dispositivos, poderá criptografar uma mensagem que escrever ou falar, de forma que ela seja compreensível apenas para alguém usando o outro dispositivo. Vários conjuntos de dispositivos de criptologia (criados por você ou por outro praticante) podem ser calibrados para usar a mesma codificação, desde que todos sejam feitos pela mesma pessoa e ao mesmo tempo.\n\nAdaptando Dispositivos de Correspondência ao Cenário\n\nMestres e jogadores são incentivados a serem criativos ao explicar como um dispositivo de esfera Consertador funciona com base no cenário. Abaixo estão alguns exemplos de como o Dispositivo de Correspondência pode ser adaptado para se adaptar a uma fonte de energia específica:\n\n•Dispositivos com energia alquímica: Cada metade do par de dispositivos contém uma gosma criada alquimicamente que é simpática à outra, respondendo às ações realizadas por suas contrapartes.\n\n•Dispositivos com energia mecânica: Cada metade do par de dispositivos é um pequeno mensageiro mecânico que se dirige ao seu parceiro e, ao fazê-lo, entrega a mensagem.\n\n•Dispositivos com energia energética: Cada metade do par se comunica com a outra usando vários sinais, como ondas de rádio.\n\n•Dispositivos movidos a carne: Cada um dos pares de dispositivos é, na verdade, feito de matéria cerebral de criaturas telepáticas, com a qual transmite sons audivelmente um para o outro.\n\n•Dispositivos movidos a magia: O dispositivo é alimentado por itens mágicos descartados, como varinhas quebradas ou pedras de envio."
+    },
+    {
+      "id": "m-engenhosidade-oculos",
+      "name": "Óculos (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um dispositivo que aparece e funciona como um conjunto de óculos de sua própria criação. Esses óculos concedem um dos seguintes benefícios. Você pode criar um conjunto de óculos que concede múltiplos benefícios; cada modo concedido conta como um dispositivo separado para fins de complexidade.\n\nAté dois conjuntos de lentes podem estar ativos ao mesmo tempo, mas ter dois conjuntos de lentes ativos impõe desvantagem em testes baseados em visão. Ativar, desativar ou trocar uma lente é considerado interagir com um objeto.\n\nLente Etérica. Os óculos têm um modo de visão etérea. Enquanto ativos, o usuário pode ver criaturas ou objetos invisíveis e etéreos dentro de seu alcance normal de visão, mas fica cego para criaturas e objetos visíveis.\n\nLente Microscópica. Os óculos têm um modo de microvisão. Enquanto ativo, o usuário não consegue enxergar a mais de 9 metros de distância, mas ganha vantagem em todos os testes feitos para examinar uma criatura ou objeto de perto, incluindo testes de Sabedoria (Sobrevivência) para seguir ou identificar rastros, testes de Inteligência para avaliar o valor de um item e testes de Destreza para desativar uma armadilha.\n\nLente Espelhada. Os óculos possuem um modo de refração. Enquanto ativo, o usuário tem desvantagem em testes de Sabedoria (Percepção), mas vantagem em todos os testes de Inteligência (Investigação) feitos para descrer de ilusões. Além disso, enquanto o modo de refração estiver ativo, o usuário é tratado como se estivesse sempre interagindo com ilusões com componentes visíveis e ganha vantagem em testes de resistência contra ataques visuais.\n\nLente de Visão Noturna. Os óculos possuem um modo de visão noturna. Enquanto ativo, o usuário possui visão no escuro a 18 metros, mas também sensibilidade à luz solar, impondo desvantagem em jogadas de ataque e testes de Sabedoria (Percepção) que dependem da visão sob a luz solar.\n\nLente Telescópica. Os óculos possuem um modo de visão macro. Enquanto ativos, o usuário não consegue enxergar a menos de 9 metros, mas enxerga objetos com o dobro do seu tamanho normal, como se estivesse usando uma luneta."
+    },
+    {
+      "id": "m-engenhosidade-multiferramenta",
+      "name": "Multiferramenta (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um tipo de ferramenta de artesão ou um conjunto de ferramentas de ladrão como um dispositivo. Qualquer pessoa proficiente com a ferramenta embutida pode dobrar seu bônus\n\nde proficiência ao usá-la; isso não se acumula com perícia e outras características similares.\n\nPara +1 de complexidade cada, a multiferramenta ganha partes dobráveis que permitem que ela atue como um tipo adicional de ferramenta de artesão ou um conjunto de ferramentas de ladrão."
+    },
+    {
+      "id": "m-engenhosidade-protese",
+      "name": "Prótese (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Este dispositivo substitui uma mão, braço, pé, perna ou apêndice similar que foi perdido ou removido e funciona normalmente para esse membro.\n\nPor +1 de complexidade por uso, este membro pode ser ativado para conceder força aumentada, concedendo vantagem em qualquer teste de habilidade que exija o membro substituído por 1 minuto. Embora não seja um dispositivo consumível, uma bateria pode ser acoplada a um membro protético, permitindo que seu usuário gaste cargas em vez de usos."
+    },
+    {
+      "id": "m-engenhosidade-dispositivos-de-gravacao",
+      "name": "Dispositivos de Gravação (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar qualquer um dos seguintes dispositivos:\n\nGravador de Áudio. (consumível) Você cria um dispositivo gravador que cabe na sua mão. Uma vez ativado, o gravador de áudio é capaz de gravar som de qualidade média por até 1 hora. Você pode reproduzir o áudio armazenado no dispositivo ou, se tiver o dispositivo Controle Remoto, pode ouvir o áudio pelo seu controle remoto enquanto estiver dentro do alcance, mesmo enquanto ele estiver gravando ativamente.\n\nGravador de Imagens. (consumível) Você cria um dispositivo de câmera que pode gravar imagens do que observa. O gravador de imagens pode tirar até 10 fotografias, que são imediatamente gravadas em um pedaço de papel contido dentro do dispositivo após serem tiradas.\n\n•Complexidade: Para +1 de complexidade, você pode aprimorar um gravador de imagens para se tornar um gravador de vídeo. Para +1 de complexidade adicional, ele também pode conter um gravador de áudio. (consumível) Uma vez ativado, o gravador de vídeo grava imagens em movimento por 1 hora. Como um dispositivo de áudio, você pode reproduzir o vídeo armazenado se tiver o dispositivo ou, se tiver um controle remoto, pode visualizá-lo remotamente, mesmo enquanto estiver gravando ativamente."
+    },
+    {
+      "id": "m-engenhosidade-controle-remoto",
+      "name": "Controle Remoto (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria um dispositivo que se parece com um pequeno dispositivo portátil, equipado com uma tela circular e um conjunto de botões. O controle remoto permite que você ative ou desative outro dispositivo que você criou a até 36 metros de distância."
+    },
+    {
+      "id": "m-engenhosidade-mochila",
+      "name": "Mochila (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Complexidade: 2Você cria um dispositivo que conta como uma mochila, exceto que, em vez de armazenar itens, ele concede um dos seguintes benefícios. Você pode criar uma mochila com vários benefícios, cada um contando como um dispositivo separado. Cada opção de mochila tem complexidade 2.\n\nBraços Adicionais. A mochila concede ao usuário um braço adicional. Este braço tem um alcance de 1,5 m e pode empunhar armas, usar um escudo ou manipular objetos como qualquer outro braço. Este gadget pode ser concedido várias vezes, concedendo um novo braço a cada vez.\n\nCongelador. A mochila possui uma caixa de gelo, que pode conter tanto quanto uma mochila normal. Qualquer coisa dentro da mochila por 1 minuto é reduzida a temperaturas congelantes. Armas ou munições congeladas devem ser sacadas para serem usadas, mas causam 1d4 de dano de frio adicional no primeiro ataque bem-sucedido realizado em 1 minuto. A quantidade de dano de frio adicional aumenta em um passo de dado no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).\n\nForno. A mochila possui uma caixa térmica interna. Ela funciona como um freezer, exceto que aquece objetos em vez de congelá-los. Pode ser usada para chocar ovos, aquecer comida, etc., e quando usada com armas e munições, causa dano de fogo em vez de dano de frio.\n\nCasco de Tartaruga. A mochila concede ao usuário uma carapaça blindada nas costas. Ataques de oportunidade feitos contra o usuário têm desvantagem e, quando caídos, criaturas a até 1,5 metro não ganham mais vantagem em jogadas de ataque contra eles."
+    },
+    {
+      "id": "m-engenhosidade-dispositivos-de-sobrevivencia",
+      "name": "Dispositivos de Sobrevivência (dispositivo)",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Dispositivos",
+      "tags": [
+        "dispositivo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar qualquer um dos seguintes dispositivos:\n\nFarol de Socorro. Você pode ligar um farol de socorro, que emite ruídos altos, luzes brilhantes e, se alguém estiver usando um dispositivo de correspondência dentro do alcance, um sinal que pode ser detectado. Qualquer criatura em um raio de 3,2 km de território aberto pode localizar o farol de socorro (menos se estiver no subsolo ou muito obscurecido).\n\nExtintor de Incêndio. (consumível) Este dispositivo cilíndrico possui um bico em uma extremidade e uma alça em um dos lados. Um extintor de incêndio pode ser usado como uma ação para criar um cone de vapor nebuloso de 4,5 metros que extingue rapidamente incêndios dentro de sua área de efeito. Se usado em uma criatura baseada em fogo (como um elemental de fogo), causa 1d10 de dano de frio, que aumenta em\n\n1d10 no 5º (2d10), 11º (3d10) e 17º nível (4d10). Criaturas afetadas podem tentar um teste de Destreza para reduzir o dano pela metade.\n\nContra efeitos mágicos de fogo, como aqueles criados por uma parede de fogo ou magia similar, o extintor de incêndio extingue apenas a parte do efeito maior com a qual seus vapores entram em contato direto. Chamas mágicas contínuas, como as de uma arma flamejante ou criatura de fogo, são suprimidas por 1 minuto antes de reacenderem automaticamente.\n\nEste dispositivo também pode ser usado como uma reação para neutralizar uma magia ou efeito de fogo, desde que a fonte do efeito esteja na área de efeito do extintor.\n\nLanterna. Uma lanterna pode ser usada para criar um feixe de luz brilhante em um cone de 18 metros e luz fraca por 18 metros além. Este dispositivo pode ser segurado na mão ou anexado como acessório a uma vestimenta, como uma armadura. Você pode quebrar este dispositivo como uma ação, realizando um teste de habilidade chave contra a CD da magia de um efeito de escuridão mágica em um raio de 18 metros para dissipá-lo.\n\nPara +1 de complexidade, a lanterna pode conceder vantagem em testes de Percepção feitos para avistar criaturas sob sua luz.\n\nAbrigo. Você pode criar um dispositivo que forneça abrigo portátil, semelhante a uma tenda. O abrigo tem espaço para 4 criaturas Médias e pode ser totalmente erguido ou totalmente desmontado como uma Ação. As criaturas dentro do abrigo são protegidas da maioria dos perigos ambientais, como calor, frio, ventos, etc. No entanto, condições climáticas particularmente fortes (fogos ativos, magia congelante, tornados, etc.) são poderosas demais para serem bloqueadas pelo abrigo."
+    },
+    {
+      "id": "m-engenhosidade-criacao-eficiente",
+      "name": "Criação Eficiente",
+      "sphere": "engenhosidade",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aumenta o número de dispositivos que você pode fabricar de uma só vez com o seu modificador de habilidade principal (mínimo: 1)."
+    }
+  ],
+  "_reviewed": false
+}

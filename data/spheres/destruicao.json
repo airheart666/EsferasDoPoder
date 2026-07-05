@@ -1,0 +1,1371 @@
+{
+  "id": "destruicao",
+  "name": "Destruição",
+  "section": "magic",
+  "summary": "Desencadear explosões de energia destrutiva de vários tipos e formatos.",
+  "theme": {
+    "h": 6,
+    "s": 68,
+    "sig": "destruicao"
+  },
+  "acquisition": null,
+  "talents": [
+    {
+      "id": "destruicao-explosao-destrutiva",
+      "name": "Explosão Destrutiva",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Instantânea",
+      "target": "1 criatura ou objeto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A explosão destrutiva causa 1d8 de dano + 1d8 de dano a cada 2 níveis."
+        }
+      ],
+      "body": "Escolha um tipo de explosão e uma forma de explosão que você possua. Os alvos afetados sofrem 1d8 de dano de um tipo determinado pelo talento (tipo de explosão) aplicado à explosão destrutiva. O dano da explosão destrutiva aumenta em 1d8 quando você atinge o 5º nível (2d8), o 11º nível (3d8) e o 17º nível (4d8).\n\nAo aprimorar uma explosão destrutiva com talentos da esfera de Destruição, você só pode aplicar 1 talento (tipo) e 1 talento (formato) a cada explosão destrutiva individual."
+    },
+    {
+      "id": "destruicao-quebra-de-forma",
+      "name": "Quebra de Forma (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas atingidas têm desvantagem por 1 minuto. Criaturas afetadas têm direito a um novo teste de resistência para encerrar o efeito sobre si mesmas ao final de cada um de seus turnos."
+        }
+      ],
+      "body": "Sua explosão faz com que os alvos afetados tenham seus corpos dobrados e contorcidos de maneiras prejudiciais, deslocando ossos, comprimindo nervos e rompendo tendões.\n\nSua explosão destrutiva causa dano de concussão. Qualquer talento (forma de explosão) que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Força. Qualquer criatura atingida pela explosão tem desvantagem em testes de Força (Atletismo) e Destreza (Acrobacia) até o início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-veneno",
+      "name": "Veneno (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Em vez disso, as criaturas"
+        }
+      ],
+      "body": "Um veneno jorra de sua forma, envenenando aqueles que entram em contato com ele.\n\nSua explosão destrutiva causa dano de veneno. Qualquer talento (forma de explosão) que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição. Qualquer criatura atingida pela explosão fica envenenada até o início do seu próximo turno.\n\natingidas ficam envenenadas por 1 minuto. As criaturas afetadas têm direito a um novo teste de resistência para encerrar o efeito sobre si mesmas ao final de cada um de seus turnos."
+    },
+    {
+      "id": "destruicao-restringente",
+      "name": "Restringente (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Membros e tentáculos se estendem através de um buraco no espaço, golpeando e agarrando seu alvo.\n\nSua explosão destrutiva causa dano de impacto. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Força. Qualquer criatura atingida pela explosão fica agarrada até o final do seu próximo turno."
+    },
+    {
+      "id": "destruicao-espectral",
+      "name": "Espectral (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Invocações de outro mundo se solidificam brevemente para realizar um ataque pelas laterais antes de desaparecerem no éter.\n\nSua explosão destrutiva causa dano cortante. Qualquer criatura atingida pela explosão é tratada como se sempre houvesse um inimigo não incapacitado a 1,5 metro dela até o início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-corrosiva-tipo-alterar-poder",
+      "name": "Corrosiva (tipo) [alterar poder]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Lodo ácido adere ao chão sob o alvo ou à área de efeito por 1 minuto. Qualquer criatura que entrar nesses quadrados sofre dano ácido igual ao número de dados de dano rolados. Um alvo só pode ser afetado uma vez por rodada."
+        }
+      ],
+      "body": "Energias destrutivas quebram e desintegram lentamente tudo o que tocam.\n\nSua explosão destrutiva causa dano ácido. Qualquer criatura atingida pela explosão sofre dano ácido adicional igual ao número de dados de dano rolados no início do seu próximo turno; esse dano ácido adicional não conta como parte do dano inicial da explosão destrutiva para fins de interação com outros talentos ou habilidades que aumentariam seu dano."
+    },
+    {
+      "id": "destruicao-fisico-tipo-criar-poder",
+      "name": "Físico (tipo) [criar poder]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O objeto ou objetos se despedaçam e permanecem por 1 minuto, tornando o quadrado ou quadrados afetados pela explosão destrutiva terreno difícil por 1 minuto."
+        }
+      ],
+      "body": "Você invoca um objeto que voa em direção ao alvo e o atinge antes de desaparecer.\n\nCada vez que você aplicar este talento (tipo), escolha contundente, perfurante ou cortante. Sua explosão destrutiva causa dano do tipo escolhido. Sua explosão destrutiva não conta como mágica para efeitos que concedem resistência, imunidade ou outros benefícios contra magia."
+    },
+    {
+      "id": "destruicao-obscurecido",
+      "name": "Obscurecido (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas sem visão no escuro ficam cegas por um número de rodadas igual ao seu bônus de proficiência. Criaturas com visão no escuro consideram todas as criaturas como tendo cobertura parcial (+2 na CA e nos testes de resistência de Destreza) por um número de rodadas igual ao seu bônus de proficiência. Criaturas capazes de enxergar através da escuridão mágica não sofrem penalidade. Um teste de resistência de Sabedoria bem-sucedido reduz essas durações para 1 rodada."
+        }
+      ],
+      "body": "Sombras entorpecem os nervos e embotam os sentidos das criaturas inimigas.\n\nSua explosão destrutiva causa dano de frio. Qualquer criatura atingida pela explosão considera todas as criaturas como tendo cobertura parcial (+2 na CA e nos testes de resistência de Destreza) e sofre desvantagem em todos os testes de Percepção que dependem da visão até o início do seu próximo turno. Criaturas com visão no escuro ou a capacidade de enxergar através da escuridão mágica ignoram este efeito."
+    },
+    {
+      "id": "destruicao-tinta",
+      "name": "Tinta (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração da desvantagem aumenta para 1 minuto."
+        }
+      ],
+      "body": "A energia sombria permanece em quem toca.\n\nSua explosão destrutiva causa dano necrótico. Qualquer criatura atingida pela explosão tem desvantagem em testes de resistência contra os efeitos da esfera Sombria até o final do seu próximo turno. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Sabedoria."
+    },
+    {
+      "id": "destruicao-drenante",
+      "name": "Drenante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Qualquer criatura atingida pela explosão não poderá mais fazer um teste de resistência para evitar o aumento de seu nível de exaustão."
+        }
+      ],
+      "body": "A vida se esvai da criatura, deixando o alvo como uma casca vazia.\n\nSua explosão destrutiva causa dano necrótico. Qualquer criatura atingida pela explosão deve ser bem-sucedida em um teste de resistência de Constituição ou terá seu nível de exaustão aumentado em 1 por um número de rodadas igual ao seu bônus de proficiência. Este efeito não se acumula. Qualquer talento (forma de explosão) que permita um teste de resistência de Destreza agora permite um teste de resistência de Constituição."
+    },
+    {
+      "id": "destruicao-necrotico",
+      "name": "Necrótico (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração da desvantagem aumenta para 1 minuto."
+        }
+      ],
+      "body": "Energia negativa satura o alvo, tornando-o suscetível à magia da morte.\n\nSua explosão destrutiva causa dano necrótico. Qualquer criatura atingida pela explosão tem desvantagem em testes de resistência contra efeitos da escola de Necromancia e da Esfera da Morte até o final do seu próximo turno. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza agora permite um teste de resistência de Constituição."
+    },
+    {
+      "id": "destruicao-psionico",
+      "name": "Psiônico (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você também tem vantagem em testes de resistência contra criaturas atingidas pela explosão."
+        }
+      ],
+      "body": "Pensamentos superficiais são arrancados do alvo e momentaneamente projetados em sua mente, concedendo-lhe conhecimento sobre seus futuros ataques.\n\nSua explosão destrutiva causa dano psíquico. Qualquer criatura atingida pela explosão tem desvantagem em jogadas de ataque contra você até o final do seu próximo turno. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Inteligência."
+    },
+    {
+      "id": "destruicao-diluvio-psiquico",
+      "name": "Dilúvio Psíquico (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração que uma criatura ferida deve escolher usar uma ação ou ação bônus aumenta para 1 minuto. Criaturas afetadas têm direito a um novo teste de resistência para encerrar o efeito sobre si mesmas ao final do seu turno."
+        }
+      ],
+      "body": "Informações sensoriais sobrecarregam a mente do alvo, resultando em inação.\n\nSua explosão destrutiva causa dano psíquico. Qualquer criatura atingida pela explosão deve fazer um teste de resistência de Inteligência ou, então, por 1 rodada em seu turno, ela pode usar uma ação ou uma ação bônus, não ambas. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Inteligência."
+    },
+    {
+      "id": "destruicao-degradante",
+      "name": "Degradante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas feridas devem ser bem-sucedidas em um teste de resistência de Constituição ou não se beneficiarão da regeneração até o início do seu próximo turno."
+        }
+      ],
+      "body": "A resistência da criatura enfraquece, tornando-a mais suscetível aos ataques de seus aliados.\n\nSua explosão destrutiva causa dano de força. Qualquer criatura ferida pela explosão tem todos os ataques feitos contra ela tratados como mágicos até o início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-atrofiante",
+      "name": "Atrofiante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Escolha um atributo; Criaturas danificadas devem ser bem-sucedidas em um teste de resistência de Constituição ou sofrerão desvantagem em testes de habilidade do tipo escolhido por 1 minuto."
+        }
+      ],
+      "body": "Os membros e músculos da criatura atrofiam, dificultando o movimento.\n\nSua explosão destrutiva causa dano necrótico. Qualquer criatura ferida pela explosão tem sua velocidade de movimento reduzida em 3 metros (até um mínimo de 1,5 metro) por 1 minuto. Aplicações múltiplas desta penalidade se acumulam."
+    },
+    {
+      "id": "destruicao-amaldicoada-tipo-maldicao",
+      "name": "Amaldiçoada (tipo) [maldição]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A desvantagem se aplica a todas as jogadas de ataque, testes de habilidade e testes de resistência realizados antes do final do seu próximo turno."
+        }
+      ],
+      "body": "A energia cósmica influencia o destino daqueles que toca.\n\nSua explosão destrutiva causa dano necrótico. Qualquer criatura atingida pela explosão sofre desvantagem em seu próximo teste de habilidade ou teste de resistência realizado antes do final do seu próximo turno."
+    },
+    {
+      "id": "destruicao-tribunal-tipo-maldicao",
+      "name": "Tribunal (tipo) [maldição]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração da desvantagem aumenta para 1 minuto."
+        }
+      ],
+      "body": "O julgamento recai sobre aqueles atingidos pela sua explosão.\n\nSua explosão destrutiva causa dano radiante. Qualquer criatura atingida pela explosão sofre desvantagem em testes de resistência contra os efeitos da Esfera do Destino até o final do seu próximo turno. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Carisma."
+    },
+    {
+      "id": "destruicao-desconcertante",
+      "name": "Desconcertante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração da desvantagem aumenta para 1 minuto."
+        }
+      ],
+      "body": "Elementos destrutivos ilusórios se manifestam, causando queimaduras psicossomáticas, contusões e cortes.\n\nSua explosão destrutiva causa dano psíquico. Qualquer criatura atingida pela explosão sofre\n\ndesvantagem em testes de resistência contra efeitos da escola de Ilusão e da esfera da Ilusão até o final do seu próximo turno. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Inteligência."
+    },
+    {
+      "id": "destruicao-sombra",
+      "name": "Sombra (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sua explosão destrutiva causa dano normal em vez de metade do dano."
+        }
+      ],
+      "body": "A matéria sombria é misturada à sua explosão, dando substância à sua ilusão. Cada vez que você usa este talento (tipo), escolha um tipo de dano. Sua explosão destrutiva causa dano do tipo escolhido, mas causa metade do dano. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Inteligência."
+    },
+    {
+      "id": "destruicao-revigorante",
+      "name": "Revigorante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Os pontos de vida temporários duram 1 minuto."
+        },
+        {
+          "pm": 1,
+          "text": "Em vez de ganhar pontos de vida temporários, você recupera pontos de vida."
+        }
+      ],
+      "body": "Energia curativa é atraída para você enquanto energia radiante queima seus inimigos.\n\nSua explosão destrutiva causa dano radiante. Sempre que você causar dano a criaturas com sua explosão, você ganha pontos de vida temporários iguais ao número de dados de dano rolados, que duram até o início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-vivacidade",
+      "name": "Vivacidade (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas mortas-vivas que sofrem dano devem ser bem-sucedidas em um teste de resistência de Sabedoria ou serão repelidas até o início do seu próximo turno. Uma criatura repelida deve gastar seus turnos tentando se mover o mais longe possível de você e não pode se mover voluntariamente para um espaço a menos de 9 metros de você. Ela também não pode usar reações. Para sua ação, ela pode usar apenas a ação Disparada ou tentar escapar de um efeito que a impeça de se mover. Se não houver para onde se mover, a criatura pode usar a ação Esquivar."
+        }
+      ],
+      "body": "Energia positiva pulsa, queimando a carne daqueles que toca. Sua explosão destrutiva causa dano radiante. Você tem vantagem em quaisquer jogadas de ataque feitas como parte da explosão destrutiva se o alvo for um morto-vivo. Mortos-vivos têm desvantagem em quaisquer testes de resistência feitos contra sua explosão destrutiva. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Sabedoria."
+    },
+    {
+      "id": "destruicao-iluminadora",
+      "name": "Iluminadora (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas que sofrem dano tornam-se visíveis em áreas de escuridão, em vez de apenas levemente obscurecidas."
+        }
+      ],
+      "body": "Energia luminescente adere àqueles que toca, revelando seus movimentos.\n\nSua explosão destrutiva causa dano radiante. Qualquer criatura atingida pela explosão sofre desvantagem em todos os testes de Furtividade e torna-se visível na penumbra ou apenas levemente obscurecida na escuridão. Esses efeitos duram até o início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-radiante",
+      "name": "Radiante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A criatura fica cega até o final do seu próximo turno."
+        }
+      ],
+      "body": "Uma luz ofuscante torna os ataques de seus inimigos menos eficazes.\n\nSua explosão destrutiva causa dano radiante. Escolha uma criatura atingida pela sua explosão destrutiva. Essa criatura tem desvantagem em todas as jogadas de ataque feitas antes do final do seu próximo turno."
+    },
+    {
+      "id": "destruicao-encantadora",
+      "name": "Encantadora (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas que falharem no teste de resistência ficam encantadas por 1 minuto. As criaturas afetadas têm direito a um novo teste de resistência para encerrar o efeito sobre si mesmas ao final do seu turno."
+        }
+      ],
+      "body": "Uma energia psíquica invasiva preenche a mente e o coração da criatura com o poder da amizade.\n\nSua explosão destrutiva causa dano psíquico. Qualquer criatura atingida pela explosão deve fazer um teste de resistência de Carisma ou ficará encantada até o início do seu próximo turno. Uma criatura encantada por esta explosão recebe um novo teste de resistência para encerrar a condição sempre que sofrer dano. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Carisma."
+    },
+    {
+      "id": "destruicao-aterrorizante",
+      "name": "Aterrorizante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas que falharem no teste de resistência ficam amedrontadas por 1 minuto. As criaturas afetadas têm direito a um novo teste de resistência para encerrar o efeito sobre si mesmas no final do seu turno."
+        }
+      ],
+      "body": "Dúvida e insegurança consomem a criatura, deixando-a em estado de pavor.\n\nSua explosão destrutiva causa dano psíquico. Qualquer criatura atingida pela explosão deve fazer um teste de resistência de Sabedoria ou ficará amedrontada até o início do seu próximo turno. Qualquer talento de\n\nforma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Sabedoria."
+    },
+    {
+      "id": "destruicao-contundente-tipo-protomancia-de-terra",
+      "name": "Contundente (tipo) [protomancia de terra]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A distância em que as criaturas são empurradas aumenta em até 6 metros."
+        }
+      ],
+      "body": "A terra golpeia e bombardeia a criatura, empurrando-a para longe da explosão.\n\nSua explosão destrutiva causa dano contundente. Qualquer criatura atingida pela explosão é empurrada 1,5 metro do ponto de origem do efeito (geralmente você). Esse movimento não provoca ataques de oportunidade. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Força. Se o alvo for arremessado contra outra criatura ou um objeto sólido, o alvo e a criatura ou objeto sólido sofrem 1d6 de dano contundente, + 1d6 para cada 3 metros que o alvo teria percorrido além da barreira.\n\nNota: Se estiver usando um talento como Orbe Explosivo (forma de explosão), o ponto de origem será o centro da explosão. Se estiver usando a Parede (forma de explosão), cada quadrado da parede é considerado o centro do efeito para aqueles que entrarem nessa seção. Se usar Golpe Guiado, você pode escolher a direção em que deseja empurrar o alvo, inclusive para cima ou para baixo, se desejar. Empurrar um alvo contra o chão o derruba.\n\nExtrair da natureza (Aprimoramento 0PM): Se houver um cubo de 1,5 metro (ou volume equivalente) de terra, areia ou pedra dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para efeitos de criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento."
+    },
+    {
+      "id": "destruicao-espinheiro-tipo-protomancia-de-planta",
+      "name": "Espinheiro (tipo) [protomancia de planta]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas que falharem em seu teste de resistência ficam, em vez disso, restringidas."
+        }
+      ],
+      "body": "Vinhas espinhosas se contorcem e prendem tudo o que tocam, mantendo-as no lugar.\n\nSua explosão destrutiva causa dano perfurante. Qualquer criatura atingida pela explosão deve ser bem-sucedida em um teste de resistência de Destreza ou ficará agarrada. Essa condição dura até que a criatura seja bem-sucedida em um novo teste de resistência de Destreza realizado como uma ação ou até que o emaranhado de sarças seja destruído. Cada quadrado de 1,5 metro de sarças possui 3 pontos de vida por nível do conjurador e uma CA de 10. O emaranhado de sarças desaparece quando destruído ou após a criatura escapar.\n\nUma criatura afetada cujo espaço tenha sido pelo menos parcialmente limpo do emaranhado de sarças tem vantagem em seus testes de resistência para escapar e pode realizá-los como uma ação bônus.\n\nExtrair da natureza (Aprimoramento 0PM): Se houver um raio de 3 metros de vegetação dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para fins de afetar criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento."
+    },
+    {
+      "id": "destruicao-afogamento-tipo-protomancia-de-agua",
+      "name": "Afogamento (tipo) [protomancia de água]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração da desvantagem aumenta para 1 minuto."
+        }
+      ],
+      "body": "Água gelada e congelante encharca o alvo da sua explosão.\n\nSua explosão destrutiva causa dano de frio. Qualquer criatura atingida pela explosão tem desvantagem em testes de resistência contra os efeitos do pacote de água da esfera Natureza e é considerada molhada até o final do seu próximo turno. Além disso, qualquer área ou espaço que sua explosão tocar é considerado encharcado para fins de extinção de chamas. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição.\n\nExtrair da natureza (Aprimoramento 0PM): Se houver um cubo de água de 1,5 metro (ou volume equivalente) dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para fins de afetar criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento."
+    },
+    {
+      "id": "destruicao-fogo-tipo-protomancia-de-fogo",
+      "name": "Fogo (tipo) [protomancia de fogo]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas em chamas ficam amedrontadas até que as chamas se extingam."
+        }
+      ],
+      "body": "Chamas persistem enquanto sofrem com as brasas fumegantes da sua explosão.\n\nSua explosão destrutiva causa dano de fogo. Qualquer criatura atingida pela explosão deve ser bem-sucedida em um teste de resistência de Destreza ou pegará fogo, sofrendo 1d8 de dano de fogo por rodada no final de seu turno até que as chamas sejam extintas.\n\nO dano de fogo por estar em chamas aumenta em 1d8 quando você atinge o 5º nível (2d8), o 11º nível (3d8) e o 17º nível (4d8). Estar em chamas não conta como parte do dano inicial da explosão destrutiva para fins de interação com outros talentos ou habilidades que aumentariam seu dano. As criaturas podem tentar um teste de resistência de Destreza para extinguir as chamas no final de cada um de seus turnos antes de sofrerem o dano. Usar uma ação para rolar no chão ou usar um cobertor para abafar as chamas extingue-as automaticamente.\n\nExtrair da natureza (Aprimoramento 0PM): Se houver um fogo de tamanho pelo menos médio dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para fins de afetar criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento."
+    },
+    {
+      "id": "destruicao-vento-cortante-tipo-protomancia-do-ar",
+      "name": "Vento Cortante (tipo) [protomancia do ar]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A penalidade na CA dura 1 minuto."
+        }
+      ],
+      "body": "Ventos cortantes dilaceram as defesas de tudo em seu caminho. Sua explosão destrutiva causa dano cortante. Qualquer criatura atingida pela explosão sofre uma penalidade de -1 na CA até o final da sua próxima rodada. Aplicações múltiplas desta penalidade se acumulam. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição.\n\nExtrair da natureza (Aprimoramento 0PM): Se houver um cubo de ar de 1,5 metro (ou volume equivalente) dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para efeitos de criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento."
+    },
+    {
+      "id": "destruicao-estilhacos-tipo-protomancia-metalica",
+      "name": "Estilhaços (tipo) [protomancia metálica]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Os espinhos permanecem por 1 minuto. Criaturas que se movem pela área afetada estão sujeitas ao teste de resistência de Destreza, independentemente da velocidade."
+        }
+      ],
+      "body": "Estilhaços perfurantes de armadura cobrem a área, deixando para trás espinhos no rastro da sua explosão.\n\nSua explosão destrutiva causa dano perfurante. Todos os quadrados afetados (ou quadrados diretamente abaixo da área afetada) ficam cobertos de espinhos até o final do seu próximo turno. Esses espinhos usam a CD da sua esfera Destruição e causam dano igual ao número de dados de dano da sua explosão destrutiva.\n\nExtrair da natureza (Aprimoramento 0PM): Se houver um cubo de metal de 1,5 metro (ou volume equivalente) dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para efeitos de criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento.\n\nEstrepes: Como uma ação, você pode espalhar um saco de espinhos para cobrir uma área quadrada de 1,5 metro de lado. Qualquer criatura que entrar na área deve ser bem-sucedida em um teste de resistência de Destreza CD 15 ou parar de se mover neste turno e sofrer 1 ponto de dano perfurante. Sofrer esse dano reduz a velocidade de movimento da criatura em 3 metros até que ela recupere pelo menos 1 ponto de vida. Uma criatura que se move pela área com metade da velocidade não precisa fazer o teste de resistência."
+    },
+    {
+      "id": "destruicao-confinante",
+      "name": "Confinante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas afetadas também sofrem dano de força adicional igual ao número de dados de dano rolados se elas se moverem voluntariamente de seu espaço atual antes do início do seu próximo turno."
+        }
+      ],
+      "body": "Uma barreira fraca se forma ao redor dos atingidos, impedindo qualquer movimento em sua direção.\n\nSua explosão destrutiva causa dano de força. Qualquer criatura atingida pela explosão deve ser bem-sucedida em um teste de resistência de Força ou ficará impedida de se mover para mais perto de você até o início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-protetora",
+      "name": "Protetora (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode escolher até um número de criaturas atingidas igual ao seu bônus de proficiência."
+        }
+      ],
+      "body": "Uma barreira fraca se forma ao redor dos atingidos, impedindo o próximo ataque deles contra você.\n\nSua explosão destrutiva causa dano de concussão. Escolha uma criatura que você atingiu com sua explosão. Você ganha resistência ao primeiro ataque ou efeito danoso que essa criatura causar e que o afete antes do início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-gravidade",
+      "name": "Gravidade (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Qualquer criatura danificada pela explosão tem desvantagem em testes de resistência contra os efeitos da esfera de Telecinese até o final da sua próxima rodada."
+        }
+      ],
+      "body": "Uma massa de energia densa envolve aqueles que toca, alterando a gravidade para atrair ataques em sua direção.\n\nSua explosão destrutiva causa dano de força. Escolha uma criatura que você danificou com sua explosão. Outras criaturas têm vantagem nas jogadas de ataque feitas contra essa criatura até o início da sua próxima rodada."
+    },
+    {
+      "id": "destruicao-cinetica",
+      "name": "Cinética (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Por 1 minuto, qualquer criatura caída pela explosão não pode se levantar sem antes ser bem-sucedida em um teste de resistência de Força feito como uma ação ou ação bônus. Um teste de resistência bem-sucedido encerra este efeito."
+        }
+      ],
+      "body": "A força telecinética desequilibra seus inimigos.\n\nSua explosão destrutiva causa dano de força. Qualquer criatura danificada pela explosão deve ser bem-sucedida em um teste de resistência de Força ou ficará caída."
+    },
+    {
+      "id": "destruicao-entropico",
+      "name": "Entrópico (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas que falharem em seu teste de resistência sofrem desvantagem em todos os testes de resistência, não apenas físicos."
+        }
+      ],
+      "body": "As criaturas sofrem as dores e desvantagens da idade. Sua explosão destrutiva causa dano necrótico. Qualquer criatura atingida pela explosão deve fazer um teste de resistência de Constituição ou sofrer desvantagem em testes de resistência físicos (Força, Destreza, Constituição) por 1 rodada. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição. Criaturas que explicitamente não sofrem efeitos negativos do envelhecimento são imunes a este efeito."
+    },
+    {
+      "id": "destruicao-lentidao",
+      "name": "Lentidão (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas que falharem em seu teste de resistência ficam atordoadas por 1 rodada."
+        }
+      ],
+      "body": "Uma energia temporal envolve a criatura, retardando suas ações. Sua explosão destrutiva causa dano de força. Qualquer criatura atingida pela explosão deve fazer um teste de resistência de Sabedoria ou, então, por 1 rodada em seu turno, ela pode usar uma ação ou uma ação bônus, não ambas. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Sabedoria."
+    },
+    {
+      "id": "destruicao-cromatica-tipo-magia-selvagem",
+      "name": "Cromática (tipo) [magia selvagem]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O resultado do dado correspondente agora é o seguinte: 1 - força, 2 - necrótico, 3 - psíquico, 4 - radiante, 5 ou 6 - sua escolha entre ácido, contundente, frio, fogo, relâmpago, perfurante, veneno, cortante ou trovão."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode optar por rolar na tabela Geral: Magia Selvagem, em vez da tabela Truques: Magia Selvagem."
+        }
+      ],
+      "body": "Você conjura energia prismática que está em constante fluxo, produzindo um efeito aleatório a cada vez que a explosão é usada.\n\nRole um d6. Sua explosão destrutiva causa um tipo de dano correspondente ao resultado do dado: 1 - ácido, 2 - frio, 3 - fogo, 4 - relâmpago, 5 - veneno, 6 - trovão. Você pode optar por rolar na tabela de Truques: Magia Selvagem e aplicar os efeitos do resultado além da explosão."
+    },
+    {
+      "id": "destruicao-disruptivo-tipo-dissipar",
+      "name": "Disruptivo (tipo) [dissipar]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Até o início do seu próximo turno, criaturas atingidas pela sua explosão devem fazer um teste de concentração para usar qualquer magia ou efeito mágico."
+        }
+      ],
+      "body": "Uma energia disruptiva envolve e distrai aqueles que usam magia.\n\nSua explosão destrutiva causa dano de força. Criaturas atingidas pela sua explosão sofrem desvantagem em todos os testes de concentração até o início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-sifao-tipo-mana",
+      "name": "Sifão (tipo) [mana]",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Energia mágica é sifonada de uma criatura para você. Sua explosão destrutiva causa dano psíquico. Se sua explosão destrutiva causar dano com sucesso a um ou mais conjuradores, conjuradores de esferas ou criaturas com conjuração ou poderes psíquicos inatos, você ganha um ponto de magia temporário. Se o custo final em pontos de magia da sua explosão destrutiva for de 1 ou mais pontos de magia, você ganha um ponto de magia temporário sempre que causar dano a uma ou mais criaturas com sua explosão destrutiva. Você não pode ganhar mais de 1 ponto de magia com qualquer explosão destrutiva e, se atingir alvos com múltiplas explosões destrutivas de Sifão na mesma rodada, não poderá ganhar mais pontos de magia temporários dessa forma em uma única rodada do que metade do seu bônus de proficiência. Todos os pontos de magia temporários ganhos por meio desse tipo de explosão desaparecem no início do seu próximo turno."
+    },
+    {
+      "id": "destruicao-dissipante",
+      "name": "Dissipante (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Dissipar funciona em qualquer alvo que não esteja em seu plano nativo, não apenas em criaturas invocadas ou conjuradas."
+        },
+        {
+          "pm": 4,
+          "text": "Criaturas conjuradas ou invocadas que sofrerem dano (ou qualquer alvo que não esteja em seu plano nativo, se aprimorado com 1PM) devem ser bem-sucedidas em um teste de resistência de Carisma ou serão banidas, retornando ao seu plano de origem."
+        }
+      ],
+      "body": "A energia antiplanar pune aqueles que não são nativos do plano atual.\n\nSua explosão destrutiva causa dano de força. Você tem vantagem em quaisquer jogadas de ataque feitas como parte da explosão destrutiva se o alvo for conjurado ou invocado (como com a esfera de Conjuração ou uma magia da escola de Conjuração). Criaturas conjuradas ou invocadas têm desvantagem em quaisquer testes de resistência feitos contra sua explosão destrutiva. Qualquer talento de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Carisma."
+    },
+    {
+      "id": "destruicao-teletransporte",
+      "name": "Teletransporte (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A distância de teletransporte aumenta para até 6 metros."
+        }
+      ],
+      "body": "O espaço se distorce ao redor daqueles que entrarem em contato com sua explosão, teletransportando-os brutalmente para um local próximo.\n\nSua explosão destrutiva causa dano de força. Qualquer criatura atingida pela explosão deve ser bem-sucedida em um teste de resistência de Sabedoria ou será teletransportada 1,5 metro na direção escolhida por você, mas deve terminar seu movimento em uma superfície capaz de suportá-la e não pode ser movida para objetos sólidos ou espaços intrinsecamente perigosos."
+    },
+    {
+      "id": "destruicao-esfera-de-clima",
+      "name": "Esfera de Clima",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Tipo de Explosão",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração da desvantagem aumenta para 1 minuto."
+        },
+        {
+          "pm": 1,
+          "text": "Criaturas feridas são envoltas em gelo em vez de simplesmente desaceleradas, ficando imobilizadas por um número de rodadas igual ao seu bônus de proficiência. Criaturas imobilizadas podem fazer um teste de resistência de Força como uma ação para encerrar a imobilização. Causar 3 pontos de dano por nível ao gelo liberta a criatura. O gelo tem CA 10."
+        },
+        {
+          "pm": 1,
+          "text": "As criaturas afetadas devem ser bem-sucedidas em um teste de resistência de Constituição ou ficarão atordoadas até o início do seu próximo turno."
+        },
+        {
+          "pm": 1,
+          "text": "Criaturas atingidas pela explosão devem ser bem-sucedidas em um teste de resistência de Constituição ou sofrerão 1 nível de exaustão até realizarem um descanso longo ou curto; essa exaustão não se acumula com outras fontes mágicas de exaustão."
+        },
+        {
+          "pm": 1,
+          "text": "Criaturas que falharem em seu teste de resistência ficam atordoadas até o início do seu próximo turno."
+        }
+      ],
+      "body": "Especial: Possuir a esfera Climática concede a opção de escolher o tipo de explosão Vento Cortante da esfera Natureza como se você possuísse protomancia do ar em vez das opções abaixo.\n\nVendaval (tipo)\n\nVentos poderosos uivam em seu alvo, deixando-o vulnerável a outros efeitos de vento.\n\nSua explosão destrutiva causa dano trovejante. Qualquer criatura atingida pela explosão tem desvantagem em testes de resistência contra efeitos do pacote de ar da esfera Natureza e talentos (vento) da esfera Climática até o final do seu próximo turno. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição.\n\nExtrair da natureza (Aprimoramento 0PM): Se você estiver em uma área com intensidade de vento 1 ou superior, ou se houver um cubo de ar de 1,5 metro (ou volume equivalente) dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para fins de afetar criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento.\n\nGelo (tipo)\n\nO gelo congela os membros do seu alvo, dificultando seus movimentos. Sua explosão destrutiva causa dano de frio. Qualquer criatura atingida pela explosão tem sua velocidade de movimento reduzida em 3 metros (até um mínimo de 1,5 metro) por 1 minuto. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição.\n\nExtrair da natureza (Aprimoramento 0PM): Se você estiver em uma área com precipitação e severidade de frio de 1 ou superior, ou se houver um cubo de água de 1,5 metro (ou volume equivalente) dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para fins de afetar criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento.\n\nRelâmpago (tipo)\n\nEnergia elétrica percorre os nervos do alvo, causando tensão muscular.\n\nSua explosão destrutiva causa dano elétrico. Você tem vantagem em quaisquer jogadas de ataque feitas como parte da explosão destrutiva se o alvo estiver usando armadura de metal. Alvos usando armadura de metal também têm desvantagem em quaisquer testes de resistência feitos contra sua explosão destrutiva. Qualquer criatura que sofrer dano não pode realizar reações até o início de seu próximo turno.\n\nExtrair da natureza (Aprimoramento 0PM): Se você estiver em uma área com precipitação e vento de intensidade 1 ou superior, você pode optar por não considerar sua explosão destrutiva como mágica para efeitos de criaturas com bônus contra, resistência ou imunidade à magia.\n\nEscaldante (tipo)\n\nO calor extremo causa danos aos nervos e exaure a criatura. Sua explosão destrutiva causa dano de fogo. Qualquer criatura atingida pela explosão sofre uma quantidade adicional de dano igual ao seu bônus de proficiência; esse dano adicional não está sujeito a resistência, imunidade ou vulnerabilidade a dano. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição.\n\nExtrair da natureza (Aprimoramento 0PM): Se você estiver em uma área com aridez e calor de intensidade 1 ou superior, ou se houver um incêndio de tamanho médio ou superior dentro do alcance da sua explosão destrutiva, você pode optar por não considerar sua explosão destrutiva como mágica para efeitos de criaturas com bônus contra, resistência ou imunidade à magia. Você pode usar o aprimoramento concedido pelo talento Criar Natureza da esfera Natureza como parte da conjuração para aplicar este aprimoramento.\n\nTrovão (tipo)\n\nUm estrondo de trovão ressoa nos ouvidos do seu alvo, ensurdecendo-o.\n\nSua explosão destrutiva causa dano trovejante. Qualquer criatura atingida pela explosão deve ser bem-sucedida em um teste de resistência de Constituição ou ficará ensurdecida por 1 minuto. Qualquer talento (forma de explosão) que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição.\n\nExtrair da natureza (Aprimoramento 0PM): Se você estiver em uma área com vento e aridez ou precipitação, ambas com valor igual ou superior a 1, você pode optar por fazer com que sua explosão destrutiva não seja considerada mágica para fins de afetar criaturas com bônus contra, resistência ou imunidade à magia."
+    },
+    {
+      "id": "destruicao-aura",
+      "name": "Aura (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "duration": "1 rodada.",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM A duração aumenta para Concentração, até 1 minuto."
+        },
+        {
+          "pm": 2,
+          "text": "Aprimoramento 2PM O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem uma ação."
+        }
+      ],
+      "body": "Sua explosão destrutiva se transforma em uma aura que você pode usar para se cercar e que se estende por 3 metros a partir de você. Enquanto essa aura estiver ativa, você pode gastar uma ação bônus para afetar todas as criaturas dentro da aura com sua explosão destrutiva. Os alvos afetados podem evitar esse dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua explosão destrutiva for de 1 ou mais pontos de magia, um teste bem-sucedido reduz o dano pela metade e anula quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao alvo. Como esta é uma explosão única e contínua, o tipo de explosão e outros parâmetros são definidos no momento da conjuração."
+    },
+    {
+      "id": "destruicao-lamina",
+      "name": "Lâmina (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "duration": "Concentração, até 1 minuto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Você pode afetar um número adicional de armas corpo a corpo, armas naturais, ataques desarmados ou conjuntos de 20 peças de munição igual ao seu bônus de proficiência."
+        },
+        {
+          "pm": 2,
+          "text": "Aprimoramento 2PM O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem uma ação."
+        }
+      ],
+      "body": "Tempo de Conjuração: 1 ação ou ação bônus, escolhida no momento da conjuração.\n\nSua explosão destrutiva tem como alvo e imbui armas e munições. Escolha uma arma corpo a corpo, arma natural, ataque desarmado ou até 20 peças de munição dentro do alcance. O tipo de dano causado pela arma ou munição muda para o tipo de explosão escolhido. Ataques feitos desta forma não infligem nenhum dano adicional ou efeitos do tipo de explosão, exceto conforme descrito abaixo:\n\nApós causar dano a uma criatura com uma arma ou munição imbuída, o portador pode gastar uma ação bônus para aplicar o efeito adicional do tipo de explosão à criatura danificada como se ela tivesse sido danificada pela explosão destrutiva. Acertos críticos feitos com armas ou munições imbuídas causam 1d6 de dano adicional do tipo de explosão escolhido, aumentando em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6). Este dano adicional não é rolado duas vezes, mas sim adicionado ao dano total causado."
+    },
+    {
+      "id": "destruicao-explosao-em-cadeia",
+      "name": "Explosão em Cadeia (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Quando um alvo falha em seu teste de resistência contra sua explosão destrutiva, como uma ação bônus, você pode fazer com que a explosão destrutiva salte para um ou mais alvos adicionais. Você pode fazer com que a explosão destrutiva atinja um número total de alvos em uma rodada igual ao seu bônus de proficiência. Cada alvo deve estar a até 9 metros (30 pés) do alvo anterior e dentro do alcance da sua explosão destrutiva. Nenhum alvo pode ser atingido pela explosão mais de uma vez. Este aprimoramento é escolhido quando o primeiro alvo falha em seu teste de resistência."
+        }
+      ],
+      "body": "Sua explosão destrutiva se projeta em direção a um alvo à sua escolha que você possa ver dentro do alcance. Um alvo pode evitar este dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua explosão destrutiva for de 1 ou mais pontos de magia, um teste bem-sucedido reduz o dano pela metade e nega quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao alvo."
+    },
+    {
+      "id": "destruicao-orbe-explosivo",
+      "name": "Orbe Explosivo (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Aprimoramento 0PM [Globo] O orbe explosivo se materializa em sua mão como um pequeno globo do tamanho de uma pedra de funda. A qualquer momento, você ou uma criatura a quem você der o globo pode arremessá-lo (a um alcance normal de 6 metros, alcance longo de 18 metros) ou lançá-lo com uma funda (ao alcance normal da funda). Ele se estilhaça ao impacto, com o mesmo efeito da conjuração normal da explosão destrutiva. Mesmo se arremessado através de uma arma, ele causa apenas o dano da explosão destrutiva, e o ataque não pode ser usado com o talento Golpe (metaesfera). Você também pode colocar o globo no chão sem quebrá-lo. Após 1 minuto, se o globo ainda não tiver se quebrado, ele explode. Uma criatura pode quebrar um globo dentro de seu alcance como uma ação ou ação bônus, ou gastando 1,5 metro de movimento enquanto atravessa o espaço do globo. Criaturas que não sabem da existência do globo e atravessam seu espaço têm 50% de chance de quebrá-lo. Você não pode ter mais globos criados simultaneamente do que seu bônus de proficiência, e você pode tratar um globo como se fosse uma fórmula de esfera de Alquimia que pode ser arremessada para interagir com a esfera Armadilha."
+        },
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Ao usar o aprimoramento de globo, o globo persiste por 8 horas. Se você estiver dentro do alcance de explosão destrutiva do globo, você pode fazê-lo explodir como uma reação. Ao final desse tempo, ele explode ou se dissipa. Essa escolha é feita no momento da conjuração."
+        },
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM A área afetada é, em vez disso, uma esfera com um raio de até 6 metros."
+        }
+      ],
+      "body": "Sua explosão destrutiva tem como alvo um cubo de 1,5 metro. Alvos afetados podem evitar esse dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua explosão destrutiva for de 1 ou mais pontos de magia, um teste bem-sucedido reduz o dano pela metade e anula quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao alvo."
+    },
+    {
+      "id": "destruicao-salto",
+      "name": "Salto (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Aumente o comprimento da linha em qualquer quantidade que desejar, até o alcance da sua explosão destrutiva."
+        },
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Você pode chegar a qualquer ponto ao longo da linha após o efeito ser resolvido, desde que seja um espaço desocupado."
+        }
+      ],
+      "body": "Sua explosão destrutiva se torna uma linha de 1,5 metro de largura por 3 metros de comprimento. Ao usar este formato de explosão, você aparece no último quadrado da linha após o efeito ser resolvido (ou no espaço disponível mais próximo). Alvos afetados podem evitar esse dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua explosão destrutiva for 1 ou mais, um teste bem-sucedido reduz o dano pela metade e anula quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao alvo. Você não conta como tendo passado por nenhum espaço intermediário e não provoca ataques de oportunidade por movimento."
+    },
+    {
+      "id": "destruicao-raio",
+      "name": "Raio (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Você pode disparar 2 raios. O número de raios que você pode disparar aumenta em 1 no 5º nível (3 raios), no 11º nível (4 raios) e no 17º nível (5 raios), mas nenhuma criatura ou objeto pode ser alvo de mais de um raio."
+        }
+      ],
+      "body": "Você pode disparar sua explosão destrutiva como um raio, realizando um ataque mágico à distância. Você pode realizar um ataque mágico corpo a corpo, se o alvo estiver dentro do seu alcance natural."
+    },
+    {
+      "id": "destruicao-retribuicao",
+      "name": "Retribuição (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode usar esta explosão destrutiva como uma reação, que você realiza em resposta a ser ferido por uma criatura dentro do alcance que você possa ver."
+        }
+      ],
+      "body": "Sua explosão destrutiva envolve e afeta a criatura que lhe causou dano. O alvo afetado pode fazer um teste de resistência de Destreza para reduzir o dano pela metade e anula quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao seu alvo."
+    },
+    {
+      "id": "destruicao-esculpir",
+      "name": "Esculpir (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "range": "pessoal",
+      "area": "variável; veja aprimoramento",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Aprimoramento 0PM Sua explosão destrutiva afeta uma área de 1,5 metro de raio, centrada dentro do alcance. Você pode se excluir desta área. Alvos afetados podem evitar este dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua explosão destrutiva for 1 ou mais, um teste bem-sucedido reduz o dano pela metade e anula quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao alvo."
+        },
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Sua explosão destrutiva se torna um cone de 9 metros ou uma linha de 36 metros por 1,5 metro, cada um emanando de um ponto dentro do alcance. Os alvos afetados podem evitar esse dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua explosão destrutiva for de 1 ou mais pontos de magia, um teste de resistência bem-sucedido reduz o dano pela metade e anula quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao seu alvo."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "destruicao-esfera",
+      "name": "Esfera (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "duration": "1 rodada",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM A duração aumenta para Concentração, até 1 minuto."
+        },
+        {
+          "pm": 2,
+          "text": "Aprimoramento 2PM O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem uma ação."
+        }
+      ],
+      "body": "Sua explosão destrutiva assume a forma de uma esfera de 1,5 metro de diâmetro, surgindo em um espaço desocupado à sua escolha dentro do alcance. Qualquer criatura que entrar no espaço da esfera será afetada pela sua explosão destrutiva. Alvos afetados podem evitar esse dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua explosão destrutiva for 1 ou mais, um teste bem-sucedido reduz o dano pela metade e anula quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao alvo.\n\nComo uma ação bônus, você pode mover a esfera até 9 metros. Se você arremessar a esfera contra uma criatura, essa criatura pode tentar um teste de resistência de Destreza para anular o dano da esfera e a esfera para de se mover neste turno, terminando seu movimento no espaço imediatamente anterior à criatura. A esfera voa e nunca corre o risco de cair."
+    },
+    {
+      "id": "destruicao-amarrar",
+      "name": "Amarrar (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "duration": "Concentração, até 1 minuto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Aprimoramento 2PM O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação."
+        }
+      ],
+      "body": "Sua explosão destrutiva aprisiona o alvo a você. Faça um ataque corpo a corpo (se o alvo estiver dentro do seu alcance natural) ou um ataque mágico à distância contra uma criatura ou objeto a até 9 metros para causar o dano da sua explosão destrutiva e aprisionar o alvo a você. O alvo não pode se afastar de você, a menos que você permita. Enquanto o aprisionamento persistir, nem você nem o alvo podem se afastar mais de 9 metros um do outro. Qualquer um pode tentar arrastar o outro, exigindo um teste de Força contestado; se a criatura que se move vencer o teste, ela pode se mover até metade de sua velocidade, arrastando a outra. Criaturas com duas ou mais dimensões maiores não podem ser arrastadas e podem se mover livremente em velocidade máxima, arrastando a criatura menor. Enquanto a ligação permanecer ativa, você pode causar dano explosivo destrutivo ao alvo ligado como uma ação bônus. Alvos ligados podem evitar esse dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua explosão destrutiva for de 1 ou mais pontos de magia, um teste bem-sucedido reduz o dano pela metade e anula quaisquer efeitos adicionais que o (tipo de explosão) infligiria ao alvo. Como esta é uma explosão única e contínua, o tipo de explosão e outros parâmetros são definidos no momento da conjuração.\n\nA ligação tem CA igual a 10 + seu bônus de proficiência e 3 pontos de vida por nível, que são renovados no início do seu turno. A ligação tem imunidade a dano psíquico e ao tipo de dano correspondente à explosão destrutiva."
+    },
+    {
+      "id": "destruicao-parede",
+      "name": "Parede (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Formato de Explosão",
+      "tags": [
+        "formato"
+      ],
+      "duration": "concentração, até 1 minuto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Aprimoramento 0PM Em vez disso, você pode criar uma esfera ou cúpula hemisférica com um raio máximo não superior à largura ou altura do seu painel."
+        },
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM A largura e a altura máximas de cada painel aumentam em 1,5 metro (3 metros por 3 metros), aumentando novamente no 5º nível (4,5 metros por 4,5 metros), no 11º nível (6 metros por 6 metros) e no 17º nível (7,5 metros por 7,5 metros)."
+        },
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Você pode criar o dobro de painéis; 1º nível (2 painéis), 5º nível (4 painéis), 11º nível (8 painéis) e 17º nível (16 painéis)."
+        },
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM a parede bloqueia a visão e atravessá-la requer 1,5 metro de deslocamento. Se você for de 11º nível ou superior, projéteis não mágicos que atravessarem a parede serão destruídos."
+        },
+        {
+          "pm": 2,
+          "text": "Aprimoramento 2PM o efeito persiste pelo restante da duração sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem a necessidade de uma ação."
+        }
+      ],
+      "body": "Sua explosão destrutiva se transforma em uma parede de painéis de 1,5 metro por 1,5 metro que dura pelo tempo estipulado. Os painéis da parede devem ser colocados em uma superfície plana. Criaturas que atravessarem sua parede sofrerão o dano e os efeitos da sua explosão destrutiva. Criaturas que estiverem no espaço da parede quando ela for criada têm direito a um teste de resistência de Destreza para evitar esse dano, mas se o custo final em pontos de magia da sua explosão destrutiva for de 1 ou mais pontos de magia, um teste de resistência bem-sucedido reduz o dano pela metade e anula quaisquer efeitos adicionais que o (tipo) infligiria ao seu alvo. Com um teste de resistência bem-sucedido, a criatura pode escolher em qual lado da parede ficar, caso contrário, você escolhe.\n\nA parede não bloqueia linha de efeito, visão, projéteis ou objetos arremessados. Uma criatura individual não pode ser danificada por uma explosão destrutiva com este formato de explosão mais de uma vez por turno, independentemente de quantas vezes ela entre ou atravesse um painel. O número máximo de painéis que você pode criar dobra no 5º nível (2 painéis), no 11º nível (4 painéis) e no 17º nível (8 painéis). Cada painel deve ser contíguo a outro painel."
+    },
+    {
+      "id": "destruicao-mestre-de-explosoes",
+      "name": "Mestre de Explosões",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos de Destruição",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Como uma reação, quando você rolar o dano de uma explosão destrutiva que cause dano do tipo escolhido, você pode considerar qualquer 1 ou 2 em um dado de dano como 3 para aquela rodada."
+        }
+      ],
+      "body": "Escolha um tipo de dano. Quando você rolar o dano de uma explosão destrutiva que cause dano do tipo escolhido, você pode adicionar seu modificador de habilidade principal ao dano causado.\n\nVocê pode escolher este talento várias vezes, cada vez escolhendo um tipo de dano diferente."
+    },
+    {
+      "id": "destruicao-arma-de-energia",
+      "name": "Arma de Energia",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos de Destruição",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação bônus",
+      "range": "Pessoal",
+      "duration": "Concentração, até 1 minuto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Durante a duração, ao realizar ataques com a arma, você pode optar por fazer uma jogada de ataque com magia em vez de uma jogada de ataque com arma."
+        },
+        {
+          "pm": 2,
+          "text": "Aprimoramento 2PM O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação."
+        }
+      ],
+      "body": "Você conjura uma arma com a qual você é proficiente, que parece ser feita de energia solidificada. Se você conjurar uma arma de ataque à distância, ela também produz uma quantidade de munição a cada rodada igual ao seu bônus de proficiência. Em vez de causar dano de concussão, perfuração ou corte, a arma causa um tipo de dano que corresponde a um talento (tipo) que você possui. Independentemente do tipo de dano causado pela arma, ela é considerada mágica para fins de imunidade ou resistência a dano.\n\nSe você soltar a arma ou arremessá-la, ela se dissipará ao final do turno. Qualquer munição conjurada por este efeito também se dissipará ao final do turno. Depois disso, enquanto o efeito persistir, você poderá usar uma ação bônus para fazer a arma reaparecer em sua mão."
+    },
+    {
+      "id": "destruicao-epicentro",
+      "name": "Epicentro",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos de Destruição",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você é imune a qualquer dano e outros efeitos de suas próprias explosões destrutivas. Isso inclui ignorar terreno difícil criado por um tipo de explosão e imunidade aos seus próprios talentos (formato) com duração não instantânea."
+    },
+    {
+      "id": "destruicao-tipo-de-explosao-extra",
+      "name": "Tipo de Explosão Extra",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos de Destruição",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha três talentos (tipo) que você não possua; você ganha esses tipos de explosão. Você não precisa possuir a esfera base (ou pacotes de esferas) associada a esses tipos de explosão. Este talento não pode ser usado para selecionar talentos avançados. Você pode selecionar este talento mais de uma vez; cada vez que você o fizer, você ganha três talentos adicionais (tipo)."
+    },
+    {
+      "id": "destruicao-golpe-guiado",
+      "name": "Golpe Guiado",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos de Destruição",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você tem vantagem nas jogadas de ataque mágico feitas como parte da sua explosão destrutiva. Aprimoramentos que concedem jogadas de ataque adicionais como parte da explosão destrutiva (como com o talento Raio (forma de explosão)), concedem vantagem a todas as jogadas de ataque mágico feitas para a conjuração. Se você já tiver vantagem na sua jogada de ataque mágico, você pode rolar um dos dados novamente uma vez."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "destruicao-explosao-seletiva",
+      "name": "Explosão Seletiva",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos de Destruição",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Ao usar uma explosão destrutiva com duração instantânea, você pode excluir uma criatura; ela não sofre dano ou efeitos."
+        },
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Você pode excluir um número de criaturas igual ao seu bônus de proficiência."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "destruicao-calamidade",
+      "name": "Calamidade (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Destruição",
+      "tags": [
+        "formato"
+      ],
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Ao usar a forma de explosão Esculpir, a linha se torna 150 metros de comprimento, o cone se torna 27 metros de comprimento ou você afeta tudo em um raio de 9 metros de você."
+        }
+      ],
+      "body": "Pré-requisitos: Esfera de destruição (Esculpir (formato)), 11º nível ou superior."
+    },
+    {
+      "id": "destruicao-nuvem",
+      "name": "Nuvem (formato)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Destruição",
+      "tags": [
+        "formato"
+      ],
+      "duration": "Concentração, até 10 minutos",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "destruicao"
+        },
+        {
+          "type": "talent",
+          "id": "destruicao-esfera"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 3,
+          "text": "Você pode transformar sua explosão destrutiva em uma nuvem turbulenta de destruição. A nuvem cobre um cilindro de 4,5 metros de raio e 4,5 metros de altura e permanece estacionária, a menos que você a direcione para se mover como uma ação bônus, o que ela faz a uma velocidade de 12 metros. A área dentro da nuvem fica fortemente obscurecida. Quaisquer criaturas que entrarem ou iniciarem seu turno dentro da nuvem sofrem os efeitos da sua explosão destrutiva. Os alvos afetados devem fazer um teste de resistência de Destreza. Em caso de sucesso, eles sofrem metade do dano e negam quaisquer efeitos adicionais que o (tipo) normalmente infligiria ao alvo. O raio e a altura do cilindro aumentam em 1,5 metro no 11º nível (raio de 6 metros, altura de 6 metros) e no 17º nível (raio de 7,5 metros, altura de 7,5 metros)."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem uma ação."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "destruicao-desintegrar",
+      "name": "Desintegrar (tipo)",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Destruição",
+      "tags": [
+        "tipo"
+      ],
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Sua explosão destrutiva causa dano de força e dano adicional igual ao seu nível. Qualquer criatura reduzida a 0 pontos de vida pela sua explosão destrutiva é completamente desintegrada, restando apenas um rastro de pó fino, embora seus itens mágicos não sejam afetados. A criatura só pode ser trazida de volta à vida por meio do talento Ressurreição Maior, ou pelas magias ressurreição verdadeira ou desejo. Este tipo de explosão causa dano dobrado a objetos."
+        }
+      ],
+      "body": "Pré-requisitos: Esfera de Destruição, 5º nível ou superior.\n\nAo atingir um objeto não mágico que não esteja sendo usado ou segurado, a explosão destrutiva simplesmente desintegra até o equivalente a um cubo de matéria de 3 metros de lado. Portanto, ela desintegra apenas parte de qualquer objeto ou estrutura muito grande atingida. A explosão afeta até mesmo objetos construídos inteiramente de força, mas não efeitos mágicos como um globo de invulnerabilidade, um campo antimágico ou a Barreira da esfera Proteção."
+    },
+    {
+      "id": "destruicao-explosao-penetrante",
+      "name": "Explosão Penetrante",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Destruição",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aprimoramento 1PM Sua explosão destrutiva ignora qualquer resistência ao seu tipo de dano que as criaturas e objetos afetados possuam. Criaturas e objetos com imunidade ao tipo de dano são tratados como tendo resistência."
+        }
+      ],
+      "body": "Pré-requisitos: Esfera Destruição, 5º nível ou superior."
+    },
+    {
+      "id": "destruicao-evocador-dedicado",
+      "name": "Evocador Dedicado",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não ganha talentos adicionais (tipo) por possuir outras esferas. Você recebe o talento Adepto de Explosão como um talento bônus. Você não pode possuir este talento e a variante Ligado à Natureza simultaneamente."
+    },
+    {
+      "id": "destruicao-ligado-a-natureza",
+      "name": "Ligado à Natureza",
+      "sphere": "destruicao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode escolher qualquer talento (tipo) ao obter a esfera Destruição, mas fica limitado a talentos (tipo) associados às esferas Natureza e Clima, podendo usá-los apenas se o aprimoramento Extrair Natureza estiver ativo. Você recebe um talento de Destruição como um talento bônus. Você não pode possuir este talento e a variante Evocador Dedicado simultaneamente."
+    }
+  ],
+  "_reviewed": false
+}

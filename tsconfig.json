@@ -1,0 +1,16 @@
+{
+  "//": "Opt-in type-checking for the structured-mechanics layer. No emit, no bundler — the browser still loads plain files. Scope is limited to src/ (shared types + the Phase 3 rules engine + the future browser modules); the Node tooling in scripts/ is untyped CLI glue verified by running. Phase 4 expands scope to app.js as the monolith is modularized.",
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*.js"]
+}

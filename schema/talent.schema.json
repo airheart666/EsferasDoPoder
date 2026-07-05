@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "talent.schema.json",
+  "title": "Talent",
+  "description": "One base ability or talent of a sphere. Canonical mechanical record consumed by the character builder. Never inferred from the DOM at runtime.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "sphere", "section", "kind"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable unique slug within the whole dataset (e.g. 'mente-encanto'). Referenced by prerequisites and class grants.",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "sphere": {
+      "type": "string",
+      "description": "id of the owning sphere.",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "section": { "enum": ["magic", "martial"] },
+    "kind": {
+      "enum": ["base", "talent"],
+      "description": "'base' = base ability granted with sphere access; 'talent' = an optional pick."
+    },
+    "group": {
+      "type": "string",
+      "description": "Originating h3 group heading in the source (drives free-pick classification). Empty for base abilities."
+    },
+    "tags": {
+      "type": "array",
+      "description": "Normalized parenthetical tags from the source name, e.g. ['genotipo'], ['encanto'].",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "cost": { "$ref": "#/definitions/cost" },
+    "action":   { "type": ["string", "null"], "description": "Tempo de Conjuração." },
+    "range":    { "type": ["string", "null"] },
+    "duration": { "type": ["string", "null"] },
+    "target":   { "type": ["string", "null"] },
+    "area":     { "type": ["string", "null"] },
+    "save":     { "type": ["string", "null"], "description": "Teste de Resistência." },
+    "prerequisites": {
+      "type": "array",
+      "description": "References the rules engine checks before allowing this talent.",
+      "items": { "$ref": "#/definitions/prerequisite" },
+      "default": []
+    },
+    "advanced": {
+      "type": "boolean",
+      "description": "True if the talent has prerequisites / belongs to an advanced or legendary group.",
+      "default": false
+    },
+    "enhancements": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/enhancement" },
+      "default": []
+    },
+    "body": {
+      "type": "string",
+      "description": "Talent prose (Homebrewery/Markdown). Source for the future structured reader render (Phase 5)."
+    },
+    "_needsReview": {
+      "type": ["array", "boolean"],
+      "description": "Migration marker: fields the extractor could not infer confidently. Must be cleared before a sphere is marked reviewed.",
+      "items": { "type": "string" }
+    }
+  },
+  "definitions": {
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Structured magic-point cost. Captures tiered costs like '0PM (menor), 1PM (maior), 2PM (poderoso)'.",
+      "properties": {
+        "base": { "type": ["number", "null"], "description": "Flat PM cost, or null when variable / expressed only as tiers." },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "pm"],
+            "properties": {
+              "label": { "type": "string" },
+              "pm": { "type": "number" }
+            }
+          }
+        },
+        "variable": { "type": "boolean", "default": false },
+        "text": { "type": "string", "description": "Original prose cost, for display and audit." }
+      }
+    },
+    "prerequisite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["talent", "sphere", "level", "text"] },
+        "id": { "type": "string", "description": "Referenced talent or sphere id (required for type talent/sphere)." },
+        "min": { "type": "integer", "minimum": 1, "maximum": 20, "description": "Minimum character level (type level)." },
+        "text": { "type": "string", "description": "Free-form / unresolved prerequisite (type text)." }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "enum": ["talent", "sphere"] } } },
+          "then": { "required": ["id"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "level" } } },
+          "then": { "required": ["min"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "text" } } },
+          "then": { "required": ["text"] }
+        }
+      ]
+    },
+    "enhancement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "pm": { "type": ["number", "null"], "description": "Extra PM cost of the enhancement." },
+        "text": { "type": "string" }
+      }
+    }
+  }
+}

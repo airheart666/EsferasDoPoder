@@ -1,0 +1,516 @@
+{
+  "id": "clima",
+  "name": "Clima",
+  "section": "magic",
+  "summary": "Comandar o clima e os fenômenos atmosféricos conforme sua vontade.",
+  "theme": {
+    "h": 200,
+    "s": 46,
+    "sig": "clima"
+  },
+  "acquisition": null,
+  "talents": [
+    {
+      "id": "clima-manto",
+      "name": "Manto",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "10 minutos",
+      "range": "Toque",
+      "duration": "Concentração, até 1 hora",
+      "target": "1 criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração é reduzido para 1 ação."
+        },
+        {
+          "pm": 1,
+          "text": "Você concede os efeitos de um de seus talentos (de manto), independentemente do clima da área. Este aprimoramento pode ser aplicado várias vezes, concedendo os efeitos de um talento (de manto) adicional a cada vez. Você pode trocar um talento (de manto) concedido uma vez por rodada como uma ação bônus."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem custo de ação."
+        }
+      ],
+      "body": "Você envolve o alvo com sua magia, concedendo-lhe benefícios dependendo do clima ao redor. Embora uma criatura nunca possa ter mais de um manto ativo por vez, ela recebe os benefícios de todos os seus talentos (de manto) aplicáveis ​​ao clima da área."
+    },
+    {
+      "id": "clima-mortalha",
+      "name": "Mortalha",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Concentração, até 1 minuto",
+      "target": "1 criatura ou objeto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. O efeito termina imediatamente em um alvo afetado por mortalha assim que ele obtiver sucesso em 3 testes de resistência contra o efeito. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem custo de ação."
+        }
+      ],
+      "body": "Você altera o clima imediatamente ao redor do alvo, aplicando os efeitos de um talento (mortalha) que você conhece. Uma criatura só pode estar sob o efeito de uma de suas mortalhas por vez; usar uma segunda mortalha em uma criatura dissipa a primeira. Embora uma mortalha possa produzir chuva, ventos ou outros efeitos, eles não são permanentes no ambiente; qualquer chuva evapora imediatamente, o gelo desaparece ao deixar o alvo, etc."
+    },
+    {
+      "id": "clima-reacao",
+      "name": "Reação (manto)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Manto",
+      "tags": [
+        "manto"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aumente o número de dados de dano em 1 (2d4 no 1º nível, 2d6 no 5º nível, etc.)."
+        }
+      ],
+      "body": "Escolha uma das opções abaixo. Enquanto estiver em uma área com categoria climática de severidade 1 ou superior, se criaturas com seu manto forem atingidas por um ataque corpo a corpo, o atacante sofre 1d4 de dano, desde que atenda aos outros pré-requisitos. O tipo de dano é determinado pela categoria climática. A quantidade de dano aumenta no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).\n\nVento Cortante (vento). Requer severidade de Vento 1 ou superior. Os atacantes sofrem dano perfurante.\n\nPele Ardente (calor). Requer severidade de Calor 1 ou superior. Os atacantes sofrem dano de fogo.\n\nPele Congelante (frio). Requer severidade de Frio 1 ou superior. Os atacantes sofrem dano de frio.\n\nPara-raios (tempestade). Requer severidade de Tempestade 1 ou superior. Os atacantes sofrem dano elétrico.\n\nRespingo (precipitação). Requer severidade de Precipitação 1 ou superior. Os atacantes sofrem dano de impacto e são encharcados.\n\nPele Murcha (aridez). Requer severidade de aridez 1 ou superior. Os atacantes sofrem dano necrótico por dessecação."
+    },
+    {
+      "id": "clima-dinamico",
+      "name": "Dinâmico (manto)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Manto",
+      "tags": [
+        "manto"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas com seu manto ganham uma das seguintes habilidades:\n\nLevantar-se (vento). Enquanto estiverem em uma área de Vento de severidade 1 ou superior, criaturas com seu manto podem levitar até 3 metros, permanecendo suspensas no ar. Criaturas com manto só podem se mover empurrando ou puxando um objeto ou superfície fixa ao seu alcance (o que lhes permite mover-se como se estivessem escalando). Elas podem alterar sua altitude uma vez por turno em até 3 metros em qualquer direção como parte de seu movimento, que aumenta no 5º nível (6 metros), 11º nível (12 metros) e 17º nível (18 metros). Caso o manto termine enquanto a criatura estiver levitando, o alvo coberto flutua suavemente até o chão, caindo a uma velocidade de 18 metros por rodada.\n\nPasso Relâmpago (tempestade). Enquanto estiverem em uma área de Tempestade de intensidade 1 ou superior, criaturas com seu manto podem se teletransportar até 1,5 metro como uma ação bônus. Se um raio atingir a criatura enquanto o manto estiver ativo, ela também poderá se teletransportar como uma reação. A distância que as criaturas cobertas podem se teletransportar aumenta em 1,5 metro no 5º nível (3 metros), no 11º nível (4,5 metros) e no 17º nível (6 metros).\n\nZéfiro Flamejante (calor). Enquanto estiverem em uma área de Calor de intensidade 1 ou superior, criaturas com seu manto recebem um bônus de +1,5 metro em todos os seus modos de movimento. O bônus de movimento aumenta em 1,5 metro no 5º nível (+3 metros), no 11º nível (+4,5 metros) e no 17º nível (+6 metros).\n\nFluidez (precipitação). Enquanto estiverem em uma área de Precipitação de severidade 1 ou superior, criaturas com seu manto ganham vantagem em testes de Força (Atletismo) e Destreza (Acrobacia) feitos para resistir ou escapar de uma imobilização. As criaturas com manto se consideram um tamanho menor para fins de passagem por espaços apertados no 5º nível (1 tamanho menor), 11º nível (2 tamanhos menores) e 17º nível (3 tamanhos menores).\n\nPatins de Gelo (frio). Enquanto estiverem em uma área de Frio de severidade 1 ou superior, criaturas com seu manto podem ignorar qualquer terreno difícil causado por gelo, lama, areia, neve ou água. Além disso, ao se moverem por esses terrenos, criaturas com manto recebem um bônus de +3 metros em sua velocidade de deslocamento terrestre, aumentando em 3 metros no 5º nível (+6 metros), 11º nível (+9 metros) e 17º nível (+12 metros).\n\nNadador de Areia (aridez). Enquanto estiverem em uma área de aridez de severidade 1 ou superior, criaturas com seu manto podem fazer testes de Força (Atletismo) para nadar através da areia como se fosse água e ganhar percepção sísmica de 3 metros. O alcance da percepção sísmica aumenta em 3 metros no 5º nível (6 metros), no 11º nível (9 metros) e no 17º nível (12 metros)."
+    },
+    {
+      "id": "clima-hostil",
+      "name": "Hostil (manto)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Manto",
+      "tags": [
+        "manto"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aumente o número de dados de dano em 1 (2d4 no 1º nível, 2d6 no 5º nível, etc.)."
+        }
+      ],
+      "body": "Criaturas com seu manto ganham uma das seguintes habilidades:\n\nOlhar Boreal (frio). Enquanto estiverem em uma área de Frio de severidade 1 ou superior, criaturas com seu manto podem congelar outras com um simples olhar. Como uma Ação ou ação bônus, elas podem fazer uma jogada de ataque mágico à distância usando seu modificador de habilidade principal contra um único alvo a até 9 metros. Criaturas atingidas sofrem 1d6 de dano de frio. O dano de frio do ataque de olhar aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).\n\nDessecante (aridez). Enquanto estiverem em uma área de Aridez de severidade 1 ou superior, criaturas com seu manto causam 1d4 de dano necrótico adicional por dessecação quando atingem uma criatura com um ataque corpo a corpo. A quantidade de dano necrótico bônus aumenta no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).\n\nFebre (calor). Enquanto estiverem em uma área de Calor de severidade 1 ou superior, criaturas com seu manto causam 1d4 de dano de fogo adicional ao atingirem uma criatura com uma arma natural (como uma mordida, garra ou pancada). A quantidade de dano de fogo bônus aumenta no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).\n\nHiponatremia (precipitação). Enquanto estiverem em uma área de Precipitação de severidade 1 ou superior, criaturas com seu manto causam 1d4 de dano de veneno adicional ao atingirem uma criatura com uma arma de ataque à distância. A quantidade de dano de veneno bônus aumenta no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).\n\nVento Cortante (vento). Enquanto estiverem em uma área de Vento de severidade 1 ou superior, criaturas com seu manto causam 1d4 de dano cortante adicional ao atingirem uma criatura com um ataque desarmado. A quantidade de dano cortante bônus aumenta no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10).\n\nChoque (tempestade). Enquanto estiverem em uma área de Tempestade de severidade 1 ou superior, criaturas com seu manto causam 1d4 de dano elétrico adicional ao atingirem uma criatura com uma arma de metal. A quantidade de dano elétrico bônus aumenta no 5º nível (1d6), 11º nível (1d8) e 17º nível (1d10)."
+    },
+    {
+      "id": "clima-utilidade",
+      "name": "Utilidade (manto)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Manto",
+      "tags": [
+        "manto"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas com seu manto ganham uma das seguintes habilidades:\n\nFala da Brisa (manto, vento). Enquanto estiverem em uma área de Vento de intensidade 1 ou superior, criaturas com seu manto podem falar com outras criaturas com um manto de Fala da Brisa como se estivessem adjacentes, independentemente da distância ou mesmo se uma delas estiver silenciada. Isso funciona independentemente da distância entre elas, contanto que ambas estejam dentro de uma área contínua de Vento de intensidade 1 ou superior e no mesmo plano. Isso permite que elas falem e se ouçam mesmo que uma delas esteja em uma área de silêncio mágico, embora não permita que usem componentes verbais em tal área.\n\nDesfibrilação (tempestade). Enquanto estiverem em uma área de Tempestade de intensidade 1 ou superior, criaturas com seu manto têm vantagem em qualquer teste de resistência contra morte que fizerem.\n\nAlta Energia (calor). Enquanto estiverem em uma área de Calor de intensidade 1 ou superior, criaturas com seu manto ganham um número de pontos de vida temporários igual ao seu bônus de proficiência. Esses pontos de vida temporários são restaurados no início de cada rodada.\n\nGeladeira (frio). Enquanto estiverem em uma área de Frio de severidade 1 ou superior, criaturas com seu manto e seus equipamentos são protegidas contra decomposição e não podem se tornar mortas-vivas. Além disso, o limite de tempo para que criaturas com manto possam ser ressuscitadas é estendido, já que rodadas, minutos e horas passadas sob o manto não contam para o limite de tempo de tais magias ou talentos e habilidades da esfera mágica.\n\nCarga Leve (aridez). Enquanto estiverem em uma área de Aridez de severidade 1 ou superior, criaturas com seu manto podem adicionar seu bônus de proficiência à sua Força ao determinar a quantidade de peso que podem carregar.\n\nForma de Névoa (precipitação). Enquanto estiverem em uma área de Precipitação de severidade 1 ou superior, criaturas com seu manto são imunes a ataques de oportunidade e podem entrar e ocupar o espaço de outra criatura."
+    },
+    {
+      "id": "clima-previsor-do-tempo",
+      "name": "Previsor do Tempo (manto)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Manto",
+      "tags": [
+        "manto"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas com seu manto ganham uma das seguintes habilidades:\n\nManto Barométrico (qualquer). Criaturas com seu manto podem prever com precisão o clima natural em um raio de 8 quilômetros (5 milhas) com até 48 horas de antecedência e, portanto, sempre saber se o clima está sendo manipulado magicamente. Elas também têm vantagem em quaisquer testes de resistência contra efeitos climáticos (incluindo efeitos da esfera climática, como sudários).\n\nCéus Limpos (qualquer). Criaturas com seu manto consideram o clima um nível menos severo, até o nível de severidade 0. Este e outros talentos (de manto) ainda funcionam de acordo com o nível de severidade real. A criatura com manto considera o clima um nível adicional menos severo no 5º nível (2 níveis), 11º nível (3 níveis) e 17º nível (4 níveis)."
+    },
+    {
+      "id": "clima-a-prova-de-intemperies",
+      "name": "À Prova de Intempéries (manto)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Manto",
+      "tags": [
+        "manto"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Criaturas com seu manto ganham uma das seguintes habilidades:\n\nCorpo Gelificado (frio). Enquanto estiverem em uma área de Frio de severidade 1 ou superior, criaturas com seu manto ganham resistência a dano de frio e dano cortante não mágico.\n\nBrilho de Miragem (calor). Enquanto estiverem em uma área de Calor de severidade 1 ou superior, criaturas com seu manto ganham resistência a dano perfurante não mágico e vantagem em testes de Inteligência (Investigação) para desacreditar ilusões.\n\nCarne Mumificada (aridez). Enquanto estiverem em uma área de Aridez de severidade 1 ou superior, criaturas com seu manto ganham resistência a dano necrótico e dano contundente não mágico.\n\nNão Condutivo (tempestade). Enquanto estiverem em uma área de Tempestade de severidade 1 ou superior, criaturas com seu manto ganham resistência a dano elétrico. Além disso, alvos envoltos em manto ganham vantagem em todos os testes de resistência feitos para negar ou reduzir dano elétrico.\n\nEncharcado (precipitação). Enquanto estiverem em uma área de Precipitação de severidade 1 ou superior, criaturas com seu manto ganham resistência a dano de fogo e veneno. Além disso, alvos encapuzados também podem apagar incêndios não mágicos de tamanho Minúsculo ou menor com um ataque corpo a corpo bem-sucedido. O alvo encapuzado também pode apagar incêndios mágicos, mas isso requer um teste bem-sucedido de habilidade de conjuração contra a CD de resistência à magia ou a CD da esfera do incêndio. O tamanho do incêndio que eles podem apagar aumenta em um nível no 5º nível (tamanho Pequeno), 11º nível (tamanho Médio) e 17º nível (tamanho Grande).\n\nTúnel de Vento (vento). Ataques com armas à distância feitos contra criaturas com seu manto enquanto estiverem em uma área de Vento de intensidade 1 ou superior são feitos com desvantagem. Além disso, criaturas encapuzadas não erram automaticamente ao lançar projéteis comuns contra alvos atrás de uma parede de vento (ou efeito similar)."
+    },
+    {
+      "id": "clima-frio-artico",
+      "name": "Frio Ártico (mortalha, frio)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Mortalha",
+      "tags": [
+        "mortalha",
+        "frio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode colocar uma das seguintes mortalhas em um alvo:\n\nGelo Negro. Colocar esta mortalha em um alvo faz com que gelo se forme ao redor de seus membros, reduzindo sua velocidade de movimento pela metade. Uma criatura cuja velocidade seria reduzida para menos de 1,5 metro fica restringida.\n\nPó de Diamante. Colocar esta mortalha em um alvo faz com que o ar ao seu redor seja repentinamente preenchido com cristais de gelo. Durante a duração, ao final do seu turno, o alvo afetado pela mortalha sofre 1d6 de dano de frio. Alvos afetados podem evitar esse dano com um teste de resistência de Constituição bem-sucedido, mas se o custo final em pontos de magia da sua mortalha for 1 ou mais pontos de magia, um teste bem-sucedido reduz o dano pela metade. O dano de frio aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).\n\nKarakaze. Colocar esta mortalha em um alvo cria um vento frio e seco da montanha que o entorpece, impondo uma penalidade de -2 na CA e nos testes de resistência de Destreza que ele fizer."
+    },
+    {
+      "id": "clima-precipitacao-da-costa",
+      "name": "Precipitação da Costa (mortalha, precipitação)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Mortalha",
+      "tags": [
+        "mortalha",
+        "precipitacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode colocar uma das seguintes mortalhas em um alvo:\n\nEncharcar. Colocar esta mortalha em um alvo faz com que uma pequena nuvem o siga, despejando chuva constantemente. A menos que o alvo gaste uma ação bônus para se secar a cada rodada, uma ação que provoca um ataque de oportunidade, sua velocidade de movimento é reduzida pela metade, ele tem desvantagem em testes de resistência contra efeitos de clima frio e é considerado encharcado ou molhado.\n\nAfogar. Colocar esta mortalha em um alvo cria uma torrente de água que jorra em todos os orifícios na tentativa de afogar o alvo. Durante a duração, ao final do seu turno, o alvo afetado pela mortalha deve ser bem-sucedido em um teste de resistência de Constituição ou sofrer 1d8 de dano de impacto não mágico. Alvos que sofreram dano de concussão na rodada anterior devido à mortalha e falharem em seu teste de resistência ficam envenenados por uma rodada. Criaturas que podem respirar debaixo d'água são imunes ao efeito desta mortalha. O dano de concussão aumenta em 1d8 no 5º nível (2d8), 11º nível (3d8) e 17º nível (4d8).\n\nCorrente de Retorno. Colocar esta mortalha em um alvo o envolve em água, incapacitando a vítima e deixando-a vulnerável ao afogamento. Durante a duração, ao final do seu turno, o alvo afetado pela mortalha deve fazer um teste de resistência de Constituição. Uma criatura que falhar neste teste é considerada agarrada por uma rodada. Criaturas que falharem em dois testes de resistência ficam envenenadas enquanto estiverem agarradas. Criaturas que falharem em três testes de resistência ficam impedidas de se mover durante a duração do agarramento. Ser bem-sucedido em um teste de resistência libera a criatura do agarramento, mas não encerra o efeito. Criaturas que podem respirar tanto água quanto ar são imunes aos efeitos desta mortalha, enquanto criaturas que só podem respirar água têm vantagem nos testes de resistência."
+    },
+    {
+      "id": "clima-aridez-do-deserto",
+      "name": "Aridez do Deserto (mortalha, aridez)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Mortalha",
+      "tags": [
+        "mortalha",
+        "aridez"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode colocar uma das seguintes mortalhas em um alvo:\n\nNuvem de Poeira. Colocar esta mortalha em um alvo preenche o ar do espaço com poeira seca. Durante a duração, ao final do seu turno, o alvo afetado pela mortalha deve ser bem-sucedido em um teste de resistência de Constituição ou será envenenado pela rodada.\n\nRaio Iluminado. Colocar esta mortalha em um alvo cria um feixe de luz para revelar sua posição, impondo desvantagem em todos os testes de Destreza (Furtividade) que ele fizer.\n\nSiroco. Colocar esta mortalha em um alvo cria um vento constante e ressecante que suga sua força. O alvo afetado pela mortalha deve ser bem-sucedido em um teste de resistência de Constituição ou será infligido com exaustão de nível 1 que dura pela duração da mortalha. Um teste de resistência de Constituição bem-sucedido encerrará imediatamente a mortalha, sem outros efeitos. O nível de exaustão infligido por uma falha no teste de resistência de Constituição aumenta em 1 no 5º nível (exaustão de nível 2), no 11º nível (exaustão de nível 3) e no 17º nível (exaustão de nível 4)."
+    },
+    {
+      "id": "clima-tempestade-da-floresta",
+      "name": "Tempestade da Floresta (mortalha, tempestade)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Mortalha",
+      "tags": [
+        "mortalha",
+        "tempestade"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode colocar uma das seguintes mortalhas em um alvo:\n\nArco Estaladiço. Colocar esta mortalha em um alvo faz com que ele seja envolto em plasma que salta para atingir outra criatura. Durante a duração, ao final do seu turno, você pode escolher uma criatura (que não seja o alvo da mortalha) dentro do alcance da mortalha do alvo para sofrer 1d6 de dano elétrico. As criaturas afetadas podem evitar esse dano com um teste de resistência de Destreza bem-sucedido, mas se o custo final em pontos de magia da sua mortalha for 1 ou mais, um teste bem-sucedido reduz o dano pela metade. Se você não escolher uma criatura para sofrer o dano elétrico, o plasma se dissipa inofensivamente naquela rodada. Independentemente de quantas mortalhas Arco Estaladiço você tiver ativas ao mesmo tempo, nenhuma\n\ncriatura individual pode ser danificada por esta mortalha mais de uma vez por rodada. Se esta mortalha tiver uma duração diferente de concentração, o efeito termina imediatamente assim que uma criatura individual obtiver 3 testes de resistência bem-sucedidos contra o efeito. O dano de relâmpago aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).\n\nNuvem de Trovão Pessoal. Colocar esta mortalha em um alvo cria uma nuvem de trovão que o segue e emite periodicamente rajadas de trovão alto. Durante a duração, ao final do seu turno, o alvo afetado pela mortalha sofre 1d6 de dano de trovão. Os alvos afetados podem evitar esse dano com um teste de resistência de Constituição bem-sucedido, mas se o custo final em pontos de magia da sua mortalha for de 1 ou mais pontos de magia, um teste bem-sucedido reduz o dano pela metade. O dano de trovão aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6)."
+    },
+    {
+      "id": "clima-clima-intensificado",
+      "name": "Clima Intensificado (mortalha)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Mortalha",
+      "tags": [
+        "mortalha"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao aplicar esta mortalha em um alvo, escolha Aridez, Frio, Calor, Precipitação ou Vento. O alvo afetado pela mortalha sofre o efeito dessa categoria climática no nível de severidade 1; veja o talento avançado Controlar o Clima. Se o alvo já estiver sob o efeito de um clima da categoria escolhida com a mesma severidade ou superior, ele sofre o efeito do tipo de clima escolhido como se fosse um nível mais severo (nível máximo de severidade 4). Você pode aplicar esta mortalha várias vezes a um único alvo, escolhendo uma categoria climática diferente a cada vez. Você pode optar por aumentar o nível de severidade da categoria climática escolhida em um nível adicional no 5º nível (nível de severidade 2), 11º nível (nível de severidade 3) e 17º nível (nível de severidade 4)."
+    },
+    {
+      "id": "clima-vento-da-montanha",
+      "name": "Vento da Montanha (mortalha, vento)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Mortalha",
+      "tags": [
+        "mortalha",
+        "vento"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode aplicar uma das seguintes mortalhas em um alvo:\n\nVentos Impiedosos. Colocar esta mortalha em um alvo impõe desvantagem em jogadas de ataque com armas de longo alcance e em testes de resistência de Destreza.\n\nVento Cortante. Colocar esta mortalha em um alvo impõe desvantagem em testes de Sabedoria (Percepção) baseados na visão.\n\nVento Deslocante. Colocar esta mortalha em um alvo cria um vento forte e constante que o empurra. Durante a duração, ao final do seu turno, o alvo afetado pela mortalha é movido 1,5 metro na direção que você escolher. Um teste de resistência de Força bem-sucedido impede esse movimento forçado. A distância percorrida em um teste de resistência de Força falho aumenta em 1,5 metro no 5º nível (3 metros), no 11º nível (4,5 metros) e no 17º nível (6 metros)."
+    },
+    {
+      "id": "clima-calor-do-pantano",
+      "name": "Calor do Pântano (mortalha, calor)",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Mortalha",
+      "tags": [
+        "mortalha",
+        "calor"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode colocar uma das seguintes mortalhas em um alvo:\n\nFata Morgana. Colocar esta mortalha em um alvo impõe desvantagem em todos os testes de resistência contra ilusões e em testes de Inteligência (Investigação) feitos para desacreditar ilusões.\n\nOfuscamento. Colocar esta mortalha em um alvo causa cegueira por uma luz intensa. Durante a duração, ao final do seu turno, o alvo afetado pela mortalha deve ser bem-sucedido em um teste de resistência de Sabedoria ou ficará cego durante a rodada.\n\nInsolação. Colocar esta mortalha em um alvo cria uma região de calor intenso ao redor dele. Durante a duração, ao final do seu turno, o alvo afetado pela mortalha sofre 1d6 de dano de fogo. Alvos afetados podem evitar esse dano com um teste de resistência de Constituição bem-sucedido, mas se o custo final em pontos de magia da sua mortalha for de 1 ou mais pontos de magia, um teste bem-sucedido reduz o dano pela metade. O dano de fogo aumenta em 1d6 no 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6)."
+    },
+    {
+      "id": "clima-clima",
+      "name": "Clima",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados em Clima",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "talent",
+          "id": "universal-alcance"
+        },
+        {
+          "type": "sphere",
+          "id": "climatica"
+        },
+        {
+          "type": "talent",
+          "id": "clima-controlar-o-clima"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 3,
+          "text": "o alcance aumenta para 1,6 km."
+        }
+      ],
+      "body": "Ao usar Controlar o Clima, a duração passa a ser Concentração, até 8 horas.\n\nAprimoramento 4PM (requer 15º nível): o alcance aumenta para 8 km.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Climática"
+      ]
+    },
+    {
+      "id": "clima-controlar-o-clima",
+      "name": "Controlar o Clima",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados em Clima",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "10 minutos",
+      "range": "9 metros",
+      "duration": "Concentração, até 1 hora",
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração do controle climático passa a ser uma ação."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem a necessidade de uma ação."
+        }
+      ],
+      "body": "Pré-requisito: Esfera Climática\n\nDuração, você controla o clima, afetando apenas a área dentro do alcance. Se você estiver em uma área confinada, como dentro de um prédio, seu controle se estende apenas até a borda desse espaço.\n\nAo usar Controlar o Clima, você altera as condições climáticas, que são determinadas pelo Mestre com base no clima, localização e estação do ano. Ao alterar as condições climáticas, encontre a condição atual nas tabelas a seguir e altere sua severidade em um nível, para cima ou para baixo. A cada 10 minutos de uso do controle climático, você pode aumentar ou diminuir a severidade em um nível, até a severidade máxima de 1.\n\nA severidade máxima que você pode criar aumenta em 1 ao atingir o 5º nível (nível de severidade 2), o 11º nível (nível de severidade 3) e o 17º nível (nível de severidade 4).\n\nCada categoria climática (aridez, frio, calor, precipitação e vento) possui 5 níveis de severidade (0-4). A temperatura é dividida em \"Calor\" e \"Frio\", cada uma com 5 níveis de severidade. (Se a temperatura for reduzida abaixo da severidade 0 de Calor, ela se torna a severidade 1 de Frio.) Da mesma forma, a umidade é dividida em \"Precipitação\" e \"Aridez\", que segue uma configuração semelhante. Um dia médio sem vento e com umidade e temperatura normais é considerado de nível de severidade 0 para todas as categorias.\n\nInformações sobre cada categoria de clima e sua severidade podem ser encontradas no Apêndice.\n\nQuando a duração do controle climático termina, a severidade do clima alterado retorna ao normal na proporção de um nível a cada 10 minutos."
+    },
+    {
+      "id": "clima-senhor-da-tempestade",
+      "name": "Senhor da Tempestade",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados em Clima",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "clima"
+        },
+        {
+          "type": "talent",
+          "id": "clima-controlar-o-clima"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar Controlar o Clima para criar uma Tempestade de nível de severidade 1 ou superior, você escolhe a localização dos efeitos, como raios; eles não são mais escolhidos aleatoriamente."
+    },
+    {
+      "id": "clima-tempestade-subita",
+      "name": "Tempestade Súbita",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados em Clima",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "talent",
+          "id": "universal-acelerar"
+        },
+        {
+          "type": "sphere",
+          "id": "clima"
+        },
+        {
+          "type": "talent",
+          "id": "clima-controlar-o-clima"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A cada rodada que você usa Controlar o Clima, você pode aumentar ou diminuir a severidade em um ponto, até o seu limite máximo ou mínimo de severidade."
+        }
+      ],
+      "body": "A cada minuto que você usa Controlar o Clima, você pode aumentar ou diminuir a severidade em um ponto, até o seu limite máximo ou mínimo de severidade."
+    },
+    {
+      "id": "clima-aeromancia",
+      "name": "Aeromancia",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em vez de ganhar um talento (manto) ou (manto) ao obter a esfera Clima pela primeira vez, você ganha o talento e a habilidade avançados Controlar o Clima."
+    },
+    {
+      "id": "clima-clima-focado",
+      "name": "Clima Focado",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha uma categoria climática entre: aridez, frio, calor, precipitação ou vento. Ao usar talentos ou habilidades (manto) ou (manto), você está limitado àqueles marcados com (qualquer) ou à categoria climática escolhida. Se você tiver o talento avançado Controlar o Clima, poderá apenas modificar o nível de severidade da categoria climática escolhida ou diminuir a categoria climática oposta para que se torne a categoria climática escolhida. Por exemplo, se você escolheu (calor) e possui o talento avançado Controlar o Clima, poderá modificar a severidade do calor entre os níveis 0 e 4 ou diminuir os níveis de severidade do frio para atingir os níveis de severidade do calor. Você ganha um talento bônus da esfera Clima ao obter esta variante da esfera."
+    },
+    {
+      "id": "clima-aridez",
+      "name": "Aridez",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Apêndice: Categorias Climáticas",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "A aridez é o oposto da precipitação. Se a precipitação diminuir abaixo do nível de severidade 0, torna-se severidade 1 de aridez, e vice-versa.\n\nA água exposta ao ar perde cerca de 2,5 cm de altura por dia para cada nível de severidade combinado entre aridez e calor. Esse valor aumenta para 5 cm por nível combinado no nível de severidade 3 de aridez e para 10 cm por nível combinado no nível de severidade 4 de aridez.\n\nImunidades\n\nCriaturas naturalmente adaptadas a climas áridos tratam as condições climáticas de aridez como se fossem 1 nível de severidade menor. Criaturas com resistência a dano necrótico tratam as condições climáticas de aridez como se fossem 2 níveis de severidade menores. Criaturas imunes a dano necrótico obtêm sucesso automaticamente em qualquer teste de resistência contra as condições climáticas de aridez.\n\nSeveridade 0\n\nEm condições normais (nível de severidade 0 de aridez), um personagem pode ficar sem água por 1 dia mais um número de horas igual ao seu modificador de Constituição. Após esse período, o personagem deve fazer um teste de resistência de Constituição a cada hora subsequente ou ganhar um nível de exaustão.\n\nSeveridade 1\n\nNo nível de severidade 1 de aridez e superiores, todas as criaturas sofrem desvantagem em qualquer teste de resistência de Constituição contra exaustão devido à desidratação. Além disso, a cada vez que o teste de resistência de Constituição for feito durante as mesmas 24 horas, a CD aumenta em 1.\n\nSeveridade 2\n\nNo nível de severidade 2 de aridez, todas as criaturas devem beber o dobro de água por dia para se manterem saudáveis, e o tempo que um personagem pode ficar sem água antes de precisar começar a fazer testes de resistência de Constituição, bem como o tempo entre os testes, é reduzido pela metade (12 + 1/2 do modificador de Constituição horas, testes a cada 30 minutos).\n\nSeveridade 3\n\nNo nível de severidade 3 de aridez, o tempo que um personagem pode ficar sem água antes de precisar começar a fazer testes de resistência de Constituição, bem como o tempo entre os testes, é reduzido pela metade novamente (6 + 1/4 do modificador de Constituição horas, testes a cada 15 minutos).\n\nSeveridade 4\n\nNo nível de severidade 4 de aridez, o tempo que um personagem pode ficar sem água antes de precisar começar a fazer testes de resistência de Constituição é reduzido para 1 hora, e o tempo entre os testes é reduzido para uma vez por minuto. Além de ganhar um nível de exaustão por falhar no teste de resistência de Constituição, o personagem também sofre dano necrótico igual ao seu nível. Esse dano é causado pela desidratação e não pode ser curado até que a criatura consuma a quantidade de água necessária."
+    },
+    {
+      "id": "clima-frio",
+      "name": "Frio",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Apêndice: Categorias Climáticas",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O frio é o oposto do calor. Se o nível de calor for reduzido abaixo do nível 0, ele se torna nível 1 de frio, e vice-versa.\n\nImunidades\n\nCriaturas usando roupas de frio (casacos grossos, luvas e similares) e criaturas naturalmente adaptadas a climas frios consideram as condições de frio como um nível de severidade menor. Criaturas com resistência a dano de frio consideram as condições de frio como dois níveis de severidade menores. Criaturas imunes a dano de frio obtêm sucesso automaticamente em qualquer teste de resistência contra condições de frio.\n\nSeveridade 0\n\nEm condições temperadas (nível de severidade 0 de frio), os personagens geralmente se sentem confortáveis ​​com roupas comuns, sem muitas camadas.\n\nSeveridade 1\n\nNo nível de severidade 1 de frio, a temperatura está entre 4 e -18 graus Celsius. Personagens expostos ao frio devem obter sucesso em um teste de resistência de Constituição a cada 4 horas de exposição ou ganhar 1 nível de exaustão. Cada vez que o teste for feito durante as mesmas 24 horas, a CD aumenta em 1.\n\nSeveridade 2\n\nNo nível de severidade 2 de frio, a temperatura está entre -18 e -40 graus Celsius. Personagens expostos a esse frio extremo devem obter sucesso no teste de resistência de Constituição a cada hora de exposição.\n\nSeveridade 3\n\nNo nível de severidade 3 de frio, a temperatura está entre -40 e -85 graus Celsius. Personagens expostos a esse frio ártico devem obter sucesso no teste de resistência de Constituição a cada 10 minutos de exposição. Criaturas que tirarem um 1 natural em seu teste de resistência sofrem 1d8 de dano de frio.\n\nSeveridade 4\n\nNo nível de severidade 4 de frio, a temperatura está abaixo de -85 graus Celsius. Personagens expostos a esse frio sobrenatural devem obter sucesso no teste de resistência de Constituição a cada minuto de exposição, e aqueles que falharem também sofrem 4d8 de dano de frio. Qualquer dano de frio sofrido por falhar neste teste de resistência não pode ser curado até que a criatura se aqueça ou esteja em uma área com nível de severidade de frio 1 ou menor."
+    },
+    {
+      "id": "clima-calor",
+      "name": "Calor",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Apêndice: Categorias Climáticas",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O calor é o oposto do frio. Se o frio for reduzido abaixo da severidade 0, ele se torna severidade 1 de calor, e vice-versa.\n\nImunidades\n\nCriaturas usando armadura média ou pesada, ou que estejam vestindo roupas pesadas, têm desvantagem em quaisquer testes de resistência contra condições climáticas de calor. Criaturas usando roupas adequadas para clima quente (roupas de linho folgadas, cobertura de cabeça folgada e similares) e criaturas naturalmente adaptadas a climas quentes tratam as condições climáticas de calor como se fossem 1 nível de severidade menor. Criaturas com resistência a dano de fogo tratam as condições climáticas de calor como se fossem 2 níveis de severidade menores. Criaturas imunes a dano de fogo automaticamente obtêm sucesso em quaisquer testes de resistência contra condições climáticas de calor.\n\nSeveridade 0\n\nEm condições temperadas (nível de severidade 0 de calor), os personagens geralmente se sentem confortáveis ​​com roupas comuns sem muitas camadas.\n\nSeveridade 1\n\nNo nível de severidade 1 de calor, a temperatura está entre 80 e 100 graus Fahrenheit. Personagens expostos ao calor devem obter sucesso em um teste de resistência de Constituição ao final de cada 4 horas de exposição ou ganhar 1 nível de exaustão. Cada vez que o teste for feito durante as mesmas 24 horas, a CD aumenta em 1.\n\nSeveridade 2\n\nNo nível de severidade 2 de calor, a temperatura está entre 100 e 140 graus Fahrenheit (38 a 60 graus Celsius). Personagens expostos a esse calor extremo devem obter sucesso no teste de resistência de Constituição ao final de cada hora de exposição.\n\nSeveridade 3\n\nNo nível de severidade 3 de calor, a temperatura está entre 140 e 180 graus Fahrenheit (60 a 82 graus Celsius). Personagens expostos a esse calor insuportável devem obter sucesso no teste de resistência de Constituição ao final de cada 10 minutos de exposição. Criaturas que tirarem um 1 natural em seu teste de resistência (independentemente de terem passado ou falhado no teste) sofrem 1d8 de dano de fogo.\n\nSeveridade 4\n\nNo nível de severidade 4 de calor, a temperatura está acima de 180 graus Fahrenheit (82 graus Celsius). Personagens expostos a esse calor sobrenatural devem obter sucesso no teste de resistência de Constituição ao final de cada minuto de exposição e aqueles que falharem também sofrem 4d8 de dano de fogo. Qualquer dano de fogo sofrido por falhar neste teste de resistência não pode ser curado até que a criatura se resfrie ou esteja em uma área com nível de severidade de calor 1 ou inferior."
+    },
+    {
+      "id": "clima-precipitacao",
+      "name": "Precipitação",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Apêndice: Categorias Climáticas",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "A precipitação é o oposto da aridez. Se a Aridez for reduzida abaixo do nível de severidade 0, ela se transforma em Precipitação de severidade 1. Se a Precipitação for reduzida abaixo do nível de severidade 0, ela se transforma em Aridez de severidade 1.\n\nSeveridade 0\n\nEm condições normais (nível de severidade de Precipitação 0), um personagem geralmente não estará molhado, mas sim mais ou menos seco. Se houver nuvens, elas não impactam significativamente a visibilidade.\n\nSeveridade 1\n\nNo nível de severidade de Precipitação 1, há uma combinação de nuvens leves ou neblina no solo, obscurecendo levemente criaturas voadoras nas nuvens ou criaturas na neblina.\n\nSeveridade 2\n\nNo nível de severidade de Precipitação 2, há uma combinação de céu nublado ou neblina densa, obscurecendo fortemente criaturas voadoras nas nuvens ou criaturas na neblina densa. Vampiros e outras criaturas com vulnerabilidades semelhantes não sofrem os efeitos nocivos da luz solar enquanto estiverem em uma área com céu nublado.\n\nSeveridade 3\n\nNo nível de severidade de Precipitação 3, há chuva (se a severidade de Calor for 1 ou superior), granizo (se a severidade de Frio/Calor for 0) ou neve (se a severidade de Frio for 1 ou superior). A área afetada fica levemente obscurecida e todas as chamas expostas são apagadas.\n\nSeveridade 4\n\nNo nível de severidade de Precipitação 4, há chuva torrencial (se a severidade de Calor for 1 ou superior), granizo forte (se a severidade de Frio/Calor for 0) ou nevasca (se a severidade de Frio for 1 ou superior). A área afetada fica fortemente obscurecida, todas as chamas expostas são apagadas, o solo fica escorregadio e considerado terreno difícil e, finalmente, outras criaturas que estiverem se concentrando na área devem fazer testes de resistência de Constituição contra o efeito ou perder a concentração."
+    },
+    {
+      "id": "clima-tempestade",
+      "name": "Tempestade",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Apêndice: Categorias Climáticas",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao contrário de outras condições climáticas, a severidade da tempestade só aumenta quando a umidade (Aridez/Precipitação) e o vento aumentam simultaneamente. Por exemplo, para atingir a severidade 1 da tempestade, tanto o vento quanto a aridez ou a precipitação devem ser iguais ou superiores a 1. Isso significa que os efeitos de uma tempestade são cumulativos com os efeitos do vento e da aridez/precipitação.\n\nSeveridade 1\n\nNa severidade 1 da tempestade, há nuvens de tempestade. A cada 10 minutos, ocorre uma descarga de energia elétrica, geralmente inofensiva, que atinge um ponto aleatório na área, criando um forte trovão que ensurdece as criaturas próximas. Embora a energia elétrica em si não seja particularmente perigosa, qualquer criatura a até 1,5 metro do local atingido pelo raio deve fazer um teste de resistência de Constituição. Uma criatura sofre 1d4 de dano de trovão em caso de falha no teste e fica surda por 1 rodada. Em caso de sucesso no teste, a criatura fica surda apenas por 1 rodada.\n\nSeveridade 2\n\nNa severidade 2 da tempestade, há uma tempestade propriamente dita. A cada minuto, um raio atinge aleatoriamente um quadrado. Cada criatura a até 1,5 metro desse ponto deve fazer um teste de resistência de Destreza. Uma criatura sofre 3d10 de dano elétrico em caso de falha no teste, ou metade desse dano em caso de sucesso.\n\nSeveridade 3\n\nNa severidade 3 da tempestade, há uma tempestade poderosa. É semelhante à severidade 2, exceto que os raios atingem um quadrado aleatório a cada rodada e causam 6d10 de dano elétrico em caso de falha no teste, ou metade desse dano em caso de sucesso.\n\nSeveridade 4\n\nNa severidade 4 da tempestade, há uma tempestade de areia (se a aridez for de severidade 4) ou um tufão (se a precipitação for de severidade 4). Uma tempestade de areia cria obscuridade pesada na área, e as criaturas na área sofrem 1d6 de dano cortante a cada rodada e devem fazer um teste de resistência de Constituição a cada rodada ou ficarão envenenadas por 1 minuto. Um tufão cria obscuridade leve na área, e as criaturas devem fazer um teste de resistência de Força a cada rodada ou sofrerão 2d6 de dano de concussão, ou metade desse dano em caso de sucesso. Cobertura pode proteger um alvo de uma tempestade de areia ou tufão."
+    },
+    {
+      "id": "clima-vento",
+      "name": "Vento",
+      "sphere": "clima",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Apêndice: Categorias Climáticas",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em completa calmaria (Nível de intensidade do vento 0), não há vento suficiente para que veículos se movam à vela. Se houver uma brisa, ela não impactará significativamente a área.\n\nSeveridade 1\n\nNo nível de intensidade do vento 1, há um vento moderado com 50% de chance de apagar chamas expostas de tamanho minúsculo ou menor, como velas.\n\nSeveridade 2\n\nNo nível de intensidade do vento 2, a área impõe desvantagem em testes de ataque com armas de longo alcance e testes de Sabedoria (Percepção) que dependem da audição. O vento também apaga chamas abertas e dispersa a névoa. Além disso, vento de intensidade 2 ou superior exige um teste de Força (Atletismo) ou Destreza (Acrobacia) contra o efeito climático para voar. Aqueles que falharem devem pousar no final de seu turno ou cair. Se um vento forte estiver presente em uma área com muitos detritos soltos (como areia em um deserto), a área também impõe desvantagem em testes de Sabedoria (Percepção) que dependem da visão.\n\nSeveridade 3\n\nNo nível de intensidade do vento 3, há um vento de força de vendaval, poderoso o suficiente para derrubar galhos, senão árvores inteiras. Esses ventos, além de apagarem chamas abertas, têm 75% de chance de apagar chamas protegidas, como as de lanternas.\n\nAtaques comuns com armas de longo alcance são impossíveis, e mesmo armas de cerco sofrem desvantagem em seus testes de ataque à distância. A área também impõe desvantagem em todos os testes de Sabedoria (Percepção). Criaturas de tamanho Médio ou menor devem fazer um teste de Força (Atletismo) para se mover contra o vento. Criaturas de tamanho Pequeno ou menor que falharem neste teste são derrubadas e arrastadas 1d4 x 10 pés, sofrendo 1d4 de dano de concussão a cada 10 pés.\n\nSeveridade 4\n\nNo nível de intensidade do vento 4, há ventos de tornado. Todas as chamas são extintas. Todos os ataques à distância são impossíveis (mesmo com armas de cerco), testes de Sabedoria (Percepção) baseados na audição sempre falham, e a área fica levemente obscurecida. Criaturas de tamanho Enorme ou menor devem fazer um teste de Força (Atletismo) para se mover contra o vento. Criaturas de tamanho Grande ou menor que falharem neste teste são levantadas e arremessadas 2d4 x 10 pés, sofrendo 1d8 de dano de concussão a cada 10 pés após serem derrubadas. Voar nesta área é impossível; uma criatura voadora em meio a ventos de tornado deve pousar no final de seu turno ou cairá."
+    }
+  ],
+  "_reviewed": false
+}

@@ -1,0 +1,663 @@
+{
+  "id": "criacao",
+  "name": "Criação",
+  "section": "magic",
+  "summary": "Criar e moldar materiais físicos, alterando o mundo à sua volta.",
+  "theme": {
+    "h": 20,
+    "s": 58,
+    "sig": "criacao"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "criacao-alterar",
+      "name": "Alterar",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 PM"
+      },
+      "action": "1 ação",
+      "range": "Toque",
+      "duration": "Instantânea",
+      "target": "Um objeto não mágico desprotegido",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser conjurado no seu turno sem uma ação."
+        },
+        {
+          "pm": 1,
+          "text": "O tamanho do objeto que você pode alterar pode ser até dois tamanhos maior."
+        },
+        {
+          "pm": 1,
+          "text": "O dano causado por destruir ultrapassa o limite de dano do objeto."
+        }
+      ],
+      "body": "Você pode alterar um objeto com um toque. O objeto não pode ser maior que o tamanho Minúsculo, embora você possa ter como alvo uma porção de tamanho Minúsculo de um objeto maior (como uma parede). Isso aumenta para o tamanho Pequeno no 5º nível, Médio no 11º nível e Grande no 17º nível.\n\nVocê não pode alterar um alvo animado (como um golem ou objeto animado) e o objeto deve ser não mágico e desacompanhado (não pode ser segurado, vestido ou parte do equipamento de uma criatura).\n\nAo ganhar a esfera da Criação, você pode alterar objetos das seguintes maneiras:\n\nReparar\n\nVocê pode reparar um objeto danificado, restaurando uma quantidade de pontos de vida igual a 1d4 + seu modificador de habilidade chave. Esta habilidade não pode restaurar itens deformados ou transmutados, mas ainda pode reparar o dano causado a tais itens. A quantidade de pontos de vida restaurados aumenta em 1d4 no 5º nível (2d4 + MHC), 11º nível (3d4 + MHC) e 17º nível (4d4 + MHC).\n\nDestruir\n\nVocê causa dano contundente ao objeto igual a 1d4 + seu modificador de habilidade chave. A quantidade de dano aumenta em 1d4 no 5º nível (2d4 + MHC), 11º nível (3d4 + MHC) e 17º nível (4d4 + MHC).\n\nTalentos marcados como (alterar) concedem novas maneiras de alterar objetos."
+    },
+    {
+      "id": "criacao-criar",
+      "name": "Criar",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 PM"
+      },
+      "action": "1 ação",
+      "range": "toque",
+      "duration": "Concentração, até 1 minuto",
+      "target": "Espaço vazio visível suficiente para conter o objeto criado",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tamanho do objeto que você pode criar pode ser até dois tamanhos maior."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser lançado no seu turno sem uma ação."
+        }
+      ],
+      "body": "Você pode criar objetos a partir de magia que apareçam na sua mão ou adjacentes a você. Você pode criar um único objeto não mágico e desprotegido a partir de matéria vegetal, como madeira, cânhamo ou algodão, que não pode ser maior que o tamanho Minúsculo, aumentando para o tamanho Pequeno no 5º nível, Médio no 11º nível e Grande no 17º nível.\n\nSe você não puder carregar, segurar ou empunhar o objeto criado com as duas mãos devido ao seu volume, peso ou tamanho, ele deve começar em um quadrado adjacente e nenhuma parte dele pode estar a mais de 9 metros de distância.\n\nVocê não pode criar itens que exijam mistura, que carreguem propriedades especiais ou conhecimento que você não possua (itens alquímicos, ervas raras, a chave de uma fechadura que você não criou, etc.). Um teste de Inteligência CD 10 revela que o objeto é uma falsificação mágica. Objetos fabricados possuem uma aura mágica persistente que pode ser detectada como mágica, embora os objetos em si não sejam mágicos.\n\nEnquanto objetos simples como velas, dobras de tecido, móveis simples ou armas básicas são fáceis de criar, objetos particularmente complexos (mecânicos, bestas, objetos com partes móveis) exigem um teste de habilidade como se estivessem sendo criados. Falha significa que o objeto se quebra e fica inutilizável. Você não pode criar um objeto diretamente sobre um alvo (invocar algemas nos pulsos de alguém, etc.).\n\nTabela: Materiais de Objetos\n\nSubstânciaCACategoria de PVVidro13FrágilPapel ou Tecido11FrágilCorda11FrágilGelo13FrágilCouro ou Pele11FrágilMadeira15FrágilPedra17ResilienteFerro ou Aço19ResilienteMitril21ResilienteAdamântio23Resiliente\n\nPontos de Vida de Objetos\n\nTamanhoFrágilResilienteMinúsculo2 (1d4)5 (2d4)Pequeno3 (1d6)10 (3d6)Médio4 (1d8)18 (4d8)Grande5 (1d10)27 (5d10)Enorme¹limite de dano 10limite de dano 15Gigantesco¹limite de dano 15limite de dano 20\n\nLimite de dano¹: Objetos enormes e gigantescos não têm seus próprios pontos de vida, mas são divididos em várias seções grandes ou menores, registrando os pontos de vida de cada seção separadamente. Por exemplo, uma estátua gigante de um humano pode tratar cada um de seus membros como um objeto grande separado. Objetos enormes e gigantescos têm limites de dano. Um objeto com um limite de dano é imune a todos os danos, a menos que receba uma quantidade de dano de um único ataque ou efeito igual ou maior que seu limite de dano, caso em que recebe dano normalmente. Qualquer dano que não atinja ou exceda o limite de dano do objeto é considerado superficial e não reduz os pontos de vida do objeto.\n\nExemplos\n\nO número de objetos que um conjurador pode criar e os usos desses objetos são praticamente infinitos, e muitos detalhes precisarão ser determinados pelo Mestre. No entanto, as seguintes regras e diretrizes devem ajudar a fornecer exemplos específicos.\n\nNotas sobre Paredes e Coberturas:\n\nSe você criar uma parede (um objeto grande, porém fino, em um único plano), um quadrado de 1,5 m por 1,5 m é considerado um objeto Pequeno. Se criar um tecido, um quadrado de 1,5 m por 1,5 m é considerado um objeto Minúsculo.\n\nNotas sobre Envoltórios: Se você tentar criar um envoltório sobre uma criatura (por exemplo, cobrindo uma criatura com uma cúpula de pedra), isso conta como criar um objeto 1 tamanho maior que o alvo pretendido. Assim, um envoltório para uma criatura Média é um objeto Grande, um envoltório para uma criatura Grande é um objeto Enorme, etc. Uma criatura tem direito a um teste de resistência de Destreza para escapar de tal aprisionamento, movendo-se para fora do espaço alvo em uma direção de sua escolha. As criaturas sempre podem atacar seu próprio envoltório.\n\nNotas sobre Objetos em Queda: Se você criar um objeto com a intenção de que ele caia sobre algo para danificá-lo, isso requer um ataque mágico e, se bem-sucedido, causa dano com base no tamanho do objeto, conforme a Tabela: Tamanho do Objeto. Objetos particularmente macios podem não causar dano (por exemplo, ao deixar cair um tecido).\n\nO texto acima pressupõe que você esteja deixando cair um objeto de uma altura de aproximadamente 4,5 a 18 metros. Se a queda for de uma altura menor, você terá vantagem no seu ataque mágico, mas causará metade do dano. Se a queda for de uma altura maior, você terá desvantagem no seu ataque mágico, mas causará o dobro do dano. O tipo de dano (contundente, perfurante ou cortante) depende do formato do objeto que está sendo deixado cair. Objetos que não foram projetados para serem armas sofrem seu próprio dano de queda.\n\nSe você deixar cair um objeto que seja maior do que o objeto sobre o qual ele cairá, o alvo (ou alvos) na área fará um teste de resistência de Destreza para evitar o dano, obtendo vantagem contra quedas de grandes alturas e desvantagem contra quedas de pequenas alturas.\n\nTabela: Tamanho de Objetos\n\nTamanhoExemploDano de QaMinúsculoAdaga1d4PequenoCadeira1d6MédioMesa1d8GrandeEstátua1d10EnormeCarroça2d6GigantescoCatapulta2d8"
+    },
+    {
+      "id": "criacao-alterar-material",
+      "name": "Alterar Material (alterar)",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Alterar",
+      "tags": [
+        "alterar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser conjurado no seu turno sem uma ação."
+        }
+      ],
+      "body": "Você pode alterar um objeto, mudando sua composição de um material para outro. Tanto o material que você está afetando quanto o material no qual você está transformando devem ser materiais que você pode criar (ou seja, você deve usar o talento Materiais Expandidos para trabalhar com objetos que não sejam matéria vegetal). Quando a duração expira, o objeto retorna ao seu material normal, embora qualquer dano sofrido durante a alteração permaneça após ele retornar ao seu material original. Você não pode transformar um líquido em sólido ou um sólido em líquido, e não pode criar ou afetar gases."
+    },
+    {
+      "id": "criacao-forjar",
+      "name": "Forjar (alterar)",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Alterar",
+      "tags": [
+        "alterar"
+      ],
+      "duration": "Instantânea",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode moldar o material com um toque. Este é um efeito instantâneo, pois você está literalmente mudando a forma do material em questão. Você só pode afetar materiais que pode criar (ou seja, você deve usar o talento Materiais Expandidos para trabalhar com materiais que não sejam matéria vegetal) e só pode fazer alterações rudimentares, como formar paredes, trincheiras, portas, cofres e outras formas básicas. Trabalhos detalhados (como forjar armaduras) não são possíveis, e há 30% de chance de que qualquer coisa com partes móveis simplesmente não funcione. Você pode afetar alvos até o seu tamanho normal de criação, mas ao trabalhar com um mineral (pedra, metais, gemas, etc.), o tamanho que você pode afetar é reduzido pela metade."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "criacao-transparencia",
+      "name": "Transparência (alterar)",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Alterar",
+      "tags": [
+        "alterar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode converter qualquer material em uma versão mais transparente de si mesmo.\n\nIsso não afeta a composição do objeto, o limite de dano ou tem qualquer efeito além de oferecer uma visão clara através do objeto.\n\nO conjurador pode escolher afetar a opacidade do objeto de forma que permita espiar através dele sem ser observado do outro lado. Quando usado dessa forma, testes de Sabedoria (Percepção) através do objeto sofrem desvantagem, mas é necessário um teste de Sabedoria (Percepção) contra a CD da sua esfera para perceber que o objeto agora pode ser visto através do outro lado. Se você possuir Detalhe Requintado, ele não impõe mais desvantagem e a CD de Sabedoria (Percepção) para perceber que o objeto é transparente ganha desvantagem."
+    },
+    {
+      "id": "criacao-criacao-alquimica",
+      "name": "Criação Alquímica",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode criar itens que requerem mistura, como frascos de ácido, fogo de alquimia, antitoxina, veneno básico e outros itens similares, a critério do Mestre. Você cria apenas um único item apropriado para o seu tamanho."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "criacao-explosao-alteradora",
+      "name": "Explosão Alteradora",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode alterar todos os objetos não mágicos desacompanhados em um raio de 3 metros ao seu redor. Você pode escolher qualquer número de materiais que você possa criar dentro dessa área para serem afetados. (Por exemplo, você pode escolher destruir uma parede de pedra, deixando a cômoda de madeira apoiada nela ilesa.)"
+        },
+        {
+          "pm": 1,
+          "text": "Aumenta o raio para 6 metros."
+        }
+      ],
+      "body": "Se você possuir o talento Universal Alcance (metasfera), você pode centralizar este efeito em qualquer lugar dentro do alcance. Ao aumentar o efeito com Alteração Potente, você pode alterar um objeto usado, segurado ou mágico, aumentando em até um no 5º nível (2 objetos), 11º nível (3 objetos) e 17º nível (4 objetos). Esses objetos usados, segurados ou mágicos alterados são adicionais a outros objetos na área."
+    },
+    {
+      "id": "criacao-catapulta",
+      "name": "Catapulta",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao criar um item, você pode criá-lo com impulso. O objeto voa do ponto de criação em uma linha reta tão larga quanto o objeto até 18 metros na direção que você escolher antes de cair no chão, parando precocemente se impactar contra uma superfície sólida. Se o objeto atingir uma criatura, esta deve realizar um teste de resistência de Destreza. Em caso de falha, o objeto atinge o alvo e para de se mover. Quando o objeto atinge algo, o objeto e o objeto atingido sofrem o dano de queda do objeto de uma altura normal."
+        },
+        {
+          "pm": 1,
+          "text": "Ao determinar o dano causado, role o dano de queda duas vezes e some-os."
+        },
+        {
+          "pm": 2,
+          "text": "Ao determinar o dano causado, role o dano de queda três vezes e some-os."
+        }
+      ],
+      "body": "Sua criação ganha os seguintes aumentos:\n\nAo aprimorar a criação com o talento Catapulta, você pode aplicar um dos seguintes aprimoramentos:"
+    },
+    {
+      "id": "criacao-criacao-complexa",
+      "name": "Criação Complexa",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Ao criar um objeto, você pode criar uma \"criação\" temática composta por vários objetos diferentes. Por exemplo, você pode criar uma aljava cheia de flechas ou, se estiver criando uma construção, pode incluir cadeiras, camas, barris, etc. Você deve ser capaz de criar todos os materiais necessários para a criação complexa."
+        },
+        {
+          "pm": 1,
+          "text": "Ao criar um objeto com dois ou mais tamanhos menores que o seu tamanho máximo, você pode atrasar sua criação para que, em vez de criar um único objeto uma vez, ela crie vários objetos idênticos ao longo do tempo. O tamanho total de todos os objetos criados não pode exceder um tamanho acima do seu tamanho máximo de criação. Como regra geral, dois objetos de tamanho semelhante contam como um tamanho maior (2 objetos Pequenos equivalem a um objeto Médio, 2 objetos Médios equivalem a um Grande, etc.). Você deve definir um parâmetro quando este efeito for criado para quando e onde dentro do alcance os itens serão criados (por exemplo, criar uma nova flecha em uma aljava sempre que a flecha anterior for removida ou soltar uma nova bigorna a cada rodada em um local alvo, determinado no momento da conjuração). Isso continua enquanto durar o efeito de criação ou até que o tamanho máximo (ou outro limite, sujeito à aprovação do Mestre) seja atingido, o que ocorrer primeiro."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "criacao-materiais-expandidos",
+      "name": "Materiais Expandidos",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao criar um objeto, você pode trabalhar com qualquer material sólido e frágil que não seja nocivo e não possua propriedades incomuns, como vidro, gelo ou couro. Você também pode criar líquidos inofensivos como água (3 pés cúbicos equivalem a uma criatura Pequena), mas não gases ou carne. Você também pode criar objetos com vários materiais, desde que consiga criar todos os materiais necessários."
+        }
+      ],
+      "body": "À medida que você sobe de nível, também ganha a habilidade de criar cada vez mais materiais, conforme detalhado na tabela abaixo. Adamantina não pode ser criada ou alterada, exceto para as habilidades de reparo e destruição, e gemas criadas não podem ser usadas como componentes materiais.\n\nPontos de Vida de Objetos\n\nNívelMaterial1ºPedra5ºMetais básicos (cobre, ferro, aço)11ºMetais preciosos (ouro, prata)17ºMetais especiais (mitril), gemas"
+    },
+    {
+      "id": "criacao-detalhe-requintado",
+      "name": "Detalhe Requintado",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Os itens que você cria são mais complexos e muito mais difíceis de identificar como falsificações. Você é proficiente em testes de habilidade feitos para criar objetos detalhados ou complicados e em qualquer CD necessária para detectar objetos que você cria como falsificações mágicas."
+        }
+      ],
+      "body": "Se você já for proficiente, adicione o dobro do seu bônus de proficiência. Isso não acumula com efeitos similares. Aqueles que tentarem detectar magia em seus objetos criados devem passar por um teste de habilidade de conjuração contra a CD da sua esfera para detectar quaisquer auras de criação remanescentes."
+    },
+    {
+      "id": "criacao-alteracao-maior",
+      "name": "Alteração Maior",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "O dano causado com sua habilidade de alteração de destruição agora usa d8 em vez de d4."
+        },
+        {
+          "pm": 0,
+          "text": "A quantidade curada com sua habilidade de alteração de reparo agora usa d8 em vez de d4."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "criacao-criacoes-magicas",
+      "name": "Criações Mágicas",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Os objetos que você cria são considerados mágicos para o propósito de superar resistência e imunidade a ataques e danos não mágicos."
+    },
+    {
+      "id": "criacao-ampliarminimizar",
+      "name": "Ampliar/Minimizar",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode aumentar o número de passos para ampliar ou reduzir um objeto em uma categoria de tamanho, aumentando em um no 5º nível (2 passos), 11º nível (3 passos) e 17º nível (4 passos) (até um máximo de Gargantuano e um mínimo de Minúsculo)."
+        }
+      ],
+      "body": "Você pode alterar o tamanho de um objeto por 1 minuto por nível. Ao usar Alterar, você pode fazer com que qualquer objeto que você possa afetar aumente ou diminua em 1 categoria de tamanho. Isso dobra ou reduz pela metade a altura e a largura do objeto e multiplica ou divide seu peso por 8. Efeitos que dependem do tamanho do objeto alvo e que não funcionariam devido a alterações de tamanho são suprimidos automaticamente, continuando a contagem regressiva de sua duração normalmente, quando o objeto não atende mais aos requisitos de tamanho.\n\nItens usados que são aumentados dificultam os movimentos de quem os usa, reduzindo sua velocidade de movimento em 3 metros, até um mínimo de 1,5 metro. Este efeito falha se usado para encolher itens usados abaixo de um tamanho que seu usuário possa usar.\n\nSe este efeito for aumentado por Alteração Potente para atingir uma criatura de acordo com aquele talento, a criatura alvo ganha os mesmos ajustes como se o talento Alteração de Mudança de Tamanho tivesse sido usado nela para ajustá-la ao seu tamanho."
+    },
+    {
+      "id": "criacao-objeto-de-forca",
+      "name": "Objeto de Força",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode criar objetos feitos de força sólida. Objetos de Força não têm peso e permanecem rígidos e imóveis no local em que são criados, embora uma criatura dois tamanhos maior que o objeto possa movê-lo. Objetos de Força são resilientes e têm resistência a todos os danos não mágicos, além de impedir que criaturas incorpóreas os atravessem. Objetos de Força são translúcidos, mas facilmente perceptíveis e não requerem teste de Percepção para serem vistos, enquanto concedem desvantagem em testes de Sabedoria (Percepção) para ver através deles. Se você possuir Transparência, poderá tornar o objeto invisível (como a Invisibilidade da esfera de Ilusão) ou totalmente opaco sem gastar um ponto de magia adicional, escolhido no momento de sua criação."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "criacao-alteracao-potente",
+      "name": "Alteração Potente",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao alterar um objeto, você pode afetar objetos mágicos, objetos usados ou segurados, ou criaturas do tipo constructo. Embora isso signifique que você pode consertar itens mágicos quebrados com sua habilidade de consertar, você não pode restaurar a magia de tal objeto. Se usado contra uma criatura ou um objeto vigiado, a criatura alvo ou a criatura que usa ou segura o objeto pode realizar um teste de resistência de Constituição para negar o efeito."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "criacao-destruicao-precisa",
+      "name": "Destruição Precisa",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode destruir componentes móveis e fechaduras em vez de desabilitá-los de forma mais convencional. Ao tentar desabilitar um dispositivo complexo (como uma armadilha ou fechadura), você pode simplesmente mirar na parte problemática do objeto com destruir. Você é tratado como possuidor de ferramentas de ladrão o tempo todo e proficiente com essas ferramentas de ladrão, podendo fazer testes de habilidade para abrir fechaduras ou desabilitar dispositivos complexos usando seu modificador de habilidade de conjuração no lugar do modificador de atributo usual, mas somente quando a ação desejada puder ser alcançada destruindo cuidadosamente os componentes (portanto, uma porta destrancada com esta habilidade seria impossível de trancar novamente sem primeiro consertar a fechadura)."
+    },
+    {
+      "id": "criacao-criacao-restritiva",
+      "name": "Criação Restritiva",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode criar objetos não nocivos diretamente sobre uma criatura. Um alvo relutante tem direito a um teste de resistência de Destreza para evitar que um objeto seja criado diretamente sobre ele, fazendo com que o objeto caia inofensivamente no chão. Isso significa que você pode criar amarras, algemas ou alguma outra prisão bem ajustada diretamente sobre o alvo, tornando-o Restringido em caso de falha no teste de resistência. Os alvos ainda podem atacar suas próprias amarras (conforme descrito em Notas sobre Invólucros listados acima)."
+        }
+      ],
+      "body": "Se você cobrir o alvo completamente com uma prisão bem ajustada, ele só poderá causar metade do dano às suas amarras, mas também terá cobertura completa enquanto estiver dentro do seu invólucro."
+    },
+    {
+      "id": "criacao-criar-materiais",
+      "name": "Criar Materiais",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Criação",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "criacao"
+        },
+        {
+          "type": "text",
+          "text": "Forja"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Estendida (metasfera)"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Você pode criar matérias-primas. Este é um efeito instantâneo; você cria o material como material normal autoevidente e, portanto, ele não pode ser dissipado e não tem duração. Você não pode criar itens complexos, ou seja, você pode criar paredes, ameias, rampas ou domos, mas não pode criar catapultas, armaduras ou uma construção completa dessa maneira, embora o material possa ser criado como qualquer outro material após ser invocado. Você pode invocar qualquer material que possa criar, com exceção de gemas, metais preciosos (como ouro ou prata) ou metais raros (como ferro frio ou mithril)."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Forja",
+        "prereq:unresolved:Estendida (metasfera)"
+      ]
+    },
+    {
+      "id": "criacao-dissolucao",
+      "name": "Dissolução (alterar)",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Criação",
+      "tags": [
+        "alterar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "criacao"
+        },
+        {
+          "type": "talent",
+          "id": "criacao-alteracao-maior"
+        },
+        {
+          "type": "talent",
+          "id": "criacao-alteracao-potente"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar destruir em um objeto não mágico e desprotegido, você pode desintegrá-lo completamente. A habilidade não causa dano e, em vez disso, simplesmente desintegra um cubo de 3 metros de matéria inanimada."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "criacao-fabricar",
+      "name": "Fabricar",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Criação",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar seu talento Forja, você pode criar itens com grande riqueza de detalhes. Você deve passar no teste apropriado para criar itens complexos e trabalhar a uma taxa de 1 rodada a cada 3 metros cúbicos ao trabalhar dessa maneira. Você só pode trabalhar com um material que você possa criar."
+        }
+      ],
+      "body": "Pré-requisitos: Esfera de criação (Forja), 11º nível ou superior."
+    },
+    {
+      "id": "criacao-criar-carne",
+      "name": "Criar Carne",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Criação",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "criacao"
+        },
+        {
+          "type": "talent",
+          "id": "criacao-materiais-expandidos"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode alterar uma criatura viva. Um teste de resistência de Constituição nega esse efeito."
+        }
+      ],
+      "body": "Você pode criar e alterar carne como faria com outros materiais. Isso significa que você pode criar o corpo de uma criatura, mesmo que ela não esteja viva, e você deve fazer um teste de Inteligência se tentar criar uma cópia de um indivíduo específico. Você também pode alterar um corpo inanimado. Você pode criar um corpo permanente por meio do talento Criar Materiais.\n\nSe usado em conjunto com o talento Alterar Material para afetar uma criatura viva, isso não mata o alvo; no entanto, ele não parece estar vivo para efeitos que detectariam tais coisas e pode ser ferido como qualquer outro objeto. Quando retorna ao normal, a criatura ainda está viva (desde que não tenha sido destruída nesta forma alternativa), mas quaisquer ferimentos ou deformidades adquiridos em seu estado alterado são transferidos para suas formas originais. Usar Moldar a Carne dessa forma conta como um efeito de [maldição].\n\nSe você possui o talento Forjar, você pode esculpir o corpo de uma criatura de uma das seguintes maneiras:\n\nVocê pode remover ou restaurar um braço, perna ou cauda, ou até mesmo adicionar alguns que não estavam lá originalmente.\n\nVocê pode remover ou restaurar um sentido: visão, audição, tato, paladar ou olfato.\n\nVocê pode atacar o corpo do alvo, reduzindo sua Constituição em 2d6, ou restaurar uma criatura ao seu valor normal de Constituição.\n\nSe você possuir o talento avançado Fabricar, poderá alterar a aparência de uma criatura permanentemente. Faça um teste de Inteligência se tentar imitar uma criatura específica.\n\nOutros usos deste talento ficam a critério do Mestre."
+    },
+    {
+      "id": "criacao-mudanca-permanente",
+      "name": "Mudança Permanente",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Criação",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "criacao"
+        },
+        {
+          "type": "text",
+          "text": "Mudar Material"
+        },
+        {
+          "type": "talent",
+          "id": "criacao-materiais-expandidos"
+        },
+        {
+          "type": "text",
+          "text": "Forja"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar seu talento Mudar Material, você pode tornar a mudança um efeito instantâneo; a mudança é permanente e não pode ser dissipada. Você não pode criar uma mudança permanente envolvendo gemas, metais preciosos (como ouro ou prata) ou metais raros (como mithril). Se usado em um alvo em conjunto com os talentos Mudar Material e Moldar a Carne, outra aplicação dos talentos Mudar Material e Mudar Material pode retorná-lo ao normal por um tempo limitado. Somente outro uso do talento Mudança Permanente, ou magia suficientemente poderosa, como uma ressurreição verdadeira ou magia de desejo, pode reverter este efeito permanentemente."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Mudar Material",
+        "prereq:unresolved:Forja"
+      ]
+    },
+    {
+      "id": "criacao-mudanca-de-estado",
+      "name": "Mudança de Estado (alterar)",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Criação",
+      "tags": [
+        "alterar"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "criacao"
+        },
+        {
+          "type": "text",
+          "text": "Mudar Matéria"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Ao usar Mudar Matéria, você pode transformar líquidos e sólidos em qualquer um dos dois estados. Este é um efeito mágico e a mudança de forma em si não tem efeito adicional na condição do objeto alvo, não causando dano a ele. Ao transformar um sólido em líquido, o objeto resultante se dispersa normalmente, mas se recombina quando o efeito termina e no mesmo local, a menos que seus componentes tenham sido coletados e movidos para outro lugar. Se todos os pedaços de um objeto não estiverem presentes, o objeto ainda renasce a partir do maior pedaço restante.\n\nSe um objeto mágico for convertido em uma nova forma, suas propriedades mágicas não podem ser usadas, a menos que ainda sejam aplicáveis ao seu novo estado da matéria.",
+      "_needsReview": [
+        "prereq:unresolved:Mudar Matéria"
+      ]
+    },
+    {
+      "id": "criacao-sustento",
+      "name": "Sustento",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Criação",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1 pm"
+      },
+      "action": "10 minutos",
+      "duration": "Instantânea",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "criacao"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração é reduzido para uma ação."
+        }
+      ],
+      "body": "Você pode criar comida e bebida insossas o suficiente para sustentar um número de criaturas de tamanho Médio igual ao seu modificador de atributo chave. Se você possuir Detalhe Requintado, poderá criar qualquer variedade normal de comida ou bebida, determinando a qualidade realizando um teste de modificador de atributo chave com proficiência no lugar de qualquer teste de atributo normal necessário."
+    },
+    {
+      "id": "criacao-fissao",
+      "name": "Fissão",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode usar a habilidade de alterar. Se usar a habilidade de criar da esfera da Criação, você o faz dividindo parte do seu corpo: isso reduz seus pontos de vida máximos em 1d4 + 1d4 por categoria de tamanho do objeto a ser criado acima de Pequeno. Essa redução não pode ser curada enquanto o objeto existir. No entanto, você pode reabsorver o objeto criado tocando-o como uma ação livre, removendo a redução de pontos de vida igual à gasta para criá-lo. Se o objeto for destruído, você não pode reabsorvê-lo, mas pode se\n\ncurar normalmente. Você pode dispensar qualquer objeto criado dessa forma, independentemente da distância. Fazer isso não restaura a redução de pontos de vida, mas permite que você se recupere normalmente, como se o objeto tivesse sido destruído. Essa desvantagem concede um talento bônus da esfera da Criação. Você deve possuir a variante Criação Limitada (alterar) para ter essa variante."
+    },
+    {
+      "id": "criacao-criacao-limitada",
+      "name": "Criação Limitada",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Escolha entre alterar ou criar. Você não pode usar essa habilidade, nem pegar talentos que a aprimorem. Você ainda pode ganhar Materiais Expandidos se optar por não poder criar objetos.\n\nVocê ganha um talento bônus desta esfera."
+    },
+    {
+      "id": "criacao-foco-material",
+      "name": "Foco Material",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode alterar ou criar objetos de uma única substância especial frágil, como gelo, tecido, ossos, etc. Você não pode escolher o talento Materiais Expandidos. Você ganha um talento bônus desta esfera.\n\nVocê pode escolher uma substância especial resiliente, como metais comuns ou pedra, como seu material; nesse caso, você não ganha um talento mágico bônus e aumenta o custo base em pontos de magia da sua habilidade de criar em 1 ponto de magia."
+    },
+    {
+      "id": "criacao-mimica-material",
+      "name": "Mímica Material",
+      "sphere": "criacao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Para alterar ou criar objetos, você deve estar em contato físico com outro objeto composto do material resultante do efeito e não mais do que três categorias de tamanho menor (por exemplo, para criar um objeto de ferro Grande, você precisaria tocar outro objeto de ferro de tamanho Pequeno ou maior).\n\nSe você possuir Transformar Material, isso restringe os materiais nos quais você pode transformar o objeto alvo. Se você possuir o talento avançado Moldar Carne, você não pode usar seu próprio corpo para produzir objetos carnudos, embora possa usar outras criaturas.\n\nVocê ganha Materiais Expandidos como um talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

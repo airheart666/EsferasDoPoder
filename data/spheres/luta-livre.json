@@ -1,0 +1,392 @@
+{
+  "id": "luta-livre",
+  "name": "Luta Livre",
+  "section": "martial",
+  "summary": "Agarrar, girar e arremessar oponentes ao chão com força.",
+  "theme": {
+    "h": 12,
+    "s": 34,
+    "sig": "luta-livre"
+  },
+  "acquisition": null,
+  "talents": [
+    {
+      "id": "m-luta-livre-agarrar",
+      "name": "Agarrar",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Lembrete da Regra de Combate",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você quiser agarrar uma criatura ou lutar com ela, você pode usar a ação Atacar para fazer um ataque corpo a corpo especial, um agarrar. Se você puder fazer múltiplos ataques com a ação Atacar, este ataque substitui um deles.\n\nO alvo do seu agarrar não pode ser mais do que um tamanho maior que você e deve estar ao seu alcance. Usando pelo menos uma mão livre, você tenta agarrar o alvo fazendo um teste de agarrar em vez de uma jogada de ataque: um teste de Força (Atletismo) contestado pelo teste de Força (Atletismo) ou Destreza (Acrobacia) do alvo (o alvo escolhe a habilidade a ser usada). Você obtém sucesso automaticamente se o alvo estiver incapacitado. Se você obtiver sucesso, você sujeita o alvo à condição agarrado (veja o apêndice B).\n\nA condição especifica as coisas que a encerram, e você pode soltar o alvo quando quiser (nenhuma ação é necessária).\n\nEscapar de um Agarrar: Uma criatura agarrada pode usar sua ação para escapar. Para isso, ele deve ser bem-sucedido em um teste de Força (Atletismo) ou Destreza (Acrobacia) contestado pelo seu teste de Força (Atletismo).\n\nMovendo uma Criatura Agarrada: Você pode arrastar ou carregar a criatura agarrada consigo ao se mover, mas sua velocidade é reduzida à metade, a menos que a criatura seja duas ou mais vezes menor que você."
+    },
+    {
+      "id": "m-luta-livre-estrangulamento",
+      "name": "Estrangulamento (imobilização)",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Imobilização",
+      "tags": [
+        "imobilizacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "A criatura fica impossibilitada de respirar ou falar (e, portanto, incapaz de fornecer componentes verbais). Se você aplicar este golpe várias rodadas seguidas, cada rodada após a primeira conta como tempo total de sobrevivência sem ar (uma criatura pode sobreviver por um número de rodadas igual ao seu modificador de Constituição (mínimo de 1 rodada); no início do seu próximo turno, ela cai para 0 pontos de vida e está morrendo)."
+    },
+    {
+      "id": "m-luta-livre-chicote",
+      "name": "Chicote (imobilização)",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Imobilização",
+      "tags": [
+        "imobilizacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode encerrar a imobilização para forçar a criatura agarrada a se mover até 3 metros em uma direção de sua escolha, exceto para cima. Este movimento não provoca um ataque de oportunidade."
+    },
+    {
+      "id": "m-luta-livre-imobilizacao-com-martelo",
+      "name": "Imobilização com Martelo (imobilização)",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Imobilização",
+      "tags": [
+        "imobilizacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Qualquer teste de habilidade que o alvo fizer para escapar da imobilização nesta rodada terá desvantagem."
+    },
+    {
+      "id": "m-luta-livre-taticas-de-calcanhar",
+      "name": "Táticas de Calcanhar (imobilização)",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Imobilização",
+      "tags": [
+        "imobilizacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para forçar o alvo a ser bem-sucedido em um teste de resistência de Destreza ou ficará cego até o início do seu próximo turno."
+    },
+    {
+      "id": "m-luta-livre-arma-viva",
+      "name": "Arma Viva (imobilização)",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Imobilização",
+      "tags": [
+        "imobilizacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se o alvo da sua agarrada não for maior que você (incluindo efeitos que aumentam seu tamanho efetivo para agarrar, como o talento Impulso Muscular da esfera Bruto), você pode empunhar a criatura como se fosse uma arma corpo a corpo com a qual você seja proficiente até o final do seu próximo turno ou até que você não esteja mais agarrando-a, o que ocorrer primeiro.\n\nCriaturas empunhadas dessa maneira causam dano de concussão e sofrem o mesmo dano que o alvo que você está atacando com elas.\n\nCriaturas com pelo menos dois tamanhos menores que você são consideradas armas leves de uma mão, enquanto criaturas com um tamanho menor que você são consideradas armas de uma mão. Criaturas do mesmo tamanho que você são armas de duas mãos.\n\nTamanho da CriaturaDado de DanoMínimo1d4Pequeno1d6Médio1d8Grande1d10Enorme2d6Gargantuesco3d6"
+    },
+    {
+      "id": "m-luta-livre-agarrar-na-ultima-chance",
+      "name": "Agarrar na Última Chance",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você tentar iniciar uma agarrada e falhar, você pode gastar seu foco marcial para fazer outra tentativa de agarrar contra a mesma criatura como uma ação bônus."
+    },
+    {
+      "id": "m-luta-livre-golpe-imponente",
+      "name": "Golpe Imponente",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você usar um talento (imobilização), você pode gastar seu foco marcial. Todas as criaturas hostis que puderem vê-lo, exceto a criatura afetada pelo talento (imobilização), devem ser bem-sucedidas em um teste de resistência de Carisma ou ficarão amedrontadas por 1 rodada. Assim que uma criatura for bem-sucedida em um teste de resistência contra esta  habilidade, ela ficará imune ao seu uso até que você complete um descanso curto ou longo."
+    },
+    {
+      "id": "m-luta-livre-jogo-terrestre",
+      "name": "Jogo Terrestre",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você começar seu turno agarrando uma criatura, você pode tentar derrubá-la como uma ação bônus. Quando uma criatura for bem-sucedida em um teste de agarrar contra você, você pode tentar derrubá-la como uma reação."
+    },
+    {
+      "id": "m-luta-livre-empalar",
+      "name": "Empalar",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você causar dano a uma criatura com uma arma corpo a corpo empunhada com as duas mãos, você pode tentar agarrá-la como uma ação bônus. Se você for bem-sucedido, o alvo ficará empalado em sua arma. O alvo ficará agarrado, mas você deve estar segurando a arma para manter o agarramento e não poderá usar a arma para atacar ninguém além do alvo empalado. Isso conta como agarrar o alvo para todos os efeitos, como aplicar talentos de impacto à agarrada."
+    },
+    {
+      "id": "m-luta-livre-golpe-inicial",
+      "name": "Golpe Inicial",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você causar dano a uma criatura com um ataque com arma, você pode tentar agarrá-la como uma ação bônus. Você precisa ter pelo menos uma mão livre para usar esta habilidade."
+    },
+    {
+      "id": "m-luta-livre-esmagamento",
+      "name": "Esmagamento",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao realizar um ataque desarmado contra um alvo que você agarrou, você pode gastar seu foco marcial para levantar a criatura do chão e arremessá-la contra o chão. Se o ataque for bem-sucedido, você causa o dano do seu ataque desarmado e derruba a criatura, e o alvo deve ser bem-sucedido em um teste de resistência de Constituição ou ficará atordoado até o final do seu próximo turno. Se você possuir o talento Amarrar Duplo, você pode aplicar esta habilidade a ambas as criaturas que você agarrou."
+    },
+    {
+      "id": "m-luta-livre-imobilizar",
+      "name": "Imobilizar",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você tiver uma criatura agarrada, você pode tentar outro teste de agarrar para mantê-la imobilizada enquanto a imobilização durar. Se você tiver uma criatura imobilizada por esta habilidade por 1 rodada, você pode amarrá-la como uma ação, prendendo-a com corda, algemas ou restrições similares, mantendo-a imobilizada até que ela se liberte, mesmo que você solte a imobilização."
+    },
+    {
+      "id": "m-luta-livre-esmagador",
+      "name": "Esmagador",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha vantagem nas jogadas de ataque contra alvos que você agarrou."
+    },
+    {
+      "id": "m-luta-livre-repouso-e-imobilizacao",
+      "name": "Repouso e Imobilização",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto estiver agarrando uma criatura, você pode optar por reduzir sua velocidade para 0 durante a rodada para recuperar seu foco marcial como uma ação bônus e considerar essa criatura como concedendo a você cobertura parcial contra qualquer criatura que não seja ela mesma até o início do seu próximo turno. Se você possuir Treinamento em Combate Corpo a Corpo, você pode puxar o alvo para o seu espaço sem teste e ganha cobertura de três quartos em vez de cobertura parcial."
+    },
+    {
+      "id": "m-luta-livre-escorregar-e-atacar",
+      "name": "Escorregar e Atacar",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que a tentativa de uma criatura de agarrá-lo falhar, você pode fazer um ataque como uma reação contra ela. Ao optar por liberar uma imobilização, você pode realizar um único ataque com arma contra a criatura liberada como uma ação bônus antes do final do seu turno."
+    },
+    {
+      "id": "m-luta-livre-agarrao-subito",
+      "name": "Agarrão Súbito",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar sua ação para Disparar, você pode usar uma ação bônus para tentar agarrar uma criatura."
+    },
+    {
+      "id": "m-luta-livre-agarrao-duplo",
+      "name": "Agarrão Duplo",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode gastar seu foco marcial para realizar um teste de agarrar contra duas criaturas diferentes ao seu alcance como uma ação. Se o seu teste de agarrar for bem-sucedido contra ambas as criaturas, você pode agarrar ambas simultaneamente. Ambas as criaturas ganham vantagem em testes de habilidade para encerrar a imobilização. Se você usar um talento (imobilização), poderá usá-lo contra ambas as criaturas agarradas, embora deva aplicar o mesmo (imobilização) a cada uma delas ao fazê-lo."
+    },
+    {
+      "id": "m-luta-livre-golpe-da-terra-arrasada",
+      "name": "Golpe da Terra Arrasada",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Luta Livre",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "impeto"
+        },
+        {
+          "type": "text",
+          "text": "Quebrar a Terra"
+        },
+        {
+          "type": "sphere",
+          "id": "luta-livre"
+        },
+        {
+          "type": "talent",
+          "id": "m-luta-livre-arma-viva"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Se você usar uma criatura empunhada por meio de Arma Viva para golpear o chão com o talento Quebrar a Terra, o alvo deve ser bem-sucedido em um teste de resistência de Destreza ou ficará imobilizado no chão. Usar esta habilidade encerra sua imobilização. O alvo pode se livrar da condição de imobilização com um teste de Força (Atletismo) ou Destreza (Acrobacia) (à sua escolha) contra a CD da sua esfera.",
+      "_needsReview": [
+        "prereq:unresolved:Quebrar a Terra"
+      ]
+    },
+    {
+      "id": "m-luta-livre-dilacerador-de-membros",
+      "name": "Dilacerador de Membros (imobilização)",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Luta Livre",
+      "tags": [
+        "imobilizacao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "luta-livre"
+        },
+        {
+          "type": "text",
+          "text": "Imobilização"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando você tiver uma criatura imobilizada pelo talento Imobilização, você pode tentar remover um membro dela; a criatura deve ser bem-sucedida em um teste de resistência de Força ou terá um de seus membros removido por você (braços, pernas, tentáculos ou asas), encerrando a imobilização.\n\nA perda de um membro reduz pela metade qualquer velocidade de movimento dependente desse membro e remove quaisquer ataques e habilidades dependentes dele. Criaturas sem nenhuma perna ficam caídas e têm uma velocidade de caminhada de 1,5 metro, a menos que possuam outras formas de movimento.",
+      "_needsReview": [
+        "prereq:unresolved:Imobilização"
+      ]
+    },
+    {
+      "id": "m-luta-livre-aperto-mortal-magico",
+      "name": "Aperto Mortal Mágico (imobilização)",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Luta Livre",
+      "tags": [
+        "imobilizacao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "luta-livre"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Considere o resultado do seu teste de agarrar como um teste de dissipar magia contra o alvo do seu agarrar, como se você estivesse usando dissipar magia. Se você agarrar uma criatura invocada, isso pode encerrar a magia que a invocou."
+    },
+    {
+      "id": "m-luta-livre-sepultar",
+      "name": "Sepultar",
+      "sphere": "luta-livre",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Luta Livre",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "impeto"
+        },
+        {
+          "type": "text",
+          "text": "Quebrar a Terra"
+        },
+        {
+          "type": "sphere",
+          "id": "luta-livre"
+        },
+        {
+          "type": "talent",
+          "id": "m-luta-livre-arma-viva"
+        },
+        {
+          "type": "talent",
+          "id": "m-luta-livre-golpe-da-terra-arrasada"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que você usar Golpe da Terra Arrasada com sucesso contra um alvo, você pode optar por enterrá-lo. O alvo se move 3 metros através do solo. Se isso fizer com que o alvo atravesse completamente o chão (como, por exemplo, caindo pelo telhado de um prédio), ele cai no chão abaixo, sofrendo dano de queda normalmente. Se o novo chão ainda estiver a menos de 3 metros, ele também pode se mover para dentro ou através dessa superfície para atingir o limite deste talento. Essa distância aumenta para 6 metros no 17º nível.\n\nEnquanto seu Golpe da Terra Arrasada imobilizar o alvo, ele também não poderá respirar e deverá prender a respiração ou começará a sufocar. Mesmo que escape da imobilização, ele ainda precisará escalar, voar ou sair do buraco em que está.",
+      "_needsReview": [
+        "prereq:unresolved:Quebrar a Terra"
+      ]
+    }
+  ],
+  "_reviewed": false
+}

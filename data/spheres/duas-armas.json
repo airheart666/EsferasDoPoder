@@ -1,0 +1,304 @@
+{
+  "id": "duas-armas",
+  "name": "Duas Armas",
+  "section": "martial",
+  "summary": "Empunhar duas armas ao mesmo tempo com técnicas de ambidestria.",
+  "theme": {
+    "h": 224,
+    "s": 22,
+    "sig": "duas-armas"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "m-duas-armas-ambidestria",
+      "name": "Ambidestria",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar o estilo de luta com duas armas, você pode gastar seu foco marcial para realizar o ataque com a arma secundária sem gastar sua ação bônus (nenhuma ação necessária)."
+    },
+    {
+      "id": "m-duas-armas-defesa-equilibrada",
+      "name": "Defesa Equilibrada",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você recebe um bônus de +1 na CA enquanto estiver empunhando uma arma corpo a corpo em cada mão. Este bônus de CA é tratado como um escudo para fins de acumulação com outras fontes de CA. Você não pode considerar um ataque desarmado ou ataque natural como uma arma para este propósito, a menos que possua o talento Treinamento Desarmado (disciplina) da esfera de Equipamento."
+    },
+    {
+      "id": "m-duas-armas-saque-duplo",
+      "name": "Saque Duplo",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que puder sacar ou guardar uma arma, você pode sacar ou guardar duas armas de uma mão."
+    },
+    {
+      "id": "m-duas-armas-manobras-combinadas",
+      "name": "Manobras Combinadas (secundário)",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Secundário",
+      "tags": [
+        "secundario"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar combate com duas armas, você pode substituir seu ataque com a arma secundária por uma manobra de agarrar ou empurrar."
+    },
+    {
+      "id": "m-duas-armas-exibicao-dancante",
+      "name": "Exibição Dançante (secundário)",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Secundário",
+      "tags": [
+        "secundario"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar combate com duas armas, se você atingir um alvo com seu ataque da arma secundária, seu movimento não provoca ataques de oportunidade da criatura atingida pelo resto do seu turno."
+    },
+    {
+      "id": "m-duas-armas-redemoinho-defensivo",
+      "name": "Redemoinho Defensivo (secundário)",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Secundário",
+      "tags": [
+        "secundario"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar combate com duas armas, se você atingir um alvo com seu ataque da arma secundária, você pode gastar seu foco marcial para impor desvantagem nos ataques dessa criatura contra você durante o próximo turno dela."
+    },
+    {
+      "id": "m-duas-armas-combinacao-desorientadora",
+      "name": "Combinação Desorientadora (secundário)",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Secundário",
+      "tags": [
+        "secundario"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se você atingir o alvo com seu ataque da arma secundária, essa criatura deve fazer um teste de resistência de Destreza ou ter todas as suas velocidades de movimento reduzidas pela metade por 1 minuto."
+    },
+    {
+      "id": "m-duas-armas-golpe-seguido",
+      "name": "Golpe Seguido (secundário)",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Secundário",
+      "tags": [
+        "secundario"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode fazer um ataque adicional com sua arma secundária, mas ambos os ataques e pelo menos um dos seus ataques com a arma principal devem ser contra criaturas diferentes."
+    },
+    {
+      "id": "m-duas-armas-preparacao-perfeita",
+      "name": "Preparação Perfeita (secundário)",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Secundário",
+      "tags": [
+        "secundario"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar combate com duas armas, você pode substituir seu ataque com a arma secundária pela ação de Ajuda."
+    },
+    {
+      "id": "m-duas-armas-golpe-assincrono",
+      "name": "Golpe Assíncrono",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto você tiver foco marcial, ambas as armas causam o mesmo dado de dano sempre que você usar combate com duas armas, e você pode escolher que ambas as armas causem o mesmo tipo de dano. Você pode escolher o dado de dano de qualquer uma das armas e o tipo de dano de qualquer uma das armas."
+    },
+    {
+      "id": "m-duas-armas-critico-seguido",
+      "name": "Crítico Seguido",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar combate com duas armas, seu ataque com a arma secundária causa um acerto crítico em um resultado de 19 ou 20."
+    },
+    {
+      "id": "m-duas-armas-oportunidade-dupla",
+      "name": "Oportunidade Dupla",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Uma vez por rodada, você pode fazer um ataque com duas armas qualificadas ao realizar um ataque de oportunidade, como se estivesse usando combate com duas armas."
+    },
+    {
+      "id": "m-duas-armas-defesa-focada",
+      "name": "Defesa Focada",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar a ação Esquivar, seu bônus de CA por empunhar duas armas aumenta de +1 para +3."
+    },
+    {
+      "id": "m-duas-armas-laminas-maiores",
+      "name": "Lâminas Maiores",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar combate com duas armas mesmo que as armas de combate corpo a corpo de uma mão que você esteja empunhando não sejam leves."
+    },
+    {
+      "id": "m-duas-armas-combinacao-alta-baixa",
+      "name": "Combinação Alta-Baixa",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando você atinge o mesmo alvo pelo menos uma vez com sua arma principal e com seu ataque secundário, você pode gastar seu foco marcial para tentar empurrar a criatura. Isso não custa nenhuma ação adicional, mas deve ser feito imediatamente após resolver o ataque secundário."
+    },
+    {
+      "id": "m-duas-armas-defesa-mista",
+      "name": "Defesa Mista",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sempre que você empunhar uma arma corpo a corpo em uma mão e uma arma de longo alcance ou arremesso na outra, você não sofre desvantagem em ataques à distância se uma criatura hostil estiver a até 1,5 metro de você. Você pode tratar a arma de longo alcance ou arremesso como se fosse uma arma corpo a corpo com a propriedade de alcance."
+    },
+    {
+      "id": "m-duas-armas-precisao-sincrona",
+      "name": "Precisão Síncrona",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Ao usar combate com duas armas, se o seu ataque com a arma principal errar, você pode gastar seu foco marcial para fazer dois ataques como uma ação bônus em vez de um com sua segunda arma. Você pode aplicar um talento (secundário) a cada um desses ataques, desde que sejam talentos diferentes."
+    },
+    {
+      "id": "m-duas-armas-ofensiva-conjunta",
+      "name": "Ofensiva Conjunta",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto você tiver foco marcial, se você usar com sucesso a ação de ataque para atingir uma criatura com sua arma principal enquanto usa combate com duas armas, seu ataque secundário ganha quaisquer bônus mágicos que sua arma principal possua até o início do seu próximo turno, substituindo quaisquer bônus que sua arma secundária possa possuir, se forem maiores."
+    },
+    {
+      "id": "m-duas-armas-corte-ciclonico",
+      "name": "Corte Ciclônico",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Empunhadura Dupla",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "duas-armas"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Enquanto empunha duas armas, você pode gastar seu foco marcial como uma ação para girar as duas armas com força suficiente para criar um ciclone de ar devastador. Cada criatura a até 4,5 metros de você sofre dano de concussão igual à soma dos dados de dano das suas duas armas. Um teste de resistência de Destreza bem-sucedido reduz esse dano pela metade."
+    },
+    {
+      "id": "m-duas-armas-estilo-das-tres-espadas",
+      "name": "Estilo das Três Espadas",
+      "sphere": "duas-armas",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Empunhadura Dupla",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "duas-armas"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você adquire a capacidade de empunhar uma arma adicional. Se você não possuir mãos adicionais ou algum outro método, pode empunhar a terceira arma com a boca, tratando-a como uma mão adicional que só pode ser usada para empunhar uma arma de uma mão ou leve. Enquanto empunha uma arma dessa maneira, você não pode fornecer componentes verbais para conjurar magias ou realizar testes de perícia que exijam fala ou canto, embora ainda possa se comunicar de forma incompreensível. Quando você usa o combate com duas armas em seu turno, pode fazer um ataque adicional com a arma da mão secundária, usando a terceira arma. Se fizer isso, não poderá realizar uma reação neste turno."
+    }
+  ],
+  "_reviewed": false
+}

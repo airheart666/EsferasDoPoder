@@ -1,0 +1,871 @@
+{
+  "id": "tempo",
+  "name": "Tempo",
+  "section": "magic",
+  "summary": "Alterar o fluxo do tempo, acelerando, retardando e manipulando momentos.",
+  "theme": {
+    "h": 52,
+    "s": 38,
+    "sig": "tempo"
+  },
+  "acquisition": null,
+  "talents": [
+    {
+      "id": "tempo-alterar-o-tempo",
+      "name": "Alterar o Tempo",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Concentração, até 1 minuto",
+      "target": "1 criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Efeitos de Alterar o Tempo com durações não instantâneas persistem pela duração restante sem a necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem a necessidade de uma ação."
+        }
+      ],
+      "body": "Manipule o tempo ao redor de um alvo aplicando os efeitos de um único talento (chronos) que você possua."
+    },
+    {
+      "id": "tempo-frequencia-ajustada",
+      "name": "Frequência Ajustada (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Durante a duração, você também concede ao alvo uma ação adicional em cada um de seus turnos. Essa ação só pode ser usada para realizar as ações de Atacar (apenas um ataque com arma), Disparar, Desengajar, Esconder-se ou Usar um Objeto. Quando o efeito termina, o alvo não pode se mover ou realizar ações até o final do seu próximo turno, enquanto uma onda de letargia o domina."
+        },
+        {
+          "pm": 2,
+          "text": "Durante a duração, o alvo afetado também tem ações limitadas em seu turno. Ele pode usar uma ação ou uma ação bônus, não ambas. Independentemente das habilidades ou itens mágicos da criatura, ela não pode fazer mais de um ataque corpo a corpo ou à distância durante seu turno."
+        }
+      ],
+      "body": "Você pode alterar o tempo de duas maneiras, escolhidas no momento da conjuração:\n\nAcelerar\n\nDurante a duração do efeito, a velocidade do alvo é dobrada, ele recebe um bônus de +2 na CA e tem vantagem em testes de resistência de Destreza.\n\nLento\n\nDurante a duração do efeito, a velocidade do alvo é reduzida à metade, ele sofre uma penalidade de -2 na CA e nos testes de resistência de Destreza e não pode usar reações. Uma criatura afetada por este efeito faz outro teste de resistência de Sabedoria no final de cada um de seus turnos. Se obtiver sucesso, o efeito termina para ela.\n\nSe a criatura tentar conjurar uma magia ou efeito de esfera com um tempo de conjuração de 1 ação, role um d20. Com um resultado de 11 ou mais, a magia não terá efeito até o próximo turno da criatura, e a criatura deve usar sua ação nesse turno para completar a magia ou o efeito de esfera. Se não conseguir, o efeito é desperdiçado."
+    },
+    {
+      "id": "tempo-idade",
+      "name": "Idade (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "duration": "Concentração, até 1 minuto (exceto quando indicado)",
+      "target": "1 criatura ou objeto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tocar uma criatura ou objeto e ajustar sua idade para frente ou para trás. Criaturas podem fazer um teste de resistência de Sabedoria para negar esta habilidade se elas mesmas ou seus itens equipados ou carregados forem o alvo. Aplicações com duração podem ser descartadas como uma reação. Escolha entre os seguintes efeitos:\n\n•Mudança Arbórea: Você pode aumentar ou diminuir a categoria de tamanho de uma planta em 1 passo, a mudança aumentando em 1 passo no 7º nível (2) e no 14º nível (3), até um máximo de Gargantuesco e um mínimo de Minúsculo.\n\n•Ajustar Idade: Você ajusta a idade de uma criatura alvo. Um teste de resistência de Constituição bem-sucedido nega este efeito. Se transformar um alvo em uma criança, seu tamanho é reduzido em um passo e ele sofre uma penalidade de 1d4 em todas as rolagens de dano com armas, além de sofrer desvantagem em todos os testes de Inteligência, Sabedoria e Carisma. Se transformar um alvo em um ancião, ele sofre desvantagem em todos os testes de resistência de Força, Destreza e Constituição.\n\n•Restaurar/Desgastar: Como um efeito instantâneo, você pode escolher um item como alvo e reduzir seus pontos de vida em um valor igual ao seu nível ou restaurar pontos de vida iguais ao dobro do seu nível. Isso não restaura nem remove cargas de itens de uso limitado, nem restaura itens já utilizados. Esta opção também pode ser usada para neutralizar ou dissipar as outras aplicações deste talento com um teste de habilidade de conjuração.\n\n•Reverter Encantamento: Você retorna um objeto ao estado em que ele estava antes de ser encantado. Faça um teste de habilidade de conjuração contra a CD de resistência à magia ou a CD da esfera do item (consulte a Habilidade de Magia de Item na introdução, se necessário). Se bem-sucedido, o objeto se torna não mágico durante a duração do efeito.\n\n•Deterioração: Como um efeito instantâneo, você pode fazer com que uma quantidade de comida suficiente para alimentar 1 criatura Média por nível se estrague ou fazer com que uma quantidade igual de comida estragada retorne a um estado palatável. Se a comida tiver sido envenenada ou tiver efeitos mágicos adicionados, você deve ser bem-sucedido em um teste de habilidade de conjuração contra a CD do veneno ou efeito para removê-lo. Restaurar a comida não impede que ela se estrague novamente."
+    },
+    {
+      "id": "tempo-tempo-fragmentado",
+      "name": "Tempo Fragmentado (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você faz com que o tempo se mova em um ritmo antinatural ao redor do alvo, saltando e pulando em tremores distorcidos, a menos que ele seja bem-sucedido em um teste de resistência de Sabedoria. Alvos que falharem no teste de resistência sofrem desvantagem em todos os testes de habilidade e devem ser bem-sucedidos em um teste de Constituição contra a CD da sua esfera para conjurar uma magia ou efeito de esfera; falhar neste teste significa que a magia falha e o esforço é desperdiçado. As criaturas têm direito a um novo teste de resistência no final de cada um de seus turnos para encerrar este efeito sobre si mesmas."
+    },
+    {
+      "id": "tempo-causalidade",
+      "name": "Causalidade (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "duration": "Instantânea",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode escolher qual efeito eles recebem na tabela."
+        }
+      ],
+      "body": "Você pode puxar a causalidade de uma linha temporal alternativa, fazendo com que a causa siga o efeito em vez do contrário. Você força o alvo a tentar um teste de Força (Atletismo) ou Destreza (Acrobacia) contra a CD da sua esfera. Se ele falhar no teste, algo acontece para impedi-lo; Talvez uma pedra caia sobre eles, eles tropecem em algo inofensivo ou um acidente inesperado os debilite de alguma forma (os detalhes ficam a critério do Mestre). O resultado disso é um dos seguintes, escolhido aleatoriamente:\n\n1. O alvo fica surdo por 1 minuto.\n\n2. O alvo cai no chão.\n\n3. O alvo é agarrado por 1 rodada.\n\n4. A velocidade de movimento do alvo é reduzida à metade por 1 minuto.\n\n5. O alvo fica cego por 1 rodada.\n\n6. O alvo deixa cair o que estiver segurando, que cai a 3 metros de distância em uma direção aleatória.\n\nNormalmente, um alvo pode gastar uma ação para esfregar os olhos, desamarrar as roupas ou desfazer o que aconteceu e encerrar esse efeito antecipadamente. Se você estiver usando alguma regra de falha crítica, pode rolar para uma falha crítica em vez de usar a tabela acima."
+    },
+    {
+      "id": "tempo-atrasar-dor",
+      "name": "Atrasar Dor (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 reação",
+      "duration": "1 rodada",
+      "target": "1 criatura ou objeto que você possa ver",
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode retardar parcialmente o dano aos pontos de vida, fazendo com que a criatura receba metade (arredondada para cima) do dano no final do seu próximo turno e o restante no final do turno seguinte."
+        }
+      ],
+      "body": "Quando uma criatura ou objeto voluntário dentro do alcance sofrer dano ou estiver sujeito a qualquer efeito, você pode atrasar o início desse dano e/ou efeito até o final do próximo turno da criatura (para criaturas e objetos que estejam sendo usados ​​ou segurados) ou o seu próximo turno (para objetos desacompanhados). O dano e/ou efeito atrasado é sofrido neste momento, embora esteja sujeito a quaisquer alterações de imunidade, resistências, etc. Um determinado efeito ou instância de dano não pode ser atrasado mais de uma vez. Criaturas e objetos não voluntários usados ​​ou segurados por criaturas não voluntárias têm direito a um teste de resistência de Sabedoria para negar este atraso. Se este efeito for dissipado antes que o efeito atrasado seja sofrido, ele será sofrido imediatamente. Efeitos que curariam dano, removeriam condições ou dissipariam ou neutralizariam o efeito retardado podem ter todo ou parte do seu efeito direcionado para reduzir a quantidade de dano ou remover ou neutralizar o efeito que está sendo retardado."
+    },
+    {
+      "id": "tempo-ejetar",
+      "name": "Ejetar (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "duration": "1 rodada",
+      "target": "1 criatura ou objeto",
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração aumenta para concentração, até 1 minuto. Este aprimoramento deve ser aplicado no momento da conjuração."
+        },
+        {
+          "pm": 3,
+          "text": "A duração aumenta para 1 minuto. Este aprimoramento deve ser aplicado no momento da conjuração."
+        }
+      ],
+      "body": "Você pode ejetar uma criatura ou objeto do próprio tempo durante a duração do efeito. As criaturas têm direito a um teste de resistência de Sabedoria para negar este efeito para si mesmas e para os objetos que estiverem vestindo ou segurando. O alvo desaparece completamente e não pode ser alvo de nenhum dano ou efeito enquanto estiver desaparecido.\n\nQuando o efeito termina, o alvo retorna exatamente para o local de onde desapareceu (ou para o quadrado desocupado mais próximo). Do ponto de vista do alvo, nenhum tempo transcorreu, e qualquer efeito já ativo no alvo com duração (como magia ou veneno) continua como se o tempo gasto para ejetar o efeito simplesmente não tivesse ocorrido. Os objetos alvo não podem ser maiores que médios, aumentando para grande no 5º nível, enorme no 11º nível e gigantesco no 17º nível. Você pode dissipar este efeito no seu turno sem precisar de nenhuma ação."
+    },
+    {
+      "id": "tempo-imagem-fragmentada",
+      "name": "Imagem Fragmentada (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode fazer com que um alvo sangre através do tempo, distorcendo sua imagem para que pareça estar em vários lugares ao mesmo tempo. Durante a duração, todas as criaturas têm desvantagem nas jogadas de ataque contra o alvo."
+    },
+    {
+      "id": "tempo-letargia",
+      "name": "Letargia (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "duration": "Instantânea",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode fazer com que um alvo dentro do alcance experimente uma quantidade enorme de tempo em um único instante, aumentando seu nível de exaustão em 1 (até um máximo de 5), a menos que seja bem-sucedido em um teste de resistência de Constituição."
+    },
+    {
+      "id": "tempo-resposta-rapida",
+      "name": "Resposta Rápida (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas afetadas também ganham evasão (quando o alvo é submetido a um efeito que lhe permite fazer um teste de resistência de Destreza para sofrer apenas metade do dano, ele não sofre dano algum se for bem-sucedido no teste e sofre metade do dano se falhar)."
+        },
+        {
+          "pm": 1,
+          "text": "Atacantes que o alvo não conhece não têm vantagem em jogadas de ataque feitas contra o alvo."
+        }
+      ],
+      "body": "Durante a duração, você concede ao alvo vantagem em testes de Destreza para iniciativa e a capacidade de realizar uma ação ou ação bônus em uma rodada quando estiver surpreso."
+    },
+    {
+      "id": "tempo-repeticao",
+      "name": "Repetição (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 ação (se apenas em si mesmo, 1 ação bônus)",
+      "duration": "1 rodada",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode estender momentaneamente o tempo para um alvo, permitindo que ele tenha mais cuidado ao realizar uma ação. Isso permite que o alvo trate um teste de Força ou Destreza como se tivesse rolado um 20. Isso só pode ser usado em testes de habilidade que levam no máximo 1 rodada para serem realizados, que não têm como alvo e não são contestados por uma criatura hostil. Se usar esta habilidade em si mesmo e somente em si mesmo, você pode usá-la como uma ação bônus. Você não pode usar essa habilidade como uma ação bônus dessa maneira se estiver aprimorando-a com o talento Massa (metaesfera)."
+    },
+    {
+      "id": "tempo-preparacao-retroativa",
+      "name": "Preparação Retroativa (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "duration": "Instantânea",
+      "target": "variável",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode editar o passado. Escolha um dos seguintes efeitos:\n\n•Influência: Escolha uma criatura dentro do seu alcance de alteração temporal. Você pode alterar o passado para que tenha procurado e influenciado essa criatura recentemente. Faça um teste de Carisma (Enganação), Carisma (Persuasão) ou Carisma (Intimidação) para influenciar a atitude do alvo ou manipular seu comportamento. A criatura é tratada como se você tivesse feito o teste no passado. A criatura deve ter estado em um local onde você poderia razoavelmente tê-la encontrado no último dia por nível, caso contrário o efeito falha, embora você não perca o ponto de magia. Esta habilidade não aumenta a duração do resultado do teste de habilidade escolhido. Você pode gastar até 10 po por nível como parte deste teste de habilidade para subornos ou pagamentos similares. Esta aplicação não pode fazer com que criaturas apareçam em um lugar onde elas não estariam de outra forma (portanto, você pode subornar retroativamente um guarda para que ele o deixe passar, mas não pode pagá-lo para contratar mercenários em seu nome).\n\n•Compra: Você pode obter retroativamente um objeto genérico com valor inferior a 100 po por nível. O objeto aparece imediatamente em sua pessoa ou em um recipiente ou espaço extradimensional em sua posse. O custo do item é imediatamente deduzido da riqueza que você carrega atualmente. O objeto deve ser um que estaria disponível em um assentamento que você visitou na última semana por nível. Se você especificar um item que não poderia ter sido comprado, a conjuração falha, mas o ponto de magia não é gasto.\n\n•Pesquisa: Você pode alterar o passado para ter passado tempo pesquisando um assunto. Você possui perícia (você adiciona seu bônus de proficiência duas vezes) ao fazer testes de Inteligência relacionados a um assunto específico (você poderia escolher “dragões verdes” ou “esta cidade”, mas não “arcano” ou “geografia”) por 1 hora, desde que tenha estado perto de um local onde poderia ter acessado materiais de referência na última semana por nível, gastando tempo retroativamente para pesquisar o assunto. Você pode gastar até 100 po por nível para obter acesso a esses materiais de pesquisa.\n\nA riqueza gasta com esta habilidade geralmente consiste em moedas, mas pode ser composta por gemas não mágicas ou outros objetos não mágicos usados para\n\ncomércio, e deve estar acessível a você no momento em que o efeito é conjurado. Você não pode gastar riqueza que não possui. Uma vez que uma criatura tenha sido alvo deste efeito, você não poderá escolhê-la novamente com esta habilidade por 24 horas.\n\nSe você aprimorar essa habilidade com o talento Massa (metasfera), poderá influenciar múltiplas criaturas (rolando cada teste de habilidade separadamente), obter múltiplos itens ou tentar múltiplos testes de perícia, com o número total de criaturas, objetos ou testes de perícia afetados limitado por esse talento. Você também pode incluir criaturas dispostas a participar do efeito, permitindo que um aliado faça os testes de habilidade ou obtenha o(s) item(ns). Cada aliado incluído conta para o limite de Massa (metasfera). Cada conjuração só pode selecionar uma das opções; você não pode influenciar uma criatura enquanto obtém um item ou pesquisa um assunto."
+    },
+    {
+      "id": "tempo-tentar-novamente",
+      "name": "Tentar novamente (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "action": "1 reação",
+      "duration": "Instantânea",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode forçar um alvo a refazer seu turno (um teste de resistência de Sabedoria nega esse efeito para criaturas relutantes). O alvo retorna ao ponto onde seu turno começou, e quaisquer testes de habilidade, jogadas de ataque, movimento, ataques de oportunidade, etc., que ocorreram durante seu turno, são anulados como se nunca tivessem acontecido. O alvo pode realizar as mesmas ações novamente (refazendo quaisquer rolagens necessárias para tais ações) ou pode escolher ações completamente diferentes. Se você optar por refazer seu próprio turno dessa maneira, você não recupera os pontos de ação ou de magia gastos usando esta habilidade."
+    },
+    {
+      "id": "tempo-rebobinar-mana",
+      "name": "Rebobinar Mana (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "action": "1 reação",
+      "duration": "Instantânea",
+      "target": "1 efeito de magia ou esfera dissipado desde o final do seu último turno",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha as seguintes habilidades:\n\nRestaurar Mana\n\nVocê pode retroceder o tempo para restaurar a energia mágica gasta anteriormente por outra criatura. Você gasta um número de pontos de magia que não exceda seu bônus de proficiência para restaurar um número igual a uma criatura voluntária dentro do alcance cujo ND ou nível não exceda o seu nível. Isso não pode fazer com que uma criatura exceda seu máximo de pontos de magia; qualquer excesso não é transferido. Pontos de magia temporários não podem ser transferidos. Se aprimorado com o talento Massa (metasfera) na esfera Universal, você distribui os pontos entre as criaturas afetadas como desejar. Isso não permite que você exceda seu bônus de proficiência em pontos de magia transferidos.\n\nCancelar Dissipar\n\nQuando um efeito de magia ou esfera dentro do alcance é dissipado, você pode retroceder no tempo para desfazer a dissipação."
+    },
+    {
+      "id": "tempo-distorcao-temporal",
+      "name": "Distorção Temporal (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire as seguintes habilidades:"
+    },
+    {
+      "id": "tempo-emprestimo-temporal",
+      "name": "Empréstimo Temporal",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 ação (somente para si mesmo: ação bônus ou ação livre, veja o texto)",
+      "duration": "Instantânea",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder ao alvo a habilidade de realizar imediatamente uma ação, mover-se até sua velocidade ou realizar uma ação bônus, se assim desejar. Qualquer alvo que realize uma ação, ação bônus ou se mova com esta habilidade perde essa ação, ação bônus ou distância de movimento em seu próximo turno. Você pode usar esta habilidade em si mesmo e somente em si mesmo como uma ação bônus, ou como uma ação livre se optar por realizar uma ação bônus com esta habilidade. Você não pode usar esta habilidade como uma ação bônus ou ação livre desta maneira se estiver combinando-a com o talento Massa (metasfera). Uma criatura não pode se beneficiar de habilidades de Distorção Temporal (empréstimo tempo e armazenamento de tempo) mais de uma vez por rodada."
+    },
+    {
+      "id": "tempo-armazenamento-de-tempo",
+      "name": "Armazenamento de Tempo",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação bônus",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Os alvos podem armazenar a ação ou o movimento por um número de rodadas igual ao seu modificador de habilidade principal (mínimo de 2 rodadas)."
+        }
+      ],
+      "body": "Você pode conceder a uma criatura a habilidade de armazenar ações para uso futuro durante a duração do efeito. No turno do alvo, ele pode gastar uma ação, uma ação bônus ou todo o seu movimento. Antes do final do seu próximo turno, ele ganha uma ação extra do tipo armazenado ou a distância de movimento armazenada como uma ação livre. Uma criatura só pode ganhar uma ação ou movimento adicional desta habilidade por rodada, e quaisquer ações não gastas são perdidas ao final do próximo turno da criatura. Uma criatura não pode se beneficiar de habilidades de Distorção Temporal (tomar emprestado tempo e armazenar tempo) mais de uma vez por rodada."
+    },
+    {
+      "id": "tempo-roubar-tempo",
+      "name": "Roubar Tempo (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "duration": "Instantânea",
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O alvo fica atordoado, em vez de incapacitado, caso falhe no teste de resistência."
+        },
+        {
+          "pm": 1,
+          "text": "Se o alvo falhar no teste de resistência, você também ganha imediatamente uma ação adicional. Um alvo individual não pode sofrer os efeitos desta habilidade mais de uma vez por rodada. Se você atingir com sucesso várias criaturas na mesma rodada com esta habilidade (como aprimorá-la com o talento Massa (metaesfera) da esfera Universal), você não pode ganhar mais de uma ação por rodada desta maneira."
+        }
+      ],
+      "body": "Você pode tentar apagar o turno de um alvo da existência. O alvo fica incapacitado por 1 rodada, a menos que seja bem-sucedido em um teste de resistência de Sabedoria."
+    },
+    {
+      "id": "tempo-congelamento-temporal",
+      "name": "Congelamento Temporal (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "duration": "1 rodada",
+      "target": "cubo de 3 metros, aumentando em 1,5 metro no 5º nível (4,5 metros), 11º nível (6 metros) e 17º nível (7,5 metros)",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode reduzir o tempo de conjuração para 1 reação."
+        }
+      ],
+      "body": "Você pode congelar toda a atividade dentro de uma área. Se usada como uma ação preparada, esta habilidade pode interromper ataques à distância ou efeitos mágicos instantâneos (como explosões destrutivas), mas, no caso de efeitos que afetam áreas, apenas o efeito contido na área de congelamento temporal é interrompido. Alvos involuntários (incluindo aliados, se assim o desejarem) têm direito a um teste de resistência de Sabedoria para negar este efeito para si mesmos ou para efeitos originados deles (ataques, magia, etc.). Você pode escolher se deseja ou não ser afetado pelo congelamento temporal. Todos os objetos e criaturas afetados dentro desta área não podem agir até o final do seu próximo turno; tampouco podem ser afetados (movidos, sofrer dano, etc.). Uma vez que o efeito esteja em vigor, criaturas não afetadas podem entrar na área de efeito sem problemas, embora não possam perturbar uma criatura ou objeto afetado.\n\nAo final do seu próximo turno, tudo dentro da área é descongelado; as criaturas voltam a se mover, os ataques à distância atingem o quadrado que estavam mirando e os efeitos de explosão são resolvidos normalmente."
+    },
+    {
+      "id": "tempo-duracao-acelerada",
+      "name": "Duração Acelerada (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode escolher acelerar ou desacelerar o tempo para uma criatura ou objeto.\n\nDuração Fugaz\n\nVocê pode acelerar o tempo para uma criatura ou objeto. Todos os efeitos sobre a criatura ou objeto têm sua duração reduzida por um número de rodadas igual ao seu bônus de proficiência a cada rodada. Isso também reduz a duração máxima que um efeito (exceto este) pode ter. Isso afeta magia (feitiços, habilidades de esfera, etc.), venenos, doenças, etc., mas não concede ações extras aos alvos dentro desta área nem fornece qualquer outro benefício. Alvos relutantes (incluindo aliados, se assim desejarem) podem fazer um teste de resistência de Sabedoria para negar este efeito. Duração Fugaz neutraliza os efeitos de Duração Relaxada.\n\nDuração Relaxada\n\nTodos os efeitos ativos na criatura ou objeto têm sua duração estendida por um número de rodadas igual ao bônus de proficiência do conjurador, até uma duração máxima estendida de duas vezes a duração normal do efeito (portanto, um efeito que normalmente dura apenas 1 rodada não pode ser estendido dessa maneira por mais de 1 rodada adicional). Isso afeta magia (feitiços, habilidades de esfera, etc.), venenos, doenças, etc., mas não impede que as criaturas realizem ações normalmente. Alvos relutantes (incluindo aliados, se assim desejarem) podem fazer um teste de resistência de Sabedoria para negar este efeito. Você pode escolher se deseja ou não ser afetado pela sua própria duração relaxada. Duração Relaxada neutraliza os efeitos de duração efêmera.\n\nSe você aplicar o aprimoramento Zona Temporal a qualquer um desses efeitos, eles se aplicam a todos os efeitos em andamento na área, embora modifiquem apenas a duração da porção do efeito nessa área.\n\nUma criatura relutante pode fazer um teste de resistência de Sabedoria para evitar ser afetada por um efeito originado dela."
+    },
+    {
+      "id": "tempo-ponte-temporal",
+      "name": "Ponte Temporal (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Chronos",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Como reação, você pode encerrar este efeito no alvo e conceder desvantagem em uma única jogada de ataque a um atacante que tenha como alvo essa criatura, ou conceder vantagem em um único teste de resistência à criatura alvo, dando-lhe uma onda de revelação de uma versão de si"
+        }
+      ],
+      "body": "Ao conectar o alvo a versões de si mesmo que existem em linhas temporais alternativas, você concede ao alvo vantagem em todos os testes de Inteligência para recordar conhecimento.\n\nmesmo que já sobreviveu ao ataque ou efeito em outra linha temporal. Este aprimoramento é aplicado no momento em que a condição de ativação (um ataque sendo declarado contra o alvo) é atendida."
+    },
+    {
+      "id": "tempo-manipular-cura",
+      "name": "Manipular Cura",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Criaturas que se beneficiam da sua Aceleração podem gastar um dado de vida como uma ação bônus para curar como se estivessem completando um descanso curto. Isso não concede nenhum outro benefício de completar um descanso curto."
+        },
+        {
+          "pm": 1,
+          "text": "Quando você usa Lentidão em uma criatura, você pode suspender as habilidades de cura do alvo. Regeneração e outras habilidades que restauram pontos de vida são suprimidas. Efeitos mágicos que restauram pontos de vida não os restauram a menos que o conjurador seja bem-sucedido em um teste de habilidade de conjuração contra a CD da sua esfera."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "tempo-segunda-chance",
+      "name": "Segunda Chance",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 reação",
+      "duration": "Instantânea",
+      "target": "1 criatura que você possa ver atualmente sob os efeitos da sua alteração do tempo",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Seu efeito de alteração temporal assume a forma de uma esfera ou parede. Você pode imbuir esta área com uma única habilidade de alteração temporal. A área do efeito é visualmente perceptível. Criaturas que entram ou iniciam seu turno nesta área são afetadas como se fossem alvos da habilidade de alteração temporal escolhida. Ao sair da área, os efeitos duram até o início do próximo turno da criatura. Se a habilidade de alteração temporal permitir um teste de resistência, a criatura deve realizá-lo na primeira vez em cada rodada em que entrar ou iniciar seu turno dentro da área."
+        },
+        {
+          "pm": 1,
+          "text": "Você pode dobrar o tamanho de um efeito de alteração temporal que tenha como alvo uma área."
+        }
+      ],
+      "body": "Você pode forçar qualquer criatura atualmente sob os efeitos de um dos seus efeitos de alteração do tempo a rolar novamente um teste de resistência que acabou de falhar. Ela deve aceitar o novo resultado, mesmo que seja pior que o original. Alvos relutantes podem tentar um teste de resistência de Sabedoria para negar este efeito.\n\nFuso Horário\n\nVocê pode aplicar o seguinte aprimoramento a qualquer habilidade (cronos) que tenha como alvo uma criatura e possua duração de concentração:\n\nÁreas disponíveis:\n\nEsfera: Sua alteração temporal tem um raio de até 3 metros, aumentando em 1,5 metro no 5º nível (4,5 metros), 11º nível (6 metros) e 17º nível (7,5 metros), centrado em você. Este efeito irradia de um ponto central e não pode atravessar paredes. Você pode optar por se excluir do efeito.\n\nParede: Você pode organizar sua alteração temporal em até três cubos de 1,5 metro. Você deve ser capaz de perceber todas as áreas que sua alteração temporal irá ocupar. Você deve ocupar um espaço dentro ou adjacente a um dos cubos. O número de cubos que você pode organizar aumenta em três no 5º nível (6 cubos), 11º nível (9 cubos) e 17º nível (12 cubos).\n\nHabilidades de alteração temporal, como Acelerar, aplicadas a criaturas nesta área terminam para a criatura afetada na primeira vez que ela terminar seu turno fora da área afetada. Se você possuir o talento Alcance (metaesfera) da esfera Universal, a área selecionada pode estar em qualquer lugar dentro do alcance da sua esfera Tempo e não precisa estar centrada em você ou adjacente a você."
+    },
+    {
+      "id": "tempo-acelerar-descanso",
+      "name": "Acelerar Descanso (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "range": "9 metros",
+      "duration": "10 minutos",
+      "target": "1 criatura voluntária",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "tempo"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você acelera o fluxo do tempo ao redor de um alvo, fazendo com que ele fique inconsciente durante a duração. O efeito termina mais cedo se o alvo sofrer dano ou se alguém usar uma ação para sacudi-lo ou dar um tapa nele e acordá-lo. Se o alvo permanecer inconsciente durante toda a duração, ele recebe os benefícios de um descanso curto e não poderá ser afetado por este efeito de esfera novamente até terminar um descanso longo. Aprimorar este talento com talentos (metaesfera) da esfera Universal, como Massa, não pode reduzir a duração desta habilidade de esfera para menos de 10 minutos."
+    },
+    {
+      "id": "tempo-imagem-fraturada-aprimorada",
+      "name": "Imagem Fraturada Aprimorada",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "temporal"
+        },
+        {
+          "type": "text",
+          "text": "Imagem Fraturada"
+        },
+        {
+          "type": "level",
+          "min": 9
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Sempre que um alvo estiver sob os efeitos do seu talento Imagem Fraturada, ele ganha uma capacidade aumentada de perceber e agir através de seu estado de tempo alterado; a cada rodada, o alvo pode realizar 1 ação bônus adicional durante a duração do efeito de imagem fraturada. Esta ação bônus não pode ser usada para conjurar uma magia ou efeito de esfera."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:sphere-unknown:Temporal",
+        "prereq:unresolved:Imagem Fraturada"
+      ]
+    },
+    {
+      "id": "tempo-visao-do-passado",
+      "name": "Visão do Passado",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 minuto",
+      "range": "9 metros.",
+      "duration": "Concentração, até 10 minutos",
+      "target": "especial",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "talent",
+          "id": "adivinhacao-retrospectiva"
+        },
+        {
+          "type": "sphere",
+          "id": "temporal"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração desta habilidade aumenta para 10 minutos e você visualiza um dia. Você pode se concentrar por até 1 hora, visualizando 1 dia a cada 10 minutos."
+        },
+        {
+          "pm": 2,
+          "text": "O tempo de conjuração desta habilidade aumenta para 1 hora e você visualiza um ano. Você pode se concentrar por até 8 horas, visualizando 1 ano a cada hora."
+        }
+      ],
+      "body": "Você enxerga não apenas através do espaço, mas também através do tempo. Você pode visualizar o passado de um local dentro do alcance, visualizando a última hora. Você obtém informações sensoriais completas com base nos sentidos que possui. Você pode se concentrar neste efeito, visualizando uma hora adicional para cada minuto de concentração, até um máximo de 10 minutos. Todos os ataques direcionados a você têm vantagem e você tem desvantagem em todos os testes de Força e Destreza e em todos os testes de resistência enquanto conjura e se concentra nesta habilidade.\n\nSe você possuir o talento Massa (metaesfera) da esfera Universal, poderá aprimorar esta habilidade para compartilhar esta visão com um número de alvos dentro do seu alcance de alteração temporal, conforme definido por esse talento. Tais criaturas sofrem as mesmas penalidades, embora possam optar por sair da visão a qualquer momento, mas não possam retornar a ela.\n\nNo 11º nível, você pode obter o seguinte aprimoramento:\n\nNo 17º nível, você pode obter o seguinte aprimoramento:",
+      "_needsReview": [
+        "prereq:sphere-unknown:Temporal"
+      ]
+    },
+    {
+      "id": "tempo-consulta-ao-eu",
+      "name": "Consulta ao Eu",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [],
+      "cost": {
+        "base": 2,
+        "text": "2PM"
+      },
+      "duration": "Instantânea ou Concentração, até 1 minuto",
+      "target": "especial",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "tempo"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode viajar no tempo para contatar um possível eu futuro. Esse eu futuro pode estar até 1 hora por nível no futuro. Você pode fazer uma única pergunta curta a um eu futuro, recebendo uma resposta curta e concisa, caso seu eu futuro seja capaz. Você pode se concentrar nesse efeito, fazendo uma pergunta diferente a cada rodada para um eu futuro diferente. Se a resposta precisar ser mais longa do que algumas palavras, seu eu futuro pode responder em várias rodadas, contanto que você mantenha a concentração. Embora seu eu futuro geralmente forneça informações honestas e precisas, seu novo conhecimento dos eventos pode alterar o resultado e, portanto, tornar o conselho do seu eu futuro obsoleto, a critério do Mestre (como no caso de resultados ligados ao acaso, em que o Mestre deve rolar um dado para aproximar a chance de sucesso ao determinar se uma versão bem-sucedida ou não de si mesmo foi contatada). Se você conjurar o efeito duas ou mais vezes antes de terminar seu próximo descanso longo, há uma chance cumulativa de 25% para cada conjuração após a primeira de não obter resposta. O Mestre faz essa rolagem em segredo. Esse resultado é idêntico ao de tentar contatar uma versão de si mesmo que morreu como resultado do curso de ação que você especificou."
+    },
+    {
+      "id": "tempo-reversao",
+      "name": "Reversão",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [],
+      "cost": {
+        "base": 6,
+        "text": "6PM"
+      },
+      "action": "1 hora",
+      "duration": "Instantânea",
+      "target": "uma criatura voluntária",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "tempo"
+        },
+        {
+          "type": "level",
+          "min": 17
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você adquire a habilidade de permitir que um personagem recupere completamente o último nível de classe que obteve, retornando-o a um ponto anterior no tempo. Ao final da conjuração, o alvo pode imediatamente recuperar o último nível de classe que adquiriu, escolhendo uma nova classe, talentos, proezas (se em uso), magias ou outras opções de classe, conforme apropriado. O alvo dessa habilidade ainda precisa descansar para recuperar quaisquer pontos de magia, espaços de magia ou outras habilidades de uso limitado concedidas por esse novo nível de classe."
+    },
+    {
+      "id": "tempo-carcereiro-temporal",
+      "name": "Carcereiro Temporal (chronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [
+        "chronos"
+      ],
+      "cost": {
+        "base": 5,
+        "text": "5PM"
+      },
+      "duration": "Instantânea",
+      "target": "Cubo de 9 metros",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "tempo"
+        },
+        {
+          "type": "talent",
+          "id": "tempo-ejetar"
+        },
+        {
+          "type": "level",
+          "min": 17
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 4,
+          "text": "Você altera a duração do seu talento Ejetar (chronos) para instantânea. O alvo permanece em estado de animação suspensa, a menos que Recuperação seja conjurada no local onde a ejeção ocorreu. Busca mágica por bola de cristal, localizar objetoPMell ou outras adivinhações similares (incluindo a maioria dos efeitos de AdivinhaçãoPMaqui) não revelam que uma criatura foi ejetada, mas localizar criaturaPMell ou o talento avançado Encontrar Localização revelam. Um desejo ou milagrePMell não libertará o destinatário, mas revelará onde ele foi ejetado."
+        }
+      ],
+      "body": "Você adquire as seguintes habilidades:\n\nEjetar Aprimorado\n\nRecuperação\n\nVocê pode retornar uma criatura ejetada do contínuo espaço-tempo usando Ejetar Aprimorado. Esta habilidade deve ser usada no local onde o alvo foi ejetado pela primeira vez. Este talento também pode ser usado para libertar uma criatura dos efeitos de um aprisionamento ou labirinto, e pode ser usado para dissipar instantaneamente qualquer efeito contínuo criado pelo Tempo, como um efeito de lentidão, bolha temporal ou clone temporal."
+    },
+    {
+      "id": "tempo-estase-temporal",
+      "name": "Estase Temporal",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [],
+      "cost": {
+        "base": 3,
+        "text": "3PM"
+      },
+      "duration": "Especial",
+      "prerequisites": [
+        {
+          "type": "text",
+          "text": "Tempo"
+        },
+        {
+          "type": "level",
+          "min": 15
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode colocar uma criatura em estado de animação suspensa (um teste de resistência de Constituição bem-sucedido nega este efeito). Para a criatura, o tempo deixa de fluir e sua condição se torna fixa. A criatura não envelhece. Suas funções corporais praticamente cessam e nenhuma força ou efeito pode feri-la. Ao aplicar este efeito em uma criatura, você pode optar por colocar o alvo em estase permanentemente ou definir um limite de tempo ou uma condição para a habilidade. Quando o limite de tempo expira ou a condição é atendida, a estase temporal termina. A estase temporal pode ser dissipada.",
+      "_needsReview": [
+        "prereq:unresolved:Tempo"
+      ]
+    },
+    {
+      "id": "tempo-clone-temporal",
+      "name": "Clone Temporal (cronos)",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [
+        "cronos"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "target": "1 criatura voluntária",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "temporal"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode criar um clone temporal do alvo, fazendo-o aparecer em um espaço desocupado dentro do seu alcance. Este clone temporal é uma imagem mágica e translúcida do alvo que dura pela duração da habilidade, até ser destruído, até você dispensá-lo como uma ação bônus ou até você usar Clone Temporal novamente.\n\nTodos os clones temporais têm CA 14 + seu bônus de proficiência, 1 ponto de vida e imunidade a todas as condições. Se um clone temporal precisar fazer um teste de resistência, ele usa o bônus de teste de resistência do alvo para a rolagem. Ele tem o mesmo tamanho que o alvo e ocupa seu próprio espaço.\n\nO alvo, em seu turno, pode comandar mentalmente seu clone temporal para se mover 9 metros em qualquer direção (nenhuma ação necessária). Se qualquer clone temporal estiver a mais de 9 metros de você do que o seu alcance da Esfera Temporal ao final do turno do alvo, ele é destruído.\n\nO alvo pode usar seu clone temporal das seguintes maneiras:\n\nComo uma ação bônus, o alvo pode se teletransportar, trocando magicamente de lugar com seu clone temporal ao custo de seu movimento, independentemente da distância entre eles.\n\nQuando o alvo realiza a ação Atacar em seu turno, qualquer ataque que ele fizer com essa ação pode se originar de seu espaço ou do espaço de seu clone temporal. O alvo faz essa escolha para cada ataque.\n\nQuando o alvo conjura um truque ou uma habilidade de esfera com custo de 0 pontos de magia em seu turno, o efeito mágico pode se originar de seu espaço ou do espaço de seu clone temporal.\n\nQuando uma criatura que o alvo possa ver a até 1,5 metro de seu clone temporal se move pelo menos 1,5 metro para longe dele, ele pode usar sua reação para fazer um ataque de oportunidade contra essa criatura como se estivesse no espaço de seu clone temporal.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Temporal"
+      ]
+    },
+    {
+      "id": "tempo-parar-o-tempo",
+      "name": "Parar o Tempo",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Tempo",
+      "tags": [],
+      "cost": {
+        "base": 4,
+        "text": "4PM"
+      },
+      "duration": "Instantânea",
+      "target": "Pessoal",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "temporal"
+        },
+        {
+          "type": "talent",
+          "id": "tempo-congelamento-temporal"
+        },
+        {
+          "type": "level",
+          "min": 17
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você interrompe brevemente o fluxo do tempo para todos, exceto para você. O tempo não passa para outras criaturas enquanto você realiza 1d4 + 1 turnos consecutivos, durante os quais você pode usar ações e se mover normalmente.\n\nEste efeito termina se uma das ações que você usar durante este período, ou quaisquer efeitos que você criar durante este período, afetar uma criatura que não seja você ou um objeto que esteja sendo usado ou carregado por alguém que não seja você. Além disso, a magia termina se você se mover para um local a mais de 300 metros do local onde a conjurou.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Temporal"
+      ]
+    },
+    {
+      "id": "tempo-tempo-pessoal",
+      "name": "Tempo Pessoal",
+      "sphere": "tempo",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode escolher a si mesmo como alvo ao usar habilidades de alteração do tempo que tenham criaturas como alvo. Você não pode adquirir o talento Fuso Temporal. Você recebe um talento bônus da esfera Tempo."
+    }
+  ],
+  "_reviewed": false
+}

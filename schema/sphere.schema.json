@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sphere.schema.json",
+  "title": "Sphere",
+  "description": "One sphere (magic or martial): its identity, presentation, acquisition rules, and its talents. One file per sphere in data/spheres/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "section", "talents"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "name": { "type": "string", "minLength": 1, "description": "Display name; must match the chapter/TOC heading during the transitional cross-check." },
+    "section": { "enum": ["magic", "martial"] },
+    "summary": { "type": ["string", "null"], "description": "One-line blurb (migrated from descriptions.json)." },
+    "theme": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "Visual identity (migrated from sphere-themes.json).",
+      "properties": {
+        "h": { "type": "number" },
+        "s": { "type": "number" },
+        "sig": { "type": "string" },
+        "lLight": { "type": ["number", "null"] }
+      }
+    },
+    "acquisition": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "description": "Character-builder acquisition rules (migrated from sphere-rules.json).",
+      "properties": {
+        "freeGroup": { "$ref": "#/definitions/freeGroup" },
+        "freeLabel": { "type": "string" },
+        "freePicks": { "type": "number" },
+        "talentTags": { "type": "array", "items": { "type": "string" } },
+        "conditionals": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/conditional" }
+        },
+        "packages": { "$ref": "#/definitions/packages" }
+      }
+    },
+    "talents": {
+      "type": "array",
+      "items": { "$ref": "talent.schema.json" }
+    },
+    "_reviewed": {
+      "type": "boolean",
+      "description": "Set true only after a human has verified the migrated data and cleared all _needsReview markers.",
+      "default": false
+    }
+  },
+  "definitions": {
+    "freeGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tag":  { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "h3":   { "type": "string", "description": "Regex tested against a talent's group heading." }
+      }
+    },
+    "conditional": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requires"],
+      "properties": {
+        "requires": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } }
+          ],
+          "description": "Proficiency (or one of several) that unlocks the bonus pick."
+        },
+        "addPicks": { "type": "number", "default": 1 }
+      }
+    },
+    "packages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["options"],
+      "properties": {
+        "label": { "type": "string" },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "label"],
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" },
+              "freeGroup": { "$ref": "#/definitions/freeGroup" },
+              "freeLabel": { "type": "string" },
+              "freePicks": { "type": "number" },
+              "talentTags": { "type": "array", "items": { "type": "string" } },
+              "conditionals": { "type": "array", "items": { "$ref": "#/definitions/conditional" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

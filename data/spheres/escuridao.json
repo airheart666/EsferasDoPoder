@@ -1,0 +1,878 @@
+{
+  "id": "escuridao",
+  "name": "Escuridão",
+  "section": "magic",
+  "summary": "Criar e controlar a escuridão, ocultando e cegando o que quiser.",
+  "theme": {
+    "h": 262,
+    "s": 26,
+    "sig": "escuridao",
+    "lLight": 20
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "escuridao-escuridao",
+      "name": "Escuridão",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 PM"
+      },
+      "action": "1 ação",
+      "range": "36 metros",
+      "duration": "concentração, até 1 minuto",
+      "area": "esfera com raio de 4,5 metros",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser conjurado no seu turno sem uma ação."
+        }
+      ],
+      "body": "Você pode criar uma esfera de escuridão, centralizada em qualquer lugar dentro do alcance. Essa escuridão irradia de um ponto central e não pode se estender através de paredes. A escuridão se espalha pelos cantos. Uma criatura com visão no escuro pode ver através dessa escuridão, mas luz não mágica não pode iluminá-la.\n\nSe um efeito de esfera de Luz for criado dentro do seu efeito de escuridão, o criador do efeito de esfera de Luz deve ser bem-sucedido em um teste de habilidade de conjuração contra a CD da sua esfera. Se o teste for bem-sucedido, seu efeito de escuridão é anulado e o efeito de esfera de Luz funciona normalmente. Caso contrário, funciona como qualquer outra fonte de luz, conforme descrito acima."
+    },
+    {
+      "id": "escuridao-veu",
+      "name": "Véu",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 PM"
+      },
+      "action": "10 minutos",
+      "range": "toque",
+      "duration": "concentração, até 1 hora.",
+      "target": "1 criatura",
+      "save": "nenhum, a menos que listado",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "O tempo de conjuração é reduzido para 1 ação."
+        },
+        {
+          "pm": 2,
+          "text": "O efeito persiste pela duração restante sem concentração. Este aumento pode ser aplicado após o efeito ser conjurado no seu turno sem uma ação."
+        }
+      ],
+      "body": "Você pode conceder um único véu a uma criatura. Alvos relutantes podem realizar um teste de resistência de Sabedoria para resistir à obtenção de uma fusão.\n\nAo ganhar a esfera das Escuridão, você ganha a seguinte habilidade (véu):"
+    },
+    {
+      "id": "escuridao-visao-no-escuro",
+      "name": "Visão no Escuro (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "base",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "O alcance da Visão no Escuro aumenta para 36 metros. Se o alvo já possuir Visão no Escuro, isso aumenta o alcance de sua Visão no Escuro em 18 metros."
+        }
+      ],
+      "body": "Você pode conceder Visão no Escuro ao alvo 18 metros. Se o alvo já possuir Visão no Escuro, isso aumenta o alcance da Visão no Escuro em 9 metros."
+    },
+    {
+      "id": "escuridao-pulmao-negro",
+      "name": "Pulmão Negro (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode imbuir seu Pulmão Negro com uma dose de veneno de contato ou inalação segurado em sua mão. Usar esta habilidade consome a dose de veneno. Qualquer criatura que falhe em seu teste de resistência contra o talento Pulmão Negro deve fazer um teste de resistência adicional contra a CD do veneno ou sofrer seus efeitos. Aqueles imunes ao seu Pulmão Negro também são imunes ao veneno."
+        }
+      ],
+      "body": "Sua escuridão assume uma qualidade vil e miasmática que faz com que as criaturas sufoquem e vomitem. Criaturas que entram na escuridão ou iniciam seu turno nela devem ser bem-sucedidas em um teste de resistência de Constituição ou serão envenenadas até saírem da escuridão. Criaturas com a desvantagem Conjuração Verbal ou que tentam conjurar uma magia com componentes verbais enquanto envenenadas por esta habilidade devem ser bem-sucedidas em um teste de resistência de Constituição ou terão a conjuração falhada, perdendo a ação e quaisquer pontos de magia ou espaços de magia. Criaturas que não respiram não são afetadas por Pulmão Negro."
+    },
+    {
+      "id": "escuridao-letargia-rastejante",
+      "name": "Letargia Rastejante (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aumento de 1 pm: Sua escuridão embaça a mente, fazendo com que aqueles dentro dela caiam em sonolência. Criaturas que entram na escuridão ou iniciam seu turno dentro da sua escuridão devem ser bem-sucedidas em um teste de resistência de Sabedoria ou podem realizar apenas ações ou ações bônus a cada turno, não ambos, até que iniciem seu turno fora da sua escuridão.\n\nSe uma criatura sofrendo esta penalidade iniciar seu turno dentro da escuridão, ela deve ser bem-sucedida em um teste de resistência de Sabedoria ou adormecer por 1 minuto ou até iniciar seu turno fora da escuridão, o que ocorrer primeiro.\n\nCriaturas adormecidas recebem um novo teste de resistência para acordar no início de cada um de seus\n\nturnos. A criatura acorda se sofrer dano ou se outra criatura realizar uma ação para acordá-la."
+    },
+    {
+      "id": "escuridao-escuridao-desorientadora",
+      "name": "Escuridão Desorientadora (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você possui um mínimo de controle sobre os delírios de seus alvos. Quando uma criatura que falhou em seu teste de resistência contra sua Escuridão Desorientadora tenta se mover, você pode gastar uma reação para escolher a direção de deslocamento dela em vez de rolar aleatoriamente."
+        },
+        {
+          "pm": 1,
+          "text": "Quando uma criatura que falhou em seu teste de resistência e fica desorientada por sua Escuridão Desorientadora faz um ataque, conjura uma magia ou efeito de esfera direcionado, ou usa outra habilidade com um alvo especificado antes do final do turno em que falhou em seu teste de resistência, o ataque ou habilidade é direcionado aleatoriamente para outro alvo válido dentro do alcance. Se não houver outro alvo válido dentro do alcance, o ataque ou habilidade não será afetado. Se a mágica ou habilidade afetada tiver mais de um alvo, todos os seus alvos serão escolhidos aleatoriamente entre os alvos válidos dentro do alcance."
+        }
+      ],
+      "body": "Você pode criar um efeito de escuridão que tem chance de desorientar qualquer um que entre nele. Quando uma criatura tenta entrar ou sair de um espaço dentro desta escuridão pela primeira vez em seu turno, ela deve ser aprovada em um teste de resistência de Inteligência ou ficará desorientada.\n\nSe a criatura falhar neste teste de resistência, ela deve rolar um d8 para determinar a direção: 1 é a direção pretendida, com 2-8 girando ao redor da criatura no sentido horário. O alvo se move nessa direção como se fosse o curso pretendido. O alvo não percebe que está fora do curso até o próximo turno ou até deixar a área de escuridão.\n\nVocê pode escolher este talento uma segunda vez. Fazer isso concede os seguintes aprimoramentos:"
+    },
+    {
+      "id": "escuridao-escuridao-amedrontadora",
+      "name": "Escuridão Amedrontadora (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um efeito de escuridão que brinca com os medos de qualquer um que entre nela. Criaturas que entrarem ou iniciarem seu turno dentro desta área de escuridão devem passar por um teste de resistência de Carisma ou ficarão amedrontadas até terminarem seu turno fora da escuridão. Criaturas que forem bem-sucedidas neste teste de resistência, mas permanecerem na escuridão, podem fazer um novo teste para encerrar sua condição de amedrontado no início de seus turnos subsequentes."
+    },
+    {
+      "id": "escuridao-escuridao-faminta",
+      "name": "Escuridão Faminta (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um efeito de escuridão que drena a força vital daqueles dentro dela. Quando uma criatura entra ou inicia seu turno dentro da área desta escuridão, ela deve passar por um teste de resistência de Constituição ou sofrerá 1 ponto de dano necrótico por Dado de Vida que possuir. Uma criatura só pode ser afetada pela Escuridão Faminta uma vez por rodada, independentemente de quantas vezes ela entrar ou sair da área naquele turno."
+    },
+    {
+      "id": "escuridao-escuridao-iminente",
+      "name": "Escuridão Iminente (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um efeito de escuridão que corrói a determinação daqueles que a penetram. Todas as criaturas dentro da sua escuridão sofrem desvantagem em todos os testes de habilidade e testes de resistência de Inteligência, Sabedoria e Carisma."
+    },
+    {
+      "id": "escuridao-escuridao-entorpecente",
+      "name": "Escuridão Entorpecente (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar uma escuridão que anestesia sutilmente aqueles dentro dela. Todas as criaturas dentro da sua escuridão sofrem desvantagem em todos os testes de habilidade e testes de resistência de Força, Destreza e Constituição."
+    },
+    {
+      "id": "escuridao-escuridao-pura",
+      "name": "Escuridão Pura (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar uma escuridão que reduz a Visão no Escuro para 1,5 metro.\n\nAlém disso, todos os outros sentidos (visão às cegas, olfato, etc.) são reduzidos pela metade. Você também pode optar por diminuir o som, impondo desvantagem em todos os testes de Percepção feitos para ouvir ruídos produzidos dentro ou viajando pela área da sua escuridão."
+    },
+    {
+      "id": "escuridao-sombra-ondulada",
+      "name": "Sombra Ondulada (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sua escuridão assume uma qualidade ondulada, quase sem atrito. Qualquer criatura que tente se mover mais da metade de sua velocidade através da escuridão deve ser bem-sucedida em um teste de habilidade de Destreza (Acrobacia) contra a CD da sua esfera ou cairá prostrada. Criaturas dentro da sua escuridão têm vantagem em todos os testes de habilidade de Destreza feitos para escapar da condição de agarrado."
+    },
+    {
+      "id": "escuridao-marca-sombria",
+      "name": "Marca Sombria (escuridão, véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao",
+        "veu"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Qualquer pessoa que passar pela sua área de escuridão absorve um pouco da sua magia na sombra, permitindo que você saiba sua direção e status relativos (vivo, inconsciente, morto) por 8 horas. Se usada como um talento (fusão), você conjura esta habilidade diretamente sobre uma criatura, ganhando os mesmos benefícios. Você pode rastrear um número de criaturas igual ao seu bônus de proficiência desta forma. Se você estiver neste limite, você deve parar de rastrear um alvo antigo para começar a rastrear um novo. O efeito termina imediatamente para um alvo que se mova a mais de 1,6 km de você."
+    },
+    {
+      "id": "escuridao-escuridao-agarradora",
+      "name": "Escuridão Agarradora (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um efeito de escuridão repleto de tentáculos escuros que prendem qualquer coisa que passe. Quando uma criatura entra ou começa seu turno dentro da escuridão, ela deve passar por um teste de resistência de Destreza ou ficará presa até o início do seu próximo turno. Uma criatura presa pode tentar\n\nescapar do seu emaranhamento realizando um teste de Força (Atletismo) ou Destreza (Acrobacia) como uma ação bônus, com CD igual à CD de resistência."
+    },
+    {
+      "id": "escuridao-tenebrous-prestidigitacao",
+      "name": "Tenebrous Prestidigitação (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você cria uma área de escuridão que pode manipular para realizar pequenos feitos de prestidigitação. Você pode tentar roubar um objeto usado ou segurado de uma criatura dentro da sua escuridão como uma ação bônus. Você deve fazer uma jogada de ataque de magia à distância ou um teste de Destreza (Prestidigitação) contestado pelo teste de Força (Atletismo) ou Destreza (Acrobacia) daquela criatura. Se for bem-sucedido, você puxa o objeto para longe daquela criatura e pode movê-lo para outro lugar dentro da mesma área de escuridão. Se um objeto estiver firmemente preso ou segurado com as duas mãos, você tem desvantagem neste teste. Objetos que não estejam sendo usados ou segurados por uma criatura podem ser movidos sem um teste. Esta habilidade pode mover objetos que pesam até 2,2 kg por nível."
+    },
+    {
+      "id": "escuridao-escuridao-densa",
+      "name": "Escuridão Densa (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode criar um efeito de escuridão que conta como terreno difícil. As criaturas se movem com metade da velocidade através da sua escuridão e não podem realizar as ações de avanço ou desengajamento."
+    },
+    {
+      "id": "escuridao-venda",
+      "name": "Venda (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "veu"
+      ],
+      "duration": "Concentração, até 1 minuto",
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você concentra a sombra de um alvo em uma faixa de escuridão sobrenatural sobre sua cabeça, cegando-o e reduzindo o alcance de todos os outros sentidos pela metade. Uma criatura sob os efeitos de uma venda recebe um novo teste de resistência para encerrar o efeito a cada rodada no final de seu turno. Visão no Escuro não tem efeito sobre Venda, mas criaturas que podem ver na escuridão mágica são imunes."
+    },
+    {
+      "id": "escuridao-visao-clara",
+      "name": "Visão Clara (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder imunidade a um alvo a todos os efeitos negativos de seus talentos (escuridão). Isso não concede ao alvo a habilidade de ver na sua escuridão se ele ainda não possuir os meios para isso, mas permite que criaturas com Visão no Escuro vejam na Escuridão Pura. Além disso, aliados podem optar por permitir que sua Visão Clara se aplique aos efeitos de escuridão que eles criam, além dos seus."
+    },
+    {
+      "id": "escuridao-massacre-sombrio",
+      "name": "Massacre Sombrio (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode conceder ao alvo a habilidade de realizar ataques de precisão. Sempre que o alvo ataca uma criatura com vantagem ou que não é capaz de percebê-lo (como por meio de um teste bem-sucedido de Destreza (Furtividade)), ele causa 1d6 pontos de dano adicionais ao alvo. Isso aumenta em um tamanho de dado no 5º (1d8), 11º (1d10) e 17º níveis (1d12). Esse dano é multiplicado em um acerto crítico e acumula com a habilidade de ataque furtivo de um ladino. Isso só funciona enquanto estiver dentro de uma área de sua escuridão."
+    },
+    {
+      "id": "escuridao-alimentar-se-da-escuridao",
+      "name": "Alimentar-se da Escuridão (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "veu"
+      ],
+      "duration": "Concentração, até 10 minutos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O alvo ganha pontos de vida temporários iguais ao seu modificador de habilidade chave a cada rodada em que permanecer dentro de sua escuridão. Esses pontos de vida duram 1 rodada após sair da escuridão."
+    },
+    {
+      "id": "escuridao-esconder-se-na-escuridao",
+      "name": "Esconder-se na Escuridão (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você concede ao alvo a habilidade de realizar testes de Destreza (Furtividade) para se esconder em áreas de penumbra ou escuridão, mesmo estando claramente visível. Isso só funciona quando estiver dentro de uma área de sua escuridão."
+    },
+    {
+      "id": "escuridao-espreita-das-sombras",
+      "name": "Espreita das Sombras (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "veu"
+      ],
+      "duration": "Concentração, até 10 minutos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode fazer com que a sombra de um alvo se separe dele e forme uma espreita das sombras que age como uma criatura independente, inabalavelmente leal a você. Uma espreita das sombras aparece como uma versão sombreada e obviamente espúria do alvo. Ela não tem peso e seu equipamento é inteiramente ilusório. Ela possui as mesmas perícias, talentos e atributos que o alvo, exceto que seu valor de Força é 3 (a menos que seja menor, use seu valor de Força normal) e possui apenas um número de pontos de vida igual ao seu nível. A espreita das sombras não pode atacar, usar habilidades de classe ou raciais, conjurar magias ou efeitos de esfera, ou quaisquer outras habilidades, embora possa manipular objetos e usar perícias. Uma espreita das sombras deve permanecer a até 90 metros de sua fonte original ou deixará de existir. O alvo não possui sombra enquanto este efeito estiver ativo.\n\nRetrair uma espreita das sombras é uma ação bônus. Tanto o alvo quanto a espreita das sombras podem gastar esta ação. Se um espreitador das sombras for morto ou exceder seu alcance, ele desaparece e a sombra do alvo retorna com uma onda de energia que o atordoa até o final do próximo turno. Em ambos os casos, o alvo imediatamente ganha o conhecimento de tudo o que seu espreitador das sombras observou e fez enquanto estava destacado.\n\nAo investir um segundo talento em Espreitador das Sombras, você domina a arte de entrelaçar matéria sombria em seus espreitadores das sombras, dando a eles e seus equipamentos maior substância. Seus espreitadores das sombras usam o valor total de Força\n\nde sua fonte, têm 2 pontos de vida por nível e possuem versões não mágicas dos equipamentos de suas fontes. Eles têm o mesmo alcance da criatura da qual foram criados e podem realizar um único ataque por turno usando versões não mágicas de quaisquer armas ou ataques naturais que sua fonte possua. Eles atacam usando o bônus de proficiência, o valor de Força e os talentos completos de sua fonte, mas causam apenas metade do dano. Um espreitador imbuído de matéria sombria ainda não pode conjurar magias ou efeitos de esfera, ou usar as características de classe de sua fonte. Itens consumíveis, como frascos de ácido ou poções, criados como parte de seus espreitamentos não funcionam."
+    },
+    {
+      "id": "escuridao-marca-sombria-2",
+      "name": "Marca Sombria (escuridão, véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "escuridao",
+        "veu"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Qualquer pessoa que passar pela sua área de escuridão absorve um pouco da sua magia na sombra, permitindo que você saiba sua direção e status relativos (vivo, inconsciente, morto) por 8 horas. Se usada como um talento (fusão), você conjura esta habilidade diretamente sobre uma criatura, obtendo os mesmos benefícios. Você pode rastrear um número de criaturas igual ao seu bônus de proficiência desta forma. Se você estiver nesse limite, deve parar de rastrear um alvo antigo para começar a rastrear um novo. O efeito termina imediatamente para um alvo que se mova a mais de uma milha de distância de você."
+    },
+    {
+      "id": "escuridao-semblante-sombreado",
+      "name": "Semblante Sombreado (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode conceder substância à aura sombria. O alvo ganha uma quantidade de pontos de vida temporários igual ao seu nível pela duração do efeito. Esgotar esses pontos de vida temporários não encerra os outros efeitos do Semblante Sombrio."
+        }
+      ],
+      "body": "Você envolve o alvo em uma aura de sombra ameaçadora que oculta sua aparência, movimentos sutis e intenções por trás de uma cortina de escuridão desconcertante. Essa aura sombria esconde características distintivas de observadores e concede vantagem em testes de Carisma (Enganação) para mentir, bem como em testes de Carisma (Intimidação). Testes de Sabedoria (Intuição) para discernir as verdadeiras intenções do alvo sofrem desvantagem. O alvo não tem dificuldade em enxergar através do Semblante Sombrio, mas o efeito não pode ser penetrado pela Visão no Escuro. Visão Clara e habilidades que permitem que uma criatura veja através da escuridão mágica permitem que o alvo do Semblante Sombrio seja visto claramente. Criaturas que podem ver o alvo claramente não estão sujeitas aos efeitos desta habilidade."
+    },
+    {
+      "id": "escuridao-passar-pela-escuridao",
+      "name": "Passar Pela Escuridão (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Véu",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Aumenta a distância teletransportada para sua velocidade de movimento máxima."
+        }
+      ],
+      "body": "Você pode conceder ao alvo, e até uma carga pesada de equipamento carregado, a habilidade de entrar em um trecho de escuridão e emergir em outro. Enquanto o alvo fundido estiver em penumbra ou escuridão, ele pode, como uma ação bônus, teletransportar até metade de sua velocidade de movimento para um espaço desocupado que ele possa ver e que também esteja em penumbra ou escuridão."
+    },
+    {
+      "id": "escuridao-escuridao-aderente",
+      "name": "Escuridão Aderente",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode centralizar uma área de escuridão em uma criatura ou objeto em vez de uma área. Se o alvo for uma criatura ou seu objeto usado ou segurado, essa criatura pode tentar um teste de resistência de Sabedoria para negar o efeito. Efeitos de escuridão ampliados são ancorados e se movem com o alvo. As criaturas afetadas recebem um novo teste de resistência para encerrar o efeito a cada rodada no final do seu turno."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-escuridao-direcional",
+      "name": "Escuridão Direcional",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Sua área de escuridão bloqueia a luz apenas de um ponto de vista. Se sua escuridão tiver a forma de uma parede, ela dificulta a visão de um lado e parece clara do outro. Se for esférica, o conjurador pode escolher entre permitir que aqueles dentro da área de escuridão vejam o exterior claramente ou que aqueles fora vejam o interior claramente. Os limites da área de escuridão permanecem óbvios para aqueles que conseguem ver através dela sem impedimentos."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-extinguir",
+      "name": "Extinguir",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode optar por extinguir instantaneamente todas as fontes de luz não mágicas dentro de suas áreas de escuridão, não apenas suprimi-las. Isso inclui fogo, incandescência e fontes alquímicas. Carvões esfriam, metais incandescentes esfriam e substâncias químicas luminosas se tornam inertes. Além disso, sua escuridão pode ser usada para neutralizar ou dissipar fontes de chama mágica (como uma parede conjurada de fogo) com um teste de habilidade de conjuração contra a CD da magia ou esfera da chama mágica. Este é um efeito de contra-ataque instantâneo que ocorre quando a área de escuridão é criada. Criaturas feitas de chama ou outros materiais ou energias luminosas não são prejudicadas por este talento."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-escuridao-maior",
+      "name": "Escuridão Maior",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao criar uma área de escuridão, seu raio aumenta para 9 metros. Se combinado com o talento Muralha da Escuridão, isso permite que você dobre o número de cubos de 3 metros criados."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-ofuscacao",
+      "name": "Ofuscação",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Criaturas e itens dentro da sua área de escuridão ou sujeitos a um dos seus talentos (fusão) são tratados como se estivessem protegidos por uma camada de chumbo, e qualquer tentativa de localizá-los por meio de vidência falha. Talentos de Adivinhação que se beneficiam de uma única ocorrência de Adivinhação Penetrante podem ignorar a ofuscação com um teste de habilidade de conjuração bem-sucedido contra a CD da sua esfera. Aqueles que se beneficiam de uma segunda ocorrência de Adivinhação Penetrante ignoram a Ofuscação automaticamente. A Ofuscação não afeta as adivinhações do conjurador."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-passagem-obscura",
+      "name": "Passagem Obscura",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1 pm"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Concentração, até 1 minuto",
+      "target": "veja o texto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você coloca um círculo preto em uma superfície, criando um buraco temporário com um diâmetro em metros igual ao seu bônus de proficiência e uma profundidade de 1,5 metro, aumentando em 1,5 metro no 5º (3 metros), 11º (4,5 metros) e 17º nível (6 metros). Passagem Obscura não pode penetrar em superfícies com dureza excepcional, como adamantina.\n\nTentativa de criar uma passagem obscura através de um alvo muito espesso ou muito duro faz com que o efeito falhe e todos os pontos de magia gastos sejam perdidos. Uma Passagem Obscura deixa a superfície intacta e intacta ao expirar. A luz não atravessa uma passagem obscura, nem a visão na penumbra ou a visão no escuro permitem que uma criatura a espie, embora Visão Clara e qualquer efeito que permita que uma criatura enxergue na escuridão mágica o façam. Uma criatura parada sobre uma passagem obscura conforme ela se abre pode tentar um teste de resistência de Destreza para evitar cair, movendo-se para o espaço seguro mais próximo se for bem-sucedido."
+    },
+    {
+      "id": "escuridao-rolagem-de-blecaute",
+      "name": "Rolagem de Blecaute",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você ganha a habilidade de mover suas áreas de escuridão. Você pode mover uma instância de escuridão até 9 metros como uma ação ou ação bônus, dentro do alcance máximo do efeito. Se mover uma área de escuridão fizer com que uma criatura saia de sua área de efeito, quaisquer efeitos contínuos sob os quais a criatura esteja devido a estar dentro dessa área de escuridão terminam imediatamente."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-escavacao-de-sombra",
+      "name": "Escavação de Sombra",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0 pm"
+      },
+      "action": "1 ação bônus",
+      "range": "próprio",
+      "duration": "instantânea",
+      "target": "1 objeto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode recuperar itens de seu estoque de sombras sem nenhuma ação, se feito durante seu turno, ou como uma reação."
+        }
+      ],
+      "body": "Você pode esconder itens em sua sombra, armazenando cada um como uma ação bônus. Os itens aparecem em sua sombra como se você os estivesse vestindo ou usando. Um item pequeno (um anel ou uma chave) pode ser imperceptível, enquanto um item maior (uma espada larga, um escudo) seria bastante óbvio. Você pode armazenar até 2,2 kg de matéria inanimada por nível. Os itens não têm peso enquanto armazenados e não podem ser usados, ativados ou conceder bônus passivos.\n\nVocê pode recuperar um item como uma ação bônus. Itens armazenados em seu estoque de sombras não podem ser roubados ou alvejados de outra forma, a menos que a criatura que tentar fazer isso também tenha o talento Estoque de Sombras. Se sua sombra for removida ou animada, você não poderá acessar seu estoque de sombras até que ela retorne. Se você morrer, o conteúdo de seu estoque de sombras aparecerá imediatamente no espaço desocupado mais próximo."
+    },
+    {
+      "id": "escuridao-parede-da-escuridao",
+      "name": "Parede da Escuridão",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Em vez de criar uma esfera de escuridão, você pode organizar sua escuridão como um número de Cubos de 3 metros igual ao dobro do seu bônus de proficiência. Esses cubos devem ser organizados"
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-sombra-animada",
+      "name": "Sombra Animada (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Escuridão",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "talent",
+          "id": "escuridao-espreita-das-sombras"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você empresta animação e substância à sua sombra, permitindo que ela se mova e manipule objetos como se fossem um conjunto adicional de membros. Sua sombra animada tem dois braços e um alcance de 3 metros. Ela pode recuperar e usar itens armazenados, empunhar e atacar com armas, ativar itens mágicos, realizar tarefas delicadas como destravar uma fechadura e desferir ataques mágicos, tudo usando suas próprias estatísticas e bônus. Esses braços não podem ser usados para realizar ataques adicionais acima do seu máximo normal ou conceder ações adicionais. Você não pode usar outras habilidades ou talentos que permitam que você use sua sombra para manipular objetos enquanto a Sombra Animada estiver ativa."
+    },
+    {
+      "id": "escuridao-escuridao-eterna",
+      "name": "Escuridão Eterna",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Escuridão",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Você pode transformar sua escuridão em um efeito permanente que dura até ser dissipado. Uma vez criada, essa escuridão é imóvel. Não pode ser centralizado em uma criatura ou objeto com o talento Escuridão Aderente e não pode ser movido com o talento Blecaute Rolante."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-penumbra-sem-luz",
+      "name": "Penumbra Sem Luz (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Escuridão",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "text",
+          "text": "Sinal Sombreado"
+        },
+        {
+          "type": "level",
+          "min": 1
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode tornar seu Semblante Sombreado totalmente opaco, protegendo o alvo de danos causados pela luz do dia, mágicos ou normais, e concedendo vantagem em testes de resistência contra efeitos baseados em luz e visão. Você sempre é tratado como se tivesse seus olhos desviados em relação a ataques de olhar, embora não sofra nenhuma das penalidades associadas. Criaturas com extrema vulnerabilidade à luz do dia, como vampiros, são protegidas da luz do dia por este talento."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Sinal Sombreado"
+      ]
+    },
+    {
+      "id": "escuridao-meia-noite",
+      "name": "Meia-Noite (escuridão)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Escuridão",
+      "tags": [
+        "escuridao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "talent",
+          "id": "escuridao-escuridao-maior"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Você pode aumentar a área de sua escuridão para um raio de 3,2 quilômetros. Você não pode adicionar os efeitos de nenhum talento (escuridão) à escuridão aprimorada desta forma."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-um-com-o-vazio",
+      "name": "Um com o Vazio",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Escuridão",
+      "tags": [],
+      "cost": {
+        "base": 2,
+        "text": "2 pm"
+      },
+      "action": "1 ação",
+      "duration": "concentração, até 10 minutos",
+      "target": "si mesmo",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "text",
+          "text": "Atravessar a Escuridão"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode se tornar uma área de sua própria escuridão. Você se torna incorpóreo, permitindo que entre e se mova pelos espaços de outras criaturas, e ganha um deslocamento de voo de 9 metros.\n\nVocê não pode realizar ataques nesta forma e ganha resistência a fontes não mágicas de dano contundente, cortante e perfurante, embora ainda possa conjurar magias e usar efeitos de esfera (desde que não necessite de componentes somáticos, de foco ou outros que não possam ser fornecidos nesta forma). Enquanto incorpóreo, você pode se mover através de outras criaturas e objetos como se fossem terreno acidentado. Você sofre 5 (1d10) de dano de força se terminar seu turno dentro de um objeto. Você não pode cair e permanecer pairando no ar mesmo quando atordoado ou incapacitado de alguma outra forma.\n\nVocê pode ajustar seu tamanho como uma ação bônus, de uma esfera de 1,5 metro de raio até o volume máximo da sua escuridão, e pode imbuir-se com um talento (escuridão) com seu custo normal em pontos de magia. Alterar seu talento ativo (escuridão) é uma ação, e você deve pagar qualquer custo em pontos de magia associado ao novo talento. Você não pode manipular objetos ou usar seus próprios itens nesta forma. Terminar este efeito antecipadamente é uma ação bônus que lhe permite rematerializar-se em qualquer espaço desocupado dentro da sua área de escuridão pessoal.",
+      "_needsReview": [
+        "prereq:unresolved:Atravessar a Escuridão"
+      ]
+    },
+    {
+      "id": "escuridao-escuridao-total",
+      "name": "Escuridão Total",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Escuridão",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "talent",
+          "id": "escuridao-escuridao-pura"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode adicionar Escuridão Pura além de qualquer outro talento (escuridão) que aplicar a uma área de (escuridão) que criar."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "escuridao-andarilho-das-sombras",
+      "name": "Andarilho das Sombras (véu)",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Escuridão",
+      "tags": [
+        "veu"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "text",
+          "text": "Atravessar a Escuridão"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Um alvo deve estar em uma área de penumbra ou escuridão para que você aplique este talento (fusão) a ele. Quando este talento é aplicado, o alvo sai temporariamente do Plano Material e entra no local onde ele faz fronteira com o Plano das Sombras. Enquanto estiver nesta região de sombra, o alvo pode se mover a uma velocidade de 80 quilômetros por hora, vendo sua posição relativa no Plano Material, embora pareça borrada e sem detalhes. A qualquer momento, o alvo pode voltar para o Plano Material, momento em que os efeitos deste talento (fusão) cessam imediatamente."
+        }
+      ],
+      "body": "Devido à indefinição da realidade entre o Plano das Sombras e o Plano Material, o alvo não consegue distinguir detalhes do terreno ou das áreas por onde você passa durante o trânsito, nem você consegue prever perfeitamente onde sua viagem terminará. É impossível avaliar distâncias com precisão, tornando esta habilidade inadequada para reconhecimento ou espionagem. Além disso, ao voltar para o Plano Material, o alvo é deslocado 1d10 x 30 metros em uma direção horizontal aleatória a partir do ponto final desejado.\n\nSe isso colocar o alvo dentro de um objeto sólido, ele será deslocado 1d10 x 300 metros na mesma direção. Se isso ainda o colocar dentro de um objeto sólido, ele será deslocado para o espaço vazio mais próximo disponível, mas o esforço dessa atividade aumenta o nível de exaustão da criatura em 1.",
+      "_needsReview": [
+        "prereq:unresolved:Atravessar a Escuridão"
+      ]
+    },
+    {
+      "id": "escuridao-fundir-se-na-escuridao",
+      "name": "Fundir-se na Escuridão",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode criar escuridão e só pode ter como alvo a si mesmo ao conceder um talento (véu). Você só pode selecionar talentos (véu) da esfera da Escuridão. No entanto, você também pode usar talentos (véu) em toda\n\na penumbra e escuridão, não apenas em áreas da sua escuridão. Você não pode ter esta e a variante Dependência da Sombra. Você ganha um talento (véu) como talento bônus."
+    },
+    {
+      "id": "escuridao-dependencia-da-sombra",
+      "name": "Dependência da Sombra",
+      "sphere": "escuridao",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Em vez de invocar escuridão do nada, você se baseia na sua própria sombra para produzir sua magia. Você estica e manipula sua sombra para criar áreas de escuridão e pode ter apenas uma ativa por vez. Quando sua escuridão está ativa, você não projeta uma sombra e não pode usar ou ser alvo de habilidades ou talentos que dependam da posse de uma sombra. Você não pode ter esta e a variante Fundir-se na Escuridão. Você ganha um talento bônus (escuridão)."
+    }
+  ],
+  "_reviewed": false
+}

@@ -1,0 +1,792 @@
+{
+  "id": "telecinese",
+  "name": "Telecinese",
+  "section": "magic",
+  "summary": "Levantar e mover objetos à distância pela força da magia.",
+  "theme": {
+    "h": 228,
+    "s": 44,
+    "sig": "telecinese"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "telecinese-agarrar",
+      "name": "Agarrar",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Instantânea",
+      "target": "1 projétil ou objeto arremessado que você possa ver",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode reduzir o tempo de conjuração para 1 reação."
+        }
+      ],
+      "body": "Você pode mirar em uma arma arremessada ou projétil lançado, como uma flecha de um arco (geralmente exigindo a ação Preparar para pegá-la depois de disparada) para impedir que o ataque cause dano. O alvo deve estar dentro do limite de tamanho da sua esfera de Telecinese. Faça uma jogada de ataque de magia à distância contestada pela jogada de ataque do atacante; se você for bem-sucedido, o ataque é anulado. Você pode optar por soltar o objeto imediatamente (tornando este um efeito instantâneo) ou pode optar por continuar a levitar o objeto, caso em que seu Agarrar se torna um Levitar."
+    },
+    {
+      "id": "telecinese-levitar",
+      "name": "Levitar",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Concentração, até 10 minutos",
+      "target": "1 criatura ou objeto que você possa ver",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode levantar uma criatura involuntária com levitar. O alvo tem direito a um teste de resistência de Força para anular este efeito. Uma criatura afetada faz outro teste de resistência de Força no final de cada um de seus turnos. Em caso de sucesso, o efeito termina para ela. Uma criatura pode sofrer dano de queda se obtiver sucesso no teste de resistência enquanto estiver flutuando no ar."
+        },
+        {
+          "pm": 2,
+          "text": "Este efeito dura pela sua duração restante. Este aprimoramento pode ser aplicado sem a necessidade de uma ação no seu turno. Alvos levitados permanecerão suspensos até que você encerre o efeito prematuramente, com uma ação bônus ou como uma reação, fazendo com que o alvo caia."
+        }
+      ],
+      "body": "Você pode mover telecineticamente uma criatura disposta ou um objeto desacompanhado de até o tamanho permitido pela sua telecinese dentro do alcance. Alvos que você está levitando não podem se mover por conta própria e, uma vez por rodada, como uma ação bônus, você pode mover suavemente o alvo em linha reta até 6 metros em qualquer direção, incluindo para cima. A distância máxima que você pode movê-lo aumenta nos níveis 5 (12 metros), 11 (18 metros) e 17 (24 metros). O alvo permanece suspenso naquele local até que você decida movê-lo novamente ou até que o efeito termine."
+    },
+    {
+      "id": "telecinese-projetil",
+      "name": "Projétil",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Instantânea",
+      "target": "1 criatura ou objeto que você possa ver",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode escolher uma criatura involuntária para ser o seu projétil. A criatura tem direito a um teste de resistência de Força para anular este efeito."
+        }
+      ],
+      "body": "Você pode levantar telecineticamente uma criatura ou objeto voluntário de até o seu tamanho de telecinese dentro do alcance, chamado de projétil, e arremessá-lo contra outro alvo que também esteja dentro do alcance da sua telecinese. Faça uma jogada de ataque mágico à distância contra a CA do alvo. Em caso de acerto, tanto o alvo quanto o projétil sofrem dano de concussão (ou outro tipo de dano apropriado, como perfurante se estiver arremessando uma adaga) de acordo com a tabela abaixo:\n\nTamanho do ProjétilDado de DanoMinúsculo1d4Pequeno1d6Médio1d8Grande1d10Enorme2d6Colossal2d8\n\nSe o projétil for uma arma, o ataque causa dano ao alvo igual ao dado de dano da arma (flechas e virotes são tratados como adagas para este propósito) e o projétil não sofre dano, já que armas são projetadas para atacar.\n\nSe você já estiver levitando um objeto, ele sempre será um alvo válido para ser transformado em projétil, independentemente do seu tamanho ou de ser ou não voluntário."
+    },
+    {
+      "id": "telecinese-agarrar-aprimorada",
+      "name": "agarrar Aprimorada (agarrar)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de agarrar",
+      "tags": [
+        "agarrar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar a habilidade de agarrar, você não precisa escolher imediatamente quais projéteis alvejar. Até o início do seu próximo turno, você pode tentar agarrarr um número de alvos igual a 1 mais o seu bônus de proficiência. Alvejar um projétil dessa forma não requer uma ação."
+        },
+        {
+          "pm": 1,
+          "text": "Em vez de alvejar projéteis diretamente, você pode criar um campo cinético — uma superfície plana estacionária para agarrarr todos os projéteis e objetos arremessados que a atravessarem até o início do seu próximo turno. Qualquer objeto que atinja o campo perde imediatamente o impulso e cai no chão se o originador do ataque falhar em um teste de resistência de Sabedoria. Este campo é composto por no máximo dois painéis de 3 metros por 3 metros."
+        }
+      ],
+      "body": "Você ganha os seguintes aprimoramentos para a habilidade de agarrar. Você não pode adicionar ambos os aprimoramentos à mesma agarrar.\n\nCada painel deve ser contíguo a outro painel. O campo só pode parar alvos válidos da sua habilidade de agarrar e não bloqueia a linha de visão ou a linha de efeito. O campo ganha um painel adicional nos níveis 5 (3 painéis), 11 (4 painéis) e 17 (5 painéis).\n\nVocê pode se concentrar para sustentar um campo cinético por até 10 minutos e pode mover o campo com você enquanto se move. Isso pode ser combinado com a Manobra Telecinética para agarrar alvos que tentem atravessá-lo até o início do próximo turno deles (momento em que podem tentar novamente)."
+    },
+    {
+      "id": "telecinese-aparar",
+      "name": "Aparar (agarrar)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de agarrar",
+      "tags": [
+        "agarrar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar a habilidade de agarrar para bloquear ataques com armas corpo a corpo, embora o usuário mantenha o controle da arma mesmo que você bloqueie o ataque com sucesso. No entanto, se você também possuir o talento Roubar, poderá aplicá-lo imediatamente a uma arma fabricada como parte da transformação de uma agarrar em levitação.\n\nSua telecinese deve ser especialmente ajustada para a tarefa, portanto, se você preparar uma ação para usar a habilidade de agarrar, deverá especificar se está tentando interceptar ataques corpo a corpo ou à distância."
+    },
+    {
+      "id": "telecinese-retorno",
+      "name": "Retorno (agarrar)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de agarrar",
+      "tags": [
+        "agarrar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você interrompe um ataque com a habilidade de agarrar, pode arremessá-lo de volta imediatamente contra o atacante, se ele estiver ao alcance. Resolva este ataque como se fosse um projétil, usando o objeto com o qual você foi atacado. Fazer isso não interfere na concentração em outros efeitos."
+        },
+        {
+          "pm": 0,
+          "text": "Quando você erra um ataque com arma de longo alcance, uma arma arremessada ou um projétil telecinético, você pode, como reação, fazer com que o projétil retorne para você. Você pode pegá-lo automaticamente ao retornar, sem gastar uma ação."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "telecinese-manobra-telecinetica",
+      "name": "Manobra Telecinética (agarrar)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de agarrar",
+      "tags": [
+        "agarrar"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode alvejar qualquer criatura ou objeto em movimento dentro do seu limite de tamanho, não apenas projéteis e objetos arremessados. Se o alvo for relutante, faça uma jogada de ataque mágico resistida por um teste de Força (Atletismo) ou Destreza (Acrobacia) do alvo (à escolha dele). Em caso de sucesso, você pode derrubar o alvo ou aplicar a condição de agarrado até o início do seu próximo turno. Ser agarrado por essa habilidade também pode impedir que uma criatura se mova para cima ou para baixo, como por exemplo, para impedir que um aliado caia. Você pode transformar essa habilidade em levitação sem gastar pontos de magia adicionais para alvejar uma criatura relutante."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "telecinese-mudanca-de-gravidade",
+      "name": "Mudança de Gravidade (gravidade)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Gravidade",
+      "tags": [
+        "gravidade"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "30 pés",
+      "duration": "Concentração, até 10 minutos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Este efeito dura pelo restante de sua duração. Este aumento pode ser aplicado sem a necessidade de qualquer ação em seu turno."
+        }
+      ],
+      "body": "Você manipula a gravidade que afeta uma área de 5 pés de raio dentro do alcance, aumentando ou diminuindo efetivamente a gravidade da área. Essa área aumenta em 5 pés no 5º nível (raio de 10 pés), 11º nível (raio de 15 pés) e 17º nível (raio de 20 pés).\n\nA área se torna uma área de gravidade pesada ou uma área de gravidade leve. Você pode alterar a gravidade para pesada, normal ou leve como uma ação ou ação bônus. Isso não pode ser usado em áreas sem gravidade ou com gravidade subjetiva.\n\n•Gravidade Pesada: Em áreas de gravidade pesada, testes de Força e Destreza sofrem desvantagem, assim como todos os testes de ataque. O peso de todos os objetos é efetivamente dobrado, o que pode afetar a velocidade de um personagem. O alcance das armas é reduzido pela metade. Personagens que caem em áreas de gravidade pesada sofrem 1d10 pontos de dano de concussão para cada 10 pés caídos em vez de 1d6, até um máximo de 20d10 pontos de dano.\n\n•Gravidade Leve: Personagens em uma área de gravidade leve ganham vantagem em testes de ataque com armas pesadas, testes de resistência de Destreza e em testes de Destreza (Acrobacia). Todos os itens pesam metade do normal e o alcance das armas dobra. Personagens que caem em gravidade leve sofrem 1d4 pontos de dano de concussão para cada 20 pés caídos em vez de 1d6 por 10 pés, até um máximo de 10d4."
+    },
+    {
+      "id": "telecinese-poco-de-gravidade",
+      "name": "Poço de Gravidade (gravidade)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Gravidade",
+      "tags": [
+        "gravidade"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "30 pés",
+      "duration": "Concentração, até 10 minutos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Este efeito dura pelo tempo restante de sua duração. Este aprimoramento pode ser aplicado sem a necessidade de uma ação no seu turno."
+        }
+      ],
+      "body": "Você pode criar um ponto compacto de força telecinética que atrai tudo para si. Selecione um ponto dentro do alcance. Todas as criaturas e objetos soltos de até o tamanho da sua telecinese que estiverem a 5 pés desse ponto são atraídos em linha reta para o espaço desocupado mais próximo do centro do efeito. O tamanho da área aumenta nos níveis 5 (raio de 3 metros), 11 (raio de 4,5 metros) e 17 (raio de 6 metros). Alvos relutantes podem fazer um teste de resistência de Força para resistir, além de um teste adicional a cada turno em que terminarem seu movimento dentro da área afetada. Uma vez que um alvo seja puxado para o centro da gravidade, ele fica agarrado pela duração do efeito, mas pode tentar um novo teste de resistência de Força no início de seu turno para se libertar."
+    },
+    {
+      "id": "telecinese-zona-de-velocidade",
+      "name": "Zona de Velocidade (gravidade)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Gravidade",
+      "tags": [
+        "gravidade"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adquire as seguintes habilidades da esfera de Telecinese:"
+    },
+    {
+      "id": "telecinese-campo-de-atrito",
+      "name": "Campo de Atrito",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Gravidade",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Concentração, até 10 minutos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Este efeito dura pelo restante de sua duração. Este aprimoramento pode ser aplicado sem a necessidade de qualquer ação no seu turno."
+        }
+      ],
+      "body": "Você manipula o atrito de uma área, afetando um raio de 1,5 metro dentro do alcance, aumentando o atrito na área e dificultando o movimento. Esta área aumenta em 1,5 metro nos níveis 5 (raio de 3 metros), 11 (raio de 4,5 metros) e 17 (raio de 6 metros). A área se torna terreno difícil, inclusive o ar; voar ou pairar sobre o solo não evita o efeito. Além disso, quando uma criatura começa seu turno dentro da área, ela sofre dano de concussão igual ao seu nível. Você pode optar por não infligir esse dano a uma criatura que você possa ver; essa escolha não requer nenhuma ação."
+    },
+    {
+      "id": "telecinese-linha-de-impulso",
+      "name": "Linha de Impulso",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Gravidade",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Concentração, até 10 minutos",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Este efeito dura pelo restante de sua duração. Este aprimoramento pode ser aplicado sem a necessidade de qualquer ação no seu turno."
+        }
+      ],
+      "body": "Você manipula o impulso de uma área, afetando uma linha de 3 metros de largura e 18 metros de comprimento, centrada em qualquer ponto dentro do alcance. O movimento dentro desta área é dobrado, permitindo que as criaturas se movam dois quadrados com apenas 1,5 metro de movimento. O comprimento desta linha aumenta em 3 metros nos níveis 5 (21 metros), 11 (24 metros) e 17 (27 metros)."
+    },
+    {
+      "id": "telecinese-elo",
+      "name": "Elo (gravidade)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Gravidade",
+      "tags": [
+        "gravidade"
+      ],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "duration": "1 minuto",
+      "target": "2 criaturas ou objetos que você possa ver",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "A duração aumenta para 1 hora."
+        }
+      ],
+      "body": "Você pode criar uma conexão telecinética entre duas criaturas ou objetos de qualquer tamanho, desde que pelo menos um esteja dentro do seu limite de tamanho de telecinese, unindo-os. Os alvos devem estar a até 9 metros um do outro; A corda impede que se afastem a mais de 9 metros um do outro, a menos que a corda se rompa ou que um arraste o outro consigo. Uma criatura que não queira ser amarrada pode fazer um teste de resistência de Destreza para evitar ser presa.\n\nUma criatura que esteja arrastando um objeto segue as regras normais de capacidade de carga e sobrecarga. Criaturas dois ou mais tamanhos menores do que a criatura à qual estão amarradas não podem arrastar seu parceiro e não podem resistir quando são arrastadas.\n\nCaso contrário, para arrastar uma criatura que não queira ser arrastada, cada uma faz um teste de Força resistido; se a criatura que tenta se mover vencer, ela pode se mover à metade da velocidade normal. A corda pode ser rompida como uma ação com um teste de Força igual à CD de resistência da corda."
+    },
+    {
+      "id": "telecinese-arma-dancante",
+      "name": "Arma Dançante (levitação)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Levitação",
+      "tags": [
+        "levitacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Ao usar levitação em um objeto menor que você, você pode tratar o objeto que está levantando como um escudo sob seu controle. O objeto concede um bônus de +1 na CA (ou seu bônus usual, se for um escudo de verdade) a qualquer coisa em seu espaço, embora as criaturas ainda só possam se beneficiar de um único escudo por vez. O escudo pode ser aprimorado por estilos de luta, talentos e habilidades que afetam escudos, e se estiver usando uma criatura como escudo, os ataques que errarem o alvo protegido serão redirecionados contra a criatura levitada, usando a mesma jogada de ataque."
+        },
+        {
+          "pm": 0,
+          "text": "Ao usar levitação para mover um objeto menor que você, esse objeto conta como uma arma corpo a corpo ou de longo alcance (ou arma improvisada) sob seu controle. Seus aliados podem considerá-lo como uma criatura aliada ocupando seu espaço, você pode usá-lo para fazer ataques, ataques de oportunidade e pode aplicar habilidades baseadas em armas às suas ações com essa arma, como se estivesse empunhando-a em suas mãos. Você pode usar seu modificador de atributo principal em vez de Força ou Destreza ao fazer ataques com sua arma dançante, mas, fora isso, ela causa dano normalmente para uma arma ou arma improvisada de seu tipo."
+        }
+      ],
+      "body": "Sua habilidade de levitação recebe os seguintes aprimoramentos, dos quais apenas um pode ser usado por vez:"
+    },
+    {
+      "id": "telecinese-destreza",
+      "name": "Destreza (levitação)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Levitação",
+      "tags": [
+        "levitacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Em vez de mover um alvo para um local diferente, você pode usar levitação para realizar manipulações delicadas, como girar uma chave em uma fechadura, desenrolar um pergaminho, dar um nó ou usar ferramentas. Você pode fazer testes de Destreza à distância, bem como testes de Sabedoria (Medicina) para estabilizar uma criatura. Ao realizar uma ação à distância, você pode usar seu modificador de atributo principal em vez do modificador de atributo normal, mas também sofre desvantagem no teste."
+        }
+      ],
+      "body": "Ao aprimorar a levitação para ser mantida sem concentração, você pode usar levitação para manter procedimentos complexos e não relacionados a combate, como fazer talheres prepararem o jantar, fazer um alaúde tocar sozinho ou fazer uma pá cavar uma vala, tudo sem gastar a ação bônus geralmente necessária para mover o alvo."
+    },
+    {
+      "id": "telecinese-orbita",
+      "name": "Órbita (Levitação)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Levitação",
+      "tags": [
+        "levitacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Quando você levita uma criatura ou objeto e o move para o seu espaço (ou imediatamente após capturar um objeto que estava mirando em você), você pode colocá-lo em uma órbita passiva ao seu redor. Um objeto em órbita flutua lentamente ao seu redor, movendo-se com você quando você se move, como se você o estivesse carregando, e não requer concentração para permanecer em órbita, embora não faça nada além de flutuar passivamente. A qualquer momento, você pode começar a se concentrar nele novamente para movê-lo com levitação. Você pode ter vários objetos ao seu redor ao mesmo tempo, desde que o tamanho total deles não exceda o seu máximo de telecinese. Se você possuir o talento Arma Dançante, você conta como levitando qualquer coisa em sua órbita para os propósitos desse talento."
+        }
+      ],
+      "body": "Se o tamanho total dos objetos em sua órbita for igual ou maior que o seu tamanho e não estiverem sendo usados com Arma Dançante, você pode conceder a si mesmo meia cobertura (concedendo um bônus de +2 na CA e nos testes de resistência de Destreza, como de costume) até o início do seu próximo turno como uma ação bônus.\n\nSe o tamanho total dos objetos em sua órbita for pelo menos 2 tamanhos maior que o seu tamanho e não estiverem sendo usados com Arma Dançante, você pode conceder a si mesmo três quartos de cobertura (concedendo um bônus de +5 na CA e nos testes de resistência de Destreza, como de costume) até o início do seu próximo turno como uma ação."
+    },
+    {
+      "id": "telecinese-movimento-rapido",
+      "name": "Movimento Rápido (Levitação)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Levitação",
+      "tags": [
+        "levitacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Ao usar levitação, você não precisa mais gastar uma ação bônus para mover o alvo, embora ainda só possa fazê-lo uma vez por rodada."
+        }
+      ],
+      "body": "Sua levitação ganha o seguinte aprimoramento:"
+    },
+    {
+      "id": "telecinese-roubar",
+      "name": "Roubar (Levitação)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Levitação",
+      "tags": [
+        "levitacao"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você pode usar levitação em objetos usados ou carregados por uma criatura. Você deve fazer um teste de ataque de magia à distância ou um teste de Destreza (Prestidigitação) resistido por um teste de Força (Atletismo) ou Destreza (Acrobacia) da criatura. Se você for bem-sucedido, você puxa o objeto para longe da criatura e pode movê-lo até o seu alcance de levitação em qualquer direção. Se um objeto estiver firmemente preso ou segurado com as duas mãos, você tem desvantagem neste teste. Esta habilidade não requer aprimoramento adicional para atingir objetos em posse de criaturas que não desejam ser alvo."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "telecinese-cratera",
+      "name": "Cratera (projétil)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Projétil",
+      "tags": [
+        "projetil"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aprimoramento 1 PM: Em vez de fazer uma jogada de ataque contra um alvo, seu projétil atinge uma área com base no tamanho do projétil: Minúsculo (quadrado de 1,5 metro), Pequeno ou Médio (quadrado de 3 metros), Grande (quadrado de 6 metros), Enorme (quadrado de 9 metros), Colossal (quadrado de 12 metros). Criaturas e objetos desacompanhados dentro da área que obtiverem sucesso em um teste de resistência de Destreza sofrem metade do dano do projétil."
+    },
+    {
+      "id": "telecinese-teleguiado",
+      "name": "Teleguiado (projétil)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Projétil",
+      "tags": [
+        "projetil"
+      ],
+      "cost": {
+        "base": 1,
+        "text": "1 PM"
+      },
+      "action": "1 reação",
+      "duration": "1 minuto ou até um ataque bem-sucedido",
+      "target": "1 criatura ou objeto que você possa ver",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha a seguinte habilidade de esfera de telecinese:\n\nQuando você ou um aliado erra um ataque com arma de longo alcance, uma arma arremessada ou um projétil telecinético, você pode fazer com que o projétil volte a atingir o alvo. O projétil se move em direção ao alvo de forma determinada, sem que você precise se concentrar nele, seguindo o caminho mais curto enquanto tenta atacá-lo a cada turno. Um projétil direcionado dessa forma só pode fazer um ataque por turno e, assim que fizer um ataque bem-sucedido, para de perseguir o alvo e cai no chão.\n\nAprimoramento 1 PM: (requer Massa (metaesfera)) Você pode fazer com que vários objetos persigam um alvo, mas assim que qualquer um deles fizer um ataque bem-sucedido, todos param de perseguir."
+    },
+    {
+      "id": "telecinese-arma-cinetica",
+      "name": "Arma Cinética (projétil)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Projétil",
+      "tags": [
+        "projetil"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adicionar seu modificador de atributo principal a todas as jogadas de dano feitas com um projétil. Além disso, a partir do 5º nível, ao usar uma arma como projétil, você causa 1d6 de dano adicional. A arma deve ser uma com a qual você seja proficiente e que tenha o tamanho adequado para você. Esse dano aumenta em 1d6 no 11º nível (2d6) e no 17º nível (3d6)."
+    },
+    {
+      "id": "telecinese-manifestacao-de-forca",
+      "name": "Manifestação de Força (projétil)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Projétil",
+      "tags": [
+        "projetil"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao usar um projétil, você pode fazer dois testes de ataque com o mesmo projétil contra o mesmo alvo ou alvos diferentes dentro do alcance. Isso não pode ser combinado com outras opções que adicionem múltiplos ataques a um projétil, como o talento Massa (metaesfera), ou talentos que alterem a natureza do ataque, como Cratera ou Aceleração Linear."
+        }
+      ],
+      "body": "Aprimoramento 0 PM: Você pode atacar seus inimigos com uma manifestação visível de pura força telecinética. Ao usar sua habilidade de projétil dessa forma, você não precisa mirar em uma criatura ou objeto como seu projétil, causando dano como se estivesse levantando um objeto do seu tamanho máximo. Este projétil causa dano de força em vez de dano de concussão, perfuração ou corte. Projétil Móvel (projétil)"
+    },
+    {
+      "id": "telecinese-campo-de-amortecimento",
+      "name": "Campo de Amortecimento",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "1 rodada ou concentração, até 1 minuto",
+      "target": "1 criatura ou objeto que você possa ver",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Objetos que você está levitando ou usando como projétil recebem o benefício da sua armadura inercial. Criaturas, mesmo construtos, nunca recebem os benefícios deste aprimoramento."
+        },
+        {
+          "pm": 2,
+          "text": "Este efeito dura pela sua duração restante sem concentração. Este aprimoramento pode ser aplicado sem a necessidade de qualquer ação no seu turno."
+        }
+      ],
+      "body": "Você ganha a habilidade Armadura Inercial. Além disso, levitação e projétil ganham o seguinte aprimoramento:\n\nArmadura Inercial\n\nVocê pode envolver uma criatura ou objeto disposto em uma força amortecedora, concedendo-lhes resistência a dano de concussão e corte, e anulando qualquer dano que possam sofrer por queda ou por serem usados ​​como projétil."
+    },
+    {
+      "id": "telecinese-sentido-cinetico",
+      "name": "Sentido Cinético",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 1,
+        "text": "1PM"
+      },
+      "action": "1 ação",
+      "duration": "Concentração, até 10 minutos",
+      "target": "você mesmo",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Você não precisa mais ver um alvo para afetá-lo com suas habilidades da esfera de Telecinese. Em vez disso, você pode alvejar um quadrado de 1,5 metro, descobrindo e afetando o que quer que esteja lá. Se não houver nada no espaço, sua ação é desperdiçada, embora você mantenha quaisquer pontos de magia que teria gasto."
+        },
+        {
+          "pm": 2,
+          "text": "Este efeito dura pela sua duração restante. Este aprimoramento pode ser aplicado sem a necessidade de qualquer ação no seu turno."
+        }
+      ],
+      "body": "Além disso, você ganha a habilidade Sentido Tátil.\n\nSentido Tátil\n\nVocê ganha percepção às cegas com um alcance de 9 metros."
+    },
+    {
+      "id": "telecinese-movimento-impulsionado",
+      "name": "Movimento Impulsionado",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação",
+      "range": "9 metros",
+      "duration": "Concentração, até 10 minutos",
+      "target": "1 criatura ou objeto que você possa ver",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Este efeito dura pela sua duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado sem a necessidade de uma ação no seu turno."
+        },
+        {
+          "pm": 2,
+          "text": "Este efeito dura pela sua duração restante. Este aprimoramento pode ser aplicado sem a necessidade de uma ação no seu turno."
+        }
+      ],
+      "body": "Você adquire as seguintes habilidades da esfera de telecinese:\n\nVoar\n\nO alvo ganha uma velocidade de voo de 6 metros, aumentando em 6 metros nos níveis 5 (12 metros), 11 (18 metros) e 17 (24 metros).\n\nAjudar/Dificultar\n\nAumente ou diminua (à sua escolha) as velocidades de movimento do alvo em 3 metros, +1,5 metros nos níveis 5 (4,5 metros), 11 (6 metros) e 17 (7,5 metros), até um mínimo de 1,5 metros. O alvo também dobra o dano de queda se sua velocidade for aumentada, ou anula o dano de queda se sua velocidade for diminuída. O alvo tem direito a um teste de resistência de Força para anular este efeito."
+    },
+    {
+      "id": "telecinese-esmagamento-telecinetico",
+      "name": "Esmagamento Telecinético",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "cost": {
+        "base": 0,
+        "text": "0PM"
+      },
+      "action": "1 ação bônus",
+      "range": "9 metros",
+      "duration": "Instantânea",
+      "target": "Você mesmo",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Se você estiver usando um projétil na tentativa de quebrar um objeto (por exemplo, arremessando alguém contra uma parede), você causa o dobro de dano ao objeto ou objetos. Se um teste de perícia for solicitado pelo Mestre, você tem proficiência neste teste."
+        },
+        {
+          "pm": 0,
+          "text": "Ao usar levitação em um alvo, você pode esmagá-lo com sua força telecinética. A cada rodada que você mantiver a concentração, você pode causar 1d6 de dano de força, aumentando em 1d6 nos níveis 5 (2d6), 11 (3d6) e 17 (4d6). Você pode cessar ou retomar este dano no seu turno sem a necessidade de uma ação. Montagem Turbilhão"
+        }
+      ],
+      "body": "Você adquire os seguintes aprimoramentos:\n\nVocê adquire as seguintes habilidades da esfera de Telecinese:\n\nChamar à Mão\n\nVocê pode chamar instantaneamente para a sua mão um único objeto de até o tamanho permitido pela sua telecinese, que esteja solto ou sendo carregado por (mas não preso a) uma criatura disposta que você possa ver dentro do alcance.\n\nTroca Telecinética\n\nVocê pode usar sua telecinese para se preparar para qualquer situação. Você pode sacar até duas armas ou itens embainhados que esteja carregando (mesmo que estejam guardados em uma mochila ou recipiente similar) e guardar até dois objetos que esteja segurando nas mãos. Além disso, você pode vestir um conjunto de armadura ou vestes e guardar qualquer armadura ou vestes que esteja usando, ou trocar qualquer número de itens menores que esteja vestindo (como luvas, chapéus ou anéis). Cada item individual equipado ou guardado deve ter até o tamanho permitido pela sua telecinese."
+    },
+    {
+      "id": "telecinese-fixacao",
+      "name": "Fixação (Levitação)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Telecinese",
+      "tags": [
+        "levitacao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "telecinese"
+        },
+        {
+          "type": "talent",
+          "id": "destruicao-amarrar"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 3,
+          "text": "Sem a necessidade de uma ação, você pode fixar permanentemente um único alvo de sua levitação a um ponto específico no espaço. Este é um efeito instantâneo que encerra a levitação e prende o alvo a esse ponto específico, impedindo-o de se mover em qualquer direção, mesmo para baixo."
+        }
+      ],
+      "body": "Uma criatura relutante pode fazer um teste de resistência de Destreza para evitar ser fixada no lugar. Uma criatura afetada por Fixação ainda pode realizar ações e mover livremente seus membros, mas não pode se afastar do ponto ao qual foi fixada, mesmo com efeitos de teletransporte.\n\nComo este é um efeito instantâneo, não pode ser dissipado. No entanto, uma aplicação bem-sucedida de telecinese ou força bruta de uma criatura ou força 2 ou mais tamanhos maior do que o tamanho da sua telecinese, ou que exija um teste de Força com desvantagem contra a CD da sua esfera, pode encerrar o efeito. Uma criatura não pode tentar este teste em si mesma sem algo para se segurar, como uma parede. Se você aplicar sua própria telecinese contra um objeto que fixou, você automaticamente obtém sucesso no seu teste de habilidade principal."
+    },
+    {
+      "id": "telecinese-telecinese-sem-esforco",
+      "name": "Telecinese Sem Esforço",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Telecinese",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "telecinese"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Suas habilidades da esfera de Telecinese persistem por 8 horas em vez de 10 minutos."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "telecinese-manipulacao-da-gravidade",
+      "name": "Manipulação da Gravidade (Gravidade)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Telecinese",
+      "tags": [
+        "gravidade"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "telecinese"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Quando você usa Mudança de Gravidade, você tem maior controle sobre a gravidade. Você pode criar ou manipular áreas de gravidade zero ou gravidade subjetiva, e pode aplicar qualquer característica de gravidade a qualquer área. Criaturas na área podem fazer um teste de resistência de Destreza para se segurar em uma superfície adjacente sempre que você mudar a gravidade."
+        },
+        {
+          "pm": 3,
+          "text": "Ao usar projétil, você pode arremessar a criatura ou objeto a velocidades imensas, disparando-o contra qualquer alvo na linha de visão a até 1,6 km de distância e causando o dobro de dano."
+        }
+      ],
+      "body": "Gravidade Zero: Indivíduos em uma área de gravidade zero simplesmente flutuam no espaço, a menos que outros recursos estejam disponíveis para fornecer uma direção para a atração gravitacional.\n\nGravidade Direcional Objetiva: A força da gravidade direcional objetiva é a mesma que a normal, mas a direção não é a tradicional \"para baixo\" em direção ao solo. Pode ser para baixo em direção a qualquer objeto sólido, em um ângulo com a superfície do solo ou mesmo para cima. Aceleração Linear (projétil)\n\nIndependentemente do sucesso ou falha do ataque, o impacto do objeto na área libera uma poderosa onda de choque e todos em uma esfera de 9 metros de raio a partir do quadrado do alvo, incluindo o próprio alvo inicial, sofrem 2d6 de dano trovejante e ficam atordoados até o final do seu próximo turno. Um teste de resistência de Constituição anula a condição de atordoamento."
+    },
+    {
+      "id": "telecinese-marionete",
+      "name": "Marionete (levitação)",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Telecinese",
+      "tags": [
+        "levitacao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "telecinese"
+        },
+        {
+          "type": "text",
+          "text": "Precisão"
+        },
+        {
+          "type": "talent",
+          "id": "telecinese-manobra-telecinetica"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Quando você usa levitação em uma criatura, você pode assumir o controle preciso de sua forma física. Você pode forçá-la a correr, pular, manipular objetos e empunhar armas, mas não pode forçá-la a usar habilidades especiais, como poderes de classe ou magias que não sejam função de movimento corporal, e não pode controlar suas cordas vocais, embora possa impedi-la de emitir sons. Quaisquer ações que você force o alvo a realizar custam ações idênticas suas; se você o força a usar uma ação, isso também custa uma ação sua. Se você força o alvo a entrar em combate ou usar qualquer perícia, use seu modificador de atributo principal em vez do modificador de Força ou Destreza dele, e use suas próprias proficiências em perícias e armas ao determinar o bônus para seus ataques ou ações. Como o alvo está apenas sob seu controle físico, em seu turno ele ainda pode realizar ações puramente mentais."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Precisão"
+      ]
+    },
+    {
+      "id": "telecinese-girocinese",
+      "name": "Girocinese",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Sua telecinese opera inteiramente manipulando a gravidade sobre os objetos. Suas habilidades de projétil e levitação só podem mover objetos para cima e para baixo, não lateralmente ou para os lados. Você ganha um talento bônus (gravidade) da esfera de Telecinese."
+    },
+    {
+      "id": "telecinese-telecinese-limitada",
+      "name": "Telecinese Limitada",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você só pode usar as habilidades da sua esfera de Telecinese em um tipo de material (água, metal, pedra, etc.) escolhido quando você adquire esta variante. Se você escolher carne como material, poderá usar sua telecinese em feras, humanoides e monstruosidades (ou seus cadáveres). Outras criaturas adequadas (como um golem de carne) também podem ser afetadas a critério do Mestre. Você ganha um talento bônus da esfera de Telecinese."
+    },
+    {
+      "id": "telecinese-manifestacao",
+      "name": "Manifestação",
+      "sphere": "telecinese",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Suas habilidades da esfera de Telecinese se manifestam visivelmente como uma construção translúcida, com uma aparência escolhida quando você adquire esta variante. Essa manifestação o conecta ao efeito, mas não impede o movimento ou a visão. Criaturas podem atacar essa manifestação, seja na área de efeito ou em qualquer ponto ao longo da linha mais curta e desimpedida entre você e o efeito. A manifestação tem uma CA igual a 10 + seu modificador de atributo principal e 3 pontos de vida por nível. Se for reduzida a 0 pontos de vida, o efeito termina imediatamente. Esses pontos de vida são restaurados no início de cada um dos seus turnos. Você ganha um talento bônus da esfera de Telecinese."
+    }
+  ],
+  "_reviewed": false
+}

@@ -1,0 +1,710 @@
+{
+  "id": "mente",
+  "name": "Mente",
+  "section": "magic",
+  "summary": "Alterar a mente alheia, encantando e controlando as ações dos outros.",
+  "theme": {
+    "h": 336,
+    "s": 48,
+    "sig": "mente"
+  },
+  "acquisition": null,
+  "talents": [
+    {
+      "id": "mente-encanto",
+      "name": "Encanto",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "base",
+      "tags": [],
+      "cost": {
+        "base": null,
+        "tiers": [
+          {
+            "label": "menor",
+            "pm": 0
+          },
+          {
+            "label": "maior",
+            "pm": 1
+          },
+          {
+            "label": "poderoso",
+            "pm": 2
+          }
+        ],
+        "text": "0PM (menor), 1PM (maior), 2PM (poderoso)"
+      },
+      "action": "1 ação",
+      "range": "30 pés",
+      "duration": "varia",
+      "target": "1 criatura do seu tipo de criatura",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Você pode usar o efeito do encanto maior da habilidade (encanto) selecionada."
+        }
+      ],
+      "body": "Você pode colocar encantos em criaturas. Você só pode usar encantos em alvos que possuam o mesmo tipo de criatura que você (humanoide para humanoides, etc.), embora o talento Encanto Expandido modifique isso. Cada encanto possui três níveis de potência: menor, maior e poderoso.\n\nEncantos menores são habilidades à vontade, mas você não pode mirar em uma criatura individual mais de uma vez com o mesmo encanto menor, a menos que seja indicado. Você pode fazer isso novamente após um descanso longo. Você deve possuir o talento Encanto Poderoso antes de poder usar qualquer encanto poderoso."
+    },
+    {
+      "id": "mente-amnesia",
+      "name": "Amnésia (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Instantânea",
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode acessar a memória de um sujeito e remover informações e consciência sobre pessoas, lugares, coisas ou eventos.\n\nEncanto Menor: O alvo perde qualquer lembrança do que aconteceu na última rodada, retrocedendo até o início das ações da sua rodada anterior. Uma lembrança dos eventos, como testemunhar uma ação semelhante tomada por uma das criaturas envolvidas ou itens distintos sendo usados da mesma forma, ou alguém gastando uma ação livre para informar a pessoa sobre o evento, permite que o alvo faça um novo teste de resistência de Sabedoria para recuperar o momento esquecido, ou a memória do alvo pode ser restaurada pelo talento Quebrar Encantamento da esfera da Vida, por qualquer efeito que remova a condição confusão, ou pelo uso dos encantos menores, maiores ou poderosos do talento Inception usados especificamente para fazer o alvo lembrar do que foi esquecido.\n\nEncanto Maior: O alvo perde toda consciência do passado imediato, afetando todas as memórias de até 10 minutos antes. Alternativamente, um alvo pode perder toda a memória de apenas uma pessoa, local, item ou evento, como a identidade de um amigo ou um roubo em que participou. Se a memória de um evento for esquecida, apenas até 10 minutos da memória do alvo podem ser removidos. A memória do alvo pode ser restaurada pelo talento Quebrar Encantamento da esfera da Vida, ou pelos encantos maiores ou poderosos do talento Inception, usados especificamente para recuperar a memória esquecida.\n\nEncanto Poderoso: O alvo perde todas as memórias de eventos que ocorreram no passado recente, podendo apagar memórias de até 1 semana. O conjurador pode apagar toda ou parte da memória do sujeito desse período. A memória do alvo só pode ser restaurada pelo efeito Quebrar Encantamento da esfera da Vida se o conjurador também possuir o talento Restaurar Mente, ou por meio do feitiço Desejo ou equivalente apropriado. A memória do alvo também pode ser restaurada pelo encanto poderoso do talento Inception, usado para fazer o alvo lembrar do que foi esquecido."
+    },
+    {
+      "id": "mente-calmaria",
+      "name": "Calmaria (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Concentração, até 1 minuto",
+      "save": "Carisma",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode suprimir emoções em criaturas hostis ou proporcionar calma em excitação e confiança. Pode impedir que criaturas enfurecidas entrem em batalha ou que criaturas alegres se entreguem à festividade.\n\nEncanto Menor: Você pode suprimir qualquer efeito que cause o alvo a estar encantado ou amedrontado, assim como suprimir a fúria de um bárbaro ou habilidades semelhantes a critério do GM. Quando o encanto termina, qualquer efeito suprimido retoma, desde que sua duração não tenha expirado. Os efeitos são suprimidos, mas não dissipados. Qualquer ação agressiva ou dano infligido à criatura sob este efeito encerra automaticamente o efeito.\n\nEncanto Maior: Além dos efeitos do encanto menor, este encanto remove qualquer desejo de lutar ou se entregar a comportamentos festivos. Nenhuma ação violenta ou destrutiva pode ser tomada pela criatura, mas o alvo ainda pode se defender normalmente. Além disso, efeitos que seriam suprimidos pelo encanto menor não podem ser iniciados. Como no encanto menor, ação agressiva ou dano encerra imediatamente o efeito.\n\nEncanto Poderoso: Além dos efeitos do encanto maior, o alvo perde completamente qualquer desejo de agir. O alvo é tomado por uma paz e calma profunda, não podendo realizar ações, mas ainda podendo se defender normalmente. Como nos casos anteriores, ação agressiva ou dano encerra imediatamente o efeito."
+    },
+    {
+      "id": "mente-franqueza",
+      "name": "Franqueza (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Concentração, até 1 minuto",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Teste de resistência: Carisma anula\n\nVocê obriga palavras de honestidade em seu sujeito, trazendo a verdade à sua voz.\n\nEncanto Menor: O alvo é compelido a falar apenas o que acredita ser verdade. Isso não o obriga a falar, mas impede que qualquer palavra dita seja intencionalmente desonesta. Um alvo pode não perceber que está magicamente compelido a dizer a verdade se o conjurador possuir o talento Subtleza, mas mesmo assim pode receber um teste de Destreza para se conter de falar quando tenta mentir e percebe que suas palavras estão mudando.\n\nEncanto Maior: Funciona como o encanto menor, mas a duração da Franqueza aumenta para 8 horas.\n\nEncanto Poderoso: O alvo é compelido a responder a uma única pergunta feita diretamente a ele. Um teste bem-sucedido permite ao alvo ignorar perguntas semelhantes (com conjurações adicionais deste talento) por um número de minutos igual à sua pontuação de Sabedoria. (A definição de “semelhante” é do GM, mas geralmente “Quem roubou as joias da rainha?” é considerado semelhante a “Você roubou as joias da rainha?” e não a “O que você fazia na noite do roubo das joias?”.)"
+    },
+    {
+      "id": "mente-comando",
+      "name": "Comando (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Concentração, até 1 rodada",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Teste de resistência: Sabedoria anula\n\nVocê pode controlar diretamente o corpo de outra criatura. Cada vez que você faz o alvo realizar uma ação, ele recebe um novo teste de resistência para terminar o efeito.\n\nEncanto Menor: Durante a duração, você pode gastar uma de suas ações restantes para forçar o alvo a realizar uma ação de custo similar, usando a lista abaixo como guia. O alvo realiza estas ações no seu turno e nada faz em seu próprio turno, exceto usar a ação Esquiva. Se o alvo sofrer dano enquanto estiver sob o Encanto Comando, ele recebe um novo teste de resistência para terminar o efeito.\n\n•Se você ainda tiver movimento restante, pode mover o alvo até sua velocidade restante.\n\n•Se não interagiu com um objeto neste turno, pode fazer o alvo interagir com um objeto.\n\n•Se tiver ação bônus restante, pode fazer o alvo usar uma ação bônus.\n\n•Se tiver ação restante, pode fazer o alvo usar uma ação.\n\nEncanto Maior: A duração muda para: Concentração, até 1 minuto. Este encanto é igual ao Comando menor, exceto que você pode gastar qualquer ação restante para realizar uma ação de custo similar.\n\nEncanto Poderoso: Igual ao Comando maior, exceto que o alvo só recebe um novo teste de resistência no final de cada rodada, não a cada ação forçada."
+    },
+    {
+      "id": "mente-confusao",
+      "name": "Confusão (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "1 rodada",
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode desorganizar a mente de uma criatura e fazê-la agir de forma errática.\n\nEncanto Menor: O alvo fica confuso. Um alvo afetado não pode usar reações e deve rolar um d10 no início de cada turno para determinar seu comportamento naquele turno.\n\nd10Comportamento1A criatura usa todo o seu movimento para se mover em uma direção aleatória. Para determinar a direção, role um d8 e atribua uma direção a cada face do dado. A criatura não realiza nenhuma ação neste turno.2-6A criatura não se move nem realiza ações neste turno.7-8A criatura usa sua ação para fazer um ataque corpo a corpo contra uma criatura determinada aleatoriamente que esteja ao seu alcance. Se não houver nenhuma criatura ao seu alcance, a criatura não faz nada neste turno.9-10A criatura pode agir e se mover normalmente.\n\nEncanto Maior: Assim como o encanto menor, mas a duração aumenta para: concentração, até 1 minuto. Criaturas afetadas podem fazer um novo teste de resistência no final de cada um de seus turnos para encerrar o efeito apenas sobre si mesmas.\n\nEncanto Poderoso: Este é o mesmo que o encanto maior de Confusão, exceto que, além de ficar confuso, o alvo também sofre desvantagem em todos os testes de atributo mental."
+    },
+    {
+      "id": "mente-coragem",
+      "name": "Coragem (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "concentração, até 1 minuto",
+      "save": "Sabedoria",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você inspira o alvo a grandes feitos.\n\nEncanto Menor: Uma vez antes que o efeito termine, o alvo pode rolar um d4 e adicionar o número rolado a um teste de atributo, jogada de ataque ou teste de resistência de sua escolha. Ele pode rolar o dado antes ou depois de fazer o teste de atributo. O efeito então termina.\n\nEncanto Maior: A cada turno, o alvo pode rolar um d4 e adicionar o número rolado a qualquer teste de atributo,\n\njogada de ataque ou teste de resistência feito antes do início do seu próximo turno. Ele pode rolar o dado antes ou depois de fazer o teste de atributo.\n\nEncanto Poderoso: Este é o mesmo que o encanto maior de Coragem, exceto que a duração muda para: 1 hora, e o alvo também se torna imune à condição de amedrontado."
+    },
+    {
+      "id": "mente-interromper-foco",
+      "name": "Interromper Foco (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "concentração, até 1 minuto",
+      "save": "Constituição",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode dificultar a concentração de um alvo no uso de sua magia ou no foco em combate.\n\nEncanto Menor: Quando este efeito é conjurado e no final de cada turno subsequente em que você se concentra nele, o alvo deve ser bem-sucedido em um teste de resistência de Constituição ou perderá a concentração em quaisquer efeitos em andamento. Se o alvo tiver a capacidade de obter foco marcial ou possuir a desvantagem Foco Mental, ele também perderá o foco ao falhar no teste de resistência de Constituição. Este efeito termina assim que o alvo falha em seu teste de resistência.\n\nEncanto Maior: Este efeito não termina depois que uma criatura falha em seu teste de resistência.\n\nEncanto Poderoso: Como o encanto maior, mas as criaturas também devem ser bem-sucedidas no teste de resistência de Constituição para conjurar qualquer feitiço ou efeito de esfera mágica, ou para usar qualquer habilidade de esfera marcial (veja Esferas de Poder)."
+    },
+    {
+      "id": "mente-cativar",
+      "name": "Cativar (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "concentração, até 1 minuto",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode tornar as criaturas mais amigáveis ​​a você.\n\nEncanto Menor: Você faz com que uma criatura o considere como seu amigo, tornando-a encantada por você durante a duração do efeito. Se você ou seus aliados estiverem atacando ou ameaçando a criatura, ela ganha vantagem em seu teste de resistência contra este encanto.\n\nEncanto Maior: Como o encanto menor de Cativar, mas a duração máxima aumenta para 1 hora. Você pode fazer pedidos ao alvo, mas pedir que ele faça algo que normalmente não faria exige um teste de Carisma contestado pelo teste de Carisma do alvo, e ele nunca obedece a pedidos que sejam obviamente fatais ou contra sua natureza, embora o alvo possa ser convencido de que coisas perigosas valem a pena.\n\nEncanto Poderoso: Funciona como o encanto maior de Cativar, exceto que a duração aumenta para 8 horas."
+    },
+    {
+      "id": "mente-medo",
+      "name": "Medo (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "1 rodada",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode distorcer a mente de um alvo com medo.\n\nEncanto Menor: Você faz com que o alvo fique amedrontado.\n\nEncanto Maior: A duração torna-se concentração: até 1 minuto.\n\nEncanto Poderoso: Este é o mesmo que o encanto maior de Medo, exceto que o alvo fica incapaz de realizar ações. Em um teste bem-sucedido, ele ainda fica amedrontado por 1 rodada."
+    },
+    {
+      "id": "mente-gestos",
+      "name": "Gestos (Encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Concentração até 1 minuto",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você manipula mentalmente os músculos do alvo e os aspectos de sua mente relacionados às funções motoras.\n\nEncanto Menor: Você influencia os gestos físicos feitos por um alvo e as ações de seus membros e extremidades. Você pode impor uma chance de falha a qualquer outro usuário de magia cuja magia exija um componente somático, igual a 10% + um adicional de 5% nos níveis 5 (15%), 11 (20%) e 17 (25%). Uma magia perdida dessa forma resulta na perda da ação e do espaço de magia ou pontos de magia. Além disso, o alvo sofre uma penalidade igual à metade do seu bônus de proficiência em todos os testes de Força e Destreza. Criaturas afetadas por esta habilidade (e pelas versões maior e poderosa dela) têm direito a um novo teste de resistência no final de cada um de seus turnos para encerrar o efeito apenas para si mesmas.\n\nEncanto Maior: Além dos efeitos do encanto menor, você pode impor ações rápidas e desajeitadas ao alvo ou interromper as ações que ele estiver realizando. Você pode forçar o alvo a pegar ou soltar um objeto em um espaço ao seu alcance, embora o alvo só possa ser forçado a soltar objetos que estejam sendo segurados (em vez de usados ​​ou presos de alguma forma). Como uma ação, você pode fazer um teste de atributo contestado pela Força ou Destreza da criatura (escolha do alvo); se você for bem-sucedido, o alvo cai no chão. Finalmente, você também pode impedir o uso de qualquer habilidade mágica que exija gestos ou componentes somáticos.\n\nEncanto Poderoso: Além dos efeitos dos encantamentos menor e maior, você obtém controle quase total sobre os gestos e movimentos rápidos do alvo. Como uma reação, quando o alvo teria direito a um ataque de oportunidade (inclusive contra seus aliados), você pode forçá-lo a fazer o ataque ou negar-lhe a capacidade de\n\nfazer o ataque que ele deseja. Como uma ação bônus, você pode forçar o alvo a se mover até metade de sua velocidade de movimento em qualquer direção que desejar. Você também pode usar o alvo para fornecer os componentes somáticos para seus próprios efeitos mágicos e até mesmo fazer do alvo o ponto de origem desses efeitos, desde que apenas componentes somáticos sejam necessários. (Conjuradores com o talento \"Proferimentos\" podem incluir componentes verbais sem a necessidade de um teste de resistência adicional). Você também pode permitir que essa magia funcione em ambas as direções, permitindo que um alvo disposto controle você ou vice-versa (por exemplo, um ladino amigo pode abrir uma fechadura que só você consegue alcançar com as mãos, ou você pode usar suas próprias habilidades de pintura para pintar um quadro através das mãos de um paladino amigo para impressionar um dignitário)."
+    },
+    {
+      "id": "mente-hostilidade",
+      "name": "Hostilidade (encantamento)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encantamento"
+      ],
+      "duration": "1 rodada",
+      "save": "Sabedoria (negativo)",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você faz com que o alvo entre em uma fúria cegante.\n\nEncanto Menor: Você força o alvo a atacar a criatura mais próxima em seu próximo turno. O alvo se move até que essa criatura esteja ao alcance e faça pelo menos um ataque com uma arma ou ataque desarmado. Se nenhuma criatura estiver ao alcance, o alvo causa dano a si mesmo igual a 1d8 + seu modificador de Força com o que tiver em mãos.\n\nEncanto Maior: O alvo entra em fúria por 1 minuto. Ele tem vantagem em testes de Força e testes de resistência de Força e em jogadas de ataque baseadas em Força, ganha resistência a dano de concussão, perfuração e corte, mas as jogadas de ataque contra ele têm vantagem. Além disso, o alvo não pode usar quaisquer magias ou efeitos de esfera, nem quaisquer perícias ou características de classe baseadas em Inteligência, Sabedoria ou Carisma.\n\nEncanto Poderoso: O mesmo que o encanto maior, mas você também pode conceder um dos seguintes pacotes ao alvo:\n\n•Fúria Heroica: O alvo ainda pode usar magias e efeitos de esfera, bem como características de classe e perícias baseadas em Inteligência, Sabedoria ou Carisma.\n\n•Fúria Brutal: O alvo é compelido à hostilidade e a cada rodada ataca o alvo mais próximo, seja amigo ou inimigo. Se a criatura não puder atacar algo durante seu turno, ela causa 1d8 + seu modificador de Força de dano a si mesma com o que tiver em mãos."
+    },
+    {
+      "id": "mente-concepcao",
+      "name": "Concepção (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Instantânea",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você adiciona informações, conhecimentos e memórias à mente de uma pessoa, independentemente de essas informações serem baseadas em fatos.\n\nEncanto Menor: Você pode “criar um rumor” na mente de um alvo, sugerindo informações que o alvo “ouviu em algum lugar” ou “leu uma vez”, mas que ele na verdade nunca encontrou. Como parte da conjuração, você pode fazer um teste de habilidade de conjuração ou um teste de Carisma (Enganação) oposto ao teste de Sabedoria (Intuição) do alvo para ver o quão firmemente o alvo adere a essa nova informação; ele pode não acreditar nesse rumor, mesmo que acredite tê-lo ouvido ou lido em algum lugar.\n\nEvidências que conflitam com a memória implantada permitem um novo teste de resistência de Sabedoria para perceber que a informação é falha, embora a falha em um novo teste de resistência de Sabedoria não signifique que o alvo seja compelido a acreditar na informação antiga (em vez disso, ele acredita que aprendeu alguma informação falha). Além disso, o talento Quebrar Encantamento da esfera da Vida, a magia quebrar encantamento, ou os encantos menor, maior ou poderoso do talento Amnésia podem ser usados ​​para remover informações falsas implantadas ou para fazer com que o alvo perceba que a informação é falsa.\n\nEncanto Maior: Assim como na versão menor do talento, mas a nova memória do alvo pode estar relacionada a coisas dentro de sua própria experiência ou de sua própria criação (como detalhes sobre a vida de amigos ou notícias atuais discutidas em uma taverna na noite anterior). As novas memórias terão precedência sobre as antigas se forem contraditórias, mas as memórias antigas ainda permanecerão (por exemplo, um guarda pode ter a memória de uma combinação diferente para uma fechadura de combinação, senha para uma porta ou rota através de um labirinto, mas nada o impede de recordar a informação verdadeira quando as memórias implantadas se mostrarem falsas).\n\nEncontrar evidências que contradizem a nova memória permite um novo teste de resistência de Sabedoria para perceber que as novas memórias são falsas. Além disso, o talento Quebrar Encantamento da esfera da Vida, a magia quebrar encantamento, ou os encantos maior ou poderoso do talento Amnésia podem ser usados para remover informações falsas implantadas ou para fazer com que o alvo perceba que a informação é falsa.\n\nEncanto Poderoso: Assim como na versão maior do talento, embora agora você possa criar memórias completamente novas de eventos que o alvo\n\ntestemunhou pessoalmente. Essas memórias são indistinguíveis das memórias reais e parecem se encaixar no fluxo da continuidade de suas memórias, mas não removem ou alteram as memórias anteriores. Uma memória contraditória concede vantagem no teste de resistência de Sabedoria para resistir ao encanto e no teste de Sabedoria (Intuição) para resistir a acreditar na nova memória. Da mesma forma, memórias de criaturas fazendo algo que normalmente não fariam ou fazendo coisas contra sua natureza também concedem vantagem a esses testes.\n\nAs falsas memórias de um alvo só podem ser removidas ou comprovadas como falsas através do efeito Quebrar Encantamento da esfera da Vida se o conjurador também possuir o talento Restaurar Mente, ou através das magias desejo ou milagre. A memória do alvo também pode ser restaurada através do uso do encanto poderoso do talento Amnésia para fazer com que o alvo perceba quais memórias são falsas."
+    },
+    {
+      "id": "mente-inspiracao",
+      "name": "Inspiração (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Instantânea",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você inspira competência no alvo.\n\nEncanto Menor: Como uma reação, você pode adicionar +1d4 a um teste de habilidade ou jogada de ataque que o alvo acabou de fazer. Isso pode transformar uma falha em um sucesso. Você deve escolher usar este encanto depois que a jogada for feita, mas antes que os resultados sejam revelados.\n\nEncanto Maior: Este é o mesmo que o encanto menor de Inspiração, exceto que adiciona +2d4 à jogada de ataque ou teste de perícia em vez de +1d4.\n\nEncanto Poderoso: O alvo pode rerolar, adicionando +2d4 ao resultado."
+    },
+    {
+      "id": "mente-escudo-mental",
+      "name": "Escudo Mental (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "1 minuto",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode estabelecer uma proteção na mente de outro, capaz de fornecer proteção contra ataques mentais.\n\nEncanto Menor: Você cria uma bolha metafísica de percepção protetora sobre a mente de uma criatura disposta. Essa percepção intelectual aguçada concede proficiência em testes de resistência de Sabedoria. Este escudo mental é anulado assim que o alvo fizer um único teste de resistência de Sabedoria, independentemente de o teste ter sido bem-sucedido ou não. Isso não suprime ou remove efeitos mágicos existentes em criaturas, apenas as protege de outros ataques mentais. Ao contrário de outros encantos menores, não há limite para o número de vezes que você pode usar este encanto menor em um alvo sem precisar de um descanso longo.\n\nEncanto Maior: O efeito não expira até que um número de jogadas igual ao seu bônus de proficiência tenha sido tentado.\n\nEncanto Poderoso: Você concede um escudo inabalável de certeza conceitual à mente de uma criatura disposta. Esta criatura ganha imunidade a qualquer feitiço ou efeito de encantamento que exija um teste de resistência de Sabedoria durante a duração. Esta imunidade pode ser superada com um teste de habilidade de conjuração contra a sua CD da esfera. Mesmo que esta imunidade seja contornada, o alvo continua a receber o benefício do encanto poderoso de Escudo Mental contra outros feitiços ou efeitos de encantamento durante a duração."
+    },
+    {
+      "id": "mente-espiao-mental",
+      "name": "Espião Mental (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "veja o texto",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode enviar uma parte da sua mente para o seu alvo para ver o mundo através dos olhos dele. O alvo recebe um novo teste de resistência de Sabedoria toda vez que você usa essa habilidade, embora rodadas consecutivas não concedam testes adicionais. Enquanto essa ligação com o seu alvo permanecer ativa, você pode optar por usar essa habilidade a qualquer momento antes que a ligação expire, ou vincular sua ativação a um evento específico que seu alvo possa experimentar.\n\nEncanto Menor: Enquanto a ligação permanecer ativa, você pode usar os sentidos do alvo por até 1 minuto, em incrementos de 1 rodada, para ver e ouvir o que ele vê e ouve. As rodadas não precisam ser consecutivas. A ligação permanece ativa por até 1 hora a partir do momento em que o alvo é afetado pela primeira vez. Habilidades que bloqueiam ou suprimem possessão ou removem encantamentos (como a magia Proteção contra o Bem e o Mal ou o talento Quebrar Encantamento) também bloquearão, suprimirão ou removerão o efeito deste encanto em seu alvo.\n\nEncanto Maior: Assim como o encanto menor, mas você pode usar os sentidos do alvo por 10 minutos e a ligação dura 1 dia.\n\nEncanto Poderoso: Assim como o encanto maior, mas você pode usar os sentidos do alvo por 1 hora e a ligação dura 1 semana."
+    },
+    {
+      "id": "mente-paralisar",
+      "name": "Paralisar (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "1 rodada",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você congela o alvo no lugar.\n\nEncanto Menor: O alvo fica imobilizado por 1 rodada.\n\nEncanto Maior: O alvo fica atordoado enquanto você se concentrar, até 1 minuto. O alvo tem direito a um novo  teste de resistência de Sabedoria a cada rodada, no final de seu turno, para encerrar o efeito prematuramente.\n\nEncanto Poderoso: Este é o mesmo que o encanto maior de Paralisar, exceto que o alvo fica paralisado em vez de atordoado."
+    },
+    {
+      "id": "mente-pensamentos-projetados",
+      "name": "Pensamentos Projetados (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Instantânea",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode se comunicar diretamente com a mente de outra pessoa.\n\nEncanto Menor: Você projeta uma mensagem empática na mente do alvo. O alvo sabe o que você está sentindo (medo, raiva, ansiedade, fúria, etc.), embora não consiga se comunicar de volta. Você pode projetar uma mensagem telepática para um alvo com no máximo 25 palavras. Se você e o alvo não possuírem um idioma em comum, essa forma de comunicação é impossível. Ao contrário de outros encantamentos menores, não há limite para o número de vezes que você pode usar este encantamento menor em um alvo sem precisar de um descanso longo.\n\nEncanto Maior: Sua mensagem telepática projetada não tem limite de palavras, embora a comunicação seja realizada em tempo real e você precise se concentrar durante todo o tempo da comunicação. Você pode se comunicar com o alvo mesmo sem um idioma em comum.\n\nEncanto Poderoso: Você pode se comunicar com o alvo por até 8 horas sem precisar de concentração. Se o alvo sair do alcance do seu encantamento, a comunicação é interrompida até que ele retorne ao alcance."
+    },
+    {
+      "id": "mente-ler-mente",
+      "name": "Ler Mente (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Instantânea",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode extrair informações da mente de um alvo.\n\nEncanto Menor: Você pode detectar o estado emocional de uma criatura. Ao contrário de outros encantamentos menores, não há limite para o número de vezes que você pode usar este encantamento menor em um alvo por dia.\n\nEncanto Maior: Você pode ler os pensamentos superficiais de uma criatura enquanto se concentra, por até 1 hora.\n\nEncanto Poderoso: Você pode extrair uma informação específica da mente de uma criatura. Geralmente, isso é informação suficiente para responder a uma única pergunta específica, de acordo com o conhecimento da criatura, em no máximo 25 palavras. Uma criatura que obtiver sucesso no teste de resistência contra este encantamento poderoso pode optar por não responder à sua pergunta ou tentar mentir com sua perícia de Carisma (Enganação). Se você usar este encantamento poderoso duas vezes na mesma criatura para fazer a mesma pergunta, a mesma resposta (correta, sem resposta ou mentira) será dada novamente."
+    },
+    {
+      "id": "mente-sono",
+      "name": "Sono (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "variável",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você coloca o alvo para dormir. :\n\nEncanto Menor: Você torna o alvo letárgico. Durante 1d4 rodadas, ele só pode realizar uma ação bônus ou uma ação (não ambas) e não pode fazer ataques de oportunidade.\n\nEncanto Maior: Você coloca o alvo para dormir enquanto se concentra, por até 1 minuto. Alvos que sofrem dano acordam automaticamente, e outras criaturas podem acordar uma criatura adormecida como uma ação.\n\nEncanto Poderoso: O alvo é colocado em um sono mais profundo. Sempre que o alvo adormecido sofre dano ou outra criatura tenta acordá-lo como uma ação, o alvo não acorda automaticamente, mas faz um novo teste de resistência de Sabedoria (com vantagem) para acordar."
+    },
+    {
+      "id": "mente-sugestao",
+      "name": "Sugestão (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "até ser concluída, até 8 horas",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode implantar pensamentos na mente de um alvo.\n\nEncanto Menor: Você pode implantar uma sugestão na mente de um alvo, que ele obedece como se o pensamento fosse seu, a menos que seja bem-sucedido em um teste de resistência de Sabedoria. A sugestão deve ser limitada a uma ou duas frases e deve ser um pedido muito simples. A criatura executa a ação sugerida até terminá-la ou por 8 horas, o que ocorrer primeiro.\n\nSe desejar, você pode especificar as condições que a criatura deve observar (por exemplo, \"você deve revistar a próxima pessoa que entrar nesta sala, procurando por armas\"). Se a condição não for atendida antes do término da duração, a atividade não é realizada.\n\nEncanto Maior: Este é o mesmo que o Encanto Menor de Sugestão, mas pode ser um pedido básico. Pedidos muito simples fazem com que o teste de resistência seja feito com desvantagem. Não se pode pedir ao alvo para fazer algo que ele normalmente não faria.\n\nEncanto Poderoso: Este é o mesmo que o Encanto Menor de Sugestão, mas a criatura obedece a qualquer curso de ação dado, desde que a sugestão não seja obviamente fatal ou contra a natureza do alvo. Pedidos\n\nbásicos e muito simples fazem com que o teste de resistência seja feito com desvantagem."
+    },
+    {
+      "id": "mente-proferimentos",
+      "name": "Proferimentos (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "Concentração até 1 minuto",
+      "save": "Sabedoria anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você manipula o centro da linguagem da mente e os músculos que controlam a fala para impedir ou alterar o fluxo de palavras.\n\nEncanto Menor: Você pode influenciar o fluxo da conversa, alterando os sons das palavras, inserindo ou negando vocalizações conforme desejar. Você pode impor uma chance de falha a qualquer outro usuário de magia cuja magia inclua um componente verbal, exigindo que o conjurador seja bem-sucedido em um teste de habilidade de conjuração contra a sua CD de teste de resistência da esfera para conjurar a magia ou habilidade. Além disso, você pode impor desvantagem nos testes de Carisma do alvo.\n\nEncanto Maior: Além dos efeitos do encanto menor, você pode assumir o controle total da fala de um alvo, impedindo-o de falar completamente ou escolhendo as palavras que ele deve dizer. Isso pode impedir que um alvo use magia que exija componentes verbais ou outras vocalizações, e pode forçar um alvo que permaneça dentro do alcance a dizer apenas o que você deseja. Um alvo que não esteja especificamente sob o comando mental de permanecer em silêncio poderá dizer o que quiser se sair do alcance do efeito. Se você tentar fazer com que um alvo diga algo que seja contra a sua natureza (como um jovem amante renunciando ao afeto por seu noivo ou noiva, ou um dragão concordando com um contrato verbal para se desfazer de parte de seu tesouro), ele recebe outro teste de resistência de Sabedoria para resistir ao efeito.\n\nEncanto Poderoso: Seu controle sobre a fala do alvo é fluido e quase impecável. Além dos efeitos dos encantamentos menor e maior, você pode fazer com que o alvo fale com tanta eloquência que você pode realizar testes de Carisma através dele usando seu próprio bônus de proficiência em vez do dele, desde que o teste em questão seja de natureza vocal. Você também pode usar a proficiência do alvo, emprestando o talento ou, se desejar, permitindo que o alvo fale diretamente através de você. Você também pode usar magia que exija componentes verbais (mas nenhum outro componente) através do alvo, como se a magia se originasse do espaço do alvo. Conjuradores com o talento Gestos podem incluir componentes somáticos sem a necessidade de um teste de resistência adicional."
+    },
+    {
+      "id": "mente-delirio",
+      "name": "Delírio (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos de Encanto",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "1 minuto",
+      "save": "Inteligência anula",
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode fazer com que alguém veja coisas que não existem.\n\nEncanto Menor: Você pode alterar a percepção de uma criatura em relação a uma única criatura, objeto, som ou efeito. Você pode alterar 1 sentido (visão, audição, tato/dor, paladar, olfato); por exemplo, você poderia fazer um ladrão parecer um gato de rua, fazer um arranhão parecer um ferimento profundo de faca ou fazer o som de passos parecer o vento. Você não pode usar isso para replicar fala ou visões e sons que nunca encontrou antes, nem para tornar algo invisível. Se usado para disfarçar a dor (como esconder que o alvo está sofrendo dano), o alvo ganha vantagem em seu teste de resistência. Se o alvo interagir com o objeto de sua percepção alterada, ele tem direito a um teste de resistência adicional a cada rodada em que continuar a fazê-lo.\n\nEncanto Maior: Funciona como o Encanto Menor, exceto que você pode afetar todos os 5 sentidos em relação à criatura, objeto, som ou efeito escolhido.\n\nEncanto Poderoso: Funciona como o Encanto Maior, exceto que você pode mudar a percepção do alvo sobre tudo ao seu redor. Isso concede ao alvo um novo teste de resistência a cada rodada em que ele interagir com qualquer parte do ambiente alterado."
+    },
+    {
+      "id": "mente-encanto-expandido",
+      "name": "Encanto Expandido",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Seus encantos podem afetar qualquer criatura de qualquer tipo de criatura."
+    },
+    {
+      "id": "mente-encanto-poderoso",
+      "name": "Encanto Poderoso",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 2,
+          "text": "Você pode usar a versão de Encanto Poderoso de qualquer encanto que possua."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "mente-sutileza",
+      "name": "Sutileza",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "Se um alvo obtiver sucesso em seu teste de resistência contra um de seus encantos, ele deve imediatamente fazer um teste de resistência de Sabedoria. Se falhar nesse segundo teste, ele não percebe que foi alvo de uma tentativa de assalto mental."
+        }
+      ],
+      "body": ""
+    },
+    {
+      "id": "mente-nublar-a-mente",
+      "name": "Nublar a Mente (encanto)",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Mente",
+      "tags": [
+        "encanto"
+      ],
+      "duration": "1 minuto",
+      "save": "Inteligência anula",
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "mente"
+        },
+        {
+          "type": "talent",
+          "id": "mente-delirio"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode tornar alguém incapaz de perceber uma única criatura ou objeto.\n\nEncanto Menor: Você altera a percepção do alvo em relação a uma única criatura ou objeto. A criatura ou objeto torna-se invisível e inaudível para o alvo.\n\nSe o alvo interagir com a criatura ou objeto, ele ganha um novo teste de resistência a cada rodada enquanto continuar interagindo.\n\nSe a criatura ou objeto atacar o alvo, o efeito termina.\n\nEncanto Maior: Como o encanto menor de Nublar a Mente, mas o alvo não consegue detectar a criatura\n\nou objeto nem mesmo com sentidos especiais como visão cega, tremorssentir ou visão verdadeira.\n\nO alvo não pode localizar a criatura ou objeto por nenhum meio.\n\nEncanto Poderoso: Funciona como o encanto maior de Visão, exceto que o alvo permanece inconsciente de quaisquer ações realizadas pela criatura ou objeto de sua percepção alterada, desde que essas ações não envolvam ataques nem mudanças óbvias ou diretamente ameaçadoras ao ambiente do alvo."
+    },
+    {
+      "id": "mente-comunicacao-superior",
+      "name": "Comunicação Superior",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Mente",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "mente"
+        },
+        {
+          "type": "talent",
+          "id": "mente-ler-mente"
+        },
+        {
+          "type": "text",
+          "text": "Projeção de Pensamentos"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": ""
+        }
+      ],
+      "body": "Desde que você seja pessoalmente familiarizado com o alvo, você pode usar seu encanto Projeção de Pensamentos a qualquer distância, até mesmo entre planos (embora haja 5% de chance de a mensagem não chegar).\n\nOs recipientes podem responder (25 palavras para o Encanto Maior, sem limite de palavras para o Encanto Poderoso).\n\nO alvo deve voluntariamente receber e enviar mensagens; ele pode simplesmente bloqueá-lo, encerrando a comunicação.",
+      "_needsReview": [
+        "prereq:unresolved:Projeção de Pensamentos"
+      ]
+    },
+    {
+      "id": "mente-insanidade",
+      "name": "Insanidade",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Mente",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "mente"
+        },
+        {
+          "type": "talent",
+          "id": "mente-confusao"
+        },
+        {
+          "type": "talent",
+          "id": "mente-encanto-poderoso"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 0,
+          "text": "O alvo sofre uma loucura de curto prazo aleatória que dura 1d10 minutos após o fim da Confusão."
+        },
+        {
+          "pm": 1,
+          "text": "O alvo sofre uma loucura de longo prazo aleatória que dura 1d10 × 10 horas após o fim da Confusão."
+        },
+        {
+          "pm": 2,
+          "text": "O alvo sofre uma loucura indefinida aleatória, que permanece até ser curada."
+        },
+        {
+          "pm": 3,
+          "text": "Em vez de infligir uma loucura aleatória ao alvo, você pode alterar a duração do efeito de Confusão para instantânea. Este aprimoramento não pode ser aplicado se você já tiver infligido uma loucura aleatória ao alvo. Assim como a loucura, ele não pode ser removido, exceto através da habilidade avançada de Vida \"Restaurar Mente e Corpo\" ou por meio de um efeito semelhante, como um feitiço de restauração maior."
+        }
+      ],
+      "body": "Quando você aplica um encanto poderoso de Confusão, você adiciona uma loucura aleatória que começa quando o efeito de confusão termina.\n\nEssa loucura só pode ser removida com Restauração da Mente e Corpo (talento avançado da esfera da Vida) ou efeitos semelhantes (como restauração maior)."
+    },
+    {
+      "id": "mente-vinculo-memetico",
+      "name": "Vínculo Memético",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Mente",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "mente"
+        },
+        {
+          "type": "text",
+          "text": "Enredar"
+        },
+        {
+          "type": "talent",
+          "id": "mente-encanto-poderoso"
+        },
+        {
+          "type": "text",
+          "text": "Projeção de Pensamentos"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "text",
+          "text": "Massa — metasfera"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao aplicar um encanto poderoso de Enredar, você cria um vínculo memético entre você e o alvo. Se o alvo tiver acesso à esfera da Mente, magias de encantamento ou efeitos semelhantes, ele pode tratar tanto a si quanto você como o conjurador desses efeitos. Todos os cálculos (CD, nível, habilidade de conjuração) usam o valor do alvo, mas você é considerado o conjurador para os resultados. Exemplo: Se o alvo conjurar Ler Mente em outra criatura, você também recebe as informações lidas. Se o alvo possuir Vínculo Memético, ele pode transferir para você o controle de um encanto de Enredar que tenha conjurado, criando uma cadeia de alvos enredados. Essa cadeia só pode ter comprimento até seu modificador de habilidade chave (sem contar você)."
+        }
+      ],
+      "body": "",
+      "_needsReview": [
+        "prereq:unresolved:Enredar",
+        "prereq:unresolved:Projeção de Pensamentos",
+        "prereq:unresolved:Massa — metasfera"
+      ]
+    },
+    {
+      "id": "mente-controle-mental",
+      "name": "Controle Mental",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Talentos Avançados de Mente",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "mente"
+        },
+        {
+          "type": "talent",
+          "id": "mente-cativar"
+        },
+        {
+          "type": "talent",
+          "id": "mente-encanto-poderoso"
+        },
+        {
+          "type": "text",
+          "text": "Projeção de Pensamentos"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [
+        {
+          "pm": 1,
+          "text": "Ao aplicar um encanto poderoso de Cativar, você pode aumentar a duração para 1 semana. O alvo obedece a todos os comandos, exceto ordens claramente suicidas. Comandos contrários à natureza do alvo concedem um novo teste de resistência com vantagem para romper o efeito."
+        }
+      ],
+      "body": "Você pode enviar comandos telepaticamente (mesmo sem idioma compartilhado, mas limitando-se a comandos simples). A comunicação ignora distância, mas não atravessa planos.\n\nVocê pode usar sua ação para dominar completamente o alvo até o fim do seu próximo turno, escolhendo todas as ações e podendo forçar uma reação (gastando também sua própria reação).\n\nAlternativamente, você pode usar sua ação para obter entrada sensorial interpretada pela mente do alvo.\n\nCom Ler Mente e Comunicação Superior, o alvo pode até se comunicar com você.\n\nNão é visão direta pelos olhos dele, mas dá uma boa noção do ambiente.\n\nO alvo recebe um novo teste de resistência a cada 24 horas para tentar quebrar o efeito.",
+      "_needsReview": [
+        "prereq:unresolved:Projeção de Pensamentos"
+      ]
+    },
+    {
+      "id": "mente-xama-animal",
+      "name": "Xamã Animal",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode afetar criaturas do tipo fera com seus encantos, mas nenhum outro tipo de criatura."
+    },
+    {
+      "id": "mente-efeitos-colaterais-evidentes",
+      "name": "Efeitos Colaterais Evidentes",
+      "sphere": "mente",
+      "section": "magic",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Seus encantos produzem sinais estranhos e reconhecíveis no alvo — halos brilhantes, tremores no chão, olhos brilhantes e mutantes, padrões de fala mecânicos, etc.\n\nEsses sinais desaparecem imediatamente quando o encanto termina, deixando claro quando alguém está ou não sob sua influência.\n\nCD 5 Percepção: detectar os sinais\n\nCD 5 Arcana: saber que é controle mental\n\nCD 5 Intuição: suspeitar de coerção mental\n\nVocê ganha Encanto Expandido como talento bônus."
+    }
+  ],
+  "_reviewed": false
+}

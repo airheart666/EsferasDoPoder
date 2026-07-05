@@ -1,0 +1,549 @@
+{
+  "id": "guardiao",
+  "name": "Guardião",
+  "section": "martial",
+  "summary": "Proteger aliados e atrair para si a ira dos inimigos.",
+  "theme": {
+    "h": 182,
+    "s": 38,
+    "sig": "guardiao"
+  },
+  "acquisition": {
+    "freePicks": 0
+  },
+  "talents": [
+    {
+      "id": "m-guardiao-reserva-de-dano-atrasado",
+      "name": "Reserva de Dano Atrasado",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "base",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha uma reserva de dano atrasado igual a três vezes o seu nível. Sempre que receber dano, você pode redirecioná-lo, total ou parcialmente, para essa reserva. Aplique resistência antes de redirecionar o dano e você não pode redirecionar dano que exceda o máximo da reserva. Sua reserva de dano atrasado se esvazia ao final de cada turno, infligindo a você qualquer dano armazenado na reserva, ignorando qualquer resistência a dano, imunidade ou outros efeitos de redução que você possua, e zerando. Quaisquer efeitos adicionais do ataque, como veneno, ainda são sofridos imediatamente, mesmo que todo o dano do ataque seja redirecionado para a reserva. Qualquer cura que você receber além dos seus pontos de vida máximos reduz automaticamente a quantidade de dano na sua reserva de dano atrasdo. Caso você perca o acesso à esfera Guardião, qualquer dano (ou outros efeitos, se você possuir certos talentos) será sofrido ao final do seu turno.\n\nAlém disso, escolha um dos seguintes pacotes, ganhando a habilidade correspondente:"
+    },
+    {
+      "id": "m-guardiao-desafio",
+      "name": "Desafio",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Pacote de Desafio",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como uma ação bônus, você pode lançar um desafio a uma criatura que você possa ver. O desafio pode ser auditivo ou visual, contanto que o alvo possa percebê-lo (embora outros meios de comunicação que você possua, como telepatia, também possam ser usados). Criaturas que não desejam ser desafiadas podem fazer um teste de resistência de Carisma para resistir, e criaturas sem mente não podem ser desafiadas. Uma criatura afetada pelo seu desafio sofre desvantagem em jogadas de ataque que não incluam você como alvo e ganha vantagem em jogadas de ataque que tenham você como alvo. Se a criatura não puder atacá-lo (por exemplo, se você estiver escondido), ela não sofre desvantagem ao atacar outra coisa. O desafio dura 1 minuto. Quando você lança um novo desafio, qualquer desafio anterior que você tenha ativo termina. Uma criatura pode ser afetada por múltiplos desafios, mas ganha vantagem contanto que esteja atacando pelo menos um alvo que a tenha desafiado.\n\nTalentos com o descritor (desafio) concedem efeitos adicionais aos alvos que você desafiou."
+    },
+    {
+      "id": "m-guardiao-patrulha",
+      "name": "Patrulha",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Pacote de Patrulha",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como uma ação, você pode estabelecer uma patrulha até o início do seu próximo turno. Uma patrulha é uma área ao seu redor igual ao seu alcance de arma corpo a corpo + 3 metros. Sempre que uma criatura se move para dentro, para fora ou através desta área, você pode gastar uma reação para se mover até o seu deslocamento para trazer esse alvo para o seu alcance e realizar um ataque de oportunidade contra ele, conhecido como ataque de patrulha. Qualquer movimento que você fizer provoca ataques de oportunidade normalmente, e seu movimento total antes do início do seu próximo turno não pode exceder o seu deslocamento.\n\nVocê pode realizar 1 ataque de oportunidade adicional no 5º nível (2 ataques de oportunidade), no 11º nível (3 ataques de oportunidade) e no 17º nível (4 ataques de oportunidade). Esses ataques de oportunidade adicionais não exigem o gasto da sua reação - embora ainda contem como uma reação para todos os outros propósitos.\n\nAtaques de patrulha nunca causam dano de ataque furtivo, e você está limitado a apenas um ataque de oportunidade por turno, o que significa que você não pode atacar o mesmo alvo com múltiplos ataques de oportunidade durante o movimento dele, não importa o quanto ou com que frequência ele se mova através da sua área de patrulha ou para fora do seu alcance."
+    },
+    {
+      "id": "m-guardiao-chamado-de-ferro-frio",
+      "name": "Chamado de Ferro Frio (desafio, resiliência)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Desafio",
+      "tags": [
+        "desafio",
+        "resiliencia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando alvo de uma magia ou outro efeito mágico, você pode atrasar o início de seus efeitos até o final do seu próximo turno como se fosse dano. Cada efeito é tratado como se fosse uma quantidade de dano a pontos de vida igual ao nível do conjurador para fins da sua reserva de dano atrasado. Se você não tiver espaço suficiente na reserva de dano atrasado, não poderá atrasar o efeito. No entanto, você pode optar por esvaziar parte ou todo o dano atrasado da reserva para liberar espaço, sofrendo o dano (ou efeito atrasado) imediatamente. Qualquer efeito sobre você que removeria o efeito atrasado também o removerá da sua reserva de dano atrasado, como se estivesse removendo o efeito normalmente.\n\nSe você possuir o pacote (patrulha) e o talento Defender Outro, poderá usar esse talento para redirecionar a magia como se fosse um ataque.\n\nSe você possuir o pacote (desafio), sempre que uma criatura sob o efeito do seu desafio conjurar uma magia, efeito de esfera ou outro efeito mágico que não inclua você, ela sofrerá uma penalidade de -2 na CD do teste de resistência da magia, efeito de esfera ou efeito mágico."
+    },
+    {
+      "id": "m-guardiao-duravel",
+      "name": "Durável (desafio, resiliência)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Desafio",
+      "tags": [
+        "desafio",
+        "resiliencia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode adiar o início de certos efeitos até o final do seu próximo turno, incluindo doenças, níveis de exaustão, veneno ou qualquer uma das seguintes condições: cego, enfeitiçado, surdo, exausto, amedrontado, paralisado, petrificado, envenenado, atordoado, restringido ou inconsciente. Cada efeito é tratado como se fossem 10 pontos de vida ao determinar a capacidade da sua reserva de dano adiado. Se você não tiver espaço suficiente na reserva de dano adiado, não poderá adiar o efeito, a menos que esvazie parte ou toda a sua reserva de dano adiado em si mesmo para liberar espaço. Qualquer coisa que removeria o efeito que você adiou pode removê-lo da sua reserva de dano adiado.\n\nSe você possuir o pacote (patrulha) e o talento Defender Outro, poderá usá-lo para redirecionar um efeito direcionado a um de seus aliados para você mesmo, como se fosse um ataque.\n\nSe você possuir o pacote (desafio), sempre que uma criatura sob o efeito do seu desafio usar uma habilidade que causaria uma dessas condições e que não o inclua, ela sofrerá uma penalidade de -2 na CD do teste de resistência da habilidade."
+    },
+    {
+      "id": "m-guardiao-auge-da-vitoria",
+      "name": "Auge da Vitória (desafio)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Desafio",
+      "tags": [
+        "desafio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando uma criatura afetada pelo seu desafio for reduzida a 0 pontos de vida, você ganha pontos de vida temporários iguais ao seu nível. A criatura deve ter um ND de pelo menos metade do seu nível de personagem (arredondado para baixo, mínimo 0)."
+    },
+    {
+      "id": "m-guardiao-guarda-magica",
+      "name": "Guarda Mágica (desafio)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Desafio",
+      "tags": [
+        "desafio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se uma criatura estiver sob o efeito do seu desafio, ela sofre desvantagem em testes de resistência para manter a concentração enquanto estiver ao seu alcance."
+    },
+    {
+      "id": "m-guardiao-pele-de-aco",
+      "name": "Pele de Aço (desafio)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Desafio",
+      "tags": [
+        "desafio"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se uma criatura sob o efeito do seu desafio realizar um acerto crítico contra você, você pode encerrar o desafio nessa criatura, mas o ataque causará dano normal."
+    },
+    {
+      "id": "m-guardiao-chamado-de-ferro-frio-2",
+      "name": "Chamado de Ferro Frio (desafio, resiliência)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Resiliência",
+      "tags": [
+        "desafio",
+        "resiliencia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando alvo de uma magia ou outro efeito mágico, você pode atrasar o início dos seus efeitos até o final do seu próximo turno como se fosse dano. Cada efeito é tratado como se fosse uma quantidade de dano em pontos de vida igual ao nível do conjurador para fins da sua reserva de dano atrasado. Se você não tiver espaço suficiente na reserva de dano atrasado, não poderá atrasar o efeito. No entanto, você pode optar por esvaziar parte ou todo o dano atrasado da reserva para liberar espaço, sofrendo o dano (ou efeito atrasado) imediatamente. Qualquer efeito que remova o efeito atrasado de você removerá o efeito atrasado da sua reserva de dano atrasado, como se estivesse removendo o efeito de você normalmente.\n\nSe você possuir o pacote (patrulha) e o talento Defender Outro, você pode usar esse talento para redirecionar a magia como se fosse um ataque.\n\nSe você possuir o pacote (desafio), sempre que uma criatura sob o efeito do seu desafio conjurar uma magia, efeito de esfera ou outro efeito mágico que não inclua você, ela sofrerá uma penalidade de -2 na CD do teste de resistência da magia, efeito de esfera ou efeito mágico."
+    },
+    {
+      "id": "m-guardiao-duravel-2",
+      "name": "Durável (desafio, resiliência)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Resiliência",
+      "tags": [
+        "desafio",
+        "resiliencia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode retardar o início de certos efeitos até o final do seu próximo turno, incluindo doenças, níveis de exaustão, veneno ou qualquer uma das seguintes condições: cego, enfeitiçado, surdo, exausto, amedrontado, paralisado, petrificado, envenenado, atordoado, restringido ou inconsciente. Cada efeito é tratado como se fossem 10 pontos de vida ao determinar a capacidade da sua reserva de dano atrasado. Se você não tiver espaço suficiente na reserva de dano atrasado, não poderá retardar o efeito, a menos que esvazie parte ou toda a sua reserva de dano atrasado em si mesmo para liberar espaço. Qualquer coisa que removeria o efeito que você retardou pode, em vez disso, removê-lo da sua reserva de dano atrasado.\n\nSe você possuir o pacote (patrulha) e o talento Defender Outro, poderá usá-lo para redirecionar um efeito que tenha como alvo um de seus aliados para si mesmo como se fosse um ataque.\n\nSe você possuir o pacote (desafio), sempre que uma criatura sob o efeito do seu desafio usar uma habilidade que causaria uma dessas condições que não o inclua em seu efeito, ela sofrerá uma penalidade de -2 na CD do teste de resistência da habilidade."
+    },
+    {
+      "id": "m-guardiao-dano-retardado-maior",
+      "name": "Dano Retardado Maior (resiliência)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Resiliência",
+      "tags": [
+        "resiliencia"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "O tamanho da sua reserva de dano atrasado aumenta em +1 por nível que você possuir. Você pode escolher este talento duas vezes; os efeitos se acumulam."
+    },
+    {
+      "id": "m-guardiao-assistencia",
+      "name": "Assistência (área)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Área",
+      "tags": [
+        "area"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aliados dentro da sua patrulha recebem um bônus de +1 na Classe de Armadura."
+    },
+    {
+      "id": "m-guardiao-caminho-livre",
+      "name": "Caminho Livre (área)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Área",
+      "tags": [
+        "area"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Aliados (exceto você) não provocam ataques de oportunidade de criaturas hostis ao se moverem pela área da sua patrulha."
+    },
+    {
+      "id": "m-guardiao-disruptivo",
+      "name": "Disruptivo (área)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Área",
+      "tags": [
+        "area"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando uma criatura hostil dentro da área da sua patrulha tenta conjurar uma magia ou efeito de esfera, você pode realizar um ataque de patrulha contra essa criatura. Este ataque é resolvido antes da conclusão da magia; qualquer dano causado força um teste de resistência de Constituição como se estivesse tentando manter a concentração, fazendo com que o conjurador perca a magia ou o efeito de esfera em caso de falha."
+    },
+    {
+      "id": "m-guardiao-repreensao-punitiva",
+      "name": "Repreensão Punitiva (área)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Área",
+      "tags": [
+        "area"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando uma criatura ataca um aliado dentro da sua área de patrulha, exceto você, ela provoca um ataque de patrulha seu."
+    },
+    {
+      "id": "m-guardiao-imovel",
+      "name": "Imóvel (área)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Área",
+      "tags": [
+        "area"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Enquanto você tiver uma patrulha posicionada, qualquer criatura hostil que você danificar com um ataque de patrulha terá sua velocidade reduzida a 0 até o início do seu próximo turno."
+    },
+    {
+      "id": "m-guardiao-cerca-de-aco",
+      "name": "Cerca de Aço (área)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Área",
+      "tags": [
+        "area"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Todas as criaturas hostis consideram a área da sua patrulha como terreno difícil."
+    },
+    {
+      "id": "m-guardiao-defender-outro",
+      "name": "Defender Outro",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Quando um aliado adjacente for atacado, você pode usar sua reação para redirecionar o ataque para si mesmo. Quando um aliado dentro da sua patrulha for atacado, se você tiver estabelecido uma patrulha, poderá usar um dos seus ataques de patrulha para se mover até ele e redirecionar o ataque para si mesmo."
+    },
+    {
+      "id": "m-guardiao-guardiao-expandido",
+      "name": "Guardião Expandido",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você ganha um pacote de Guardião, incluindo a habilidade correspondente, que você não possui."
+    },
+    {
+      "id": "m-guardiao-foco-do-guardiao",
+      "name": "Foco do Guardião",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Como uma ação bônus durante seu próximo turno, você pode recuperar seu foco marcial quando cumprir um dos seguintes critérios, embora você deva ter um foco gasto no momento em que esta habilidade for ativada para se beneficiar dela:\n\n•Quando uma criatura afetada pelo seu desafio for reduzida a 0 pontos de vida.\n\n•Você obtiver sucesso em uma manobra de agarrar ou empurrar enquanto tiver uma patrulha estabelecida.\n\n•Você obtiver sucesso em um ataque feito como parte de um ataque de patrulha enquanto tiver uma patrulha estabelecida.\n\n•Você usou com sucesso o talento Defender Outro."
+    },
+    {
+      "id": "m-guardiao-desafio-em-massa",
+      "name": "Desafio em Massa",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você pode usar sua habilidade de desafio como uma ação, escolhendo como alvo um número de criaturas igual ao seu bônus de proficiência."
+    },
+    {
+      "id": "m-guardiao-guardiao-veloz",
+      "name": "Guardião Veloz",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Outros Talentos",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Se você possuir o pacote (desafio), poderá gastar foco marcial para usar desafio no seu turno sem precisar de nenhuma ação. Se você possuir Desafio em Massa, poderá gastar foco marcial para usar essa habilidade como uma ação bônus.\n\nSe você possuir o pacote (patrulha), poderá, em vez disso, gastar seu foco marcial para usar patrulha como uma ação bônus."
+    },
+    {
+      "id": "m-guardiao-desafio-inescapavel",
+      "name": "Desafio Inescapável (desafio)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Guardião",
+      "tags": [
+        "desafio"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "guardia"
+        },
+        {
+          "type": "level",
+          "min": 7
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Uma criatura afetada pelo seu desafio deve fazer um teste de resistência de Sabedoria sempre que tentar se afastar de você (inclusive por teletransporte ou outros efeitos mágicos) ou perderá a ação ou o movimento tentado. A criatura não perde nenhum uso de magia, pontos de magia ou item mágico em um teste de resistência falho se isso impedir o efeito de uma magia ou esfera. A criatura pode ser movida normalmente por outras criaturas.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Guardiã"
+      ]
+    },
+    {
+      "id": "m-guardiao-desafio-punitivo",
+      "name": "Desafio Punitivo (desafio)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Guardião",
+      "tags": [
+        "desafio"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "guardiao"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Sempre que uma criatura afetada pelo seu desafio sofrer desvantagem em um ataque porque ele não afeta você, essa criatura sofre dano radiante ou necrótico (escolhido quando você adquire este talento) igual ao seu nível. Este é um efeito mágico."
+    },
+    {
+      "id": "m-guardiao-de-pe-a-qualquer-custo",
+      "name": "De Pé a Qualquer Custo",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Guardião",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "guardia"
+        },
+        {
+          "type": "talent",
+          "id": "m-guardiao-reserva-de-dano-atrasado"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando reduzido a 0 pontos de vida, você pode gastar seu foco marcial (nenhuma ação necessária) para agir normalmente até o final do seu próximo turno. Você não fica inconsciente devido à perda de pontos de vida e não está sujeito a testes de resistência contra morte durante esse período. Você pode receber cura durante esse turno para recuperar seus pontos de vida.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Guardiã"
+      ]
+    },
+    {
+      "id": "m-guardiao-eu-irei",
+      "name": "Eu Irei",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Guardião",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "guardiao"
+        },
+        {
+          "type": "text",
+          "text": "Defender Outros"
+        },
+        {
+          "type": "talent",
+          "id": "m-guardiao-eu-ouvirei"
+        },
+        {
+          "type": "level",
+          "min": 11
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando uma criatura o chama com o talento Eu Ouvirei, você pode gastar uma ação para se teletransportar para a localização dela. Você pode levar objetos consigo, desde que o peso deles não exceda sua carga máxima. Você também pode levar um número de criaturas Médias ou menores adicionais dispostas (carregando equipamentos ou objetos até sua carga máxima) igual ao seu bônus de proficiência. Uma criatura Grande conta como duas criaturas Médias, uma criatura Enorme conta como duas criaturas Grandes e assim por diante. Todas as criaturas a serem teletransportadas devem estar em contato umas com as outras e devem estar em contato com você ou com uma criatura que esteja em contato com você.\n\nO contato pode ser estabelecido sem nenhuma ação durante o seu turno ou como uma reação quando não for o seu turno. Você só pode viajar para uma criatura específica usando esta habilidade uma vez. Você recupera o uso desta habilidade para cada criatura relevante ao completar um descanso longo. Este é um efeito de teletransporte mágico.",
+      "_needsReview": [
+        "prereq:unresolved:Defender Outros"
+      ]
+    },
+    {
+      "id": "m-guardiao-eu-ouvirei",
+      "name": "Eu Ouvirei",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Guardião",
+      "tags": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "guardia"
+        },
+        {
+          "type": "talent",
+          "id": "m-guardiao-defender-outro"
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Você pode formar um vínculo com uma criatura como uma ação. Não há limite de alcance para com quem você pode se vincular, nem você precisa de linha de visão ou linha de efeito para formar um vínculo com uma criatura; você deve, no entanto, conhecer pessoalmente a criatura com a qual está se vinculando, mesmo que tenha sido uma apresentação casual. Uma criatura vinculada não toma conhecimento automaticamente deste vínculo, do seu nome ou de como chamá-lo; ela precisa ser informada.\n\nUma criatura vinculada pode chamar seu nome como uma reação; se você estiver a 1,6 km por nível, você toma conhecimento imediatamente do chamado e da direção para aquela criatura. No 5º nível, esse alcance aumenta para 16 km por nível. No 11º nível, o alcance se torna ilimitado, contanto que ambos estejam no mesmo plano.\n\nNo 17º nível, você pode ouvir o chamado através dos planos e obter conhecimento de em qual plano a criatura que o chama está. Você pode manter um número desses vínculos igual ao seu bônus de proficiência. Este é um efeito mágico.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Guardiã"
+      ]
+    },
+    {
+      "id": "m-guardiao-punicao",
+      "name": "Punição (resiliência)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Guardião",
+      "tags": [
+        "resiliencia"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "guardiao"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "Quando você causa dano com um ataque a uma criatura enquanto você tem dano em sua reserva de dano atrasado, você pode gastar seu foco marcial para causar dano igual à sua reserva de dano atrasado à criatura alvo. Este dano é do mesmo tipo do seu ataque que desencadeou o efeito. Se você possuir os talentos Chamado de Ferro Frio ou Durável, você também pode infligir quaisquer efeitos que esteja adiando com essas habilidades. Se o efeito permitisse um teste de resistência, o alvo pode fazer um teste de resistência imediatamente com a CD original.\n\nUm teste de resistência de Constituição bem-sucedido reduz a quantidade de dano adicional pela metade e nega quaisquer efeitos adicionais."
+    },
+    {
+      "id": "m-guardiao-singularidade",
+      "name": "Singularidade (área)",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos Lendários de Guardião",
+      "tags": [
+        "area"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "guardia"
+        },
+        {
+          "type": "level",
+          "min": 5
+        }
+      ],
+      "advanced": true,
+      "enhancements": [],
+      "body": "No início de seus turnos, criaturas hostis dentro da área de sua patrulha devem ser bem-sucedidas em um teste de resistência de Força ou serão movidas 1,5 metro para mais perto de você, embora parem quando se tornarem adjacentes. Esse movimento não provoca ataques de oportunidade.\n\nCriaturas hostis dentro da área de sua patrulha contam cada 1,5 metro de movimento direcionado para longe de você como 3 metros ao determinar seu movimento para a rodada. Isso se acumula com os efeitos de terreno difícil. No 11º nível, tanto a distância percorrida em sua direção quanto o custo adicional de movimento para longe de você aumentam em 1,5 metro. Este é um efeito mágico.",
+      "_needsReview": [
+        "prereq:sphere-unknown:Guardiã"
+      ]
+    },
+    {
+      "id": "m-guardiao-resiliente",
+      "name": "Resiliente",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não pode selecionar um pacote Guardião. Você recebe o talento Dano Atrasado Maior como um talento bônus. Você não pode possuir esta variante e a variante Sem Atraso simultaneamente."
+    },
+    {
+      "id": "m-guardiao-sem-atraso",
+      "name": "Sem Atraso",
+      "sphere": "guardiao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Variantes",
+      "tags": [],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você não recebe uma reserva de dano atrasado e não pode selecionar nenhum talento (de resiliência). Você recebe o talento Guardião Veloz como um talento bônus. Você não pode possuir esta variante e a desvantagem Resiliente simultaneamente."
+    }
+  ],
+  "_reviewed": false
+}
