@@ -1,0 +1,81 @@
+{
+  "Artífice": {
+    "subclasses": {
+      "Alquimista": {
+        "grants": [
+          { "level": 3, "feature": "Magias de Alquimista", "talents": [
+            { "name": "Revitalizar", "sphere": "Vida" },
+            { "name": "Envenenamento", "sphere": "Morte" }
+          ] },
+          { "level": 5, "feature": "Magias de Alquimista", "talents": [
+            { "name": "Esfera", "sphere": "Destruição" },
+            { "name": "Veneno", "sphere": "Destruição" }
+          ] },
+          { "level": 9, "feature": "Magias de Alquimista", "talents": [
+            { "name": "Elemental", "sphere": "Alteração" },
+            { "name": "Em Massa", "sphere": "Universal" }
+          ] },
+          { "level": 13, "feature": "Magias de Alquimista", "talents": [
+            { "name": "Drenante", "sphere": "Destruição" },
+            { "name": "Imortal", "sphere": "Proteção" }
+          ] },
+          { "level": 17, "feature": "Magias de Alquimista", "talents": [
+            { "name": "Ressurreição", "sphere": "Vida" },
+            { "name": "Nuvem", "sphere": "Destruição" }
+          ] }
+        ]
+      }
+    }
+  },
+  "Feiticeiro": {
+    "features": [
+      {
+        "name": "Metamágica",
+        "section": "magic",
+        "bonusByLevel": [[3, 2], [10, 1], [17, 1]],
+        "group": "talento (Meta) da esfera Universal",
+        "note": "no lugar de uma opção de Metamágica"
+      }
+    ],
+    "subclasses": {
+      "Sangue Feérico": {
+        "grants": [
+          { "level": 1, "feature": "Magias Feéricas", "talents": [
+            { "name": "Cativar", "sphere": "Mente" },
+            { "name": "Luz Reveladora", "sphere": "Luz" }
+          ] },
+          { "level": 3, "feature": "Magias Feéricas", "talents": [
+            { "name": "Delírio", "sphere": "Mente" },
+            { "name": "Teleporte Rápido", "sphere": "Distorção" }
+          ] },
+          { "level": 5, "feature": "Magias Feéricas", "talents": [
+            { "name": "Piscar", "sphere": "Distorção" },
+            { "name": "Terreno Ilusório", "sphere": "Ilusão" }
+          ] },
+          { "level": 7, "feature": "Magias Feéricas", "talents": [
+            { "name": "Confusão", "sphere": "Mente" },
+            { "name": "Disfarce Ilusório", "sphere": "Ilusão" }
+          ] },
+          { "level": 9, "feature": "Magias Feéricas", "talents": [
+            { "name": "Paralisar", "sphere": "Mente" },
+            { "name": "Ilusões Potentes", "sphere": "Ilusão" }
+          ] }
+        ]
+      }
+    }
+  },
+  "Guerreiro": {
+    "subclasses": {
+      "Possuído": {
+        "features": [
+          {
+            "name": "Vínculo Espiritual",
+            "section": "martial",
+            "bonusByLevel": [[3, 2], [7, 2], [10, 2], [15, 2], [18, 2]],
+            "group": "quaisquer talentos marciais"
+          }
+        ]
+      }
+    }
+  }
+}

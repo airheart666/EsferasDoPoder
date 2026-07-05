@@ -1627,6 +1627,47 @@ h4.base-ability::after {
 /* Estados do botão de personagem nos cards. */
 .char-btn.is-free { font-size: 0.78rem; padding: 0.1rem 0.4rem; }
 .char-btn.needs-sphere, .char-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+/* Chip "✦ concedido" (talento vindo de subclasse) — verde, como o grátis */
+.granted-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--verdigris);
+  border: 1px solid color-mix(in srgb, var(--verdigris) 40%, transparent);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+.acquire-status.granted { color: var(--verdigris); }
+
+/* Notas de features de classe/subclasse (bônus de talentos) na ficha */
+.char-feature-notes {
+  list-style: none;
+  margin: 0 0 1.2rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--table-border);
+  border-left: 3px solid var(--verdigris);
+  border-radius: var(--border-radius);
+  background: color-mix(in srgb, var(--verdigris) 6%, var(--bg-content));
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.char-feature-notes li { margin: 0.15rem 0; }
+.char-granted-badge {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  color: var(--verdigris);
+  border: 1px solid color-mix(in srgb, var(--verdigris) 45%, transparent);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+  margin-left: 0.55rem;
+}
+.char-card-tag.char-tag-granted { color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
 
 /* ---- Ficha: esferas adquiridas --------------------------------------------- */
 .char-sphere { margin: 0 0 1.6rem; }

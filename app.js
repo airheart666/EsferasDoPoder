@@ -7,6 +7,7 @@ let cardDescriptions = {}; // descrições curadas dos cards (descriptions.json)
 let sphereThemes = {};   // identidade por esfera (sphere-themes.json): título -> {h,s,sig,lLight?}
 let classesData = {};    // progressão das classes (classes.json): nome -> {type,keyAbility,resource,progression[]}
 let sphereRules = {};    // regras de aquisição por esfera (sphere-rules.json): título -> {freeGroup,freeLabel,freePicks}
+let classFeatures = {};  // características de classe/subclasse que concedem talentos (class-features.json)
 let sphereModelCache = new Map(); // título -> modelo classificado (getSphereModel), cache do pipeline pesado
 let availableSigils = new Set(); // ids de sigilo já presentes no sprite (sigils.svg)
 let talentIndex = new Map();  // normNome -> {name, pageAnchor, slug, chapterTitle, summary}
@@ -67,6 +68,13 @@ async function init() {
       const srRes = await fetch('sphere-rules.json');
       if (srRes.ok) sphereRules = await srRes.json();
     } catch (_) { /* mantém {} → fallback por esfera */ }
+
+    // Características de classe/subclasse que concedem talentos (bônus por nível +
+    // talentos específicos com acesso implícito à esfera). Opcional.
+    try {
+      const cfRes = await fetch('class-features.json');
+      if (cfRes.ok) classFeatures = await cfRes.json();
+    } catch (_) { /* mantém {} → sem concedidos */ }
 
     // Sprite de sigilos (SVG injetado uma vez; referenciado por <use>). Opcional.
     try {
@@ -565,13 +573,13 @@ function makeFavButton(item) {
 
 // Controle de personagem de um card, conforme o papel na esfera (base/free/extra/
 // ignore) e o estado do personagem ativo. Base → chip; ignore → nada; demais → +/✓.
-function makeCharControl(item, role, active, entry, multi) {
+function makeCharControl(item, role, active, entry, multi, granted) {
   if (role === 'ignore') return null; // não é talento (feature de pacote/regras)
-  if (role === 'base') {
+  if (role === 'base' || role === 'granted') {
     const chip = document.createElement('span');
-    chip.className = 'base-included';
-    chip.textContent = '✦ incluída';
-    chip.title = 'Habilidade-base — vem junto ao adquirir a esfera';
+    chip.className = role === 'granted' ? 'granted-chip' : 'base-included';
+    chip.textContent = role === 'granted' ? '✦ concedido' : '✦ incluída';
+    chip.title = role === 'granted' ? 'Talento concedido pela subclasse' : 'Habilidade-base — vem junto ao adquirir a esfera';
     return chip;
   }
   const btn = document.createElement('button');
@@ -586,7 +594,7 @@ function makeCharControl(item, role, active, entry, multi) {
     btn.setAttribute('aria-label', 'Adicionar ao personagem');
     return btn;
   }
-  if (!entry) { // esfera não adquirida p/ o personagem ativo
+  if (!entry && !granted) { // esfera não adquirida nem concedida p/ o ativo
     btn.textContent = '+';
     if (multi) { // vários personagens → clique abre o seletor de alvo
       btn.title = 'Escolher personagem';
@@ -599,9 +607,10 @@ function makeCharControl(item, role, active, entry, multi) {
     }
     return btn;
   }
+  const e = entry || { freePicks: [], talents: [] }; // esfera concedida sem entry ainda
   const k = favKey(item);
-  const isFree = (entry.freePicks || []).some(f => favKey(f) === k);
-  const isExtra = (entry.talents || []).some(t => favKey(t) === k);
+  const isFree = (e.freePicks || []).some(f => favKey(f) === k);
+  const isExtra = (e.talents || []).some(t => favKey(t) === k);
   if (isFree) {
     btn.textContent = '✓ grátis';
     btn.classList.add('on', 'is-free');
@@ -625,16 +634,17 @@ function addFavoriteStars(root, chapter) {
   const active = getActiveChar();
   const entry = active ? sphereEntry(active, chapter.title) : null;
   const cs = classSpec(chapter.title, entry && entry.choices ? entry.choices.pkg : null);
+  const gc = grantCtxFor(active, chapter.title);
   const multi = getCharacters().length > 1;
   for (const card of root.querySelectorAll('.talent-card')) {
     const h4 = card.querySelector(':scope > h4, :scope > h5');
     if (!h4) continue;
     const section = card.closest('section[id]');
     const item = { name: h4.textContent.trim(), sphere: chapter.title, anchor: section ? '#' + section.id : chapter.anchor, slug: h4.id || '' };
-    const role = cardRole(card, cs);
+    const role = cardRole(card, cs, gc);
     const actions = document.createElement('div');
     actions.className = 'talent-actions';
-    const ctl = makeCharControl(item, role, active, entry, multi);
+    const ctl = makeCharControl(item, role, active, entry, multi, gc.granted);
     if (ctl) actions.appendChild(ctl);
     actions.appendChild(makeFavButton(item));
     card.appendChild(actions);
@@ -669,6 +679,21 @@ function renderSphereAcquireBar(chapter) {
   }
   who.appendChild(whoSel);
   bar.appendChild(who);
+
+  // Esfera concedida pela subclasse: acesso grátis, sem botão de adquirir/grátis.
+  if (isGrantedSphere(active, chapter.title)) {
+    const status = document.createElement('span');
+    status.className = 'acquire-status granted';
+    status.textContent = `✦ ${chapter.title} concedida${active.subclass ? ' (' + active.subclass + ')' : ''}`;
+    bar.appendChild(status);
+    if (entry && entry.talents.length) {
+      const cost = document.createElement('span');
+      cost.className = 'acquire-cost';
+      cost.textContent = `${entry.talents.length} talento(s) extra`;
+      bar.appendChild(cost);
+    }
+    return bar;
+  }
 
   if (!entry) {
     const btn = document.createElement('button');
@@ -751,7 +776,7 @@ function renderSphereAcquireBar(chapter) {
 
   const cost = document.createElement('span');
   cost.className = 'acquire-cost';
-  cost.textContent = `${sphereCost(entry)} talento(s)`;
+  cost.textContent = `${sphereCost(entry, active)} talento(s)`;
   bar.appendChild(cost);
 
   const rm = document.createElement('button');
@@ -770,6 +795,7 @@ function refreshSphereUI(title) {
   const active = getActiveChar();
   const entry = active ? sphereEntry(active, title) : null;
   const cs = classSpec(title, entry && entry.choices ? entry.choices.pkg : null);
+  const gc = grantCtxFor(active, title);
   const multi = getCharacters().length > 1;
   const chapter = chapters.find(c => c.title === title);
 
@@ -784,11 +810,11 @@ function refreshSphereUI(title) {
     if (!h) continue;
     const section = card.closest('section[id]');
     const item = { name: h.textContent.trim(), sphere: title, anchor: section ? '#' + section.id : (chapter ? chapter.anchor : ''), slug: h.id || '' };
-    const role = cardRole(card, cs);
+    const role = cardRole(card, cs, gc);
     const actions = card.querySelector('.talent-actions');
     if (!actions) continue;
-    const oldCtl = actions.querySelector(':scope > .char-btn, :scope > .base-included');
-    const newCtl = makeCharControl(item, role, active, entry, multi);
+    const oldCtl = actions.querySelector(':scope > .char-btn, :scope > .base-included, :scope > .granted-chip');
+    const newCtl = makeCharControl(item, role, active, entry, multi, gc.granted);
     if (oldCtl) { if (newCtl) oldCtl.replaceWith(newCtl); else oldCtl.remove(); }
     else if (newCtl) actions.insertBefore(newCtl, actions.firstChild);
   }
@@ -797,11 +823,14 @@ function refreshSphereUI(title) {
 // Aplica o clique de um talento ao personagem `active`: alterna grátis/extra
 // (recomputa o papel a partir do card, robusto a pacotes por personagem).
 function applyTalentToggle(active, title, item, cardEl) {
+  const granted = isGrantedSphere(active, title);
   const entry = sphereEntry(active, title);
-  if (!entry) return false; // esfera não adquirida p/ este personagem
+  if (!entry && !granted) return false; // esfera não adquirida nem concedida
   const k = favKey(item);
-  if ((entry.freePicks || []).some(f => favKey(f) === k)) { removeFreePick(active, title, item); return true; }
-  if ((entry.talents || []).some(t => favKey(t) === k)) { toggleExtraTalent(active, title, item); return true; }
+  if (granted && isGrantedTalent(active, title, item.name)) return false; // talento concedido é fixo
+  if (entry && (entry.freePicks || []).some(f => favKey(f) === k)) { removeFreePick(active, title, item); return true; }
+  if (entry && (entry.talents || []).some(t => favKey(t) === k)) { toggleExtraTalent(active, title, item); return true; }
+  if (granted) { toggleExtraTalent(active, title, item); return true; } // esfera concedida: só extras (+1)
   const cs = classSpec(title, entry.choices && entry.choices.pkg);
   const role = cardEl ? cardRole(cardEl, cs) : 'extra';
   const cap = resolveSpec(active, title, entry.choices).freePicks;
@@ -1118,7 +1147,7 @@ function uid() { return 'c' + Date.now().toString(36) + Math.random().toString(3
 
 function createCharacter(patch) {
   const chars = getCharacters();
-  const char = Object.assign({ id: uid(), name: 'Novo personagem', className: '', level: 1, keyMod: 0, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [] }, patch);
+  const char = Object.assign({ id: uid(), name: 'Novo personagem', className: '', subclass: '', level: 1, keyMod: 0, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [] }, patch);
   chars.push(char);
   saveCharacters(chars);
   setActiveCharId(char.id);
@@ -1154,13 +1183,84 @@ function isProficient(char, req) {
   return reqs.every(r => set.has(normalizeTerm(r)));
 }
 
+/* ---- Características de classe/subclasse (concedem talentos) ------------------
+   class-features.json → por classe: features (bônus por nível) + subclasses
+   {features, grants}. Bônus somam ao teto por nível; grants concedem talentos
+   específicos + acesso implícito à esfera (custo 0). ---------------------------- */
+function subclassesOf(className) {
+  // reusa a travessia do TOC de injectSubclassTable (nós sob #grp-…)
+  const node = tocTreesGlobal[2] && tocTreesGlobal[2][0] && tocTreesGlobal[2][0].children.find(c => c.text === className);
+  if (!node) return [];
+  const subs = [];
+  for (const child of node.children) {
+    if (child.anchor && child.anchor.startsWith('#grp-') && child.children) subs.push(...child.children.map(s => s.text));
+  }
+  return subs;
+}
+// Features ativas (classe + subclasse escolhida). Não filtra por nível aqui.
+function activeFeatures(char) {
+  const cf = char && classFeatures[char.className];
+  if (!cf) return { features: [], grants: [] };
+  const sub = char.subclass && cf.subclasses && cf.subclasses[char.subclass];
+  return {
+    features: [].concat(cf.features || [], (sub && sub.features) || []),
+    grants: (sub && sub.grants) || [],
+  };
+}
+// Bônus de orçamento por tipo, estritamente por nível (soma bonusByLevel[l]≤nível).
+function classFeatureBonus(char) {
+  const out = { magic: 0, martial: 0, notes: [] };
+  if (!char) return out;
+  const lvl = char.level || 1;
+  for (const f of activeFeatures(char).features) {
+    if (!f.bonusByLevel || !f.section) continue;
+    let n = 0;
+    for (const [l, c] of f.bonusByLevel) if (l <= lvl) n += c;
+    if (n > 0) {
+      out[f.section] = (out[f.section] || 0) + n;
+      out.notes.push(`${f.name}: +${n} ${f.section === 'magic' ? 'mágicos' : 'marciais'}${f.group ? ' — ' + f.group : ''}`);
+    }
+  }
+  return out;
+}
+// Talentos concedidos (nível ≤ char.level), agrupados por esfera.
+function grantedSpheresMap(char) {
+  const map = new Map();
+  if (!char) return map;
+  const lvl = char.level || 1;
+  for (const g of activeFeatures(char).grants) {
+    if ((g.level || 1) > lvl) continue;
+    for (const t of (g.talents || [])) {
+      const sphere = t.sphere;
+      if (!map.has(sphere)) map.set(sphere, []);
+      map.get(sphere).push({ name: t.name, sphere, anchor: '', slug: '', level: g.level, feature: g.feature });
+    }
+  }
+  return map;
+}
+function isGrantedSphere(char, title) { return grantedSpheresMap(char).has(title); }
+// Chave de um talento concedido, sempre pelo NOME-BASE (sem a tag do card) — assim
+// os nomes curados casam com os cards reais mesmo que uns tenham tag e outros não.
+function grantedTalentKey(title, name) { return normalizeTerm(talentBaseName(name)) + '|' + normalizeTerm(title); }
+function grantedKeys(char, title) {
+  const set = new Set();
+  for (const it of (grantedSpheresMap(char).get(title) || [])) set.add(grantedTalentKey(title, it.name));
+  return set;
+}
+function isGrantedTalent(char, title, name) { return grantedKeys(char, title).has(grantedTalentKey(title, name)); }
+
 /* ---- Esferas adquiridas (custo real + escolha grátis condicional) ------------
    entry = { sphere, section, choices:{pkg?}, freePicks:[item…], talents:[item…] }.
    Custo = 1 (acesso) + talentos-extra; bases e os freePicks são grátis. -------- */
 function sphereEntry(char, title) {
   return char && Array.isArray(char.spheres) ? char.spheres.find(s => s.sphere === title) : null;
 }
-function sphereCost(entry) { return 1 + (entry && entry.talents ? entry.talents.length : 0); }
+// Acesso de uma esfera: grátis (0) se concedida pela subclasse; senão 1 talento.
+function sphereAccessCost(char, title) { return isGrantedSphere(char, title) ? 0 : 1; }
+function sphereCost(entry, char) {
+  const access = char ? sphereAccessCost(char, entry.sphere) : 1;
+  return access + (entry && entry.talents ? entry.talents.length : 0);
+}
 
 function acquireSphere(char, title) {
   if (!char) return null;
@@ -1240,6 +1340,9 @@ function sphereTags(name) {
   if (!m) return [];
   return m[1].split(/[,;/]|\be\b|\bou\b/i).map(s => normalizeTerm(s.trim())).filter(Boolean);
 }
+// Nome-base de um talento (sem a tag entre parênteses no fim): "Cativar (encanto)" → "Cativar".
+// Usado para casar talentos concedidos (nomeados sem tag) com os cards reais.
+function talentBaseName(s) { return String(s).replace(/\s*\([^)]*\)\s*$/, '').trim(); }
 function matchesFreeGroup(card, name, fg) {
   if (!fg) return true; // fallback: qualquer não-base é elegível ao grátis
   if (fg.tag || fg.tags) {
@@ -1283,7 +1386,7 @@ function resolveSpec(char, title, choices) {
 }
 // Papel de UM card (classifica o elemento, não o nome). 'ignore' = não é talento
 // (ex.: features de pacote/regras da Alquimia, sem a tag exigida).
-function cardRole(card, cs) {
+function cardRole(card, cs, grantCtx) {
   if (cs.talentTags && cs.talentTags.length) {
     const h0 = card.querySelector(':scope > h4, :scope > h5');
     const tags = sphereTags(h0 ? h0.textContent.trim() : '');
@@ -1291,10 +1394,24 @@ function cardRole(card, cs) {
     if (!want.some(w => tags.includes(w))) return 'ignore';
   }
   if (card.classList.contains('base-ability')) return 'base';
-  if (!cs.canFree) return 'extra';
   const h = card.querySelector(':scope > h4, :scope > h5');
   const name = h ? h.textContent.trim() : '';
+  // Esfera concedida pela subclasse: talento específico → 'granted'; demais → 'extra'
+  // (o acesso concede bases + os específicos, não a escolha grátis). Compara pelo
+  // nome-base (os concedidos são nomeados sem a tag do card).
+  if (grantCtx && grantCtx.granted) {
+    return grantCtx.grantedKeys.has(grantedTalentKey(grantCtx.title, name)) ? 'granted' : 'extra';
+  }
+  if (!cs.canFree) return 'extra';
   return matchesFreeGroup(card, name, cs.fg) ? 'free' : 'extra';
+}
+// Contexto de concessão de uma esfera para um personagem (p/ cardRole/UI).
+function grantCtxFor(char, title) {
+  return {
+    granted: char ? isGrantedSphere(char, title) : false,
+    grantedKeys: char ? grantedKeys(char, title) : new Set(),
+    title,
+  };
 }
 // Classifica os cards da esfera (para o pacote escolhido). Cacheado por título|pacote.
 function getSphereModel(title, pkg) {
@@ -1326,15 +1443,21 @@ function getSphereModel(title, pkg) {
 function findCardInFrag(frag, item) {
   if (!frag) return null;
   const secId = (item.anchor || '').replace(/^#/, '');
-  let fallback = null;
+  const wantBase = normalizeTerm(talentBaseName(item.name));
+  let exact = null, byBase = null;
   for (const card of frag.querySelectorAll('.talent-card')) {
     const h = card.querySelector(':scope > h4, :scope > h5');
-    if (!h || h.textContent.trim() !== item.name) continue;
-    if (!fallback) fallback = card;
-    const sec = card.closest('section[id]');
-    if (sec && sec.id === secId) return card;
+    if (!h) continue;
+    const name = h.textContent.trim();
+    if (name === item.name) {
+      if (!exact) exact = card;
+      const sec = card.closest('section[id]');
+      if (sec && sec.id === secId) return card; // exato + seção → melhor casamento
+    } else if (!byBase && normalizeTerm(talentBaseName(name)) === wantBase) {
+      byBase = card; // concedidos são nomeados sem a tag → casa pelo nome-base
+    }
   }
-  return fallback;
+  return exact || byBase;
 }
 
 // Linha da progressão da classe no nível dado (fallback: nível mais próximo abaixo).
@@ -1390,6 +1513,17 @@ function traditionField(char) {
     .join('');
   return `<label class="char-field-l">${t.label}
        <select class="char-field" data-field="tradition">${opts}</select>
+     </label>`;
+}
+// Campo <select> da subclasse (opções das subclasses da classe, via TOC).
+function subclassField(char) {
+  const subs = subclassesOf(char.className);
+  if (!subs.length) return '';
+  const opts = ['<option value="">— nenhuma —</option>']
+    .concat(subs.map(s => `<option value="${escapeHtml(s)}"${char.subclass === s ? ' selected' : ''}>${escapeHtml(s)}</option>`))
+    .join('');
+  return `<label class="char-field-l">Subclasse
+       <select class="char-field" data-field="subclass">${opts}</select>
      </label>`;
 }
 
@@ -1500,6 +1634,7 @@ function renderCharacter() {
          ${Object.keys(classesData).map(k => `<option value="${escapeHtml(k)}"${k === active.className ? ' selected' : ''}>${escapeHtml(k)}</option>`).join('')}
        </select>
      </label>
+     ${subclassField(active)}
      <label class="char-field-l">Nível
        <input type="number" class="char-field" data-field="level" min="1" max="20" value="${active.level || 1}">
      </label>
@@ -1516,8 +1651,8 @@ function renderCharacter() {
   const stats = characterStats(active);
   if (stats) {
     const spheres = active.spheres || [];
-    const usedMagic = spheres.filter(s => s.section === 'magic').reduce((n, s) => n + sphereCost(s), 0);
-    const usedMartial = spheres.filter(s => s.section === 'martial').reduce((n, s) => n + sphereCost(s), 0);
+    const usedMagic = spheres.filter(s => s.section === 'magic').reduce((n, s) => n + sphereCost(s, active), 0);
+    const usedMartial = spheres.filter(s => s.section === 'martial').reduce((n, s) => n + sphereCost(s, active), 0);
     const panel = document.createElement('div');
     panel.className = 'char-stats';
     const stat = (label, val, hint) => `<div class="char-stat"><span class="cs-val">${val}</span><span class="cs-label">${label}</span>${hint ? `<span class="cs-hint">${hint}</span>` : ''}</div>`;
@@ -1526,14 +1661,32 @@ function renderCharacter() {
     cells += stat('CD', stats.cd, '8 + prof + mod');
     cells += stat('Ataque', (stats.attack >= 0 ? '+' : '') + stats.attack);
     if (stats.resourceName) cells += stat(stats.resourceName, stats.resource);
-    const bonus = traditionBonus(active); // +N da tradição (aplica ao tipo da classe)
-    const magicBudget = stats.magicTalents + (stats.type === 'magic' ? bonus : 0);
-    const martialBudget = stats.martialTalents + (stats.type === 'martial' ? bonus : 0);
-    const budgetHint = b => (b ? `inclui +${b} da tradição` : 'usados/disponíveis');
-    if (stats.type === 'magic') cells += stat('Talentos mágicos', `${usedMagic}/${magicBudget}`, budgetHint(stats.type === 'magic' ? bonus : 0));
-    if (stats.type === 'martial' || usedMartial > 0) cells += stat('Talentos marciais', `${usedMartial}/${martialBudget}`, budgetHint(stats.type === 'martial' ? bonus : 0));
+    const tBonus = traditionBonus(active);        // +N da tradição (tipo da classe)
+    const cfBonus = classFeatureBonus(active);    // +N de features de classe/subclasse
+    const magicBudget = stats.magicTalents + (stats.type === 'magic' ? tBonus : 0) + cfBonus.magic;
+    const martialBudget = stats.martialTalents + (stats.type === 'martial' ? tBonus : 0) + cfBonus.martial;
+    const budgetHint = (b, cf) => {
+      const parts = [];
+      if (b) parts.push(`+${b} tradição`);
+      if (cf) parts.push(`+${cf} classe/subclasse`);
+      return parts.length ? 'inclui ' + parts.join(', ') : 'usados/disponíveis';
+    };
+    if (stats.type === 'magic') cells += stat('Talentos mágicos', `${usedMagic}/${magicBudget}`, budgetHint(tBonus, cfBonus.magic));
+    if (stats.type === 'martial' || usedMartial > 0) cells += stat('Talentos marciais', `${usedMartial}/${martialBudget}`, budgetHint(stats.type === 'martial' ? tBonus : 0, cfBonus.martial));
     panel.innerHTML = cells;
     frag.appendChild(panel);
+
+    // Notas das features de classe/subclasse que concedem bônus de talentos
+    if (cfBonus.notes.length) {
+      const ul = document.createElement('ul');
+      ul.className = 'char-feature-notes';
+      for (const note of cfBonus.notes) {
+        const li = document.createElement('li');
+        li.textContent = note;
+        ul.appendChild(li);
+      }
+      frag.appendChild(ul);
+    }
 
     // Aviso de orçamento estourado
     const over = [];
@@ -1547,12 +1700,13 @@ function renderCharacter() {
     }
   }
 
-  // Esferas adquiridas: incluído (bases + grátis) vs. talentos-extra, por esfera
+  // Esferas: adquiridas + concedidas pela subclasse (acesso grátis), por esfera
   const spheresList = active.spheres || [];
+  const grantedMap = grantedSpheresMap(active);
   const h2 = document.createElement('h2');
   h2.textContent = 'Esferas e talentos';
   frag.appendChild(h2);
-  if (spheresList.length === 0) {
+  if (spheresList.length === 0 && grantedMap.size === 0) {
     const p = document.createElement('p');
     p.className = 'glossary-intro';
     p.textContent = 'Nenhuma esfera ainda. Abra uma esfera e use “Adquirir esta esfera” para começar — depois escolha o grátis e adicione talentos com o +.';
@@ -1587,8 +1741,8 @@ function renderCharacter() {
         head.setAttribute('aria-expanded', 'false');
         if (kind !== 'extra') {
           const tag = document.createElement('span');
-          tag.className = 'char-card-tag' + (kind === 'free' ? ' char-tag-free' : '');
-          tag.textContent = kind === 'free' ? 'grátis' : 'base';
+          tag.className = 'char-card-tag' + (kind === 'free' ? ' char-tag-free' : kind === 'granted' ? ' char-tag-granted' : '');
+          tag.textContent = kind === 'free' ? 'grátis' : kind === 'granted' ? 'concedido' : 'base';
           head.appendChild(tag);
         }
       }
@@ -1596,38 +1750,57 @@ function renderCharacter() {
       return wrap;
     };
 
-    for (const entry of spheresList) {
-      const model = getSphereModel(entry.sphere, entry.choices && entry.choices.pkg);
+    const titles = spheresList.map(e => e.sphere);
+    for (const t of grantedMap.keys()) if (!titles.includes(t)) titles.push(t);
+
+    for (const title of titles) {
+      const entry = sphereEntry(active, title);
+      const granted = grantedMap.has(title);
+      const grantedItems = grantedMap.get(title) || [];
+      const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
       const fr = model.frag;
-      const freePicks = entry.freePicks || [];
+      const freePicks = (entry && entry.freePicks) || [];
+      const extras = (entry && entry.talents) || [];
+      // Contador = talentos que o personagem tem na esfera (concedidos + grátis + extras).
+      const count = grantedItems.length + freePicks.length + extras.length;
+
       const group = document.createElement('section');
       group.className = 'char-sphere';
       const h3 = document.createElement('h3');
       h3.className = 'char-sphere-title';
-      h3.textContent = `${entry.sphere} — ${sphereCost(entry)} talento(s)`;
+      h3.textContent = `${title} — ${count} talento(s)`;
+      if (granted) {
+        const badge = document.createElement('span');
+        badge.className = 'char-granted-badge';
+        badge.textContent = 'concedida';
+        h3.appendChild(badge);
+      }
       group.appendChild(h3);
 
-      if (model.bases.length || freePicks.length) {
+      if (model.bases.length || freePicks.length || grantedItems.length) {
         const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Incluído com a esfera';
         group.appendChild(sub);
         const box = document.createElement('div'); box.className = 'char-cards';
-        for (const it of model.bases) box.appendChild(charTalentCard(fr, it, 'base', entry.sphere));
-        for (const it of freePicks) box.appendChild(charTalentCard(fr, it, 'free', entry.sphere));
+        for (const it of model.bases) box.appendChild(charTalentCard(fr, it, 'base', title));
+        for (const it of grantedItems) box.appendChild(charTalentCard(fr, it, 'granted', title));
+        for (const it of freePicks) box.appendChild(charTalentCard(fr, it, 'free', title));
         group.appendChild(box);
       }
 
-      if (entry.talents.length) {
+      if (extras.length) {
         const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Talentos';
         group.appendChild(sub);
         const box = document.createElement('div'); box.className = 'char-cards';
-        for (const t of entry.talents) box.appendChild(charTalentCard(fr, t, 'extra', entry.sphere));
+        for (const it of extras) box.appendChild(charTalentCard(fr, it, 'extra', title));
         group.appendChild(box);
       }
 
-      const rm = document.createElement('button');
-      rm.type = 'button'; rm.className = 'char-sphere-remove'; rm.dataset.removesphere = entry.sphere;
-      rm.textContent = 'Remover esfera';
-      group.appendChild(rm);
+      if (!granted) { // esferas concedidas pela subclasse não podem ser removidas
+        const rm = document.createElement('button');
+        rm.type = 'button'; rm.className = 'char-sphere-remove'; rm.dataset.removesphere = title;
+        rm.textContent = 'Remover esfera';
+        group.appendChild(rm);
+      }
 
       frag.appendChild(group);
     }
@@ -1671,6 +1844,7 @@ function migrateCharacters() {
   for (const c of chars) {
     if (!c.proficiencies) { c.proficiencies = { skills: [], tools: [] }; changed = true; }
     if (!('tradition' in c)) { c.tradition = 'base'; changed = true; } // regra da mesa: +2 talentos a todos
+    if (!('subclass' in c)) { c.subclass = ''; changed = true; }
     if (Array.isArray(c.spheres)) {
       for (const e of c.spheres) {
         if ('freePick' in e) { e.freePicks = e.freePick ? [e.freePick] : []; delete e.freePick; changed = true; }
