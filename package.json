@@ -6,6 +6,7 @@
   "scripts": {
     "extract": "node scripts/extract-structured.js",
     "validate": "node scripts/validate.js",
+    "test": "node scripts/test-rules.js",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

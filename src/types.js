@@ -143,4 +143,44 @@
  * @property {ProgressionRow[]} progression
  */
 
+/* ---- Character model (Phase 3: talent references are stable ids) ---- */
+
+/**
+ * @typedef {Object} CharSphere
+ * @property {string} sphere        Sphere id.
+ * @property {Section} section
+ * @property {Object} [choices]     e.g. { pkg: 'formula' } for package spheres.
+ * @property {string[]} freePicks   Talent ids taken via the sphere's free picks.
+ * @property {string[]} talents     Talent ids taken as extra (slot-costing) picks.
+ */
+
+/**
+ * @typedef {Object} Character
+ * @property {string} id
+ * @property {string} name
+ * @property {string} className
+ * @property {string} [subclass]
+ * @property {number} level
+ * @property {number} [keyMod]
+ * @property {string} [tradition]
+ * @property {{skills: string[], tools: string[]}} proficiencies
+ * @property {CharSphere[]} spheres
+ */
+
+/**
+ * @typedef {Object} DataIndex
+ * @property {Map<string, Talent>} talentById
+ * @property {Map<string, Sphere>} sphereById
+ * @property {Object<string, ClassDef>} classes
+ * @property {Object<string, any>} classFeatures
+ */
+
+/**
+ * A single prerequisite check result.
+ * @typedef {Object} PrereqResult
+ * @property {boolean} ok            All structured prereqs satisfied.
+ * @property {Prerequisite[]} missing    Structured prereqs not met (block).
+ * @property {Prerequisite[]} unverified Text prereqs needing manual confirmation.
+ */
+
 export {};

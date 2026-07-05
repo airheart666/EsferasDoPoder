@@ -5,8 +5,8 @@
 
 ## Current Status
 
-**Active step:** Phase 3 — builder on structured data + rules engine (next)
-**Last cleared:** Phase 2 — validator — 2026-07-05 (validate + typecheck both green)
+**Active step:** Phase 3 — step 1 (rules engine) COMPLETE; next: class-features id migration + wire app.js
+**Last cleared:** Phase 3 step 1 — src/rules.js — 2026-07-05 (typecheck + 12-assertion smoke test green)
 **Pending deploy:** NO (feature branch `structured-mechanics-layer`, not merging until proven)
 **Open for Owner:** 84 talents flagged `_needsReview`, catalogued in `data/CURATION-NOTES.md`. Confident
 sphere variants (Domínio de Feras→das Feras, Guardiã→Guardião, Temporal→Tempo, Climática→Clima) and 5e
@@ -102,6 +102,29 @@ Decisions made:
   `scripts/` is verified by running, not typed.
 
 Reviewer findings: (pending)
+Deploy: pending
+
+---
+
+### Phase 3 (step 1) — Rules engine — COMPLETE
+*Date: 2026-07-05*
+
+Files changed:
+- `src/rules.js` — pure, typed rules engine (dual-mode like parser.js): index; derived stats; talent-slot
+  budget (progression + tradition + feature bonus); granted spheres; owned/accessed sets; prereq check
+  (talent/sphere/level enforced, text→unverified); canAddTalent/canAccessSphere.
+- `src/types.js` — Character/CharSphere/DataIndex/PrereqResult typedefs.
+- `scripts/test-rules.js` + `npm test` — 12 assertions on real data.
+
+Result: `npm test` 12/12; `npm run typecheck` green. Confirms the target behavior: advanced talent is
+BLOCKED without its sphere/prereq-talents/level and passes once met; over-budget blocked; granted access
+free. Live app.js NOT yet touched (safe).
+
+Decisions made:
+- Build budget = talent slots (magic/martial), not PM (PM is a derived casting pool). Matches app.js:1654.
+- Structured prereqs block; `text` prereqs are "unverified" (surfaced, never silently pass/block).
+
+Reviewer findings: (formal Richard pass deferred to end of Phase 3, when app.js is wired)
 Deploy: pending
 
 ---
