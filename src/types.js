@@ -141,6 +141,16 @@
  * @property {string}  keyAbility
  * @property {'PM'|'Chi'|'none'|null} resource
  * @property {ProgressionRow[]} progression
+ * @property {string[]} [crossSpheres]  Titles of other-section spheres buyable with this class's budget.
+ */
+
+/**
+ * Result of computeGrants: what a character's subclass/class grants resolve to,
+ * applying the conditional access-vs-specific rule.
+ * @typedef {Object} GrantResult
+ * @property {Set<string>} accessSpheres    Sphere ids granted BASE access (character lacked prior access).
+ * @property {Set<string>} specificTalents  Talent ids granted specifically (character had prior access).
+ * @property {Array<{sphereId:string, talentId:string, name?:string, feature?:string, level:number}>} pendingReplacements  Granted specifics the character already owns → free replacement choice (deferred).
  */
 
 /* ---- Character model (Phase 3: talent references are stable ids) ---- */

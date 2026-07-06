@@ -23,6 +23,7 @@
  * @typedef {import('./types.js').Prerequisite} Prerequisite
  * @typedef {import('./types.js').DataIndex} DataIndex
  * @typedef {import('./types.js').PrereqResult} PrereqResult
+ * @typedef {import('./types.js').GrantResult} GrantResult
  */
 
 const Rules = (() => {
@@ -139,21 +140,69 @@ const Rules = (() => {
   }
 
   /**
-   * Sphere ids the character gets for free via subclass/class grants (by level).
-   * @param {Character} char @param {DataIndex} idx @returns {Set<string>}
+   * Resolve subclass/class grants under the CONDITIONAL rule (Spheres of Power):
+   * a granted talent gives the SPECIFIC talent if its sphere is already accessible,
+   * otherwise only the sphere's BASE access. Processed in level order; both
+   * slot-bought spheres and earlier granted-access count as "prior access". A granted
+   * specific the character already owns becomes a (deferred) replacement choice.
+   * @param {Character} char @param {DataIndex} idx @returns {GrantResult}
    */
-  function grantedSphereIds(char, idx) {
-    /** @type {Set<string>} */ const ids = new Set();
+  function computeGrants(char, idx) {
+    /** @type {Set<string>} */ const accessSpheres = new Set();
+    /** @type {Set<string>} */ const specificTalents = new Set();
+    /** @type {GrantResult['pendingReplacements']} */ const pendingReplacements = [];
     const cf = idx.classFeatures[char.className];
-    if (!cf) return ids;
+    if (!cf) return { accessSpheres, specificTalents, pendingReplacements };
     const level = char.level || 1;
+    /** @type {Array<{level:number, feature?:string, talents:any[]}>} */ const grants = [];
     /** @param {any} node */
-    const collect = node => {
-      for (const g of node.grants || []) if (g.level <= level) for (const t of g.talents || []) ids.add(slug(t.sphere));
-    };
-    if (char.subclass && cf.subclasses && cf.subclasses[char.subclass]) collect(cf.subclasses[char.subclass]);
-    if (cf.grants) collect(cf);
-    return ids;
+    const gather = node => { for (const g of node.grants || []) if ((g.level || 1) <= level) grants.push(g); };
+    if (char.subclass && cf.subclasses && cf.subclasses[char.subclass]) gather(cf.subclasses[char.subclass]);
+    if (cf.grants) gather(cf);
+    grants.sort((a, b) => (a.level || 1) - (b.level || 1));
+
+    const accessed = new Set((char.spheres || []).map(e => e.sphere));   // prior access (slots), grows as we grant access
+    const owned = new Set();                                             // slot picks (for the "already owns" check)
+    for (const e of char.spheres || []) { for (const id of e.freePicks || []) owned.add(id); for (const id of e.talents || []) owned.add(id); }
+
+    for (const g of grants) {
+      for (const t of g.talents || []) {
+        if (!t.id) continue; // unresolved grant talent — skip
+        const S = slug(t.sphere);
+        if (accessed.has(S)) {
+          if (owned.has(t.id) || specificTalents.has(t.id)) pendingReplacements.push({ sphereId: S, talentId: t.id, name: t.name, feature: g.feature, level: g.level || 1 });
+          else specificTalents.add(t.id);
+        } else {
+          accessSpheres.add(S); accessed.add(S); // gain base access instead of the specific talent
+        }
+      }
+    }
+    return { accessSpheres, specificTalents, pendingReplacements };
+  }
+
+  // Sphere ids granted FREE base access (cost 0). Spheres whose specific talent was
+  // granted are already accessible via slots/earlier grants, so they are NOT here.
+  /** @param {Character} char @param {DataIndex} idx @returns {Set<string>} */
+  function grantedSphereIds(char, idx) { return computeGrants(char, idx).accessSpheres; }
+
+  /**
+   * The section a sphere's cost counts against FOR THIS CHARACTER: the class's own
+   * type if the sphere is one of the class/subclass `crossSpheres` (a class spending
+   * its budget on the other section, e.g. Artífice buying Engenhosidade with magic
+   * slots), else the sphere's own section.
+   * @param {Character} char @param {string} sphereId @param {DataIndex} idx @returns {Section}
+   */
+  function effectiveSection(char, sphereId, idx) {
+    const sph = idx.sphereById.get(sphereId);
+    const own = sph ? sph.section : /** @type {Section} */ ('magic');
+    const cls = idx.classes[char.className];
+    if (!cls) return own;
+    /** @type {Set<string>} */ const cross = new Set();
+    for (const title of cls.crossSpheres || []) cross.add(slug(title));
+    const cf = idx.classFeatures[char.className];
+    const sub = cf && char.subclass && cf.subclasses && cf.subclasses[char.subclass];
+    if (sub) for (const title of sub.crossSpheres || []) cross.add(slug(title));
+    return cross.has(sphereId) ? cls.type : own;
   }
 
   /**
@@ -167,7 +216,7 @@ const Rules = (() => {
     let magic = 0, martial = 0;
     for (const e of char.spheres || []) {
       const cost = (granted.has(e.sphere) ? 0 : 1) + (e.talents ? e.talents.length : 0);
-      if (e.section === 'martial') martial += cost; else magic += cost;
+      if (effectiveSection(char, e.sphere, idx) === 'martial') martial += cost; else magic += cost;
     }
     return { magic, martial };
   }
@@ -180,9 +229,8 @@ const Rules = (() => {
   }
 
   /**
-   * Talent ids the character owns: base abilities of every accessed sphere + all
-   * chosen picks. (Granted SPECIFIC talents by id land here once class-features has
-   * ids — Phase 3 step 2.)
+   * Talent ids the character owns: base abilities of every accessed sphere, all
+   * chosen picks, and subclass-granted specific talents.
    * @param {Character} char @param {DataIndex} idx @returns {Set<string>}
    */
   function ownedTalentIds(char, idx) {
@@ -195,6 +243,7 @@ const Rules = (() => {
       for (const id of e.freePicks || []) set.add(id);
       for (const id of e.talents || []) set.add(id);
     }
+    for (const id of computeGrants(char, idx).specificTalents) set.add(id); // granted specific talents
     return set;
   }
 
@@ -225,9 +274,10 @@ const Rules = (() => {
    */
   function canAddTalent(char, talent, idx) {
     const prereq = prereqCheck(char, talent, idx);
-    const remaining = bySection(talentBudget(char, idx), talent.section) - bySection(slotsSpent(char, idx), talent.section);
+    const section = effectiveSection(char, talent.sphere, idx);
+    const remaining = bySection(talentBudget(char, idx), section) - bySection(slotsSpent(char, idx), section);
     const budgetOk = remaining >= 1;
-    return { ok: prereq.ok && budgetOk, prereq, budgetOk, remaining, section: talent.section };
+    return { ok: prereq.ok && budgetOk, prereq, budgetOk, remaining, section };
   }
 
   /**
@@ -238,14 +288,15 @@ const Rules = (() => {
     const sph = idx.sphereById.get(sphereId);
     if (!sph) return { ok: false, reason: 'unknown-sphere', granted: false, remaining: 0, section: /** @type {Section} */ ('magic') };
     const granted = grantedSphereIds(char, idx).has(sphereId);
-    const remaining = bySection(talentBudget(char, idx), sph.section) - bySection(slotsSpent(char, idx), sph.section);
-    return { ok: granted || remaining >= 1, granted, remaining, section: sph.section, reason: '' };
+    const section = effectiveSection(char, sphereId, idx);
+    const remaining = bySection(talentBudget(char, idx), section) - bySection(slotsSpent(char, idx), section);
+    return { ok: granted || remaining >= 1, granted, remaining, section, reason: '' };
   }
 
   return {
     indexData, classRow, derivedStats, traditionBonus, classFeatureBonus,
-    talentBudget, grantedSphereIds, slotsSpent, accessedSphereIds, ownedTalentIds,
-    prereqCheck, canAddTalent, canAccessSphere,
+    talentBudget, computeGrants, grantedSphereIds, effectiveSection, slotsSpent,
+    accessedSphereIds, ownedTalentIds, prereqCheck, canAddTalent, canAccessSphere,
   };
 })();
 

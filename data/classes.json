@@ -3,6 +3,9 @@
     "type": "magic",
     "keyAbility": "Inteligência",
     "resource": "PM",
+    "crossSpheres": [
+      "Engenhosidade"
+    ],
     "progression": [
       {
         "level": 1,

@@ -2,6 +2,7 @@
   "Artífice": {
     "subclasses": {
       "Alquimista": {
+        "crossSpheres": ["Alquimia"],
         "grants": [
           { "level": 3, "feature": "Magias de Alquimista", "talents": [
             { "name": "Revitalizar", "sphere": "Vida" },

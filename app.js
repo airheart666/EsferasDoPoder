@@ -867,7 +867,7 @@ function applyTalentToggle(active, title, item, cardEl) {
   const granted = isGrantedSphere(active, title);
   const entry = sphereEntry(active, title);
   if (!entry && !granted) return false; // esfera não adquirida nem concedida
-  if (granted && isGrantedTalent(active, title, item.name)) return false; // talento concedido é fixo
+  if (isGrantedTalentId(active, item.id)) return false; // talento específico concedido é fixo
   const id = item.id;
   if (!id || !dataIndex) { showCharNotice(cardEl, 'Não foi possível localizar este talento nos dados estruturados — recarregue a página.'); return false; }
   if (entry && (entry.freePicks || []).includes(id)) { removeFreePick(active, title, id); return true; }
@@ -1277,34 +1277,32 @@ function subclassesOf(className) {
   }
   return subs;
 }
-// Talentos concedidos (nível ≤ char.level), agrupados por título de esfera.
+// Concessões da subclasse pela REGRA CONDICIONAL (fonte única: Rules.computeGrants):
+// esferas com ACESSO grátis (sem acesso prévio → só habilidades iniciais) vs.
+// talentos ESPECÍFICOS concedidos (com acesso prévio). Ver src/rules.js.
+function charGrants(char) {
+  return (char && dataIndex) ? Rules.computeGrants(char, dataIndex)
+    : { accessSpheres: new Set(), specificTalents: new Set(), pendingReplacements: [] };
+}
+// Mapa TÍTULO da esfera → talentos específicos concedidos (p/ exibição na ficha).
+// Inclui esferas de acesso-concedido (lista vazia) para que apareçam na ficha.
 function grantedSpheresMap(char) {
   const map = new Map();
-  if (!char || !dataIndex) return map;
-  const cf = dataIndex.classFeatures[char.className];
-  const sub = cf && char.subclass && cf.subclasses && cf.subclasses[char.subclass];
-  const grants = (sub && sub.grants) || [];
-  const lvl = char.level || 1;
-  for (const g of grants) {
-    if ((g.level || 1) > lvl) continue;
-    for (const t of (g.talents || [])) {
-      const sphere = t.sphere; // título ("Vida"), como no card/UI
-      if (!map.has(sphere)) map.set(sphere, []);
-      map.get(sphere).push({ id: t.id || null, name: t.name, sphere, anchor: '', slug: '', level: g.level, feature: g.feature });
-    }
+  const g = charGrants(char);
+  for (const sid of g.accessSpheres) { const title = sphereTitleById.get(sid) || sid; if (!map.has(title)) map.set(title, []); }
+  for (const id of g.specificTalents) {
+    const t = dataIndex && dataIndex.talentById.get(id);
+    if (!t) continue;
+    const title = sphereTitleById.get(t.sphere) || t.sphere;
+    if (!map.has(title)) map.set(title, []);
+    map.get(title).push({ id: t.id, name: t.name, sphere: title });
   }
   return map;
 }
-function isGrantedSphere(char, title) { return grantedSpheresMap(char).has(title); }
-// Chave de um talento concedido, sempre pelo NOME-BASE (sem a tag do card) — assim
-// os nomes curados casam com os cards reais mesmo que uns tenham tag e outros não.
-function grantedTalentKey(title, name) { return normalizeTerm(talentBaseName(name)) + '|' + normalizeTerm(title); }
-function grantedKeys(char, title) {
-  const set = new Set();
-  for (const it of (grantedSpheresMap(char).get(title) || [])) set.add(grantedTalentKey(title, it.name));
-  return set;
-}
-function isGrantedTalent(char, title, name) { return grantedKeys(char, title).has(grantedTalentKey(title, name)); }
+// Esfera com ACESSO concedido de graça (custo 0 + selo "concedida").
+function isGrantedSphere(char, title) { const sid = sphereIdFor(title); return !!sid && charGrants(char).accessSpheres.has(sid); }
+// Um talento específico concedido pela subclasse é fixo (não removível/alternável).
+function isGrantedTalentId(char, id) { return !!id && charGrants(char).specificTalents.has(id); }
 
 /* ---- Esferas adquiridas (custo real + escolha grátis condicional) ------------
    entry = { sphere: <id>, section, choices:{pkg?}, freePicks:[talentId…], talents:[talentId…] }.
@@ -1346,6 +1344,10 @@ function acquireSphere(char, title) {
 function tryAcquireSphere(char, title) {
   if (!char) return { ok: false, message: 'Crie ou selecione um personagem primeiro.' };
   if (sphereEntry(char, title)) return { ok: true };
+  // Acesso concedido pela subclasse é grátis e automático — "adquirir" é um no-op
+  // (não cria entrada; criar uma faria a esfera contar como "acesso prévio pago" na
+  // regra condicional de concessões).
+  if (isGrantedSphere(char, title)) return { ok: true };
   const sid = sphereIdFor(title);
   if (!sid || !dataIndex) return { ok: false, message: 'Os dados desta esfera não puderam ser carregados — recarregue a página.' };
   const check = Rules.canAccessSphere(char, sid, dataIndex);
@@ -1476,9 +1478,11 @@ function talentRole(talent, cs) {
 }
 // Contexto de concessão de uma esfera para um personagem (p/ cardDisplayRole/UI).
 function grantCtxFor(char, title) {
+  const g = charGrants(char);
+  const sid = sphereIdFor(title);
   return {
-    granted: char ? isGrantedSphere(char, title) : false,
-    grantedKeys: char ? grantedKeys(char, title) : new Set(),
+    granted: !!sid && g.accessSpheres.has(sid),  // esfera de acesso-concedido (base grátis)
+    specificTalents: g.specificTalents,           // ids dos talentos específicos concedidos
     title,
   };
 }
@@ -1490,7 +1494,8 @@ function cardDisplayRole(model, title, name, isBaseCard, gc) {
   const id = resolveTalentId(title, name, isBaseCard);
   const structural = id ? (model.roleByKey.get(id) || 'ignore') : 'ignore';
   if (structural === 'ignore' || structural === 'base') return { id, role: structural };
-  if (gc && gc.granted) return { id, role: gc.grantedKeys.has(grantedTalentKey(title, name)) ? 'granted' : 'extra' };
+  if (id && gc && gc.specificTalents.has(id)) return { id, role: 'granted' };  // talento específico concedido
+  if (gc && gc.granted) return { id, role: 'extra' };  // esfera de acesso-concedido: sem grátis; resto é extra pago
   return { id, role: structural };
 }
 // Classifica os TALENTOS da esfera (dado estruturado; para o pacote escolhido).
@@ -1756,6 +1761,18 @@ function renderCharacter() {
   const h2 = document.createElement('h2');
   h2.textContent = 'Esferas e talentos';
   frag.appendChild(h2);
+
+  // Concessão de talento específico que o personagem já possui → a regra permite
+  // escolher um substituto na mesma esfera (picker adiado; por ora, nota manual).
+  const pendingGrants = charGrants(active).pendingReplacements;
+  if (pendingGrants.length) {
+    const note = document.createElement('p');
+    note.className = 'char-warn';
+    note.textContent = 'Talento(s) concedido(s) pela subclasse que você já possui: ' +
+      pendingGrants.map(p => `${p.name || p.talentId} (${sphereTitleById.get(p.sphereId) || p.sphereId})`).join(', ') +
+      '. A regra permite escolher um talento substituto da mesma esfera — por ora, adicione-o manualmente com o + no capítulo.';
+    frag.appendChild(note);
+  }
   if (spheresList.length === 0 && grantedMap.size === 0) {
     const p = document.createElement('p');
     p.className = 'glossary-intro';
@@ -1816,7 +1833,7 @@ function renderCharacter() {
 
     for (const title of titles) {
       const entry = sphereEntry(active, title);
-      const granted = grantedMap.has(title);
+      const granted = isGrantedSphere(active, title); // acesso concedido → selo "concedida" + não removível
       const grantedItems = grantedMap.get(title) || [];
       const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
       const fr = model.frag;

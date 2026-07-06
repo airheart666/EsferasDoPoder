@@ -12,6 +12,7 @@
       "type": { "enum": ["magic", "martial"] },
       "keyAbility": { "type": "string" },
       "resource": { "enum": ["PM", "Chi", "none", null], "description": "Casting resource pool, or null for classes with none." },
+      "crossSpheres": { "type": "array", "items": { "type": "string" }, "description": "Sphere titles of the OTHER section this class may buy with its own talent budget (e.g. a magic class spending magic slots on a martial sphere)." },
       "progression": {
         "type": "array",
         "minItems": 1,

@@ -66,7 +66,7 @@ async function main() {
     `({
        Rules, dataIndex, sphereIdByTitle, sphereTitleById, chapters,
        createCharacter, updateCharacter, getCharacters, saveCharacters,
-       sphereEntry, acquireSphere, tryAcquireSphere, isGrantedSphere,
+       sphereEntry, acquireSphere, tryAcquireSphere, isGrantedSphere, grantedSpheresMap,
        addFreePickChecked, addExtraTalentChecked, toggleExtraTalent,
        migrateCharacters, characterStats, getSphereModel, resolveTalentIdLoose,
      })`,
@@ -150,6 +150,18 @@ async function main() {
   ok('Sangue Feérico grants Mente for free', t.isGrantedSphere(sangue, 'Mente'));
   const grantedAcquire = t.tryAcquireSphere(sangue, 'Mente');
   ok('acquiring an already-granted sphere is a no-op ok', grantedAcquire.ok === true);
+  // Feature A (conditional grants): Mente is access-granted at L1 (base only, no Cativar);
+  // later same-sphere grants (Delírio@L3) ARE granted specifically.
+  const menteGrantedIds = (t.grantedSpheresMap(sangue).get('Mente') || []).map(x => x.id);
+  ok('conditional grant: Delírio granted specifically, Cativar not (access-only)',
+     menteGrantedIds.includes('mente-delirio') && !menteGrantedIds.includes('mente-cativar'));
+
+  /* ---------------------------------------------------------------------
+   * 4b) Cross-section: Artífice buys the martial Engenhosidade sphere with
+   *     its magic budget (Feature B).
+   * --------------------------------------------------------------------- */
+  const artif = t.createCharacter({ name: 'Sanity Artífice', className: 'Artífice', level: 5 });
+  ok('Artífice acquires martial Engenhosidade via magic budget', t.tryAcquireSphere(artif, 'Engenhosidade').ok === true);
 
   /* ---------------------------------------------------------------------
    * 5) Migration: legacy {name,sphere,anchor,slug} item shape -> talent ids,

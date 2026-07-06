@@ -16,7 +16,8 @@
           "additionalProperties": false,
           "properties": {
             "features": { "type": "array", "items": { "$ref": "#/definitions/feature" } },
-            "grants": { "type": "array", "items": { "$ref": "#/definitions/grant" } }
+            "grants": { "type": "array", "items": { "$ref": "#/definitions/grant" } },
+            "crossSpheres": { "type": "array", "items": { "type": "string" }, "description": "Sphere titles of the other section this subclass may buy with the class's talent budget." }
           }
         }
       },

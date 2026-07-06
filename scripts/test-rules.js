@@ -11,12 +11,13 @@ const Rules = require('../src/rules.js');
 const ROOT = path.resolve(__dirname, '..');
 const load = p => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 
-// Load structured spheres + the (still root) classes / class-features.
+// Load the same structured data the browser uses (data/*): spheres + migrated
+// classes/class-features (grants carry resolved talent ids, which computeGrants needs).
 const spheres = fs.readdirSync(path.join(ROOT, 'data', 'spheres'))
   .filter(f => f.endsWith('.json'))
   .map(f => load(path.join('data', 'spheres', f)));
-const classes = load('classes.json');
-const classFeatures = load('class-features.json');
+const classes = load(path.join('data', 'classes.json'));
+const classFeatures = load(path.join('data', 'class-features.json'));
 const idx = Rules.indexData(spheres, classes, classFeatures);
 
 let pass = 0;
@@ -79,5 +80,28 @@ ok('Sangue Feérico grants sphere access (e.g. mente/luz/ilusao)', grantedIds.si
 const gsid = [...grantedIds][0];
 const access = Rules.canAccessSphere(feiSangue, gsid, idx);
 ok('granted sphere access costs 0 slots', access.granted === true && access.ok === true);
+
+// --- Feature A: conditional grants (Sangue Feérico grants Cativar(Mente)@L1, Delírio(Mente)@L3) ---
+const gNoAccess = Rules.computeGrants(feiSangue, idx);
+ok('no prior Mente access → Mente base granted, Cativar NOT', gNoAccess.accessSpheres.has('mente') && !gNoAccess.specificTalents.has('mente-cativar'));
+ok('later same-sphere grant → Delírio granted specifically', gNoAccess.specificTalents.has('mente-delirio'));
+ok('granted specific talent is owned (KG-2 closed)', Rules.ownedTalentIds(feiSangue, idx).has('mente-delirio') && !Rules.ownedTalentIds(feiSangue, idx).has('mente-cativar'));
+/** @type {any} */
+const feiSangueMente = { ...feiSangue, spheres: [{ sphere: 'mente', section: 'magic', choices: {}, freePicks: [], talents: [] }] };
+const gWithAccess = Rules.computeGrants(feiSangueMente, idx);
+ok('prior Mente access (slot) → Cativar IS granted', gWithAccess.specificTalents.has('mente-cativar'));
+
+// --- Feature B: cross-section (Artífice → Engenhosidade with magic budget) ---
+/** @type {any} */
+const artifice = { id: 'a', name: 'Art', className: 'Artífice', subclass: '', level: 5, keyMod: 3, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [] };
+ok('Artífice: Engenhosidade counts as magic section', Rules.effectiveSection(artifice, 'engenhosidade', idx) === 'magic');
+ok('Artífice: a normal martial sphere stays martial', Rules.effectiveSection(artifice, 'atletismo', idx) === 'martial');
+ok('Artífice can access Engenhosidade (magic budget)', Rules.canAccessSphere(artifice, 'engenhosidade', idx).ok === true && Rules.canAccessSphere(artifice, 'engenhosidade', idx).section === 'magic');
+const engTalent = idx.sphereById.get('engenhosidade').talents.find(t => t.kind === 'talent' && (!t.prerequisites || t.prerequisites.length === 0));
+ok('Artífice can add an Engenhosidade talent vs magic budget', Rules.canAddTalent(artifice, engTalent, idx).section === 'magic');
+/** @type {any} */
+const artAlq = { ...artifice, subclass: 'Alquimista' };
+ok('Alquimista subclass adds Alquimia as magic', Rules.effectiveSection(artAlq, 'alquimia', idx) === 'magic');
+ok('non-Artífice magic class cannot cross to Engenhosidade', Rules.effectiveSection(feit, 'engenhosidade', idx) === 'martial');
 
 console.log(`\n${pass} assertions passed.`);
