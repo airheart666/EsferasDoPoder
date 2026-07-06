@@ -66,7 +66,7 @@ async function main() {
     `({
        Rules, dataIndex, sphereIdByTitle, sphereTitleById, chapters,
        createCharacter, updateCharacter, getCharacters, saveCharacters,
-       sphereEntry, acquireSphere, tryAcquireSphere, isGrantedSphere, grantedSpheresMap,
+       sphereEntry, acquireSphere, tryAcquireSphere, isGrantedSphere, grantedSpheresMap, resolveSpec,
        addFreePickChecked, addExtraTalentChecked, toggleExtraTalent,
        migrateCharacters, characterStats, getSphereModel, resolveTalentIdLoose,
      })`,
@@ -155,6 +155,10 @@ async function main() {
   const menteGrantedIds = (t.grantedSpheresMap(sangue).get('Mente') || []).map(x => x.id);
   ok('conditional grant: Delírio granted specifically, Cativar not (access-only)',
      menteGrantedIds.includes('mente-delirio') && !menteGrantedIds.includes('mente-cativar'));
+  // P1: a granted sphere still offers its own free pick (Mente grants "um talento
+  // (encanto) de sua escolha"); Vida grants none.
+  ok('granted Mente offers its free pick', t.resolveSpec(sangue, 'Mente', {}).freePicks === 1);
+  ok('granted Vida offers no free pick', t.resolveSpec(sangue, 'Vida', {}).freePicks === 0);
 
   /* ---------------------------------------------------------------------
    * 4b) Cross-section: Artífice buys the martial Engenhosidade sphere with

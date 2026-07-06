@@ -161,7 +161,10 @@ const Rules = (() => {
     if (cf.grants) gather(cf);
     grants.sort((a, b) => (a.level || 1) - (b.level || 1));
 
-    const accessed = new Set((char.spheres || []).map(e => e.sphere));   // prior access (slots), grows as we grant access
+    // Prior access = spheres the player PAID a slot for (granted-access entries,
+    // marked `granted`, are the RESULT of grants and must not seed prior access —
+    // otherwise a granted sphere's free-pick entry would flip access→specific).
+    const accessed = new Set((char.spheres || []).filter(e => !e.granted).map(e => e.sphere));
     const owned = new Set();                                             // slot picks (for the "already owns" check)
     for (const e of char.spheres || []) { for (const id of e.freePicks || []) owned.add(id); for (const id of e.talents || []) owned.add(id); }
 
@@ -212,10 +215,9 @@ const Rules = (() => {
    * @returns {{magic:number, martial:number}}
    */
   function slotsSpent(char, idx) {
-    const granted = grantedSphereIds(char, idx);
     let magic = 0, martial = 0;
     for (const e of char.spheres || []) {
-      const cost = (granted.has(e.sphere) ? 0 : 1) + (e.talents ? e.talents.length : 0);
+      const cost = (e.granted ? 0 : 1) + (e.talents ? e.talents.length : 0); // granted access is free
       if (effectiveSection(char, e.sphere, idx) === 'martial') martial += cost; else magic += cost;
     }
     return { magic, martial };

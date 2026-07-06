@@ -91,6 +91,15 @@ const feiSangueMente = { ...feiSangue, spheres: [{ sphere: 'mente', section: 'ma
 const gWithAccess = Rules.computeGrants(feiSangueMente, idx);
 ok('prior Mente access (slot) → Cativar IS granted', gWithAccess.specificTalents.has('mente-cativar'));
 
+// --- P1: a GRANTED-access entry (granted:true, e.g. holding a free pick) must NOT
+//     seed prior access (else it would flip Mente access→Cativar) and costs 0. ---
+/** @type {any} */
+const feiGrantedEntry = { ...feiSangue, spheres: [{ sphere: 'mente', section: 'magic', granted: true, choices: {}, freePicks: [], talents: [] }] };
+const gGE = Rules.computeGrants(feiGrantedEntry, idx);
+ok('granted:true entry does NOT seed prior access (Mente stays access-granted, not Cativar)', gGE.accessSpheres.has('mente') && !gGE.specificTalents.has('mente-cativar'));
+ok('granted:true sphere entry costs 0 slots', Rules.slotsSpent(feiGrantedEntry, idx).magic === 0);
+ok('slot (granted:false) sphere entry costs 1 slot', Rules.slotsSpent(feiSangueMente, idx).magic === 1);
+
 // --- Feature B: cross-section (Artífice → Engenhosidade with magic budget) ---
 /** @type {any} */
 const artifice = { id: 'a', name: 'Art', className: 'Artífice', subclass: '', level: 5, keyMod: 3, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [] };

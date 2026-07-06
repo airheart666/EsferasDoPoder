@@ -719,22 +719,10 @@ function renderSphereAcquireBar(chapter) {
   who.appendChild(whoSel);
   bar.appendChild(who);
 
-  // Esfera concedida pela subclasse: acesso grátis, sem botão de adquirir/grátis.
-  if (isGrantedSphere(active, chapter.title)) {
-    const status = document.createElement('span');
-    status.className = 'acquire-status granted';
-    status.textContent = `✦ ${chapter.title} concedida${active.subclass ? ' (' + active.subclass + ')' : ''}`;
-    bar.appendChild(status);
-    if (entry && entry.talents.length) {
-      const cost = document.createElement('span');
-      cost.className = 'acquire-cost';
-      cost.textContent = `${entry.talents.length} talento(s) extra`;
-      bar.appendChild(cost);
-    }
-    return bar;
-  }
+  const granted = isGrantedSphere(active, chapter.title);
 
-  if (!entry) {
+  // Não adquirida e não concedida → só o botão de adquirir.
+  if (!granted && !entry) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'acquire-btn';
@@ -744,12 +732,18 @@ function renderSphereAcquireBar(chapter) {
     return bar;
   }
 
-  const spec = resolveSpec(active, chapter.title, entry.choices);
+  // Adquirida OU concedida: mostra pacote + escolha grátis (uma esfera concedida
+  // também dá o grátis inicial da esfera). `entry` pode ser null numa esfera
+  // concedida ainda sem escolhas — os seletores criam a entrada ao escolher.
+  const choices = (entry && entry.choices) || {};
+  const spec = resolveSpec(active, chapter.title, choices);
   const model = getSphereModel(chapter.title, spec.pkg);
 
   const status = document.createElement('span');
-  status.className = 'acquire-status';
-  status.textContent = `✓ ${chapter.title} adquirida`;
+  status.className = 'acquire-status' + (granted ? ' granted' : '');
+  status.textContent = granted
+    ? `✦ ${chapter.title} concedida${active.subclass ? ' (' + active.subclass + ')' : ''}`
+    : `✓ ${chapter.title} adquirida`;
   bar.appendChild(status);
 
   // Seletor de pacote-base (Alquimia)
@@ -786,7 +780,7 @@ function renderSphereAcquireBar(chapter) {
 
   // Seletores de escolha grátis (N = capacidade resolvida)
   if (spec.freePicks > 0 && model.freeGroup.length) {
-    const picks = (entry.freePicks || []).slice(0, spec.freePicks);
+    const picks = ((entry && entry.freePicks) || []).slice(0, spec.freePicks);
     for (let i = 0; i < spec.freePicks; i++) {
       const lbl = document.createElement('label');
       lbl.className = 'freepick-l';
@@ -814,15 +808,20 @@ function renderSphereAcquireBar(chapter) {
 
   const cost = document.createElement('span');
   cost.className = 'acquire-cost';
-  cost.textContent = `${sphereCost(entry, active)} talento(s)`;
+  const extras = (entry && entry.talents) ? entry.talents.length : 0;
+  cost.textContent = granted
+    ? (extras ? `${extras} talento(s) extra` : 'acesso grátis')
+    : `${sphereCost(entry, active)} talento(s)`;
   bar.appendChild(cost);
 
-  const rm = document.createElement('button');
-  rm.type = 'button';
-  rm.className = 'sphere-remove';
-  rm.dataset.removesphere = chapter.title;
-  rm.textContent = 'Remover esfera';
-  bar.appendChild(rm);
+  if (!granted) { // esferas concedidas pela subclasse não podem ser removidas
+    const rm = document.createElement('button');
+    rm.type = 'button';
+    rm.className = 'sphere-remove';
+    rm.dataset.removesphere = chapter.title;
+    rm.textContent = 'Remover esfera';
+    bar.appendChild(rm);
+  }
   return bar;
 }
 
@@ -1333,7 +1332,9 @@ function acquireSphere(char, title) {
   if (!Array.isArray(char.spheres)) char.spheres = [];
   let e = sphereEntry(char, title);
   if (!e) {
-    e = { sphere: sid, section: sph.section, choices: {}, freePicks: [], talents: [] };
+    // Marca se o ACESSO é concedido (grátis) — calculado ANTES de inserir a entrada
+    // (a esfera ainda não está em char.spheres, então não interfere no cálculo).
+    e = { sphere: sid, section: sph.section, granted: isGrantedSphere(char, title), choices: {}, freePicks: [], talents: [] };
     char.spheres.push(e);
     updateCharacter(char.id, { spheres: char.spheres });
   }
@@ -1495,8 +1496,7 @@ function cardDisplayRole(model, title, name, isBaseCard, gc) {
   const structural = id ? (model.roleByKey.get(id) || 'ignore') : 'ignore';
   if (structural === 'ignore' || structural === 'base') return { id, role: structural };
   if (id && gc && gc.specificTalents.has(id)) return { id, role: 'granted' };  // talento específico concedido
-  if (gc && gc.granted) return { id, role: 'extra' };  // esfera de acesso-concedido: sem grátis; resto é extra pago
-  return { id, role: structural };
+  return { id, role: structural };  // free/extra normal — esfera concedida também dá o grátis inicial da esfera
 }
 // Classifica os TALENTOS da esfera (dado estruturado; para o pacote escolhido).
 // Cacheado por título|pacote. `model.frag` guarda os cards renderizados do
@@ -1957,6 +1957,13 @@ function migrateCharacters() {
       changed = true;
     }
 
+    // Heurística p/ o campo `granted` (acesso concedido pela subclasse, custo 0) em
+    // entradas antigas: a esfera aparece nas concessões da subclasse ≤ nível.
+    const grantedSids = new Set();
+    const mcf = dataIndex && dataIndex.classFeatures[c.className];
+    const msub = mcf && c.subclass && mcf.subclasses && mcf.subclasses[c.subclass];
+    if (msub) for (const g of (msub.grants || [])) if ((g.level || 1) <= (c.level || 1)) for (const tt of (g.talents || [])) { const s = sphereIdByTitle.get(tt.sphere); if (s) grantedSids.add(s); }
+
     for (const e of c.spheres) {
       if ('freePick' in e) { e.freePicks = e.freePick ? [e.freePick] : []; delete e.freePick; changed = true; }
       if (!Array.isArray(e.freePicks)) { e.freePicks = []; changed = true; }
@@ -1969,6 +1976,7 @@ function migrateCharacters() {
         if (sid) { e.sphere = sid; changed = true; }
         else { e._needsReview = true; changed = true; } // esfera não reconhecida — mantém, sinaliza
       }
+      if (!('granted' in e)) { e.granted = grantedSids.has(e.sphere); changed = true; }
       if (!e.section) {
         const sph = dataIndex && dataIndex.sphereById.get(e.sphere);
         e.section = sph ? sph.section : sphereSection(sphereTitleById.get(e.sphere) || e.sphere);
