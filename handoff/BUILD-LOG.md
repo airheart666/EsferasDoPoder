@@ -8,11 +8,11 @@
 **Active step:** Phase 3 — step 1 (rules engine) COMPLETE; next: class-features id migration + wire app.js
 **Last cleared:** Phase 3 step 1 — src/rules.js — 2026-07-05 (typecheck + 12-assertion smoke test green)
 **Pending deploy:** NO (feature branch `structured-mechanics-layer`, not merging until proven)
-**Open for Owner:** 84 talents flagged `_needsReview`, catalogued in `data/CURATION-NOTES.md`. Confident
-sphere variants (Domínio de Feras→das Feras, Guardiã→Guardião, Temporal→Tempo, Climática→Clima) and 5e
-skills auto-resolved. Remaining need game knowledge (Esgrima/Berserker/Taverna sphere aliases) OR are
-rules-engine design inputs (OR-alternatives, descriptive prereqs like "qualquer talento que conceda
-resistência a ácido"). 2 real `pp`→`PM` source typos to fix in content.
+**Curation DONE (Buckets 1 & 2):** flags 100→18. All talent-name mismatches resolved (sphere
+self-references fixed at source; talent-name variants via extractor `TALENT_ALIAS`; source renames
+Ataque→Golpe, Pomada→Bálsamo, Tempo→sphere-req; Borda Irregular card-split; 2 pp→PM typos). The
+remaining 18 are Bucket 3 = rules-engine prereq TYPES (OR-groups, tag/package/descriptive), logged as
+Phase 3 backlog in `data/CURATION-NOTES.md` — not data bugs.
 
 ---
 
