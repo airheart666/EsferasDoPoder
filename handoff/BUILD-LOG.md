@@ -188,6 +188,16 @@ Deploy: pending
   "Invocação") that hasn't been migrated to ids yet cannot be auto-resolved during migration (no DOM
   signal available to disambiguate) — kept in `entry._unresolvedLegacy`, surfaced in the character
   sheet, never silently dropped. Affects at most 1-2 spheres, only pre-this-change saves.
+- **KG-4 (P2 follow-up)** — Universal's **Criação de Magias** package has stricter, unmodeled rules:
+  (a) access requires the character to already have ≥ 2 other magic spheres; (b) its free (esfera dupla)
+  pick must satisfy that talent's OWN multi-sphere prerequisites — the two spheres it names + any specific
+  talent — which are encoded only in the talent's name/tags (e.g. "Transformar Objeto (esfera dupla,
+  Alteração, Aprimoramento (Animar Objeto))" ⇒ needs Alteração + Aprimoramento spheres + the Animar Objeto
+  talent), not in the structured `prerequisites`. Deferred per Owner. Needs: a package-access prereq
+  (N spheres of a section) + parsing (esfera dupla) talents' dependencies into structured prereqs.
+  Related minor open item: whether Universal's general/untagged talents (Contrafeitiço, Foco Místico,
+  Pacote Universal, the "Extremo" advanced ones) should be pickable regardless of the chosen package
+  (currently `talentTags` scopes them out).
 
 ---
 
