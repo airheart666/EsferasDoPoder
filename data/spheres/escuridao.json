@@ -691,8 +691,8 @@
           "id": "escuridao"
         },
         {
-          "type": "text",
-          "text": "Sinal Sombreado"
+          "type": "talent",
+          "id": "escuridao-semblante-sombreado"
         },
         {
           "type": "level",
@@ -706,10 +706,7 @@
           "text": "Você pode tornar seu Semblante Sombreado totalmente opaco, protegendo o alvo de danos causados pela luz do dia, mágicos ou normais, e concedendo vantagem em testes de resistência contra efeitos baseados em luz e visão. Você sempre é tratado como se tivesse seus olhos desviados em relação a ataques de olhar, embora não sofra nenhuma das penalidades associadas. Criaturas com extrema vulnerabilidade à luz do dia, como vampiros, são protegidas da luz do dia por este talento."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Sinal Sombreado"
-      ]
+      "body": ""
     },
     {
       "id": "escuridao-meia-noite",
@@ -765,8 +762,8 @@
           "id": "escuridao"
         },
         {
-          "type": "text",
-          "text": "Atravessar a Escuridão"
+          "type": "talent",
+          "id": "escuridao-passar-pela-escuridao"
         },
         {
           "type": "level",
@@ -775,10 +772,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode se tornar uma área de sua própria escuridão. Você se torna incorpóreo, permitindo que entre e se mova pelos espaços de outras criaturas, e ganha um deslocamento de voo de 9 metros.\n\nVocê não pode realizar ataques nesta forma e ganha resistência a fontes não mágicas de dano contundente, cortante e perfurante, embora ainda possa conjurar magias e usar efeitos de esfera (desde que não necessite de componentes somáticos, de foco ou outros que não possam ser fornecidos nesta forma). Enquanto incorpóreo, você pode se mover através de outras criaturas e objetos como se fossem terreno acidentado. Você sofre 5 (1d10) de dano de força se terminar seu turno dentro de um objeto. Você não pode cair e permanecer pairando no ar mesmo quando atordoado ou incapacitado de alguma outra forma.\n\nVocê pode ajustar seu tamanho como uma ação bônus, de uma esfera de 1,5 metro de raio até o volume máximo da sua escuridão, e pode imbuir-se com um talento (escuridão) com seu custo normal em pontos de magia. Alterar seu talento ativo (escuridão) é uma ação, e você deve pagar qualquer custo em pontos de magia associado ao novo talento. Você não pode manipular objetos ou usar seus próprios itens nesta forma. Terminar este efeito antecipadamente é uma ação bônus que lhe permite rematerializar-se em qualquer espaço desocupado dentro da sua área de escuridão pessoal.",
-      "_needsReview": [
-        "prereq:unresolved:Atravessar a Escuridão"
-      ]
+      "body": "Você pode se tornar uma área de sua própria escuridão. Você se torna incorpóreo, permitindo que entre e se mova pelos espaços de outras criaturas, e ganha um deslocamento de voo de 9 metros.\n\nVocê não pode realizar ataques nesta forma e ganha resistência a fontes não mágicas de dano contundente, cortante e perfurante, embora ainda possa conjurar magias e usar efeitos de esfera (desde que não necessite de componentes somáticos, de foco ou outros que não possam ser fornecidos nesta forma). Enquanto incorpóreo, você pode se mover através de outras criaturas e objetos como se fossem terreno acidentado. Você sofre 5 (1d10) de dano de força se terminar seu turno dentro de um objeto. Você não pode cair e permanecer pairando no ar mesmo quando atordoado ou incapacitado de alguma outra forma.\n\nVocê pode ajustar seu tamanho como uma ação bônus, de uma esfera de 1,5 metro de raio até o volume máximo da sua escuridão, e pode imbuir-se com um talento (escuridão) com seu custo normal em pontos de magia. Alterar seu talento ativo (escuridão) é uma ação, e você deve pagar qualquer custo em pontos de magia associado ao novo talento. Você não pode manipular objetos ou usar seus próprios itens nesta forma. Terminar este efeito antecipadamente é uma ação bônus que lhe permite rematerializar-se em qualquer espaço desocupado dentro da sua área de escuridão pessoal."
     },
     {
       "id": "escuridao-escuridao-total",
@@ -827,8 +821,8 @@
           "id": "escuridao"
         },
         {
-          "type": "text",
-          "text": "Atravessar a Escuridão"
+          "type": "talent",
+          "id": "escuridao-passar-pela-escuridao"
         },
         {
           "type": "level",
@@ -842,10 +836,7 @@
           "text": "Um alvo deve estar em uma área de penumbra ou escuridão para que você aplique este talento (fusão) a ele. Quando este talento é aplicado, o alvo sai temporariamente do Plano Material e entra no local onde ele faz fronteira com o Plano das Sombras. Enquanto estiver nesta região de sombra, o alvo pode se mover a uma velocidade de 80 quilômetros por hora, vendo sua posição relativa no Plano Material, embora pareça borrada e sem detalhes. A qualquer momento, o alvo pode voltar para o Plano Material, momento em que os efeitos deste talento (fusão) cessam imediatamente."
         }
       ],
-      "body": "Devido à indefinição da realidade entre o Plano das Sombras e o Plano Material, o alvo não consegue distinguir detalhes do terreno ou das áreas por onde você passa durante o trânsito, nem você consegue prever perfeitamente onde sua viagem terminará. É impossível avaliar distâncias com precisão, tornando esta habilidade inadequada para reconhecimento ou espionagem. Além disso, ao voltar para o Plano Material, o alvo é deslocado 1d10 x 30 metros em uma direção horizontal aleatória a partir do ponto final desejado.\n\nSe isso colocar o alvo dentro de um objeto sólido, ele será deslocado 1d10 x 300 metros na mesma direção. Se isso ainda o colocar dentro de um objeto sólido, ele será deslocado para o espaço vazio mais próximo disponível, mas o esforço dessa atividade aumenta o nível de exaustão da criatura em 1.",
-      "_needsReview": [
-        "prereq:unresolved:Atravessar a Escuridão"
-      ]
+      "body": "Devido à indefinição da realidade entre o Plano das Sombras e o Plano Material, o alvo não consegue distinguir detalhes do terreno ou das áreas por onde você passa durante o trânsito, nem você consegue prever perfeitamente onde sua viagem terminará. É impossível avaliar distâncias com precisão, tornando esta habilidade inadequada para reconhecimento ou espionagem. Além disso, ao voltar para o Plano Material, o alvo é deslocado 1d10 x 30 metros em uma direção horizontal aleatória a partir do ponto final desejado.\n\nSe isso colocar o alvo dentro de um objeto sólido, ele será deslocado 1d10 x 300 metros na mesma direção. Se isso ainda o colocar dentro de um objeto sólido, ele será deslocado para o espaço vazio mais próximo disponível, mas o esforço dessa atividade aumenta o nível de exaustão da criatura em 1."
     },
     {
       "id": "escuridao-fundir-se-na-escuridao",

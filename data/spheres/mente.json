@@ -596,8 +596,8 @@
           "id": "mente"
         },
         {
-          "type": "text",
-          "text": "Enredar"
+          "type": "talent",
+          "id": "mente-cativar"
         },
         {
           "type": "talent",
@@ -627,10 +627,7 @@
           "text": "Ao aplicar um encanto poderoso de Enredar, você cria um vínculo memético entre você e o alvo. Se o alvo tiver acesso à esfera da Mente, magias de encantamento ou efeitos semelhantes, ele pode tratar tanto a si quanto você como o conjurador desses efeitos. Todos os cálculos (CD, nível, habilidade de conjuração) usam o valor do alvo, mas você é considerado o conjurador para os resultados. Exemplo: Se o alvo conjurar Ler Mente em outra criatura, você também recebe as informações lidas. Se o alvo possuir Vínculo Memético, ele pode transferir para você o controle de um encanto de Enredar que tenha conjurado, criando uma cadeia de alvos enredados. Essa cadeia só pode ter comprimento até seu modificador de habilidade chave (sem contar você)."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Enredar"
-      ]
+      "body": ""
     },
     {
       "id": "mente-controle-mental",

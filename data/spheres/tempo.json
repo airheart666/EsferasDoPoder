@@ -764,8 +764,8 @@
       "duration": "Especial",
       "prerequisites": [
         {
-          "type": "text",
-          "text": "Tempo"
+          "type": "sphere",
+          "id": "tempo"
         },
         {
           "type": "level",
@@ -774,10 +774,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode colocar uma criatura em estado de animação suspensa (um teste de resistência de Constituição bem-sucedido nega este efeito). Para a criatura, o tempo deixa de fluir e sua condição se torna fixa. A criatura não envelhece. Suas funções corporais praticamente cessam e nenhuma força ou efeito pode feri-la. Ao aplicar este efeito em uma criatura, você pode optar por colocar o alvo em estase permanentemente ou definir um limite de tempo ou uma condição para a habilidade. Quando o limite de tempo expira ou a condição é atendida, a estase temporal termina. A estase temporal pode ser dissipada.",
-      "_needsReview": [
-        "prereq:unresolved:Tempo"
-      ]
+      "body": "Você pode colocar uma criatura em estado de animação suspensa (um teste de resistência de Constituição bem-sucedido nega este efeito). Para a criatura, o tempo deixa de fluir e sua condição se torna fixa. A criatura não envelhece. Suas funções corporais praticamente cessam e nenhuma força ou efeito pode feri-la. Ao aplicar este efeito em uma criatura, você pode optar por colocar o alvo em estase permanentemente ou definir um limite de tempo ou uma condição para a habilidade. Quando o limite de tempo expira ou a condição é atendida, a estase temporal termina. A estase temporal pode ser dissipada."
     },
     {
       "id": "tempo-clone-temporal",

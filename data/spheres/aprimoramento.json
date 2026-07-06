@@ -19,7 +19,7 @@
       "tags": [],
       "cost": {
         "base": 0,
-        "text": "0 pp"
+        "text": "0 PM"
       },
       "action": "1 ação",
       "range": "9 metros",
@@ -34,10 +34,7 @@
           "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem a necessidade de uma ação."
         }
       ],
-      "body": "Você pode aprimorar uma criatura ou objeto dentro do alcance. Se o alvo for uma criatura ou objeto inteligente que não queira ser aprimorado (ou um objeto na posse de uma criatura que não queira que seu objeto seja aprimorado), o alvo tem direito a um teste de resistência de Sabedoria para negar o efeito. Ao final de cada um de seus turnos, a criatura afetada pode fazer um teste de resistência de Sabedoria. Em caso de sucesso, o efeito termina para aquela criatura ou objeto em sua posse.",
-      "_needsReview": [
-        "cost:uses-pp-not-PM"
-      ]
+      "body": "Você pode aprimorar uma criatura ou objeto dentro do alcance. Se o alvo for uma criatura ou objeto inteligente que não queira ser aprimorado (ou um objeto na posse de uma criatura que não queira que seu objeto seja aprimorado), o alvo tem direito a um teste de resistência de Sabedoria para negar o efeito. Ao final de cada um de seus turnos, a criatura afetada pode fazer um teste de resistência de Sabedoria. Em caso de sucesso, o efeito termina para aquela criatura ou objeto em sua posse."
     },
     {
       "id": "aprimoramento-degradar",

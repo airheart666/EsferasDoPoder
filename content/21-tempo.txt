@@ -390,7 +390,7 @@ Você adquire as seguintes habilidades:
 Você pode retornar uma criatura ejetada do contínuo espaço-tempo usando Ejetar Aprimorado. Esta habilidade deve ser usada no local onde o alvo foi ejetado pela primeira vez. Este talento também pode ser usado para libertar uma criatura dos efeitos de um aprisionamento ou labirinto, e pode ser usado para dissipar instantaneamente qualquer efeito contínuo criado pelo Tempo, como um efeito de lentidão, bolha temporal ou clone temporal.
 
 #### Estase Temporal
-**Pré-requisitos**: :: Tempo, 15º nível ou superior.
+**Pré-requisitos**: :: Esfera do Tempo, 15º nível ou superior.
 
 **Duração**: :: Especial
 **Custo**: :: 3PM

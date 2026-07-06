@@ -481,8 +481,8 @@
       "body": "Objetos perecíveis podem ser revestidos com esta substância para evitar que estraguem por 1 hora. Se aplicada a um membro decepado ou corpo morto, impedirá a necrose, a progressão de doenças, bem como a reanimação durante esse período.\n\nPotência: Gaste Foco Marcial. A duração aumenta para 2 horas. A duração aumenta em mais 2 horas nos níveis 5 (4 horas), 11 (6 horas) e 17 (8 horas)."
     },
     {
-      "id": "m-alquimia-pomada",
-      "name": "Pomada (fórmula, médico)",
+      "id": "m-alquimia-balsamo",
+      "name": "Bálsamo (fórmula, médico)",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
@@ -1186,8 +1186,8 @@
           "id": "m-alquimia-pocao-de-regeneracao"
         },
         {
-          "type": "text",
-          "text": "Unguento"
+          "type": "talent",
+          "id": "m-alquimia-balsamo"
         },
         {
           "type": "talent",
@@ -1200,10 +1200,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode criar um elixir especial que restaura uma criatura à sua idade inicial como um jovem adulto.\n\nCada elixir da imortalidade conta como sete fórmulas para fins de determinação de quantas você pode ter criado simultaneamente.",
-      "_needsReview": [
-        "prereq:unresolved:Unguento"
-      ]
+      "body": "Você pode criar um elixir especial que restaura uma criatura à sua idade inicial como um jovem adulto.\n\nCada elixir da imortalidade conta como sete fórmulas para fins de determinação de quantas você pode ter criado simultaneamente."
     },
     {
       "id": "m-alquimia-pocao-de-cura",
@@ -1222,8 +1219,8 @@
           "id": "alquimia"
         },
         {
-          "type": "text",
-          "text": "Unguento"
+          "type": "talent",
+          "id": "m-alquimia-balsamo"
         },
         {
           "type": "level",
@@ -1232,10 +1229,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Um personagem que bebe o líquido vermelho mágico neste frasco recupera 2d4 + 2 pontos de vida. Beber uma poção de cura requer uma ação.\n\nCada poção de cura conta como duas fórmulas para fins de determinação de quantas você pode ter criado simultaneamente.\n\nPotência: Gaste Foco Marcial. O personagem recupera 1d6 pontos de vida adicionais. Os pontos de vida adicionais recuperados aumentam em 1d6 nos níveis 5 (+2d6), 11 (+3d6) e 17 (+4d6).\n\nEspecial: Potência também pode ser aplicada a Poções de Cura Maiores, Poções de Cura Superiores e Poções de Cura Supremas.",
-      "_needsReview": [
-        "prereq:unresolved:Unguento"
-      ]
+      "body": "Um personagem que bebe o líquido vermelho mágico neste frasco recupera 2d4 + 2 pontos de vida. Beber uma poção de cura requer uma ação.\n\nCada poção de cura conta como duas fórmulas para fins de determinação de quantas você pode ter criado simultaneamente.\n\nPotência: Gaste Foco Marcial. O personagem recupera 1d6 pontos de vida adicionais. Os pontos de vida adicionais recuperados aumentam em 1d6 nos níveis 5 (+2d6), 11 (+3d6) e 17 (+4d6).\n\nEspecial: Potência também pode ser aplicada a Poções de Cura Maiores, Poções de Cura Superiores e Poções de Cura Supremas."
     },
     {
       "id": "m-alquimia-imposicao-material",
@@ -1309,8 +1303,8 @@
           "id": "alquimia"
         },
         {
-          "type": "text",
-          "text": "Unguento"
+          "type": "talent",
+          "id": "m-alquimia-balsamo"
         },
         {
           "type": "talent",
@@ -1323,10 +1317,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Quando uma criatura bebe esta poção, ela regenera quaisquer membros decepados dentro do próximo minuto. Além disso, a criatura recupera um número de pontos de vida igual à metade do seu bônus de proficiência no início do seu turno a cada rodada durante a duração.\n\nCada poção de regeneração conta como três fórmulas para fins de determinação de quantas você pode ter criado de uma vez.\n\nPotência: Gaste Foco Marcial. A criatura também regenerará membros que foram decepados há 1 hora, aumentando em 1 hora nos níveis 5 (2 horas atrás), 11 (3 horas atrás) e 17 (4 horas atrás).",
-      "_needsReview": [
-        "prereq:unresolved:Unguento"
-      ]
+      "body": "Quando uma criatura bebe esta poção, ela regenera quaisquer membros decepados dentro do próximo minuto. Além disso, a criatura recupera um número de pontos de vida igual à metade do seu bônus de proficiência no início do seu turno a cada rodada durante a duração.\n\nCada poção de regeneração conta como três fórmulas para fins de determinação de quantas você pode ter criado de uma vez.\n\nPotência: Gaste Foco Marcial. A criatura também regenerará membros que foram decepados há 1 hora, aumentando em 1 hora nos níveis 5 (2 horas atrás), 11 (3 horas atrás) e 17 (4 horas atrás)."
     },
     {
       "id": "m-alquimia-veneno-de-pedra",

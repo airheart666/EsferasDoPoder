@@ -8,7 +8,7 @@ Você pode aplicar melhorias em criaturas e objetos, alterando suas propriedades
 **Alcance**: :: 9 metros
 **Duração**: :: Concentração, até 10 minutos
 **Alvo**: :: 1 criatura ou objeto
-**Custo**: :: 0 pp
+**Custo**: :: 0 PM
 **Teste de Resistência**: :: Sabedoria
 
 Você pode aprimorar uma criatura ou objeto dentro do alcance. Se o alvo for uma criatura ou objeto inteligente que não queira ser aprimorado (ou um objeto na posse de uma criatura que não queira que seu objeto seja aprimorado), o alvo tem direito a um teste de resistência de Sabedoria para negar o efeito. Ao final de cada um de seus turnos, a criatura afetada pode fazer um teste de resistência de Sabedoria. Em caso de sucesso, o efeito termina para aquela criatura ou objeto em sua posse.

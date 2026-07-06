@@ -229,7 +229,22 @@
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
-      "body": "Você pode empunhar uma arma ou arma improvisada como um escudo improvisado até o início do seu próximo turno; essa decisão é tomada no início do seu turno e não requer nenhuma ação.\n\nAo empunhar um escudo improvisado, você ganha um bônus de +1 na CA como se estivesse equipado com um escudo, mas não pode usar esse item para atacar. Um escudo improvisado conta como um escudo normal para a esfera de Escudo.\n\nSempre que você estiver empunhando um escudo frágil e uma criatura causar um acerto crítico contra você, como uma reação, você pode quebrar seu escudo para transformar o acerto crítico em um acerto normal. Borda Irregular (frágil)\n\nVocê sabe como quebrar um objeto para usar suas bordas irregulares a seu favor. Ao rolar dano com uma arma frágil, você pode quebrar essa arma para causar 1d6 de dano adicional. A quantidade de dano aumenta em um passo nos níveis 5 (1d8), 11 (1d10) e 17 (1d12)."
+      "body": "Você pode empunhar uma arma ou arma improvisada como um escudo improvisado até o início do seu próximo turno; essa decisão é tomada no início do seu turno e não requer nenhuma ação.\n\nAo empunhar um escudo improvisado, você ganha um bônus de +1 na CA como se estivesse equipado com um escudo, mas não pode usar esse item para atacar. Um escudo improvisado conta como um escudo normal para a esfera de Escudo.\n\nSempre que você estiver empunhando um escudo frágil e uma criatura causar um acerto crítico contra você, como uma reação, você pode quebrar seu escudo para transformar o acerto crítico em um acerto normal."
+    },
+    {
+      "id": "m-brigao-borda-irregular",
+      "name": "Borda Irregular (frágil)",
+      "sphere": "brigao",
+      "section": "martial",
+      "kind": "talent",
+      "group": "Talentos de Frágil",
+      "tags": [
+        "fragil"
+      ],
+      "prerequisites": [],
+      "advanced": false,
+      "enhancements": [],
+      "body": "Você sabe como quebrar um objeto para usar suas bordas irregulares a seu favor. Ao rolar dano com uma arma frágil, você pode quebrar essa arma para causar 1d6 de dano adicional. A quantidade de dano aumenta em um passo nos níveis 5 (1d8), 11 (1d10) e 17 (1d12)."
     },
     {
       "id": "m-brigao-fragmento-incrustado",
@@ -423,8 +438,8 @@
           "id": "brigao"
         },
         {
-          "type": "text",
-          "text": "Gume Afiado"
+          "type": "talent",
+          "id": "m-brigao-borda-irregular"
         },
         {
           "type": "level",
@@ -433,10 +448,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você sabe como quebrar um objeto no meio de um golpe para infligir ferimentos graves. Uma vez por descanso curto, antes de fazer um ataque com uma arma frágil, você pode gastar seu foco marcial, quebrando a arma. Se o ataque acertar, você pode, como uma reação, transformar um acerto normal em um acerto crítico. Você pode adquirir este talento várias vezes, cada vez aumentando o número de vezes que você pode usar este talento por descanso curto.",
-      "_needsReview": [
-        "prereq:unresolved:Gume Afiado"
-      ]
+      "body": "Você sabe como quebrar um objeto no meio de um golpe para infligir ferimentos graves. Uma vez por descanso curto, antes de fazer um ataque com uma arma frágil, você pode gastar seu foco marcial, quebrando a arma. Se o ataque acertar, você pode, como uma reação, transformar um acerto normal em um acerto crítico. Você pode adquirir este talento várias vezes, cada vez aumentando o número de vezes que você pode usar este talento por descanso curto."
     },
     {
       "id": "m-brigao-embriaguez-eterna",
@@ -452,8 +464,8 @@
           "id": "brigao"
         },
         {
-          "type": "text",
-          "text": "Inalador de Fumaça"
+          "type": "talent",
+          "id": "m-brigao-embriagado-pelos-vapores"
         },
         {
           "type": "talent",
@@ -466,10 +478,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar o talento Inalador de Fumaça, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela.",
-      "_needsReview": [
-        "prereq:unresolved:Inalador de Fumaça"
-      ]
+      "body": "Ao usar o talento Inalador de Fumaça, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela."
     },
     {
       "id": "m-brigao-ficar-mole",
@@ -531,8 +540,8 @@
           "id": "brigao"
         },
         {
-          "type": "text",
-          "text": "Descontraído e Relaxado"
+          "type": "talent",
+          "id": "m-brigao-bem-solto"
         },
         {
           "type": "level",
@@ -541,10 +550,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar Descontraído e Relaxado para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido.",
-      "_needsReview": [
-        "prereq:unresolved:Descontraído e Relaxado"
-      ]
+      "body": "Ao usar Descontraído e Relaxado para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido."
     },
     {
       "id": "m-brigao-quebrador-de-reliquias",

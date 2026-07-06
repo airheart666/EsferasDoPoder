@@ -35,7 +35,7 @@ Escolha um talento (adivinhar) que você possua; o efeito de adivinhar é determ
 
 #### Sentido
 **Tempo de Conjuração**: :: 1 ação
-**Custo**: :: 0 pp
+**Custo**: :: 0 PM
 **Alcance**: :: pessoal
 **Duração**: :: Concentração até 1 hora
 

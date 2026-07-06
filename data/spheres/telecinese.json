@@ -724,8 +724,8 @@
           "id": "telecinese"
         },
         {
-          "type": "text",
-          "text": "Precisão"
+          "type": "talent",
+          "id": "telecinese-destreza"
         },
         {
           "type": "talent",
@@ -743,10 +743,7 @@
           "text": "Quando você usa levitação em uma criatura, você pode assumir o controle preciso de sua forma física. Você pode forçá-la a correr, pular, manipular objetos e empunhar armas, mas não pode forçá-la a usar habilidades especiais, como poderes de classe ou magias que não sejam função de movimento corporal, e não pode controlar suas cordas vocais, embora possa impedi-la de emitir sons. Quaisquer ações que você force o alvo a realizar custam ações idênticas suas; se você o força a usar uma ação, isso também custa uma ação sua. Se você força o alvo a entrar em combate ou usar qualquer perícia, use seu modificador de atributo principal em vez do modificador de Força ou Destreza dele, e use suas próprias proficiências em perícias e armas ao determinar o bônus para seus ataques ou ações. Como o alvo está apenas sob seu controle físico, em seu turno ele ainda pode realizar ações puramente mentais."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Precisão"
-      ]
+      "body": ""
     },
     {
       "id": "telecinese-girocinese",

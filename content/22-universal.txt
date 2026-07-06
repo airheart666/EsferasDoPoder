@@ -365,7 +365,7 @@ O alcance de suas habilidades de esfera mágica aumenta em 1 passo. Você pode e
 **Aprimoramento 1PM**: :: Dobre o alcance da sua habilidade de conjuração de esferas. Dobrar o alcance de um efeito de esfera com alcance de toque permite que você atinja criaturas a 1,5 metro a mais de distância.
 
 
-#### Ataque (metaesfera)
+#### Golpe (metasfera)
 **Aprimoramento 1PM**: :: Ao usar um efeito de esfera mágica que tem como alvo uma única criatura ou objeto e é conjurado como uma ação, você pode aplicar o efeito através de um único ataque com arma, que substitui qualquer ataque mágico (se houver) exigido por esse efeito. Qualquer criatura ou objeto danificado pelo ataque também é afetado pelo efeito da esfera. Todas as outras limitações do efeito devem ser atendidas, incluindo custo em pontos de magia e alcance.
 
 

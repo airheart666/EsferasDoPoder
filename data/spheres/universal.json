@@ -1091,14 +1091,14 @@
       "body": "O alcance de suas habilidades de esfera mágica aumenta em 1 passo. Você pode escolher este talento até três vezes, e seus efeitos se acumulam. Quando você aumenta o alcance de uma habilidade de esfera mágica com um alcance inicial de Si mesmo, o alvo da sua habilidade deve ser um alvo voluntário. Efeitos de esfera cujo alcance aumenta conforme você sobe de nível têm seus aumentos de alcance baseados em nível aplicados após o alcance final.\n\nAlcance inicialAlcance finalAutoToqueToque9 metros9 metros18 metros18 metros36 metros36 metros90 metros90 metros180 metros"
     },
     {
-      "id": "universal-ataque",
-      "name": "Ataque (metaesfera)",
+      "id": "universal-golpe",
+      "name": "Golpe (metasfera)",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos da Metasfera",
       "tags": [
-        "metaesfera"
+        "metasfera"
       ],
       "prerequisites": [],
       "advanced": false,
@@ -1432,8 +1432,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Prolongada (metasfera)"
+          "type": "talent",
+          "id": "universal-estendido"
         },
         {
           "type": "level",
@@ -1442,10 +1442,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode reduzir o custo em pontos de magia dos aprimoramentos de talento Prolongada (metasfera) em 1 ponto de magia (mínimo 0). Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam; cada vez que o aprimoramento for escolhido, o custo em pontos de magia será reduzido em 1 ponto de magia (mínimo 0).",
-      "_needsReview": [
-        "prereq:unresolved:Prolongada (metasfera)"
-      ]
+      "body": "Você pode reduzir o custo em pontos de magia dos aprimoramentos de talento Prolongada (metasfera) em 1 ponto de magia (mínimo 0). Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam; cada vez que o aprimoramento for escolhido, o custo em pontos de magia será reduzido em 1 ponto de magia (mínimo 0)."
     },
     {
       "id": "universal-oportunista-extremo",
@@ -1513,8 +1510,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Golpe (metaesfera)"
+          "type": "talent",
+          "id": "universal-golpe"
         },
         {
           "type": "level",
@@ -1523,10 +1520,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode reduzir o custo em pontos de magia do aprimoramento de talento Golpe (metaesfera) em 1 ponto de magia (mínimo 0).",
-      "_needsReview": [
-        "prereq:unresolved:Golpe (metaesfera)"
-      ]
+      "body": "Você pode reduzir o custo em pontos de magia do aprimoramento de talento Golpe (metaesfera) em 1 ponto de magia (mínimo 0)."
     }
   ],
   "_reviewed": false

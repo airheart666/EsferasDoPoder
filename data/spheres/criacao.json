@@ -388,8 +388,8 @@
           "id": "criacao"
         },
         {
-          "type": "text",
-          "text": "Forja"
+          "type": "talent",
+          "id": "criacao-forjar"
         },
         {
           "type": "sphere",
@@ -411,10 +411,7 @@
           "text": "Você pode criar matérias-primas. Este é um efeito instantâneo; você cria o material como material normal autoevidente e, portanto, ele não pode ser dissipado e não tem duração. Você não pode criar itens complexos, ou seja, você pode criar paredes, ameias, rampas ou domos, mas não pode criar catapultas, armaduras ou uma construção completa dessa maneira, embora o material possa ser criado como qualquer outro material após ser invocado. Você pode invocar qualquer material que possa criar, com exceção de gemas, metais preciosos (como ouro ou prata) ou metais raros (como ferro frio ou mithril)."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Forja"
-      ]
+      "body": ""
     },
     {
       "id": "criacao-dissolucao",
@@ -512,16 +509,16 @@
           "id": "criacao"
         },
         {
-          "type": "text",
-          "text": "Mudar Material"
+          "type": "talent",
+          "id": "criacao-alterar-material"
         },
         {
           "type": "talent",
           "id": "criacao-materiais-expandidos"
         },
         {
-          "type": "text",
-          "text": "Forja"
+          "type": "talent",
+          "id": "criacao-forjar"
         },
         {
           "type": "level",
@@ -535,11 +532,7 @@
           "text": "Ao usar seu talento Mudar Material, você pode tornar a mudança um efeito instantâneo; a mudança é permanente e não pode ser dissipada. Você não pode criar uma mudança permanente envolvendo gemas, metais preciosos (como ouro ou prata) ou metais raros (como mithril). Se usado em um alvo em conjunto com os talentos Mudar Material e Moldar a Carne, outra aplicação dos talentos Mudar Material e Mudar Material pode retorná-lo ao normal por um tempo limitado. Somente outro uso do talento Mudança Permanente, ou magia suficientemente poderosa, como uma ressurreição verdadeira ou magia de desejo, pode reverter este efeito permanentemente."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Mudar Material",
-        "prereq:unresolved:Forja"
-      ]
+      "body": ""
     },
     {
       "id": "criacao-mudanca-de-estado",
@@ -557,8 +550,8 @@
           "id": "criacao"
         },
         {
-          "type": "text",
-          "text": "Mudar Matéria"
+          "type": "talent",
+          "id": "criacao-alterar-material"
         },
         {
           "type": "level",
@@ -567,10 +560,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar Mudar Matéria, você pode transformar líquidos e sólidos em qualquer um dos dois estados. Este é um efeito mágico e a mudança de forma em si não tem efeito adicional na condição do objeto alvo, não causando dano a ele. Ao transformar um sólido em líquido, o objeto resultante se dispersa normalmente, mas se recombina quando o efeito termina e no mesmo local, a menos que seus componentes tenham sido coletados e movidos para outro lugar. Se todos os pedaços de um objeto não estiverem presentes, o objeto ainda renasce a partir do maior pedaço restante.\n\nSe um objeto mágico for convertido em uma nova forma, suas propriedades mágicas não podem ser usadas, a menos que ainda sejam aplicáveis ao seu novo estado da matéria.",
-      "_needsReview": [
-        "prereq:unresolved:Mudar Matéria"
-      ]
+      "body": "Ao usar Mudar Matéria, você pode transformar líquidos e sólidos em qualquer um dos dois estados. Este é um efeito mágico e a mudança de forma em si não tem efeito adicional na condição do objeto alvo, não causando dano a ele. Ao transformar um sólido em líquido, o objeto resultante se dispersa normalmente, mas se recombina quando o efeito termina e no mesmo local, a menos que seus componentes tenham sido coletados e movidos para outro lugar. Se todos os pedaços de um objeto não estiverem presentes, o objeto ainda renasce a partir do maior pedaço restante.\n\nSe um objeto mágico for convertido em uma nova forma, suas propriedades mágicas não podem ser usadas, a menos que ainda sejam aplicáveis ao seu novo estado da matéria."
     },
     {
       "id": "criacao-sustento",

@@ -48,7 +48,7 @@
       "tags": [],
       "cost": {
         "base": 0,
-        "text": "0 pp"
+        "text": "0 PM"
       },
       "action": "1 ação",
       "range": "pessoal",
@@ -65,10 +65,7 @@
           "text": "O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado em seu turno, sem custo de ação."
         }
       ],
-      "body": "Você pode conceder a si mesmo sentidos paranormais com alcance de 9 metros. Escolha e obtenha os efeitos de um talento (sentido) que você possua.",
-      "_needsReview": [
-        "cost:uses-pp-not-PM"
-      ]
+      "body": "Você pode conceder a si mesmo sentidos paranormais com alcance de 9 metros. Escolha e obtenha os efeitos de um talento (sentido) que você possua."
     },
     {
       "id": "adivinhacao-detectar-monstruosidade",
@@ -1106,8 +1103,8 @@
           "id": "adivinhacao"
         },
         {
-          "type": "text",
-          "text": "Adivinhação"
+          "type": "talent",
+          "id": "adivinhacao-adivinhar"
         },
         {
           "type": "talent",
@@ -1133,10 +1130,7 @@
           "text": "Ao usar o talento avançado Adivinhação, você pode mover seu sensor sem seguir um alvo com uma velocidade de 45 metros uma vez por rodada, sem precisar de ação."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Adivinhação"
-      ]
+      "body": ""
     },
     {
       "id": "adivinhacao-buscar-conhecimento",
@@ -1218,8 +1212,8 @@
           "id": "adivinhacao"
         },
         {
-          "type": "text",
-          "text": "Radiografia"
+          "type": "talent",
+          "id": "adivinhacao-radiestesia"
         },
         {
           "type": "sphere",
@@ -1236,10 +1230,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Aprimoramento 3PM: Você pode encontrar a localização de qualquer criatura ou objeto. Para encontrar uma criatura, você deve tê-la visto ou possuir algum item que já lhe pertenceu. Para encontrar um objeto, você deve tê-lo tocado pelo menos uma vez. Esta habilidade tem alcance ilimitado e funciona através de fronteiras planares.\n\nEncontrar Localização ignora meios normais de proteção contra vidência ou outros meios de não detecção. De fato, nada além de uma magia de bloqueio mental, o talento avançado de Proteção Indefinível ou a intervenção direta de uma divindade impede que você descubra a localização exata do indivíduo ou objeto alvo. Você descobre o nome da localização da criatura ou objeto (lugar, nome, nome comercial, nome do prédio ou similar), comunidade, condado (ou divisão política similar), país, continente e o plano de existência onde o alvo se encontra.",
-      "_needsReview": [
-        "prereq:unresolved:Radiografia"
-      ]
+      "body": "Aprimoramento 3PM: Você pode encontrar a localização de qualquer criatura ou objeto. Para encontrar uma criatura, você deve tê-la visto ou possuir algum item que já lhe pertenceu. Para encontrar um objeto, você deve tê-lo tocado pelo menos uma vez. Esta habilidade tem alcance ilimitado e funciona através de fronteiras planares.\n\nEncontrar Localização ignora meios normais de proteção contra vidência ou outros meios de não detecção. De fato, nada além de uma magia de bloqueio mental, o talento avançado de Proteção Indefinível ou a intervenção direta de uma divindade impede que você descubra a localização exata do indivíduo ou objeto alvo. Você descobre o nome da localização da criatura ou objeto (lugar, nome, nome comercial, nome do prédio ou similar), comunidade, condado (ou divisão política similar), país, continente e o plano de existência onde o alvo se encontra."
     },
     {
       "id": "adivinhacao-ler-pressagios",

@@ -432,8 +432,8 @@
           "id": "canalha"
         },
         {
-          "type": "text",
-          "text": "Perícia Roubar"
+          "type": "talent",
+          "id": "m-canalha-roubar-pericia"
         },
         {
           "type": "level",
@@ -442,10 +442,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que usar Roubar Perícia, você pode escolher roubar um talento (mágico ou marcial) em vez de uma proficiência em perícia. Se tentar roubar uma esfera base para a qual o alvo possua talentos adicionais além do básico, você recebe desvantagem no seu teste. Criaturas afetadas não podem usar habilidades para as quais o talento pré-requisito foi roubado, e se você roubar talentos com pré-requisitos que você não atende, não poderá usá-los. Este é um efeito mágico.",
-      "_needsReview": [
-        "prereq:unresolved:Perícia Roubar"
-      ]
+      "body": "Sempre que usar Roubar Perícia, você pode escolher roubar um talento (mágico ou marcial) em vez de uma proficiência em perícia. Se tentar roubar uma esfera base para a qual o alvo possua talentos adicionais além do básico, você recebe desvantagem no seu teste. Criaturas afetadas não podem usar habilidades para as quais o talento pré-requisito foi roubado, e se você roubar talentos com pré-requisitos que você não atende, não poderá usá-los. Este é um efeito mágico."
     }
   ],
   "_reviewed": false

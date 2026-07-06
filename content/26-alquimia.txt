@@ -203,7 +203,7 @@ Objetos perecíveis podem ser revestidos com esta substância para evitar que es
 
 **Potência**: :: **Gaste Foco Marcial.** A duração aumenta para 2 horas. A duração aumenta em mais 2 horas nos níveis 5 (4 horas), 11 (6 horas) e 17 (8 horas).
 
-#### Pomada (fórmula, médico)
+#### Bálsamo (fórmula, médico)
 Um personagem que tenha esta pomada aplicada pode gastar um de seus Dados de Vida. A criatura então rola o dado e adiciona seu modificador de Constituição ao resultado. A criatura recupera pontos de vida iguais ao total (mínimo de 1).
 
 Uma criatura sem Dados de Vida restantes não pode se beneficiar da pomada. Administrar a pomada leva uma ação.
@@ -537,7 +537,7 @@ Cada elixir da saúde conta como três fórmulas para fins de determinação de 
 
 
 #### Elixir da Imortalidade (fórmula, médico)
-**Pré-requisitos**: :: Esfera de Alquimia (Antitoxina, Elixir da Saúde, Panaceia, Poção de Regeneração, Unguento, Sangue de Troll), 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Alquimia (Antitoxina, Elixir da Saúde, Panaceia, Poção de Regeneração, Bálsamo, Sangue de Troll), 1º nível ou superior.
 
 Você pode criar um elixir especial que restaura uma criatura à sua idade inicial como um jovem adulto.
 
@@ -545,7 +545,7 @@ Cada elixir da imortalidade conta como sete fórmulas para fins de determinaçã
 
 
 #### Poção de Cura (fórmula, médico)
-**Pré-requisitos**: :: Esfera de Alquimia (Unguento), 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Alquimia (Bálsamo), 1º nível ou superior.
 Um personagem que bebe o líquido vermelho mágico neste frasco recupera 2d4 + 2 pontos de vida. Beber uma poção de cura requer uma ação.
 
 Cada poção de cura conta como duas fórmulas para fins de determinação de quantas você pode ter criado simultaneamente.
@@ -579,7 +579,7 @@ Cada óleo do necromante conta como duas doses de veneno para fins de determina�
 
 
 #### Poção de Regeneração (fórmula, medicinal)
-**Pré-requisitos**: :: Esfera de Alquimia (Unguento, Sangue de Troll), 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Alquimia (Bálsamo, Sangue de Troll), 1º nível ou superior.
 
 Quando uma criatura bebe esta poção, ela regenera quaisquer membros decepados dentro do próximo minuto. Além disso, a criatura recupera um número de pontos de vida igual à metade do seu bônus de proficiência no início do seu turno a cada rodada durante a duração.
 

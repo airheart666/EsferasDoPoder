@@ -80,7 +80,9 @@ Você pode empunhar uma arma ou arma improvisada como um escudo improvisado até
 
 Ao empunhar um escudo improvisado, você ganha um bônus de +1 na CA como se estivesse equipado com um escudo, mas não pode usar esse item para atacar. Um escudo improvisado conta como um escudo normal para a esfera de Escudo.
 
-Sempre que você estiver empunhando um escudo frágil e uma criatura causar um acerto crítico contra você, como uma reação, você pode quebrar seu escudo para transformar o acerto crítico em um acerto normal. Borda Irregular (frágil)
+Sempre que você estiver empunhando um escudo frágil e uma criatura causar um acerto crítico contra você, como uma reação, você pode quebrar seu escudo para transformar o acerto crítico em um acerto normal.
+
+#### Borda Irregular (frágil)
 Você sabe como quebrar um objeto para usar suas bordas irregulares a seu favor. Ao rolar dano com uma arma frágil, você pode quebrar essa arma para causar 1d6 de dano adicional. A quantidade de dano aumenta em um passo nos níveis 5 (1d8), 11 (1d10) e 17 (1d12).
 
 #### Fragmento Incrustado (frágil)

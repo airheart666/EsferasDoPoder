@@ -933,8 +933,8 @@
           "id": "batedor"
         },
         {
-          "type": "text",
-          "text": "Quebrador de Partes"
+          "type": "talent",
+          "id": "m-batedor-quebra-partes"
         },
         {
           "type": "level",
@@ -943,10 +943,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que você acertar um golpe crítico contra uma criatura analisada, você pode alterar 1 característica analisada conhecida do alvo de uma das seguintes maneiras por 1 hora:\n\n•: Classe de Armadura. Reduzida em 2.\n\n•: Resistências a Condições. Perde uma resistência a condição.\n\n•: Imunidades a Condições. Uma imunidade a condição é transformada em resistência a condição.\n\n•: Resistências a Dano. Perde uma resistência a dano.\n\n•: Imunidades a Dano. Uma imunidade a dano é transformada em resistência a dano.\n\n•: Vulnerabilidades a Dano. (Requer Resistência a Dano e Imunidades a Dano como características conhecidas) Escolha um tipo de dano para o qual a criatura não tenha Imunidade ou Resistência. Ganha essa vulnerabilidade a dano.\n\n•: Velocidade. Reduz todos os modos de movimento em 3 metros (mínimo 0 m).\n\n•: Um Atributo. Reduz um atributo conhecido em 2 (mínimo 1).\n\n•: Um de seus Testes de Resistência. Reduz um teste de resistência conhecido em 2.\n\n•: Um de seus Sentidos. Reduz um de seus sentidos conhecidos em 3 metros (mínimo 0 m).\n\n•: Pontos de Vida Máximos. Reduz seus Pontos de Vida Máximos em 10 (mínimo 1).\n\n•: Outra Característica. Modificada com a permissão do Mestre.",
-      "_needsReview": [
-        "prereq:unresolved:Quebrador de Partes"
-      ]
+      "body": "Sempre que você acertar um golpe crítico contra uma criatura analisada, você pode alterar 1 característica analisada conhecida do alvo de uma das seguintes maneiras por 1 hora:\n\n•: Classe de Armadura. Reduzida em 2.\n\n•: Resistências a Condições. Perde uma resistência a condição.\n\n•: Imunidades a Condições. Uma imunidade a condição é transformada em resistência a condição.\n\n•: Resistências a Dano. Perde uma resistência a dano.\n\n•: Imunidades a Dano. Uma imunidade a dano é transformada em resistência a dano.\n\n•: Vulnerabilidades a Dano. (Requer Resistência a Dano e Imunidades a Dano como características conhecidas) Escolha um tipo de dano para o qual a criatura não tenha Imunidade ou Resistência. Ganha essa vulnerabilidade a dano.\n\n•: Velocidade. Reduz todos os modos de movimento em 3 metros (mínimo 0 m).\n\n•: Um Atributo. Reduz um atributo conhecido em 2 (mínimo 1).\n\n•: Um de seus Testes de Resistência. Reduz um teste de resistência conhecido em 2.\n\n•: Um de seus Sentidos. Reduz um de seus sentidos conhecidos em 3 metros (mínimo 0 m).\n\n•: Pontos de Vida Máximos. Reduz seus Pontos de Vida Máximos em 10 (mínimo 1).\n\n•: Outra Característica. Modificada com a permissão do Mestre."
     },
     {
       "id": "m-batedor-visao-verdadeira-abordagem",

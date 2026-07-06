@@ -1353,8 +1353,8 @@
           "id": "morte"
         },
         {
-          "type": "text",
-          "text": "Profissional (reanimar)"
+          "type": "talent",
+          "id": "morte-habilidoso"
         },
         {
           "type": "text",
@@ -1365,7 +1365,6 @@
       "enhancements": [],
       "body": "Ao reanimar, você pode criar um inumano.\n\nInumano\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR14 (+2)14 (+2)14 (+2)10 (+0)12 (+1)8 (-1)\n\nResistências a Dano: necrótico; dano de concussão, perfuração e corte de ataques não mágicos que não sejam feitos com armas de prata\n\nImunidades a Dano: veneno\n\nImunidades a Condições: exaustão, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz do sol, o Inumano tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGarras. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 6 (1d6+2) de dano cortante.",
       "_needsReview": [
-        "prereq:unresolved:Profissional (reanimar)",
         "prereq:unresolved:Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
       ]
     },
