@@ -1416,6 +1416,7 @@ h4.base-ability::after {
   margin: 0 0 1.2rem;
 }
 [data-theme="dark"] .char-warn { color: var(--oxblood-light); }
+.char-warn-toast { margin: 0.5rem 0; }
 
 /* Talentos escolhidos: remover ✕ inline */
 .char-talent-remove {

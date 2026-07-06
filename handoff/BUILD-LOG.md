@@ -5,8 +5,10 @@
 
 ## Current Status
 
-**Active step:** Phase 3 — step 1 (rules engine) COMPLETE; next: class-features id migration + wire app.js
-**Last cleared:** Phase 3 step 1 — src/rules.js — 2026-07-05 (typecheck + 12-assertion smoke test green)
+**Active step:** Phase 3 — step 4 (wire app.js to the rules engine) BUILT, awaiting Richard's review.
+**Last cleared:** Phase 3 step 4 — app.js/index.html/style.css — 2026-07-06 (validate + typecheck + test +
+new 23-assertion sanity-builder.js all green; browser click-through still needs a human — see
+REVIEW-REQUEST.md).
 **Pending deploy:** NO (feature branch `structured-mechanics-layer`, not merging until proven)
 **Curation DONE (Buckets 1 & 2):** flags 100→18. All talent-name mismatches resolved (sphere
 self-references fixed at source; talent-name variants via extractor `TALENT_ALIAS`; source renames
@@ -129,11 +131,63 @@ Deploy: pending
 
 ---
 
+### Phase 3 (step 4) — Wire app.js to the rules engine — BUILT (pending review)
+*Date: 2026-07-06*
+
+Files changed:
+- `index.html` — added `src/rules.js` + `src/data.js` `<script>` tags before `app.js`.
+- `app.js` — data layer swapped from root `classes.json`/`sphere-rules.json`/`class-features.json`
+  fetches to `DataLoader.loadData()` + `Rules.indexData()` (module global `dataIndex` +
+  `sphereIdByTitle`/`sphereTitleById`); `getSphereModel`/`classSpec` reimplemented to classify
+  base/free/extra from `sph.acquisition` + `talent.tags/kind/group` (structured), not the DOM
+  (`cardRole`/`matchesFreeGroup`/`sphereTags` retired); `characterStats`/`traditionBonus`/
+  `classFeatureBonus` now delegate to `Rules.derivedStats`/`traditionBonus`/`classFeatureBonus`;
+  `renderCharacter`'s used/budget numbers now come from `Rules.slotsSpent`/`talentBudget`.
+  Persisted character shape changed: `char.spheres[].sphere` is now the sphere id (was title);
+  `.freePicks`/`.talents` are now talent-id arrays (were `{name,sphere,anchor,slug}` objects) —
+  matches `src/types.js` `CharSphere` exactly. New enforcement wrappers `addFreePickChecked`/
+  `addExtraTalentChecked`/`tryAcquireSphere` call `Rules.prereqCheck`/`canAddTalent`/
+  `canAccessSphere` before mutating state; blocked picks show a transient `.char-warn` notice
+  (`showCharNotice`). `migrateCharacters()` extended to convert existing saved characters
+  non-destructively (title→id, item→talent-id; unresolvable items moved to
+  `entry._unresolvedLegacy`, never dropped).
+- `style.css` — one rule (`.char-warn-toast`) for the new transient notice.
+- `scripts/sanity-builder.js` (new, not wired into `npm test`) — loads the real app.js/rules.js
+  into jsdom and drives prereq/budget/migration scenarios against real data.
+
+Result: `npm run validate` (0 errors), `npm run typecheck` (green), `npm test` (12/12) all still
+green — none of them touch app.js. `node scripts/sanity-builder.js` — 23/23 assertions (prereq
+block/allow, talent-budget block, sphere-access-budget block, granted-sphere free access, and
+non-destructive migration incl. an intentionally-unresolvable legacy talent).
+
+Decisions made:
+- `getSphereModel`/`classSpec` read `sph.acquisition` (structured) instead of root
+  `sphere-rules.json` — confirmed byte-identical for all 42 spheres before switching.
+- Card *display* still clones rendered HTML via `buildChapterCardFrag`/`findCardInFrag`
+  (homonym talents disambiguated via `.base-ability` ⟺ `kind:'base'`, not DOM section anchors).
+- `rules.js` is treated as frozen (per brief) — its documented gap (granted specific talents from
+  class-features aren't in `ownedTalentIds`) is unchanged behavior from before this step, not a
+  regression; app.js keeps its own title-keyed `grantedSpheresMap` for the "included with the
+  sphere" display, now sourced from `dataIndex.classFeatures` instead of the DOM/root global.
+
+Reviewer findings: pending — see `handoff/REVIEW-REQUEST.md`.
+Deploy: pending
+
+---
+
 ## Known Gaps
 *Logged here instead of fixed. Addressed in a future step.*
 
 - **KG-1** — Reader still renders from `content/*.txt` (prose) during Phases 0–4. Rendering the reader
   from structured data is deferred to Phase 5.
+- **KG-2** — `Rules.ownedTalentIds` doesn't fold in class-features-granted *specific* talents (only
+  granted sphere access + base talents + chosen picks) — `rules.js` itself documents this as a future
+  step. Not a regression: those granted talents never cost a slot or counted as "owned" for prereqs
+  before this step either. Would need a `rules.js` change (out of scope — "use it, don't rebuild").
+- **KG-3** — Legacy saved characters with a homonym talent (e.g. Conjuração's base vs. advanced
+  "Invocação") that hasn't been migrated to ids yet cannot be auto-resolved during migration (no DOM
+  signal available to disambiguate) — kept in `entry._unresolvedLegacy`, surfaced in the character
+  sheet, never silently dropped. Affects at most 1-2 spheres, only pre-this-change saves.
 
 ---
 
