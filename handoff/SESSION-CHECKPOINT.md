@@ -5,13 +5,18 @@
 
 ## Where We Stopped
 
-Structured-mechanics-layer refactor, branch `structured-mechanics-layer`, 5 commits (master untouched).
-**Phases 0–2 + curation + Phase 3 step 1 complete**: schema/tooling, extractor (1595 talents, 42 spheres),
-validator (0 errors), curation notes, and the **pure rules engine `src/rules.js`** (typed + `npm test`
-12/12 — blocks illegal picks, budgets talent slots, resolves granted spheres). Live `app.js` NOT yet
-touched. Next: **Phase 3 steps 2–4** — migrate classes/class-features into `data/` with talent ids,
-`src/data.js` browser loader, wire app.js to rules.js + id-based character state + block in UI, then
-Richard's review + deploy gate.
+Structured-mechanics-layer refactor, branch `structured-mechanics-layer`, 10 commits (master untouched).
+**Phases 0–2 + curation + Phase 3 steps 1–4 COMPLETE and committed.** The character builder now reads all
+rules from structured data (`data/` via `src/rules.js`+`src/data.js`), blocks illegal picks, and stores
+character state as ids with non-destructive migration. Built by Bob, reviewed SHIP by Richard, Architect-
+verified. Curation done: 1596 talents, only 18 Bucket-3 flags (rules-engine prereq types) remain.
+All checks green: validate 0 err · typecheck · test 12/12 · sanity-builder 23/23.
+
+**NEXT ACTION — the gate before merge:** manual BROWSER smoke test (see `handoff/REVIEW-REQUEST.md`
+7-item list), ESPECIALLY loading the app against real pre-existing localStorage saved characters to
+confirm migration on real state. Only Arch/Owner (with a browser) can do this — automated checks can't.
+After that passes: consider Phase 4 (modularize app.js into ES modules + expand checkJs) and Phase 5
+(render reader from structured data), plus the Bucket-3 rules-engine prereq types (OR/tag/package).
 
 ---
 
