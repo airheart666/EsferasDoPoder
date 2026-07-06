@@ -88,6 +88,8 @@
             "properties": {
               "id": { "type": "string" },
               "label": { "type": "string" },
+              "baseTalents": { "type": "array", "items": { "type": "string" }, "description": "Talent names auto-granted (base ability) when this package is chosen." },
+              "baseTalentIds": { "type": "array", "items": { "type": "string" }, "description": "Resolved ids of baseTalents (filled by the extractor)." },
               "freeGroup": { "$ref": "#/definitions/freeGroup" },
               "freeLabel": { "type": "string" },
               "freePicks": { "type": "number" },

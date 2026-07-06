@@ -244,6 +244,14 @@ const Rules = (() => {
     for (const e of char.spheres || []) {
       for (const id of e.freePicks || []) set.add(id);
       for (const id of e.talents || []) set.add(id);
+      // package base ability (e.g. Universal "Dissipar" package → Dissipar), auto-granted
+      const pkg = e.choices && e.choices.pkg;
+      if (pkg) {
+        const sph = idx.sphereById.get(e.sphere);
+        const opts = (sph && sph.acquisition && sph.acquisition.packages && sph.acquisition.packages.options) || [];
+        const opt = opts.find(o => o.id === pkg);
+        if (opt) for (const id of opt.baseTalentIds || []) set.add(id);
+      }
     }
     for (const id of computeGrants(char, idx).specificTalents) set.add(id); // granted specific talents
     return set;

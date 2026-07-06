@@ -82,6 +82,8 @@
  * @typedef {Object} PackageOption
  * @property {string} id
  * @property {string} label
+ * @property {string[]} [baseTalents]    Talent names auto-granted as the package's base ability.
+ * @property {string[]} [baseTalentIds]  Resolved ids of baseTalents (extractor-filled).
  * @property {FreeGroup} [freeGroup]
  * @property {string} [freeLabel]
  * @property {number} [freePicks]
@@ -160,7 +162,7 @@
  * @property {string} sphere        Sphere id.
  * @property {Section} section
  * @property {boolean} [granted]    Access granted by a subclass (free); absent/false if slot-bought.
- * @property {Object} [choices]     e.g. { pkg: 'formula' } for package spheres.
+ * @property {{pkg?: string}} [choices]  e.g. { pkg: 'formula' } for package spheres.
  * @property {string[]} freePicks   Talent ids taken via the sphere's free picks.
  * @property {string[]} talents     Talent ids taken as extra (slot-costing) picks.
  */

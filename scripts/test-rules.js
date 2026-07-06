@@ -113,4 +113,13 @@ const artAlq = { ...artifice, subclass: 'Alquimista' };
 ok('Alquimista subclass adds Alquimia as magic', Rules.effectiveSection(artAlq, 'alquimia', idx) === 'magic');
 ok('non-Artífice magic class cannot cross to Engenhosidade', Rules.effectiveSection(feit, 'engenhosidade', idx) === 'martial');
 
+// --- P2: Universal package grants its base ability (owned, free) ---
+/** @type {any} */
+const univ = { id: 'u2', name: 'U', className: 'Feiticeiro', subclass: '', level: 5, keyMod: 0, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [{ sphere: 'universal', section: 'magic', choices: { pkg: 'dissipar' }, freePicks: [], talents: [] }] };
+ok('Universal "dissipar" package → Dissipar is owned', Rules.ownedTalentIds(univ, idx).has('universal-dissipar'));
+ok('Universal access costs 1 slot; package base ability is free', Rules.slotsSpent(univ, idx).magic === 1);
+/** @type {any} */
+const univMana = { ...univ, spheres: [{ sphere: 'universal', section: 'magic', choices: { pkg: 'mana' }, freePicks: [], talents: [] }] };
+ok('Universal "mana" package → Vínculo de Mana owned', Rules.ownedTalentIds(univMana, idx).has('universal-vinculo-de-mana'));
+
 console.log(`\n${pass} assertions passed.`);

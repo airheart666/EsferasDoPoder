@@ -168,6 +168,15 @@ async function main() {
   ok('Artífice acquires martial Engenhosidade via magic budget', t.tryAcquireSphere(artif, 'Engenhosidade').ok === true);
 
   /* ---------------------------------------------------------------------
+   * 4c) Universal packages (P2): choosing a package grants its base ability.
+   * --------------------------------------------------------------------- */
+  const uModel = t.getSphereModel('Universal', 'dissipar');
+  ok('Universal "dissipar" model exposes Dissipar as base', uModel.bases.some(b => b.id === 'universal-dissipar'));
+  const uMana = t.getSphereModel('Universal', 'mana');
+  ok('Universal "mana" model: base Vínculo de Mana + 1 free (vínculo de mana)',
+     uMana.bases.some(b => b.id === 'universal-vinculo-de-mana') && uMana.freeGroup.length > 0);
+
+  /* ---------------------------------------------------------------------
    * 5) Migration: legacy {name,sphere,anchor,slug} item shape -> talent ids,
    *    non-destructively (unresolvable items are kept, flagged, not dropped).
    * --------------------------------------------------------------------- */

@@ -1444,15 +1444,16 @@ function classSpec(title, pkg) {
   let fg = rule.freeGroup || null, freeLabel = rule.freeLabel || 'talento', talentTags = rule.talentTags || null;
   let baseFree = rule.freePicks != null ? rule.freePicks : 1;
   let conds = rule.conditionals || [];
+  let baseTalentIds = [];   // habilidades-base concedidas pelo pacote (ex.: Dissipar)
   if (rule.packages) {
     const opt = rule.packages.options.find(o => o.id === pkg);
     if (opt) {
       fg = opt.freeGroup || null; freeLabel = opt.freeLabel || freeLabel;
       talentTags = opt.talentTags || talentTags; baseFree = opt.freePicks != null ? opt.freePicks : 0;
-      conds = opt.conditionals || [];
+      conds = opt.conditionals || []; baseTalentIds = opt.baseTalentIds || [];
     } else { baseFree = 0; conds = []; } // pacote ainda não escolhido
   }
-  return { fg, freeLabel, talentTags, baseFree, conds, canFree: baseFree > 0 || conds.length > 0, packages: rule.packages || null };
+  return { fg, freeLabel, talentTags, baseFree, conds, baseTalentIds, canFree: baseFree > 0 || conds.length > 0, packages: rule.packages || null };
 }
 // Spec RESOLVIDO (com o personagem): capacidade de grátis = base + condicionais
 // satisfeitas por proficiência.
@@ -1469,6 +1470,7 @@ function resolveSpec(char, title, choices) {
 }
 // Papel ESTRUTURAL de um Talent (base/free/extra/ignore), lido do dado, não do DOM.
 function talentRole(talent, cs) {
+  if (cs.baseTalentIds && cs.baseTalentIds.includes(talent.id)) return 'base'; // habilidade-base do pacote (auto)
   if (cs.talentTags && cs.talentTags.length) {
     const want = cs.talentTags.map(normalizeTerm);
     if (!want.some(w => (talent.tags || []).map(normalizeTerm).includes(w))) return 'ignore';

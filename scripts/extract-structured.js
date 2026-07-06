@@ -299,6 +299,21 @@ function resolvePrereqs(allTalents, sphereIds) {
   }
 }
 
+// ---- Resolve package baseTalents (names) → ids within the sphere -------------
+// e.g. Universal's "Dissipar" package auto-grants the "Dissipar" base ability.
+function resolvePackageBaseTalents(sphere) {
+  const pkgs = sphere.acquisition && sphere.acquisition.packages;
+  if (!pkgs) return;
+  const byBase = new Map();
+  for (const t of sphere.talents) { const k = normalizeTerm(baseName(t.name)); if (!byBase.has(k)) byBase.set(k, t.id); }
+  for (const opt of pkgs.options || []) {
+    if (!Array.isArray(opt.baseTalents)) continue;
+    opt.baseTalentIds = opt.baseTalents.map(n => byBase.get(normalizeTerm(baseName(n)))).filter(Boolean);
+    const missing = opt.baseTalents.filter(n => !byBase.get(normalizeTerm(baseName(n))));
+    if (missing.length) console.log(`  ⚠ ${sphere.name} package "${opt.id}": baseTalents unresolved: ${missing.join(', ')}`);
+  }
+}
+
 // ---- Migrate classes.json + class-features.json into data/ -------------------
 // classes.json is already schema-shaped (copied through). class-features grants
 // reference talents by {name, sphere}; we resolve each to a stable talent id so
@@ -365,6 +380,7 @@ function main() {
     };
     const { talents } = extractSphere(sphere, ch, pages, {});
     sphere.talents = talents;
+    resolvePackageBaseTalents(sphere);
     allTalents.push(...talents);
     results.push(sphere);
   }
