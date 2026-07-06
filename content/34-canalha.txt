@@ -119,7 +119,7 @@ Ao usar roubar, em vez de roubar um item, você pode tentar transferir um efeito
 Isso funciona com efeitos de magia cujo alvo seja "próprio", mas não funciona com efeitos de magia que o considerariam um alvo inválido (por exemplo, se o efeito tiver como alvo apenas tipos específicos de criatura). Este é um efeito mágico.
 
 #### Roubar Talento
-**Pré-requisitos**: :: Esfera do Canalha (Perícia Roubar), 7º nível ou superior.
+**Pré-requisitos**: :: Esfera do Canalha (Roubar Perícia), 7º nível ou superior.
 
 Sempre que usar Roubar Perícia, você pode escolher roubar um talento (mágico ou marcial) em vez de uma proficiência em perícia. Se tentar roubar uma esfera base para a qual o alvo possua talentos adicionais além do básico, você recebe desvantagem no seu teste. Criaturas afetadas não podem usar habilidades para as quais o talento pré-requisito foi roubado, e se você roubar talentos com pré-requisitos que você não atende, não poderá usá-los. Este é um efeito mágico.
 

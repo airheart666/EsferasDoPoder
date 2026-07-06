@@ -389,7 +389,7 @@ Ao analisar o alvo, você pode discernir um número adicional de característica
 <div class='pageNumber auto'></div>
 
 #### Modificar Características (pesquisa)
-**Pré-requisitos**: :: Esfera de Batedor (Quebrador de Partes), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera de Batedor (Quebra-Partes), 5º nível ou superior.
 
 Sempre que você acertar um golpe crítico contra uma criatura analisada, você pode alterar 1 característica analisada conhecida do alvo de uma das seguintes maneiras por 1 hora:
 

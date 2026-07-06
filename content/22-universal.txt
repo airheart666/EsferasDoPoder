@@ -473,9 +473,9 @@ O efeito de esfera contingente só afeta você, mesmo que normalmente possa ter 
 
 
 #### Duração Extrema
-**Pré-requisitos**: :: Esfera Universal (Prolongada (metasfera)), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera Universal (Estendido (metasfera)), 5º nível ou superior.
 
-Você pode reduzir o custo em pontos de magia dos aprimoramentos de talento Prolongada (metasfera) em 1 ponto de magia (mínimo 0). Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam; cada vez que o aprimoramento for escolhido, o custo em pontos de magia será reduzido em 1 ponto de magia (mínimo 0).
+Você pode reduzir o custo em pontos de magia dos aprimoramentos de talento Estendido (metasfera) em 1 ponto de magia (mínimo 0). Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam; cada vez que o aprimoramento for escolhido, o custo em pontos de magia será reduzido em 1 ponto de magia (mínimo 0).
 
 
 #### Oportunista Extremo

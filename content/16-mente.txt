@@ -9,7 +9,7 @@ Você ganha a habilidade de alterar a mente dos outros, fazendo com que ajam com
 **Alcance**: :: 30 pés
 **Duração**: :: varia
 **Alvo**: :: 1 criatura do seu tipo de criatura
-**Custo**: :: 0 pe (menor), 1 pe (maior), 2 pe (poderoso)
+**Custo**: :: 0PM (menor), 1PM (maior), 2PM (poderoso)
 
 Você pode colocar encantos em criaturas. Você só pode usar encantos em alvos que possuam o mesmo tipo de criatura que você (humanoide para humanoides, etc.), embora o talento Encanto Expandido modifique isso. Cada encanto possui três níveis de potência: menor, maior e poderoso.
 
@@ -471,9 +471,9 @@ Essa loucura só pode ser removida com Restauração da Mente e Corpo (talento a
 
 
 #### Vínculo Memético
-**Pré-requisitos**: :: Esfera da Mente (Enredar, Encanto Poderoso, Projeção de Pensamentos); Esfera Universal (Massa — metasfera); nível 11 ou superior
+**Pré-requisitos**: :: Esfera da Mente (Cativar, Encanto Poderoso, Projeção de Pensamentos); Esfera Universal (Massa — metasfera); nível 11 ou superior
 
-**Aprimoramento 1PM**: :: Ao aplicar um encanto poderoso de Enredar, você cria um vínculo memético entre você e o alvo. Se o alvo tiver acesso à esfera da Mente, magias de encantamento ou efeitos semelhantes, ele pode tratar tanto a si quanto você como o conjurador desses efeitos. Todos os cálculos (CD, nível, habilidade de conjuração) usam o valor do alvo, mas você é considerado o conjurador para os resultados. Exemplo: Se o alvo conjurar Ler Mente em outra criatura, você também recebe as informações lidas. Se o alvo possuir Vínculo Memético, ele pode transferir para você o controle de um encanto de Enredar que tenha conjurado, criando uma cadeia de alvos enredados. Essa cadeia só pode ter comprimento até seu modificador de habilidade chave (sem contar você).
+**Aprimoramento 1PM**: :: Ao aplicar um encanto poderoso de Cativar, você cria um vínculo memético entre você e o alvo. Se o alvo tiver acesso à esfera da Mente, magias de encantamento ou efeitos semelhantes, ele pode tratar tanto a si quanto você como o conjurador desses efeitos. Todos os cálculos (CD, nível, habilidade de conjuração) usam o valor do alvo, mas você é considerado o conjurador para os resultados. Exemplo: Se o alvo conjurar Ler Mente em outra criatura, você também recebe as informações lidas. Se o alvo possuir Vínculo Memético, ele pode transferir para você o controle de um encanto de Cativar que tenha conjurado, criando uma cadeia de alvos enredados. Essa cadeia só pode ter comprimento até seu modificador de habilidade chave (sem contar você).
 
 
 #### Controle Mental

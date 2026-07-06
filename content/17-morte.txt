@@ -996,7 +996,7 @@ Você pode aprimorar mortos-vivos que reanima, concedendo-lhes características 
 **Aprimoramento 2PM**: Regeneração. Escolha um tipo de dano diferente de radiante ao qual seu morto-vivo não tenha resistência ou imunidade. O morto-vivo recupera 5 pontos de vida no início do seu turno se tiver pelo menos 1 ponto de vida. Se o morto-vivo sofrer dano radiante ou o tipo de dano escolhido, esta característica não funciona no início do próximo turno do morto-vivo. A regeneração aumenta em 5 pontos de vida recuperados no 11º nível (10 pontos de vida) e no 17º nível (15 pontos de vida).
 
 #### Inumano (morto-vivo)
-**Pré-requisitos**: Esfera da Morte (Profissional (reanimar); Esqueleto (morto-vivo) ou Zumbi (morto-vivo))
+**Pré-requisitos**: Esfera da Morte (Habilidoso (reanimar); Esqueleto (morto-vivo) ou Zumbi (morto-vivo))
 ___
 **Alvo**: Um cadáver fresco
 :

@@ -132,7 +132,7 @@ Você pode gastar seu foco marcial para realizar um grito ensurdecedor. Todos os
 
 
 #### Legião Infinita (tática)
-**Pré-requisitos**: :: Esfera do General (Sinal de Impulso), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera do General (Brado Revigorante), 11º nível ou superior.
 
 Sempre que uma criatura afetada por esta tática estiver prestes a ter seus pontos de vida reduzidos a 0, você pode usar uma reação para conceder a ela um número de pontos de vida temporários igual ao dobro do seu nível. Esses pontos de vida temporários são aplicados antes do dano do ataque que a desencadeou. Esses pontos de vida temporários expiram no início do seu turno.
 
@@ -147,13 +147,13 @@ Qualquer criatura que entrar em contato físico com você enquanto esta tática 
 
 
 #### Recuperar Espírito (grito)
-**Pré-requisitos**: :: Esfera do General (Sinal de Impulso), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera do General (Brado Revigorante), 11º nível ou superior.
 
 Você pode gastar seu foco marcial para recuperar o espírito de uma criatura dentro do alcance do seu grito que tenha morrido em 1 rodada. O alvo é curado em uma quantidade igual ao seu nível + seu modificador de habilidade principal. O nível de exaustão do alvo aumenta em 2, até um máximo de 5, e não pode ser reduzido abaixo do nível de exaustão 1 por nenhum meio até completar um descanso longo.
 
 
 #### Lealdade Infinita
-**Pré-requisitos**: :: Esfera do General (Legião Infinita, Recuperar Espírito, Sinal de Impulso), 15º nível ou superior.
+**Pré-requisitos**: :: Esfera do General (Legião Infinita, Recuperar Espírito, Brado Revigorante), 15º nível ou superior.
 
 Você pode usar seu grito Recuperar Espírito em um alvo que tenha morrido em 1 minuto, em vez de 1 rodada. O alvo retorna à vida com um número de pontos de vida igual ao dobro do seu nível + seu modificador de habilidade principal e sem exaustão (se isso lhe conceder mais pontos de vida do que o normal, ele recebe o excesso como pontos de vida temporários). Após uma hora, a criatura morre independentemente de seus pontos de vida e não pode ser afetada por este talento uma segunda vez, a menos que seja trazida de volta à vida por outros meios. Este é um efeito mágico.
 

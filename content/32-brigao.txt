@@ -139,15 +139,15 @@ Sempre que você puder ingerir uma bebida alcoólica, você pode, em vez disso, 
 
 
 #### Arma Descartável (frágil)
-**Pré-requisitos**: :: Esfera do Brigão (Gume Afiado), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Brigão (Borda Irregular), 5º nível ou superior.
 
 Você sabe como quebrar um objeto no meio de um golpe para infligir ferimentos graves. Uma vez por descanso curto, antes de fazer um ataque com uma arma frágil, você pode gastar seu foco marcial, quebrando a arma. Se o ataque acertar, você pode, como uma reação, transformar um acerto normal em um acerto crítico. Você pode adquirir este talento várias vezes, cada vez aumentando o número de vezes que você pode usar este talento por descanso curto.
 
 
 #### Embriaguez Eterna
-**Pré-requisitos**: :: Esfera do Brigão (Inalador de Fumaça, Fígado de Ferro), 15º nível ou superior.
+**Pré-requisitos**: :: Esfera do Brigão (Embriagado pelos Vapores, Fígado de Ferro), 15º nível ou superior.
 
-Ao usar o talento Inalador de Fumaça, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela.
+Ao usar o talento Embriagado pelos Vapores, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela.
 
 
 #### Ficar Mole (bêbado)
@@ -163,9 +163,9 @@ Enquanto você tiver o status de bêbado, seus ataques desarmados não mágicos 
 
 
 #### Relaxamento Perfeito
-**Pré-requisitos**: :: Esfera do Brigão (Descontraído e Relaxado), nível 11 ou superior.
+**Pré-requisitos**: :: Esfera do Brigão (Bem Solto), nível 11 ou superior.
 
-Ao usar Descontraído e Relaxado para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido.
+Ao usar Bem Solto para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido.
 
 
 #### Quebrador de Relíquias

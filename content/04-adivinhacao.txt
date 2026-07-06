@@ -439,7 +439,7 @@ Você pode escolher uma criatura dentro do alcance como alvo, causando uma sobre
 Ao usar talentos ou habilidades da esfera de Adivinhação, quaisquer habilidades adivinhar ou sensoriais normalmente bloqueadas por substâncias densas agora podem penetrar 1,5 metro de pedra, 15 centímetros de metal comum, 1,25 centímetro de chumbo ou 4,5 metros de madeira. Você pode escolher este talento avançado uma segunda vez, aumentando a espessura que pode penetrar para 3 metros de pedra, 30 centímetros de metal comum, 2,5 centímetros de chumbo ou 9 metros de madeira.
 
 #### Adivinhação Maior (adivinhar)
-**Pré-requisitos**: Esfera de Adivinhação (Adivinhação, Visão), Esfera Universal (Alcance (metaesfera)); 15º nível ou superior.
+**Pré-requisitos**: Esfera de Adivinhação (Adivinhar, Visão), Esfera Universal (Alcance (metaesfera)); 15º nível ou superior.
 :
 **Aprimoramento 1PM**: Ao usar o talento avançado Adivinhação, você pode mover seu sensor sem seguir um alvo com uma velocidade de 45 metros uma vez por rodada, sem precisar de ação.
 
@@ -457,7 +457,7 @@ Ao usar talentos ou habilidades da esfera de Adivinhação, quaisquer habilidade
 **Aprimoramento 0PM**: Ao usar Detectar Teletransporte, você também adivinha o plano exato para onde uma criatura que você viu se teletransportou. Caso você se encontre nesse plano enquanto mantém essa habilidade, você adivinha a direção geral para a qual a criatura se teletransportou e continua a se lembrar da direção geral do teletransporte até que o efeito termine. Você pode usar adivinhar novamente para determinar essa direção enquanto permanecer no plano.
 
 #### Encontrar Localização (adivinhar)
-**Pré-requisitos**: Esfera de Adivinhação (Radiografia), Esfera Universal (Alcance (metaesfera)), 15º nível ou superior.
+**Pré-requisitos**: Esfera de Adivinhação (Radiestesia), Esfera Universal (Alcance (metaesfera)), 15º nível ou superior.
 
 Aprimoramento 3PM: Você pode encontrar a localização de qualquer criatura ou objeto. Para encontrar uma criatura, você deve tê-la visto ou possuir algum item que já lhe pertenceu. Para encontrar um objeto, você deve tê-lo tocado pelo menos uma vez. Esta habilidade tem alcance ilimitado e funciona através de fronteiras planares.
 

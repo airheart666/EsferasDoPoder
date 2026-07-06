@@ -223,7 +223,7 @@ Se você cobrir o alvo completamente com uma prisão bem ajustada, ele só poder
 ### Talentos Avançados de Criação
 
 #### Criar Materiais
-**Pré-requisitos**: :: Esfera da Criação (Forja), Esfera Universal (Estendida (metasfera)), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera da Criação (Forjar), Esfera Universal (Estendida (metasfera)), 11º nível ou superior.
 
 **Aprimoramento 2 PM**: :: Você pode criar matérias-primas. Este é um efeito instantâneo; você cria o material como material normal autoevidente e, portanto, ele não pode ser dissipado e não tem duração. Você não pode criar itens complexos, ou seja, você pode criar paredes, ameias, rampas ou domos, mas não pode criar catapultas, armaduras ou uma construção completa dessa maneira, embora o material possa ser criado como qualquer outro material após ser invocado. Você pode invocar qualquer material que possa criar, com exceção de gemas, metais preciosos (como ouro ou prata) ou metais raros (como ferro frio ou mithril).
 
@@ -233,9 +233,9 @@ Se você cobrir o alvo completamente com uma prisão bem ajustada, ele só poder
 **Aprimoramento 1 PM**: :: Ao usar destruir em um objeto não mágico e desprotegido, você pode desintegrá-lo completamente. A habilidade não causa dano e, em vez disso, simplesmente desintegra um cubo de 3 metros de matéria inanimada.
 
 #### Fabricar
-Pré-requisitos: Esfera de criação (Forja), 11º nível ou superior.
+Pré-requisitos: Esfera de criação (Forjar), 11º nível ou superior.
 
-**Aprimoramento 1 PM**: :: Ao usar seu talento Forja, você pode criar itens com grande riqueza de detalhes. Você deve passar no teste apropriado para criar itens complexos e trabalhar a uma taxa de 1 rodada a cada 3 metros cúbicos ao trabalhar dessa maneira. Você só pode trabalhar com um material que você possa criar.
+**Aprimoramento 1 PM**: :: Ao usar seu talento Forjar, você pode criar itens com grande riqueza de detalhes. Você deve passar no teste apropriado para criar itens complexos e trabalhar a uma taxa de 1 rodada a cada 3 metros cúbicos ao trabalhar dessa maneira. Você só pode trabalhar com um material que você possa criar.
 
 #### Criar Carne
 **Pré-requisitos**: :: Esfera de criação (Materiais Expandidos), 11º nível ou superior.
@@ -255,14 +255,14 @@ Se você possuir o talento avançado Fabricar, poderá alterar a aparência de u
 Outros usos deste talento ficam a critério do Mestre.
 
 #### Mudança Permanente
-**Pré-requisitos**: :: Esfera de Criação (Mudar Material, Materiais Expandidos, Forja), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera de Criação (Alterar Material, Materiais Expandidos, Forjar), 11º nível ou superior.
 
-**Aprimoramento 1 PM**: :: Ao usar seu talento Mudar Material, você pode tornar a mudança um efeito instantâneo; a mudança é permanente e não pode ser dissipada. Você não pode criar uma mudança permanente envolvendo gemas, metais preciosos (como ouro ou prata) ou metais raros (como mithril). Se usado em um alvo em conjunto com os talentos Mudar Material e Moldar a Carne, outra aplicação dos talentos Mudar Material e Mudar Material pode retorná-lo ao normal por um tempo limitado. Somente outro uso do talento Mudança Permanente, ou magia suficientemente poderosa, como uma ressurreição verdadeira ou magia de desejo, pode reverter este efeito permanentemente.
+**Aprimoramento 1 PM**: :: Ao usar seu talento Alterar Material, você pode tornar a mudança um efeito instantâneo; a mudança é permanente e não pode ser dissipada. Você não pode criar uma mudança permanente envolvendo gemas, metais preciosos (como ouro ou prata) ou metais raros (como mithril). Se usado em um alvo em conjunto com os talentos Alterar Material e Moldar a Carne, outra aplicação dos talentos Alterar Material e Alterar Material pode retorná-lo ao normal por um tempo limitado. Somente outro uso do talento Mudança Permanente, ou magia suficientemente poderosa, como uma ressurreição verdadeira ou magia de desejo, pode reverter este efeito permanentemente.
 
 #### Mudança de Estado (alterar)
-**Pré-requisitos**: :: Esfera da Criação (Mudar Matéria), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera da Criação (Alterar Material), 11º nível ou superior.
 
-Ao usar Mudar Matéria, você pode transformar líquidos e sólidos em qualquer um dos dois estados. Este é um efeito mágico e a mudança de forma em si não tem efeito adicional na condição do objeto alvo, não causando dano a ele. Ao transformar um sólido em líquido, o objeto resultante se dispersa normalmente, mas se recombina quando o efeito termina e no mesmo local, a menos que seus componentes tenham sido coletados e movidos para outro lugar. Se todos os pedaços de um objeto não estiverem presentes, o objeto ainda renasce a partir do maior pedaço restante. 
+Ao usar Alterar Material, você pode transformar líquidos e sólidos em qualquer um dos dois estados. Este é um efeito mágico e a mudança de forma em si não tem efeito adicional na condição do objeto alvo, não causando dano a ele. Ao transformar um sólido em líquido, o objeto resultante se dispersa normalmente, mas se recombina quando o efeito termina e no mesmo local, a menos que seus componentes tenham sido coletados e movidos para outro lugar. Se todos os pedaços de um objeto não estiverem presentes, o objeto ainda renasce a partir do maior pedaço restante. 
 \page
 <div class='pageNumber auto'></div>
 

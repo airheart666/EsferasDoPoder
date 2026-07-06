@@ -79,25 +79,9 @@ const TALENT_ALIAS = {
   'teletransporte de objeto': 'Teletransportar Objeto',
   'corpo retorcido': 'Corpo Distorcido',
   'pacote de companheiros': 'Pacote de Companheiro',
-  // Bucket 2 — confirmed by the Owner (game knowledge). #17 (Tempo→sphere req),
-  // #19 (Ataque→Golpe rename), #3 (Pomada→Bálsamo rename) were fixed at source.
-  'adivinhacao': 'Adivinhar',
-  'quebrador de partes': 'Quebra-Partes',
-  'forja': 'Forjar',
-  'mudar material': 'Alterar Material',
-  'mudar materia': 'Alterar Material',
-  'atravessar a escuridao': 'Passar Pela Escuridão',
-  'sinal sombreado': 'Semblante Sombreado',
-  'profissional': 'Habilidoso',
-  'prolongada': 'Estendido',
-  'radiografia': 'Radiestesia',
-  'inalador de fumaca': 'Embriagado pelos Vapores',
-  'descontraido e relaxado': 'Bem Solto',
-  'sinal de impulso': 'Brado Revigorante',
-  'enredar': 'Cativar',
-  'precisao': 'Destreza',
-  'gume afiado': 'Borda Irregular',
-  'pericia roubar': 'Roubar Perícia',
+  // Bucket 2 talent-name references were fixed at SOURCE (prose) per the Owner, so
+  // they resolve directly from the corrected content — no aliases needed. (Removing
+  // them avoids a latent footgun where a future same-named prereq is silently remapped.)
 };
 // D&D 5e perícias (PT-BR) that appear as bare prereqs — proficiency requirements,
 // not talents. Excludes "Atletismo"/"Natureza" (also sphere names) to avoid clashes.

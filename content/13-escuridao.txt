@@ -223,7 +223,7 @@ Você empresta animação e substância à sua sombra, permitindo que ela se mov
 **Aprimoramento 2 pm**: :: Você pode transformar sua escuridão em um efeito permanente que dura até ser dissipado. Uma vez criada, essa escuridão é imóvel. Não pode ser centralizado em uma criatura ou objeto com o talento Escuridão Aderente e não pode ser movido com o talento Blecaute Rolante.
 
 #### Penumbra Sem Luz (véu)
-**Pré-requisitos**: :: Esfera de Escuridão (Sinal Sombreado), 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Escuridão (Semblante Sombreado), 1º nível ou superior.
 
 **Aprimoramento 1 pm**: :: Você pode tornar seu Semblante Sombreado totalmente opaco, protegendo o alvo de danos causados pela luz do dia, mágicos ou normais, e concedendo vantagem em testes de resistência contra efeitos baseados em luz e visão. Você sempre é tratado como se tivesse seus olhos desviados em relação a ataques de olhar, embora não sofra nenhuma das penalidades associadas. Criaturas com extrema vulnerabilidade à luz do dia, como vampiros, são protegidas da luz do dia por este talento.
 
@@ -233,7 +233,7 @@ Você empresta animação e substância à sua sombra, permitindo que ela se mov
 **Aprimoramento 2 pm**: :: Você pode aumentar a área de sua escuridão para um raio de 3,2 quilômetros. Você não pode adicionar os efeitos de nenhum talento (escuridão) à escuridão aprimorada desta forma.
 
 #### Um com o Vazio
-**Pré-requisitos**: :: Esfera de Escuridão (Atravessar a Escuridão), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera de Escuridão (Passar Pela Escuridão), 11º nível ou superior.
 **Tempo de Conjuração**: :: 1 ação
 **Duração**: :: concentração, até 10 minutos
 **Alvo**: :: si mesmo
@@ -251,7 +251,7 @@ Você pode ajustar seu tamanho como uma ação bônus, de uma esfera de 1,5 metr
 **Aprimoramento 1 pm**: ::  Você pode adicionar Escuridão Pura além de qualquer outro talento (escuridão) que aplicar a uma área de (escuridão) que criar.
 
 #### Andarilho das Sombras (véu)
-**Pré-requisitos**: :: Esfera de Escuridão (Atravessar a Escuridão), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera de Escuridão (Passar Pela Escuridão), 11º nível ou superior.
 
 **Aprimoramento 1 pm**: ::  Um alvo deve estar em uma área de penumbra ou escuridão para que você aplique este talento (fusão) a ele. Quando este talento é aplicado, o alvo sai temporariamente do Plano Material e entra no local onde ele faz fronteira com o Plano das Sombras. Enquanto estiver nesta região de sombra, o alvo pode se mover a uma velocidade de 80 quilômetros por hora, vendo sua posição relativa no Plano Material, embora pareça borrada e sem detalhes. A qualquer momento, o alvo pode voltar para o Plano Material, momento em que os efeitos deste talento (fusão) cessam imediatamente.
 

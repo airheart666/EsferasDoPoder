@@ -478,7 +478,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar o talento Inalador de Fumaça, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela."
+      "body": "Ao usar o talento Embriagado pelos Vapores, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela."
     },
     {
       "id": "m-brigao-ficar-mole",
@@ -550,7 +550,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar Descontraído e Relaxado para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido."
+      "body": "Ao usar Bem Solto para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido."
     },
     {
       "id": "m-brigao-quebrador-de-reliquias",
