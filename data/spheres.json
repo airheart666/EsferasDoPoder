@@ -1,0 +1,212 @@
+[
+  {
+    "id": "adivinhacao",
+    "name": "Adivinhação",
+    "section": "magic"
+  },
+  {
+    "id": "aprimoramento",
+    "name": "Aprimoramento",
+    "section": "magic"
+  },
+  {
+    "id": "alteracao",
+    "name": "Alteração",
+    "section": "magic"
+  },
+  {
+    "id": "clima",
+    "name": "Clima",
+    "section": "magic"
+  },
+  {
+    "id": "conjuracao",
+    "name": "Conjuração",
+    "section": "magic"
+  },
+  {
+    "id": "criacao",
+    "name": "Criação",
+    "section": "magic"
+  },
+  {
+    "id": "destino",
+    "name": "Destino",
+    "section": "magic"
+  },
+  {
+    "id": "destruicao",
+    "name": "Destruição",
+    "section": "magic"
+  },
+  {
+    "id": "distorcao",
+    "name": "Distorção",
+    "section": "magic"
+  },
+  {
+    "id": "escuridao",
+    "name": "Escuridão",
+    "section": "magic"
+  },
+  {
+    "id": "ilusao",
+    "name": "Ilusão",
+    "section": "magic"
+  },
+  {
+    "id": "luz",
+    "name": "Luz",
+    "section": "magic"
+  },
+  {
+    "id": "mente",
+    "name": "Mente",
+    "section": "magic"
+  },
+  {
+    "id": "morte",
+    "name": "Morte",
+    "section": "magic"
+  },
+  {
+    "id": "natureza",
+    "name": "Natureza",
+    "section": "magic"
+  },
+  {
+    "id": "protecao",
+    "name": "Proteção",
+    "section": "magic"
+  },
+  {
+    "id": "telecinese",
+    "name": "Telecinese",
+    "section": "magic"
+  },
+  {
+    "id": "tempo",
+    "name": "Tempo",
+    "section": "magic"
+  },
+  {
+    "id": "universal",
+    "name": "Universal",
+    "section": "magic"
+  },
+  {
+    "id": "vida",
+    "name": "Vida",
+    "section": "magic"
+  },
+  {
+    "id": "alquimia",
+    "name": "Alquimia",
+    "section": "martial"
+  },
+  {
+    "id": "armadilha",
+    "name": "Armadilha",
+    "section": "martial"
+  },
+  {
+    "id": "atirador",
+    "name": "Atirador",
+    "section": "martial"
+  },
+  {
+    "id": "atletismo",
+    "name": "Atletismo",
+    "section": "martial"
+  },
+  {
+    "id": "barragem",
+    "name": "Barragem",
+    "section": "martial"
+  },
+  {
+    "id": "batedor",
+    "name": "Batedor",
+    "section": "martial"
+  },
+  {
+    "id": "brigao",
+    "name": "Brigão",
+    "section": "martial"
+  },
+  {
+    "id": "bruto",
+    "name": "Bruto",
+    "section": "martial"
+  },
+  {
+    "id": "canalha",
+    "name": "Canalha",
+    "section": "martial"
+  },
+  {
+    "id": "dominio-das-feras",
+    "name": "Domínio das Feras",
+    "section": "martial"
+  },
+  {
+    "id": "duas-armas",
+    "name": "Duas Armas",
+    "section": "martial"
+  },
+  {
+    "id": "duelismo",
+    "name": "Duelismo",
+    "section": "martial"
+  },
+  {
+    "id": "engenhosidade",
+    "name": "Engenhosidade",
+    "section": "martial"
+  },
+  {
+    "id": "equipamento",
+    "name": "Equipamento",
+    "section": "martial"
+  },
+  {
+    "id": "escudo",
+    "name": "Escudo",
+    "section": "martial"
+  },
+  {
+    "id": "general",
+    "name": "General",
+    "section": "martial"
+  },
+  {
+    "id": "gladiador",
+    "name": "Gladiador",
+    "section": "martial"
+  },
+  {
+    "id": "guardiao",
+    "name": "Guardião",
+    "section": "martial"
+  },
+  {
+    "id": "impeto",
+    "name": "Ímpeto",
+    "section": "martial"
+  },
+  {
+    "id": "lideranca",
+    "name": "Liderança",
+    "section": "martial"
+  },
+  {
+    "id": "luta-livre",
+    "name": "Luta Livre",
+    "section": "martial"
+  },
+  {
+    "id": "retribuicao",
+    "name": "Retribuição",
+    "section": "martial"
+  }
+]

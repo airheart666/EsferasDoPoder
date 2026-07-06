@@ -350,6 +350,40 @@ function resolvePrereqs(allTalents, sphereIds) {
   }
 }
 
+// ---- Migrate classes.json + class-features.json into data/ -------------------
+// classes.json is already schema-shaped (copied through). class-features grants
+// reference talents by {name, sphere}; we resolve each to a stable talent id so
+// the rules engine can match granted talents by id, not by fragile name compare.
+function migrateClasses(allTalents) {
+  const byKey = new Map(), globalBase = new Map();
+  for (const t of allTalents) {
+    const base = normalizeTerm(baseName(t.name));
+    if (!byKey.has(t.sphere + '|' + base)) byKey.set(t.sphere + '|' + base, t.id);
+    if (!globalBase.has(base)) globalBase.set(base, t.id);
+  }
+  const resolve = (name, sphereName) => {
+    const base = normalizeTerm(baseName(name));
+    const sid = SPHERE_ALIAS[slugify(sphereName)] || slugify(sphereName);
+    return byKey.get(sid + '|' + base) || globalBase.get(base) || null;
+  };
+  const classes = load('classes.json');
+  const cf = load('class-features.json');
+  const unresolved = [];
+  const addIds = node => {
+    for (const g of node.grants || []) for (const t of g.talents || []) {
+      const id = resolve(t.name, t.sphere);
+      if (id) t.id = id; else unresolved.push(`${t.name} [${t.sphere}]`);
+    }
+    for (const sub of Object.values(node.subclasses || {})) addIds(sub);
+  };
+  for (const cls of Object.values(cf)) addIds(cls);
+  if (!dryRun) {
+    fs.writeFileSync(path.join(ROOT, 'data', 'classes.json'), JSON.stringify(classes, null, 2) + '\n');
+    fs.writeFileSync(path.join(ROOT, 'data', 'class-features.json'), JSON.stringify(cf, null, 2) + '\n');
+  }
+  return unresolved;
+}
+
 // ---- Main --------------------------------------------------------------------
 function main() {
   const manifest = load('manifest.json');
@@ -399,6 +433,20 @@ function main() {
     if (!dryRun) fs.writeFileSync(path.join(outDir, sphere.id + '.json'), JSON.stringify(sphere, null, 2) + '\n', 'utf8');
   }
   console.log(`\n${results.length} spheres, ${totalTalents} talents, ${flagged} flagged for review.` + (dryRun ? ' (dry run — nothing written)' : ` Written to data/spheres/.`));
+
+  // Full extraction only: emit the sphere manifest (browsers can't list a dir)
+  // and migrate classes / class-features into data/ with grant ids resolved.
+  if (!onlySphere) {
+    if (!dryRun) {
+      const sphereManifest = results.map(s => ({ id: s.id, name: s.name, section: s.section }));
+      fs.writeFileSync(path.join(ROOT, 'data', 'spheres.json'), JSON.stringify(sphereManifest, null, 2) + '\n');
+    }
+    const grantUnresolved = migrateClasses(allTalents);
+    console.log(`data/classes.json + data/class-features.json migrated` +
+      (grantUnresolved.length ? ` — ⚠ ${grantUnresolved.length} grant talents unresolved: ${grantUnresolved.join(', ')}` : ` (all grant talents resolved to ids)`));
+  } else {
+    console.log('(--sphere filter: skipped class migration + manifest — run without filter for those)');
+  }
 }
 
 main();

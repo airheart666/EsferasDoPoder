@@ -139,7 +139,7 @@
  * @typedef {Object} ClassDef
  * @property {Section} type
  * @property {string}  keyAbility
- * @property {'PM'|'Chi'|'none'} resource
+ * @property {'PM'|'Chi'|'none'|null} resource
  * @property {ProgressionRow[]} progression
  */
 

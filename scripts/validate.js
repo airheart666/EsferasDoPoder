@@ -46,6 +46,18 @@ for (const f of sphereFiles) {
   spheres.push(doc);
 }
 
+// classes.json + class-features.json schema conformance (if migrated into data/)
+const validateClasses = ajv.getSchema('class.schema.json');
+const validateClassFeatures = ajv.getSchema('class-features.schema.json');
+if (fs.existsSync(path.join(ROOT, 'data', 'classes.json'))) {
+  const doc = load(path.join('data', 'classes.json'));
+  if (!validateClasses(doc)) for (const e of validateClasses.errors) err(`classes.json: ${e.instancePath || '/'} ${e.message}`);
+}
+if (fs.existsSync(path.join(ROOT, 'data', 'class-features.json'))) {
+  const doc = load(path.join('data', 'class-features.json'));
+  if (!validateClassFeatures(doc)) for (const e of validateClassFeatures.errors) err(`class-features.json: ${e.instancePath || '/'} ${e.message}`);
+}
+
 // ---- 2. Referential integrity ------------------------------------------------
 const talentIds = new Set();
 const sphereIds = new Set();

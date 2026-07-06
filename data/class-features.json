@@ -1,0 +1,235 @@
+{
+  "Artífice": {
+    "subclasses": {
+      "Alquimista": {
+        "grants": [
+          {
+            "level": 3,
+            "feature": "Magias de Alquimista",
+            "talents": [
+              {
+                "name": "Revitalizar",
+                "sphere": "Vida",
+                "id": "vida-revitalizar"
+              },
+              {
+                "name": "Envenenamento",
+                "sphere": "Morte",
+                "id": "morte-envenenamento"
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "feature": "Magias de Alquimista",
+            "talents": [
+              {
+                "name": "Esfera",
+                "sphere": "Destruição",
+                "id": "destruicao-esfera"
+              },
+              {
+                "name": "Veneno",
+                "sphere": "Destruição",
+                "id": "destruicao-veneno"
+              }
+            ]
+          },
+          {
+            "level": 9,
+            "feature": "Magias de Alquimista",
+            "talents": [
+              {
+                "name": "Elemental",
+                "sphere": "Alteração",
+                "id": "alteracao-elemental"
+              },
+              {
+                "name": "Em Massa",
+                "sphere": "Universal",
+                "id": "universal-em-massa"
+              }
+            ]
+          },
+          {
+            "level": 13,
+            "feature": "Magias de Alquimista",
+            "talents": [
+              {
+                "name": "Drenante",
+                "sphere": "Destruição",
+                "id": "destruicao-drenante"
+              },
+              {
+                "name": "Imortal",
+                "sphere": "Proteção",
+                "id": "protecao-imortal"
+              }
+            ]
+          },
+          {
+            "level": 17,
+            "feature": "Magias de Alquimista",
+            "talents": [
+              {
+                "name": "Ressurreição",
+                "sphere": "Vida",
+                "id": "vida-ressurreicao"
+              },
+              {
+                "name": "Nuvem",
+                "sphere": "Destruição",
+                "id": "destruicao-nuvem"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Feiticeiro": {
+    "features": [
+      {
+        "name": "Metamágica",
+        "section": "magic",
+        "bonusByLevel": [
+          [
+            3,
+            2
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            17,
+            1
+          ]
+        ],
+        "group": "talento (Meta) da esfera Universal",
+        "note": "no lugar de uma opção de Metamágica"
+      }
+    ],
+    "subclasses": {
+      "Sangue Feérico": {
+        "grants": [
+          {
+            "level": 1,
+            "feature": "Magias Feéricas",
+            "talents": [
+              {
+                "name": "Cativar",
+                "sphere": "Mente",
+                "id": "mente-cativar"
+              },
+              {
+                "name": "Luz Reveladora",
+                "sphere": "Luz",
+                "id": "luz-luz-reveladora"
+              }
+            ]
+          },
+          {
+            "level": 3,
+            "feature": "Magias Feéricas",
+            "talents": [
+              {
+                "name": "Delírio",
+                "sphere": "Mente",
+                "id": "mente-delirio"
+              },
+              {
+                "name": "Teleporte Rápido",
+                "sphere": "Distorção",
+                "id": "distorcao-teleporte-rapido"
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "feature": "Magias Feéricas",
+            "talents": [
+              {
+                "name": "Piscar",
+                "sphere": "Distorção",
+                "id": "distorcao-piscar"
+              },
+              {
+                "name": "Terreno Ilusório",
+                "sphere": "Ilusão",
+                "id": "ilusao-terreno-ilusorio"
+              }
+            ]
+          },
+          {
+            "level": 7,
+            "feature": "Magias Feéricas",
+            "talents": [
+              {
+                "name": "Confusão",
+                "sphere": "Mente",
+                "id": "mente-confusao"
+              },
+              {
+                "name": "Disfarce Ilusório",
+                "sphere": "Ilusão",
+                "id": "ilusao-disfarce-ilusorio"
+              }
+            ]
+          },
+          {
+            "level": 9,
+            "feature": "Magias Feéricas",
+            "talents": [
+              {
+                "name": "Paralisar",
+                "sphere": "Mente",
+                "id": "mente-paralisar"
+              },
+              {
+                "name": "Ilusões Potentes",
+                "sphere": "Ilusão",
+                "id": "ilusao-ilusoes-potentes"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Guerreiro": {
+    "subclasses": {
+      "Possuído": {
+        "features": [
+          {
+            "name": "Vínculo Espiritual",
+            "section": "martial",
+            "bonusByLevel": [
+              [
+                3,
+                2
+              ],
+              [
+                7,
+                2
+              ],
+              [
+                10,
+                2
+              ],
+              [
+                15,
+                2
+              ],
+              [
+                18,
+                2
+              ]
+            ],
+            "group": "quaisquer talentos marciais"
+          }
+        ]
+      }
+    }
+  }
+}
