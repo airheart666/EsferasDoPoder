@@ -747,16 +747,16 @@
           "id": "distorcao"
         },
         {
-          "type": "text",
-          "text": "Teletransporte à Distância"
+          "type": "talent",
+          "id": "distorcao-teleporte-a-distancia"
         },
         {
           "type": "talent",
           "id": "distorcao-teletransporte-verdadeiro"
         },
         {
-          "type": "text",
-          "text": "Teletransporte Invisível"
+          "type": "talent",
+          "id": "distorcao-teleporte-invisivel"
         },
         {
           "type": "level",
@@ -770,11 +770,7 @@
           "text": "Ao usar o talento avançado Teletransporte Verdadeiro, a distância aumenta para ilimitada e você não corre mais o risco de chegar fora do alvo, sempre aparecendo exatamente onde pretendia. Ao usar o talento avançado Mudança Planar, você não aparece mais fora do alvo em relação ao seu destino pretendido no outro plano."
         }
       ],
-      "body": "Você não precisa ter visto o destino que está tentando alcançar, mas, nesse caso, você deve ter pelo menos uma descrição confiável do local para o qual está se teletransportando, senão você desaparece e simplesmente reaparece em sua localização original.",
-      "_needsReview": [
-        "prereq:unresolved:Teletransporte à Distância",
-        "prereq:unresolved:Teletransporte Invisível"
-      ]
+      "body": "Você não precisa ter visto o destino que está tentando alcançar, mas, nesse caso, você deve ter pelo menos uma descrição confiável do local para o qual está se teletransportando, senão você desaparece e simplesmente reaparece em sua localização original."
     },
     {
       "id": "distorcao-mudanca-planar",
@@ -790,16 +786,16 @@
           "id": "distorcao"
         },
         {
-          "type": "text",
-          "text": "Teletransporte à Distância"
+          "type": "talent",
+          "id": "distorcao-teleporte-a-distancia"
         },
         {
           "type": "talent",
           "id": "distorcao-teletransporte-verdadeiro"
         },
         {
-          "type": "text",
-          "text": "Teletransporte Invisível"
+          "type": "talent",
+          "id": "distorcao-teleporte-invisivel"
         },
         {
           "type": "level",
@@ -813,11 +809,7 @@
           "text": "Você pode se teletransportar para uma dimensão ou plano de existência alternativo. Você precisa saber o plano que deseja alcançar, bem como onde, dentro desse plano, deseja aparecer (se não souber um local específico para aparecer nesse plano, ainda poderá usar esta habilidade, mas corre o risco de aparecer em qualquer lugar do plano). Você aparece próximo ao seu destino pretendido (se especificar uma cidade, poderá aparecer em qualquer portão dessa cidade ou em qualquer outro lugar visível do exterior dela, por exemplo), embora a localização exata fique a critério do Mestre."
         }
       ],
-      "body": "Alternativamente, se você souber a sequência de sigilos de um círculo de teletransporte em outro plano de existência, este efeito pode levá-lo até esse círculo. Se o círculo de teletransporte for pequeno demais para conter todas as criaturas que você transportou, elas aparecerão nos espaços desocupados mais próximos ao círculo.\n\nSequência de Sigilos;: Círculos de teletransporte permanentes possuem uma sequência de sigilos única que os identifica. Aprender uma sequência de sigilos requer estudar um círculo por 1 minuto.",
-      "_needsReview": [
-        "prereq:unresolved:Teletransporte à Distância",
-        "prereq:unresolved:Teletransporte Invisível"
-      ]
+      "body": "Alternativamente, se você souber a sequência de sigilos de um círculo de teletransporte em outro plano de existência, este efeito pode levá-lo até esse círculo. Se o círculo de teletransporte for pequeno demais para conter todas as criaturas que você transportou, elas aparecerão nos espaços desocupados mais próximos ao círculo.\n\nSequência de Sigilos;: Círculos de teletransporte permanentes possuem uma sequência de sigilos única que os identifica. Aprender uma sequência de sigilos requer estudar um círculo por 1 minuto."
     },
     {
       "id": "distorcao-portal",
@@ -907,8 +899,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Massa (metasfera)"
+          "type": "talent",
+          "id": "universal-em-massa"
         },
         {
           "type": "talent",
@@ -926,10 +918,7 @@
           "text": "Você pode teletransportar qualquer número de alvos dentro do alcance. Se você possuir Teletransporte Involuntário, você só precisa gastar um ponto de magia, não importa quantos alvos involuntários sejam afetados. Se um alvo involuntário passar no teste de resistência, os outros alvos ainda serão afetados normalmente. Se você possuir o talento Teletransportar Objeto, também poderá teletransportar qualquer número de objetos, desde que cada objeto individual esteja dentro do seu limite de peso (ou limite de tamanho, caso possua o talento Teletransportar Estrutura)."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Massa (metasfera)"
-      ]
+      "body": ""
     },
     {
       "id": "distorcao-teletransportar-estrutura",
@@ -945,8 +934,8 @@
           "id": "distorcao"
         },
         {
-          "type": "text",
-          "text": "Teletransporte de Objeto"
+          "type": "talent",
+          "id": "distorcao-teletransportar-objeto"
         },
         {
           "type": "level",
@@ -955,10 +944,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode teletransportar objetos de peso e tamanho muito maiores, até mesmo veículos e estruturas inteiras. Você pode teletransportar qualquer objeto de tamanho apropriado, conforme mostrado na Tabela: Estruturas abaixo. Se você usar Teletransporte de Exército em conjunto com este talento, poderá teletransportar todos os alvos que estiverem tocando um objeto ou estrutura teletransportada dentro do alcance, em vez de teletransportar todas as criaturas dentro do alcance.\n\nVocê deve usar Teletransporte Involuntário para teletransportar quaisquer criaturas involuntárias em contato com o objeto ou estrutura.\n\nTabela: Estruturas\n\nNívelTamanho MáximoExemplo de Objeto1ºMédioBarril5ºGrandeMesa11ºEnormeCarroça17ºGargantuescoCatapulta",
-      "_needsReview": [
-        "prereq:unresolved:Teletransporte de Objeto"
-      ]
+      "body": "Você pode teletransportar objetos de peso e tamanho muito maiores, até mesmo veículos e estruturas inteiras. Você pode teletransportar qualquer objeto de tamanho apropriado, conforme mostrado na Tabela: Estruturas abaixo. Se você usar Teletransporte de Exército em conjunto com este talento, poderá teletransportar todos os alvos que estiverem tocando um objeto ou estrutura teletransportada dentro do alcance, em vez de teletransportar todas as criaturas dentro do alcance.\n\nVocê deve usar Teletransporte Involuntário para teletransportar quaisquer criaturas involuntárias em contato com o objeto ou estrutura.\n\nTabela: Estruturas\n\nNívelTamanho MáximoExemplo de Objeto1ºMédioBarril5ºGrandeMesa11ºEnormeCarroça17ºGargantuescoCatapulta"
     },
     {
       "id": "distorcao-teletransporte-verdadeiro",

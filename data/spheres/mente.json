@@ -518,8 +518,8 @@
           "id": "mente-ler-mente"
         },
         {
-          "type": "text",
-          "text": "Projeção de Pensamentos"
+          "type": "talent",
+          "id": "mente-pensamentos-projetados"
         },
         {
           "type": "level",
@@ -533,10 +533,7 @@
           "text": ""
         }
       ],
-      "body": "Desde que você seja pessoalmente familiarizado com o alvo, você pode usar seu encanto Projeção de Pensamentos a qualquer distância, até mesmo entre planos (embora haja 5% de chance de a mensagem não chegar).\n\nOs recipientes podem responder (25 palavras para o Encanto Maior, sem limite de palavras para o Encanto Poderoso).\n\nO alvo deve voluntariamente receber e enviar mensagens; ele pode simplesmente bloqueá-lo, encerrando a comunicação.",
-      "_needsReview": [
-        "prereq:unresolved:Projeção de Pensamentos"
-      ]
+      "body": "Desde que você seja pessoalmente familiarizado com o alvo, você pode usar seu encanto Projeção de Pensamentos a qualquer distância, até mesmo entre planos (embora haja 5% de chance de a mensagem não chegar).\n\nOs recipientes podem responder (25 palavras para o Encanto Maior, sem limite de palavras para o Encanto Poderoso).\n\nO alvo deve voluntariamente receber e enviar mensagens; ele pode simplesmente bloqueá-lo, encerrando a comunicação."
     },
     {
       "id": "mente-insanidade",
@@ -607,16 +604,16 @@
           "id": "mente-encanto-poderoso"
         },
         {
-          "type": "text",
-          "text": "Projeção de Pensamentos"
+          "type": "talent",
+          "id": "mente-pensamentos-projetados"
         },
         {
           "type": "sphere",
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Massa — metasfera"
+          "type": "talent",
+          "id": "universal-em-massa"
         },
         {
           "type": "level",
@@ -632,9 +629,7 @@
       ],
       "body": "",
       "_needsReview": [
-        "prereq:unresolved:Enredar",
-        "prereq:unresolved:Projeção de Pensamentos",
-        "prereq:unresolved:Massa — metasfera"
+        "prereq:unresolved:Enredar"
       ]
     },
     {
@@ -659,8 +654,8 @@
           "id": "mente-encanto-poderoso"
         },
         {
-          "type": "text",
-          "text": "Projeção de Pensamentos"
+          "type": "talent",
+          "id": "mente-pensamentos-projetados"
         },
         {
           "type": "level",
@@ -674,10 +669,7 @@
           "text": "Ao aplicar um encanto poderoso de Cativar, você pode aumentar a duração para 1 semana. O alvo obedece a todos os comandos, exceto ordens claramente suicidas. Comandos contrários à natureza do alvo concedem um novo teste de resistência com vantagem para romper o efeito."
         }
       ],
-      "body": "Você pode enviar comandos telepaticamente (mesmo sem idioma compartilhado, mas limitando-se a comandos simples). A comunicação ignora distância, mas não atravessa planos.\n\nVocê pode usar sua ação para dominar completamente o alvo até o fim do seu próximo turno, escolhendo todas as ações e podendo forçar uma reação (gastando também sua própria reação).\n\nAlternativamente, você pode usar sua ação para obter entrada sensorial interpretada pela mente do alvo.\n\nCom Ler Mente e Comunicação Superior, o alvo pode até se comunicar com você.\n\nNão é visão direta pelos olhos dele, mas dá uma boa noção do ambiente.\n\nO alvo recebe um novo teste de resistência a cada 24 horas para tentar quebrar o efeito.",
-      "_needsReview": [
-        "prereq:unresolved:Projeção de Pensamentos"
-      ]
+      "body": "Você pode enviar comandos telepaticamente (mesmo sem idioma compartilhado, mas limitando-se a comandos simples). A comunicação ignora distância, mas não atravessa planos.\n\nVocê pode usar sua ação para dominar completamente o alvo até o fim do seu próximo turno, escolhendo todas as ações e podendo forçar uma reação (gastando também sua própria reação).\n\nAlternativamente, você pode usar sua ação para obter entrada sensorial interpretada pela mente do alvo.\n\nCom Ler Mente e Comunicação Superior, o alvo pode até se comunicar com você.\n\nNão é visão direta pelos olhos dele, mas dá uma boa noção do ambiente.\n\nO alvo recebe um novo teste de resistência a cada 24 horas para tentar quebrar o efeito."
     },
     {
       "id": "mente-xama-animal",

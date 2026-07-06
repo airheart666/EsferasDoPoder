@@ -894,8 +894,8 @@
           "id": "natureza"
         },
         {
-          "type": "text",
-          "text": "Forjar Terra"
+          "type": "talent",
+          "id": "natureza-forjar-a-terra"
         },
         {
           "type": "level",
@@ -904,10 +904,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "(concentração; requer terra, areia ou pedra) Você cria uma perturbação sísmica em um ponto no solo que você possa ver dentro do alcance. Durante a duração, um tremor intenso atravessa o solo em um círculo de até 30 metros de raio centrado nesse ponto e sacode criaturas e estruturas em contato com o solo nessa área.\n\nO solo na área torna-se terreno difícil. Cada criatura no solo que estiver concentrando-se deve fazer um teste de resistência de Constituição. Em caso de falha, a concentração da criatura é quebrada.\n\nAo conjurar esta magia e ao final de cada turno em que você se concentra nela, cada criatura no solo na área deve fazer um teste de resistência de Destreza. Em caso de falha, a criatura é derrubada.\n\nEsta magia pode ter efeitos adicionais dependendo do terreno na área, conforme determinado pelo Mestre.\n\nFissuras: Fissuras se abrem por toda a área da magia no início do seu próximo turno após conjurá-la. Um total de 1d6 dessas fissuras se abrem em locais escolhidos pelo Mestre. Cada uma tem 1d10 × 3 metros de profundidade, 3 metros de largura e se estende de uma borda da área da magia até o lado oposto. Uma criatura parada em um ponto onde uma fissura se abre deve ser bem-sucedida em um teste de resistência de Destreza\n\nou cairá dentro dela. Uma criatura que obtiver sucesso no teste se move com a borda da fissura à medida que ela se abre. Uma fissura que se abre sob uma estrutura faz com que ela desmorone automaticamente (veja abaixo).\n\nEstruturas: O tremor causa 50 pontos de dano de concussão a qualquer estrutura em contato com o solo na área quando você conjura a magia e no início de cada um dos seus turnos até o término da magia. Se uma estrutura cair para 0 pontos de vida, ela desaba e pode causar dano a criaturas próximas. Uma criatura a uma distância igual à metade da altura de uma estrutura deve fazer um teste de resistência de Destreza. Em caso de falha no teste de resistência, a criatura sofre 5d6 de dano de impacto, é derrubada e soterrada nos escombros, necessitando de um teste de Força (Atletismo) CD 20 como uma ação para escapar.\n\nO Mestre pode ajustar a CD para mais ou para menos, dependendo da natureza dos escombros. Em caso de sucesso no teste de resistência, a criatura sofre metade do dano e não cai nem é soterrada.",
-      "_needsReview": [
-        "prereq:unresolved:Forjar Terra"
-      ]
+      "body": "(concentração; requer terra, areia ou pedra) Você cria uma perturbação sísmica em um ponto no solo que você possa ver dentro do alcance. Durante a duração, um tremor intenso atravessa o solo em um círculo de até 30 metros de raio centrado nesse ponto e sacode criaturas e estruturas em contato com o solo nessa área.\n\nO solo na área torna-se terreno difícil. Cada criatura no solo que estiver concentrando-se deve fazer um teste de resistência de Constituição. Em caso de falha, a concentração da criatura é quebrada.\n\nAo conjurar esta magia e ao final de cada turno em que você se concentra nela, cada criatura no solo na área deve fazer um teste de resistência de Destreza. Em caso de falha, a criatura é derrubada.\n\nEsta magia pode ter efeitos adicionais dependendo do terreno na área, conforme determinado pelo Mestre.\n\nFissuras: Fissuras se abrem por toda a área da magia no início do seu próximo turno após conjurá-la. Um total de 1d6 dessas fissuras se abrem em locais escolhidos pelo Mestre. Cada uma tem 1d10 × 3 metros de profundidade, 3 metros de largura e se estende de uma borda da área da magia até o lado oposto. Uma criatura parada em um ponto onde uma fissura se abre deve ser bem-sucedida em um teste de resistência de Destreza\n\nou cairá dentro dela. Uma criatura que obtiver sucesso no teste se move com a borda da fissura à medida que ela se abre. Uma fissura que se abre sob uma estrutura faz com que ela desmorone automaticamente (veja abaixo).\n\nEstruturas: O tremor causa 50 pontos de dano de concussão a qualquer estrutura em contato com o solo na área quando você conjura a magia e no início de cada um dos seus turnos até o término da magia. Se uma estrutura cair para 0 pontos de vida, ela desaba e pode causar dano a criaturas próximas. Uma criatura a uma distância igual à metade da altura de uma estrutura deve fazer um teste de resistência de Destreza. Em caso de falha no teste de resistência, a criatura sofre 5d6 de dano de impacto, é derrubada e soterrada nos escombros, necessitando de um teste de Força (Atletismo) CD 20 como uma ação para escapar.\n\nO Mestre pode ajustar a CD para mais ou para menos, dependendo da natureza dos escombros. Em caso de sucesso no teste de resistência, a criatura sofre metade do dano e não cai nem é soterrada."
     },
     {
       "id": "natureza-geiser-congelante",
@@ -987,8 +984,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Estendida (metaesfera)"
+          "type": "talent",
+          "id": "universal-estendido"
         },
         {
           "type": "level",
@@ -997,10 +994,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Aprimoramento 2PM: A duração das habilidades concedidas pelo talento Domínio da Névoa torna-se permanente. Você pode gastar uma ação para que o efeito se mova até 4,5 metros em qualquer direção. Se for alvo de uma habilidade da esfera do Clima ou estiver na área de efeito dela, o conjurador que usa a esfera do Clima deve fazer um teste de habilidade de conjuração contra a CD de resistência da sua esfera. Se o usuário da esfera do Clima for bem-sucedido, a névoa é neutralizada. Caso contrário, ela não está sujeita aos efeitos de clima não criado por magia. Você pode dissipar um efeito tornado permanente por este aprimoramento como uma ação.",
-      "_needsReview": [
-        "prereq:unresolved:Estendida (metaesfera)"
-      ]
+      "body": "Aprimoramento 2PM: A duração das habilidades concedidas pelo talento Domínio da Névoa torna-se permanente. Você pode gastar uma ação para que o efeito se mova até 4,5 metros em qualquer direção. Se for alvo de uma habilidade da esfera do Clima ou estiver na área de efeito dela, o conjurador que usa a esfera do Clima deve fazer um teste de habilidade de conjuração contra a CD de resistência da sua esfera. Se o usuário da esfera do Clima for bem-sucedido, a névoa é neutralizada. Caso contrário, ela não está sujeita aos efeitos de clima não criado por magia. Você pode dissipar um efeito tornado permanente por este aprimoramento como uma ação."
     },
     {
       "id": "natureza-ressurgimento-da-fenix",
@@ -1191,8 +1185,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Alcance (metasfera) (3)"
+          "type": "talent",
+          "id": "universal-alcance"
         },
         {
           "type": "level",
@@ -1210,10 +1204,7 @@
           "text": "O dano causado aumenta para 1d8 + 1d8 a cada dois níveis."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Alcance (metasfera) (3)"
-      ]
+      "body": ""
     },
     {
       "id": "natureza-espirito-da-natureza",

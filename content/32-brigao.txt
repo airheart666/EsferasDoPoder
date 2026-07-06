@@ -122,52 +122,52 @@ Aumente o número de bebidas que você pode consumir antes de adquirir a condiç
 Sempre que você atacar um alvo com uma arma que ele desconhecia (uma arma escondida ou uma arma improvisada do ambiente que ainda não foi empunhada ou usada para atacar), você ganha vantagem na jogada de ataque.
 
 
-### Talentos Lendários de Taverna
+### Talentos Lendários de Brigão
 
 #### Dragão Alquímico
-**Pré-requisitos**: :: Esfera de Alquimia, Esfera de Taverna.
+**Pré-requisitos**: :: Esfera de Alquimia, Esfera do Brigão.
 
 Como uma ação, você pode ingerir qualquer arma alquímica líquida, como fogo alquímico, algumas fórmulas ou ácido, e então cuspi-la em um cone de 4,5 metros. Todas as criaturas dentro desse cone devem fazer um teste de resistência de Destreza bem-sucedido ou sofrer os efeitos do item alquímico.
 
 
 #### Água Flamejante
-**Pré-requisitos**: :: Esfera de Taverna, 7º nível ou superior.
+**Pré-requisitos**: :: Esfera do Brigão, 7º nível ou superior.
 
 Sempre que você puder ingerir uma bebida alcoólica, você pode, em vez disso, derramá-la em uma arma que você ou um aliado adjacente esteja empunhando e incendiá-la. Por um minuto, essa arma causa 1d6 de dano de fogo adicional. Isso não conta como ingerir o álcool você mesmo.
 
 
 #### Arma Descartável (frágil)
-**Pré-requisitos**: :: Esfera de Taverna (Gume Afiado), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Brigão (Gume Afiado), 5º nível ou superior.
 
 Você sabe como quebrar um objeto no meio de um golpe para infligir ferimentos graves. Uma vez por descanso curto, antes de fazer um ataque com uma arma frágil, você pode gastar seu foco marcial, quebrando a arma. Se o ataque acertar, você pode, como uma reação, transformar um acerto normal em um acerto crítico. Você pode adquirir este talento várias vezes, cada vez aumentando o número de vezes que você pode usar este talento por descanso curto.
 
 
 #### Embriaguez Eterna
-**Pré-requisitos**: :: Esfera de Taverna (Inalador de Fumaça, Fígado de Ferro), 15º nível ou superior.
+**Pré-requisitos**: :: Esfera do Brigão (Inalador de Fumaça, Fígado de Ferro), 15º nível ou superior.
 
 Ao usar o talento Inalador de Fumaça, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela.
 
 
 #### Ficar Mole (bêbado)
-**Pré-requisitos**: :: Esfera de Taverna, 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Brigão, 5º nível ou superior.
 
 Como uma reação, você pode gastar seu status de bêbado para obter resistência a dano de concussão, perfuração e corte contra um ataque.
 
 
 #### Magia Destilada
-**Pré-requisitos**: :: Esfera de Taverna, 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Brigão, 5º nível ou superior.
 
 Enquanto você tiver o status de bêbado, seus ataques desarmados não mágicos e armas empunhadas ganham um bônus de +1 para ataque e dano, e são tratados como mágicos. 
 
 
 #### Relaxamento Perfeito
-**Pré-requisitos**: :: Esfera de Bar (Descontraído e Relaxado), nível 11 ou superior.
+**Pré-requisitos**: :: Esfera do Brigão (Descontraído e Relaxado), nível 11 ou superior.
 
 Ao usar Descontraído e Relaxado para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido.
 
 
 #### Quebrador de Relíquias
-**Pré-requisitos**: :: Esfera da Taverna.
+**Pré-requisitos**: :: Esfera do Brigão.
 
 Ao usar um item mágico como arma improvisada, qualquer dano causado por ele conta como dano mágico.
 
@@ -179,7 +179,7 @@ Você pode tratar itens mágicos como frágeis para fins de qualificação para 
 Se você também estiver usando Esferas de Poder, sempre que puder aplicar um talento (frágil) a um item mágico, você pode, em vez disso, gastar seu foco para ativar um efeito de magia selvagem de truque ou um efeito de magia selvagem universal.
 
 #### Quebrador de Aço
-**Pré-requisitos**: :: Esfera da Taverna.
+**Pré-requisitos**: :: Esfera do Brigão.
 
 Para fins de qualificação para talentos (frágeis), objetos feitos de material durável (ferro, aço, etc.) são tratados como se fossem frágeis.
 

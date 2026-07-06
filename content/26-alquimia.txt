@@ -359,8 +359,8 @@ Ingerir uma bebida alcoólica é considerado uma interação com um objeto. Apó
 
 O álcool pode ser abusado e ter efeitos negativos significativos. Em geral, um personagem pode consumir um número de bebidas alcoólicas igual ao dobro do seu modificador de Constituição por descanso longo, mas ficará envenenado por 1 hora para cada bebida acima desse limite. Formas particularmente exóticas ou fortes de álcool podem ser tratadas como drogas. Aqueles que abusam regularmente do álcool podem desenvolver um vício.
 
-##### Esfera da Alquimia: Álcool e a Esfera da Taverna
-Personagens que possuem a característica Beberrão da Esfera da Taverna não precisam esperar os 10 minutos completos para entrar no estado de embriaguez ao consumir álcool feito com a Esfera da Alquimia; eles podem escolher entrar imediatamente no estado de embriaguez; no entanto, o estado de embriaguez adquirido dessa forma durará apenas 1 minuto, em vez dos 10 minutos normais.
+##### Esfera da Alquimia: Álcool e a Esfera do Brigão
+Personagens que possuem a característica Beberrão da Esfera do Brigão não precisam esperar os 10 minutos completos para entrar no estado de embriaguez ao consumir álcool feito com a Esfera da Alquimia; eles podem escolher entrar imediatamente no estado de embriaguez; no entanto, o estado de embriaguez adquirido dessa forma durará apenas 1 minuto, em vez dos 10 minutos normais.
 
 Embora esses personagens possam escolher a cada vez que consomem álcool se utilizam ou não a característica Beberrão, a maioria dos combates raramente dura mais do que algumas rodadas, muito menos um minuto inteiro; geralmente, recomenda-se que os jogadores utilizem a característica Beberrão, se a possuírem.
 

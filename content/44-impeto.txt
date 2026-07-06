@@ -87,22 +87,22 @@ Sempre que você reduzir uma criatura a 0 pontos de vida com um ataque corpo a c
 Sempre que você reduzir uma criatura a 0 pontos de vida com um ataque corpo a corpo ou com arma de arremesso, você pode gastar uma ação bônus para recuperar foco marcial. A criatura deve ter um Nível de Desafio (ND) de pelo menos metade do seu nível de personagem (arredondado para baixo, mínimo 1/2).
 
 
-### Talentos Lendários do Berserker
+### Talentos Lendários do Ímpeto
 
 #### Alterar Terreno
-**Pré-requisitos**: :: Esfera do Berserker (Quebrar a Terra), 7º nível ou superior.
+**Pré-requisitos**: :: Esfera do Ímpeto (Quebrar a Terra), 7º nível ou superior.
 
 Ao usar o talento Quebrar a Terra, você pode criar um buraco de 1,5 metro de profundidade no solo nos quadrados afetados. Se desejar, você também pode elevar o terreno em 1,5 metro em todos os quadrados adjacentes aos quadrados afetados.
 
 
 #### Atavismo (adrenalina)
-**Pré-requisitos**: :: Esfera do Berserker
+**Pré-requisitos**: :: Esfera do Ímpeto
 
 Sempre que for afetado por uma magia, efeito ou outra habilidade, você pode escolher ser considerado como seu tipo de criatura original ou como uma besta, sempre que isso for vantajoso para você (como ser imune a uma magia de imobilizar pessoa, tratando-se como uma besta, ou receber uma magia de aumentar pessoa, tratando-se como um humanoide).
 
 
 #### Golpe da Fenda
-**Pré-requisitos**: :: Esfera do Berserker, 11º nível ou superior.
+**Pré-requisitos**: :: Esfera do Ímpeto, 11º nível ou superior.
 
 Como uma ação que provoca ataques de oportunidade, você libera um rugido poderoso e desfere um golpe com uma arma com tamanha ferocidade que rasga o próprio tecido do espaço-tempo, abrindo uma fenda para outro local. Isso teletransporta você, seus itens carregados e até uma criatura Média ou menor disposta e seus equipamentos por três níveis para um local que pode estar a até 160 quilômetros por nível de distância. Criaturas Grandes contam como duas criaturas Médias, uma criatura Enorme conta como duas criaturas Grandes, e assim por diante. Todas as criaturas a serem transportadas devem estar em contato umas com as outras, e pelo menos uma dessas criaturas deve estar em contato com você.
 
@@ -112,7 +112,7 @@ Seu nível de exaustão aumenta em 1 após usar esta habilidade. Você sofre ess
 
 
 #### Passos Ruinosos
-**Pré-requisitos**: :: Esfera do Berserker (Quebrar a Terra).
+**Pré-requisitos**: :: Esfera do Ímpeto (Quebrar a Terra).
 
 Você pode escolher quebrar o chão enquanto se move. Sempre que sair de um quadrado, você pode escolher tornar esse quadrado terreno difícil. Este terreno difícil permanece até ser removido por uma ação (limpando 1 quadrado dentro do alcance da criatura) ou reparado com uma magia ou efeito, como a magia Consertar.
 
@@ -120,7 +120,7 @@ Você pode escolher quebrar o chão enquanto se move. Sempre que sair de um quad
 <div class='pageNumber auto'></div>
 
 #### Dilacerar
-**Pré-requisitos**: :: Esfera do Berserker, 11º nível ou superior.
+**Pré-requisitos**: :: Esfera do Ímpeto, 11º nível ou superior.
 
 Quando você acerta um golpe crítico com uma arma corpo a corpo, você pode gastar foco marcial. O alvo deve passar em um teste de resistência de Constituição ou ter um membro decepado. O alvo sofre 1d6 pontos de dano necrótico da ferida a cada rodada no início do seu turno até receber pelo menos 1 ponto de cura ou o sangramento ser estancado com um teste de Sabedoria (Medicina) CD 10.
 
@@ -128,7 +128,7 @@ Perder um membro reduz pela metade qualquer velocidade de movimento dependente d
 
 
 #### Quebra-Feitiço (esforço)
-**Pré-requisitos**: :: Esfera do Berserker, 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Ímpeto, 5º nível ou superior.
 
 Você pode tentar quebrar um efeito mágico ativo no alvo. Você pode escolher um efeito do qual esteja ciente, mas, caso contrário, isso afeta o efeito mágico de nível mais baixo. Se o dano do ataque exceder uma CD de 10 + o nível da magia, o efeito mágico é suprimido por um número de rodadas igual ao seu bônus de proficiência. Se o seu dano exceder a CD em 5 ou mais, ele é dissipado completamente. Você pode usar isso para atingir um efeito mágico em uma área.
 

@@ -268,8 +268,8 @@
           "id": "impeto"
         },
         {
-          "type": "text",
-          "text": "Quebrar a Terra"
+          "type": "talent",
+          "id": "m-impeto-quebra-terra"
         },
         {
           "type": "sphere",
@@ -286,10 +286,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Se você usar uma criatura empunhada por meio de Arma Viva para golpear o chão com o talento Quebrar a Terra, o alvo deve ser bem-sucedido em um teste de resistência de Destreza ou ficará imobilizado no chão. Usar esta habilidade encerra sua imobilização. O alvo pode se livrar da condição de imobilização com um teste de Força (Atletismo) ou Destreza (Acrobacia) (à sua escolha) contra a CD da sua esfera.",
-      "_needsReview": [
-        "prereq:unresolved:Quebrar a Terra"
-      ]
+      "body": "Se você usar uma criatura empunhada por meio de Arma Viva para golpear o chão com o talento Quebrar a Terra, o alvo deve ser bem-sucedido em um teste de resistência de Destreza ou ficará imobilizado no chão. Usar esta habilidade encerra sua imobilização. O alvo pode se livrar da condição de imobilização com um teste de Força (Atletismo) ou Destreza (Acrobacia) (à sua escolha) contra a CD da sua esfera."
     },
     {
       "id": "m-luta-livre-dilacerador-de-membros",
@@ -307,8 +304,8 @@
           "id": "luta-livre"
         },
         {
-          "type": "text",
-          "text": "Imobilização"
+          "type": "talent",
+          "id": "m-luta-livre-imobilizar"
         },
         {
           "type": "level",
@@ -317,10 +314,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Quando você tiver uma criatura imobilizada pelo talento Imobilização, você pode tentar remover um membro dela; a criatura deve ser bem-sucedida em um teste de resistência de Força ou terá um de seus membros removido por você (braços, pernas, tentáculos ou asas), encerrando a imobilização.\n\nA perda de um membro reduz pela metade qualquer velocidade de movimento dependente desse membro e remove quaisquer ataques e habilidades dependentes dele. Criaturas sem nenhuma perna ficam caídas e têm uma velocidade de caminhada de 1,5 metro, a menos que possuam outras formas de movimento.",
-      "_needsReview": [
-        "prereq:unresolved:Imobilização"
-      ]
+      "body": "Quando você tiver uma criatura imobilizada pelo talento Imobilização, você pode tentar remover um membro dela; a criatura deve ser bem-sucedida em um teste de resistência de Força ou terá um de seus membros removido por você (braços, pernas, tentáculos ou asas), encerrando a imobilização.\n\nA perda de um membro reduz pela metade qualquer velocidade de movimento dependente desse membro e remove quaisquer ataques e habilidades dependentes dele. Criaturas sem nenhuma perna ficam caídas e têm uma velocidade de caminhada de 1,5 metro, a menos que possuam outras formas de movimento."
     },
     {
       "id": "m-luta-livre-aperto-mortal-magico",
@@ -360,8 +354,8 @@
           "id": "impeto"
         },
         {
-          "type": "text",
-          "text": "Quebrar a Terra"
+          "type": "talent",
+          "id": "m-impeto-quebra-terra"
         },
         {
           "type": "sphere",
@@ -382,10 +376,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que você usar Golpe da Terra Arrasada com sucesso contra um alvo, você pode optar por enterrá-lo. O alvo se move 3 metros através do solo. Se isso fizer com que o alvo atravesse completamente o chão (como, por exemplo, caindo pelo telhado de um prédio), ele cai no chão abaixo, sofrendo dano de queda normalmente. Se o novo chão ainda estiver a menos de 3 metros, ele também pode se mover para dentro ou através dessa superfície para atingir o limite deste talento. Essa distância aumenta para 6 metros no 17º nível.\n\nEnquanto seu Golpe da Terra Arrasada imobilizar o alvo, ele também não poderá respirar e deverá prender a respiração ou começará a sufocar. Mesmo que escape da imobilização, ele ainda precisará escalar, voar ou sair do buraco em que está.",
-      "_needsReview": [
-        "prereq:unresolved:Quebrar a Terra"
-      ]
+      "body": "Sempre que você usar Golpe da Terra Arrasada com sucesso contra um alvo, você pode optar por enterrá-lo. O alvo se move 3 metros através do solo. Se isso fizer com que o alvo atravesse completamente o chão (como, por exemplo, caindo pelo telhado de um prédio), ele cai no chão abaixo, sofrendo dano de queda normalmente. Se o novo chão ainda estiver a menos de 3 metros, ele também pode se mover para dentro ou através dessa superfície para atingir o limite deste talento. Essa distância aumenta para 6 metros no 17º nível.\n\nEnquanto seu Golpe da Terra Arrasada imobilizar o alvo, ele também não poderá respirar e deverá prender a respiração ou começará a sufocar. Mesmo que escape da imobilização, ele ainda precisará escalar, voar ou sair do buraco em que está."
     }
   ],
   "_reviewed": false

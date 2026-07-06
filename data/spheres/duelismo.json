@@ -344,12 +344,12 @@
       "sphere": "duelismo",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Esgrima",
+      "group": "Talentos Lendários de Duelismo",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "esgrima"
+          "id": "duelismo"
         },
         {
           "type": "talent",
@@ -362,10 +362,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode usar seu talento Aparar e Contra-atacar contra ataques de magia e arma à distância, bem como contra ataques corpo a corpo. Você ainda não pode fazer um ataque retaliatório contra o alvo, a menos que ele esteja ao seu alcance (para uma arma corpo a corpo) ou dentro do alcance normal (para uma arma à distância ou uma arma com a propriedade de arremesso).",
-      "_needsReview": [
-        "prereq:sphere-unknown:Esgrima"
-      ]
+      "body": "Você pode usar seu talento Aparar e Contra-atacar contra ataques de magia e arma à distância, bem como contra ataques corpo a corpo. Você ainda não pode fazer um ataque retaliatório contra o alvo, a menos que ele esteja ao seu alcance (para uma arma corpo a corpo) ou dentro do alcance normal (para uma arma à distância ou uma arma com a propriedade de arremesso)."
     },
     {
       "id": "m-duelismo-golpe-da-alma",
@@ -373,22 +370,19 @@
       "sphere": "duelismo",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Esgrima",
+      "group": "Talentos Lendários de Duelismo",
       "tags": [
         "exploracao"
       ],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "esgrima"
+          "id": "duelismo"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você mira na psique do inimigo. O alvo sofre uma penalidade de -2 em todos os testes de resistência por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Esgrima"
-      ]
+      "body": "Você mira na psique do inimigo. O alvo sofre uma penalidade de -2 em todos os testes de resistência por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica."
     },
     {
       "id": "m-duelismo-golpe-sombrio",
@@ -396,22 +390,19 @@
       "sphere": "duelismo",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Esgrima",
+      "group": "Talentos Lendários de Duelismo",
       "tags": [
         "exploracao"
       ],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "esgrima"
+          "id": "duelismo"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Seu ataque corta a essência. Uma criatura atingida pelo seu ataque deve ser bem-sucedida em um teste de resistência de Constituição ou terá seu nível de exaustão aumentado em 1 por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica e pode acumular com outras habilidades.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Esgrima"
-      ]
+      "body": "Seu ataque corta a essência. Uma criatura atingida pelo seu ataque deve ser bem-sucedida em um teste de resistência de Constituição ou terá seu nível de exaustão aumentado em 1 por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica e pode acumular com outras habilidades."
     },
     {
       "id": "m-duelismo-sangrar-ar",
@@ -419,14 +410,14 @@
       "sphere": "duelismo",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Esgrima",
+      "group": "Talentos Lendários de Duelismo",
       "tags": [
         "explorar"
       ],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "esgrima"
+          "id": "duelismo"
         },
         {
           "type": "level",
@@ -435,10 +426,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Se você atacar uma criatura com menos pontos de vida do que o máximo que ela possui, você pode gastar seu foco marcial para girar sua lâmina e perfurar um pulmão ou órgão similar, fazendo com que o alvo comece a sufocar 1d4 rodadas depois, a menos que seja\n\nbem-sucedido em um teste de resistência de Constituição. Assim que a sufocação começar, o alvo cai para 0 pontos de vida e começa a fazer testes de resistência contra a morte.\n\nCriaturas que não precisam respirar são imunes a este efeito. Se o alvo for curado completamente antes do início da sufocação, ela é evitada",
-      "_needsReview": [
-        "prereq:sphere-unknown:Esgrima"
-      ]
+      "body": "Se você atacar uma criatura com menos pontos de vida do que o máximo que ela possui, você pode gastar seu foco marcial para girar sua lâmina e perfurar um pulmão ou órgão similar, fazendo com que o alvo comece a sufocar 1d4 rodadas depois, a menos que seja\n\nbem-sucedido em um teste de resistência de Constituição. Assim que a sufocação começar, o alvo cai para 0 pontos de vida e começa a fazer testes de resistência contra a morte.\n\nCriaturas que não precisam respirar são imunes a este efeito. Se o alvo for curado completamente antes do início da sufocação, ela é evitada"
     },
     {
       "id": "m-duelismo-vacuo-cortante",
@@ -446,20 +434,17 @@
       "sphere": "duelismo",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Esgrima",
+      "group": "Talentos Lendários de Duelismo",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "esgrima"
+          "id": "duelismo"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que você usar a ação de ataque para fazer um ataque corpo a corpo na mesma rodada em que sacar uma arma embainhada, você pode gastar seu foco marcial para aumentar o alcance do seu ataque para 9 metros.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Esgrima"
-      ]
+      "body": "Sempre que você usar a ação de ataque para fazer um ataque corpo a corpo na mesma rodada em que sacar uma arma embainhada, você pode gastar seu foco marcial para aumentar o alcance do seu ataque para 9 metros."
     },
     {
       "id": "m-duelismo-vacuo-rasgante",
@@ -467,12 +452,12 @@
       "sphere": "duelismo",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Esgrima",
+      "group": "Talentos Lendários de Duelismo",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "esgrima"
+          "id": "duelismo"
         },
         {
           "type": "talent",
@@ -485,10 +470,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que usar o talento Vácuo Cortante, você pode gastar uma ação bônus para aumentar o efeito, tendo como alvo todas as criaturas em uma linha de 9 metros. Faça uma única jogada de ataque e compare o resultado com o de cada criatura na área afetada; todas as criaturas atingidas pelo ataque sofrem dano como se você as tivesse atingido diretamente com o ataque corpo a corpo. Apenas o dano é causado; nenhum outro efeito concedido pelo ataque é aplicado.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Esgrima"
-      ]
+      "body": "Sempre que usar o talento Vácuo Cortante, você pode gastar uma ação bônus para aumentar o efeito, tendo como alvo todas as criaturas em uma linha de 9 metros. Faça uma única jogada de ataque e compare o resultado com o de cada criatura na área afetada; todas as criaturas atingidas pelo ataque sofrem dano como se você as tivesse atingido diretamente com o ataque corpo a corpo. Apenas o dano é causado; nenhum outro efeito concedido pelo ataque é aplicado."
     },
     {
       "id": "m-duelismo-lamina-imprecisa",

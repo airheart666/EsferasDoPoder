@@ -744,8 +744,8 @@
           "id": "alteracao"
         },
         {
-          "type": "text",
-          "text": "Corpo Retorcido (traço)"
+          "type": "talent",
+          "id": "alteracao-corpo-distorcido"
         },
         {
           "type": "level",
@@ -759,10 +759,7 @@
           "text": "Criaturas que você causar dano com Corpo Retorcido (especialização) e que tenham menos de 100 pontos de vida devem ser bem-sucedidas em um teste de resistência de Constituição ou serão mortas, reduzindo-as a uma poça homogênea de matéria orgânica."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Corpo Retorcido (traço)"
-      ]
+      "body": ""
     },
     {
       "id": "alteracao-transformacao-permanente-maldicao",
@@ -782,8 +779,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Estendida (metasfera)"
+          "type": "talent",
+          "id": "universal-estendido"
         },
         {
           "type": "level",
@@ -797,10 +794,7 @@
           "text": "Ao aplicar uma transformação, você pode transformá-la em um efeito instantâneo, transformando a criatura permanentemente na nova forma. Como este é um efeito instantâneo, ele não pode ser dissipado após ser aplicado; no entanto, magias, talentos ou habilidades de esfera que removem maldições explicitamente podem encerrar a transformação com um teste de habilidade de conjuração bem-sucedido. O alvo ainda está sob o efeito de uma transformação, no entanto, e qualquer conjurador que tentar aplicar uma nova transformação ao alvo (exceto o próprio conjurador original) deve passar por um teste de habilidade de conjuração como de costume; a segunda transformação substitui a primeira em vez de aumentá-la. Quando a duração da segunda transformação expira, a primeira retorna. Uma segunda aplicação de uma Permanente (genótipo) pode ser usada para neutralizar a primeira Transformação Permanente, retornando o alvo à sua forma original ou concedendo-lhe uma nova."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Estendida (metasfera)"
-      ]
+      "body": ""
     },
     {
       "id": "alteracao-distorcedor-de-carne",

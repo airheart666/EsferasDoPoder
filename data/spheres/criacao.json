@@ -396,8 +396,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Estendida (metasfera)"
+          "type": "talent",
+          "id": "universal-estendido"
         },
         {
           "type": "level",
@@ -413,8 +413,7 @@
       ],
       "body": "",
       "_needsReview": [
-        "prereq:unresolved:Forja",
-        "prereq:unresolved:Estendida (metasfera)"
+        "prereq:unresolved:Forja"
       ]
     },
     {

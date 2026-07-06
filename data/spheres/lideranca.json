@@ -525,8 +525,8 @@
           "id": "lideranca"
         },
         {
-          "type": "text",
-          "text": "pacote de companheiros"
+          "type": "talent",
+          "id": "m-lideranca-pacote-de-companheiro"
         },
         {
           "type": "level",
@@ -535,10 +535,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ganhe um companheiro adicional. Você deve dividir os níveis de seus companheiros entre os dois, podendo fazê-lo como achar melhor (portanto, se você normalmente pudesse ter um companheiro com nível máximo de 6, com este talento você poderia ter dois companheiros de 3º nível, um de 4º nível e outro de 2º nível, etc.). Você pode escolher este talento várias vezes. Cada vez que você o adquire, aumente em 1 o número de companheiros que você pode possuir. Isso não aumenta o número total combinado de níveis que seus companheiros podem ter.",
-      "_needsReview": [
-        "prereq:unresolved:pacote de companheiros"
-      ]
+      "body": "Ganhe um companheiro adicional. Você deve dividir os níveis de seus companheiros entre os dois, podendo fazê-lo como achar melhor (portanto, se você normalmente pudesse ter um companheiro com nível máximo de 6, com este talento você poderia ter dois companheiros de 3º nível, um de 4º nível e outro de 2º nível, etc.). Você pode escolher este talento várias vezes. Cada vez que você o adquire, aumente em 1 o número de companheiros que você pode possuir. Isso não aumenta o número total combinado de níveis que seus companheiros podem ter."
     },
     {
       "id": "m-lideranca-viagem-aerea",

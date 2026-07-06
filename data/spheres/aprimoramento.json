@@ -434,12 +434,12 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Estendida (metasfera)"
+          "type": "talent",
+          "id": "universal-estendido"
         },
         {
-          "type": "text",
-          "text": "Massa (metasfera)"
+          "type": "talent",
+          "id": "universal-em-massa"
         },
         {
           "type": "level",
@@ -453,11 +453,7 @@
           "text": "Sempre que você aprimorar uma habilidade de degradação ou aprimoramento com o talento Massa (metaesfera), você pode fazer com que a habilidade de degradação ou aprimoramento afete uma esfera de 9 metros (30 pés). Se fizer isso, a duração do efeito muda para 1 semana, não é necessária concentração e afeta todos os alvos válidos que estiverem dentro da área; os benefícios e penalidades desaparecem imediatamente se o alvo sair da área."
         }
       ],
-      "body": "Ao usar este talento, você pode excluir alvos do efeito com base em algum critério visível ou audível. Isso permitiria, por exemplo, que Aprimorar Equipamento afetasse quaisquer espadas dentro da área, ou que Roubar Habilidade se aplicasse apenas a criaturas que não estejam exibindo um emblema específico de forma proeminente.",
-      "_needsReview": [
-        "prereq:unresolved:Estendida (metasfera)",
-        "prereq:unresolved:Massa (metasfera)"
-      ]
+      "body": "Ao usar este talento, você pode excluir alvos do efeito com base em algum critério visível ou audível. Isso permitiria, por exemplo, que Aprimorar Equipamento afetasse quaisquer espadas dentro da área, ou que Roubar Habilidade se aplicasse apenas a criaturas que não estejam exibindo um emblema específico de forma proeminente."
     },
     {
       "id": "aprimoramento-inversao-de-gravidade",

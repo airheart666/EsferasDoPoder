@@ -510,8 +510,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Estendida [metasfera]"
+          "type": "talent",
+          "id": "universal-estendido"
         },
         {
           "type": "level",
@@ -525,10 +525,7 @@
           "text": "Seus figmentos e charmes duram até serem dissipados, sem exigir sua concentração."
         }
       ],
-      "body": "Suas ilusões têm longa duração.",
-      "_needsReview": [
-        "prereq:unresolved:Estendida [metasfera]"
-      ]
+      "body": "Suas ilusões têm longa duração."
     },
     {
       "id": "ilusao-infusao-sombria",

@@ -98,25 +98,25 @@ Você aprendeu a ler as sutilezas do seu inimigo. Você ganha proficiência em I
 Sempre que você usar desarmar com sucesso, você pode imediatamente pegar o objeto desarmado, contanto que tenha pelo menos uma mão livre. Se assim desejar, você pode imediatamente fazer um único ataque com esse item como uma ação bônus.
 
 
-### Talentos Lendários de Esgrima
+### Talentos Lendários de Duelismo
 #### Aparar Qualquer Coisa
-**Pré-requisitos**: :: Esfera de Esgrima (Aparar e Contra-atacar), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Duelismo (Aparar e Contra-atacar), 5º nível ou superior.
 
 Você pode usar seu talento Aparar e Contra-atacar contra ataques de magia e arma à distância, bem como contra ataques corpo a corpo. Você ainda não pode fazer um ataque retaliatório contra o alvo, a menos que ele esteja ao seu alcance (para uma arma corpo a corpo) ou dentro do alcance normal (para uma arma à distância ou uma arma com a propriedade de arremesso).
 
 #### Golpe da Alma (exploração)
-**Pré-requisitos**: :: Esfera de Esgrima.
+**Pré-requisitos**: :: Esfera do Duelismo.
 
 Você mira na psique do inimigo. O alvo sofre uma penalidade de -2 em todos os testes de resistência por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica.
 
 #### Golpe Sombrio (exploração)
-**Pré-requisitos**: :: Esfera de Esgrima.
+**Pré-requisitos**: :: Esfera do Duelismo.
 
 Seu ataque corta a essência. Uma criatura atingida pelo seu ataque deve ser bem-sucedida em um teste de resistência de Constituição ou terá seu nível de exaustão aumentado em 1 por um número de rodadas igual ao seu bônus de proficiência. Esta é uma habilidade mágica e pode acumular com outras habilidades.
 
 
 #### Sangrar Ar (explorar)
-**Pré-requisitos**: :: Esfera de Esgrima, 11º nível ou superior.
+**Pré-requisitos**: :: Esfera do Duelismo, 11º nível ou superior.
 
 Se você atacar uma criatura com menos pontos de vida do que o máximo que ela possui, você pode gastar seu foco marcial para girar sua lâmina e perfurar um pulmão ou órgão similar, fazendo com que o alvo comece a sufocar 1d4 rodadas depois, a menos que seja 
 
@@ -128,13 +128,13 @@ bem-sucedido em um teste de resistência de Constituição. Assim que a sufocaç
 Criaturas que não precisam respirar são imunes a este efeito. Se o alvo for curado completamente antes do início da sufocação, ela é evitada
 
 #### Vácuo Cortante
-**Pré-requisitos**: :: Esfera de Esgrima.
+**Pré-requisitos**: :: Esfera do Duelismo.
 
 Sempre que você usar a ação de ataque para fazer um ataque corpo a corpo na mesma rodada em que sacar uma arma embainhada, você pode gastar seu foco marcial para aumentar o alcance do seu ataque para 9 metros.
 
 
 #### Vácuo Rasgante
-**Pré-requisitos**: :: Esfera de Esgrima (Vácuo Cortante), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera do Duelismo (Vácuo Cortante), 11º nível ou superior.
 
 Sempre que usar o talento Vácuo Cortante, você pode gastar uma ação bônus para aumentar o efeito, tendo como alvo todas as criaturas em uma linha de 9 metros. Faça uma única jogada de ataque e compare o resultado com o de cada criatura na área afetada; todas as criaturas atingidas pelo ataque sofrem dano como se você as tivesse atingido diretamente com o ataque corpo a corpo. Apenas o dano é causado; nenhum outro efeito concedido pelo ataque é aplicado.
 

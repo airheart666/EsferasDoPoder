@@ -9,7 +9,7 @@ Assim como Esferas de Magia, o sistema de magia alternativo, Esferas de Poder é
 
 ## Esferas Marciais e Talentos Marciais
 As habilidades marciais listadas neste suplemento são divididas em esferas. Uma esfera é um grupo de habilidades baseadas em um tema. Cada esfera possui uma habilidade ou habilidades concedidas pela esfera base e pode ser expandida com os talentos daquela esfera.
-Existem 22 esferas marciais: Alquimia, Atletismo, Barragem, Briga de Bar, Domínio das Feras, Berserker, Bruto, Duas Armas, Equipamento, Esgrima, Gladiador, Guardião, Liderança, Retribuição, Canalha, Batedor, Escudo, Atirador de Elite, Engenhosidade, Armadilha, Líder de Guerra e Luta Livre.
+Existem 22 esferas marciais: Alquimia, Atletismo, Barragem, Brigão, Domínio das Feras, Ímpeto, Bruto, Duas Armas, Equipamento, Duelismo, Gladiador, Guardião, Liderança, Retribuição, Canalha, Batedor, Escudo, Atirador, Engenhosidade, Armadilha, General e Luta Livre.
 
 As esferas marciais concedem técnicas poderosas, mas são separadas da habilidade de conjuração. Sempre que um personagem ganha um talento marcial, ele pode gastá-lo de duas maneiras: para ganhar uma nova esfera marcial base ou para ganhar um talento associado a uma esfera marcial que já possua. O número de talentos marciais que um personagem ganha difere entre as classes. Uma vez gasto, um talento não pode ser alterado, a menos que seja permitido retreinamento. Algumas características de classe ou outras opções concedem a você uma esfera bônus ou um talento bônus específico. Se você ganhar uma esfera ou talento que já possui, poderá ganhar um talento de sua escolha da mesma esfera.
 

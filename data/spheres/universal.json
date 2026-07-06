@@ -1487,8 +1487,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Alcance (metasfera) (3)"
+          "type": "talent",
+          "id": "universal-alcance"
         },
         {
           "type": "level",
@@ -1497,10 +1497,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode aumentar o alcance de suas habilidades de esfera mágica em 1 passo, como se tivesse escolhido o talento Alcance (metaesfera) mais uma vez. Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam. Se o alcance inicial da sua habilidade de esfera mágica for de 600 ou 1.000 pés, use a tabela abaixo para calcular o alcance final.\n\nAlcance inicialAlcance final180m300m300m600m",
-      "_needsReview": [
-        "prereq:unresolved:Alcance (metasfera) (3)"
-      ]
+      "body": "Você pode aumentar o alcance de suas habilidades de esfera mágica em 1 passo, como se tivesse escolhido o talento Alcance (metaesfera) mais uma vez. Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam. Se o alcance inicial da sua habilidade de esfera mágica for de 600 ou 1.000 pés, use a tabela abaixo para calcular o alcance final.\n\nAlcance inicialAlcance final180m300m300m600m"
     },
     {
       "id": "universal-golpe-extremo",

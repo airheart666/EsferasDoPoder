@@ -1044,8 +1044,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Estendida (metaesfera)"
+          "type": "talent",
+          "id": "universal-estendido"
         },
         {
           "type": "level",
@@ -1059,10 +1059,7 @@
           "text": "Quando você reanima um morto-vivo, você pode tornar a reanimação um efeito instantâneo. A criatura morta-viva existe independentemente da sua concentração, não tem duração e não pode ser dissipada. Esses mortos-vivos ainda contam para o número total de mortos-vivos que você pode ter reanimados a qualquer momento. Se você criar mais mortos-vivos do que o seu total, os mortos-vivos permanentes antigos não são destruídos; em vez disso, eles são simplesmente liberados do serviço e se comportarão como é normal para os mortos-vivos do seu tipo (a maioria simplesmente atacará você ou qualquer outra criatura viva próxima). Seu total máximo de pontos de magia é reduzido pelo número de pontos de magia gastos na criação desses mortos-vivos; essa redução desaparece quando os mortos-vivos criados são destruídos, embora os pontos de magia não sejam recuperados até o momento em que você os recuperaria normalmente."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Estendida (metaesfera)"
-      ]
+      "body": ""
     },
     {
       "id": "morte-praga-dos-mortos",

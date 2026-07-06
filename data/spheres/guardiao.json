@@ -417,8 +417,8 @@
           "id": "guardiao"
         },
         {
-          "type": "text",
-          "text": "Defender Outros"
+          "type": "talent",
+          "id": "m-guardiao-defender-outro"
         },
         {
           "type": "talent",
@@ -431,10 +431,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Quando uma criatura o chama com o talento Eu Ouvirei, você pode gastar uma ação para se teletransportar para a localização dela. Você pode levar objetos consigo, desde que o peso deles não exceda sua carga máxima. Você também pode levar um número de criaturas Médias ou menores adicionais dispostas (carregando equipamentos ou objetos até sua carga máxima) igual ao seu bônus de proficiência. Uma criatura Grande conta como duas criaturas Médias, uma criatura Enorme conta como duas criaturas Grandes e assim por diante. Todas as criaturas a serem teletransportadas devem estar em contato umas com as outras e devem estar em contato com você ou com uma criatura que esteja em contato com você.\n\nO contato pode ser estabelecido sem nenhuma ação durante o seu turno ou como uma reação quando não for o seu turno. Você só pode viajar para uma criatura específica usando esta habilidade uma vez. Você recupera o uso desta habilidade para cada criatura relevante ao completar um descanso longo. Este é um efeito de teletransporte mágico.",
-      "_needsReview": [
-        "prereq:unresolved:Defender Outros"
-      ]
+      "body": "Quando uma criatura o chama com o talento Eu Ouvirei, você pode gastar uma ação para se teletransportar para a localização dela. Você pode levar objetos consigo, desde que o peso deles não exceda sua carga máxima. Você também pode levar um número de criaturas Médias ou menores adicionais dispostas (carregando equipamentos ou objetos até sua carga máxima) igual ao seu bônus de proficiência. Uma criatura Grande conta como duas criaturas Médias, uma criatura Enorme conta como duas criaturas Grandes e assim por diante. Todas as criaturas a serem teletransportadas devem estar em contato umas com as outras e devem estar em contato com você ou com uma criatura que esteja em contato com você.\n\nO contato pode ser estabelecido sem nenhuma ação durante o seu turno ou como uma reação quando não for o seu turno. Você só pode viajar para uma criatura específica usando esta habilidade uma vez. Você recupera o uso desta habilidade para cada criatura relevante ao completar um descanso longo. Este é um efeito de teletransporte mágico."
     },
     {
       "id": "m-guardiao-eu-ouvirei",

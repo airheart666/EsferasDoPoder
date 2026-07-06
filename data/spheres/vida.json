@@ -379,8 +379,8 @@
           "id": "universal"
         },
         {
-          "type": "text",
-          "text": "Estendida (metaesfera)"
+          "type": "talent",
+          "id": "universal-estendido"
         },
         {
           "type": "level",
@@ -394,10 +394,7 @@
           "text": "Durante a duração, se você possuir a parte decepada e a segurar contra o coto (uma interação com objeto) de uma criatura sob o efeito de Revitalizar, o membro é instantaneamente reconectado. Se Revitalizar também for aprimorado com o talento Estendido (metaesfera) da esfera Universal, os membros decepados do alvo (dedos, pernas, caudas, etc.), se houver, serão restaurados após 2 minutos."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Estendida (metaesfera)"
-      ]
+      "body": ""
     },
     {
       "id": "vida-restaurar-mente-e-corpo",

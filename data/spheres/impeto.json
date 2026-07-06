@@ -322,16 +322,16 @@
       "sphere": "impeto",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários do Berserker",
+      "group": "Talentos Lendários do Ímpeto",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "berserker"
+          "id": "impeto"
         },
         {
-          "type": "text",
-          "text": "Quebrar a Terra"
+          "type": "talent",
+          "id": "m-impeto-quebra-terra"
         },
         {
           "type": "level",
@@ -340,11 +340,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar o talento Quebrar a Terra, você pode criar um buraco de 1,5 metro de profundidade no solo nos quadrados afetados. Se desejar, você também pode elevar o terreno em 1,5 metro em todos os quadrados adjacentes aos quadrados afetados.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Berserker",
-        "prereq:unresolved:Quebrar a Terra"
-      ]
+      "body": "Ao usar o talento Quebrar a Terra, você pode criar um buraco de 1,5 metro de profundidade no solo nos quadrados afetados. Se desejar, você também pode elevar o terreno em 1,5 metro em todos os quadrados adjacentes aos quadrados afetados."
     },
     {
       "id": "m-impeto-atavismo",
@@ -352,22 +348,19 @@
       "sphere": "impeto",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários do Berserker",
+      "group": "Talentos Lendários do Ímpeto",
       "tags": [
         "adrenalina"
       ],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "berserker"
+          "id": "impeto"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que for afetado por uma magia, efeito ou outra habilidade, você pode escolher ser considerado como seu tipo de criatura original ou como uma besta, sempre que isso for vantajoso para você (como ser imune a uma magia de imobilizar pessoa, tratando-se como uma besta, ou receber uma magia de aumentar pessoa, tratando-se como um humanoide).",
-      "_needsReview": [
-        "prereq:sphere-unknown:Berserker"
-      ]
+      "body": "Sempre que for afetado por uma magia, efeito ou outra habilidade, você pode escolher ser considerado como seu tipo de criatura original ou como uma besta, sempre que isso for vantajoso para você (como ser imune a uma magia de imobilizar pessoa, tratando-se como uma besta, ou receber uma magia de aumentar pessoa, tratando-se como um humanoide)."
     },
     {
       "id": "m-impeto-golpe-da-fenda",
@@ -375,12 +368,12 @@
       "sphere": "impeto",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários do Berserker",
+      "group": "Talentos Lendários do Ímpeto",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "berserker"
+          "id": "impeto"
         },
         {
           "type": "level",
@@ -389,10 +382,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Como uma ação que provoca ataques de oportunidade, você libera um rugido poderoso e desfere um golpe com uma arma com tamanha ferocidade que rasga o próprio tecido do espaço-tempo, abrindo uma fenda para outro local. Isso teletransporta você, seus itens carregados e até uma criatura Média ou menor disposta e seus equipamentos por três níveis para um local que pode estar a até 160 quilômetros por nível de distância. Criaturas Grandes contam como duas criaturas Médias, uma criatura Enorme conta como duas criaturas Grandes, e assim por diante. Todas as criaturas a serem transportadas devem estar em contato umas com as outras, e pelo menos uma dessas criaturas deve estar em contato com você.\n\nVocê deve ter uma ideia clara da localização e do layout do destino; se você nunca esteve no destino desejado antes, você não chega ao local exato, criando uma fenda para um local a até 1d20 milhas do ponto desejado.\n\nSeu nível de exaustão aumenta em 1 após usar esta habilidade. Você sofre essa penalidade mesmo que seja imune à condição de exaustão. Se o seu nível de exaustão atual for maior que 1, você tem 50% de chance de a habilidade falhar e seu nível de exaustão ainda aumenta em 1. Este é um efeito mágico.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Berserker"
-      ]
+      "body": "Como uma ação que provoca ataques de oportunidade, você libera um rugido poderoso e desfere um golpe com uma arma com tamanha ferocidade que rasga o próprio tecido do espaço-tempo, abrindo uma fenda para outro local. Isso teletransporta você, seus itens carregados e até uma criatura Média ou menor disposta e seus equipamentos por três níveis para um local que pode estar a até 160 quilômetros por nível de distância. Criaturas Grandes contam como duas criaturas Médias, uma criatura Enorme conta como duas criaturas Grandes, e assim por diante. Todas as criaturas a serem transportadas devem estar em contato umas com as outras, e pelo menos uma dessas criaturas deve estar em contato com você.\n\nVocê deve ter uma ideia clara da localização e do layout do destino; se você nunca esteve no destino desejado antes, você não chega ao local exato, criando uma fenda para um local a até 1d20 milhas do ponto desejado.\n\nSeu nível de exaustão aumenta em 1 após usar esta habilidade. Você sofre essa penalidade mesmo que seja imune à condição de exaustão. Se o seu nível de exaustão atual for maior que 1, você tem 50% de chance de a habilidade falhar e seu nível de exaustão ainda aumenta em 1. Este é um efeito mágico."
     },
     {
       "id": "m-impeto-passos-ruinosos",
@@ -400,25 +390,21 @@
       "sphere": "impeto",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários do Berserker",
+      "group": "Talentos Lendários do Ímpeto",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "berserker"
+          "id": "impeto"
         },
         {
-          "type": "text",
-          "text": "Quebrar a Terra"
+          "type": "talent",
+          "id": "m-impeto-quebra-terra"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode escolher quebrar o chão enquanto se move. Sempre que sair de um quadrado, você pode escolher tornar esse quadrado terreno difícil. Este terreno difícil permanece até ser removido por uma ação (limpando 1 quadrado dentro do alcance da criatura) ou reparado com uma magia ou efeito, como a magia Consertar.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Berserker",
-        "prereq:unresolved:Quebrar a Terra"
-      ]
+      "body": "Você pode escolher quebrar o chão enquanto se move. Sempre que sair de um quadrado, você pode escolher tornar esse quadrado terreno difícil. Este terreno difícil permanece até ser removido por uma ação (limpando 1 quadrado dentro do alcance da criatura) ou reparado com uma magia ou efeito, como a magia Consertar."
     },
     {
       "id": "m-impeto-dilacerar",
@@ -426,12 +412,12 @@
       "sphere": "impeto",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários do Berserker",
+      "group": "Talentos Lendários do Ímpeto",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "berserker"
+          "id": "impeto"
         },
         {
           "type": "level",
@@ -440,10 +426,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Quando você acerta um golpe crítico com uma arma corpo a corpo, você pode gastar foco marcial. O alvo deve passar em um teste de resistência de Constituição ou ter um membro decepado. O alvo sofre 1d6 pontos de dano necrótico da ferida a cada rodada no início do seu turno até receber pelo menos 1 ponto de cura ou o sangramento ser estancado com um teste de Sabedoria (Medicina) CD 10.\n\nPerder um membro reduz pela metade qualquer velocidade de movimento dependente desse membro e remove quaisquer ataques e habilidades dependentes desse membro. Criaturas com todas as pernas removidas ficam caídas e têm uma velocidade de caminhada de 5 pés, a menos que possuam outras formas de movimento.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Berserker"
-      ]
+      "body": "Quando você acerta um golpe crítico com uma arma corpo a corpo, você pode gastar foco marcial. O alvo deve passar em um teste de resistência de Constituição ou ter um membro decepado. O alvo sofre 1d6 pontos de dano necrótico da ferida a cada rodada no início do seu turno até receber pelo menos 1 ponto de cura ou o sangramento ser estancado com um teste de Sabedoria (Medicina) CD 10.\n\nPerder um membro reduz pela metade qualquer velocidade de movimento dependente desse membro e remove quaisquer ataques e habilidades dependentes desse membro. Criaturas com todas as pernas removidas ficam caídas e têm uma velocidade de caminhada de 5 pés, a menos que possuam outras formas de movimento."
     },
     {
       "id": "m-impeto-quebra-feitico",
@@ -451,14 +434,14 @@
       "sphere": "impeto",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários do Berserker",
+      "group": "Talentos Lendários do Ímpeto",
       "tags": [
         "esforco"
       ],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "berserker"
+          "id": "impeto"
         },
         {
           "type": "level",
@@ -467,10 +450,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode tentar quebrar um efeito mágico ativo no alvo. Você pode escolher um efeito do qual esteja ciente, mas, caso contrário, isso afeta o efeito mágico de nível mais baixo. Se o dano do ataque exceder uma CD de 10 + o nível da magia, o efeito mágico é suprimido por um número de rodadas igual ao seu bônus de proficiência. Se o seu dano exceder a CD em 5 ou mais, ele é dissipado completamente. Você pode usar isso para atingir um efeito mágico em uma área.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Berserker"
-      ]
+      "body": "Você pode tentar quebrar um efeito mágico ativo no alvo. Você pode escolher um efeito do qual esteja ciente, mas, caso contrário, isso afeta o efeito mágico de nível mais baixo. Se o dano do ataque exceder uma CD de 10 + o nível da magia, o efeito mágico é suprimido por um número de rodadas igual ao seu bônus de proficiência. Se o seu dano exceder a CD em 5 ou mais, ele é dissipado completamente. Você pode usar isso para atingir um efeito mágico em uma área."
     },
     {
       "id": "m-impeto-calma",

@@ -369,7 +369,7 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [],
       "prerequisites": [
         {
@@ -378,15 +378,12 @@
         },
         {
           "type": "sphere",
-          "id": "taverna"
+          "id": "brigao"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Como uma ação, você pode ingerir qualquer arma alquímica líquida, como fogo alquímico, algumas fórmulas ou ácido, e então cuspi-la em um cone de 4,5 metros. Todas as criaturas dentro desse cone devem fazer um teste de resistência de Destreza bem-sucedido ou sofrer os efeitos do item alquímico.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Taverna"
-      ]
+      "body": "Como uma ação, você pode ingerir qualquer arma alquímica líquida, como fogo alquímico, algumas fórmulas ou ácido, e então cuspi-la em um cone de 4,5 metros. Todas as criaturas dentro desse cone devem fazer um teste de resistência de Destreza bem-sucedido ou sofrer os efeitos do item alquímico."
     },
     {
       "id": "m-brigao-agua-flamejante",
@@ -394,12 +391,12 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "taverna"
+          "id": "brigao"
         },
         {
           "type": "level",
@@ -408,10 +405,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que você puder ingerir uma bebida alcoólica, você pode, em vez disso, derramá-la em uma arma que você ou um aliado adjacente esteja empunhando e incendiá-la. Por um minuto, essa arma causa 1d6 de dano de fogo adicional. Isso não conta como ingerir o álcool você mesmo.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Taverna"
-      ]
+      "body": "Sempre que você puder ingerir uma bebida alcoólica, você pode, em vez disso, derramá-la em uma arma que você ou um aliado adjacente esteja empunhando e incendiá-la. Por um minuto, essa arma causa 1d6 de dano de fogo adicional. Isso não conta como ingerir o álcool você mesmo."
     },
     {
       "id": "m-brigao-arma-descartavel",
@@ -419,14 +413,14 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [
         "fragil"
       ],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "taverna"
+          "id": "brigao"
         },
         {
           "type": "text",
@@ -441,7 +435,6 @@
       "enhancements": [],
       "body": "Você sabe como quebrar um objeto no meio de um golpe para infligir ferimentos graves. Uma vez por descanso curto, antes de fazer um ataque com uma arma frágil, você pode gastar seu foco marcial, quebrando a arma. Se o ataque acertar, você pode, como uma reação, transformar um acerto normal em um acerto crítico. Você pode adquirir este talento várias vezes, cada vez aumentando o número de vezes que você pode usar este talento por descanso curto.",
       "_needsReview": [
-        "prereq:sphere-unknown:Taverna",
         "prereq:unresolved:Gume Afiado"
       ]
     },
@@ -451,12 +444,12 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "taverna"
+          "id": "brigao"
         },
         {
           "type": "text",
@@ -475,7 +468,6 @@
       "enhancements": [],
       "body": "Ao usar o talento Inalador de Fumaça, você pode gastar uma ação bônus em vez do seu foco marcial. Além disso, seu sangue é tratado como uma bebida alcoólica, e qualquer criatura que tentar engolir você inteiro deve passar em um teste de resistência de Constituição ou ficar envenenada enquanto você estiver dentro dela.",
       "_needsReview": [
-        "prereq:sphere-unknown:Taverna",
         "prereq:unresolved:Inalador de Fumaça"
       ]
     },
@@ -485,14 +477,14 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [
         "bebado"
       ],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "taverna"
+          "id": "brigao"
         },
         {
           "type": "level",
@@ -501,10 +493,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Como uma reação, você pode gastar seu status de bêbado para obter resistência a dano de concussão, perfuração e corte contra um ataque.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Taverna"
-      ]
+      "body": "Como uma reação, você pode gastar seu status de bêbado para obter resistência a dano de concussão, perfuração e corte contra um ataque."
     },
     {
       "id": "m-brigao-magia-destilada",
@@ -512,12 +501,12 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "taverna"
+          "id": "brigao"
         },
         {
           "type": "level",
@@ -526,10 +515,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Enquanto você tiver o status de bêbado, seus ataques desarmados não mágicos e armas empunhadas ganham um bônus de +1 para ataque e dano, e são tratados como mágicos.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Taverna"
-      ]
+      "body": "Enquanto você tiver o status de bêbado, seus ataques desarmados não mágicos e armas empunhadas ganham um bônus de +1 para ataque e dano, e são tratados como mágicos."
     },
     {
       "id": "m-brigao-relaxamento-perfeito",
@@ -537,12 +523,12 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "bar"
+          "id": "brigao"
         },
         {
           "type": "text",
@@ -557,7 +543,6 @@
       "enhancements": [],
       "body": "Ao usar Descontraído e Relaxado para obter vantagem em um teste de resistência de Destreza, você não sofre dano se o teste de resistência for bem-sucedido.",
       "_needsReview": [
-        "prereq:sphere-unknown:Bar",
         "prereq:unresolved:Descontraído e Relaxado"
       ]
     },
@@ -567,20 +552,17 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "taverna"
+          "id": "brigao"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar um item mágico como arma improvisada, qualquer dano causado por ele conta como dano mágico.\n\nVocê pode tratar itens mágicos como frágeis para fins de qualificação para talentos (frágeis); o item mágico ainda deve ser feito de um material que seja, de outra forma, frágil. Quando você aplica um talento (frágil) a um item mágico, o objeto não se quebra, mas sim sofre uma tensão inofensiva em sua integridade estrutural; um item mágico só pode ter um talento (frágil) aplicado a ele por rodada.\n\nSe você também estiver usando Esferas de Poder, sempre que puder aplicar um talento (frágil) a um item mágico, você pode, em vez disso, gastar seu foco para ativar um efeito de magia selvagem de truque ou um efeito de magia selvagem universal.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Taverna"
-      ]
+      "body": "Ao usar um item mágico como arma improvisada, qualquer dano causado por ele conta como dano mágico.\n\nVocê pode tratar itens mágicos como frágeis para fins de qualificação para talentos (frágeis); o item mágico ainda deve ser feito de um material que seja, de outra forma, frágil. Quando você aplica um talento (frágil) a um item mágico, o objeto não se quebra, mas sim sofre uma tensão inofensiva em sua integridade estrutural; um item mágico só pode ter um talento (frágil) aplicado a ele por rodada.\n\nSe você também estiver usando Esferas de Poder, sempre que puder aplicar um talento (frágil) a um item mágico, você pode, em vez disso, gastar seu foco para ativar um efeito de magia selvagem de truque ou um efeito de magia selvagem universal."
     },
     {
       "id": "m-brigao-quebrador-de-aco",
@@ -588,20 +570,17 @@
       "sphere": "brigao",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Taverna",
+      "group": "Talentos Lendários de Brigão",
       "tags": [],
       "prerequisites": [
         {
           "type": "sphere",
-          "id": "taverna"
+          "id": "brigao"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Para fins de qualificação para talentos (frágeis), objetos feitos de material durável (ferro, aço, etc.) são tratados como se fossem frágeis.",
-      "_needsReview": [
-        "prereq:sphere-unknown:Taverna"
-      ]
+      "body": "Para fins de qualificação para talentos (frágeis), objetos feitos de material durável (ferro, aço, etc.) são tratados como se fossem frágeis."
     },
     {
       "id": "m-brigao-alcoolatra",

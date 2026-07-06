@@ -589,8 +589,8 @@
           "id": "tempo"
         },
         {
-          "type": "text",
-          "text": "Imagem Fraturada"
+          "type": "talent",
+          "id": "tempo-imagem-fragmentada"
         },
         {
           "type": "level",
@@ -604,10 +604,7 @@
           "text": "Sempre que um alvo estiver sob os efeitos do seu talento Imagem Fraturada, ele ganha uma capacidade aumentada de perceber e agir através de seu estado de tempo alterado; a cada rodada, o alvo pode realizar 1 ação bônus adicional durante a duração do efeito de imagem fraturada. Esta ação bônus não pode ser usada para conjurar uma magia ou efeito de esfera."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Imagem Fraturada"
-      ]
+      "body": ""
     },
     {
       "id": "tempo-visao-do-passado",

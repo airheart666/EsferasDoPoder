@@ -56,6 +56,30 @@ const SPHERE_ALIAS = {
   'temporal': 'tempo',
   'climatica': 'clima',
 };
+// Bucket-1 talent-name variants: a prereq names a talent differently from its
+// heading (e.g. "Quebrar a Terra" vs the talent "Quebra-Terra"). Confirmed with the
+// Owner. Keyed by normalized name with ALL () / [] groups stripped ("loose" form),
+// value = the real talent's base name. Applied only during prereq resolution, so the
+// reader prose is untouched (safer than editing text — "Massa (metasfera)" is a
+// substring of the real talent "Em Massa (metasfera)"). See data/CURATION-NOTES.md.
+const TALENT_ALIAS = {
+  'quebrar a terra': 'Quebra-Terra',
+  'projecao de pensamentos': 'Pensamentos Projetados',
+  'estendida': 'Estendido',
+  'massa': 'Em Massa',
+  'massa — metasfera': 'Em Massa',
+  'massa - metasfera': 'Em Massa',
+  'alcance': 'Alcance',                 // resolves "Alcance (metasfera) (3)" / spelling variants
+  'imobilizacao': 'Imobilizar',
+  'imagem fraturada': 'Imagem Fragmentada',
+  'defender outros': 'Defender Outro',
+  'forjar terra': 'Forjar a Terra',
+  'teletransporte a distancia': 'Teleporte à Distância',
+  'teletransporte invisivel': 'Teleporte Invisível',
+  'teletransporte de objeto': 'Teletransportar Objeto',
+  'corpo retorcido': 'Corpo Distorcido',
+  'pacote de companheiros': 'Pacote de Companheiro',
+};
 // D&D 5e perícias (PT-BR) that appear as bare prereqs — proficiency requirements,
 // not talents. Excludes "Atletismo"/"Natureza" (also sphere names) to avoid clashes.
 const SKILLS = new Set(['percepcao', 'furtividade', 'sobrevivencia', 'investigacao', 'intuicao',
@@ -292,8 +316,11 @@ function resolvePrereqs(allTalents, sphereIds) {
         if (!sphereIds.has(id)) (t._needsReview = t._needsReview || []).push('prereq:sphere-unknown:' + pr.name);
         continue;
       }
-      // talent — prefer the sphere the clause named, else the owning sphere
-      const base = normalizeTerm(baseName(pr.name));
+      // talent — prefer the sphere the clause named, else the owning sphere.
+      // Apply a talent-name alias (loose key: strip all () [] groups) before lookup.
+      const loose = normalizeTerm(String(pr.name).replace(/[([][^)\]]*[)\]]/g, ' '));
+      const alias = TALENT_ALIAS[normalizeTerm(baseName(pr.name))] || TALENT_ALIAS[loose];
+      const base = normalizeTerm(alias ? alias : baseName(pr.name));
       const sphereId = pr.sphereName ? slugify(pr.sphereName) : t.sphere;
       const id = byKey.get(sphereId + '|' + base) || globalBase.get(base);
       if (id) resolved.push({ type: 'talent', id });
