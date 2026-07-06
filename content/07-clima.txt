@@ -216,7 +216,7 @@ ___
 ### Talentos Avançados em Clima
 
 #### Clima
-**Pré-requisitos**: :: Esfera Universal (Alcance (metaesfera)), Esfera Climática (Controlar o Clima), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera Universal (Alcance (metaesfera)), Esfera do Clima (Controlar o Clima), 11º nível ou superior.
 
 Ao usar Controlar o Clima, a duração passa a ser Concentração, até 8 horas.
 
@@ -225,7 +225,7 @@ Ao usar Controlar o Clima, a duração passa a ser Concentração, até 8 horas.
 **Aprimoramento 4PM (requer 15º nível)**: :: o alcance aumenta para 8 km.
 
 #### Controlar o Clima
-**Pré-requisito**: :: Esfera Climática
+**Pré-requisito**: :: Esfera do Clima
 **Tempo de Conjuração**: :: 10 minutos
 **Alcance**: :: 9 metros
 **Duração**: :: Concentração, até 1 hora

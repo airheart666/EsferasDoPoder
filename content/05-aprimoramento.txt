@@ -307,9 +307,9 @@ Esta habilidade pode se manifestar de uma das seguintes maneiras:
 A criatura alvo geralmente compartilha seu alinhamento e fica enfeitiçada por você por 30 dias ou até que você ou seus companheiros façam algo prejudicial a ela. Quando a condição de encantamento termina, a criatura escolhe se deseja permanecer amigável a você, com base em como você a tratou enquanto estava enfeitiçada.
 
 #### Aprimoramentos Referenciais
-**Pré-requisitos**: :: Esfera de Aprimoramento, Esfera Universal (Estendida (metasfera), Massa (metasfera)), 15º nível ou superior.
+**Pré-requisitos**: :: Esfera de Aprimoramento, Esfera Universal (Estendido (metaesfera), Em Massa (metaesfera)), 15º nível ou superior.
 :
-**Aprimoramento 2PM**: Sempre que você aprimorar uma habilidade de degradação ou aprimoramento com o talento Massa (metaesfera), você pode fazer com que a habilidade de degradação ou aprimoramento afete uma esfera de 9 metros (30 pés). Se fizer isso, a duração do efeito muda para 1 semana, não é necessária concentração e afeta todos os alvos válidos que estiverem dentro da área; os benefícios e penalidades desaparecem imediatamente se o alvo sair da área.
+**Aprimoramento 2PM**: Sempre que você aprimorar uma habilidade de degradação ou aprimoramento com o talento Em Massa (metaesfera), você pode fazer com que a habilidade de degradação ou aprimoramento afete uma esfera de 9 metros (30 pés). Se fizer isso, a duração do efeito muda para 1 semana, não é necessária concentração e afeta todos os alvos válidos que estiverem dentro da área; os benefícios e penalidades desaparecem imediatamente se o alvo sair da área.
 
 Ao usar este talento, você pode excluir alvos do efeito com base em algum critério visível ou audível. Isso permitiria, por exemplo, que Aprimorar Equipamento afetasse quaisquer espadas dentro da área, ou que Roubar Habilidade se aplicasse apenas a criaturas que não estejam exibindo um emblema específico de forma proeminente.
 

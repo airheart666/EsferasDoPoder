@@ -555,7 +555,7 @@ Você pode adicionar o seguinte traço às suas formas:
 Aumente em 1 o número de traços que você pode aplicar com sua transformação. Isso acumula com o aumento da Transformação Maior. Este talento pode ser escolhido uma vez e mais uma vez no 11º e no 17º níveis. Seus efeitos acumulam.
 
 #### Fusão
-**Pré-requisitos**: :: Esfera de Alteração, Esfera Universal (Massa (metasfera), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera de Alteração, Esfera Universal (Em Massa (metaesfera), 5º nível ou superior.
 
 **Aprimoramento 2 PM**: :: Você pode escolher duas criaturas adjacentes uma à outra como alvo de sua transformação e fundi-las em um corpo amalgamado em vez de aplicar um talento (genótipo). Características podem ser concedidas à criatura fundida normalmente para transformação. Caso esta habilidade não afete nenhum dos alvos (seja por um teste de resistência bem-sucedido ou por outra causa), o efeito falha.
 
@@ -583,12 +583,12 @@ Você não pode se fundir com criaturas como enxames ou tropas, que geralmente s
 habilidade ou outra penalidade incorrida é dividida igualmente entre as duas criaturas (arredondado para cima). Se este dano exceder o máximo de pontos de vida de qualquer criatura, aquela criatura é reduzida a 0 pontos de vida e fica estável, com o excesso de dano transferido para a outra criatura. Se o dano transferido exceder os pontos de vida restantes daquela criatura, ambas as criaturas são reduzidas a 0 pontos de vida e ficam estáveis. Quaisquer efeitos de magia, venenos, doenças ou outros efeitos que afetaram a criatura amalgamada continuam a afetar ambas as criaturas, mas as durações são reduzidas pela metade e quaisquer testes de resistência subsequentes são feitos com vantagem. Se o espaço disponível ao final deste efeito não puder acomodar ambas as criaturas, elas podem fazer testes de Carisma contestados. O perdedor é deslocado para o espaço vazio mais próximo, recebendo 1d6 dano por 3 metros de material sólido atravessado.
 
 #### Homogeneizar
-**Pré-requisitos**: :: Esfera de Alteração (Corpo Retorcido (traço)), 15º nível ou superior.
+**Pré-requisitos**: :: Esfera de Alteração (Corpo Distorcido (traço)), 15º nível ou superior.
 
-**Aprimoramento 5 PM**: :: Criaturas que você causar dano com Corpo Retorcido (especialização) e que tenham menos de 100 pontos de vida devem ser bem-sucedidas em um teste de resistência de Constituição ou serão mortas, reduzindo-as a uma poça homogênea de matéria orgânica.
+**Aprimoramento 5 PM**: :: Criaturas que você causar dano com Corpo Distorcido (especialização) e que tenham menos de 100 pontos de vida devem ser bem-sucedidas em um teste de resistência de Constituição ou serão mortas, reduzindo-as a uma poça homogênea de matéria orgânica.
 
 #### Transformação Permanente [maldição]
-**Pré-requisitos**: :: esfera de Alteração, esfera Universal (Estendida (metasfera)), 17º nível ou superior.
+**Pré-requisitos**: :: esfera de Alteração, esfera Universal (Estendido (metaesfera)), 17º nível ou superior.
 
 **Aprimoramento 4 PM**: :: Ao aplicar uma transformação, você pode transformá-la em um efeito instantâneo, transformando a criatura permanentemente na nova forma. Como este é um efeito instantâneo, ele não pode ser dissipado após ser aplicado; no entanto, magias, talentos ou habilidades de esfera que removem maldições explicitamente podem encerrar a transformação com um teste de habilidade de conjuração bem-sucedido. O alvo ainda está sob o efeito de uma transformação, no entanto, e qualquer conjurador que tentar aplicar uma nova transformação ao alvo (exceto o próprio conjurador original) deve passar por um teste de habilidade de conjuração como de costume; a segunda transformação substitui a primeira em vez de aumentá-la. Quando a duração da segunda transformação expira, a primeira retorna. Uma segunda aplicação de uma Permanente (genótipo) pode ser usada para neutralizar a primeira Transformação Permanente, retornando o alvo à sua forma original ou concedendo-lhe uma nova.
 
@@ -599,7 +599,7 @@ habilidade ou outra penalidade incorrida é dividida igualmente entre as duas cr
 Você não pode ter como alvo a mudança de forma. Você não pode possuir esta e a variante Licantropo. Você ganha Corpo Distorcido como um bônus de talento.
 
 #### Licantropo
-Você só pode ter como alvo sua habilidade de mudança de forma. Você não pode combinar mudança de forma com os talentos Massa (metasfera) ou Alcance (metasfera) da Esfera Universal. Você não pode possuir esta e a variante Distorcedor de Carne. Você ganha um talento bônus da esfera de alteração.
+Você só pode ter como alvo sua habilidade de mudança de forma. Você não pode combinar mudança de forma com os talentos Em Massa (metaesfera) ou Alcance (metaesfera) da Esfera Universal. Você não pode possuir esta e a variante Distorcedor de Carne. Você ganha um talento bônus da esfera de alteração.
 
 #### Fraqueza material
 Escolha prata ou madeira (ou outro material especial com a aprovação explícita do Mestre). Ao ser atingido por uma arma composta principalmente do material escolhido, o alvo da sua mudança de forma deve realizar um teste de resistência de Sabedoria com CD igual a 5 + o dano sofrido ou terá o efeito dissipado. O não pode ser alvo de sua mudança de forma novamente por 1 hora. Se o alvo estiver sob o efeito de uma Transformação Permanente, o efeito é suprimido por 1 hora, em vez de dissipado. Você ganha um talento bônus da esfera de alteração.

@@ -90,9 +90,9 @@ Sempre que você reduzir uma criatura a 0 pontos de vida com um ataque corpo a c
 ### Talentos Lendários do Ímpeto
 
 #### Alterar Terreno
-**Pré-requisitos**: :: Esfera do Ímpeto (Quebrar a Terra), 7º nível ou superior.
+**Pré-requisitos**: :: Esfera do Ímpeto (Quebra-Terra), 7º nível ou superior.
 
-Ao usar o talento Quebrar a Terra, você pode criar um buraco de 1,5 metro de profundidade no solo nos quadrados afetados. Se desejar, você também pode elevar o terreno em 1,5 metro em todos os quadrados adjacentes aos quadrados afetados.
+Ao usar o talento Quebra-Terra, você pode criar um buraco de 1,5 metro de profundidade no solo nos quadrados afetados. Se desejar, você também pode elevar o terreno em 1,5 metro em todos os quadrados adjacentes aos quadrados afetados.
 
 
 #### Atavismo (adrenalina)
@@ -112,7 +112,7 @@ Seu nível de exaustão aumenta em 1 após usar esta habilidade. Você sofre ess
 
 
 #### Passos Ruinosos
-**Pré-requisitos**: :: Esfera do Ímpeto (Quebrar a Terra).
+**Pré-requisitos**: :: Esfera do Ímpeto (Quebra-Terra).
 
 Você pode escolher quebrar o chão enquanto se move. Sempre que sair de um quadrado, você pode escolher tornar esse quadrado terreno difícil. Este terreno difícil permanece até ser removido por uma ação (limpando 1 quadrado dentro do alcance da criatura) ou reparado com uma magia ou efeito, como a magia Consertar.
 

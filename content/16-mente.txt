@@ -447,10 +447,10 @@ O alvo não pode localizar a criatura ou objeto por nenhum meio.
 
 
 #### Comunicação Superior
-**Pré-requisitos**: :: Esfera da Mente (Ler Mente, Projeção de Pensamentos), nível 11 ou superior
+**Pré-requisitos**: :: Esfera da Mente (Ler Mente, Pensamentos Projetados), nível 11 ou superior
 
 **Aprimoramento 1PM**: ::
-Desde que você seja pessoalmente familiarizado com o alvo, você pode usar seu encanto Projeção de Pensamentos a qualquer distância, até mesmo entre planos (embora haja 5% de chance de a mensagem não chegar).
+Desde que você seja pessoalmente familiarizado com o alvo, você pode usar seu encanto Pensamentos Projetados a qualquer distância, até mesmo entre planos (embora haja 5% de chance de a mensagem não chegar).
 Os recipientes podem responder (25 palavras para o Encanto Maior, sem limite de palavras para o Encanto Poderoso).
 O alvo deve voluntariamente receber e enviar mensagens; ele pode simplesmente bloqueá-lo, encerrando a comunicação.
 
@@ -471,13 +471,13 @@ Essa loucura só pode ser removida com Restauração da Mente e Corpo (talento a
 
 
 #### Vínculo Memético
-**Pré-requisitos**: :: Esfera da Mente (Cativar, Encanto Poderoso, Projeção de Pensamentos); Esfera Universal (Massa — metasfera); nível 11 ou superior
+**Pré-requisitos**: :: Esfera da Mente (Cativar, Encanto Poderoso, Pensamentos Projetados); Esfera Universal (Em Massa (metaesfera)); nível 11 ou superior
 
 **Aprimoramento 1PM**: :: Ao aplicar um encanto poderoso de Cativar, você cria um vínculo memético entre você e o alvo. Se o alvo tiver acesso à esfera da Mente, magias de encantamento ou efeitos semelhantes, ele pode tratar tanto a si quanto você como o conjurador desses efeitos. Todos os cálculos (CD, nível, habilidade de conjuração) usam o valor do alvo, mas você é considerado o conjurador para os resultados. Exemplo: Se o alvo conjurar Ler Mente em outra criatura, você também recebe as informações lidas. Se o alvo possuir Vínculo Memético, ele pode transferir para você o controle de um encanto de Cativar que tenha conjurado, criando uma cadeia de alvos enredados. Essa cadeia só pode ter comprimento até seu modificador de habilidade chave (sem contar você).
 
 
 #### Controle Mental
-**Pré-requisitos**: :: Esfera da Mente (Cativar, Encanto Poderoso, Projeção de Pensamentos), nível 11 ou superior
+**Pré-requisitos**: :: Esfera da Mente (Cativar, Encanto Poderoso, Pensamentos Projetados), nível 11 ou superior
 
 **Aprimoramento 1PM**: :: Ao aplicar um encanto poderoso de Cativar, você pode aumentar a duração para 1 semana. O alvo obedece a todos os comandos, exceto ordens claramente suicidas. Comandos contrários à natureza do alvo concedem um novo teste de resistência com vantagem para romper o efeito. 
 

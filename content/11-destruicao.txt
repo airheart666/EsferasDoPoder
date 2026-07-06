@@ -334,7 +334,7 @@ Sua explosão destrutiva causa dano de força. Qualquer criatura danificada pela
 :
 **Aprimoramento 1PM**: Por 1 minuto, qualquer criatura caída pela explosão não pode se levantar sem antes ser bem-sucedida em um teste de resistência de Força feito como uma ação ou ação bônus. Um teste de resistência bem-sucedido encerra este efeito.
 
-#### Esfera Temporal
+#### Esfera do Tempo
 
 ##### Entrópico (tipo)
 As criaturas sofrem as dores e desvantagens da idade. Sua explosão destrutiva causa dano necrótico. Qualquer criatura atingida pela explosão deve fazer um teste de resistência de Constituição ou sofrer desvantagem em testes de resistência físicos (Força, Destreza, Constituição) por 1 rodada. Qualquer talento de forma de explosão que permita um teste de resistência de Destreza permite, em vez disso, um teste de resistência de Constituição. Criaturas que explicitamente não sofrem efeitos negativos do envelhecimento são imunes a este efeito.

@@ -99,17 +99,17 @@ Você pode gastar seu foco marcial para realizar um teste de agarrar contra duas
 ### Talentos Lendários de Luta Livre
 
 #### Golpe da Terra Arrasada
-**Pré-requisitos**: :: Esfera de Ímpeto (Quebrar a Terra), Esfera Luta Livre (Arma Viva), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera de Ímpeto (Quebra-Terra), Esfera Luta Livre (Arma Viva), 5º nível ou superior.
 
-Se você usar uma criatura empunhada por meio de Arma Viva para golpear o chão com o talento Quebrar a Terra, o alvo deve ser bem-sucedido em um teste de resistência de Destreza ou ficará imobilizado no chão. Usar esta habilidade encerra sua imobilização. O alvo pode se livrar da condição de imobilização com um teste de Força (Atletismo) ou Destreza (Acrobacia) (à sua escolha) contra a CD da sua esfera.
+Se você usar uma criatura empunhada por meio de Arma Viva para golpear o chão com o talento Quebra-Terra, o alvo deve ser bem-sucedido em um teste de resistência de Destreza ou ficará imobilizado no chão. Usar esta habilidade encerra sua imobilização. O alvo pode se livrar da condição de imobilização com um teste de Força (Atletismo) ou Destreza (Acrobacia) (à sua escolha) contra a CD da sua esfera.
 
 \page
 <div class='pageNumber auto'></div>
 
 #### Dilacerador de Membros (imobilização)
-**Pré-requisitos**: :: Esfera de Luta Livre (Imobilização), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera de Luta Livre (Imobilizar), 11º nível ou superior.
 
-Quando você tiver uma criatura imobilizada pelo talento Imobilização, você pode tentar remover um membro dela; a criatura deve ser bem-sucedida em um teste de resistência de Força ou terá um de seus membros removido por você (braços, pernas, tentáculos ou asas), encerrando a imobilização.
+Quando você tiver uma criatura imobilizada pelo talento Imobilizar, você pode tentar remover um membro dela; a criatura deve ser bem-sucedida em um teste de resistência de Força ou terá um de seus membros removido por você (braços, pernas, tentáculos ou asas), encerrando a imobilização.
 
 A perda de um membro reduz pela metade qualquer velocidade de movimento dependente desse membro e remove quaisquer ataques e habilidades dependentes dele. Criaturas sem nenhuma perna ficam caídas e têm uma velocidade de caminhada de 1,5 metro, a menos que possuam outras formas de movimento.
 
@@ -121,7 +121,7 @@ Considere o resultado do seu teste de agarrar como um teste de dissipar magia co
 
 
 #### Sepultar
-**Pré-requisitos**: :: Esfera de Ímpeto (Quebrar a Terra), Esfera de Luta Livre (Arma Viva, Golpe da Terra Arrasada), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera de Ímpeto (Quebra-Terra), Esfera de Luta Livre (Arma Viva, Golpe da Terra Arrasada), 11º nível ou superior.
 
 Sempre que você usar Golpe da Terra Arrasada com sucesso contra um alvo, você pode optar por enterrá-lo. O alvo se move 3 metros através do solo. Se isso fizer com que o alvo atravesse completamente o chão (como, por exemplo, caindo pelo telhado de um prédio), ele cai no chão abaixo, sofrendo dano de queda normalmente. Se o novo chão ainda estiver a menos de 3 metros, ele também pode se mover para dentro ou através dessa superfície para atingir o limite deste talento. Essa distância aumenta para 6 metros no 17º nível.
 

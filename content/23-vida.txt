@@ -52,7 +52,7 @@ ___
 • levantar-se da posição deitada
 ___
 ___
-Se você possuir o talento Massa (metaesfera) da esfera Universal, você pode gastar um ponto de magia adicional para aplicar este aprimoramento a todas as criaturas afetadas. Os surtos são resolvidos na ordem de iniciativa.
+Se você possuir o talento Em Massa (metaesfera) da esfera Universal, você pode gastar um ponto de magia adicional para aplicar este aprimoramento a todas as criaturas afetadas. Os surtos são resolvidos na ordem de iniciativa.
 
 
 #### Quebrar Encantamento
@@ -155,7 +155,7 @@ Um efeito que reduz a velocidade de um alvo abaixo do seu valor normal, como um 
 ### Talentos Avançados de Vida
 
 #### Regeneração
-**Pré-requisitos**: :: Esfera da Vida (Revitalizar), Esfera Universal (Estendida (metaesfera)), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera da Vida (Revitalizar), Esfera Universal (Estendido (metaesfera)), 11º nível ou superior.
 
 **Aprimoramento 1PM**: :: Durante a duração, se você possuir a parte decepada e a segurar contra o coto (uma interação com objeto) de uma criatura sob o efeito de Revitalizar, o membro é instantaneamente reconectado. Se Revitalizar também for aprimorado com o talento Estendido (metaesfera) da esfera Universal, os membros decepados do alvo (dedos, pernas, caudas, etc.), se houver, serão restaurados após 2 minutos.
 

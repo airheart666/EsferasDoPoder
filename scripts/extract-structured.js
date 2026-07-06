@@ -46,43 +46,11 @@ const PARAM_FIELD = {
 const slugify = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-');
 
-// Confident sphere-name variants seen in prereq prose → canonical sphere id.
-// (spelling/gender/adjective forms of an EXISTING sphere; not game guesses).
-// Ambiguous ones (Esgrima, Berserker, Taverna, Bar) are intentionally NOT here —
-// they stay flagged for Owner curation. See data/CURATION-NOTES.md.
-const SPHERE_ALIAS = {
-  'dominio-de-feras': 'dominio-das-feras',
-  'guardia': 'guardiao',
-  'temporal': 'tempo',
-  'climatica': 'clima',
-};
-// Bucket-1 talent-name variants: a prereq names a talent differently from its
-// heading (e.g. "Quebrar a Terra" vs the talent "Quebra-Terra"). Confirmed with the
-// Owner. Keyed by normalized name with ALL () / [] groups stripped ("loose" form),
-// value = the real talent's base name. Applied only during prereq resolution, so the
-// reader prose is untouched (safer than editing text — "Massa (metasfera)" is a
-// substring of the real talent "Em Massa (metasfera)"). See data/CURATION-NOTES.md.
-const TALENT_ALIAS = {
-  'quebrar a terra': 'Quebra-Terra',
-  'projecao de pensamentos': 'Pensamentos Projetados',
-  'estendida': 'Estendido',
-  'massa': 'Em Massa',
-  'massa — metasfera': 'Em Massa',
-  'massa - metasfera': 'Em Massa',
-  'alcance': 'Alcance',                 // resolves "Alcance (metasfera) (3)" / spelling variants
-  'imobilizacao': 'Imobilizar',
-  'imagem fraturada': 'Imagem Fragmentada',
-  'defender outros': 'Defender Outro',
-  'forjar terra': 'Forjar a Terra',
-  'teletransporte a distancia': 'Teleporte à Distância',
-  'teletransporte invisivel': 'Teleporte Invisível',
-  'teletransporte de objeto': 'Teletransportar Objeto',
-  'corpo retorcido': 'Corpo Distorcido',
-  'pacote de companheiros': 'Pacote de Companheiro',
-  // Bucket 2 talent-name references were fixed at SOURCE (prose) per the Owner, so
-  // they resolve directly from the corrected content — no aliases needed. (Removing
-  // them avoids a latent footgun where a future same-named prereq is silently remapped.)
-};
+// NOTE: there are intentionally no sphere/talent name aliases. Every prereq
+// name variance was fixed at the SOURCE (content/*.txt) so prose and structured
+// data agree and the reader shows the canonical names. Prereqs resolve by direct
+// name match. (Book-wide: metasfera→metaesfera, sphere self-references, and all
+// talent-name mismatches — see handoff/SYMMETRY-CURATION.md.)
 // D&D 5e perícias (PT-BR) that appear as bare prereqs — proficiency requirements,
 // not talents. Excludes "Atletismo"/"Natureza" (also sphere names) to avoid clashes.
 const SKILLS = new Set(['percepcao', 'furtividade', 'sobrevivencia', 'investigacao', 'intuicao',
@@ -314,16 +282,13 @@ function resolvePrereqs(allTalents, sphereIds) {
       if (pr.type === 'level') { resolved.push({ type: 'level', min: pr.min }); continue; }
       if (pr.type === 'text') { resolved.push({ type: 'text', text: pr.text }); continue; }
       if (pr.type === 'sphere') {
-        const id = SPHERE_ALIAS[slugify(pr.name)] || slugify(pr.name);
+        const id = slugify(pr.name);
         resolved.push({ type: 'sphere', id });
         if (!sphereIds.has(id)) (t._needsReview = t._needsReview || []).push('prereq:sphere-unknown:' + pr.name);
         continue;
       }
       // talent — prefer the sphere the clause named, else the owning sphere.
-      // Apply a talent-name alias (loose key: strip all () [] groups) before lookup.
-      const loose = normalizeTerm(String(pr.name).replace(/[([][^)\]]*[)\]]/g, ' '));
-      const alias = TALENT_ALIAS[normalizeTerm(baseName(pr.name))] || TALENT_ALIAS[loose];
-      const base = normalizeTerm(alias ? alias : baseName(pr.name));
+      const base = normalizeTerm(baseName(pr.name));
       const sphereId = pr.sphereName ? slugify(pr.sphereName) : t.sphere;
       const id = byKey.get(sphereId + '|' + base) || globalBase.get(base);
       if (id) resolved.push({ type: 'talent', id });
@@ -347,7 +312,7 @@ function migrateClasses(allTalents) {
   }
   const resolve = (name, sphereName) => {
     const base = normalizeTerm(baseName(name));
-    const sid = SPHERE_ALIAS[slugify(sphereName)] || slugify(sphereName);
+    const sid = slugify(sphereName);
     return byKey.get(sid + '|' + base) || globalBase.get(base) || null;
   };
   const classes = load('classes.json');

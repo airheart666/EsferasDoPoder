@@ -222,7 +222,7 @@ Além disso, se você conceder a um alvo o Disfarce Ilusório (charme), ele pode
 
 
 #### Ilusão Permanente
-**Pré-requisitos**: :: Esfera de Ilusão, Esfera Universal (Estendida [metasfera]), 11º nível ou superior
+**Pré-requisitos**: :: Esfera de Ilusão, Esfera Universal (Estendido (metaesfera)), 11º nível ou superior
 
 Suas ilusões têm longa duração.
 

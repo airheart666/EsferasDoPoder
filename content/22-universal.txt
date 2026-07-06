@@ -42,7 +42,7 @@ Duração, em cada um dos seus turnos, você pode usar sua ação para aplicar u
 **Aprimoramento 2PM**: :: O efeito persiste pela duração restante sem necessidade de concentração. Este aprimoramento pode ser aplicado após o efeito ser conjurado no seu turno, sem a necessidade de uma ação.
 
 ### Pacote da Metasfera
-O pacote da metasfera trata de estabelecer uma base sólida em teoria mágica e aplicar esse conhecimento a todas as outras esferas que você possui. Ao obter o pacote da metasfera, você aprende os truques de druidismo (Livro do Jogador), prestidigitação (Livro do Jogador) e taumaturgia (Livro do Jogador), e pode usar sua habilidade principal como sua habilidade de conjuração ao conjurar qualquer truque que você conheça. Além disso, você ganha um talento (da metasfera) à sua escolha.
+O pacote da metaesfera trata de estabelecer uma base sólida em teoria mágica e aplicar esse conhecimento a todas as outras esferas que você possui. Ao obter o pacote da metaesfera, você aprende os truques de druidismo (Livro do Jogador), prestidigitação (Livro do Jogador) e taumaturgia (Livro do Jogador), e pode usar sua habilidade principal como sua habilidade de conjuração ao conjurar qualquer truque que você conheça. Além disso, você ganha um talento (da metaesfera) à sua escolha.
 
 ### Pacote de Criação de Magias
 O uso deste pacote requer possuir duas ou mais esferas mágicas diferentes. O pacote de criação de magias não possui habilidade base; em vez disso, ao obtê-lo, você ganha um talento (de esfera dupla) à sua escolha. Você só pode se beneficiar de um talento (de esfera dupla) enquanto possuir o talento, suas esferas base e atender a quaisquer outros pré-requisitos. Além disso, enquanto possuir o pacote de criação de magias, se você ganhar um talento bônus de uma esfera, poderá, em vez disso, ganhar um talento (de esfera dupla) que tenha essa esfera como pré-requisito (excluindo talentos bônus de variantes de esfera).
@@ -110,7 +110,7 @@ Enquanto estiver em clima de severidade 1 ou superior, você pode, como um efeit
 #### Controle Oculto (esfera dupla, Aprimoramento, Mente)
 Sempre que você usar um encantamento contra uma criatura ou objeto sob os efeitos de sua Conceder Inteligência, os pedidos que você fizer serão considerados 1 passo mais razoáveis. Veja a esfera Mente para detalhes.
 
-#### Tempestade Nefasta (esfera dupla, Morte, Universal (Massa (metaesfera)), Clima)
+#### Tempestade Nefasta (esfera dupla, Morte, Universal (Em Massa (metaesfera)), Clima)
 Quando o trovão ribomba e o relâmpago corta o céu, seus lacaios se levantam.
 
 **Aprimoramento 2PM**: :: Enquanto você estiver em uma categoria de clima Tempestade de severidade 2 ou superior, você pode reanimar até o número de cadáveres igual ao seu bônus de proficiência dentro do alcance de reanimação a cada rodada como uma ação bônus, sem pagar o custo normal de pontos de magia de reanimar. Você ainda não pode ter mais criaturas reanimadas ativas do que seu bônus de proficiência com esta habilidade, e os mortos-vivos reanimados duram apenas enquanto você estiver em uma categoria de clima de Tempestade de pelo menos nível de severidade 2. A reanimação não pode ser aprimorada posteriormente.
@@ -164,7 +164,7 @@ Como uma ação bônus, você pode fazer um aliado brilhar se ele estiver portan
 Sempre que você usar Criar Natureza para criar um fogo, você também pode fazer com que o fogo brilhe. Você pode tratar uma habilidade de geomancia que tenha como alvo tal fogo e um efeito de iluminar que tenha como alvo tal brilho como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem.
 
 #### Poder da Sepultura (esfera dupla, Morte, Aprimoramento)
-Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um aprimoramento à criatura criada como uma ação bônus antes do final do seu turno. O aprimoramento e a reanimação contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. O aprimoramento como ação bônus pode ser aumentado para afetar múltiplas criaturas reanimadas com o talento Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais.
+Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um aprimoramento à criatura criada como uma ação bônus antes do final do seu turno. O aprimoramento e a reanimação contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. O aprimoramento como ação bônus pode ser aumentado para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais.
 
 
 #### Teleporte Enganoso (esfera dupla, Ilusão, Distorção)
@@ -194,7 +194,7 @@ Sempre que você usar divino como uma ação, você pode, antes do final do seu 
 Ao gastar um minuto em concentração, você pode trancar parte do seu armazenamento extradimensional, enviando-o além do tempo e colocando seu conteúdo em estase. Isso torna o conteúdo selecionado inacessível até que você gaste outro minuto destrancando-o, mas enquanto estiver trancado, o conteúdo não sofre desgaste por idade ou por efeitos como ferrugem ou apodrecimento enquanto armazenado desta forma, e o tempo gasto no espaço não conta para a duração de habilidades como talentos (aprimorar) ou limites de tempo, como o limite de tempo para reviver uma criatura morta.
 
 #### Morte Rápida (esfera dupla, Morte, Tempo)
-Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um efeito de alterar o tempo que tenha como alvo uma criatura à criatura criada como uma ação bônus antes do final do seu turno. Alterar o tempo e reanimar contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjurar Alterar o Tempo pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais.
+Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um efeito de alterar o tempo que tenha como alvo uma criatura à criatura criada como uma ação bônus antes do final do seu turno. Alterar o tempo e reanimar contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjurar Alterar o Tempo pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais.
 
 #### Necromancia Silvestre (esfera dupla, Morte, Natureza (geomancia vegetal))
 Você pode usar ossos e cadáveres inanimados, em vez de plantas, para cumprir quaisquer pré-requisitos adicionais para talentos e habilidades de geomancia vegetal.
@@ -212,13 +212,13 @@ Quando você usa Animar Objeto da esfera Aprimoramento, você pode aplicar uma m
 \page
 <div class='pageNumber auto'></div>
 
-pode ser aprimorada para afetar múltiplos alvos com o talento Massa (metaesfera) da esfera Universal, se eles foram aprimorados desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de aprimoramento tenha um custo de ponto de magia de 1 ou mais.
+pode ser aprimorada para afetar múltiplos alvos com o talento Em Massa (metaesfera) da esfera Universal, se eles foram aprimorados desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de aprimoramento tenha um custo de ponto de magia de 1 ou mais.
 
 #### Adepto do Crepúsculo (esfera dupla, Escuridão, Luz)
 Áreas de escuridão criadas por você ou seus aliados podem coexistir dentro de áreas de efeitos de luz mágica criadas por você ou seus aliados; ambos os conjuradores devem concordar em permitir que seus efeitos coexistam para que este talento funcione. Em áreas onde um efeito de escuridão e um efeito de luz mágica criados por aliados se sobrepõem, a área se torna penumbra, enquanto ainda fornece efeitos adicionais como se fosse uma área de escuridão ou luz brilhante, conforme aplicável.
 
 #### Reanimação Distorcida (esfera dupla, Alteração, Morte)
-Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar uma metamorfose à criatura criada como uma ação bônus antes do final do seu turno. A reanimação e a metamorfose contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de metamorfose pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais.
+Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar uma metamorfose à criatura criada como uma ação bônus antes do final do seu turno. A reanimação e a metamorfose contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de metamorfose pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais.
 
 #### Vudu (esfera dupla, Morte, Ilusão (Disfarce Ilusório))
 Você pode conceder aos seus mortos-vivos reanimados os benefícios do talento Disfarce Ilusório, fazendo com que pareçam como eram quando estavam vivos. Você não precisa saber a aparência da criatura quando estava viva para obter esse benefício.
@@ -226,7 +226,7 @@ Você pode conceder aos seus mortos-vivos reanimados os benefícios do talento D
 #### Ossos Protegidos (esfera dupla, Morte, Proteção)
 Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar uma égide à criatura criada como uma ação bônus antes do final do seu turno. A égide e reanimar contam como um único efeito para fins de concentração.
 
-Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de égide pode ser aprimorada para afetar múltiplas criaturas reanimadas com o talento Massa (metaesfera) da esfera Universal, caso elas tenham sido criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimação tenha um custo de pontos de magia de 1 ou mais.
+Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de égide pode ser aprimorada para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, caso elas tenham sido criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimação tenha um custo de pontos de magia de 1 ou mais.
 
 
 ### Talentos de Vínculo de Mana
@@ -267,7 +267,7 @@ Você pode aplicar este talento (vínculo de mana) como uma ação bônus. Agora
 
 ### Talentos da Metasfera
 
-#### Estendido (metasfera)
+#### Estendido (metaesfera)
 Você pode aumentar a duração máxima das suas habilidades de esfera mágica. Esses aumentos não podem beneficiar uma habilidade de esfera mágica com duração instantânea, superior a 24 horas ou inferior a 1 minuto, nem podem aumentar a duração máxima das suas habilidades de esfera mágica além de 24 horas.
 
 **Aprimoramento 1PM**: :: A duração máxima das suas habilidades de esfera mágica aumenta em 1 nível.
@@ -308,18 +308,18 @@ em 1 o número de glifos que você pode ter ativos simultaneamente a cada vez qu
 **Aprimoramento 4PM**: :: Seu glifo dura indefinidamente, até ser ativado ou dissipado. Seu total máximo de pontos de magia é reduzido pelo número de pontos de magia gastos na criação do glifo; essa redução desaparece quando o glifo é ativado ou dissipado, embora os pontos de magia não sejam recuperados até o momento em que você os recuperaria normalmente.
 
 
-#### Aprimorado (metasfera)
+#### Aprimorado (metaesfera)
 **Aprimoramento 0PM**: :: Você pode adicionar metade do seu bônus de proficiência ao determinar o nível de magia efetivo do efeito da esfera ou o número efetivo de pontos de magia que ela custa para fins como superar dissipações e atingir criaturas com imunidades à magia.
 
-#### Persistente (metasfera)
-Se você perder a concentração em um efeito de esfera mágica, o efeito continua a persistir por um número de rodadas igual ao seu bônus de proficiência. Você só pode ter um efeito de esfera persistente por vez; produzir um segundo efeito de esfera persistente faz com que o primeiro termine. Persistente (metasfera) não tem efeito em um efeito de esfera mágica com duração diferente de concentração (incluindo efeitos de esfera que foram aprimorados para persistir sem concentração).
+#### Persistente (metaesfera)
+Se você perder a concentração em um efeito de esfera mágica, o efeito continua a persistir por um número de rodadas igual ao seu bônus de proficiência. Você só pode ter um efeito de esfera persistente por vez; produzir um segundo efeito de esfera persistente faz com que o primeiro termine. Persistente (metaesfera) não tem efeito em um efeito de esfera mágica com duração diferente de concentração (incluindo efeitos de esfera que foram aprimorados para persistir sem concentração).
 
-#### Em Massa (metasfera)
+#### Em Massa (metaesfera)
 Você pode aumentar o número de alvos que seus efeitos de esfera podem afetar por conjuração. Isso só pode ser aplicado a uma habilidade de esfera mágica que tenha como alvo uma única criatura ou objeto. Isso não pode ser usado em uma habilidade de esfera mágica que tenha como alvo uma área e cada alvo do efeito de esfera mágica deve estar dentro do alcance.
 
-Aumentar o efeito de uma esfera mágica com Massa (metaesfera) não altera nem remove outras limitações do efeito da esfera (como o tamanho máximo das esferas de Telecinese ou Criação), e todos os alvos afetados devem ter um tamanho combinado menor que esse limite. Se você usar o talento Massa para realizar múltiplos ataques (como usar os aumentos abaixo com o poder de projétil da Telecinese ou soltar múltiplos objetos com a esfera Criação), você ainda não poderá realizar mais de um ataque, o que aumenta em 1 no 5º nível (2 ataques), 11º (3 ataques) e 17º (4 ataques).
+Aumentar o efeito de uma esfera mágica com Em Massa (metaesfera) não altera nem remove outras limitações do efeito da esfera (como o tamanho máximo das esferas de Telecinese ou Criação), e todos os alvos afetados devem ter um tamanho combinado menor que esse limite. Se você usar o talento Massa para realizar múltiplos ataques (como usar os aumentos abaixo com o poder de projétil da Telecinese ou soltar múltiplos objetos com a esfera Criação), você ainda não poderá realizar mais de um ataque, o que aumenta em 1 no 5º nível (2 ataques), 11º (3 ataques) e 17º (4 ataques).
 
-Apenas um dos seguintes aumentos pode ser usado para aplicar os efeitos do talento Massa (metaesfera) a um único efeito de esfera.
+Apenas um dos seguintes aumentos pode ser usado para aplicar os efeitos do talento Em Massa (metaesfera) a um único efeito de esfera.
 
 **Aprimoramento 1PM**: :: Você pode diminuir a duração de uma habilidade de esfera mágica com duração de pelo menos 10 minutos (mas não superior a 24 horas) em 2 níveis para aumentar o número de alvos pelo seu bônus de proficiência. Isso conta como um único efeito para fins de concentração, bem como para talentos ou habilidades que permitem que sejam descartados ou gastos para efeitos adicionais (como efeitos de tema e socorro); no entanto, quando descartados ou gastos, eles afetariam todos os alvos válidos.
 
@@ -365,7 +365,7 @@ O alcance de suas habilidades de esfera mágica aumenta em 1 passo. Você pode e
 **Aprimoramento 1PM**: :: Dobre o alcance da sua habilidade de conjuração de esferas. Dobrar o alcance de um efeito de esfera com alcance de toque permite que você atinja criaturas a 1,5 metro a mais de distância.
 
 
-#### Golpe (metasfera)
+#### Golpe (metaesfera)
 **Aprimoramento 1PM**: :: Ao usar um efeito de esfera mágica que tem como alvo uma única criatura ou objeto e é conjurado como uma ação, você pode aplicar o efeito através de um único ataque com arma, que substitui qualquer ataque mágico (se houver) exigido por esse efeito. Qualquer criatura ou objeto danificado pelo ataque também é afetado pelo efeito da esfera. Todas as outras limitações do efeito devem ser atendidas, incluindo custo em pontos de magia e alcance.
 
 
@@ -473,19 +473,19 @@ O efeito de esfera contingente só afeta você, mesmo que normalmente possa ter 
 
 
 #### Duração Extrema
-**Pré-requisitos**: :: Esfera Universal (Estendido (metasfera)), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera Universal (Estendido (metaesfera)), 5º nível ou superior.
 
-Você pode reduzir o custo em pontos de magia dos aprimoramentos de talento Estendido (metasfera) em 1 ponto de magia (mínimo 0). Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam; cada vez que o aprimoramento for escolhido, o custo em pontos de magia será reduzido em 1 ponto de magia (mínimo 0).
+Você pode reduzir o custo em pontos de magia dos aprimoramentos de talento Estendido (metaesfera) em 1 ponto de magia (mínimo 0). Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam; cada vez que o aprimoramento for escolhido, o custo em pontos de magia será reduzido em 1 ponto de magia (mínimo 0).
 
 
 #### Oportunista Extremo
-**Pré-requisitos**: :: Esfera Universal (Oportunista (metasfera)), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera Universal (Oportunista (metaesfera)), 5º nível ou superior.
 
-Você pode reduzir o custo em pontos de magia do aprimoramento de talento Oportunista (metasfera) em 1 ponto de magia (mínimo 0).
+Você pode reduzir o custo em pontos de magia do aprimoramento de talento Oportunista (metaesfera) em 1 ponto de magia (mínimo 0).
 
 
 #### Alcance Extremo
-**Pré-requisitos**: :: Esfera Universal (Alcance (metasfera) (3)), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera Universal (Alcance (metaesfera)), 5º nível ou superior.
 
 Você pode aumentar o alcance de suas habilidades de esfera mágica em 1 passo, como se tivesse escolhido o talento Alcance (metaesfera) mais uma vez. Você pode escolher este talento avançado até duas vezes; seus efeitos se acumulam. Se o alcance inicial da sua habilidade de esfera mágica for de 600 ou 1.000 pés, use a tabela abaixo para calcular o alcance final.
 

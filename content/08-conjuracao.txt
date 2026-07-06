@@ -853,7 +853,7 @@ Sintonizar um novo objeto requer 8 horas, o que pode ser feito durante um descan
 
 Você pode escolher ter um único item para qualquer um ou todos os seus companheiros, mas não mais de um companheiro pode ser invocado usando um único item simultaneamente.
 
-Você ganha o talento Alcance (metasfera) da esfera Universal como um talento bônus.
+Você ganha o talento Alcance (metaesfera) da esfera Universal como um talento bônus.
 
 #### Convocador
 Você não ganha a habilidade de invocação da esfera de Conjuração. Você ganha o talento avançado Invocação como um talento bônus. Esta variante não pode ser selecionada se o talento avançado Invocação não for permitido em sua campanha. Você não pode possuir esta variante se possuir qualquer desvantagem que afete a habilidade de invocação ou os companheiros concedidos por ela.

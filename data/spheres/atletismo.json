@@ -258,7 +258,7 @@
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
-      "body": "Você pode fazer o teste de Força (Atletismo) ou Destreza (Acrobacia) necessário para escalar uma criatura maior como uma ação bônus em vez de uma ação padrão. Criaturas nas quais você escalou têm desvantagem em quaisquer ataques feitos contra você (mas não em tentativas de desalojá-lo).\n\nSe você possuir o talento Domador de Feras da esfera de Domínio de Feras, você pode usar testes de Força (Lidar com Animais) em vez de testes de Força (Atletismo) ao escalar uma criatura maior. Se você tiver a esfera de Luta Livre, escalar uma criatura maior conta como agarrá-la para os propósitos dessa esfera.\n\nSe você possuir o talento Treinamento de Combate Corpo a Corpo, você obtém seus benefícios enquanto estiver agarrado a uma criatura maior."
+      "body": "Você pode fazer o teste de Força (Atletismo) ou Destreza (Acrobacia) necessário para escalar uma criatura maior como uma ação bônus em vez de uma ação padrão. Criaturas nas quais você escalou têm desvantagem em quaisquer ataques feitos contra você (mas não em tentativas de desalojá-lo).\n\nSe você possuir o talento Domador de Feras da esfera de Domínio das Feras, você pode usar testes de Força (Lidar com Animais) em vez de testes de Força (Atletismo) ao escalar uma criatura maior. Se você tiver a esfera de Luta Livre, escalar uma criatura maior conta como agarrá-la para os propósitos dessa esfera.\n\nSe você possuir o talento Treinamento de Combate Corpo a Corpo, você obtém seus benefícios enquanto estiver agarrado a uma criatura maior."
     },
     {
       "id": "m-atletismo-pulmoes-fortes",

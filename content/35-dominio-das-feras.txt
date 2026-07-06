@@ -117,8 +117,8 @@ Todas as suas criaturas domadas são consideradas treinadas para serem montarias
 Suas criaturas domadas têm vantagem em testes de ataque contra uma criatura se pelo menos uma outra de suas criaturas domadas estiver a até 1,5 metro da criatura, e esse aliado não estiver incapacitado.
 
 ### Outros Talentos
-#### Pacote Extra de Domínio de Feras
-Escolha um pacote de Domínio de Feras que você ainda não possua. Você adquire esse pacote.
+#### Pacote Extra de Domínio das Feras
+Escolha um pacote de Domínio das Feras que você ainda não possua. Você adquire esse pacote.
 
 #### Adestrador Firme
 Ao fazer um teste de Adestramento de Animais, você pode gastar foco marcial como parte do teste para considerar o resultado como se tivesse rolado um 10. Essa decisão deve ser tomada antes de rolar o dado.
@@ -127,10 +127,10 @@ Ao fazer um teste de Adestramento de Animais, você pode gastar foco marcial com
 Você adiciona o dobro do seu bônus de proficiência aos testes de Adestramento de Animais.
 
 
-### Talentos Lendários de Domínio de Feras
+### Talentos Lendários de Domínio das Feras
 
 #### Domador de Feras (domador)
-**Pré-requisitos**: :: Esfera de Domínio de Feras, 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Domínio das Feras, 1º nível ou superior.
 
 Você pode gastar foco marcial como uma ação para forçar uma criatura que você possa domar a até 9 metros de distância a fazer um teste de resistência de Carisma ou servi-lo como uma criatura domesticada por 10 minutos. A criatura ainda conta para o seu limite de criaturas domesticadas.
 
@@ -140,37 +140,37 @@ Tentar fazer a criatura realizar uma ação obviamente suicida encerra a domesti
 
 
 #### Chamar Fera
-**Pré-requisitos**: :: Esfera de Domínio de Feras, 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Domínio das Feras, 1º nível ou superior.
 
 Como uma ação bônus, você pode chamar todos os seus aliados animais para o seu lado. Eles devem estar a até 1,6 km por nível e vir na sua velocidade máxima, evitando perigos e riscos aparentes da melhor maneira possível. Esse movimento ocorre usando as ações normais da criatura em seu turno. No 11º nível, os aliados animais precisam apenas estar no mesmo plano.
 
 
 #### Domador Distante (domador)
-**Pré-requisitos**: :: Esfera de Domínio de Feras (Domador de Feras), 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Domínio das Feras (Domador de Feras), 1º nível ou superior.
 
 O alcance da sua habilidade Domador de Feras aumenta para 36 metros.
 
 
 #### Controle Duradouro (domador)
-**Pré-requisitos**: :: Esfera de Domínio de Feras (Domador de Feras), 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Domínio das Feras (Domador de Feras), 1º nível ou superior.
 
 A duração da sua habilidade Domador de Feras aumenta para 8 horas.
 
 
 #### Domínio em Massa (domador)
-**Pré-requisitos**: :: Esfera de Domínio de Feras (Domador de Feras), 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Domínio das Feras (Domador de Feras), 1º nível ou superior.
 
 Ao usar sua habilidade Domador de Feras, você pode afetar várias criaturas simultaneamente, até o seu bônus de proficiência. Todas as criaturas devem estar dentro do alcance. Seus limites de Dados de Vida ainda se aplicam ao número total de criaturas que você pode afetar de uma vez com esta habilidade.
 
 
 #### Controle Permanente (domador)
-**Pré-requisitos**: :: Esfera de Domínio de Feras (Domador de Feras, Controle Duradouro), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera de Domínio das Feras (Domador de Feras, Controle Duradouro), 5º nível ou superior.
 
 A duração da sua habilidade Domador de Feras torna-se permanente.
 
 
 #### Mestre de Enxames
-**Pré-requisitos**: :: Esfera de Domínio de Feras (Treinador), 1º nível ou superior.
+**Pré-requisitos**: :: Esfera de Domínio das Feras (Treinador), 1º nível ou superior.
 
 Aumente o número de criaturas que você pode ter domadas simultaneamente pelo seu nível. Isso não aumenta o Nível de Desafio total das criaturas que você pode ter domadas de uma vez.
 
@@ -178,7 +178,7 @@ Aumente o número de criaturas que você pode ter domadas simultaneamente pelo s
 <div class='pageNumber auto'></div>
 
 #### Orador Selvagem (domador)
-**Pré-requisitos**: :: Esfera de Domínio de Feras, 5º nível ou superior.
+**Pré-requisitos**: :: Esfera de Domínio das Feras, 5º nível ou superior.
 
 Você pode falar com animais. Você pode fazer perguntas e receber respostas de criaturas do tipo besta, mas essa habilidade não as torna mais amigáveis ​​do que o normal. Bestas cautelosas e astutas provavelmente serão lacônicas e evasivas, enquanto as mais estúpidas farão comentários sem sentido. Se uma besta for amigável com você, ela poderá lhe prestar algum favor ou serviço.
 

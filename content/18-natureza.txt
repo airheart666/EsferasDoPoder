@@ -870,7 +870,7 @@ Para fins de reconfiguração, possuir qualquer pacote de Natureza conta como po
 ### Talentos Avançados de Natureza
 
 #### Terremoto (protomancia, terra)
-**Pré-requisitos**: :: Esfera da Natureza (Forjar Terra), 15º nível ou superior.
+**Pré-requisitos**: :: Esfera da Natureza (Forjar a Terra), 15º nível ou superior.
 
 **Custo**: :: 3PM
 
@@ -914,7 +914,7 @@ Criaturas presas podem tentar um teste de resistência de Força como uma ação
 Você não pode usar Aliado Natural mais de uma vez por descanso longo.
 
 #### Nuvem Persistente (protomancia, água)
-**Pré-requisitos**: :: Esfera da Natureza (Domínio da Névoa), Esfera Universal (Estendida (metaesfera)), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera da Natureza (Domínio da Névoa), Esfera Universal (Estendido (metaesfera)), 11º nível ou superior.
 
 **Aprimoramento** 2PM: A duração das habilidades concedidas pelo talento Domínio da Névoa torna-se permanente. Você pode gastar uma ação para que o efeito se mova até 4,5 metros em qualquer direção. Se for alvo de uma habilidade da esfera do Clima ou estiver na área de efeito dela, o conjurador que usa a esfera do Clima deve fazer um teste de habilidade de conjuração contra a CD de resistência da sua esfera. Se o usuário da esfera do Clima for bem-sucedido, a névoa é neutralizada. Caso contrário, ela não está sujeita aos efeitos de clima não criado por magia. Você pode dissipar um efeito tornado permanente por este aprimoramento como uma ação.
 
@@ -995,7 +995,7 @@ A mensagem é tão suave e imperceptível quanto uma brisa até atingir o local.
 A área afetada aumenta em pés no 5º nível (15 pés), 11º nível (20 pés) e 17º nível (25 pés).
 
 #### Incêndio Florestal (protomancia, fogo)
-**Pré-requisitos**: :: Esfera da Natureza, Esfera Universal (Alcance (metasfera) (3)), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera da Natureza, Esfera Universal (Alcance (metaesfera)), 5º nível ou superior.
 
 **Custo**: :: 3PM
 :

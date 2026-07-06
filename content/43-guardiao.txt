@@ -132,18 +132,18 @@ Se você possuir o pacote (patrulha), poderá, em vez disso, gastar seu foco mar
 ### Talentos Lendários de Guardião
 
 #### Desafio Inescapável (desafio)
-**Pré-requisitos**: :: Esfera Guardiã, 7º nível ou superior.
+**Pré-requisitos**: :: Esfera do Guardião, 7º nível ou superior.
 
 Uma criatura afetada pelo seu desafio deve fazer um teste de resistência de Sabedoria sempre que tentar se afastar de você (inclusive por teletransporte ou outros efeitos mágicos) ou perderá a ação ou o movimento tentado. A criatura não perde nenhum uso de magia, pontos de magia ou item mágico em um teste de resistência falho se isso impedir o efeito de uma magia ou esfera. A criatura pode ser movida normalmente por outras criaturas.
 
 
 #### Desafio Punitivo (desafio)
-**Pré-requisitos**: :: Esfera Guardião, 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Guardião, 5º nível ou superior.
 
 Sempre que uma criatura afetada pelo seu desafio sofrer desvantagem em um ataque porque ele não afeta você, essa criatura sofre dano radiante ou necrótico (escolhido quando você adquire este talento) igual ao seu nível. Este é um efeito mágico.
 
 #### De Pé a Qualquer Custo
-**Pré-requisitos**: :: Esfera Guardiã (reserva de dano atrasado), 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Guardião (reserva de dano atrasado), 5º nível ou superior.
 
 Quando reduzido a 0 pontos de vida, você pode gastar seu foco marcial (nenhuma ação necessária) para agir normalmente até o final do seu próximo turno. Você não fica inconsciente devido à perda de pontos de vida e não está sujeito a testes de resistência contra morte durante esse período. Você pode receber cura durante esse turno para recuperar seus pontos de vida.
 
@@ -151,7 +151,7 @@ Quando reduzido a 0 pontos de vida, você pode gastar seu foco marcial (nenhuma 
 <div class='pageNumber auto'></div>
 
 #### Eu Irei
-**Pré-requisitos**: :: Esfera de Guardião (Defender Outros, Eu Ouvirei), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera de Guardião (Defender Outro, Eu Ouvirei), 11º nível ou superior.
 
 Quando uma criatura o chama com o talento Eu Ouvirei, você pode gastar uma ação para se teletransportar para a localização dela. Você pode levar objetos consigo, desde que o peso deles não exceda sua carga máxima. Você também pode levar um número de criaturas Médias ou menores adicionais dispostas (carregando equipamentos ou objetos até sua carga máxima) igual ao seu bônus de proficiência. Uma criatura Grande conta como duas criaturas Médias, uma criatura Enorme conta como duas criaturas Grandes e assim por diante. Todas as criaturas a serem teletransportadas devem estar em contato umas com as outras e devem estar em contato com você ou com uma criatura que esteja em contato com você.
 
@@ -159,7 +159,7 @@ O contato pode ser estabelecido sem nenhuma ação durante o seu turno ou como u
 
 
 #### Eu Ouvirei
-**Pré-requisitos**: :: Esfera Guardiã (Defender Outro).
+**Pré-requisitos**: :: Esfera do Guardião (Defender Outro).
 
 Você pode formar um vínculo com uma criatura como uma ação. Não há limite de alcance para com quem você pode se vincular, nem você precisa de linha de visão ou linha de efeito para formar um vínculo com uma criatura; você deve, no entanto, conhecer pessoalmente a criatura com a qual está se vinculando, mesmo que tenha sido uma apresentação casual. Uma criatura vinculada não toma conhecimento automaticamente deste vínculo, do seu nome ou de como chamá-lo; ela precisa ser informada.
 
@@ -169,7 +169,7 @@ No 17º nível, você pode ouvir o chamado através dos planos e obter conhecime
 
 
 #### Punição (resiliência)
-**Pré-requisitos**: :: Esfera Guardião, 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Guardião, 5º nível ou superior.
 
 Quando você causa dano com um ataque a uma criatura enquanto você tem dano em sua reserva de dano atrasado, você pode gastar seu foco marcial para causar dano igual à sua reserva de dano atrasado à criatura alvo. Este dano é do mesmo tipo do seu ataque que desencadeou o efeito. Se você possuir os talentos Chamado de Ferro Frio ou Durável, você também pode infligir quaisquer efeitos que esteja adiando com essas habilidades. Se o efeito permitisse um teste de resistência, o alvo pode fazer um teste de resistência imediatamente com a CD original.
 
@@ -177,7 +177,7 @@ Um teste de resistência de Constituição bem-sucedido reduz a quantidade de da
 
 
 #### Singularidade (área)
-**Pré-requisitos**: :: Esfera Guardiã, 5º nível ou superior.
+**Pré-requisitos**: :: Esfera do Guardião, 5º nível ou superior.
 
 No início de seus turnos, criaturas hostis dentro da área de sua patrulha devem ser bem-sucedidas em um teste de resistência de Força ou serão movidas 1,5 metro para mais perto de você, embora parem quando se tornarem adjacentes. Esse movimento não provoca ataques de oportunidade.
 

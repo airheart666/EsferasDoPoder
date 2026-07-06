@@ -311,8 +311,8 @@
       "body": "Suas criaturas domadas têm vantagem em testes de ataque contra uma criatura se pelo menos uma outra de suas criaturas domadas estiver a até 1,5 metro da criatura, e esse aliado não estiver incapacitado."
     },
     {
-      "id": "m-dominio-das-feras-pacote-extra-de-dominio-de-feras",
-      "name": "Pacote Extra de Domínio de Feras",
+      "id": "m-dominio-das-feras-pacote-extra-de-dominio-das-feras",
+      "name": "Pacote Extra de Domínio das Feras",
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
@@ -321,7 +321,7 @@
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
-      "body": "Escolha um pacote de Domínio de Feras que você ainda não possua. Você adquire esse pacote."
+      "body": "Escolha um pacote de Domínio das Feras que você ainda não possua. Você adquire esse pacote."
     },
     {
       "id": "m-dominio-das-feras-adestrador-firme",
@@ -355,7 +355,7 @@
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Domínio de Feras",
+      "group": "Talentos Lendários de Domínio das Feras",
       "tags": [
         "domador"
       ],
@@ -379,7 +379,7 @@
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Domínio de Feras",
+      "group": "Talentos Lendários de Domínio das Feras",
       "tags": [],
       "prerequisites": [
         {
@@ -401,7 +401,7 @@
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Domínio de Feras",
+      "group": "Talentos Lendários de Domínio das Feras",
       "tags": [
         "domador"
       ],
@@ -429,7 +429,7 @@
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Domínio de Feras",
+      "group": "Talentos Lendários de Domínio das Feras",
       "tags": [
         "domador"
       ],
@@ -457,7 +457,7 @@
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Domínio de Feras",
+      "group": "Talentos Lendários de Domínio das Feras",
       "tags": [
         "domador"
       ],
@@ -485,7 +485,7 @@
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Domínio de Feras",
+      "group": "Talentos Lendários de Domínio das Feras",
       "tags": [
         "domador"
       ],
@@ -517,7 +517,7 @@
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Domínio de Feras",
+      "group": "Talentos Lendários de Domínio das Feras",
       "tags": [],
       "prerequisites": [
         {
@@ -543,7 +543,7 @@
       "sphere": "dominio-das-feras",
       "section": "martial",
       "kind": "talent",
-      "group": "Talentos Lendários de Domínio de Feras",
+      "group": "Talentos Lendários de Domínio das Feras",
       "tags": [
         "domador"
       ],

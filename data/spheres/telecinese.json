@@ -459,7 +459,7 @@
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
-      "body": "Você ganha a seguinte habilidade de esfera de telecinese:\n\nQuando você ou um aliado erra um ataque com arma de longo alcance, uma arma arremessada ou um projétil telecinético, você pode fazer com que o projétil volte a atingir o alvo. O projétil se move em direção ao alvo de forma determinada, sem que você precise se concentrar nele, seguindo o caminho mais curto enquanto tenta atacá-lo a cada turno. Um projétil direcionado dessa forma só pode fazer um ataque por turno e, assim que fizer um ataque bem-sucedido, para de perseguir o alvo e cai no chão.\n\nAprimoramento 1 PM: (requer Massa (metaesfera)) Você pode fazer com que vários objetos persigam um alvo, mas assim que qualquer um deles fizer um ataque bem-sucedido, todos param de perseguir."
+      "body": "Você ganha a seguinte habilidade de esfera de telecinese:\n\nQuando você ou um aliado erra um ataque com arma de longo alcance, uma arma arremessada ou um projétil telecinético, você pode fazer com que o projétil volte a atingir o alvo. O projétil se move em direção ao alvo de forma determinada, sem que você precise se concentrar nele, seguindo o caminho mais curto enquanto tenta atacá-lo a cada turno. Um projétil direcionado dessa forma só pode fazer um ataque por turno e, assim que fizer um ataque bem-sucedido, para de perseguir o alvo e cai no chão.\n\nAprimoramento 1 PM: (requer Em Massa (metaesfera)) Você pode fazer com que vários objetos persigam um alvo, mas assim que qualquer um deles fizer um ataque bem-sucedido, todos param de perseguir."
     },
     {
       "id": "telecinese-arma-cinetica",
@@ -491,7 +491,7 @@
       "enhancements": [
         {
           "pm": 1,
-          "text": "Ao usar um projétil, você pode fazer dois testes de ataque com o mesmo projétil contra o mesmo alvo ou alvos diferentes dentro do alcance. Isso não pode ser combinado com outras opções que adicionem múltiplos ataques a um projétil, como o talento Massa (metaesfera), ou talentos que alterem a natureza do ataque, como Cratera ou Aceleração Linear."
+          "text": "Ao usar um projétil, você pode fazer dois testes de ataque com o mesmo projétil contra o mesmo alvo ou alvos diferentes dentro do alcance. Isso não pode ser combinado com outras opções que adicionem múltiplos ataques a um projétil, como o talento Em Massa (metaesfera), ou talentos que alterem a natureza do ataque, como Cratera ou Aceleração Linear."
         }
       ],
       "body": "Aprimoramento 0 PM: Você pode atacar seus inimigos com uma manifestação visível de pura força telecinética. Ao usar sua habilidade de projétil dessa forma, você não precisa mirar em uma criatura ou objeto como seu projétil, causando dano como se estivesse levantando um objeto do seu tamanho máximo. Este projétil causa dano de força em vez de dano de concussão, perfuração ou corte. Projétil Móvel (projétil)"

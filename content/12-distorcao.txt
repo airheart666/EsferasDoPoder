@@ -258,7 +258,7 @@ Além disso, seu teletransporte recebe o seguinte aprimoramento:
 
 **Aprimoramento 1PM**: :: Você pode se teletransportar para o seu sinalizador de teletransporte, independentemente da distância, contanto que esteja no mesmo plano. Se o seu sinalizador de teletransporte for uma criatura ou objeto, você pode, em vez disso, teletransportar o seu sinalizador de teletransporte para você. Você deve usar o talento Teletransporte Involuntário para fazer isso com uma criatura involuntária, e ela tem direito a um teste de resistência normalmente.
 
-Se você possuir múltiplos faróis de teletransporte e o talento Massa (metaesfera) da esfera Universal, você pode usar o talento Massa (metaesfera) para teletransportar múltiplos faróis de teletransporte de uma só vez, como se estivesse tocando todos os alvos afetados. Todos os faróis de teletransporte afetados devem ser teletransportados para o mesmo local (você ou um farol de teletransporte não afetado de sua escolha).
+Se você possuir múltiplos faróis de teletransporte e o talento Em Massa (metaesfera) da esfera Universal, você pode usar o talento Em Massa (metaesfera) para teletransportar múltiplos faróis de teletransporte de uma só vez, como se estivesse tocando todos os alvos afetados. Todos os faróis de teletransporte afetados devem ser teletransportados para o mesmo local (você ou um farol de teletransporte não afetado de sua escolha).
 
 Se você possuir o talento avançado Mudança Planar, você pode usá-lo para aprimorar esta habilidade para funcionar através de fronteiras planares.
 
@@ -335,7 +335,7 @@ Um bloqueio dimensional não interfere no movimento de criaturas já em forma et
 
 
 #### Teletransporte Perfeito
-**Pré-requisitos**: :: Esfera de Distorção (Teletransporte à Distância, Teletransporte Verdadeiro, Teletransporte Invisível), 15º nível ou superior.
+**Pré-requisitos**: :: Esfera de Distorção (Teleporte à Distância, Teletransporte Verdadeiro, Teleporte Invisível), 15º nível ou superior.
 
 **Aprimoramento 0PM**: :: Ao usar o talento avançado Teletransporte Verdadeiro, a distância aumenta para ilimitada e você não corre mais o risco de chegar fora do alvo, sempre aparecendo exatamente onde pretendia. Ao usar o talento avançado Mudança Planar, você não aparece mais fora do alvo em relação ao seu destino pretendido no outro plano.
 
@@ -345,7 +345,7 @@ Você não precisa ter visto o destino que está tentando alcançar, mas, nesse 
 <div class='pageNumber auto'></div>
 
 #### Mudança Planar
-**Pré-requisitos**: :: Esfera de Distorção (Teletransporte à Distância, Teletransporte Verdadeiro, Teletransporte Invisível), 11º nível ou superior.
+**Pré-requisitos**: :: Esfera de Distorção (Teleporte à Distância, Teletransporte Verdadeiro, Teleporte Invisível), 11º nível ou superior.
 
 **Aprimoramento 2PM**: :: Você pode se teletransportar para uma dimensão ou plano de existência alternativo. Você precisa saber o plano que deseja alcançar, bem como onde, dentro desse plano, deseja aparecer (se não souber um local específico para aparecer nesse plano, ainda poderá usar esta habilidade, mas corre o risco de aparecer em qualquer lugar do plano). Você aparece próximo ao seu destino pretendido (se especificar uma cidade, poderá aparecer em qualquer portão dessa cidade ou em qualquer outro lugar visível do exterior dela, por exemplo), embora a localização exata fique a critério do Mestre.
 
@@ -373,13 +373,13 @@ Quando você recupera um objeto armazenado dessa forma, ele aparece em um quadra
 
 
 #### Teletransportar Exército
-**Pré-requisitos**: :: Esfera de Distorção, Esfera Universal (Massa (metasfera), Alcance (metasfera)), 11º nível ou superior
+**Pré-requisitos**: :: Esfera de Distorção, Esfera Universal (Em Massa (metaesfera), Alcance (metaesfera)), 11º nível ou superior
 
 **Aprimoramento 2PM**: :: Você pode teletransportar qualquer número de alvos dentro do alcance. Se você possuir Teletransporte Involuntário, você só precisa gastar um ponto de magia, não importa quantos alvos involuntários sejam afetados. Se um alvo involuntário passar no teste de resistência, os outros alvos ainda serão afetados normalmente. Se você possuir o talento Teletransportar Objeto, também poderá teletransportar qualquer número de objetos, desde que cada objeto individual esteja dentro do seu limite de peso (ou limite de tamanho, caso possua o talento Teletransportar Estrutura).
 
 
 #### Teletransportar Estrutura
-**Pré-requisitos**: :: Esfera de Distorção (Teletransporte de Objeto), 5º nível ou superior
+**Pré-requisitos**: :: Esfera de Distorção (Teletransportar Objeto), 5º nível ou superior
 
 Você pode teletransportar objetos de peso e tamanho muito maiores, até mesmo veículos e estruturas inteiras. Você pode teletransportar qualquer objeto de tamanho apropriado, conforme mostrado na Tabela: Estruturas abaixo. Se você usar Teletransporte de Exército em conjunto com este talento, poderá teletransportar todos os alvos que estiverem tocando um objeto ou estrutura teletransportada dentro do alcance, em vez de teletransportar todas as criaturas dentro do alcance.
 
@@ -398,7 +398,7 @@ Você deve usar Teletransporte Involuntário para teletransportar quaisquer cria
 
 
 #### Teletransporte Verdadeiro
-**Pré-requisitos**: :: Esfera de Dobra (Teletransporte à Distância, Teletransporte Invisível) de 11º nível ou superior.
+**Pré-requisitos**: :: Esfera de Dobra (Teleporte à Distância, Teleporte Invisível) de 11º nível ou superior.
 
 **Aprimoramento 2PM**: :: Ao se teletransportar, sua distância passa a ser de 1600 km. Você deve ter uma ideia clara da localização e do layout do destino. Quanto mais nítida for sua imagem mental, maior a probabilidade de o teletransporte funcionar. Áreas com forte energia física ou mágica podem tornar o teletransporte mais perigoso ou até mesmo impossível.
 
@@ -437,7 +437,7 @@ Para verificar a eficácia do teletransporte, role um d100 e consulte a tabela a
 Você não pode se teletransportar, apenas dobrar o espaço. Você recebe um talento (espacial) como talento bônus.
 
 #### Teletransporte Inanimado
-Você não pode teletransportar criaturas, apenas objetos. Você recebe Teletransporte de Objeto como talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
+Você não pode teletransportar criaturas, apenas objetos. Você recebe Teletransportar Objeto como talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
 
 #### Distorção Limitada
 Você só pode se teletransportar quando estiver dentro de uma área que atenda a uma condição específica e só pode escolher um destino que também corresponda a essa condição. Escolha uma das seguintes condições ou converse com seu Mestre para encontrar outra apropriada: você só pode se teletransportar para e de áreas de escuridão; você só pode se teletransportar para e de um corpo d'água; você só pode se teletransportar para e de fogo; você só pode se teletransportar para e de uma árvore viva. Você recebe um talento (teletransporte) como talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
@@ -446,7 +446,7 @@ Você só pode se teletransportar quando estiver dentro de uma área que atenda 
 <div class='pageNumber auto'></div>
 
 #### Distorção Pessoal
-Você só pode usar sua habilidade de teletransporte em si mesmo. Você não pode receber os talentos Teletransporte de Objeto ou Teletransporte Involuntário. Você recebe um talento (teletransporte) como talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
+Você só pode usar sua habilidade de teletransporte em si mesmo. Você não pode receber os talentos Teletransportar Objeto ou Teletransporte Involuntário. Você recebe um talento (teletransporte) como talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante.
 
 #### Teletransporte Fragmentado
 Seja devido ao estilo do seu teletransporte, treinamento incompleto ou algum outro fenômeno, sempre que você teletransporta algo, ele sofre dano durante o transporte. Você recebe Fragmentado como um talento bônus e deve sempre aplicar seus efeitos ao seu teletransporte. Você precisa ter a habilidade de teletransporte para selecionar esta variante.

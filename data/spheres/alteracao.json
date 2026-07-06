@@ -756,7 +756,7 @@
       "enhancements": [
         {
           "pm": 5,
-          "text": "Criaturas que você causar dano com Corpo Retorcido (especialização) e que tenham menos de 100 pontos de vida devem ser bem-sucedidas em um teste de resistência de Constituição ou serão mortas, reduzindo-as a uma poça homogênea de matéria orgânica."
+          "text": "Criaturas que você causar dano com Corpo Distorcido (especialização) e que tenham menos de 100 pontos de vida devem ser bem-sucedidas em um teste de resistência de Constituição ou serão mortas, reduzindo-as a uma poça homogênea de matéria orgânica."
         }
       ],
       "body": ""
@@ -820,7 +820,7 @@
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
-      "body": "Você só pode ter como alvo sua habilidade de mudança de forma. Você não pode combinar mudança de forma com os talentos Massa (metasfera) ou Alcance (metasfera) da Esfera Universal. Você não pode possuir esta e a variante Distorcedor de Carne. Você ganha um talento bônus da esfera de alteração."
+      "body": "Você só pode ter como alvo sua habilidade de mudança de forma. Você não pode combinar mudança de forma com os talentos Em Massa (metaesfera) ou Alcance (metaesfera) da Esfera Universal. Você não pode possuir esta e a variante Distorcedor de Carne. Você ganha um talento bônus da esfera de alteração."
     },
     {
       "id": "alteracao-fraqueza-material",
