@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grimório v2 — protótipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ---------- TOKENS: paleta do Grimório (claro/velino) ---------- */
+:root, [data-theme="light"]{
+  --bg:#e8dfc6; --bg-2:#e0d5b8;
+  --surface:#f5eed9; --surface-2:#efe6cc;
+  --ink:#2c2620; --ink-soft:#6a6051;
+  --copper:#a4692f;
+  --line:#cdba8f; --line-soft:#dccda4;
+  --grain:.5;
+  /* accents por seção */
+  --magic:#7c2b23; --magic-bright:#96382c;      /* oxblood — arcano */
+  --martial:#356f5f; --martial-bright:#2c6152;   /* verdete/pátina — marcial */
+  /* semântico: default = magia (a capa fica neutra/cobre) */
+  --accent:var(--magic); --accent-bright:var(--magic-bright);
+  --font-display:'Grenze Gotisch', Georgia, serif;
+  --font-body:'EB Garamond', Georgia, serif;
+  --font-sc:'EB Garamond', Georgia, serif;
+}
+[data-theme="dark"]{
+  --bg:#15110b; --bg-2:#1b150d;
+  --surface:#221b11; --surface-2:#1c160e;
+  --ink:#e9dec4; --ink-soft:#ab9c81;
+  --copper:#cf9257;
+  --line:#3c3121; --line-soft:#2a2216; --grain:.35;
+  --magic:#c06152; --magic-bright:#d5715f;
+  --martial:#6fae98; --martial-bright:#8ac9b3;
+}
+[data-section="magic"]{ --accent:var(--magic); --accent-bright:var(--magic-bright); }
+[data-section="martial"]{ --accent:var(--martial); --accent-bright:var(--martial-bright); }
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.62;font-size:18px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(90% 60% at 82% -8%, color-mix(in srgb,var(--copper) 22%,transparent), transparent 55%),
+    radial-gradient(80% 60% at 8% 108%, color-mix(in srgb,var(--martial) 14%,transparent), transparent 55%),
+    linear-gradient(165deg, var(--bg), var(--bg-2));}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:var(--grain);mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+[data-theme="dark"] body::after{mix-blend-mode:overlay}
+
+.layout{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+
+/* ---------- SIDEBAR ---------- */
+.side{border-right:1px solid var(--line);padding:1.4rem 0 2rem;position:sticky;top:0;height:100vh;overflow:auto;background:linear-gradient(180deg, color-mix(in srgb,var(--surface) 40%,transparent), transparent)}
+.side-head{display:flex;align-items:center;gap:.6rem;padding:0 1.3rem 1.1rem;border-bottom:1px solid var(--line)}
+.brand-mark{color:var(--magic);font-size:1.25rem}
+.brand{font-family:var(--font-display);font-weight:600;font-size:1.18rem;color:var(--ink)}
+.nav{padding:.8rem 0;display:flex;flex-direction:column}
+.nav a{text-decoration:none;color:var(--ink-soft);padding:.5rem 1.3rem;font-size:1rem;border-left:2px solid transparent;transition:.15s}
+.nav a:hover{color:var(--ink)}
+.nav-top{color:var(--copper)}
+.nav-group .nav-root{color:var(--accent);font-weight:600;margin-top:.6rem;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-family:var(--font-sc);display:flex;align-items:center;gap:.4rem}
+.nav-group .nav-item{padding-left:2.1rem;font-style:italic}
+.nav-group .is-active{color:var(--accent-bright);border-left-color:var(--accent);background:linear-gradient(90deg, color-mix(in srgb,var(--accent) 12%,transparent), transparent);font-style:normal;font-weight:600}
+.nav hr{border:0;border-top:1px solid var(--line);margin:.7rem 1.3rem}
+
+/* ---------- MAIN ---------- */
+.main{min-width:0;display:flex;flex-direction:column}
+.topbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:.6rem;padding:.7rem 1.4rem;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top-title{flex:1;font-family:var(--font-display);font-weight:500;font-size:1.2rem;color:var(--ink)}
+.icon-btn{background:none;border:1px solid transparent;color:var(--ink-soft);cursor:pointer;font-size:1.05rem;width:38px;height:38px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;transition:.15s}
+.icon-btn:hover{color:var(--magic);border-color:var(--line)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;padding:4.6rem 1.6rem 3.4rem;text-align:center;border-bottom:1px solid var(--line)}
+.sigil{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:460px;height:460px;opacity:.14;color:var(--magic);pointer-events:none;animation:turn 90s linear infinite}
+@keyframes turn{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.hero-badge{font-family:var(--font-sc);letter-spacing:.3em;text-transform:uppercase;font-size:.72rem;color:var(--copper);margin-bottom:1rem}
+.hero-title{font-family:var(--font-display);font-weight:500;font-size:clamp(2.9rem,8vw,5rem);line-height:1;color:var(--ink)}
+.hero-rule{width:160px;height:0;margin:1.3rem auto;border-top:1px solid var(--copper);position:relative}
+.hero-rule::after{content:'❦';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--bg);padding:0 .6rem;color:var(--copper)}
+.hero-sub{font-style:italic;color:var(--ink-soft);font-size:1.14rem}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2rem}
+.path{display:block;text-decoration:none;padding:1rem;border:1px solid var(--line);border-radius:4px;background:color-mix(in srgb,var(--surface) 60%,transparent);transition:.18s}
+.path:hover{transform:translateY(-2px)}
+.path .path-k{display:block;font-family:var(--font-sc);letter-spacing:.18em;text-transform:uppercase;font-size:.66rem;margin-bottom:.25rem}
+.path .path-n{display:block;font-family:var(--font-display);font-weight:500;font-size:1.5rem}
+.path-magic{border-color:color-mix(in srgb,var(--magic) 45%,var(--line))}
+.path-magic .path-k,.path-magic .path-n{color:var(--magic)}
+.path-martial{border-color:color-mix(in srgb,var(--martial) 45%,var(--line))}
+.path-martial .path-k,.path-martial .path-n{color:var(--martial)}
+
+/* ---------- READING ---------- */
+.reading{max-width:720px;margin:0 auto;padding:2.4rem 1.6rem 2rem;width:100%}
+.reading + .reading{padding-top:1rem;border-top:1px dashed var(--line)}
+.sec-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-sc);letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;
+  color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-radius:999px;padding:.2rem .8rem;margin-bottom:1rem;
+  background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.sec-badge .g{font-size:.95rem}
+.crumb{font-family:var(--font-sc);letter-spacing:.24em;text-transform:uppercase;font-size:.74rem;color:var(--accent);margin-bottom:.4rem}
+.sphere-title{font-family:var(--font-display);font-weight:500;font-size:3rem;color:var(--ink);margin-bottom:.3rem;position:relative}
+.sphere-title::first-letter{color:var(--accent)}
+.sphere-intro{font-size:1.2rem;color:var(--ink);border-left:2px solid var(--accent);padding-left:1rem;margin:.7rem 0 1.6rem;font-style:italic}
+
+.talent-card{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:3px;background:color-mix(in srgb,var(--surface) 66%,transparent);padding:1.1rem 1.2rem 1.3rem;margin:1.2rem 0;box-shadow:0 1px 0 color-mix(in srgb,var(--copper) 22%,transparent)}
+.talent-name{font-family:var(--font-display);font-weight:500;font-size:1.65rem;color:var(--accent);margin-bottom:.45rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem}
+.tag{font-family:var(--font-sc);font-size:.8rem;letter-spacing:.06em;padding:.1rem .6rem;border-radius:3px;border:1px solid var(--line);color:var(--ink-soft);text-transform:uppercase}
+.tag-cost{color:var(--copper);border-color:var(--copper)}
+.tag-conc::before{content:'◈ '}
+.tag-adv{background:var(--accent);color:var(--surface);border-color:var(--accent);font-weight:600}
+.params{display:grid;grid-template-columns:auto 1fr;gap:.15rem .9rem;margin:.4rem 0 .9rem;padding:.7rem .9rem;background:color-mix(in srgb,var(--accent) 8%,transparent);border-left:2px solid var(--accent);border-radius:3px}
+.params dt{font-family:var(--font-sc);text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;color:var(--accent);white-space:nowrap}
+.params dt.prereq,.params dd.prereq{color:var(--copper);font-style:italic}
+.params dd{color:var(--ink)}
+.talent-card p{margin:.5rem 0}
+.enhancement{border-left:3px solid var(--copper);background:color-mix(in srgb,var(--copper) 10%,transparent);padding:.5rem .8rem;border-radius:0 3px 3px 0}
+.enhancement strong{color:var(--copper)}
+.pm{color:var(--copper);font-weight:600}
+.gloss{font:inherit;background:none;border:0;padding:0;cursor:pointer;color:var(--accent);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.gloss.cond{color:var(--copper)}
+.gloss:hover{color:var(--accent-bright)}
+.dice{font-family:var(--font-sc);font-weight:600;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);padding:0 .35em;border-radius:3px}
+.dc{font-family:var(--font-sc);font-weight:600;background:color-mix(in srgb,var(--copper) 18%,transparent);color:var(--copper);padding:0 .35em;border-radius:3px}
+
+/* ---------- REVEAL: sangria de tinta ---------- */
+.reveal{opacity:0;transform:translateY(12px);filter:blur(6px);animation:bleed .8s ease forwards;animation-delay:calc(var(--i,0)*95ms)}
+@keyframes bleed{to{opacity:1;transform:none;filter:blur(0)}}
+
+.dir-tag{position:fixed;right:14px;bottom:14px;z-index:20;font-family:var(--font-sc);font-size:.85rem;letter-spacing:.04em;background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--line);border-radius:3px;padding:.35rem .8rem;color:var(--ink-soft);backdrop-filter:blur(6px)}
+.dir-tag a{color:var(--magic);text-decoration:none}
+.dir-tag b{color:var(--ink)}
+
+@media (max-width:820px){.layout{grid-template-columns:1fr}.side{display:none}.paths{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none;filter:none}.sigil{animation:none}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="side">
+    <div class="side-head"><span class="brand-mark">🜍</span><span class="brand">Esferas de Magia e Poder</span></div>
+    <nav class="nav">
+      <a class="nav-top" href="#">⌂ Início</a>
+      <a class="nav-top" href="#">❦ Glossário</a>
+      <hr>
+      <div class="nav-group" data-section="magic">
+        <a class="nav-root" href="#"><span>❧</span> Esferas de Magia</a>
+        <a class="nav-item is-active" href="#">Escuridão</a>
+        <a class="nav-item" href="#">Ilusão</a>
+        <a class="nav-item" href="#">Luz</a>
+      </div>
+      <div class="nav-group" data-section="martial">
+        <a class="nav-root" href="#"><span>⚔</span> Esferas de Poder</a>
+        <a class="nav-item" href="#">Alquimia</a>
+        <a class="nav-item" href="#">Duelismo</a>
+        <a class="nav-item" href="#">Guardião</a>
+      </div>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn">☰</button>
+      <span class="top-title">Escuridão</span>
+      <button class="icon-btn">⌕</button>
+      <button class="icon-btn" id="themeBtn" title="Alternar tema">◐</button>
+    </header>
+
+    <section class="hero reveal" style="--i:0">
+      <svg class="sigil" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+        <circle cx="100" cy="100" r="92"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="40"/>
+        <polygon points="100,32 158,150 42,150"/><polygon points="100,168 42,50 158,50"/>
+        <line x1="100" y1="8" x2="100" y2="20"/><line x1="100" y1="180" x2="100" y2="192"/>
+        <line x1="8" y1="100" x2="20" y2="100"/><line x1="180" y1="100" x2="192" y2="100"/>
+      </svg>
+      <div class="hero-inner">
+        <div class="hero-badge">Compêndio · Sistema de Esferas para D&amp;D 5e</div>
+        <h1 class="hero-title">Esferas de Magia e Poder</h1>
+        <div class="hero-rule"></div>
+        <p class="hero-sub">Um tomo de dois caminhos — a arte de moldar a magia e a maestria do combate, esfera a esfera.</p>
+        <div class="paths">
+          <a class="path path-magic" href="#"><span class="path-k">Caminho arcano</span><span class="path-n">Esferas de Magia</span></a>
+          <a class="path path-martial" href="#"><span class="path-k">Caminho marcial</span><span class="path-n">Esferas de Poder</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO MÁGICA -->
+    <article class="reading" data-section="magic">
+      <div class="sec-badge reveal" style="--i:1"><span class="g">❧</span> Esfera Arcana</div>
+      <div class="crumb reveal" style="--i:1">Esferas de Magia</div>
+      <h2 class="sphere-title reveal" style="--i:2">Escuridão</h2>
+      <p class="sphere-intro reveal" style="--i:3">Você comanda as sombras e o vazio: molda a escuridão, cega inimigos e some da vista de quem o caça.</p>
+
+      <div class="talent-card reveal" style="--i:4">
+        <h4 class="talent-name">Escuridão Amedrontadora</h4>
+        <div class="tags">
+          <span class="tag tag-cost">1 PM</span>
+          <span class="tag">1 ação</span>
+          <span class="tag tag-conc">Concentração</span>
+        </div>
+        <dl class="params">
+          <dt>Tempo de Conjuração</dt><dd>1 ação</dd>
+          <dt>Alcance</dt><dd>9 metros</dd>
+          <dt>Duração</dt><dd>Concentração, até 1 min</dd>
+          <dt>Custo</dt><dd><b class="pm">1 PM</b></dd>
+        </dl>
+        <p>Você tece um manto de trevas ao redor de um alvo. Se ele falhar num teste de Sabedoria (<span class="dc">CD 15</span>), a criatura fica <button class="gloss cond">amedrontada</button> e sofre <span class="dice">1d6</span> de dano psíquico ao iniciar cada turno na escuridão. O custo é pago com <button class="gloss">Pontos de Magia</button>.</p>
+        <p class="enhancement"><strong>Aprimoramento <span class="pm">1 PM</span></strong>: o alvo também fica <button class="gloss cond">restringida</button> pelas sombras que se enrolam em seus pés.</p>
+      </div>
+
+      <div class="talent-card reveal" style="--i:5">
+        <h4 class="talent-name">Manto do Vazio</h4>
+        <div class="tags">
+          <span class="tag tag-adv">Avançado</span>
+          <span class="tag tag-cost">2 PM</span>
+          <span class="tag">Ação bônus</span>
+        </div>
+        <dl class="params">
+          <dt class="prereq">Pré-requisitos</dt><dd class="prereq">Escuridão Maior</dd>
+          <dt>Duração</dt><dd>Concentração</dd>
+          <dt>Custo</dt><dd><b class="pm">2 PM</b></dd>
+        </dl>
+        <p>Você se dissolve em sombra viva, tornando-se <button class="gloss cond">invisível</button> na penumbra e movendo-se sem ruído entre os vãos do mundo.</p>
+      </div>
+    </article>
+
+    <!-- SEÇÃO MARCIAL -->
+    <article class="reading" data-section="martial">
+      <div class="sec-badge reveal" style="--i:1"><span class="g">⚔</span> Esfera Marcial</div>
+      <div class="crumb reveal" style="--i:1">Esferas de Poder</div>
+      <h2 class="sphere-title reveal" style="--i:2">Alquimia</h2>
+      <p class="sphere-intro reveal" style="--i:3">Você transforma reagentes voláteis em armas: frascos incendiários, gases sufocantes e elixires que viram a maré da batalha.</p>
+
+      <div class="talent-card reveal" style="--i:4">
+        <h4 class="talent-name">Frasco Incendiário</h4>
+        <div class="tags">
+          <span class="tag tag-cost">Foco Marcial</span>
+          <span class="tag">1 ação</span>
+          <span class="tag tag-conc">Área</span>
+        </div>
+        <dl class="params">
+          <dt>Tempo</dt><dd>1 ação</dd>
+          <dt>Alcance</dt><dd>6 metros</dd>
+          <dt>Área</dt><dd>Esfera de 1,5 m</dd>
+          <dt>Efeito</dt><dd>Dano em área</dd>
+        </dl>
+        <p>Você arremessa um frasco alquímico que se espatifa em chamas. Cada criatura na área faz um teste de resistência de Destreza (<span class="dc">CD 14</span>); em caso de falha, sofre <span class="dice">2d6</span> de dano de fogo e fica <button class="gloss cond">amedrontada</button> pela labareda repentina.</p>
+        <p class="enhancement"><strong>Aprimoramento</strong>: gaste seu <button class="gloss">Foco Marcial</button> para que o fogo persista, causando <span class="dice">1d6</span> a quem terminar o turno na área.</p>
+      </div>
+
+      <div class="talent-card reveal" style="--i:5">
+        <h4 class="talent-name">Bruma Corrosiva</h4>
+        <div class="tags">
+          <span class="tag tag-adv">Avançado</span>
+          <span class="tag">Ação bônus</span>
+          <span class="tag tag-conc">Área</span>
+        </div>
+        <dl class="params">
+          <dt class="prereq">Pré-requisitos</dt><dd class="prereq">Frasco Incendiário</dd>
+          <dt>Alcance</dt><dd>9 metros</dd>
+          <dt>Efeito</dt><dd>Nuvem de gás</dd>
+        </dl>
+        <p>Uma névoa ácida se espalha pelo campo. Quem entrar ou iniciar o turno nela fica <button class="gloss cond">cega</button> e <button class="gloss cond">restringida</button> pela corrosão que enrijece seus músculos.</p>
+      </div>
+    </article>
+  </main>
+</div>
+<div class="dir-tag"><a href="index.html">← direções</a> · <b>Grimório v2</b> (Magia × Marcial)</div>
+<script>
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var h=document.documentElement;h.dataset.theme=(h.dataset.theme==='light'?'dark':'light');
+  });
+</script>
+</body>
+</html>

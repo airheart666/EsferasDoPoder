@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direções visuais — Esferas de Magia e Poder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&family=Fraunces:opsz,wght@9..144,500..700&family=Grenze+Gotisch:wght@500&family=Spectral:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#111318;color:#e7e2d4;font-family:'Spectral',Georgia,serif;line-height:1.6;padding:3rem 1.4rem 4rem;min-height:100vh}
+.wrap{max-width:1040px;margin:0 auto}
+.kicker{font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:#c9a34e;text-align:center;margin-bottom:.6rem}
+h1{font-family:'Spectral',serif;font-weight:500;font-size:2rem;text-align:center;margin-bottom:.5rem}
+.lead{text-align:center;color:#9a978e;max-width:600px;margin:0 auto 2.6rem;font-style:italic}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.card{display:block;text-decoration:none;color:inherit;border:1px solid #2a2d38;border-radius:12px;overflow:hidden;background:#161821;transition:transform .18s,border-color .18s,box-shadow .18s}
+.card:hover{transform:translateY(-4px);border-color:#c9a34e;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.card-hl{border-color:#c9a34e;box-shadow:0 0 0 1px #c9a34e inset}
+.swatch{height:150px;position:relative;display:flex;align-items:flex-end;padding:1rem;overflow:hidden}
+.swatch .name{position:relative;z-index:1;font-size:1.7rem}
+.dots{position:absolute;top:.9rem;right:.9rem;display:flex;gap:.4rem;z-index:1}
+.dots i{width:16px;height:16px;border-radius:50%;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.12) inset}
+/* Celeste */
+.s-celeste{background:radial-gradient(120% 90% at 78% -10%, rgba(214,178,94,.28), transparent 55%),linear-gradient(160deg,#0a0e1c,#0e1327)}
+.s-celeste .name{font-family:'IM Fell DW Pica',serif;color:#f0d089}
+/* Grimório */
+.s-grimorio{background:radial-gradient(90% 70% at 82% -8%, rgba(164,105,47,.32), transparent 55%),linear-gradient(160deg,#e8dfc6,#e0d5b8)}
+.s-grimorio .name{font-family:'Fraunces',serif;font-weight:600;color:#7c2b23}
+/* Forja */
+.s-forja{background:radial-gradient(60% 55% at 75% -6%, rgba(215,163,63,.34), transparent 60%),radial-gradient(70% 60% at 95% 120%, rgba(227,123,52,.3), transparent 60%),linear-gradient(160deg,#0b0c10,#101219)}
+.s-forja .name{font-family:'Grenze Gotisch',serif;color:#f2c56b}
+.body{padding:1.1rem 1.2rem 1.3rem}
+.body h2{font-size:1.05rem;margin-bottom:.4rem}
+.body p{font-size:.92rem;color:#a6a299}
+.meta{margin-top:.8rem;font-size:.78rem;color:#7f7c74;border-top:1px solid #2a2d38;padding-top:.7rem}
+.foot{text-align:center;color:#6f6c64;font-size:.85rem;margin-top:2.6rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Protótipos de identidade visual</div>
+  <h1>Três direções — escolha a alma do site</h1>
+  <p class="lead">Cada página aplica a estética aos componentes reais (capa, esfera, card de talento, ficha, glossário). Abra, role, e use o botão <b>◐</b> para alternar claro/escuro.</p>
+
+  <div class="grid">
+    <a class="card card-hl" href="grimorio-v3.html">
+      <div class="swatch s-grimorio">
+        <span class="dots"><i style="background:#c79a3a"></i><i style="background:#6d4aa0"></i><i style="background:#3f8f74"></i><i style="background:#5f7a92"></i></span>
+        <span class="name" style="font-family:'Grenze Gotisch',serif;color:#7c2b23">Grimório v3</span>
+      </div>
+      <div class="body">
+        <h2>Identidade por esfera</h2>
+        <p>Cada esfera com seu matiz e sigilo próprios (Luz, Escuridão, Alquimia, Retribuição), tudo no registro do Grimório. Seção sinalizada por selo/ornamento.</p>
+        <div class="meta">Última iteração · 4 esferas de amostra</div>
+      </div>
+    </a>
+
+    <a class="card" href="grimorio-v2.html">
+      <div class="swatch s-grimorio">
+        <span class="dots"><i style="background:#e8dfc6"></i><i style="background:#7c2b23"></i><i style="background:#356f5f"></i><i style="background:#a4692f"></i></span>
+        <span class="name" style="font-family:'Grenze Gotisch',serif;color:#7c2b23">Grimório v2</span>
+      </div>
+      <div class="body">
+        <h2>Combinação · Magia × Marcial</h2>
+        <p>Paleta do Grimório + títulos Grenze Gotisch (Forja) + símbolo ◈ (Celeste). Magia→oxblood, Marcial→verdete, cada seção com cor e ornamento próprios.</p>
+        <div class="meta">Base do v3 · duas seções lado a lado</div>
+      </div>
+    </a>
+
+    <a class="card" href="celeste.html">
+      <div class="swatch s-celeste">
+        <span class="dots"><i style="background:#0a0e1c"></i><i style="background:#d6b25e"></i><i style="background:#9d92e6"></i><i style="background:#e0995a"></i></span>
+        <span class="name">Compêndio Celeste</span>
+      </div>
+      <div class="body">
+        <h2>Atlas de estrelas</h2>
+        <p>Índigo-noite + latão. Campo de estrelas, anéis orbitais, brilhos radiais. Fontes IM Fell DW Pica + Spectral.</p>
+        <div class="meta">Assinatura escura · Magia→violeta · Poder→brasa</div>
+      </div>
+    </a>
+
+    <a class="card" href="grimorio.html">
+      <div class="swatch s-grimorio">
+        <span class="dots"><i style="background:#e8dfc6"></i><i style="background:#7c2b23"></i><i style="background:#3d7a68"></i><i style="background:#a4692f"></i></span>
+        <span class="name">Grimório Alquímico</span>
+      </div>
+      <div class="body">
+        <h2>Tomo oculto</h2>
+        <p>Velino + oxblood + verdete. Sigilos em marca d'água, grão de papel. Fontes Fraunces + EB Garamond.</p>
+        <div class="meta">Assinatura clara · sacra geometria · patina de cobre</div>
+      </div>
+    </a>
+
+    <a class="card" href="forja.html">
+      <div class="swatch s-forja">
+        <span class="dots"><i style="background:#0b0c10"></i><i style="background:#d7a33f"></i><i style="background:#48c3c0"></i><i style="background:#e37b34"></i></span>
+        <span class="name">Forja &amp; Arcano</span>
+      </div>
+      <div class="body">
+        <h2>Dark fantasy cinematográfico</h2>
+        <p>Obsidiana + ouro-fundido. Brilhos volumétricos, constelações de runas. Fontes Grenze Gotisch + Grenze.</p>
+        <div class="meta">Assinatura escura · Magia→arcano frio · Poder→brasa</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="kicker" style="margin-top:3rem">Layouts do builder · Meu Personagem</div>
+  <h1>Três formas de construir o personagem</h1>
+  <p class="lead">Mesmo tema Grimório, três arquiteturas de tela diferentes para <b>ver os dados</b>, <b>ver os talentos</b> e sobretudo <b>adicionar esferas/talentos com contexto</b> (custo, pré-requisito, descrição) — sem dropdown seco nem lista minúscula. Abra, alterne claro/escuro com <b>◐</b>, e clique nos botões de adicionar.</p>
+
+  <div class="grid">
+    <a class="card" href="builder-gaveta.html">
+      <div class="swatch s-grimorio">
+        <span class="dots"><i style="background:#7c2b23"></i><i style="background:#356f5f"></i><i style="background:#41498a"></i><i style="background:#a4692f"></i></span>
+        <span class="name" style="font-family:'Grenze Gotisch',serif;color:#7c2b23">A · Gaveta</span>
+      </div>
+      <div class="body">
+        <h2>Ficha enxuta + navegador em gaveta</h2>
+        <p>A ficha fica limpa e legível; “Adicionar esfera/talento” abre uma gaveta lateral rica — busca, filtro, e cada item com descrição, custo e pré-requisito antes de confirmar.</p>
+        <div class="meta">Contexto sob demanda · overlay drawer</div>
+      </div>
+    </a>
+
+    <a class="card" href="builder-bancada.html">
+      <div class="swatch s-grimorio">
+        <span class="dots"><i style="background:#7c2b23"></i><i style="background:#356f5f"></i><i style="background:#41498a"></i><i style="background:#a4692f"></i></span>
+        <span class="name" style="font-family:'Grenze Gotisch',serif;color:#7c2b23">B · Bancada</span>
+      </div>
+      <div class="body">
+        <h2>Rail de stats + bancada master-detail</h2>
+        <p>Identidade, valores e orçamento sempre visíveis à esquerda; um catálogo persistente ao lado do build, com painel de detalhe (texto completo + pré-req) sempre na tela.</p>
+        <div class="meta">Tudo visível lado a lado · zero overlay</div>
+      </div>
+    </a>
+
+    <a class="card" href="builder-galeria.html">
+      <div class="swatch s-grimorio">
+        <span class="dots"><i style="background:#7c2b23"></i><i style="background:#356f5f"></i><i style="background:#41498a"></i><i style="background:#a4692f"></i></span>
+        <span class="name" style="font-family:'Grenze Gotisch',serif;color:#7c2b23">C · Galeria</span>
+      </div>
+      <div class="body">
+        <h2>Cartão-herói + coleção de cartas</h2>
+        <p>Um brasão do personagem no topo; cada esfera é uma carta que expande numa galeria de cartas de talento ricas — clique para incluir/remover. Nada de <code>&lt;select&gt;</code> ou “+” minúsculo.</p>
+        <div class="meta">Cartas contextuais em tudo</div>
+      </div>
+    </a>
+  </div>
+
+  <p class="foot">Protótipos descartáveis · fontes via Google Fonts só aqui (o build final auto-hospeda os .woff2)</p>
+</div>
+</body>
+</html>
