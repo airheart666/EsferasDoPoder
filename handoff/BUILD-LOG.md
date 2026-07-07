@@ -5,10 +5,10 @@
 
 ## Current Status
 
-**Active step:** Phase 3 — step 4 (wire app.js to the rules engine) BUILT, awaiting Richard's review.
-**Last cleared:** Phase 3 step 4 — app.js/index.html/style.css — 2026-07-06 (validate + typecheck + test +
-new 23-assertion sanity-builder.js all green; browser click-through still needs a human — see
-REVIEW-REQUEST.md).
+**Active step:** P3 (full in-sheet character builder) BUILT, awaiting Richard's review.
+**Last cleared:** P3 — app.js/style.css — 2026-07-06 (validate + typecheck + test + sanity-builder all
+green, plus ad hoc jsdom event-driven smoke checks of the new sheet controls; browser click-through
+still needs a human — see REVIEW-REQUEST.md).
 **Pending deploy:** NO (feature branch `structured-mechanics-layer`, not merging until proven)
 **Curation DONE (Buckets 1 & 2):** flags 100→18. All talent-name mismatches resolved (sphere
 self-references fixed at source; talent-name variants via extractor `TALENT_ALIAS`; source renames
@@ -169,6 +169,50 @@ Decisions made:
   class-features aren't in `ownedTalentIds`) is unchanged behavior from before this step, not a
   regression; app.js keeps its own title-keyed `grantedSpheresMap` for the "included with the
   sphere" display, now sourced from `dataIndex.classFeatures` instead of the DOM/root global.
+
+Reviewer findings: pending — see `handoff/REVIEW-REQUEST.md`.
+Deploy: pending
+
+---
+
+### P3 — Full in-sheet character builder — BUILT (pending review)
+*Date: 2026-07-06*
+
+Files changed:
+- `app.js` — extracted `buildPackageSelector`/`buildFreePickSelectors`/`applyFreePickSelection`
+  out of `renderSphereAcquireBar`'s inline blocks (behavior-preserving refactor, verified by
+  driving the reading-page bar's events post-refactor); `renderSphereAcquireBar` now calls
+  them. Added `buildAddTalentPicker` (reuses `makeCharControl`) and `buildAddSpherePicker` (new).
+  `renderCharacter`'s per-sphere loop now renders a package selector + free-pick selectors +
+  add-talent picker per sphere, and an add-sphere picker near the top of the section.
+  `setupCharacter`'s click/change handlers extended to own all of this inside `.char-sphere`
+  (full `renderCharacter()` re-render on mutation); `setupFavorites`'s `.pkg-select`/
+  `.freepick-select`/`.char-btn` handlers each got a one-line `.closest('.char-sphere')` guard
+  so the two delegated listeners (both bound to the same `#content`) don't double-handle the
+  same control.
+- `style.css` — new rules for `.char-sphere-manage`, `.char-add-talent(-row)`, `.char-add-btn`,
+  `.char-add-sphere(-select|-btn)`. The inner controls reuse existing global styles unchanged.
+
+Result: `npm run validate` (0 errors), `npm run typecheck` (green), `npm test` (28/28),
+`node scripts/sanity-builder.js` (29/29) all green (none of them exercise app.js's DOM wiring).
+Additionally ran ad hoc Node+jsdom scripts during the build (same technique as
+sanity-builder.js, not committed) that load the real app.js and drive actual dispatched
+click/change events against the new sheet controls end-to-end: package selection, free-pick
+selection (incl. a granted sphere per P1), add-talent (extra-talent path), add-sphere (incl.
+a budget-exhausted blocked case producing a `.char-warn-toast`), and confirmed the reading-page
+bar (rendered standalone, outside `.char-sphere`) still mutates via `setupFavorites` as before.
+Full manual browser click-through still needed — see REVIEW-REQUEST.md checklist.
+
+Decisions made:
+- Disambiguate the shared-classname double-listener risk via DOM ancestry
+  (`.closest('.char-sphere')`) rather than new data-attributes — zero markup overhead, and the
+  two container classes (`.char-sphere` / `.sphere-acquire`) are already mutually exclusive by
+  construction (sheet vs. reading page).
+- Sheet re-render strategy is always a full `renderCharacter()` (not the reading page's
+  `refreshSphereUI` DOM patch) — matches how every other sheet mutation already worked
+  (`.char-talent-remove`, `.char-sphere-remove`, `.char-field`).
+- No `src/rules.js` changes; no new persisted-state shape; every mutation goes through the
+  pre-existing enforced wrappers.
 
 Reviewer findings: pending — see `handoff/REVIEW-REQUEST.md`.
 Deploy: pending

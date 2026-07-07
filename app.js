@@ -690,6 +690,75 @@ function addFavoriteStars(root, chapter) {
   }
 }
 
+// Seletor de pacote-base (Alquimia/Universal) — usado pela barra de aquisição
+// (leitura) E pelo painel in-sheet (ficha); mesma marcação/classe nos dois, então
+// o handler delegado de `.pkg-select` (setupFavorites) funciona nos dois lugares.
+function buildPackageSelector(active, title, spec) {
+  if (!spec.packages) return null;
+  const lbl = document.createElement('label');
+  lbl.className = 'pkg-l';
+  lbl.textContent = `${spec.packages.label || 'Pacote'}: `;
+  const sel = document.createElement('select');
+  sel.className = 'pkg-select';
+  sel.dataset.sphere = title;
+  const none = document.createElement('option');
+  none.value = ''; none.textContent = '— escolher —';
+  sel.appendChild(none);
+  for (const opt of spec.packages.options) {
+    const o = document.createElement('option');
+    o.value = opt.id; o.textContent = opt.label;
+    if (spec.pkg === opt.id) o.selected = true;
+    sel.appendChild(o);
+  }
+  lbl.appendChild(sel);
+  return lbl;
+}
+// Seletores de escolha grátis (um por slot, N = capacidade resolvida) — mesmo uso
+// duplo que buildPackageSelector (barra de leitura + painel in-sheet).
+function buildFreePickSelectors(active, title, spec, model, entry) {
+  const out = [];
+  if (!(spec.freePicks > 0 && model.freeGroup.length)) return out;
+  const picks = ((entry && entry.freePicks) || []).slice(0, spec.freePicks);
+  for (let i = 0; i < spec.freePicks; i++) {
+    const lbl = document.createElement('label');
+    lbl.className = 'freepick-l';
+    lbl.textContent = spec.freePicks > 1 ? `Grátis (${spec.freeLabel}) ${i + 1}: ` : `Grátis — 1 ${spec.freeLabel}: `;
+    const sel = document.createElement('select');
+    sel.className = 'freepick-select';
+    sel.dataset.sphere = title;
+    sel.dataset.i = String(i);
+    const none = document.createElement('option');
+    none.value = ''; none.textContent = '—';
+    sel.appendChild(none);
+    const chosenIds = new Set(picks.filter(Boolean));
+    for (const it of model.freeGroup) {
+      // esconde os já escolhidos em OUTROS slots
+      if (chosenIds.has(it.id) && picks[i] !== it.id) continue;
+      const opt = document.createElement('option');
+      opt.value = it.id; opt.textContent = it.name;
+      if (picks[i] === it.id) opt.selected = true;
+      sel.appendChild(opt);
+    }
+    lbl.appendChild(sel);
+    out.push(lbl);
+  }
+  return out;
+}
+// Aplica o valor de um seletor de escolha grátis: confere Rules.prereqCheck antes
+// de mutar (mesma regra de addFreePickChecked); devolve true só se mutou, para o
+// chamador decidir como re-renderizar (refreshSphereUI na leitura, renderCharacter
+// na ficha). Compartilhado pelos dois handlers de `.freepick-select`.
+function applyFreePickSelection(active, title, index, talentId, anchorEl) {
+  if (talentId && dataIndex) {
+    const talent = dataIndex.talentById.get(talentId);
+    const pre = talent ? Rules.prereqCheck(active, talent, dataIndex) : { ok: false, missing: [], unverified: [] };
+    if (!pre.ok) { showCharNotice(anchorEl, `Pré-requisito não atendido para "${talent ? talent.name : talentId}".`); return false; }
+    if (pre.unverified.length) showCharNotice(anchorEl, `"${talent.name}" tem um pré-requisito em texto — confirme manualmente se ele é atendido.`);
+  }
+  setFreePickAt(active, title, index, talentId);
+  return true;
+}
+
 // Barra de aquisição sob o título da esfera. Só aparece quando já existe pelo
 // menos um personagem; o alvo é escolhido num seletor visível (nunca presumido).
 function renderSphereAcquireBar(chapter) {
@@ -747,25 +816,8 @@ function renderSphereAcquireBar(chapter) {
   bar.appendChild(status);
 
   // Seletor de pacote-base (Alquimia)
-  if (spec.packages) {
-    const lbl = document.createElement('label');
-    lbl.className = 'pkg-l';
-    lbl.textContent = `${spec.packages.label || 'Pacote'}: `;
-    const sel = document.createElement('select');
-    sel.className = 'pkg-select';
-    sel.dataset.sphere = chapter.title;
-    const none = document.createElement('option');
-    none.value = ''; none.textContent = '— escolher —';
-    sel.appendChild(none);
-    for (const opt of spec.packages.options) {
-      const o = document.createElement('option');
-      o.value = opt.id; o.textContent = opt.label;
-      if (spec.pkg === opt.id) o.selected = true;
-      sel.appendChild(o);
-    }
-    lbl.appendChild(sel);
-    bar.appendChild(lbl);
-  }
+  const pkgSel = buildPackageSelector(active, chapter.title, spec);
+  if (pkgSel) bar.appendChild(pkgSel);
 
   // Notas das condicionais de proficiência (resolvidas automaticamente)
   for (const c of spec.conditionals) {
@@ -779,32 +831,7 @@ function renderSphereAcquireBar(chapter) {
   }
 
   // Seletores de escolha grátis (N = capacidade resolvida)
-  if (spec.freePicks > 0 && model.freeGroup.length) {
-    const picks = ((entry && entry.freePicks) || []).slice(0, spec.freePicks);
-    for (let i = 0; i < spec.freePicks; i++) {
-      const lbl = document.createElement('label');
-      lbl.className = 'freepick-l';
-      lbl.textContent = spec.freePicks > 1 ? `Grátis (${spec.freeLabel}) ${i + 1}: ` : `Grátis — 1 ${spec.freeLabel}: `;
-      const sel = document.createElement('select');
-      sel.className = 'freepick-select';
-      sel.dataset.sphere = chapter.title;
-      sel.dataset.i = String(i);
-      const none = document.createElement('option');
-      none.value = ''; none.textContent = '—';
-      sel.appendChild(none);
-      const chosenIds = new Set(picks.filter(Boolean));
-      for (const it of model.freeGroup) {
-        // esconde os já escolhidos em OUTROS slots
-        if (chosenIds.has(it.id) && picks[i] !== it.id) continue;
-        const opt = document.createElement('option');
-        opt.value = it.id; opt.textContent = it.name;
-        if (picks[i] === it.id) opt.selected = true;
-        sel.appendChild(opt);
-      }
-      lbl.appendChild(sel);
-      bar.appendChild(lbl);
-    }
-  }
+  for (const lbl of buildFreePickSelectors(active, chapter.title, spec, model, entry)) bar.appendChild(lbl);
 
   const cost = document.createElement('span');
   cost.className = 'acquire-cost';
@@ -983,7 +1010,9 @@ function setupFavorites() {
       return;
     }
     // Adicionar/remover em cada talento — com ≥2 personagens, pergunta o alvo
+    // (dentro da ficha (.char-sphere) o alvo já é fixo — setupCharacter cuida disso)
     const cbtn = e.target.closest('.char-btn');
+    if (cbtn && cbtn.closest('.char-sphere')) return;
     if (cbtn) {
       e.preventDefault(); e.stopPropagation();
       const chars = getCharacters();
@@ -1008,28 +1037,23 @@ function setupFavorites() {
     // Trocar o personagem-alvo na barra de aquisição (sem presumir o último)
     const who = e.target.closest('.char-target-select');
     if (who) { setActiveCharId(who.value); refreshSphereUI(who.dataset.sphere); return; }
-    // Escolher o pacote-base (Alquimia)
+    // Escolher o pacote-base (Alquimia) — na ficha (.char-sphere), setupCharacter cuida disso
     const pkg = e.target.closest('.pkg-select');
+    if (pkg && pkg.closest('.char-sphere')) return;
     if (pkg) {
       const active = getActiveChar();
       if (active) { setPackage(active, pkg.dataset.sphere, pkg.value || null); refreshSphereUI(pkg.dataset.sphere); }
       return;
     }
-    // Seletor de escolha grátis (por slot) na barra de aquisição
+    // Seletor de escolha grátis (por slot) na barra de aquisição — idem, ficha à parte
     const sel = e.target.closest('.freepick-select');
+    if (sel && sel.closest('.char-sphere')) return;
     if (!sel) return;
     const active = getActiveChar();
     if (!active) return;
-    const title = sel.dataset.sphere;
-    const talentId = sel.value || null;
-    if (talentId && dataIndex) {
-      const talent = dataIndex.talentById.get(talentId);
-      const pre = talent ? Rules.prereqCheck(active, talent, dataIndex) : { ok: false, missing: [], unverified: [] };
-      if (!pre.ok) { showCharNotice(sel, `Pré-requisito não atendido para "${talent ? talent.name : talentId}".`); return; }
-      if (pre.unverified.length) showCharNotice(sel, `"${talent.name}" tem um pré-requisito em texto — confirme manualmente se ele é atendido.`);
+    if (applyFreePickSelection(active, sel.dataset.sphere, parseInt(sel.dataset.i || '0', 10), sel.value || null, sel)) {
+      refreshSphereUI(sel.dataset.sphere);
     }
-    setFreePickAt(active, title, parseInt(sel.dataset.i || '0', 10), talentId);
-    refreshSphereUI(title);
   });
   // Teclado: Enter/Espaço no título alterna o card
   content.addEventListener('keydown', e => {
@@ -1625,6 +1649,80 @@ function buildProficiencies(char) {
   return wrap;
 }
 
+// Painel "adicionar talento" in-sheet: lista compacta de talentos ainda não
+// possuídos (grátis OU extra, pelo dado estruturado — nunca base/concedido-fixo),
+// um botão de personagem (makeCharControl, igual ao compêndio) por item. O clique
+// é tratado em setupCharacter, que reusa applyTalentToggle (mesma decisão
+// grátis/extra/concedida já usada pelo "+" do compêndio — nenhuma regra nova).
+function buildAddTalentPicker(active, title, model, entry, granted) {
+  const e = entry || { freePicks: [], talents: [] };
+  const owned = new Set([...(e.freePicks || []), ...(e.talents || [])]);
+  const candidates = model.freeGroup.concat(model.extras)
+    .filter(it => !owned.has(it.id) && !isGrantedTalentId(active, it.id));
+  if (!candidates.length) return null;
+  const wrap = document.createElement('div');
+  wrap.className = 'char-add-talent';
+  const sub = document.createElement('p');
+  sub.className = 'char-subhead';
+  sub.textContent = 'Adicionar talento';
+  wrap.appendChild(sub);
+  const row = document.createElement('div');
+  row.className = 'char-add-talent-row';
+  for (const it of candidates) {
+    const role = model.roleByKey.get(it.id) || 'extra';
+    const item = { id: it.id, name: it.name, sphere: title };
+    const btn = makeCharControl(item, role, active, entry, false, granted);
+    if (!btn) continue;
+    btn.classList.add('char-add-btn');
+    btn.textContent = '+ ' + it.name;
+    row.appendChild(btn);
+  }
+  wrap.appendChild(row);
+  return wrap;
+}
+
+// Painel "adicionar esfera" in-sheet: seletor agrupado (magia/marcial) com as
+// esferas ainda não adquiridas nem concedidas + botão que chama tryAcquireSphere
+// (mesmo gate de orçamento usado por qualquer outra aquisição).
+function buildAddSpherePicker(active) {
+  if (!dataIndex) return null;
+  const have = new Set((active.spheres || []).map(e => sphereTitleById.get(e.sphere) || e.sphere));
+  const granted = grantedSpheresMap(active);
+  const groups = { magic: [], martial: [] };
+  for (const sph of dataIndex.sphereById.values()) {
+    const title = sph.name;
+    if (have.has(title) || granted.has(title)) continue;
+    (groups[sph.section] || groups.magic).push(title);
+  }
+  groups.magic.sort((a, b) => a.localeCompare(b, 'pt-BR'));
+  groups.martial.sort((a, b) => a.localeCompare(b, 'pt-BR'));
+  if (!groups.magic.length && !groups.martial.length) return null;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'char-add-sphere';
+  const sel = document.createElement('select');
+  sel.className = 'char-add-sphere-select';
+  const none = document.createElement('option');
+  none.value = ''; none.textContent = '— escolher esfera —';
+  sel.appendChild(none);
+  const addGroup = (label, titles) => {
+    if (!titles.length) return;
+    const og = document.createElement('optgroup');
+    og.label = label;
+    for (const t of titles) { const o = document.createElement('option'); o.value = t; o.textContent = t; og.appendChild(o); }
+    sel.appendChild(og);
+  };
+  addGroup('Esferas de Magia', groups.magic);
+  addGroup('Esferas de Poder', groups.martial);
+  wrap.appendChild(sel);
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'char-add-sphere-btn';
+  btn.textContent = '+ Adquirir esfera';
+  wrap.appendChild(btn);
+  return wrap;
+}
+
 function renderCharacter() {
   currentChapterIndex = -1;
   const content = document.getElementById('content');
@@ -1764,6 +1862,10 @@ function renderCharacter() {
   h2.textContent = 'Esferas e talentos';
   frag.appendChild(h2);
 
+  // Adicionar esfera sem sair da ficha (tryAcquireSphere já bloqueia por orçamento)
+  const addSphere = buildAddSpherePicker(active);
+  if (addSphere) frag.appendChild(addSphere);
+
   // Concessão de talento específico que o personagem já possui → a regra permite
   // escolher um substituto na mesma esfera (picker adiado; por ora, nota manual).
   const pendingGrants = charGrants(active).pendingReplacements;
@@ -1865,6 +1967,20 @@ function renderCharacter() {
         group.appendChild(warn);
       }
 
+      // Gestão in-sheet: pacote-base (Alquimia/Universal) + escolhas grátis
+      // (mesmos helpers da barra de aquisição da leitura — P1/P2 funcionam aqui também).
+      const choices = (entry && entry.choices) || {};
+      const spec = resolveSpec(active, title, choices);
+      const pkgSel = buildPackageSelector(active, title, spec);
+      const freePickSels = buildFreePickSelectors(active, title, spec, model, entry);
+      if (pkgSel || freePickSels.length) {
+        const manage = document.createElement('div');
+        manage.className = 'char-sphere-manage';
+        if (pkgSel) manage.appendChild(pkgSel);
+        for (const lbl of freePickSels) manage.appendChild(lbl);
+        group.appendChild(manage);
+      }
+
       if (model.bases.length || freePicks.length || grantedItems.length) {
         const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Incluído com a esfera';
         group.appendChild(sub);
@@ -1882,6 +1998,9 @@ function renderCharacter() {
         for (const id of extras) box.appendChild(charTalentCard(fr, id, 'extra', title));
         group.appendChild(box);
       }
+
+      const addTalent = buildAddTalentPicker(active, title, model, entry, granted);
+      if (addTalent) group.appendChild(addTalent);
 
       if (!granted) { // esferas concedidas pela subclasse não podem ser removidas
         const rm = document.createElement('button');
@@ -2056,18 +2175,58 @@ function setupCharacter() {
       if (active && confirm(`Excluir "${active.name}"? Isso não pode ser desfeito.`)) { deleteCharacter(active.id); renderCharacter(); }
       return;
     }
+    // Adquirir esfera pelo seletor "adicionar esfera" (topo da seção, na ficha)
+    const asb = e.target.closest('.char-add-sphere-btn');
+    if (asb) {
+      const active = getActiveChar();
+      if (!active) return;
+      const sel = asb.parentElement.querySelector('.char-add-sphere-select');
+      const title = sel && sel.value;
+      if (!title) return;
+      const res = tryAcquireSphere(active, title);
+      if (!res.ok) { showCharNotice(asb, res.message); return; }
+      renderCharacter();
+      return;
+    }
+    // Adicionar talento pelo painel "adicionar talento" de uma esfera (na ficha) —
+    // alvo já é o personagem ativo (sem popover de escolha, ao contrário do compêndio).
+    const cbtn = e.target.closest('.char-btn');
+    if (cbtn && cbtn.closest('.char-sphere')) {
+      const active = getActiveChar();
+      if (!active) return;
+      const title = cbtn.dataset.sphere;
+      const item = JSON.parse(cbtn.dataset.char);
+      if (applyTalentToggle(active, title, item, cbtn)) renderCharacter();
+      return;
+    }
   });
   content.addEventListener('change', e => {
     const field = e.target.closest('.char-field');
-    if (!field) return;
-    const active = getActiveChar();
-    if (!active) return;
-    const key = field.dataset.field;
-    let val = field.value;
-    if (key === 'level') val = Math.max(1, Math.min(20, parseInt(val, 10) || 1));
-    if (key === 'keyMod') val = Math.max(-5, Math.min(10, parseInt(val, 10) || 0));
-    updateCharacter(active.id, { [key]: val });
-    renderCharacter();
+    if (field) {
+      const active = getActiveChar();
+      if (!active) return;
+      const key = field.dataset.field;
+      let val = field.value;
+      if (key === 'level') val = Math.max(1, Math.min(20, parseInt(val, 10) || 1));
+      if (key === 'keyMod') val = Math.max(-5, Math.min(10, parseInt(val, 10) || 0));
+      updateCharacter(active.id, { [key]: val });
+      renderCharacter();
+      return;
+    }
+    // Pacote-base (Alquimia/Universal) escolhido no painel in-sheet de uma esfera
+    const pkg = e.target.closest('.pkg-select');
+    if (pkg && pkg.closest('.char-sphere')) {
+      const active = getActiveChar();
+      if (active) { setPackage(active, pkg.dataset.sphere, pkg.value || null); renderCharacter(); }
+      return;
+    }
+    // Escolha grátis (por slot) no painel in-sheet de uma esfera
+    const sel = e.target.closest('.freepick-select');
+    if (sel && sel.closest('.char-sphere')) {
+      const active = getActiveChar();
+      if (active && applyFreePickSelection(active, sel.dataset.sphere, parseInt(sel.dataset.i || '0', 10), sel.value || null, sel)) renderCharacter();
+      return;
+    }
   });
 }
 

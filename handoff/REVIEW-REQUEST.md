@@ -1,4 +1,4 @@
-# Review Request — Phase 3 Step 4
+# Review Request — P3: full in-sheet character builder
 *Written by Builder (Bob). Read by Reviewer (Richard).*
 
 Ready for Review: YES
@@ -7,111 +7,149 @@ Ready for Review: YES
 
 ## What Was Built
 
-Wired the character builder in `app.js` to the structured rules engine (`src/rules.js` +
-`src/data.js` over `data/spheres/*`, `data/classes.json`, `data/class-features.json`) so that
-every RULE decision — free/base/extra classification, talent-slot budget, prerequisites, granted
-spheres/talents — comes from structured data, never the DOM, and illegal picks (unmet structured
-prerequisite, exhausted talent-slot budget) are now **blocked** with a message instead of silently
-allowed. Card *display* is unchanged: it still clones the rendered HTML card for the matching
-talent (Phase 5 will render from structured `body`, not this step). The persisted character shape
-changed to store sphere/talent **ids** instead of titles/name-objects (matches `src/types.js`
-`CharSphere` exactly), with a non-destructive migration for existing saved characters.
+The "Meu Personagem" sheet (`renderCharacter`) is now a complete builder: acquire a
+sphere, choose a package, pick free talents, and add/remove extra talents — all without
+leaving the sheet. The reading-page acquire bar (`renderSphereAcquireBar`) keeps working
+identically; its selector-building logic was extracted into small helpers shared by both
+places instead of duplicated. No rule logic changed — every mutation still goes through
+the existing enforced wrappers (`tryAcquireSphere`, `setPackage`, `setFreePickAt` (via a
+new shared `applyFreePickSelection`), `addFreePickChecked`/`addExtraTalentChecked` (via
+`applyTalentToggle`, reused verbatim), `toggleExtraTalent`, `removeSphere`). `src/rules.js`
+was not touched.
 
 ## Files Changed
 
 | File | Lines | Change |
 |---|---|---|
-| `index.html` | 129-133 | Added `<script src="src/rules.js">` + `<script src="src/data.js">` before `app.js` (classic scripts, shared global scope). |
-| `style.css` | 1419 | One rule for the new transient `.char-warn-toast` block-notice. |
-| `app.js` | 3-11 | Globals: removed `classesData`/`sphereRules`/`classFeatures`; added `dataIndex`, `sphereIdByTitle`, `sphereTitleById`. |
-| `app.js` | init() (~60-70) | Replaced the 3 root-JSON fetches (`classes.json`, `sphere-rules.json`, `class-features.json`) with `DataLoader.loadData()` → `Rules.indexData()`. Failure → `dataIndex = null`, same degrade path as before (renderCharacter's "dados não puderam ser carregados"). |
-| `app.js` | ~551-582 (new) | `sphereIdFor`/`sphereByTitle` (title↔id bridge), `resolveTalentId`/`resolveTalentIdLoose` (DOM card / legacy name → talent id), `showCharNotice` (transient block-notice). |
-| `app.js` | `makeCharControl`, `addFavoriteStars`, `refreshSphereUI` | Membership checks (`favKey`-based) → `item.id`-based `.includes()`; role classification now via `cardDisplayRole(model,...)` (structured) instead of `cardRole(card, cs, gc)` (DOM). |
-| `app.js` | `applyTalentToggle` + new `addFreePickChecked`/`addExtraTalentChecked` | Core enforcement: resolves `item.id` → structured `Talent`, calls `Rules.prereqCheck`/`Rules.canAddTalent`; blocks + `showCharNotice` on failure. Removal is never gated. |
-| `app.js` | `showCharPicker`, `setupFavorites` (acquire-btn / freepick-select handlers) | Same id-based membership checks; `.acquire-btn` now goes through new `tryAcquireSphere` (gates on `Rules.canAccessSphere`); `.freepick-select` now runs `Rules.prereqCheck` before `setFreePickAt`. |
-| `app.js` | `grantedSpheresMap`, `isGrantedSphere`, `grantedKeys`, `isGrantedTalent` | Same title-keyed shape as before, now sourced from `dataIndex.classFeatures` (structured, ids included) instead of the root `classFeatures` global. |
-| `app.js` | `sphereEntry`, `acquireSphere` (+ new `tryAcquireSphere`), `removeSphere`, `sphereCost` | Convert title→id via `sphereIdFor`; `acquireSphere` stores `sphere:<id>` + structured `section`; `tryAcquireSphere` is the new enforced entry point for the "Adquirir esta esfera" action. |
-| `app.js` | `setFreePickAt`, `addFreePick`, `removeFreePick`, `toggleExtraTalent` | Now operate on talent **id strings** (were `{name,sphere,anchor,slug}` objects) — plain array mutations, no more `favKey` comparisons. |
-| `app.js` | `classSpec` | Reads `sph.acquisition` (structured) instead of root `sphereRules[title]` — confirmed byte-identical for all 42 spheres before switching (see Open Questions/verification below). `resolveSpec` unchanged (built on `classSpec`). |
-| `app.js` | `talentRole` (new, replaces `cardRole`+`matchesFreeGroup`+`sphereTags`), `cardDisplayRole` (new) | Structural base/free/extra classification now reads `talent.tags`/`kind`/`group` directly; `cardDisplayRole` bridges a DOM card (name + `.base-ability`) to a talent id, looks up its structural role, and layers the character-specific "granted by subclass" override on top — same precedence as the old `cardRole` (ignore > base > granted > free/extra). |
-| `app.js` | `getSphereModel` | Rewritten to iterate `sph.talents` (structured) for classification; still calls `buildChapterCardFrag` once for `model.frag`, used only by `charTalentCard`/`findCardInFrag` to clone the display card. |
-| `app.js` | `findCardInFrag` | Now takes a structured `Talent` (was a DOM-derived `item`); disambiguates homonyms via `talent.kind==='base'` ⟺ card's `.base-ability` class (was: DOM section-anchor matching). |
-| `app.js` | `characterStats`, `traditionBonus`, `classFeatureBonus` | Now thin delegations to `Rules.derivedStats`/`traditionBonus`/`classFeatureBonus`. `traditionField` reads `dataIndex.classes` instead of `classesData`. |
-| `app.js` | `renderCharacter` | Budget numbers via `Rules.slotsSpent`; `classesData` references → `dataIndex.classes`; `charTalentCard` rewritten to take a talent id (or, for unmigrated legacy data, the kept `{name,...}` object) instead of an item object; per-sphere loop fixed to map `entry.sphere` (id) back to a title via `sphereTitleById` for display; renders a `.char-warn` note listing any `_unresolvedLegacy` items for that sphere. |
-| `app.js` | `migrateCharacters` | Extended: converts `char.spheres[].sphere` title→id (unresolvable → kept, flagged `_needsReview`); converts each `freePicks`/`talents` item → talent id by exact-name match within the resolved sphere (ambiguous homonyms intentionally left unresolved rather than guessed); unresolvable items move to `entry._unresolvedLegacy` (never dropped). No-ops entirely if `dataIndex` didn't load (retries next successful load). |
-| `scripts/sanity-builder.js` | new file, not wired into `package.json` | Node-level integration check (see Verification). |
+| `app.js` | 696-716 (new) | `buildPackageSelector(active, title, spec)` — extracted from `renderSphereAcquireBar`'s inline package-select block; returns the `<label class="pkg-l">` or `null`. Used by both the reading-page bar and the sheet. |
+| `app.js` | 717-750 (new) | `buildFreePickSelectors(active, title, spec, model, entry)` — extracted from the inline free-pick-select loop; returns an array of `<label class="freepick-l">` (was appending directly to the bar). Used by both places. |
+| `app.js` | 751-762 (new) | `applyFreePickSelection(active, title, index, talentId, anchorEl)` — extracted the "check `Rules.prereqCheck`, then `setFreePickAt`" logic that used to be inlined in `setupFavorites`'s change handler; returns `true` only if it mutated, so each caller decides how to re-render. |
+| `app.js` | 764-~880 (`renderSphereAcquireBar`) | Now calls the three helpers above instead of the inline blocks. DOM output is unchanged for the reading page (verified — see Verification). |
+| `app.js` | `setupFavorites`'s click handler (`.char-btn` case) | Added `if (cbtn && cbtn.closest('.char-sphere')) return;` guard so the sheet's own talent buttons don't trigger the multi-character "Adicionar a…" popover (which only makes sense on reading pages, where the target character is ambiguous). |
+| `app.js` | `setupFavorites`'s change handler (`.pkg-select`/`.freepick-select`) | Added the same `.closest('.char-sphere')` guard to each, and the free-pick branch now calls the shared `applyFreePickSelection` instead of inlining the prereq check. |
+| `app.js` | 1657-1683 (new) | `buildAddTalentPicker(active, title, model, entry, granted)` — the sheet's "adicionar talento" control: filters `model.freeGroup.concat(model.extras)` down to ids not already owned and not subclass-fixed (`isGrantedTalentId`), renders one `makeCharControl` button per candidate (same +/state logic as the compendium's card buttons — reused, not reimplemented). |
+| `app.js` | 1687-1725 (new) | `buildAddSpherePicker(active)` — the sheet's "adicionar esfera" control: a `<select>` with `<optgroup>`s (Esferas de Magia / Esferas de Poder) listing every sphere not already owned or granted, plus a button. |
+| `app.js` | `renderCharacter` (per-sphere loop) | For each sphere group: computes `spec = resolveSpec(...)` and inserts a `.char-sphere-manage` block (package selector + free-pick selectors) before the talent-card boxes, and the add-talent picker after the extras box. Also inserts `buildAddSpherePicker` near the top of the "Esferas e talentos" section (after the `h2`, before the granted-talent-replacement note). |
+| `app.js` | `setupCharacter`'s click handler | Added three cases: `.char-add-sphere-btn` (reads the sibling select, calls `tryAcquireSphere`, `showCharNotice` on failure else `renderCharacter()`); `.char-btn` inside `.char-sphere` (calls `applyTalentToggle` directly on `getActiveChar()` — no popover — then `renderCharacter()` if it mutated). |
+| `app.js` | `setupCharacter`'s change handler | Added `.pkg-select`/`.freepick-select` cases scoped to `.char-sphere` (mirrors the reading-page handlers but calls `renderCharacter()` instead of `refreshSphereUI`, since the sheet needs a full re-render — budget panel, card lists, and remaining option lists all depend on the new state). |
+| `style.css` | after `.char-card-tag.char-tag-free` (~1744) | New rules for `.char-sphere-manage`, `.char-add-talent`/`.char-add-talent-row`/`.char-add-btn`, `.char-add-sphere`/`.char-add-sphere-select`/`.char-add-sphere-btn`. All the *inner* controls (`.pkg-select`, `.freepick-select`, `.char-btn`) reuse their existing global styles unchanged. |
+
+## The Shared-Helper Refactor (why it's safe)
+
+`setupFavorites()` and `setupCharacter()` both attach delegated click/change listeners to
+the same `#content` element at init time, and both fire for every event bubbling through
+it regardless of which view currently occupies `#content` (reader chapter, favorites, or
+the character sheet). Reusing the exact same control classes (`.pkg-select`,
+`.freepick-select`, `.char-btn`) in the sheet therefore risked **double-handling**: both
+listeners would see the same event. Rather than invent new class names (which would have
+meant duplicating the selector-building code), the fix is ancestry-based disambiguation:
+`.char-sphere` only ever exists inside the sheet, `.sphere-acquire` only ever exists on
+reading pages, so each `setupFavorites` handler now bails with one guard line
+(`if (X.closest('.char-sphere')) return;`) and lets `setupCharacter`'s own handler own
+that case (mutate, then `renderCharacter()` for a full re-render instead of the reading
+page's targeted `refreshSphereUI` DOM patch). No new dataset markers needed, no
+dual-mutation risk, and the reading page's behavior is byte-for-byte unchanged (same
+helper functions, same classes, same handler logic minus the extraction).
+
+## Event-Wiring Approach
+
+- **Reading page** (unchanged behavior): `setupFavorites` still owns `.acquire-btn`,
+  `.sphere-remove`, `.char-target-select`, and (outside `.char-sphere`) `.pkg-select`,
+  `.freepick-select`, `.char-btn`. Re-render via targeted `refreshSphereUI(title)`.
+- **Sheet**: `setupCharacter` owns everything inside `.char-sphere` — the package
+  selector, free-pick selectors, the new add-talent buttons — plus the new
+  `.char-add-sphere-btn`/`.char-add-sphere-select` pair (which sits outside any
+  `.char-sphere`, at the top of the section, so no guard was needed there — it's a
+  sheet-only class to begin with). Re-render strategy is always a full
+  `renderCharacter()` (the sheet already re-renders fully on every other mutation —
+  `.char-talent-remove`, `.char-sphere-remove`, `.char-field` all already worked this
+  way); the active character persists via `getActiveCharId()`/localStorage, not
+  component state, so nothing needs to be manually preserved across the re-render.
 
 ## How This Was Verified
 
 - `npm run validate` — 0 errors (unaffected; doesn't touch app.js).
-- `npm run typecheck` — green (unaffected; scoped to `src/**/*.js`, app.js not in scope).
-- `npm test` (`scripts/test-rules.js`) — 12/12, unaffected (pure `src/rules.js` test).
-- **New:** `node scripts/sanity-builder.js` — 23/23 assertions. This loads the *real*
-  `parser.js`/`chapters.js`/`src/rules.js`/`src/data.js`/`app.js` into a jsdom context (via
-  `vm.runInContext`, real functions, not reimplemented) with a `fetch` stub that serves the real
-  files off disk, parses the real `content/*.txt`, and drives:
-  - an advanced Mente talent with structured prereqs: **blocked** with no prereqs met, then
-    **allowed** once the prereq talents/level are granted directly on the character;
-  - talent-slot budget: fills a level-1 Feiticeiro's remaining magic slots with legal picks, then
-    the next legal-looking pick is **blocked**;
-  - sphere-access budget: same, via `tryAcquireSphere`;
-  - a subclass-granted sphere (Sangue Feérico → Mente) costs 0 and re-acquiring is a no-op;
-  - migration: a synthetic **old-shaped** character (`spheres[].sphere` = title,
-    `freePicks`/`talents` = `{name,sphere,anchor,slug}` objects, one resolvable + one intentionally
-    bogus name) migrates to ids correctly, the bogus one lands in `_unresolvedLegacy` (not
-    dropped, not silently lost), and re-running migration is idempotent.
-  - This script is standalone (`node scripts/sanity-builder.js`), not wired into `npm test` — it's
-    a slower jsdom-based integration check, not a fast unit test; happy to wire it in if you'd
-    rather it run every time.
-- Before writing the structured-data reads, I verified with throwaway Node scripts (not committed)
-  that: `data/classes.json`/`data/class-features.json` are byte-identical to the root files except
-  `class-features.json` grants now carry a resolved talent `id`; `sphere-rules.json` is
-  byte-identical (as JSON) to each sphere's `acquisition` for all 42 spheres; `slug(sphereTitle) ===
-  sphere.id` for all 42 spheres.
+- `npm run typecheck` — green (unaffected; app.js not in scope, confirmed in tsconfig.json).
+- `npm test` (`scripts/test-rules.js`) — 28/28, unaffected (pure `src/rules.js`, untouched).
+- `node scripts/sanity-builder.js` — 29/29, unaffected (doesn't boot DOM listeners, so it
+  doesn't exercise the new UI code, but confirms nothing about the rules engine / data
+  wiring regressed).
+- **New, ad hoc (not committed as a script — Node + jsdom, same technique as
+  sanity-builder.js, run interactively during the build):** loaded the real
+  `parser.js`/`chapters.js`/`src/rules.js`/`src/data.js`/`app.js` into a jsdom context,
+  called the real `setupFavorites()`/`setupCharacter()`/`renderCharacter()`, and drove
+  actual DOM events end-to-end:
+  - Sheet: acquired "Universal" (has packages), changed the sheet's `.pkg-select` to
+    "dissipar" via a dispatched `change` event → confirmed `entry.choices.pkg` updated
+    via the mutator (not a stale re-render).
+  - Sheet: switched to the "mana" package (has a free pick) → confirmed
+    `.char-sphere-manage .freepick-select` appeared with the right options, picked one
+    via `change` → confirmed `entry.freePicks` updated correctly.
+  - Sheet: add-talent picker → confirmed it lists not-yet-owned talents, clicking one
+    routes through `applyTalentToggle` and lands in `entry.talents` (extra, cost 1) as
+    expected for that package.
+  - Sheet: add-sphere picker → confirmed the `<optgroup>`s exclude already-owned/granted
+    spheres, and clicking "+ Adquirir esfera" with a selection acquires it via
+    `tryAcquireSphere`.
+  - **P1 regression check**: created a Feiticeiro with subclass "Sangue Feérico"
+    (grants Mente for free) → confirmed the sheet's Mente group renders a
+    `.freepick-select` even though the sphere was never explicitly "acquired".
+  - **Blocked-pick check**: exhausted a level-1 Feiticeiro's magic-slot budget by
+    acquiring spheres up to the cap, then tried the sheet's add-sphere picker for one
+    more → confirmed `tryAcquireSphere` returned `ok:false` and a `.char-warn-toast`
+    notice appeared with the expected message, with no state mutation.
+  - **Reading-page regression check**: rendered `renderSphereAcquireBar` for "Universal"
+    standalone (as the reader would), dispatched a `.pkg-select` change → confirmed the
+    mutation applies via `setupFavorites`'s (not `setupCharacter`'s) handler; confirmed
+    `.char-target-select` still renders when ≥2 characters exist.
 
-## What Still Needs Manual Browser Testing
+All of the above exercises the *real* functions from the *real* app.js (not
+reimplemented), so it's a meaningful check of the wiring — but it is not a substitute for
+a human clicking through an actual rendered page (styling, focus behavior, scroll
+position, and anything relying on real browser layout/CSS were not verified this way).
 
-I cannot click through a browser from here, so please exercise at least:
-1. Open the app, create a character, pick a class/level, **acquire a sphere**, confirm the
-   acquire bar/free-pick selects/package selects still render and behave.
-2. Click **+** on a base-ability card (should show the "included" chip, not a button), on a
-   free-group talent (should go grátis, no slot cost), on a plain talent (should cost a slot).
-3. Try to add an **advanced talent whose prerequisite isn't met** — expect it to be blocked and a
-   notice to appear (styled like `.char-warn`, near the card/button), and the character state to
-   NOT change.
-4. Exhaust the talent-slot budget, then try to add one more — expect block + notice.
-5. Pick a class/subclass combo that grants sphere access (e.g. Feiticeiro → Sangue Feérico) —
-   confirm the granted sphere shows "concedida" and its granted talents show the "concedido" chip
-   with no cost.
-6. **Most important**: if you (or anyone) has an existing saved character in `localStorage` from
-   before this change, load the app and confirm the character still appears intact with the right
-   talents (this exercises the real migration path against real prior browser state, which
-   `sanity-builder.js` can only approximate with a synthetic fixture). Check the browser console
-   for the `[Esferas]` migration warning — it should only appear if something is genuinely
-   unresolvable, and should list exactly what.
-7. Confirm the reader (non-character pages) looks and behaves identically to before — I did not
-   touch `content/*.txt`, `parser.js`, `chapters.js`, or any reader-render function; the only
-   shared surface is the two new `<script>` tags in `index.html` and one new CSS rule.
+## Browser Click-Through Checklist (for Richard/Owner)
 
-## Open Questions / Judgment Calls
+1. Open the app, go to **Meu Personagem**, create a character (pick class/level).
+2. Near the top of "Esferas e talentos", use the **"adicionar esfera"** select + button
+   to acquire a sphere. Confirm it appears below with the right talent count, and the
+   budget panel at the top updates.
+3. Acquire **Universal** (or another sphere with packages) from the sheet's add-sphere
+   picker; confirm a **package selector** appears inside that sphere's group; pick a
+   package (e.g. the Universal one that grants a free pick) and confirm the base ability
+   updates and a **free-pick selector** appears.
+4. Use the free-pick selector to choose a talent; confirm it shows up under "Incluído com
+   a esfera" and doesn't cost a slot (budget panel unchanged).
+5. Use the **"adicionar talento"** row of pill buttons to add an extra talent; confirm it
+   appears under "Talentos" with a ✕ remove button, and the magic/martial budget count
+   increases by 1.
+6. Click that ✕ to remove it; confirm it disappears and the budget count decreases.
+7. Try to trigger a **blocked pick**: either exhaust the talent budget (add talents until
+   full) and try one more, or try to add a talent whose prerequisite isn't met. Confirm a
+   notice appears near the control and the pick does NOT apply.
+8. Pick a class/subclass that **grants a sphere for free** (e.g. Feiticeiro → subclasse
+   Sangue Feérico grants Mente). Confirm that sphere shows up in the sheet tagged
+   "concedida", with its own free-pick selector, and that it can't be removed (no
+   "Remover esfera" button).
+9. **Confirm the reading-page acquire bar still works**: open any sphere chapter that has
+   ≥1 saved character, and repeat the acquire/package/free-pick/remove flow from there —
+   should look and behave exactly as before this change.
+10. With 2+ characters, click the **+** on a talent card in a sphere *chapter* (not the
+    sheet) — the "Adicionar a…" character-choice popover should still appear (this path
+    is untouched); confirm the sheet's own add-talent buttons do NOT show this popover
+    (they should act immediately on the sheet's own character).
 
-- **`Rules.ownedTalentIds` gap (KG-2 in BUILD-LOG)**: class-features-granted specific talents
-  (e.g. Alquimista's "Revitalizar") aren't folded into `ownedTalentIds`/prereq-satisfaction, per
-  `rules.js`'s own documented limitation. This matches pre-existing behavior (those talents never
-  cost a slot or counted as "owned" before this step either) — not a regression, but flagging in
-  case you want to scope a small `rules.js` extension for it later (I left `rules.js` untouched
-  per the brief's "use it, don't rebuild").
-- **Homonym talents in legacy saves (KG-3)**: only 1-2 spheres have a same-named base + advanced
-  talent (e.g. Conjuração's "Invocação"); a saved-but-unmigrated pick of the homonym can't be
-  auto-resolved from name alone (no DOM `.base-ability` signal available during migration) and
-  lands in `_unresolvedLegacy` instead of guessing. I judged "flag and ask the player to re-add"
-  safer than a possible silent misassignment. Worth a second opinion given it touches user data.
-- I removed the root-level `classes.json`/`sphere-rules.json`/`class-features.json` **fetches**
-  from `app.js` init() (they're now redundant with `dataIndex`). Confirmed these files must stay:
-  `scripts/extract-structured.js` still reads them as the canonical *source* it migrates into
-  `data/classes.json`/`data/class-features.json`, and `scripts/test-rules.js` loads them directly
-  too — only the browser's own fetch of them became redundant, not the files themselves.
+## Deviations From the Brief
 
-## Known Gaps Logged
+None of substance. One elaboration: the brief's example helper signature was
+`buildFreePickSelectors(active,title,spec,model)`; I added `entry` as a 5th parameter
+since the existing free-pick logic needs `entry.freePicks` to know which slots are
+already filled — this matches how `renderSphereAcquireBar` already used `entry` before
+extraction, just threaded through explicitly instead of via closure.
 
-See `handoff/BUILD-LOG.md` → Known Gaps (KG-2, KG-3), both described above.
+## Open Questions
+
+None outstanding. If the Owner wants the add-talent picker's option labels to preview
+"grátis" vs "custa 1 talento" more precisely (right now `makeCharControl` derives that
+from live state at render time, same as the compendium — it doesn't pre-compute a static
+label), that would be a small follow-up, not a blocker.

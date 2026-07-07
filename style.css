@@ -1742,6 +1742,63 @@ h4.base-ability::after {
 }
 .char-card-tag.char-tag-free { color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
 
+/* Painel de gestão in-sheet de uma esfera: pacote-base + escolhas grátis
+   (mesmos controles .pkg-select/.freepick-select da barra de leitura). */
+.char-sphere-manage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  margin: 0.3rem 0 0.6rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--table-border));
+  border-left: 3px solid var(--accent);
+  border-radius: var(--border-radius);
+  background: color-mix(in srgb, var(--accent) 5%, var(--bg-content));
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+}
+/* Painel "adicionar talento" (ficha): lista compacta de pílulas +Nome */
+.char-add-talent { margin: 0.4rem 0 0.7rem; }
+.char-add-talent-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.char-add-btn.char-btn {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+/* Painel "adicionar esfera" (topo da seção, ficha) */
+.char-add-sphere {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1.2rem;
+}
+.char-add-sphere-select {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg-content);
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  padding: 0.3rem 0.5rem;
+  max-width: 18rem;
+}
+.char-add-sphere-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.char-add-sphere-btn {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius);
+  padding: 0.35rem 0.9rem;
+}
+.char-add-sphere-btn:hover { background: var(--accent-light); }
+
 /* Notação mecânica: dados e CD em chips discretos e escaneáveis */
 .dice, .dc {
   font-family: var(--font-mono);
