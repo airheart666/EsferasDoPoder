@@ -17,6 +17,13 @@ let talentIndex = new Map();  // normNome -> {name, pageAnchor, slug, chapterTit
 let talentRefRegex = null;    // regex dos nomes de talento (p/ linkar pré-requisitos)
 let currentChapterIndex = -1;
 let activeObserver = null;
+// Estado de VIEW da ficha "Meu Personagem" (Layout B / Bancada) — nunca persiste
+// no localStorage; sobrevive aos re-renders (não é reconstruído a cada chamada de
+// renderCharacter). sphere = título da esfera ativa no rail; benchMode = 'talents'
+// (bancada lista candidatos a talento) | 'spheres' (bancada lista esferas p/ adquirir);
+// sel = id do item selecionado na bancada (talento OU título de esfera, conforme
+// benchMode); scope = 'sphere' | 'all' (candidatos só da esfera ativa vs. de todas).
+let charView = { sphere: null, benchMode: 'talents', sel: null, scope: 'sphere', search: '' };
 
 async function init() {
   setupDarkMode();
@@ -1012,7 +1019,10 @@ function setupFavorites() {
     // Adicionar/remover em cada talento — com ≥2 personagens, pergunta o alvo
     // (dentro da ficha (.char-sphere) o alvo já é fixo — setupCharacter cuida disso)
     const cbtn = e.target.closest('.char-btn');
-    if (cbtn && cbtn.closest('.char-sphere')) return;
+    // Ficha (.char-sphere = build panel; .char-bench = bancada) → setupCharacter cuida,
+    // com o alvo fixo no personagem ativo. Sem o guard de .char-bench, o botão
+    // "Adicionar" da bancada é processado nos DOIS listeners e o toggle se anula.
+    if (cbtn && (cbtn.closest('.char-sphere') || cbtn.closest('.char-bench'))) return;
     if (cbtn) {
       e.preventDefault(); e.stopPropagation();
       const chars = getCharacters();
@@ -1649,78 +1659,634 @@ function buildProficiencies(char) {
   return wrap;
 }
 
-// Painel "adicionar talento" in-sheet: lista compacta de talentos ainda não
-// possuídos (grátis OU extra, pelo dado estruturado — nunca base/concedido-fixo),
-// um botão de personagem (makeCharControl, igual ao compêndio) por item. O clique
-// é tratado em setupCharacter, que reusa applyTalentToggle (mesma decisão
-// grátis/extra/concedida já usada pelo "+" do compêndio — nenhuma regra nova).
-function buildAddTalentPicker(active, title, model, entry, granted) {
-  const e = entry || { freePicks: [], talents: [] };
-  const owned = new Set([...(e.freePicks || []), ...(e.talents || [])]);
-  const candidates = model.freeGroup.concat(model.extras)
-    .filter(it => !owned.has(it.id) && !isGrantedTalentId(active, it.id));
-  if (!candidates.length) return null;
-  const wrap = document.createElement('div');
-  wrap.className = 'char-add-talent';
-  const sub = document.createElement('p');
-  sub.className = 'char-subhead';
-  sub.textContent = 'Adicionar talento';
-  wrap.appendChild(sub);
-  const row = document.createElement('div');
-  row.className = 'char-add-talent-row';
-  for (const it of candidates) {
-    const role = model.roleByKey.get(it.id) || 'extra';
-    const item = { id: it.id, name: it.name, sphere: title };
-    const btn = makeCharControl(item, role, active, entry, false, granted);
-    if (!btn) continue;
-    btn.classList.add('char-add-btn');
-    btn.textContent = '+ ' + it.name;
-    row.appendChild(btn);
-  }
-  wrap.appendChild(row);
-  return wrap;
+// Títulos das esferas do personagem (adquiridas ∪ concedidas pela subclasse) —
+// mesma união usada pelo antigo loop per-sphere e pelo rail da bancada (Layout B).
+function charSphereTitles(active) {
+  if (!active) return [];
+  const titles = (active.spheres || []).map(e => sphereTitleById.get(e.sphere) || e.sphere);
+  const grantedMap = grantedSpheresMap(active);
+  for (const t of grantedMap.keys()) if (!titles.includes(t)) titles.push(t);
+  return titles;
 }
 
-// Painel "adicionar esfera" in-sheet: seletor agrupado (magia/marcial) com as
-// esferas ainda não adquiridas nem concedidas + botão que chama tryAcquireSphere
-// (mesmo gate de orçamento usado por qualquer outra aquisição).
-function buildAddSpherePicker(active) {
-  if (!dataIndex) return null;
+// Candidatos a talento de UMA esfera (grátis OU extra, pelo dado estruturado —
+// nunca base/concedido-fixo): mesma conta que o antigo buildAddTalentPicker
+// (freeGroup+extras − já possuídos − concedidos específicos). Só esferas já
+// adquiridas ou concedidas têm candidatos (as demais nunca aparecem aqui).
+function talentCandidatesForSphere(active, title) {
+  const entry = sphereEntry(active, title);
+  const granted = isGrantedSphere(active, title);
+  if (!entry && !granted) return [];
+  const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
+  const e = entry || { freePicks: [], talents: [] };
+  const owned = new Set([...(e.freePicks || []), ...(e.talents || [])]);
+  return model.freeGroup.concat(model.extras)
+    .filter(it => !owned.has(it.id) && !isGrantedTalentId(active, it.id))
+    .map(it => ({ id: it.id, name: it.name, sphere: title }));
+}
+
+// Caminho que applyTalentToggle tomaria ao adicionar este candidato: 'free'
+// (ocupa uma escolha grátis, custo 0) ou 'extra' (custa 1 talento). Mesma
+// árvore de decisão de applyTalentToggle (892) — só para EXIBIR o rótulo de
+// custo/estado; a mutação real sempre passa por applyTalentToggle.
+function talentPickPath(active, title, item) {
+  if (isGrantedSphere(active, title)) return 'extra';
+  const entry = sphereEntry(active, title);
+  if (!entry) return 'extra';
+  const model = getSphereModel(title, entry.choices && entry.choices.pkg);
+  const role = model.roleByKey.get(item.id) || 'extra';
+  if (role !== 'free') return 'extra';
+  const cap = resolveSpec(active, title, entry.choices).freePicks;
+  const room = (entry.freePicks || []).length < cap;
+  return room ? 'free' : 'extra';
+}
+
+// Descreve prerequisitos estruturados (nível/esfera/talento) por extenso, em PT-BR.
+function describePrereqs(list) {
+  return list.map(p => {
+    if (p.type === 'level') return `nível ${p.min}`;
+    if (p.type === 'sphere') return sphereTitleById.get(p.id) || p.id;
+    if (p.type === 'talent') { const t = dataIndex.talentById.get(p.id); return t ? t.name : p.id; }
+    return 'pré-requisito em texto';
+  }).join(', ');
+}
+function prereqStatusLabel(pre, talent) {
+  if (!pre.missing.length) {
+    if (pre.unverified.length) return 'Pré-requisito em texto — confirme manualmente se é atendido.';
+    if (talent && talent.prerequisites && talent.prerequisites.length) return 'Requer ' + describePrereqs(talent.prerequisites) + ' — disponível.';
+    return 'Sem pré-requisitos — disponível.';
+  }
+  return 'Requer ' + describePrereqs(pre.missing) + '.';
+}
+// Gate SÓ-DE-EXIBIÇÃO de um candidato a talento (motivo do bloqueio na lista/
+// detalhe da bancada): Rules.prereqCheck quando cairia no caminho grátis,
+// Rules.canAddTalent (pré-requisito + orçamento) quando cairia no caminho extra.
+// Leitura apenas — nunca muta; a mutação real segue por applyTalentToggle.
+function talentGate(active, title, item) {
+  const talent = dataIndex && dataIndex.talentById.get(item.id);
+  if (!talent) return { blocked: true, label: 'Talento não encontrado nos dados estruturados.' };
+  const path = talentPickPath(active, title, item);
+  if (path === 'free') {
+    const pre = Rules.prereqCheck(active, talent, dataIndex);
+    return { blocked: !pre.ok, label: prereqStatusLabel(pre, talent) };
+  }
+  const check = Rules.canAddTalent(active, talent, dataIndex);
+  if (!check.prereq.ok) return { blocked: true, label: prereqStatusLabel(check.prereq, talent) };
+  if (!check.budgetOk) return { blocked: true, label: `Sem talentos ${check.section === 'martial' ? 'marciais' : 'mágicos'} suficientes (nível ${active.level}).` };
+  return { blocked: false, label: prereqStatusLabel(check.prereq, talent) };
+}
+
+// Esferas candidatas a adquirir (não possuídas nem concedidas), agrupadas
+// magia/poder — mesma conta do antigo buildAddSpherePicker, sem construir DOM
+// (a bancada monta lista+detalhe a partir disto).
+function sphereCandidates(active) {
+  if (!dataIndex) return { magic: [], martial: [] };
   const have = new Set((active.spheres || []).map(e => sphereTitleById.get(e.sphere) || e.sphere));
   const granted = grantedSpheresMap(active);
   const groups = { magic: [], martial: [] };
   for (const sph of dataIndex.sphereById.values()) {
     const title = sph.name;
     if (have.has(title) || granted.has(title)) continue;
-    (groups[sph.section] || groups.magic).push(title);
+    (groups[sph.section] || groups.magic).push({ id: sph.id, title, section: sph.section });
   }
-  groups.magic.sort((a, b) => a.localeCompare(b, 'pt-BR'));
-  groups.martial.sort((a, b) => a.localeCompare(b, 'pt-BR'));
-  if (!groups.magic.length && !groups.martial.length) return null;
+  groups.magic.sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'));
+  groups.martial.sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'));
+  return groups;
+}
 
+// Card recolhível de um talento na "Bancada" (painel .char-build): clona o card
+// completo da esfera → lê a descrição inteira sem sair da ficha; reusa
+// .fav-card/.fav-toggle. `ref` é um id de talento estruturado (caminho normal)
+// ou, para dados antigos que a migração não conseguiu resolver, o objeto legado
+// {name,sphere,anchor,slug} (mantido — nunca descartado silenciosamente).
+// Hoisted para módulo (era interno a renderCharacter) — só lê módulo-level
+// (dataIndex/chapters), sem estado de um render específico.
+function charTalentCard(fr, ref, kind, title) {
   const wrap = document.createElement('div');
-  wrap.className = 'char-add-sphere';
-  const sel = document.createElement('select');
-  sel.className = 'char-add-sphere-select';
-  const none = document.createElement('option');
-  none.value = ''; none.textContent = '— escolher esfera —';
-  sel.appendChild(none);
-  const addGroup = (label, titles) => {
-    if (!titles.length) return;
-    const og = document.createElement('optgroup');
-    og.label = label;
-    for (const t of titles) { const o = document.createElement('option'); o.value = t; o.textContent = t; og.appendChild(o); }
-    sel.appendChild(og);
-  };
-  addGroup('Esferas de Magia', groups.magic);
-  addGroup('Esferas de Poder', groups.martial);
-  wrap.appendChild(sel);
+  wrap.className = 'char-talent' + (kind === 'extra' ? ' char-talent-extra' : '');
+  const isLegacy = ref && typeof ref === 'object';
+  const talentId = isLegacy ? null : ref;
+  const talent = talentId ? dataIndex.talentById.get(talentId) : null;
+  const name = talent ? talent.name : (isLegacy ? ref.name : String(ref));
+  if (kind === 'extra') {
+    const rm = document.createElement('button');
+    rm.type = 'button'; rm.className = 'char-talent-remove'; rm.textContent = '✕';
+    rm.title = 'Remover do personagem'; rm.dataset.char = JSON.stringify(ref); rm.dataset.sphere = title;
+    wrap.appendChild(rm);
+  }
+  const src = talent ? findCardInFrag(fr, talent) : null;
+  if (!src) { // fallback: link simples (card não encontrado / dado legado sem id)
+    const chapter = chapters.find(c => c.title === title);
+    const a = document.createElement('a');
+    a.href = (isLegacy && ref.anchor) ? ref.anchor : (chapter ? chapter.anchor : '#');
+    a.className = 'fav-go';
+    if (isLegacy && ref.slug) a.dataset.slug = ref.slug;
+    a.textContent = name;
+    wrap.appendChild(a);
+    return wrap;
+  }
+  const clone = src.cloneNode(true);
+  clone.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); // evita ids duplicados
+  clone.classList.add('fav-card', 'collapsed');
+  const head = clone.querySelector(':scope > h4, :scope > h5');
+  if (head) {
+    head.classList.add('fav-toggle');
+    head.setAttribute('role', 'button');
+    head.setAttribute('tabindex', '0');
+    head.setAttribute('aria-expanded', 'false');
+    if (kind !== 'extra') {
+      const tag = document.createElement('span');
+      tag.className = 'char-card-tag' + (kind === 'free' ? ' char-tag-free' : kind === 'granted' ? ' char-tag-granted' : '');
+      tag.textContent = kind === 'free' ? 'grátis' : kind === 'granted' ? 'concedido' : 'base';
+      head.appendChild(tag);
+    }
+  }
+  wrap.appendChild(clone);
+  return wrap;
+}
+
+// Painel "Bancada — build" (.char-build): SÓ a esfera ativa (charView.sphere).
+// Extraído do antigo corpo do loop per-sphere — mesmo DOM (cabeçalho +
+// .char-sphere-manage + "Incluído com a esfera" + "Talentos" + "Remover esfera"),
+// mantém a classe .char-sphere (guards .closest('.char-sphere') de P1/P2 dependem
+// dela). Só que agora roda para UMA esfera por vez, não num loop.
+function renderSphereBuildPanel(active, title) {
+  const entry = sphereEntry(active, title);
+  const granted = isGrantedSphere(active, title); // acesso concedido → selo "concedida" + não removível
+  const grantedMap = grantedSpheresMap(active);
+  const grantedItems = grantedMap.get(title) || [];
+  const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
+  const fr = model.frag;
+  const freePicks = (entry && entry.freePicks) || [];
+  const extras = (entry && entry.talents) || [];
+  const unresolvedLegacy = (entry && entry._unresolvedLegacy) || [];
+  const count = grantedItems.length + freePicks.length + extras.length;
+
+  const group = document.createElement('section');
+  group.className = 'char-sphere';
+  const h3 = document.createElement('h3');
+  h3.className = 'char-sphere-title char-sphere-toggle';
+  h3.dataset.sphere = title;
+  h3.setAttribute('role', 'button');
+  h3.setAttribute('tabindex', '0');
+  h3.title = 'Recolher esta esfera';
+  h3.textContent = `${title} — ${count} talento(s)`;
+  if (granted) {
+    const badge = document.createElement('span');
+    badge.className = 'char-granted-badge';
+    badge.textContent = 'concedida';
+    h3.appendChild(badge);
+  }
+  group.appendChild(h3);
+
+  if (unresolvedLegacy.length) {
+    const warn = document.createElement('p');
+    warn.className = 'char-warn';
+    warn.textContent = `${unresolvedLegacy.length} talento(s) salvo(s) antes desta atualização não puderam ser reconhecidos automaticamente: ${unresolvedLegacy.map(it => it.name).join(', ')}. Reabra-os pelo capítulo e adicione de novo.`;
+    group.appendChild(warn);
+  }
+
+  // Gestão in-sheet: pacote-base (Alquimia/Universal) + escolhas grátis
+  // (mesmos helpers da barra de aquisição da leitura — P1/P2 funcionam aqui também).
+  const choices = (entry && entry.choices) || {};
+  const spec = resolveSpec(active, title, choices);
+  const pkgSel = buildPackageSelector(active, title, spec);
+  const freePickSels = buildFreePickSelectors(active, title, spec, model, entry);
+  if (pkgSel || freePickSels.length) {
+    const manage = document.createElement('div');
+    manage.className = 'char-sphere-manage';
+    if (pkgSel) manage.appendChild(pkgSel);
+    for (const lbl of freePickSels) manage.appendChild(lbl);
+    group.appendChild(manage);
+  }
+
+  if (model.bases.length || freePicks.length || grantedItems.length) {
+    const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Incluído com a esfera';
+    group.appendChild(sub);
+    const box = document.createElement('div'); box.className = 'char-cards';
+    for (const it of model.bases) box.appendChild(charTalentCard(fr, it.id, 'base', title));
+    for (const it of grantedItems) box.appendChild(charTalentCard(fr, it.id, 'granted', title));
+    for (const id of freePicks) box.appendChild(charTalentCard(fr, id, 'free', title));
+    group.appendChild(box);
+  }
+
+  if (extras.length) {
+    const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Talentos';
+    group.appendChild(sub);
+    const box = document.createElement('div'); box.className = 'char-cards';
+    for (const id of extras) box.appendChild(charTalentCard(fr, id, 'extra', title));
+    group.appendChild(box);
+  }
+
+  if (!granted) { // esferas concedidas pela subclasse não podem ser removidas
+    const rm = document.createElement('button');
+    rm.type = 'button'; rm.className = 'char-sphere-remove'; rm.dataset.removesphere = title;
+    rm.textContent = 'Remover esfera';
+    group.appendChild(rm);
+  }
+
+  return group;
+}
+
+// Conteúdo de .char-build para o render/refresh atual: nada durante o catálogo
+// de esferas (benchMode='spheres' — a bancada ocupa a tela toda), mensagem
+// quando não há esfera ativa, senão o painel da esfera ativa.
+function buildCharBuildContent(active) {
+  if (charView.benchMode === 'spheres') return null;
+  const titles = charSphereTitles(active);
+  if (!titles.length) {
+    const p = document.createElement('p');
+    p.className = 'glossary-intro';
+    p.textContent = 'Nenhuma esfera ainda. Use “+ Adicionar esfera” na bancada abaixo para começar.';
+    return p;
+  }
+  // Accordion: TODAS as esferas adquiridas/concedidas ficam visíveis — a ativa
+  // (charView.sphere) expandida com o painel completo (gestão + cards), as demais
+  // recolhidas (cabeçalho clicável = nome + contagem) → visão do conjunto num relance.
+  const acc = document.createElement('div');
+  acc.className = 'char-accordion';
+  for (const title of titles) {
+    if (title === charView.sphere) acc.appendChild(renderSphereBuildPanel(active, title));
+    else acc.appendChild(buildCollapsedSphere(active, title));
+  }
+  return acc;
+}
+
+// Cabeçalho recolhido de uma esfera no accordion: nome + selo "concedida" +
+// contagem de talentos. Clicar torna a esfera ativa (setupCharacter → refreshCharBench),
+// expandindo-a e recolhendo a anterior.
+function buildCollapsedSphere(active, title) {
+  const entry = sphereEntry(active, title);
+  const granted = isGrantedSphere(active, title);
+  const grantedItems = grantedSpheresMap(active).get(title) || [];
+  const count = grantedItems.length + ((entry && entry.freePicks) || []).length + ((entry && entry.talents) || []).length;
   const btn = document.createElement('button');
   btn.type = 'button';
-  btn.className = 'char-add-sphere-btn';
-  btn.textContent = '+ Adquirir esfera';
-  wrap.appendChild(btn);
+  btn.className = 'char-sphere-collapsed';
+  btn.dataset.sphere = title;
+  btn.innerHTML = `<span class="csc-caret" aria-hidden="true">▸</span><span class="csc-name">${escapeHtml(title)}</span>`
+    + (granted ? '<span class="char-granted-badge">concedida</span>' : '')
+    + `<span class="csc-count">${count} talento(s)</span>`;
+  return btn;
+}
+
+function statCellHTML(label, val, hint) {
+  return `<div class="char-stat"><span class="cs-val">${val}</span><span class="cs-label">${label}</span>${hint ? `<span class="cs-hint">${escapeHtml(hint)}</span>` : ''}</div>`;
+}
+function budgetBarHTML(active, label, used, total, hint) {
+  const over = used > total;
+  const pct = total > 0 ? Math.min(100, Math.round(used / total * 100)) : (used > 0 ? 100 : 0);
+  return `<div class="char-budget-bar${over ? ' over' : ''}">
+    <div class="cbb-line"><span>${escapeHtml(label)}</span><b>${used}/${total}</b></div>
+    <div class="cbb-track"><i style="width:${pct}%"></i></div>
+    ${over ? `<div class="cbb-warn">⚠ Acima do permitido para o nível ${active.level}.</div>` : (hint ? `<div class="cbb-hint">${escapeHtml(hint)}</div>` : '')}
+  </div>`;
+}
+// Mini-grid de stats + barra(s) de orçamento do rail — MESMO cálculo do painel
+// de valores derivados antigo (Rules.derivedStats/slotsSpent/traditionBonus/
+// classFeatureBonus), só re-apresentado como grid compacto + barra em vez de
+// células de texto soltas.
+function buildCharBudgetHTML(active) {
+  const stats = characterStats(active);
+  if (!stats) return '';
+  const spent = Rules.slotsSpent(active, dataIndex);
+  const usedMagic = spent.magic, usedMartial = spent.martial;
+  let cells = '';
+  cells += statCellHTML('Proficiência', '+' + stats.prof);
+  cells += statCellHTML('CD', stats.cd, '8 + prof + mod');
+  cells += statCellHTML('Ataque', (stats.attack >= 0 ? '+' : '') + stats.attack);
+  if (stats.resourceName) cells += statCellHTML(stats.resourceName, stats.resource);
+  const tBonus = traditionBonus(active);        // +N da tradição (tipo da classe)
+  const cfBonus = classFeatureBonus(active);    // +N de features de classe/subclasse
+  const magicBudget = stats.magicTalents + (stats.type === 'magic' ? tBonus : 0) + cfBonus.magic;
+  const martialBudget = stats.martialTalents + (stats.type === 'martial' ? tBonus : 0) + cfBonus.martial;
+  const budgetHint = (b, cf) => {
+    const parts = [];
+    if (b) parts.push(`+${b} tradição`);
+    if (cf) parts.push(`+${cf} classe/subclasse`);
+    return parts.length ? 'inclui ' + parts.join(', ') : '';
+  };
+  let bars = '';
+  if (stats.type === 'magic') bars += budgetBarHTML(active, 'Talentos mágicos', usedMagic, magicBudget, budgetHint(tBonus, cfBonus.magic));
+  if (stats.type === 'martial' || usedMartial > 0) bars += budgetBarHTML(active, 'Talentos marciais', usedMartial, martialBudget, budgetHint(stats.type === 'martial' ? tBonus : 0, cfBonus.martial));
+  let notes = '';
+  if (cfBonus.notes.length) notes = `<ul class="char-feature-notes">${cfBonus.notes.map(n => `<li>${escapeHtml(n)}</li>`).join('')}</ul>`;
+  return `<div class="char-stats">${cells}</div>${bars}${notes}`;
+}
+
+// Navegação de esferas do rail: um .char-rail-sphere por esfera (união
+// spheres[]+grantedMap), selo "concedida" p/ granted, ativo destacado. A entrada
+// "+ Adicionar esfera" fica na barra da bancada (sempre visível), não aqui.
+function buildRailNavHTML(active) {
+  const titles = charSphereTitles(active);
+  const grantedMap = grantedSpheresMap(active);
+  let nav = '';
+  for (const title of titles) {
+    const entry = sphereEntry(active, title);
+    const granted = isGrantedSphere(active, title);
+    const grantedItems = grantedMap.get(title) || [];
+    const count = grantedItems.length + ((entry && entry.freePicks) || []).length + ((entry && entry.talents) || []).length;
+    const isActive = charView.benchMode === 'talents' && charView.sphere === title;
+    nav += `<button type="button" class="char-rail-sphere${isActive ? ' active' : ''}" data-sphere="${escapeHtml(title)}">
+      <span>${escapeHtml(title)}</span>
+      ${granted ? '<span class="crs-granted">concedida</span>' : `<span class="crs-count">${count}</span>`}
+    </button>`;
+  }
+  if (!titles.length) nav += '<div class="char-railnav-empty">Nenhuma esfera ainda.</div>';
+  return `<div class="char-railnav"><div class="char-railnav-h">Esferas</div>${nav}</div>`;
+}
+
+// Detalhe de um candidato a talento na bancada: tag da esfera, nome, custo
+// (grátis vs. 1 slot — talentPickPath), descrição CLONADA do card real
+// (findCardInFrag — nunca reconstruída), linha de pré-requisito (talentGate,
+// só leitura) e o botão Adicionar = makeCharControl (mesmo estado +/✓/grátis
+// do compêndio — o clique é tratado em setupCharacter via applyTalentToggle).
+function buildTalentDetail(active, item) {
+  const box = document.createElement('div');
+  box.className = 'char-bench-detail-inner';
+  if (!item) { box.innerHTML = '<div class="char-bench-empty">Selecione um talento à esquerda.</div>'; return box; }
+  const title = item.sphere;
+  const entry = sphereEntry(active, title);
+  const granted = isGrantedSphere(active, title);
+  const talent = dataIndex.talentById.get(item.id);
+  const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
+  const sph = dataIndex.sphereById.get(sphereIdFor(title));
+  const mtl = sph && sph.section === 'martial';
+  const path = talentPickPath(active, title, item);
+  const gate = talentGate(active, title, item);
+
+  // Cabeçalho fixo: identidade + ação (Adicionar). Fica preso no topo enquanto o
+  // corpo com as regras rola → a ação está sempre visível.
+  const head = document.createElement('div');
+  head.className = 'cbd-head';
+  const info = document.createElement('div');
+  info.className = 'cbd-head-info';
+  const h4 = document.createElement('h4');
+  h4.textContent = item.name;
+  info.appendChild(h4);
+  const meta = document.createElement('div');
+  meta.className = 'cbd-meta';
+  meta.textContent = `${title} · ${mtl ? 'poder' : 'magia'} · ${path === 'free' ? 'grátis — escolha da esfera' : `custa 1 talento ${mtl ? 'marcial' : 'mágico'}`}`;
+  info.appendChild(meta);
+  const req = document.createElement('div');
+  req.className = 'cbd-req' + (gate.blocked ? ' bad' : '');
+  req.innerHTML = (gate.blocked ? '⚠ ' : '✓ ') + '<b>Pré-requisito:</b> ' + escapeHtml(gate.label || '');
+  info.appendChild(req);
+  head.appendChild(info);
+  const btn = makeCharControl(item, model.roleByKey.get(item.id) || 'extra', active, entry, false, granted);
+  if (btn) {
+    btn.classList.add('char-bench-add');
+    if (!btn.classList.contains('on') && !btn.disabled) btn.textContent = 'Adicionar ao personagem';
+    head.appendChild(btn);
+  }
+  box.appendChild(head);
+
+  // Corpo rolável: o card de regras clonado (leitura em largura confortável).
+  const body = document.createElement('div');
+  body.className = 'cbd-body';
+  const desc = document.createElement('div');
+  desc.className = 'cbd-desc';
+  const src = talent ? findCardInFrag(model.frag, talent) : null;
+  if (src) {
+    const clone = src.cloneNode(true);
+    clone.querySelectorAll('[id]').forEach(e => e.removeAttribute('id'));
+    desc.appendChild(clone);
+  } else {
+    desc.textContent = 'Descrição não encontrada — abra o capítulo da esfera.';
+  }
+  body.appendChild(desc);
+  box.appendChild(body);
+  return box;
+}
+
+// Bancada modo "talentos": busca + escopo (esfera ativa/Todas) + lista mestre
+// (.char-bench-li) + detalhe (.char-bench-detail). Candidatos = mesma conta de
+// talentCandidatesForSphere (extraída do antigo buildAddTalentPicker); a
+// mutação real segue por applyTalentToggle (setupCharacter), nunca aqui.
+function buildTalentBenchPanel(active) {
+  const wrap = document.createElement('div');
+  wrap.className = 'char-bench-panel';
+  const addSphereBtn = '<button type="button" class="char-bench-addsphere">+ Adicionar esfera</button>';
+  const title = charView.sphere;
+  if (!title) {
+    const tools = document.createElement('div');
+    tools.className = 'char-bench-tools';
+    tools.innerHTML = addSphereBtn;
+    wrap.appendChild(tools);
+    const msg = charSphereTitles(active).length
+      ? 'Expanda uma esfera acima para ver e adicionar seus talentos.'
+      : 'Nenhuma esfera ainda. Use “+ Adicionar esfera” para escolher a primeira.';
+    wrap.insertAdjacentHTML('beforeend', `<div class="char-bench-empty">${msg}</div>`);
+    return wrap;
+  }
+  const titles = charSphereTitles(active);
+  let candidates = charView.scope === 'all'
+    ? titles.flatMap(t => talentCandidatesForSphere(active, t))
+    : talentCandidatesForSphere(active, title);
+  if (charView.search) {
+    const q = normalizeTerm(charView.search);
+    candidates = candidates.filter(it => normalizeTerm(it.name).includes(q));
+  }
+  if (charView.sel === null || !candidates.some(it => it.id === charView.sel)) {
+    charView.sel = candidates.length ? candidates[0].id : null;
+  }
+
+  const tools = document.createElement('div');
+  tools.className = 'char-bench-tools';
+  tools.innerHTML = `<input type="text" class="char-bench-search" placeholder="Buscar talento…" value="${escapeHtml(charView.search)}">
+    <button type="button" class="char-bench-scope${charView.scope === 'sphere' ? ' on' : ''}" data-scope="sphere">${escapeHtml(title)}</button>
+    <button type="button" class="char-bench-scope${charView.scope === 'all' ? ' on' : ''}" data-scope="all">Todas</button>
+    ${addSphereBtn}`;
+
+  const listBox = document.createElement('div');
+  listBox.className = 'char-bench-list';
+  if (!candidates.length) {
+    listBox.innerHTML = '<div class="char-bench-empty">Nenhum talento disponível — já foram adquiridos todos ou não há resultado para a busca.</div>';
+  } else {
+    listBox.innerHTML = candidates.map(it => {
+      const gate = talentGate(active, it.sphere, it);
+      const path = talentPickPath(active, it.sphere, it);
+      const meta = gate.blocked ? '<span class="cbl-lock">🔒</span>' : `<span class="cbl-meta">${path === 'free' ? 'grátis' : '1 slot'}</span>`;
+      const tag = charView.scope === 'all' ? `<span class="cbl-tag">${escapeHtml(it.sphere)}</span>` : '';
+      return `<div class="char-bench-li${gate.blocked ? ' blocked' : ''}${it.id === charView.sel ? ' sel' : ''}" data-id="${escapeHtml(it.id)}">
+        <span class="cbl-name">${escapeHtml(it.name)}</span>${tag}${meta}
+      </div>`;
+    }).join('');
+  }
+
+  const detail = document.createElement('div');
+  detail.className = 'char-bench-detail';
+  detail.appendChild(buildTalentDetail(active, candidates.find(it => it.id === charView.sel) || null));
+
+  const grid = document.createElement('div');
+  grid.className = 'char-bench-grid';
+  grid.appendChild(listBox);
+  grid.appendChild(detail);
+
+  wrap.appendChild(tools);
+  wrap.appendChild(grid);
   return wrap;
+}
+
+// Detalhe de uma esfera candidata: descrição (cardDescription/descriptions.json),
+// custo de acesso, gate só-de-exibição (Rules.canAccessSphere) e o botão
+// Adquirir → tratado em setupCharacter via tryAcquireSphere (mesmo gate de
+// orçamento usado por qualquer outra aquisição — nenhuma regra nova).
+function buildSphereDetail(active, def) {
+  const box = document.createElement('div');
+  box.className = 'char-bench-detail-inner';
+  if (!def) { box.innerHTML = '<div class="char-bench-empty">Selecione uma esfera à esquerda.</div>'; return box; }
+  const mtl = def.section === 'martial';
+  const check = Rules.canAccessSphere(active, def.id, dataIndex);
+  const blocked = !check.ok;
+  const chapter = chapters.find(c => c.title === def.title);
+
+  const head = document.createElement('div');
+  head.className = 'cbd-head';
+  const info = document.createElement('div');
+  info.className = 'cbd-head-info';
+  const h4 = document.createElement('h4');
+  h4.textContent = def.title;
+  info.appendChild(h4);
+  const meta = document.createElement('div');
+  meta.className = 'cbd-meta';
+  meta.textContent = `${mtl ? 'esfera de poder' : 'esfera de magia'} · acesso: 1 talento ${mtl ? 'marcial' : 'mágico'}`;
+  info.appendChild(meta);
+  const req = document.createElement('div');
+  req.className = 'cbd-req' + (blocked ? ' bad' : '');
+  req.innerHTML = (blocked ? '⚠ ' : '✓ ') + `<b>Requisito:</b> ${blocked ? `Sem talentos ${mtl ? 'marciais' : 'mágicos'} suficientes.` : 'Dentro do seu orçamento.'}`;
+  info.appendChild(req);
+  head.appendChild(info);
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'char-bench-acquire';
+  if (blocked) btn.disabled = true;
+  btn.textContent = blocked ? 'Indisponível' : '+ Adquirir esfera';
+  head.appendChild(btn);
+  box.appendChild(head);
+
+  const body = document.createElement('div');
+  body.className = 'cbd-body';
+  const desc = document.createElement('div');
+  desc.className = 'cbd-desc';
+  desc.textContent = chapter ? cardDescription({ text: def.title, anchor: chapter.anchor }) : '';
+  body.appendChild(desc);
+  box.appendChild(body);
+  return box;
+}
+
+// Bancada modo "esferas": lista de esferas não adquiridas/concedidas
+// (sphereCandidates — extraída do antigo buildAddSpherePicker), agrupadas
+// magia/poder, + detalhe.
+function buildSphereBenchPanel(active) {
+  const wrap = document.createElement('div');
+  wrap.className = 'char-bench-panel';
+  const groups = sphereCandidates(active);
+  const all = groups.magic.concat(groups.martial);
+  if (charView.sel === null || !all.some(s => s.title === charView.sel)) {
+    charView.sel = all.length ? all[0].title : null;
+  }
+  const tools = document.createElement('div');
+  tools.className = 'char-bench-tools';
+  tools.innerHTML = '<span class="char-bench-scope on" style="cursor:default">Não adquiridas</span>'
+    + '<button type="button" class="char-bench-backtotalents">‹ Voltar aos talentos</button>';
+
+  const listBox = document.createElement('div');
+  listBox.className = 'char-bench-list';
+  if (!all.length) {
+    listBox.innerHTML = '<div class="char-bench-empty">Todas as esferas já foram adquiridas ou concedidas.</div>';
+  } else {
+    listBox.innerHTML = all.map(s => {
+      const check = Rules.canAccessSphere(active, s.id, dataIndex);
+      const blocked = !check.ok;
+      const meta = blocked ? '<span class="cbl-lock">🔒</span>' : '<span class="cbl-meta">1 talento</span>';
+      return `<div class="char-bench-li${blocked ? ' blocked' : ''}${s.title === charView.sel ? ' sel' : ''}" data-id="${escapeHtml(s.title)}">
+        <span class="cbl-name">${escapeHtml(s.title)}</span>${meta}
+      </div>`;
+    }).join('');
+  }
+
+  const detail = document.createElement('div');
+  detail.className = 'char-bench-detail';
+  const selDef = all.find(s => s.title === charView.sel) || null;
+  detail.appendChild(buildSphereDetail(active, selDef));
+
+  const grid = document.createElement('div');
+  grid.className = 'char-bench-grid';
+  grid.appendChild(listBox);
+  grid.appendChild(detail);
+
+  wrap.appendChild(tools);
+  wrap.appendChild(grid);
+  return wrap;
+}
+
+// Conteúdo de .char-bench para o render/refresh atual (modo talentos ou esferas).
+function buildCharBenchInner(active) {
+  return charView.benchMode === 'spheres' ? buildSphereBenchPanel(active) : buildTalentBenchPanel(active);
+}
+
+// Reseta charView p/ um personagem (troca de personagem, criação, exclusão, ou
+// quando a esfera ativa deixou de existir): primeira esfera adquirida/concedida,
+// modo talentos, sem seleção nem busca. Nunca persiste — só estado de módulo.
+function resetCharView(active) {
+  const titles = active ? charSphereTitles(active) : [];
+  charView.sphere = titles.length ? titles[0] : null;
+  charView.benchMode = 'talents';
+  charView.sel = null;
+  charView.search = '';
+}
+// Normaliza charView.sphere se ele não existe mais entre as esferas do ativo
+// (ex.: esfera removida) — chamada no topo de todo renderCharacter(). Preserva
+// benchMode/sel/scope/search quando a esfera ativa continua válida.
+function normalizeCharView(active) {
+  const titles = charSphereTitles(active);
+  // null = "nenhuma esfera expandida" (accordion todo recolhido) — sempre válido;
+  // só reseta se a esfera ativa apontar para um título que não existe mais.
+  const validSphere = charView.sphere === null || titles.includes(charView.sphere);
+  if (!validSphere) resetCharView(active);
+}
+// Troca de personagem ativo — sempre reseta charView (mesmo semântica do
+// antigo seletor de abas, agora também limpando a view da bancada).
+function switchActiveChar(id) {
+  setActiveCharId(id);
+  resetCharView(getActiveChar());
+}
+
+// Re-render em DOIS NÍVEIS (contrato do Layout B):
+// - Mutações (add/remove talento, adquirir/remover esfera, pacote, grátis,
+//   .char-field) → renderCharacter() completo (função abaixo — já é o padrão).
+// - Só-view (selecionar item, escopo, busca, trocar esfera ativa) →
+//   refreshCharBench() — substitui .char-build (a esfera ativa pode ter mudado)
+//   + .char-bench, e atualiza a classe ativa do rail, SEM tocar no resto do rail
+//   (form/proficiências/stats), preservando foco/cursor da busca.
+function refreshCharBench() {
+  const active = getActiveChar();
+  if (!active) return;
+  const rail = document.querySelector('.char-rail');
+  if (rail) {
+    rail.querySelectorAll('.char-rail-sphere').forEach(el => {
+      el.classList.toggle('active', charView.benchMode === 'talents' && el.dataset.sphere === charView.sphere);
+    });
+  }
+  const buildHost = document.getElementById('char-build');
+  if (buildHost) {
+    buildHost.innerHTML = '';
+    const content = buildCharBuildContent(active);
+    if (content) buildHost.appendChild(content);
+  }
+  const benchHost = document.getElementById('char-bench');
+  if (benchHost) {
+    const activeEl = document.activeElement;
+    const wasSearch = !!(activeEl && activeEl.classList && activeEl.classList.contains('char-bench-search'));
+    const caret = wasSearch ? activeEl.selectionStart : null;
+    benchHost.innerHTML = '';
+    benchHost.appendChild(buildCharBenchInner(active));
+    if (wasSearch) {
+      const inp = benchHost.querySelector('.char-bench-search');
+      if (inp) { inp.focus(); if (caret != null) { try { inp.setSelectionRange(caret, caret); } catch (_) { /* ignora */ } } }
+    }
+  }
 }
 
 function renderCharacter() {
@@ -1765,9 +2331,9 @@ function renderCharacter() {
   add.className = 'char-new';
   add.textContent = '+ Novo personagem';
   sel.appendChild(add);
-  frag.appendChild(sel);
 
   if (!active) {
+    frag.appendChild(sel);
     const p = document.createElement('p');
     p.className = 'glossary-intro';
     p.textContent = 'Crie um personagem para reunir seus talentos e ver PM, CD e orçamento de talentos por nível. Depois, use o botão + em qualquer talento para adicioná-lo aqui.';
@@ -1777,7 +2343,16 @@ function renderCharacter() {
     return;
   }
 
-  // Formulário de identidade
+  normalizeCharView(active);
+
+  const layout = document.createElement('div');
+  layout.className = 'char-layout';
+
+  // ---- RAIL: seletor + identidade + proficiências + stats/orçamento + nav de esferas
+  const rail = document.createElement('div');
+  rail.className = 'char-rail';
+  rail.appendChild(sel);
+
   const form = document.createElement('div');
   form.className = 'char-form';
   form.innerHTML =
@@ -1798,73 +2373,33 @@ function renderCharacter() {
        <input type="number" class="char-field" data-field="keyMod" min="-5" max="10" value="${active.keyMod || 0}">
      </label>
      ${traditionField(active)}`;
-  frag.appendChild(form);
+  rail.appendChild(form);
 
-  // Proficiências (perícias + ferramentas) — resolvem as condicionais das esferas
-  frag.appendChild(buildProficiencies(active));
+  // Proficiências (perícias + ferramentas) — resolvem as condicionais das esferas.
+  // Dentro de um <details> recolhível (o próprio buildProficiencies fica intacto;
+  // o título interno dele é escondido via CSS quando aninhado no <summary>).
+  const profDetails = document.createElement('details');
+  profDetails.className = 'char-profs-details';
+  const summary = document.createElement('summary');
+  summary.textContent = 'Proficiências';
+  profDetails.appendChild(summary);
+  profDetails.appendChild(buildProficiencies(active));
+  rail.appendChild(profDetails);
 
-  // Painel de valores derivados
-  const stats = characterStats(active);
-  if (stats) {
-    const spent = Rules.slotsSpent(active, dataIndex);
-    const usedMagic = spent.magic, usedMartial = spent.martial;
-    const panel = document.createElement('div');
-    panel.className = 'char-stats';
-    const stat = (label, val, hint) => `<div class="char-stat"><span class="cs-val">${val}</span><span class="cs-label">${label}</span>${hint ? `<span class="cs-hint">${hint}</span>` : ''}</div>`;
-    let cells = '';
-    cells += stat('Proficiência', '+' + stats.prof);
-    cells += stat('CD', stats.cd, '8 + prof + mod');
-    cells += stat('Ataque', (stats.attack >= 0 ? '+' : '') + stats.attack);
-    if (stats.resourceName) cells += stat(stats.resourceName, stats.resource);
-    const tBonus = traditionBonus(active);        // +N da tradição (tipo da classe)
-    const cfBonus = classFeatureBonus(active);    // +N de features de classe/subclasse
-    const magicBudget = stats.magicTalents + (stats.type === 'magic' ? tBonus : 0) + cfBonus.magic;
-    const martialBudget = stats.martialTalents + (stats.type === 'martial' ? tBonus : 0) + cfBonus.martial;
-    const budgetHint = (b, cf) => {
-      const parts = [];
-      if (b) parts.push(`+${b} tradição`);
-      if (cf) parts.push(`+${cf} classe/subclasse`);
-      return parts.length ? 'inclui ' + parts.join(', ') : 'usados/disponíveis';
-    };
-    if (stats.type === 'magic') cells += stat('Talentos mágicos', `${usedMagic}/${magicBudget}`, budgetHint(tBonus, cfBonus.magic));
-    if (stats.type === 'martial' || usedMartial > 0) cells += stat('Talentos marciais', `${usedMartial}/${martialBudget}`, budgetHint(stats.type === 'martial' ? tBonus : 0, cfBonus.martial));
-    panel.innerHTML = cells;
-    frag.appendChild(panel);
+  const statsWrap = document.createElement('div');
+  statsWrap.className = 'char-rail-stats';
+  statsWrap.innerHTML = buildCharBudgetHTML(active);
+  rail.appendChild(statsWrap);
 
-    // Notas das features de classe/subclasse que concedem bônus de talentos
-    if (cfBonus.notes.length) {
-      const ul = document.createElement('ul');
-      ul.className = 'char-feature-notes';
-      for (const note of cfBonus.notes) {
-        const li = document.createElement('li');
-        li.textContent = note;
-        ul.appendChild(li);
-      }
-      frag.appendChild(ul);
-    }
+  const navWrap = document.createElement('div');
+  navWrap.innerHTML = buildRailNavHTML(active);
+  rail.appendChild(navWrap.firstElementChild);
 
-    // Aviso de orçamento estourado
-    const over = [];
-    if (usedMagic > magicBudget) over.push('mágicos');
-    if (usedMartial > martialBudget) over.push('marciais');
-    if (over.length) {
-      const warn = document.createElement('p');
-      warn.className = 'char-warn';
-      warn.textContent = `Atenção: você tem mais talentos ${over.join(' e ')} do que o nível ${active.level} permite.`;
-      frag.appendChild(warn);
-    }
-  }
+  layout.appendChild(rail);
 
-  // Esferas: adquiridas + concedidas pela subclasse (acesso grátis), por esfera
-  const spheresList = active.spheres || [];
-  const grantedMap = grantedSpheresMap(active);
-  const h2 = document.createElement('h2');
-  h2.textContent = 'Esferas e talentos';
-  frag.appendChild(h2);
-
-  // Adicionar esfera sem sair da ficha (tryAcquireSphere já bloqueia por orçamento)
-  const addSphere = buildAddSpherePicker(active);
-  if (addSphere) frag.appendChild(addSphere);
+  // ---- MAIN: nota (concessões pendentes) + build da esfera ativa + bancada
+  const main = document.createElement('div');
+  main.className = 'char-main';
 
   // Concessão de talento específico que o personagem já possui → a regra permite
   // escolher um substituto na mesma esfera (picker adiado; por ora, nota manual).
@@ -1875,143 +2410,24 @@ function renderCharacter() {
     note.textContent = 'Talento(s) concedido(s) pela subclasse que você já possui: ' +
       pendingGrants.map(p => `${p.name || p.talentId} (${sphereTitleById.get(p.sphereId) || p.sphereId})`).join(', ') +
       '. A regra permite escolher um talento substituto da mesma esfera — por ora, adicione-o manualmente com o + no capítulo.';
-    frag.appendChild(note);
+    main.appendChild(note);
   }
-  if (spheresList.length === 0 && grantedMap.size === 0) {
-    const p = document.createElement('p');
-    p.className = 'glossary-intro';
-    p.textContent = 'Nenhuma esfera ainda. Abra uma esfera e use “Adquirir esta esfera” para começar — depois escolha o grátis e adicione talentos com o +.';
-    frag.appendChild(p);
-  } else {
-    // Card recolhível de um talento (clona o card completo da esfera → lê a
-    // descrição inteira sem sair da ficha; reusa .fav-card/.fav-toggle). `ref` é
-    // um id de talento estruturado (caminho normal) ou, para dados antigos que a
-    // migração não conseguiu resolver, o objeto legado {name,sphere,anchor,slug}
-    // (mantido — nunca descartado silenciosamente).
-    const charTalentCard = (fr, ref, kind, title) => {
-      const wrap = document.createElement('div');
-      wrap.className = 'char-talent' + (kind === 'extra' ? ' char-talent-extra' : '');
-      const isLegacy = ref && typeof ref === 'object';
-      const talentId = isLegacy ? null : ref;
-      const talent = talentId ? dataIndex.talentById.get(talentId) : null;
-      const name = talent ? talent.name : (isLegacy ? ref.name : String(ref));
-      if (kind === 'extra') {
-        const rm = document.createElement('button');
-        rm.type = 'button'; rm.className = 'char-talent-remove'; rm.textContent = '✕';
-        rm.title = 'Remover do personagem'; rm.dataset.char = JSON.stringify(ref); rm.dataset.sphere = title;
-        wrap.appendChild(rm);
-      }
-      const src = talent ? findCardInFrag(fr, talent) : null;
-      if (!src) { // fallback: link simples (card não encontrado / dado legado sem id)
-        const chapter = chapters.find(c => c.title === title);
-        const a = document.createElement('a');
-        a.href = (isLegacy && ref.anchor) ? ref.anchor : (chapter ? chapter.anchor : '#');
-        a.className = 'fav-go';
-        if (isLegacy && ref.slug) a.dataset.slug = ref.slug;
-        a.textContent = name;
-        wrap.appendChild(a);
-        return wrap;
-      }
-      const clone = src.cloneNode(true);
-      clone.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); // evita ids duplicados
-      clone.classList.add('fav-card', 'collapsed');
-      const head = clone.querySelector(':scope > h4, :scope > h5');
-      if (head) {
-        head.classList.add('fav-toggle');
-        head.setAttribute('role', 'button');
-        head.setAttribute('tabindex', '0');
-        head.setAttribute('aria-expanded', 'false');
-        if (kind !== 'extra') {
-          const tag = document.createElement('span');
-          tag.className = 'char-card-tag' + (kind === 'free' ? ' char-tag-free' : kind === 'granted' ? ' char-tag-granted' : '');
-          tag.textContent = kind === 'free' ? 'grátis' : kind === 'granted' ? 'concedido' : 'base';
-          head.appendChild(tag);
-        }
-      }
-      wrap.appendChild(clone);
-      return wrap;
-    };
 
-    const titles = spheresList.map(e => sphereTitleById.get(e.sphere) || e.sphere);
-    for (const t of grantedMap.keys()) if (!titles.includes(t)) titles.push(t);
+  const buildHost = document.createElement('div');
+  buildHost.className = 'char-build';
+  buildHost.id = 'char-build';
+  const buildContent = buildCharBuildContent(active);
+  if (buildContent) buildHost.appendChild(buildContent);
+  main.appendChild(buildHost);
 
-    for (const title of titles) {
-      const entry = sphereEntry(active, title);
-      const granted = isGrantedSphere(active, title); // acesso concedido → selo "concedida" + não removível
-      const grantedItems = grantedMap.get(title) || [];
-      const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
-      const fr = model.frag;
-      const freePicks = (entry && entry.freePicks) || [];
-      const extras = (entry && entry.talents) || [];
-      const unresolvedLegacy = (entry && entry._unresolvedLegacy) || [];
-      // Contador = talentos que o personagem tem na esfera (concedidos + grátis + extras).
-      const count = grantedItems.length + freePicks.length + extras.length;
+  const benchHost = document.createElement('div');
+  benchHost.className = 'char-bench';
+  benchHost.id = 'char-bench';
+  benchHost.appendChild(buildCharBenchInner(active));
+  main.appendChild(benchHost);
 
-      const group = document.createElement('section');
-      group.className = 'char-sphere';
-      const h3 = document.createElement('h3');
-      h3.className = 'char-sphere-title';
-      h3.textContent = `${title} — ${count} talento(s)`;
-      if (granted) {
-        const badge = document.createElement('span');
-        badge.className = 'char-granted-badge';
-        badge.textContent = 'concedida';
-        h3.appendChild(badge);
-      }
-      group.appendChild(h3);
-
-      if (unresolvedLegacy.length) {
-        const warn = document.createElement('p');
-        warn.className = 'char-warn';
-        warn.textContent = `${unresolvedLegacy.length} talento(s) salvo(s) antes desta atualização não puderam ser reconhecidos automaticamente: ${unresolvedLegacy.map(it => it.name).join(', ')}. Reabra-os pelo capítulo e adicione de novo.`;
-        group.appendChild(warn);
-      }
-
-      // Gestão in-sheet: pacote-base (Alquimia/Universal) + escolhas grátis
-      // (mesmos helpers da barra de aquisição da leitura — P1/P2 funcionam aqui também).
-      const choices = (entry && entry.choices) || {};
-      const spec = resolveSpec(active, title, choices);
-      const pkgSel = buildPackageSelector(active, title, spec);
-      const freePickSels = buildFreePickSelectors(active, title, spec, model, entry);
-      if (pkgSel || freePickSels.length) {
-        const manage = document.createElement('div');
-        manage.className = 'char-sphere-manage';
-        if (pkgSel) manage.appendChild(pkgSel);
-        for (const lbl of freePickSels) manage.appendChild(lbl);
-        group.appendChild(manage);
-      }
-
-      if (model.bases.length || freePicks.length || grantedItems.length) {
-        const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Incluído com a esfera';
-        group.appendChild(sub);
-        const box = document.createElement('div'); box.className = 'char-cards';
-        for (const it of model.bases) box.appendChild(charTalentCard(fr, it.id, 'base', title));
-        for (const it of grantedItems) box.appendChild(charTalentCard(fr, it.id, 'granted', title));
-        for (const id of freePicks) box.appendChild(charTalentCard(fr, id, 'free', title));
-        group.appendChild(box);
-      }
-
-      if (extras.length) {
-        const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Talentos';
-        group.appendChild(sub);
-        const box = document.createElement('div'); box.className = 'char-cards';
-        for (const id of extras) box.appendChild(charTalentCard(fr, id, 'extra', title));
-        group.appendChild(box);
-      }
-
-      const addTalent = buildAddTalentPicker(active, title, model, entry, granted);
-      if (addTalent) group.appendChild(addTalent);
-
-      if (!granted) { // esferas concedidas pela subclasse não podem ser removidas
-        const rm = document.createElement('button');
-        rm.type = 'button'; rm.className = 'char-sphere-remove'; rm.dataset.removesphere = title;
-        rm.textContent = 'Remover esfera';
-        group.appendChild(rm);
-      }
-
-      frag.appendChild(group);
-    }
-  }
+  layout.appendChild(main);
+  frag.appendChild(layout);
 
   const del = document.createElement('button');
   del.type = 'button';
@@ -2134,10 +2550,10 @@ function setupCharacter() {
   const content = document.getElementById('content');
   content.addEventListener('click', e => {
     const tab = e.target.closest('.charsel-tab');
-    if (tab) { setActiveCharId(tab.dataset.id); renderCharacter(); return; }
+    if (tab) { switchActiveChar(tab.dataset.id); renderCharacter(); return; }
     if (e.target.closest('#char-new')) {
       const c = createCharacter({ name: 'Personagem ' + (getCharacters().length + 1) });
-      renderCharacter(); return;
+      switchActiveChar(c.id); renderCharacter(); return;
     }
     // Alternar uma proficiência (perícia/ferramenta) — sem re-render (só afeta esferas)
     const chip = e.target.closest('.prof-chip');
@@ -2172,20 +2588,11 @@ function setupCharacter() {
     }
     if (e.target.closest('#char-delete')) {
       const active = getActiveChar();
-      if (active && confirm(`Excluir "${active.name}"? Isso não pode ser desfeito.`)) { deleteCharacter(active.id); renderCharacter(); }
-      return;
-    }
-    // Adquirir esfera pelo seletor "adicionar esfera" (topo da seção, na ficha)
-    const asb = e.target.closest('.char-add-sphere-btn');
-    if (asb) {
-      const active = getActiveChar();
-      if (!active) return;
-      const sel = asb.parentElement.querySelector('.char-add-sphere-select');
-      const title = sel && sel.value;
-      if (!title) return;
-      const res = tryAcquireSphere(active, title);
-      if (!res.ok) { showCharNotice(asb, res.message); return; }
-      renderCharacter();
+      if (active && confirm(`Excluir "${active.name}"? Isso não pode ser desfeito.`)) {
+        deleteCharacter(active.id);
+        resetCharView(getActiveChar());
+        renderCharacter();
+      }
       return;
     }
     // Adicionar talento pelo painel "adicionar talento" de uma esfera (na ficha) —
@@ -2197,6 +2604,94 @@ function setupCharacter() {
       const title = cbtn.dataset.sphere;
       const item = JSON.parse(cbtn.dataset.char);
       if (applyTalentToggle(active, title, item, cbtn)) renderCharacter();
+      return;
+    }
+    // Adicionar talento pelo botão Adicionar da bancada (.char-bench, modo talentos)
+    // — MESMO botão/estado do compêndio (makeCharControl) e MESMA mutação
+    // (applyTalentToggle); é uma mutação → re-render completo (orçamento muda).
+    if (cbtn && cbtn.closest('.char-bench')) {
+      const active = getActiveChar();
+      if (!active) return;
+      const title = cbtn.dataset.sphere;
+      const item = JSON.parse(cbtn.dataset.char);
+      if (applyTalentToggle(active, title, item, cbtn)) { charView.sel = null; renderCharacter(); }
+      return;
+    }
+    // Trocar a esfera ativa pelo rail (view-only → refreshCharBench)
+    const rsp = e.target.closest('.char-rail-sphere');
+    if (rsp) {
+      charView.sphere = rsp.dataset.sphere;
+      charView.benchMode = 'talents';
+      charView.sel = null;
+      charView.search = '';
+      refreshCharBench();
+      return;
+    }
+    // Expandir uma esfera recolhida no accordion = torná-la a ativa (view-only)
+    const csc = e.target.closest('.char-sphere-collapsed');
+    if (csc) {
+      charView.sphere = csc.dataset.sphere;
+      charView.benchMode = 'talents';
+      charView.sel = null;
+      charView.search = '';
+      refreshCharBench();
+      return;
+    }
+    // Clicar no cabeçalho da esfera EXPANDIDA a recolhe → nenhuma expandida
+    // (accordion "minimizar todas"; a bancada abaixo passa ao estado neutro).
+    const stog = e.target.closest('.char-sphere-toggle');
+    if (stog) {
+      charView.sphere = null;
+      charView.benchMode = 'talents';
+      charView.sel = null;
+      charView.search = '';
+      refreshCharBench();
+      return;
+    }
+    // Entrar no modo "esferas" da bancada (botão sempre visível na barra da bancada)
+    const badd = e.target.closest('.char-bench-addsphere');
+    if (badd) {
+      charView.benchMode = 'spheres';
+      charView.sel = null;
+      refreshCharBench();
+      return;
+    }
+    // Voltar do catálogo de esferas para os talentos da esfera ativa (view-only)
+    const bback = e.target.closest('.char-bench-backtotalents');
+    if (bback) {
+      charView.benchMode = 'talents';
+      charView.sel = null;
+      refreshCharBench();
+      return;
+    }
+    // Selecionar um item (talento ou esfera candidata) na lista da bancada (view-only)
+    const bli = e.target.closest('.char-bench-li');
+    if (bli) {
+      charView.sel = bli.dataset.id;
+      refreshCharBench();
+      return;
+    }
+    // Trocar o escopo da bancada (esfera ativa/Todas) (view-only)
+    const bscope = e.target.closest('.char-bench-scope[data-scope]');
+    if (bscope) {
+      charView.scope = bscope.dataset.scope;
+      charView.sel = null;
+      refreshCharBench();
+      return;
+    }
+    // Adquirir a esfera selecionada na bancada (modo esferas) — mutação → render completo
+    const bacq = e.target.closest('.char-bench-acquire');
+    if (bacq) {
+      const active = getActiveChar();
+      if (!active || bacq.disabled) return;
+      const title = charView.sel;
+      if (!title) return;
+      const res = tryAcquireSphere(active, title);
+      if (!res.ok) { showCharNotice(bacq, res.message); return; }
+      charView.sphere = title;
+      charView.benchMode = 'talents';
+      charView.sel = null;
+      renderCharacter();
       return;
     }
   });
@@ -2227,6 +2722,12 @@ function setupCharacter() {
       if (active && applyFreePickSelection(active, sel.dataset.sphere, parseInt(sel.dataset.i || '0', 10), sel.value || null, sel)) renderCharacter();
       return;
     }
+  });
+  // Busca da bancada (modo talentos) — view-only a cada tecla; refreshCharBench
+  // preserva foco/cursor do input (ele é recriado no patch).
+  content.addEventListener('input', e => {
+    const s = e.target.closest('.char-bench-search');
+    if (s) { charView.search = s.value; refreshCharBench(); }
   });
 }
 
@@ -3774,11 +4275,14 @@ function setupDarkMode() {
    MOBILE MENU
    ============================================================ */
 function setupMobileMenu() {
+  const app = document.getElementById('app');
   const sidebar = document.getElementById('sidebar');
   const toggle = document.getElementById('menu-toggle');
   const close = document.getElementById('sidebar-close');
+  const desktop = window.matchMedia('(min-width: 769px)');
+  const COLLAPSE_KEY = 'sidebarCollapsed';
 
-  // overlay div para fechar ao clicar fora
+  // overlay div para fechar ao clicar fora (só no off-canvas mobile)
   const overlay = document.createElement('div');
   overlay.className = 'overlay';
   document.body.appendChild(overlay);
@@ -3792,13 +4296,29 @@ function setupMobileMenu() {
     overlay.classList.remove('visible');
   }
 
-  toggle.addEventListener('click', openSidebar);
-  close.addEventListener('click', closeSidebar);
+  // Desktop: recolher/expandir o índice lateral (persistido). A classe só tem
+  // efeito no CSS >=769px; no mobile ela é inócua (lá vale o off-canvas .open).
+  function setCollapsed(on) {
+    app.classList.toggle('sidebar-collapsed', on);
+    try { localStorage.setItem(COLLAPSE_KEY, on ? '1' : '0'); } catch (e) {}
+  }
+  if (localStorage.getItem(COLLAPSE_KEY) === '1') app.classList.add('sidebar-collapsed');
+
+  // ☰: no desktop expande (só aparece quando recolhido); no mobile abre off-canvas.
+  toggle.addEventListener('click', () => {
+    if (desktop.matches) setCollapsed(false);
+    else openSidebar();
+  });
+  // ✕: no desktop recolhe; no mobile fecha o off-canvas.
+  close.addEventListener('click', () => {
+    if (desktop.matches) setCollapsed(true);
+    else closeSidebar();
+  });
   overlay.addEventListener('click', closeSidebar);
 
-  // fecha ao clicar em link na sidebar (mobile)
+  // fecha ao clicar em link na sidebar (só mobile off-canvas)
   document.getElementById('toc-nav').addEventListener('click', e => {
-    if (e.target.tagName === 'A') closeSidebar();
+    if (e.target.tagName === 'A' && !desktop.matches) closeSidebar();
   });
 }
 

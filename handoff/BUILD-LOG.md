@@ -5,10 +5,11 @@
 
 ## Current Status
 
-**Active step:** P3 (full in-sheet character builder) BUILT, awaiting Richard's review.
-**Last cleared:** P3 — app.js/style.css — 2026-07-06 (validate + typecheck + test + sanity-builder all
-green, plus ad hoc jsdom event-driven smoke checks of the new sheet controls; browser click-through
-still needs a human — see REVIEW-REQUEST.md).
+**Active step:** Layout B (Bancada) restructure of `renderCharacter` BUILT, awaiting Richard's review.
+**Last cleared:** Layout B — app.js/style.css — 2026-07-07 (validate + typecheck + test + sanity-builder
+all green, plus a new jsdom smoke script driving the full rail/build/bench flow end-to-end incl. sphere
+acquisition and talent addition through the bench; browser click-through still needs a human — see
+REVIEW-REQUEST.md).
 **Pending deploy:** NO (feature branch `structured-mechanics-layer`, not merging until proven)
 **Curation DONE (Buckets 1 & 2):** flags 100→18. All talent-name mismatches resolved (sphere
 self-references fixed at source; talent-name variants via extractor `TALENT_ALIAS`; source renames
@@ -219,6 +220,85 @@ Deploy: pending
 
 ---
 
+### Layout B (Bancada) — restructure `renderCharacter` — BUILT (pending review)
+*Date: 2026-07-07*
+
+Files changed:
+- `app.js` — full restructure of the "Meu Personagem" sheet (`renderCharacter`, ~1550 lines touched)
+  into the approved Layout B / Bancada from `design-previews/builder-bancada.html`: sticky left
+  `.char-rail` (character tabs + `#char-new`, identity `.char-form`, proficiências in a collapsible
+  `<details>`, mini-stats + new `.char-budget-bar`, `.char-railnav` sphere nav) and a right
+  `.char-main` with `.char-build` (active-sphere-only panel) + `.char-bench` (master-detail
+  workbench for adding talents/spheres). New module-level view state `charView = { sphere,
+  benchMode, sel, scope, search }` (never persisted). New/extracted functions: `charSphereTitles`,
+  `talentCandidatesForSphere`, `talentPickPath`, `talentGate` (+`prereqStatusLabel`/
+  `describePrereqs`), `sphereCandidates` (pure data, extracted from the deleted
+  `buildAddTalentPicker`/`buildAddSpherePicker`); `charTalentCard` (hoisted out of
+  `renderCharacter`, unchanged body); `renderSphereBuildPanel` (extracted per-sphere loop body,
+  keeps the `.char-sphere` class + `.char-sphere-manage` block); `buildCharBuildContent`,
+  `buildRailNavHTML`, `buildCharBudgetHTML`/`statCellHTML`/`budgetBarHTML`, `buildTalentDetail`,
+  `buildTalentBenchPanel`, `buildSphereDetail`, `buildSphereBenchPanel`, `buildCharBenchInner`;
+  view-state helpers `resetCharView`/`normalizeCharView`/`switchActiveChar`; and the new
+  `refreshCharBench()` (view-only re-render). `setupCharacter`'s delegated listeners extended
+  (not replaced) with: `.char-rail-sphere` (switch active sphere), `.char-rail-addsphere` (enter
+  spheres mode), `.char-bench-li` (select), `.char-bench-scope` (scope toggle), `.char-bench-acquire`
+  (acquire from the bench), a new `.char-btn` branch guarded by `.closest('.char-bench')` (add
+  talent from the bench detail — reuses `applyTalentToggle`), and a new `content` `input` listener
+  for `.char-bench-search` (live filtering with focus/caret preservation). Removed the now-dead
+  `.char-add-sphere-btn` click handler (its producer, `buildAddSpherePicker`, no longer exists).
+- `style.css` — deleted the dead `.char-add-talent(-row)`/`.char-add-btn`/`.char-add-sphere(-select|
+  -btn)` rules (their markup no longer exists); added the Layout B block: `.char-layout`/`.char-main`,
+  rail sizing overrides for the *reused* `.char-stats`/`.char-stat` (not duplicated), `.char-profs-details`
+  (collapsible proficiencies, hides `buildProficiencies`'s own inner title since the `<summary>`
+  labels it), `.char-budget-bar` family, `.char-railnav`/`.char-rail-sphere`/`.char-rail-addsphere`,
+  a `.char-build .char-sphere` panel-chrome override (border/bg, scoped — doesn't touch bare
+  `.char-sphere`), and the full `.char-bench`/`.char-bench-grid`/`-list`/`-li`/`-detail`/`-tools`/
+  `-scope`/`-search`/`-acquire` family + a collapse-to-1-column media query at 880px.
+
+Result: `npm run validate` (0 errors), `npm run typecheck` (green), `npm test` (28/28),
+`node scripts/sanity-builder.js` (29/29) all green (none of them exercise app.js's DOM wiring).
+`node --check app.js` clean. Wrote a new ad hoc jsdom smoke script (same technique as
+sanity-builder.js, not committed) that loads the real app.js/rules.js, calls `setupCharacter()` +
+`renderCharacter()`, creates a level-5 Feiticeiro (Sangue Feérico), and dispatches real click/input
+events end-to-end: empty-state render, full layout present, rail nav populated, bench list
+populated, item selection (view-only patch), scope toggle, live search with focus+caret preserved
+across the `.char-bench` DOM replacement, switching to spheres mode (confirms `.char-build` goes
+empty), acquiring a sphere from the bench (mutation → budget/rail updates), adding a talent from
+the bench detail's Add button (mutation, owned-count grows), and confirmed
+`renderSphereAcquireBar` (reading-page bar) is untouched and still returns `.sphere-acquire`.
+24/24 assertions passed. Full manual browser click-through still needed — see REVIEW-REQUEST.md.
+
+Decisions made:
+- `refreshCharBench()` patches BOTH `.char-build` and `.char-bench` (not just `.char-bench` as the
+  literal brief text says) — necessary because switching the active sphere via the rail is a
+  view-only action that changes which sphere's panel `.char-build` must show; without this, the rail
+  highlight would move but the build panel would show the stale sphere. The rail's own
+  form/proficiências/stats are left untouched (mutation-only, unaffected by view actions). Flagging
+  this explicitly for Arch/Richard since it's a deliberate broadening of the brief's literal scope,
+  not a miss.
+- `buildAddTalentPicker`/`buildAddSpherePicker` were deleted rather than kept-but-unused: their DOM
+  output (inline pill row / `<select>`+button) has no place in Layout B (the bench replaces both),
+  so keeping them would be dead code. Their filtering logic was extracted verbatim into
+  `talentCandidatesForSphere`/`sphereCandidates` (same predicates, same order) so nothing was
+  reimplemented, just re-shaped from "build DOM" to "return data".
+- Gate-only display logic (`talentGate`) mirrors `applyTalentToggle`'s exact branching (free-path
+  via `Rules.prereqCheck` when there's cap room and the sphere isn't granted-only, else extra-path
+  via `Rules.canAddTalent`) so the bench's blocked/available labels can never diverge from what
+  clicking Add will actually do — no new rule surface.
+- The bench's Add button reuses `makeCharControl` as-is (brief's explicit instruction) rather than
+  a custom disabled-state button like the mockup's "Indisponível" — prereq-blocked clicks still go
+  through `applyTalentToggle` → `showCharNotice`, identical to every other `.char-btn` in the app;
+  the block is communicated via the detail's gate line (⚠ + reason), not by disabling Add.
+- Per-sphere `_unresolvedLegacy` warnings (migration leftovers) are now only visible when that
+  sphere is the active one in `.char-build`, instead of all-at-once as before — an expected
+  consequence of master-detail (you only see one sphere's detail at a time), not a P1/P2/reading-bar
+  regression.
+
+Reviewer findings: pending — see `handoff/REVIEW-REQUEST.md`.
+Deploy: pending
+
+---
+
 ## Known Gaps
 *Logged here instead of fixed. Addressed in a future step.*
 
@@ -242,6 +322,16 @@ Deploy: pending
   Related minor open item: whether Universal's general/untagged talents (Contrafeitiço, Foco Místico,
   Pacote Universal, the "Extremo" advanced ones) should be pickable regardless of the chosen package
   (currently `talentTags` scopes them out).
+
+- **KG-5 (Metamágica — restricted allowance)** — Feiticeiro's **Metamágica** feature
+  (`class-features.json`) already carries `"group": "talento (Meta) da esfera Universal"`, but
+  `Rules.classFeatureBonus` (src/rules.js:104) ignores `group` and just adds `bonusByLevel` (+2/+3/+4
+  cumulative) to the **general** magic budget — so the extra picks can be spent on ANY sphere. Correct
+  rule: those N picks are a **restricted allowance**, usable only on Universal **Meta** (metaesfera)
+  talents, at cost 0, without inflating the general budget. Needs a new grant/allowance type in the
+  rules engine + surfacing it in the builder (like P1/P2 in scope). **Owner decision: implement as a
+  dedicated increment AFTER the Layout B UI is validated & committed** (keeps the UI branch commit
+  UI-only). Note text already fixed (2026-07-07); the enforcement is what's deferred.
 
 ---
 

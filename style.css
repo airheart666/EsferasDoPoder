@@ -497,6 +497,11 @@ body.modal-open { overflow: hidden; }
   margin: 0 auto;
   width: 100%;
 }
+/* O builder (Layout B, duas colunas: rail + bancada) precisa da largura inteira —
+   a max-width de leitura o espremeria e o detalhe da bancada ficaria estreito
+   demais. Liberada só quando #content contém .char-layout; as páginas de leitura
+   mantêm a medida confortável. (:has degrada p/ o comportamento atual se ausente.) */
+#content:has(.char-layout) { max-width: none; }
 
 #loading {
   color: var(--text-muted);
@@ -1758,46 +1763,318 @@ h4.base-ability::after {
   font-family: var(--font-ui);
   font-size: 0.88rem;
 }
-/* Painel "adicionar talento" (ficha): lista compacta de pílulas +Nome */
-.char-add-talent { margin: 0.4rem 0 0.7rem; }
-.char-add-talent-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-.char-add-btn.char-btn {
-  font-size: 0.8rem;
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-/* Painel "adicionar esfera" (topo da seção, ficha) */
-.char-add-sphere {
+/* ============================================================
+   LAYOUT B (BANCADA) — ficha "Meu Personagem"
+   Rail fixo à esquerda (identidade+stats+orçamento+nav de esferas) + à direita
+   o build da esfera ativa (.char-build, reusa .char-sphere/.char-cards/.char-btn/
+   .char-sphere-manage/.pkg-select/.freepick-select) + bancada master-detail
+   sempre visível (.char-bench). Espelha design-previews/builder-bancada.html.
+   ============================================================ */
+.char-layout { display: grid; grid-template-columns: 270px 1fr; gap: 1.4rem; align-items: start; }
+.char-main { display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; }
+
+/* ---- Rail --------------------------------------------------------------- */
+.char-rail {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.5rem 0 1.2rem;
+  flex-direction: column;
+  gap: 0.9rem;
 }
-.char-add-sphere-select {
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  color: var(--text);
-  background: var(--bg-content);
+.char-rail .char-selector { margin: 0; }
+.char-rail .char-form { margin: 0; }
+/* Reusa .char-stats/.char-stat (não duplica) — só compacta pro rail estreito. */
+.char-rail-stats .char-stats { margin: 0 0 0.5rem; gap: 0.45rem; }
+.char-rail-stats .char-stat { padding: 0.5rem 0.4rem; }
+.char-rail-stats .cs-val { font-size: 1.35rem; }
+.char-rail-stats .char-feature-notes { margin: 0.6rem 0 0; font-size: 0.8rem; }
+
+/* Proficiências recolhidas por padrão (buildProficiencies fica intacto; o
+   título interno dele é escondido — o <summary> já rotula o painel). */
+.char-profs-details {
   border: 1px solid var(--table-border);
   border-radius: var(--border-radius);
-  padding: 0.3rem 0.5rem;
-  max-width: 18rem;
+  background: var(--bg-content);
 }
-.char-add-sphere-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
-.char-add-sphere-btn {
+.char-profs-details > summary {
+  cursor: pointer;
   font-family: var(--font-ui);
   font-size: 0.85rem;
   font-weight: 700;
-  cursor: pointer;
-  color: #fff;
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: var(--border-radius);
-  padding: 0.35rem 0.9rem;
+  color: var(--text-muted);
+  padding: 0.55rem 0.8rem;
+  list-style: none;
 }
-.char-add-sphere-btn:hover { background: var(--accent-light); }
+.char-profs-details > summary::-webkit-details-marker { display: none; }
+.char-profs-details > summary::before { content: '▸ '; }
+.char-profs-details[open] > summary { border-bottom: 1px solid var(--table-border); }
+.char-profs-details[open] > summary::before { content: '▾ '; }
+.char-profs-details .char-profs { margin: 0; padding: 0.75rem 0.8rem; }
+.char-profs-details .char-profs-title { display: none; }
+
+/* Barra de orçamento por tipo de talento (mágico/marcial) — substitui a antiga
+   célula de texto "X/Y" dentro de .char-stats por um widget compacto com barra. */
+.char-budget-bar {
+  background: var(--stat-bg);
+  border: 1px solid var(--stat-border);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 0.65rem;
+}
+.char-budget-bar + .char-budget-bar { margin-top: 0.5rem; }
+.char-budget-bar.over { border-color: var(--oxblood); }
+.cbb-line { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-ui); font-size: 0.8rem; color: var(--text-muted); }
+.cbb-line b { font-family: var(--font-display); font-weight: 600; color: var(--accent); font-size: 1.05rem; }
+.char-budget-bar.over .cbb-line b { color: var(--oxblood); }
+.cbb-track { height: 6px; border-radius: 3px; background: var(--table-border); margin-top: 0.35rem; overflow: hidden; }
+.cbb-track i { display: block; height: 100%; background: var(--accent); transition: width 0.25s; }
+.char-budget-bar.over .cbb-track i { background: var(--oxblood); }
+.cbb-warn { color: var(--oxblood); font-family: var(--font-ui); font-size: 0.74rem; margin-top: 0.3rem; }
+[data-theme="dark"] .cbb-warn { color: var(--oxblood-light); }
+.cbb-hint { color: var(--text-muted); font-family: var(--font-ui); font-size: 0.7rem; margin-top: 0.3rem; opacity: 0.85; }
+
+/* Navegação de esferas do rail */
+.char-railnav {
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: var(--bg-content);
+}
+.char-railnav-h {
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0.45rem 0.7rem;
+  border-bottom: 1px solid var(--table-border);
+}
+.char-rail-sphere {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+  border: none;
+  border-left: 3px solid transparent;
+  border-top: 1px solid color-mix(in srgb, var(--table-border) 60%, transparent);
+  background: none;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  color: var(--text);
+  text-align: left;
+}
+.char-rail-sphere:first-of-type { border-top: none; }
+.char-rail-sphere:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.char-rail-sphere.active {
+  border-left-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  font-weight: 700;
+  color: var(--accent);
+}
+.char-rail-sphere .crs-count { font-size: 0.76rem; color: var(--text-muted); }
+.char-rail-sphere.active .crs-count { color: var(--accent); }
+.char-rail-sphere .crs-granted { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--verdigris); }
+.char-rail-addsphere {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  color: var(--copper);
+  background: none;
+  border: none;
+  border-top: 1px dashed var(--table-border);
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+.char-rail-addsphere:hover, .char-rail-addsphere.active { color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+
+/* ---- Build da esfera ativa (.char-build reusa .char-sphere/.char-cards) -- */
+.char-build .char-sphere {
+  margin: 0;
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--bg-content) 65%, transparent);
+}
+.char-build-empty { margin: 0; }
+
+/* ---- Accordion de esferas: todas visíveis, a ativa expandida ---- */
+.char-accordion { display: flex; flex-direction: column; gap: 0.6rem; }
+.char-accordion .char-sphere > .char-sphere-title::before { content: '▾ '; color: var(--text-muted); font-weight: normal; }
+.char-sphere-toggle { cursor: pointer; }
+.char-sphere-toggle:hover { color: var(--accent); }
+.char-sphere-collapsed {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  background: color-mix(in srgb, var(--bg-content) 45%, transparent);
+  color: var(--text);
+}
+.char-sphere-collapsed:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.char-sphere-collapsed .csc-caret { color: var(--text-muted); }
+.char-sphere-collapsed .csc-name { font-weight: 600; }
+.char-sphere-collapsed .csc-count { margin-left: auto; font-family: var(--font-ui); font-size: 0.8rem; color: var(--text-muted); }
+.char-sphere-collapsed .char-granted-badge { margin-left: 0; }
+
+/* ---- Bancada master-detail ------------------------------------------------ */
+.char-bench {
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: var(--bg-content);
+}
+/* Workbench de altura fixa: a lista (estreita) e o detalhe (largo) rolam cada um
+   por conta própria, então nenhum "encolhe" o outro e a barra da lista preenche
+   todo o frame. O detalhe leva a maior parte da largura → texto confortável. */
+.char-bench-grid { display: grid; grid-template-columns: minmax(180px, 220px) 1fr; height: min(72vh, 600px); }
+.char-bench-list { border-right: 1px solid var(--table-border); overflow-y: auto; overflow-x: hidden; }
+/* Entrada "+ Adicionar esfera" sempre visível na barra da bancada (antes ficava
+   no fim do rail, exigindo scroll). Volta = "‹ Voltar aos talentos" no modo esferas. */
+.char-bench-addsphere, .char-bench-backtotalents {
+  margin-left: auto;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  padding: 0.28rem 0.72rem;
+  border: 1px solid var(--copper);
+  border-radius: var(--border-radius);
+  background: none;
+  color: var(--copper);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.char-bench-addsphere:hover, .char-bench-backtotalents:hover { background: color-mix(in srgb, var(--copper) 12%, transparent); }
+.char-railnav-empty { padding: 0.5rem 0.7rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+.char-bench-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--table-border);
+}
+.char-bench-search {
+  flex: 1 1 auto;
+  min-width: 8rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  background: var(--bg-content);
+  color: var(--text);
+}
+.char-bench-search:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.char-bench-scope {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--table-border);
+  border-radius: 999px;
+  background: var(--bg-content);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.char-bench-scope.on { background: var(--verdigris); border-color: var(--verdigris); color: #fff; }
+.char-bench-li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border-bottom: 1px solid color-mix(in srgb, var(--table-border) 60%, transparent);
+  font-family: var(--font-ui);
+}
+.char-bench-li:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.char-bench-li.sel { background: color-mix(in srgb, var(--accent) 10%, transparent); box-shadow: inset 3px 0 0 var(--accent); }
+.char-bench-li .cbl-name { font-weight: 700; color: var(--text); }
+.char-bench-li.blocked { opacity: 0.55; }
+.char-bench-li .cbl-meta { margin-left: auto; font-size: 0.74rem; color: var(--text-muted); white-space: nowrap; }
+.char-bench-li .cbl-lock { margin-left: auto; font-size: 0.72rem; color: var(--oxblood); }
+[data-theme="dark"] .char-bench-li .cbl-lock { color: var(--oxblood-light); }
+.char-bench-li .cbl-tag { font-size: 0.66rem; color: var(--text-muted); opacity: 0.8; }
+.char-bench-empty { padding: 1.3rem 0.9rem; color: var(--text-muted); font-style: italic; font-family: var(--font-ui); font-size: 0.88rem; }
+
+.char-bench-detail { min-width: 0; overflow-y: auto; }
+.char-bench-detail-inner { min-width: 0; }
+/* Cabeçalho FIXO do detalhe: nome + meta (esfera·tipo·custo) + pré-req à esquerda,
+   ação (Adicionar/Adquirir) à direita — preso no topo enquanto o corpo (regras) rola,
+   então a ação está sempre visível sem precisar rolar até o fim do texto. */
+.cbd-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.85rem 1.2rem;
+  background: var(--bg-content);
+  border-bottom: 1px solid var(--table-border);
+}
+.cbd-head-info { flex: 1 1 auto; min-width: 0; }
+.cbd-head-info h4 { font-family: var(--font-display); font-size: 1.4rem; line-height: 1.05; margin-bottom: 0.15rem; }
+.cbd-meta { font-family: var(--font-ui); font-size: 0.8rem; color: var(--text-muted); }
+.cbd-req { font-family: var(--font-ui); font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem; }
+.cbd-req.bad { color: var(--oxblood); }
+[data-theme="dark"] .cbd-req.bad { color: var(--oxblood-light); }
+.cbd-req b { color: var(--text); }
+.cbd-head .char-btn.char-bench-add, .cbd-head .char-bench-acquire { flex: 0 0 auto; margin-top: 0.1rem; }
+/* Botão Adicionar da bancada = .char-btn (makeCharControl) — só maior/rotulado aqui. */
+.char-btn.char-bench-add {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  padding: 0.42rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--verdigris);
+  background: var(--verdigris);
+  color: #fff;
+  white-space: nowrap;
+}
+.char-btn.char-bench-add:hover { background: color-mix(in srgb, var(--verdigris) 82%, black 0%); border-color: var(--verdigris); color: #fff; }
+.char-btn.char-bench-add.needs-sphere,
+.char-btn.char-bench-add:disabled {
+  background: none; border-color: var(--table-border); color: var(--text-muted); opacity: 1;
+}
+/* Corpo ROLÁVEL: medida de leitura confortável + nada estoura o frame. */
+.cbd-body { padding: 0.9rem 1.2rem 1.2rem; }
+.cbd-desc { font-size: 0.95rem; max-width: var(--read-width, 860px); }
+.cbd-desc, .cbd-desc * { min-width: 0; overflow-wrap: break-word; }
+.cbd-desc .fav-card, .cbd-desc .talent-card { margin: 0; }
+.cbd-desc table { display: block; overflow-x: auto; max-width: 100%; }
+.char-bench-acquire {
+  align-self: flex-start;
+  margin-top: auto;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.42rem 1.1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--copper);
+  background: var(--copper);
+  color: #fff;
+}
+.char-bench-acquire:hover { background: var(--accent-light); border-color: var(--accent-light); }
+.char-bench-acquire:disabled { cursor: not-allowed; background: none; border-color: var(--table-border); color: var(--text-muted); }
+
+@media (max-width: 880px) {
+  .char-layout { grid-template-columns: 1fr; }
+  .char-rail { position: static; max-height: none; overflow: visible; }
+  .char-bench-grid { grid-template-columns: 1fr; height: auto; }
+  .char-bench-list { border-right: none; border-bottom: 1px solid var(--table-border); max-height: 280px; }
+  .char-bench-detail { overflow-y: visible; }
+  .cbd-head { position: static; }
+}
 
 /* Notação mecânica: dados e CD em chips discretos e escaneáveis */
 .dice, .dc {
@@ -2134,8 +2411,16 @@ mark.hl.current {
   .overlay.visible { display: block; }
 }
 
+/* Índice/menu lateral colapsável no desktop: ✕ recolhe, ☰ reabre (persistido).
+   No mobile o ✕/☰ seguem controlando o off-canvas (.open) — regras acima. */
 @media (min-width: 769px) {
-  #sidebar-close { display: none; }
+  #app { transition: grid-template-columns 0.22s ease; }
+  #app.sidebar-collapsed { grid-template-columns: 0 1fr; }
+  #sidebar { min-width: 0; transition: opacity 0.18s ease; }
+  #app.sidebar-collapsed #sidebar { overflow: hidden; opacity: 0; border-right-color: transparent; pointer-events: none; }
+  #sidebar-close { display: block; }            /* ✕ vira o botão de recolher no desktop */
+  #menu-toggle { display: none; }
+  #app.sidebar-collapsed #menu-toggle { display: inline-flex; }  /* ☰ reabre quando recolhido */
 }
 
 /* ============================================================
