@@ -18,7 +18,7 @@
         { "id": "dissipar",       "label": "Dissipar",          "baseTalents": ["Dissipar"],        "talentTags": ["dissipar"],        "freeLabel": "dissipar",        "freePicks": 0 },
         { "id": "mana",           "label": "Mana",              "baseTalents": ["Vínculo de Mana"], "talentTags": ["vínculo de mana"], "freeGroup": { "tag": "vínculo de mana" }, "freeLabel": "vínculo de mana", "freePicks": 1 },
         { "id": "metaesfera",     "label": "Metaesfera",        "baseTalents": [],                  "talentTags": ["metaesfera"],      "freeGroup": { "tag": "metaesfera" },      "freeLabel": "metaesfera",     "freePicks": 1 },
-        { "id": "criacao-magias", "label": "Criação de Magias", "baseTalents": [],                  "talentTags": ["esfera dupla"],    "freeGroup": { "tag": "esfera dupla" },    "freeLabel": "esfera dupla",   "freePicks": 1 },
+        { "id": "criacao-magias", "label": "Criação de Magias", "baseTalents": [],                  "talentTags": ["esfera dupla"],    "freeGroup": { "tag": "esfera dupla" },    "freeLabel": "esfera dupla",   "freePicks": 1, "requires": { "minMagicSpheresExcludingSelf": 2 } },
         { "id": "magia-selvagem", "label": "Magia Selvagem",    "baseTalents": ["Aura do Caos"],    "talentTags": ["magia selvagem"],  "freeLabel": "magia selvagem",  "freePicks": 0 }
       ]
     }

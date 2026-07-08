@@ -1,303 +1,175 @@
-# Review Feedback — KG-5: Metamágica restricted allowance
+# Review Feedback — KG-4: Universal "Criação de Magias" (esfera dupla)
 
 *Written by Reviewer (Richard). Read by Owner and team.*
 
-**Date:** 2026-07-07  
-**Verdict:** **SHIP** — zero blockers; minimal out-of-scope housekeeping flagged below.
+**Date:** 2026-07-08  
+**Verdict:** **SHIP** — zero blockers; all high-value checks pass.
 
 ---
 
 ## Executive Summary
 
-The rules layer and UI layer are both correct. `restrictedAllowances` computes the Metamágica allowance accurately; `classFeatureBonus` properly excludes it from the magic budget; `ownedTalentIds` includes the metamagic picks so they satisfy prerequisites; and the UI handles expansion/collapse, cap enforcement, two-way dedup, and state resets cleanly. All 30 tests pass. Implementation matches the brief exactly.
+All high-value checks pass. The extractor correctly handles nested parentheses and synthesizes dual-sphere prerequisites. The ~46 talent id changes are safe (no data file references to old ids; character saves degrade gracefully). The package gate correctly counts accessed magic spheres and blocks/allows selection with proper reason messages. General talents (Contrafeitiço, Foco Místico, Pacote Universal, 4 Extremo) remain available under any package. Full test suite green: 35/35 assertions + 29/29 sanity checks. No regressions detected.
 
 ---
 
-## Rules Core (`src/rules.js`, `schema/class-features.schema.json`, `data/class-features.json`)
+## 1. Extractor Parse — `scripts/extract-structured.js` ✓
 
-### `classFeatureBonus(char, idx)` — lines 113–117
-**Status:** ✓ Correct
+**Status: PASS — `lastTopParen`, `dualSpherePrereqs`, and `tagsOf` all correct.**
 
-- Features with `restrictedTo` are identified and skipped from the budget accumulation.
-- The note is still surfaced (`f.note` pushed to `out.notes`), so users see the mechanic explanation.
-- Non-restricted features continue to work as before.
-- **Test assertion:** `"Metamágica does NOT add to general magic budget"` — PASS (cfb.magic === 0 for a Feiticeiro lvl5).
+### Key Functions:
 
-### `restrictedAllowances(char, idx)` — lines 128–156
-**Status:** ✓ Correct
+- **`lastTopParen(name)` (lines 62–70):** Depth-aware extraction of the last top-level paren pair. Correctly handles nested parens at depth > 0. Returns `{base, inner}` or `{base, inner: null}`.
 
-- Scans both class-level and subclass-level features for `restrictedTo` markers.
-- Accumulates `bonusByLevel` up to `char.level` (cumulative sum).
-- Returns `{feature, sphere, tag, count, note}[]`.
-- **Test assertion:** `"Metamágica allowance count = 2 at lvl5 (cumulative bonusByLevel)"` — PASS (meta.count === 2).
-- Count will correctly grow to 3 at level 10, 4 at level 17 (via bonusByLevel pairs in data).
+- **`tagsOf(name)` (lines 72–82):** Uses `lastTopParen` to extract inner content, then splits on "/" and "e"/"ou" keywords. Nested "(talento)" are correctly stripped by taking only the head of each item before the inner parens.
 
-### `ownedTalentIds(char, idx)` — line 289
-**Status:** ✓ Correct
+- **`dualSpherePrereqs(name, sphereIds)` (lines 291–304):** Synthesizes sphere + talent prereqs from dual-sphere names. Tested cases:
+  - Simple dual: `Aurora (esfera dupla, Luz, Clima)` → sphere prereqs for Luz + Clima ✓
+  - Nested talent in dual: `Tempestade Nefasta (esfera dupla, Morte, Universal (Em Massa (metaesfera)), Clima)` → correctly parses 4 prereqs (3 spheres + 1 nested talent from Universal) ✓
+  - Non-sphere descriptors stay as `{type:'text'}` in prereqs (e.g., "geomancia metálica"); flagged for manual review ✓
 
-- Folds in `char.metamagic || []` as a final set union, alongside granted talents, freePicks, and package base abilities.
-- Ensures any talent in `char.metamagic` is considered "owned" for prereq checks and dedup.
+- **Integration (line 318–320 in `resolvePrereqs`):** Dual talents with "esfera dupla" tag invoke `dualSpherePrereqs` to inject synthesized prereqs. Unresolved items degrade to `{type:'text'}` + `_needsReview` marker ✓
 
-### Schema (`schema/class-features.schema.json`)
-**Status:** ✓ Correct
-
-- `restrictedTo` is a new object property with `additionalProperties: false` (strict).
-- Declares `sphere` and `tag` as optional strings.
-- Matches the structure used in `data/class-features.json`.
-
-### Data (`data/class-features.json`)
-**Status:** ✓ Correct
-
-- Feiticeiro "Metamágica" feature replaced `"group": "talento (Meta) da esfera Universal"` with structured `restrictedTo: {sphere, tag}`.
-- `bonusByLevel` remains `[[3, 1], [10, 1], [17, 1]]` (2 total at lvl 3–9, 3 at 10–16, 4 at 17+).
-- The note is preserved.
+- **Validation:** All 33 dual-sphere talents have ≥2 sphere prerequisites ✓
 
 ---
 
-## UI Layer (`app.js`, `style.css`)
+## 2. Id Churn (Owner-approved Global Fix) ✓
 
-### `METAMAGIC_KEY` Sentinel — line 28
-**Status:** ✓ Correct
+**Status: PASS — All id changes are safe; no stale references in data files.**
 
-- Defined as `const METAMAGIC_KEY = 'mm:Metamágica'`; used as the value of `charView.sphere` when the Metamágica entry is expanded.
-- Does not collide with any sphere title (starts with sentinel prefix).
-- Enables reuse of the existing accordion expand/collapse machinery without a parallel state field.
+### Verification:
 
-### `buildCharBuildContent(active)` — lines 1923–1935
-**Status:** ✓ Correct
+- **Scope of id churn:** ~46 talent ids across Alquimia, Destruição, Destino, Morte, and others. Old ids included garbage descriptors from nested-paren parse failures (e.g., `m-alquimia-acido-formula-arma-acido` → `m-alquimia-acido`).
 
-- Checks `const mm = metamagicAllowance(active)` early; only shows the Metamágica entry if it is truthy.
-- Appends either `renderMetamagicPanel(active, mm)` (expanded) or `buildCollapsedMetamagic(active, mm)` (collapsed) after the sphere entries.
-- The early-return for "Nenhuma esfera ainda" now also checks `&& !mm`, so a Feiticeiro with the feature but zero spheres still sees the entry.
+- **Data file integrity:** Grep confirms ZERO references to old id patterns (`formula-arma-*` etc.) in any `data/*.json` files ✓
 
-### `buildCollapsedMetamagic(active, allowance)` — lines 1938–1950
-**Status:** ✓ Correct
+- **Grant talent resolution:** Class-features subclass grants (20 talent grants total) all carry resolved ids. Examples:
+  - `universal-em-massa` → "Em Massa (metaesfera)" ✓
+  - `vida-revitalizar` → "Revitalizar" ✓
+  - Grant names stored at extract time; id is the lookup key (name descriptors added later don't break resolution) ✓
 
-- Mirrors `buildCollapsedSphere` exactly: `.char-sphere-collapsed` button, `data-sphere="mm:Metamágica"`, reuses the existing click handler.
-- Displays "✦ Metamágica" (symbol) + `X/N escolha(s)` (count).
-- The existing handler in `setupCharacter` will route METAMAGIC_KEY clicks to `charView.sphere = METAMAGIC_KEY` and call `refreshCharBench()`.
+- **Character save safety:** Stale ids from older saves will be flagged by legacy-migration system (`_unresolvedLegacy`); graceful degradation per design ✓
 
-### `renderMetamagicPanel(active, allowance)` — lines 1953–2006
-**Status:** ✓ Correct
-
-- Container `section.char-sphere` reuses the `.closest('.char-sphere')` guards from P1/P2 (no regressions).
-- Header `h3.char-sphere-title.char-sphere-toggle` with `data-sphere="mm:Metamágica"` reuses the existing toggle handler.
-- Cards for chosen talents: calls `charTalentCard(model.frag, id, 'free', 'Universal')` with `kind='free'` (shows "grátis" tag).
-  - Manually adds `.char-talent-extra` class for flex layout.
-  - Creates a separate `.char-mm-remove` button (NOT `.char-talent-remove`, which would call the wrong handler).
-  - Correctly inserts the button before the card content.
-- Shows a hint line while `picks.length < count`.
-- The note from the allowance is displayed.
-
-### `metamagicAllowance(active)` — lines 1703–1709
-**Status:** ✓ Correct
-
-- Thin wrapper: `Rules.restrictedAllowances(active, dataIndex)[0] || null`.
-- Scope is correctly limited to 1 today (Metamágica only); future features would need feature-keyed lookup (noted in brief, out of scope).
-
-### `metamagicCandidates(active, allowance)` — lines 2164–2178
-**Status:** ✓ Correct
-
-- Filters by tag (`allowance.tag = 'metaesfera'`).
-- Excludes via `Rules.ownedTalentIds`, which includes `char.metamagic` AND all normal Universal picks.
-- Two-way dedup: a Metamágica pick can't be offered again here; a normally-bought Universal talent can't be offered here either.
-
-### `talentCandidatesForSphere(active, title)` — line 1690
-**Status:** ✓ Correct
-
-- Added `...((active && active.metamagic) || [])` to the `owned` set.
-- Ensures a talent taken by Metamágica doesn't reappear as a purchasable extra in the normal Universal talent list.
-- The other half of the two-way dedup (reverse direction already covered by `metamagicCandidates` via `Rules.ownedTalentIds`).
-
-### `buildMetamagicDetail(active, item, allowance)` — lines 2181–2224
-**Status:** ✓ Correct
-
-- Mirrors `buildTalentDetail` layout: name/meta/description (cloned from `findCardInFrag`).
-- Button is `.char-mm-add` (NOT `.char-btn` — see decision below).
-- `dataset.id` only (no `dataset.char`); `dataset.sphere` not needed (allowance sphere is fixed).
-- Disabled and labeled "Cota cheia" when `char.metamagic.length >= allowance.count`.
-
-### `.char-mm-add` Class Decision — NOT `.char-btn`
-**Status:** ✓ Correct & Well-Justified
-
-**Why this is right:**
-- The pre-existing delegated handler looks for `cbtn.closest('.char-btn')` and calls `applyTalentToggle(active, title, item, cbtn)` with `JSON.parse(cbtn.dataset.char)`.
-- A `.char-mm-add` button only has `dataset.id` (no `dataset.char`/`dataset.sphere`).
-- If `.char-mm-add` had the `.char-btn` class, clicking it would crash on `JSON.parse(undefined)`.
-- By explicitly omitting `.char-btn`, the Metamágica handler (which comes after in the same listener) is guaranteed to match first via `.char-mm-add` and never route through `applyTalentToggle`.
-
-**CSS reuse (correct approach):**
-- The stylesheet combines `.char-btn.char-bench-add, .char-mm-add` selectors (line 2025) to share the button visual.
-- No class duplication; clean separation of handler responsibilities.
-
-### `buildMetamagicBenchPanel(active, allowance)` — lines 2227–2264
-**Status:** ✓ Correct
-
-- Reuses master-detail shell (`.char-bench-li` + search + detail).
-- Toolbar shows a single label (no scope chips, no "+ Adicionar esfera") as specified.
-- Correctly delegates to `buildMetamagicDetail` for the detail panel.
-- Search filter (`normalizeTerm`) works as in the normal bench.
-
-### `buildTalentBenchPanel(active)` — lines 2269–2273
-**Status:** ✓ Correct
-
-- Early guard: if `charView.sphere === METAMAGIC_KEY`, calls `buildMetamagicBenchPanel(...)` and returns (never falls into the normal esfera/scope path).
-- The existing sphere-based talent list is untouched.
-
-### Cap Enforcement — Belt-and-Suspenders
-**Status:** ✓ Correct
-
-**In the UI (preventive):**
-- `.char-mm-add` is disabled when `char.metamagic.length >= allowance.count` (line 2192 in buildMetamagicDetail).
-- Button label changes to "Cota cheia".
-
-**In the handler (defensive):**
-- Line 2844: Early return if `mmAdd.disabled`.
-- Line 2851: Re-checks `picks.length >= allowance.count` and `tagOk` before `updateCharacter`.
-- Shows an error notice if the check fails.
-
-### Two-Way Dedup Verification
-**Status:** ✓ Correct
-
-1. **Metamágica → Universal normal talents:**
-   - `metamagicCandidates` excludes via `Rules.ownedTalentIds(active, dataIndex)`.
-   - This set includes both `char.metamagic` (the Metamágica picks) and normal Universal extras.
-   - ✓ A Metamágica pick can't be offered again in the Metamágica bench.
-
-2. **Universal normal talents → Metamágica:**
-   - `talentCandidatesForSphere(active, 'Universal')` now excludes `...((active && active.metamagic) || [])`.
-   - ✓ A Metamágica pick won't reappear as a normal Universal extra.
-
-3. **Reverse direction (normal extra → Metamágica):**
-   - When a talent is bought as a normal Universal extra, it enters `active.spheres[universal].talents`.
-   - Next render, `Rules.ownedTalentIds` includes it (line 278 of rules.js).
-   - `metamagicCandidates` excludes it via that set.
-   - ✓ A normal pick can't be chosen again as Metamágica.
-
-### `normalizeCharView(active)` — lines 2462–2467
-**Status:** ✓ Correct
-
-- METAMAGIC_KEY is valid only while `metamagicAllowance(active)` returns truthy.
-- If the feature disappears (level drops, subclass changes, etc.), the sentinel becomes invalid and `charView.sphere` resets.
-- Mirrors the behavior of sphere removal.
-
-### `migrateCharacters()` — line 2695
-**Status:** ✓ Correct
-
-- Seeds `char.metamagic = []` on legacy characters.
-- Runs alongside other defaults (`proficiencies`, `tradition`, `subclass`).
-- Marked `changed = true` so the localStorage update fires.
-
-### Handlers (`setupCharacter`) — lines 2841–2867
-**Status:** ✓ Correct
-
-**`.char-mm-add` handler:**
-- Line 2841: Finds the button via `.closest('.char-mm-add')`.
-- Line 2844: Returns early if disabled or no active character.
-- Line 2845–2846: Re-fetches the allowance (defensive).
-- Line 2847–2850: Retrieves the talent and checks its tags.
-- Line 2851: Final cap + tag check before mutation.
-- Line 2852: Mutates via `updateCharacter` (same pattern as other add handlers).
-- Line 2854: Full re-render (correct — syncs charView and UI state).
-
-**`.char-mm-remove` handler:**
-- Line 2859: Finds the button via `.closest('.char-mm-remove')`.
-- Line 2864: Filters the id out of `active.metamagic`.
-- Line 2865: Re-renders (same pattern as other remove handlers).
-
-**No routing through `applyTalentToggle`:**
-- Both handlers return early, so the existing talent-add logic is never reached for Metamágica.
-- Reuses handlers for `.char-sphere-collapsed` (expand), `.char-sphere-toggle` (collapse), `.char-bench-li` (selection) — they are sphere-agnostic and work with METAMAGIC_KEY out of the box.
+- **Validate.js report:** 0 errors, confirming all prereq names resolve correctly ✓
 
 ---
 
-## CSS (`style.css`)
+## 3. Package Gate — `Rules.packageRequirementMet` ✓
 
-### `.char-mm-remove` Styling — lines 1427, 1432
-**Status:** ✓ Correct
+**Status: PASS — Gate implementation is correct and robust.**
 
-- Extends the selector for `.char-talent-remove` (same visual).
-- Scoped variant for `.char-talent-extra > .char-mm-remove` (line 1725).
-- Matches the removal button styling throughout.
+### Verification:
 
-### `.char-mm-entry` Styling — lines 1918–1919
-**Status:** ✓ Correct
+**Rules.packageRequirementMet (src/rules.js, lines 345–363):**
+- Counts accessed MAGIC spheres via `accessedSphereIds(char, idx)` ✓
+- Explicitly excludes the current sphere (`Universal`) via `if (sid === sphereId) continue;` (line 354) ✓
+- Compares count against `minMagicSpheresExcludingSelf` requirement ✓
+- Returns `{ok, reason}` with localized error message ✓
 
-- Applies a copper accent (`var(--copper)`) to both the collapsed row and the expanded header.
-- Visually distinguishes Metamágica from normal purchasable spheres (subtle but clear).
-- Hover state: copper border and background tint (consistent with sphere entries).
+**buildPackageSelector (app.js, lines 708–733):**
+- Checks `if (opt.requires && active && dataIndex && spec.pkg !== opt.id)` before gating (line 724)
+  - Correctly skips gate check if option is already chosen (`spec.pkg !== opt.id` prevents false blocks) ✓
+- Calls `Rules.packageRequirementMet` on unmet options ✓
+- Disables option + appends reason to label (line 726) ✓
 
-### `.char-mm-add` Button Styling — lines 2025–2041
-**Status:** ✓ Correct
+**setPackage (app.js, line 1414):**
+- Defensive check: `if (pkgId && dataIndex && !Rules.packageRequirementMet(...).ok) return false;` ✓
+- Blocks invalid selection before state mutation ✓
+- Returns boolean for caller to handle ✓
 
-- Combined selector with `.char-btn.char-bench-add` (CSS reuse, no duplication).
-- Base, `:hover:not(:disabled)`, and `:disabled` states all correct.
-- Matches the verdigris theme used by other add buttons.
-
-### Dead CSS Removal — `.char-rail-addsphere` lines removed
-**Status:** ⚠ **Out of scope, but harmless**
-
-- This rule was added in Layout B (fbf7cbd) but has no references in the codebase.
-- The KG-5 diff removes it as a cleanup (not part of the brief, but appropriate housekeeping).
-- No functional impact; no regressions.
-- **Recommendation:** Document in commit message that this is dead CSS from Layout B, not a Metamágica change.
+**Test coverage:**
+- ✓ "KG-4: Criação de Magias package BLOCKED with <2 magic spheres" (char with only Universal)
+- ✓ "KG-4: Criação de Magias package ALLOWED with ≥2 magic spheres" (char with Universal + Luz + Clima)
 
 ---
 
-## Testing & Verification
+## 4. Scoping Decision (b): General Talents vs Other-Package Talents ✓
 
-### Automated Tests
-- **npm test:** 30/30 assertions PASS.
-  - "Metamágica does NOT add to general magic budget" ✓
-  - "Metamágica surfaces as a restricted allowance" ✓
-  - "Metamágica allowance count = 2 at lvl5" ✓
-  - All pre-existing tests (budget, prereqs, grants, etc.) still pass ✓
+**Status: PASS — Talent role classification is correct; no P2 regression.**
 
-### Validation
-- **npm run validate:** 0 errors (unaffected).
-- **npm run typecheck:** Green (app.js is out of scope).
-- **node scripts/sanity-builder.js:** 29/29 assertions PASS (migrateCharacters verified).
-- **node --check app.js:** Clean syntax.
+### Verification:
 
-### Browser Click-Through (from REVIEW-REQUEST.md jsdom smoke test)
-- 26/26 assertions passed in the hand-written integration test.
-- Covers expansion/collapse, cap enforcement, dedup (both directions), removal, and state reset.
-- Confirmed the general magic budget is NOT affected by Metamágica picks.
+**talentRole (app.js, lines 1536–1550):**
+- Line 1537: Base talents of the chosen package → `'base'` ✓
+- Lines 1544–1545: Talent ignored if:
+  - It has a package tag (from ANY package) AND that tag is not from the chosen package, OR
+  - It is a base ability of ANOTHER package (in `allPackageBaseIds` but NOT in `baseTalentIds` of chosen pkg) ✓
+- Untagged, non-base talents → remain as `'extra'` or `'free'` (available under any package) ✓
 
----
+**classSpec (app.js, lines 1508–1520):**
+- `allPackageTags` correctly collects all tags from all package options ✓
+- `allPackageBaseIds` correctly collects all base talent ids across all packages ✓
+- Returned in the spec for `talentRole` to distinguish general vs other-package talents ✓
 
-## Regressions Checklist
+**Data validation:**
+- Under "Criação de Magias" package (talentTags: ["esfera dupla"]):
+  - 33 dual-sphere talents in-scope ✓
+  - 7 general talents in-scope: Contrafeitiço, Foco Místico, Pacote Universal, Duração Extrema, Oportunista Extremo, Alcance Extremo, Golpe Extremo ✓
+  - 3 base talents of other packages ignored: Dissipar (dissipar pkg), Vínculo de Mana (mana pkg), Aura do Caos (magia selvagem pkg) ✓
+  - All package base abilities correctly classified for each package ✓
 
-✓ **Sphere accordion** — `renderSphereBuildPanel`, `.char-sphere-collapsed`, `.char-sphere-toggle` handlers untouched.  
-✓ **Bench (talents mode)** — Only one guard added at the top; normal talent list path unchanged.  
-✓ **Bench (spheres mode)** — `buildSphereBenchPanel` untouched.  
-✓ **P1 (granted sphere free picks)** — `.char-sphere-manage` and `.closest('.char-sphere')` guards byte-identical.  
-✓ **P2 (Universal package selection)** — `.closest('.char-sphere')` guards untouched.  
-✓ **Reading-page acquire bar** — Not touched.  
-✓ **Dark mode** — New CSS rules respect `var(--copper)`, `var(--accent)`, etc.; no hardcoded colors.
+**P2 regression check:** `npm run sanity-builder` yields 29/29 passing assertions (includes P1 granted access, P2 cross-sphere access, legacy migration) ✓
 
 ---
 
-## Minor Observations (Non-Blocking)
+## 5. Green Tests & Checks ✓
 
-1. **Search box in Metamágica toolbar:** The brief only mentioned a label, but the implementation includes the search input (`.char-bench-search`). This is reasonable — it matches the normal bench UX and costs nothing. Flag it if stricter fidelity to "só um rótulo" is required; otherwise, it's a UX win.
+| Check | Result | Details |
+|-------|--------|---------|
+| `npm run validate` | ✓ PASS | 0 warnings, 0 errors; all sphere prereqs resolve or degrade safely |
+| `npm run typecheck` | ✓ PASS | No TypeScript errors |
+| `npm test` | ✓ PASS | 35/35 assertions, including 5 new KG-4 tests (dual prereqs, gate block/allow) |
+| `node scripts/sanity-builder.js` | ✓ PASS | 29/29 assertions (P1, P2, legacy migration, no regressions) |
+| `node --check app.js` | ✓ PASS | Syntax valid |
 
-2. **Copper accent for Metamágica:** The brief said "só um realce... se precisar". The implementation adds a subtle copper color to distinguish it from normal spheres. This is minimal and clear; good judgment.
-
-3. **Future-proofing (`[0]` in `metamagicAllowance`):** The code correctly notes that if a second restricted-allowance feature is added, this should become a feature-keyed lookup. Scope is 1 today; the seam is identified.
+### Test Coverage Detail:
+- ✓ "KG-4: Aurora carries its 2 sphere prereqs (Luz + Clima)" 
+- ✓ "KG-4: Aurora BLOCKED without Luz+Clima"
+- ✓ "KG-4: Aurora ALLOWED with Luz+Clima"
+- ✓ "KG-4: Criação de Magias package BLOCKED with <2 magic spheres"
+- ✓ "KG-4: Criação de Magias package ALLOWED with ≥2 magic spheres"
 
 ---
 
-## Verdict: **SHIP**
+## 6. Edge Cases & Robustness ✓
+
+- **Dual talent with nested sphere talent:** "Tempestade Nefasta (esfera dupla, Morte, Universal (Em Massa (metaesfera)), Clima)" correctly parses with 4 prereqs (3 spheres + 1 nested talent) ✓
+
+- **Non-sphere descriptors in dual name:** "Aprimoramento de Liga (esfera dupla, Aprimoramento, Natureza (geomancia metálica))" correctly treats "geomancia metálica" as unresolved text, flagged for manual review ✓
+
+- **Package gate boundary:** Character with exactly 2 magic spheres (+ Universal) allows Criação de Magias; with 1 it blocks ✓
+
+- **Legacy character saves:** Old talent ids degrade gracefully (flagged in `_unresolvedLegacy`, not silently dropped) ✓
+
+---
+
+## 7. Minor Notes
+
+- 23 talents flagged with `_needsReview` remain (from earlier extraction; not introduced by KG-4). Unrelated to this change.
+- CRLF warnings in git diff are Windows line-ending normalization; harmless.
+- No uncommitted changes in test/build scripts; all extraction is deterministic.
+
+---
+
+## Sign-Off
+
+**Verdict: SHIP**
 
 **Blockers:** None.  
 **Should-fix:** None.  
 **Nits:** None.
 
-The implementation is correct, complete, and matches the brief exactly. All tests pass. No regressions detected. The decision to keep `.char-mm-add` off the `.char-btn` class is well-justified and prevents a crash. The rules layer correctly excludes Metamágica from the general budget and surfaces it as a restricted allowance. The UI cleanly reuses accordion machinery and delegates properly to the rules layer.
+No blockers. All load-bearing logic is correct:
+- Extractor handles nested parens flawlessly ✓
+- Id churn is safe (legacy fallback for saved chars) ✓
+- Package gate correctly counts and blocks ✓
+- Scoping preserves general talents, hides other-package talents ✓
+- Full test suite green (35 + 29 assertions) ✓
 
-**Out-of-scope cleanup:** The removal of `.char-rail-addsphere` CSS is harmless and improves code hygiene, but should be noted in the commit message as a separate housekeeping item.
+Ready to merge to `master`.
 
 ---
 
-**Ready to merge.** No owner sign-off required on regressions or bugs — all clean.
+**Reviewed by:** Richard  
+**Date:** 2026-07-08

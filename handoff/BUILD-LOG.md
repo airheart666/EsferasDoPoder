@@ -386,7 +386,16 @@ Deploy: pending
   "Invocação") that hasn't been migrated to ids yet cannot be auto-resolved during migration (no DOM
   signal available to disambiguate) — kept in `entry._unresolvedLegacy`, surfaced in the character
   sheet, never silently dropped. Affects at most 1-2 spheres, only pre-this-change saves.
-- **KG-4 (P2 follow-up)** — Universal's **Criação de Magias** package has stricter, unmodeled rules:
+- **KG-4 — RESOLVED 2026-07-08** (branch `kg4-criacao-magias`, Arch inline, Richard SHIP). Depth-aware
+  name parse (`lastTopParen`/`dualSpherePrereqs` in the extractor) now tags + enforces all 33 "esfera
+  dupla" talents' required spheres (+ nested specific talents); package gate `requires`
+  (`minMagicSpheresExcludingSelf:2`) blocks choosing Criação de Magias with <2 magic spheres
+  (`Rules.packageRequirementMet` + selector/`setPackage`); general untagged Universal talents (Contrafeitiço,
+  Foco Místico, Pacote Universal, the 4 "Extremo") are available under any package (`talentRole` +
+  `allPackageTags`/`allPackageBaseIds`). Global fix also cleaned ~46 nested-paren talent ids across
+  spheres (id churn accepted by Owner; non-destructive). Original scope below, for reference:
+
+- **KG-4 (P2 follow-up, original)** — Universal's **Criação de Magias** package has stricter, unmodeled rules:
   (a) access requires the character to already have ≥ 2 other magic spheres; (b) its free (esfera dupla)
   pick must satisfy that talent's OWN multi-sphere prerequisites — the two spheres it names + any specific
   talent — which are encoded only in the talent's name/tags (e.g. "Transformar Objeto (esfera dupla,

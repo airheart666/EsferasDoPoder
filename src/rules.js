@@ -336,11 +336,37 @@ const Rules = (() => {
     return { ok: granted || remaining >= 1, granted, remaining, section, reason: '' };
   }
 
+  /**
+   * Whether the character may CHOOSE a package (its `requires` gate). Today only
+   * `minMagicSpheresExcludingSelf` (e.g. Universal "Criação de Magias" needs ≥2 magic
+   * spheres besides Universal). Returns {ok, reason}.
+   * @param {Character} char @param {string} sphereId @param {string} pkgId @param {DataIndex} idx
+   */
+  function packageRequirementMet(char, sphereId, pkgId, idx) {
+    const sph = idx.sphereById.get(sphereId);
+    const opts = (sph && sph.acquisition && sph.acquisition.packages && sph.acquisition.packages.options) || [];
+    const opt = opts.find(o => o.id === pkgId);
+    const req = opt && opt.requires;
+    if (!req) return { ok: true, reason: '' };
+    if (req.minMagicSpheresExcludingSelf != null) {
+      let count = 0;
+      for (const sid of accessedSphereIds(char, idx)) {
+        if (sid === sphereId) continue;
+        const s = idx.sphereById.get(sid);
+        if (s && s.section === 'magic') count++;
+      }
+      if (count < req.minMagicSpheresExcludingSelf) {
+        return { ok: false, reason: `Requer ${req.minMagicSpheresExcludingSelf} esferas mágicas (você tem ${count}).` };
+      }
+    }
+    return { ok: true, reason: '' };
+  }
+
   return {
     indexData, classRow, derivedStats, traditionBonus, classFeatureBonus,
     talentBudget, computeGrants, grantedSphereIds, effectiveSection, slotsSpent,
     accessedSphereIds, ownedTalentIds, prereqCheck, canAddTalent, canAccessSphere,
-    restrictedAllowances,
+    restrictedAllowances, packageRequirementMet,
   };
 })();
 

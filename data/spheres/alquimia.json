@@ -561,143 +561,176 @@
       "body": "Aplicar esta substância sobre uma amputação recente permitirá que o membro decepado seja reimplantado. Uma vez aplicada, o membro decepado deve ser reimplantado em até 1 minuto.\n\nApenas membros frescos ou preservados podem ser reimplantados, e tentar reimplantar membros que não sejam do próprio corpo geralmente resulta na rejeição do membro pelo hospedeiro ou em outros efeitos colaterais graves.\n\nPotência: Gaste Foco Marcial. A cada rodada, durante a duração do efeito, o alvo ganha um número de pontos de vida temporários igual à metade do seu bônus de proficiência. Esses pontos de vida temporários não se acumulam."
     },
     {
-      "id": "m-alquimia-acido-formula-arma-acido",
+      "id": "m-alquimia-acido",
       "name": "Ácido (fórmula, arma) [ácido]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um frasco de ácido que causa 2d6 de dano de ácido ao atingir um alvo. O ácido também pode ser lançado em uma criatura a até 1,5 metro de você como um ataque corpo a corpo com uma arma improvisada.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como Veneno. A arma causa 1d6 de dano de ácido adicional por 1 minuto.\n\n•Lançar ou Espirrar. O dano do frasco de ácido aumenta em 1d6 (3d6) e novamente em 1d6 nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
     },
     {
-      "id": "m-alquimia-fogo-alquimico-formula-arma-fogo",
+      "id": "m-alquimia-fogo-alquimico",
       "name": "Fogo Alquímico (fórmula, arma) [fogo]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um frasco de fogo alquímico que causa 1d4 de dano de fogo. Qualquer criatura danificada pelo fogo alquímico sofre 1d4 de dano adicional no início de cada um de seus turnos. Uma criatura pode encerrar esse dano usando sua ação para fazer um teste de resistência de Destreza contra a CD da sua esfera de Alquimia para apagar as chamas; rolar no chão concede vantagem no teste de resistência. Saltar em um grande corpo de água ou apagar as chamas magicamente extingue o fogo automaticamente.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como Veneno. A arma causa 1d6 de dano de fogo adicional por 1 minuto.\n\n•Lançar. Tanto o dano inicial quanto o dano subsequente a cada turno aumentam em 1d4 (2d4) e novamente em 1d4 nos níveis 5 (3d4), 11 (4d4) e 17 (5d4)."
     },
     {
-      "id": "m-alquimia-gelo-alquimico-formula-arma-frio",
+      "id": "m-alquimia-gelo-alquimico",
       "name": "Gelo Alquímico (fórmula, arma) [frio]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um frasco de gelo alquímico que causa 1d6 de dano de frio a um alvo quando lançado. Criaturas danificadas pelo gelo alquímico têm sua velocidade de movimento reduzida em 3 metros por 1 rodada.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como Veneno. A arma causa 1d6 de dano de frio adicional por 1 minuto.\n\n•Lançar. O dano do gelo alquímico aumenta em 1d6 (2d6) e novamente em 1d6 nos níveis 5 (3d6), 11 (4d6) e 17 (5d6)."
     },
     {
-      "id": "m-alquimia-relampago-engarrafado-formula-arma-eletrico",
+      "id": "m-alquimia-relampago-engarrafado",
       "name": "Relâmpago Engarrafado (fórmula, arma) [elétrico]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um frasco de relâmpago engarrafado que causa 1d8 de dano elétrico. Você tem vantagem em jogadas de ataque com relâmpago engarrafado contra criaturas feitas de metal ou que estejam usando armadura de metal.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como veneno. A arma causa 1d6 de dano elétrico adicional por 1 minuto.\n\n•Arremessar. O dano do relâmpago engarrafado aumenta em 1d8 (2d8) e novamente em 1d8 nos níveis 5 (3d8), 11 (4d8) e 17 (5d8)."
     },
     {
-      "id": "m-alquimia-bombas-de-cereja-formula-arma-forca",
+      "id": "m-alquimia-bombas-de-cereja",
       "name": "Bombas de Cereja (fórmula, arma) [força]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "As bombas de cereja são sempre criadas em conjuntos iguais ao seu bônus de proficiência, chamados de aglomerado. Bombas de cereja individuais podem ser separadas do aglomerado, sem necessidade de ação, mas tornam-se inertes se não forem usadas em 1 rodada.\n\nQuando lançadas individualmente, as bombas de cereja criam uma explosão de 1,5 metro de raio, causando 1 de dano de força a qualquer criatura dentro da área (sem direito a teste de resistência). Testes de resistência de Concentração feitos em resposta a danos causados por uma bomba de cereja são feitos com desvantagem.\n\nAs bombas de cereja também podem ser lançadas em aglomerado, tendo o mesmo efeito, mas causando dano de força igual ao dobro do número de bombas de cereja no aglomerado (sem direito a teste de resistência).\n\nPotência: Gaste Foco Marcial. O raio da área aumenta em 1,5 metro (3 metros), e aumenta novamente nos níveis 5 (4,5 metros), 11 (6 metros) e 17 (7,5 metros)."
     },
     {
-      "id": "m-alquimia-desfolhante-formula-arma-corte",
+      "id": "m-alquimia-desfolhante",
       "name": "Desfolhante (fórmula, arma) [corte]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um óleo que destrói quimicamente a vegetação viva. Quando lançado, plantas vivas e criaturas vegetais em um raio de 1,5 metro do impacto devem fazer um teste de resistência de Destreza bem-sucedido ou sofrer 2d6 de dano de corte do desfolhante.\n\nPotência: Gaste Foco Marcial. Você pode aplicar o desfolhante a uma arma como se fosse um veneno. A arma causa 1d6 de dano de corte adicional contra plantas vivas e criaturas vegetais por 1 minuto. Se você gastar seu foco marcial ao lançar o desfolhante, o dano aumenta em 1d6 (3d6), aumentando novamente nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
     },
     {
-      "id": "m-alquimia-bile-demoniaca-formula-arma-necrotico",
+      "id": "m-alquimia-bile-demoniaca",
       "name": "Bile Demoníaca (fórmula, arma) [necrótico]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um ichor preto e fétido que drena a vontade dos mortais e se alimenta da carne dos celestiais. Quando lançado, celestiais em um raio de 1,5 metro do impacto devem fazer um teste de resistência de Destreza bem-sucedido ou sofrer 2d6 de dano necrótico da bile demoníaca.\n\nHumanoides e feras que consomem ou tocam a bile demoníaca sofrem desvantagem em testes de resistência contra as condições de encantamento, dominação e possessão por 1 hora; isso é considerado um efeito de maldição.\n\nPotência: Gaste Foco Marcial. Você pode aplicar bile demoníaca a uma arma como se fosse um veneno. A arma causa 1d6 de dano necrótico adicional contra seres celestiais por 1 minuto. Se você gastar seu foco marcial ao arremessar a bile demoníaca, o dano aumenta em 1d6 (3d6), aumentando novamente nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
     },
     {
-      "id": "m-alquimia-maldicao-da-bruxa-formula-arma-psiquico",
+      "id": "m-alquimia-maldicao-da-bruxa",
       "name": "Maldição da Bruxa (fórmula, arma) [psíquico]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um frasco de Maldição da Bruxa que causa 2d6 de dano psíquico a aberrações ou fadas em um acerto. A Maldição da Bruxa também pode ser lançada em uma criatura a até 1,5 metro de você como um ataque corpo a corpo com uma arma improvisada.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como veneno. A arma causa 1d6 de dano psíquico adicional contra aberrações e fadas por 1 minuto.\n\n•Salpicar. Ao salpicar uma criatura enfeitiçada, confusa ou amedrontada a até 1,5 metro de você com um ataque corpo a corpo, a criatura recebe uma jogada de salvamento adicional para encerrar o efeito.\n\n•Arremessar. O dano da Maldição da Bruxa aumenta em 1d6 (3d6), e novamente em 1d6 nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
     },
     {
-      "id": "m-alquimia-agua-benta-formula-arma-radiante",
+      "id": "m-alquimia-agua-benta",
       "name": "Água Benta (fórmula, arma) [radiante]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um frasco de água benta que causa 2d6 de dano radiante a demônios ou mortos-vivos em um acerto. A água benta também pode ser espirrada em uma criatura a até 1,5 metro de você como um ataque corpo a corpo com uma arma improvisada.\n\nPotência: Gaste Foco Marcial. Escolha uma opção:\n\n•Aplicar a uma arma como um veneno. A arma causa 1d6 de dano radiante adicional contra demônios e mortos-vivos por 1 minuto.\n\n•Salpicar. Ao salpicar uma criatura dominada ou possuída a até 1,5 metro de você como um ataque corpo a corpo, a criatura recebe uma jogada de salvamento adicional para encerrar o efeito.\n\n•Arremessar. O dano da água benta aumenta em 1d6 (3d6) e novamente em 1d6 nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
     },
     {
-      "id": "m-alquimia-oxidante-formula-arma-perfurante",
+      "id": "m-alquimia-oxidante",
       "name": "Oxidante (fórmula, arma) [perfurante]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você cria um corrosivo que oxida a maioria dos metais, perfurando sua estrutura e armação. Quando arremessado, construtos e objetos de metal não mágicos em um raio de 1,5 metro do impacto devem fazer uma jogada de salvamento de Destreza bem-sucedida ou sofrer 2d6 de dano perfurante do oxidante.\n\nPotência: Gaste Foco Marcial. Você pode aplicar o oxidante a uma arma como se fosse um veneno. A arma causa 1d6 de dano perfurante adicional contra construtos e objetos de metal não mágicos por 1 minuto. Se você gastar seu foco marcial ao arremessar o oxidante, seu dano aumenta em 1d6 (3d6), aumentando novamente nos níveis 5 (4d6), 11 (5d6) e 17 (6d6)."
     },
     {
-      "id": "m-alquimia-pedra-trovejante-formula-arma-trovao",
+      "id": "m-alquimia-pedra-trovejante",
       "name": "Pedra Trovejante (fórmula, arma) [trovão]",
       "sphere": "alquimia",
       "section": "martial",
       "kind": "talent",
       "group": "Talentos Básicos de Fórmula (arma)",
-      "tags": [],
+      "tags": [
+        "formula",
+        "arma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],

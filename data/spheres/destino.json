@@ -170,13 +170,15 @@
       "body": "Enquanto estiverem dentro da área de sua consagração, você e seus aliados podem entender todas as palavras faladas, independentemente do idioma."
     },
     {
-      "id": "destino-desgraca-consagracao-maldicao",
+      "id": "destino-desgraca",
       "name": "Desgraça (consagração) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Consagração",
-      "tags": [],
+      "tags": [
+        "consagracao"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
@@ -253,13 +255,15 @@
       "body": "Sua aura abafa todo som dentro ou através da sua consagração. Qualquer criatura ou objeto inteiramente dentro da esfera ganha resistência a dano de trovão, e criaturas ficam surdas enquanto estiverem inteiramente dentro dela. Usar qualquer magia que inclua ou exija um componente verbal é impossível ali."
     },
     {
-      "id": "destino-manipular-o-destino-consagracao-maldicao",
+      "id": "destino-manipular-o-destino",
       "name": "Manipular o Destino (consagração) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Consagração",
-      "tags": [],
+      "tags": [
+        "consagracao"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [
@@ -606,26 +610,30 @@
       "body": "Você pode abençoar as ações imediatas de um alvo dentro do alcance. O próximo dado de 20 lados que o alvo rolar antes do final da próxima rodada terá vantagem."
     },
     {
-      "id": "destino-escravidao-palavra-maldicao",
+      "id": "destino-escravidao",
       "name": "Escravidão (palavra) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Palavra",
-      "tags": [],
+      "tags": [
+        "palavra"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você pode invocar uma maldição de escravidão sobre um alvo dentro do alcance. O alvo deve fazer um teste de resistência de Carisma ou ficará restringido até o início do seu próximo turno."
     },
     {
-      "id": "destino-maldicao-palavra-maldicao",
+      "id": "destino-maldicao",
       "name": "Maldição (palavra) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Palavra",
-      "tags": [],
+      "tags": [
+        "palavra"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
@@ -667,26 +675,30 @@
       "body": "Você pode invocar uma bênção de liberdade para um alvo dentro do alcance. Até o início do próximo turno, o alvo automaticamente obtém sucesso no próximo teste de Destreza (acrobacias) ou Força (atletismo) realizado para escapar de uma imobilização, se libertar de algemas ou se desamarrar de cordas. Além disso, durante a rodada, o alvo ganha imunidade às condições agarrado, incapacitado, paralisado, restringido e atordoado. Se o alvo for uma criatura petrificada, ela perde temporariamente a condição durante a rodada."
     },
     {
-      "id": "destino-dano-palavra-maldicao",
+      "id": "destino-dano",
       "name": "Dano (palavra) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Palavra",
-      "tags": [],
+      "tags": [
+        "palavra"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você pode amaldiçoar um alvo com dor aumentada. Todo o dano sofrido pelo alvo é aumentado pelo seu Bônus de Proficiência por 1 rodada."
     },
     {
-      "id": "destino-marca-palavra-maldicao",
+      "id": "destino-marca",
       "name": "Marca (palavra) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Palavra",
-      "tags": [],
+      "tags": [
+        "palavra"
+      ],
       "duration": "Concentração, até 1 minuto",
       "prerequisites": [],
       "advanced": false,
@@ -718,13 +730,15 @@
       "body": "Você pode invocar uma bênção de misericórdia sobre um alvo dentro do alcance. Durante 1 hora, sempre que o alvo reduzir os pontos de vida de uma criatura a 0 com um ataque corpo a corpo, o atacante deve escolher nocautear a criatura (ou incapacitá-la de alguma outra forma) em vez de matá-la. Além disso, o alvo deve ser bem-sucedido em um teste de resistência de Carisma antes de atacar qualquer criatura inconsciente (ou incapacitada de alguma outra forma)."
     },
     {
-      "id": "destino-abrirfechar-palavra-maldicao",
+      "id": "destino-abrirfechar",
       "name": "Abrir/Fechar (palavra) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Palavra",
-      "tags": [],
+      "tags": [
+        "palavra"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
@@ -746,26 +760,30 @@
       "body": "Você pode abençoar um alvo com cura aumentada. Quaisquer pontos de vida restaurados ao alvo são aumentados pelo seu Bônus de Proficiência por 1 rodada."
     },
     {
-      "id": "destino-subverter-palavra-maldicao",
+      "id": "destino-subverter",
       "name": "Subverter (palavra) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Palavra",
-      "tags": [],
+      "tags": [
+        "palavra"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
       "body": "Você pode amaldiçoar as ações imediatas de um alvo dentro do alcance. Na próxima vez que o alvo causar dano a uma criatura ou objeto, antes do final da próxima rodada, ele deve fazer um teste de resistência de Carisma ou causar dano a si mesmo."
     },
     {
-      "id": "destino-violencia-palavra-maldicao",
+      "id": "destino-violencia",
       "name": "Violência (palavra) [maldição]",
       "sphere": "destino",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Palavra",
-      "tags": [],
+      "tags": [
+        "palavra"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],

@@ -94,7 +94,15 @@
               "freeLabel": { "type": "string" },
               "freePicks": { "type": "number" },
               "talentTags": { "type": "array", "items": { "type": "string" } },
-              "conditionals": { "type": "array", "items": { "$ref": "#/definitions/conditional" } }
+              "conditionals": { "type": "array", "items": { "$ref": "#/definitions/conditional" } },
+              "requires": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "Gate para poder ESCOLHER este pacote (ex.: Criação de Magias exige ≥2 esferas mágicas além da própria).",
+                "properties": {
+                  "minMagicSpheresExcludingSelf": { "type": "number" }
+                }
+              }
             }
           }
         }

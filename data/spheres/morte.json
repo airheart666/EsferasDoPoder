@@ -92,13 +92,15 @@
       "body": "Golpe Fantasma 0PM: Você pode realizar um golpe fantasma que lhe concede certo controle sobre uma criatura morta-viva. Se uma criatura morta-viva falhar em um teste de resistência de Carisma, ela ficará enfeitiçada por você enquanto você se concentrar, até 10 minutos ou até que você ou seus aliados façam algo prejudicial a ela.\n\nalvo deve ser bem-sucedido em um teste de resistência de Carisma ou deve tentar obedecer à ordem da melhor maneira possível até o início do seu próximo turno. Se o alvo receber uma ordem que ele não seja capaz de cumprir, a ação bônus é desperdiçada. Você precisa ser capaz de se comunicar com o morto-vivo para dar ordens (comandos visuais exigem que o morto-vivo possa vê-lo, comandos verbais exigem que o morto-vivo possa ouvi-lo, etc.)."
     },
     {
-      "id": "morte-maldicao-golpe-fantasma-maldicao",
+      "id": "morte-maldicao",
       "name": "Maldição (golpe fantasma) [maldição]",
       "sphere": "morte",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Golpe Fantasma",
-      "tags": [],
+      "tags": [
+        "golpe fantasma"
+      ],
       "prerequisites": [],
       "advanced": false,
       "enhancements": [],
@@ -906,13 +908,15 @@
       ]
     },
     {
-      "id": "morte-imortal-reanimar-maldicao",
+      "id": "morte-imortal",
       "name": "Imortal (reanimar) [maldição]",
       "sphere": "morte",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos Avançados de Morte",
-      "tags": [],
+      "tags": [
+        "reanimar"
+      ],
       "prerequisites": [
         {
           "type": "sphere",

@@ -56,10 +56,29 @@ const slugify = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
 const SKILLS = new Set(['percepcao', 'furtividade', 'sobrevivencia', 'investigacao', 'intuicao',
   'persuasao', 'enganacao', 'intimidacao', 'acrobacia', 'prestidigitacao', 'medicina',
   'historia', 'religiao', 'arcanismo', 'atuacao', 'lidar com animais'].map(s => s));
-const baseName = s => String(s).replace(/\s*\([^)]*\)\s*$/, '').trim();
+// Depth-aware split of the LAST top-level "(...)" in a name → { base, inner }.
+// Robust to nested parens like "X (esfera dupla, A, B (talento))" that the old
+// simple-regex baseName/tagsOf choked on (leaving nested talents empty-tagged — KG-4).
+function lastTopParen(name) {
+  const s = String(name); let d = 0, start = -1, end = -1;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (c === '(') { if (d === 0) start = i; d++; }
+    else if (c === ')') { d--; if (d === 0) end = i; }
+  }
+  return (start >= 0 && end > start) ? { base: s.slice(0, start).trim(), inner: s.slice(start + 1, end) } : { base: s.trim(), inner: null };
+}
+const baseName = s => lastTopParen(s).base;
 const tagsOf = name => {
-  const m = String(name).match(/\(([^)]*)\)\s*$/);
-  return m ? m[1].split(/[,;/]|\be\b|\bou\b/i).map(t => normalizeTerm(t.trim())).filter(Boolean) : [];
+  const { inner } = lastTopParen(name);
+  if (!inner) return [];
+  const out = [];
+  for (const item of splitTopLevel(inner)) {
+    const p = item.indexOf('(');                 // tag = the item's head (sphere/keyword); drop any nested "(talento)"
+    const head = (p >= 0 ? item.slice(0, p) : item);
+    for (const part of head.split(/[/]|\be\b|\bou\b/i)) { const t = normalizeTerm(part.trim()); if (t) out.push(t); }
+  }
+  return out;
 };
 
 // ---- Cost parsing: "0PM (menor), 1PM (maior), 2PM (poderoso)" | "1 PM" | "varia"
@@ -266,6 +285,24 @@ function extractSphere(sphere, chapter, pages, meta) {
   return { section, talents };
 }
 
+// KG-4: "(esfera dupla, A, B (talento), ...)" in a talent NAME encodes the required
+// spheres (+ optional specific talents). Synthesize prereqs from the name clause;
+// non-sphere descriptors ("socorro", "forma de explosão") are left as tags only.
+function dualSpherePrereqs(name, sphereIds) {
+  const { inner } = lastTopParen(name);
+  if (!inner) return [];
+  const items = splitTopLevel(inner);
+  if (!items.length || normalizeTerm(items[0]) !== 'esfera dupla') return [];
+  const out = [];
+  for (const item of items.slice(1)) {
+    const { base: head, inner: nested } = lastTopParen(item);
+    if (!sphereIds.has(slugify(head))) continue;   // descriptor, not a sphere → skip (stays a tag)
+    out.push({ type: 'sphere', name: head });
+    if (nested) for (const tn of splitTopLevel(nested)) { const t = tn.replace(/\.+$/, '').trim(); if (t) out.push({ type: 'talent', name: t, sphereName: head }); }
+  }
+  return out;
+}
+
 // ---- Second pass: resolve talent/sphere prereq names to ids across the set ---
 function resolvePrereqs(allTalents, sphereIds) {
   const byKey = new Map();        // "sphereId|base" -> talent id (scoped)
@@ -277,6 +314,10 @@ function resolvePrereqs(allTalents, sphereIds) {
     if (!globalBase.has(base)) globalBase.set(base, t.id);
   }
   for (const t of allTalents) {
+    // KG-4: dual-sphere talents carry their sphere/talent requirements in the name.
+    if ((t.tags || []).includes('esfera dupla')) {
+      for (const pr of dualSpherePrereqs(t.name, sphereIds)) (t._prereqs = t._prereqs || []).push(pr);
+    }
     const resolved = [];
     for (const pr of t._prereqs || []) {
       if (pr.type === 'level') { resolved.push({ type: 'level', min: pr.min }); continue; }

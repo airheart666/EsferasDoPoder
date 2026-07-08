@@ -127,4 +127,18 @@ ok('Universal access costs 1 slot; package base ability is free', Rules.slotsSpe
 const univMana = { ...univ, spheres: [{ sphere: 'universal', section: 'magic', choices: { pkg: 'mana' }, freePicks: [], talents: [] }] };
 ok('Universal "mana" package → Vínculo de Mana owned', Rules.ownedTalentIds(univMana, idx).has('universal-vinculo-de-mana'));
 
+// --- KG-4: dual-sphere (esfera dupla) talents now enforce their named spheres ---
+const aurora = idx.sphereById.get('universal').talents.find(t => t.id === 'universal-aurora');
+ok('KG-4: Aurora carries its 2 sphere prereqs (Luz + Clima)', !!aurora && aurora.prerequisites.filter(p => p.type === 'sphere').length === 2);
+/** @type {any} */
+const kg4Base = { id: 'k', name: 'K', className: 'Feiticeiro', subclass: '', level: 5, keyMod: 0, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [{ sphere: 'universal', section: 'magic', choices: { pkg: 'criacao-magias' }, freePicks: [], talents: [] }] };
+ok('KG-4: Aurora BLOCKED without Luz+Clima', Rules.prereqCheck(kg4Base, aurora, idx).ok === false);
+/** @type {any} */
+const kg4Two = { ...kg4Base, spheres: [kg4Base.spheres[0], { sphere: 'luz', section: 'magic', choices: {}, freePicks: [], talents: [] }, { sphere: 'clima', section: 'magic', choices: {}, freePicks: [], talents: [] }] };
+ok('KG-4: Aurora ALLOWED with Luz+Clima', Rules.prereqCheck(kg4Two, aurora, idx).ok === true);
+
+// --- KG-4: package gate — Criação de Magias needs ≥2 magic spheres besides Universal ---
+ok('KG-4: Criação de Magias package BLOCKED with <2 magic spheres', Rules.packageRequirementMet(kg4Base, 'universal', 'criacao-magias', idx).ok === false);
+ok('KG-4: Criação de Magias package ALLOWED with ≥2 magic spheres', Rules.packageRequirementMet(kg4Two, 'universal', 'criacao-magias', idx).ok === true);
+
 console.log(`\n${pass} assertions passed.`);

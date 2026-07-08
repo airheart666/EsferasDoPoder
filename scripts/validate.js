@@ -75,6 +75,14 @@ for (const s of spheres) for (const t of s.talents) for (const p of t.prerequisi
   if (p.type === 'sphere' && !sphereIds.has(p.id)) warn(`${t.id}: prereq sphere id not found: ${p.id}`);
 }
 
+// KG-4: every "esfera dupla" talent must resolve ≥2 sphere prereqs from its name clause.
+for (const s of spheres) for (const t of s.talents) {
+  if ((t.tags || []).includes('esfera dupla')) {
+    const n = (t.prerequisites || []).filter(p => p.type === 'sphere').length;
+    if (n < 2) warn(`${t.id}: dual-sphere talent has only ${n} sphere prereq(s) — name-clause parse gap`);
+  }
+}
+
 // class-features grants (if migrated into data/) reference talents by id
 const cfPath = path.join(ROOT, 'data', 'class-features.json');
 if (fs.existsSync(cfPath)) {

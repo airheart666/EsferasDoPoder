@@ -71,6 +71,9 @@
           },
           "freeLabel": "esfera dupla",
           "freePicks": 1,
+          "requires": {
+            "minMagicSpheresExcludingSelf": 2
+          },
           "baseTalentIds": []
         },
         {
@@ -293,30 +296,70 @@
       "body": ""
     },
     {
-      "id": "universal-aprimoramento-de-liga-esfera-dupla-aprimoramento-natureza-geomancia-metalica",
+      "id": "universal-aprimoramento-de-liga",
       "name": "Aprimoramento de Liga (esfera dupla, Aprimoramento, Natureza (geomancia metálica))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "aprimoramento",
+        "natureza"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "aprimoramento"
+        },
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "text",
+          "text": "geomancia metálica"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
-      "body": "Sempre que você usar uma habilidade de geomancia do pacote de metal para criar ou afetar um objeto de metal, você pode aprimorar o objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais."
+      "body": "Sempre que você usar uma habilidade de geomancia do pacote de metal para criar ou afetar um objeto de metal, você pode aprimorar o objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais.",
+      "_needsReview": [
+        "prereq:unresolved:geomancia metálica"
+      ]
     },
     {
-      "id": "universal-telecinese-de-liga-esfera-dupla-telecinese-natureza-geomancia-metalica",
+      "id": "universal-telecinese-de-liga",
       "name": "Telecinese de Liga (esfera dupla, Telecinese, Natureza (geomancia metálica))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "telecinese",
+        "natureza"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "telecinese"
+        },
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "text",
+          "text": "geomancia metálica"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
-      "body": "Quando você cria um objeto de metal usando qualquer geomancia, você pode usar uma habilidade de esfera de Telecinese (geralmente levitar ou projétil) no objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais."
+      "body": "Quando você cria um objeto de metal usando qualquer geomancia, você pode usar uma habilidade de esfera de Telecinese (geralmente levitar ou projétil) no objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais.",
+      "_needsReview": [
+        "prereq:unresolved:geomancia metálica"
+      ]
     },
     {
       "id": "universal-aurora",
@@ -330,7 +373,16 @@
         "luz",
         "clima"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "luz"
+        },
+        {
+          "type": "sphere",
+          "id": "clima"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Enquanto estiver em clima de severidade 1 ou superior, você pode, como um efeito de esfera de Luz, aumentar magicamente o nível de luz em um passo como uma ação bônus (a escuridão se torna penumbra, a penumbra se torna luz brilhante). Essa mudança na luz afeta tudo dentro do seu alcance de brilho. No 11º nível, você pode aumentar o nível de luz em um passo adicional (a escuridão se torna luz brilhante). Áreas de escuridão mágica dentro do alcance deste efeito não são afetadas, seus níveis de luz permanecendo inalterados."
@@ -347,20 +399,51 @@
         "aprimoramento",
         "mente"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "aprimoramento"
+        },
+        {
+          "type": "sphere",
+          "id": "mente"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Sempre que você usar um encantamento contra uma criatura ou objeto sob os efeitos de sua Conceder Inteligência, os pedidos que você fizer serão considerados 1 passo mais razoáveis. Veja a esfera Mente para detalhes."
     },
     {
-      "id": "universal-tempestade-nefasta-esfera-dupla-morte-universal-em-massa-metaesfera-clima",
+      "id": "universal-tempestade-nefasta",
       "name": "Tempestade Nefasta (esfera dupla, Morte, Universal (Em Massa (metaesfera)), Clima)",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "morte",
+        "universal",
+        "clima"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "sphere",
+          "id": "universal"
+        },
+        {
+          "type": "talent",
+          "id": "universal-em-massa"
+        },
+        {
+          "type": "sphere",
+          "id": "clima"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -382,7 +465,16 @@
         "alteracao",
         "luz"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alteracao"
+        },
+        {
+          "type": "sphere",
+          "id": "luz"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você transforma um alvo, você também pode fazer com que esse alvo brilhe. O brilho termina automaticamente quando a transformação termina. Se o brilho for interrompido por uma escuridão da esfera Escura ou efeito similar, isso não encerra a transformação. A transformação e o brilho contam como um único efeito para fins de concentração. Se você aplicar um talento (de luz) a um brilho criado e mantido desta forma, ele conta contra o número de características que você pode conceder com sua transformação."
@@ -399,33 +491,80 @@
         "morte",
         "vida"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "sphere",
+          "id": "vida"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Sempre que você usar um golpe fantasma, você pode, antes do final do seu turno, conjurar uma cura, restauração ou revigoramento como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de Golpe Fantasma tenha um custo de pontos de magia de 1 ou mais."
     },
     {
-      "id": "universal-explosao-cadaverica-esfera-dupla-forma-de-explosao-morte-bomba-cadaverica-destruicao",
+      "id": "universal-explosao-cadaverica",
       "name": "Explosão Cadavérica (esfera dupla, forma de explosão, Morte (Bomba Cadavérica), Destruição)",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "forma de explosao",
+        "morte",
+        "destruicao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "text",
+          "text": "Bomba Cadavérica"
+        },
+        {
+          "type": "sphere",
+          "id": "destruicao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
-      "body": "Você pode usar uma explosão destrutiva para ativar seu talento Bomba Cadavérica em vez de um Golpe Fantasma. Os alvos afetados têm direito a um teste de resistência de Destreza para reduzir o dano à metade."
+      "body": "Você pode usar uma explosão destrutiva para ativar seu talento Bomba Cadavérica em vez de um Golpe Fantasma. Os alvos afetados têm direito a um teste de resistência de Destreza para reduzir o dano à metade.",
+      "_needsReview": [
+        "prereq:unresolved:Bomba Cadavérica"
+      ]
     },
     {
-      "id": "universal-companheiro-destrutivo-esfera-dupla-conjuracao-companheiro-explosivo-destruicao",
+      "id": "universal-companheiro-destrutivo",
       "name": "Companheiro Destrutivo (esfera dupla, Conjuração (Companheiro Explosivo), Destruição)",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "conjuracao",
+        "destruicao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "conjuracao"
+        },
+        {
+          "type": "talent",
+          "id": "conjuracao-companheiro-explosivo"
+        },
+        {
+          "type": "sphere",
+          "id": "destruicao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você invoca um companheiro que possui o talento Companheiro Explosivo (forma), você pode aplicar um único talento (tipo explosão) que você possui a esse companheiro. Quando o companheiro explosivo detona, ele usa d8 e o tipo de dano do talento (tipo explosão) e aplica seus efeitos adicionais como se fosse uma explosão destrutiva. Quaisquer custos adicionais de pontos de magia associados ao talento (tipo explosão) escolhido devem ser pagos como parte da conjuração da invocação."
@@ -442,7 +581,16 @@
         "destruicao",
         "luz"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "destruicao"
+        },
+        {
+          "type": "sphere",
+          "id": "luz"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Sempre que você usar sua explosão destrutiva, você pode optar por fazer com que ela assuma as propriedades da luz. Uma explosão destrutiva modificada dessa forma pode atravessar objetos sólidos transparentes (como vidro), mas não pode afetar nenhuma criatura ou objeto que você não possa ver. Possuir sentidos especiais que lhe permitam ver através de substâncias opacas impede que sua explosão destrutiva atravesse o objeto sólido normalmente opaco."
@@ -460,7 +608,16 @@
         "protecao",
         "distorcao"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "protecao"
+        },
+        {
+          "type": "sphere",
+          "id": "distorcao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você sacrifica uma égide que colocou em outro aliado para trocar de lugar com ele usando teletransporte. Ele deve estar dentro do alcance da sua habilidade de teletransporte. O aliado deve estar disposto ou inconsciente. Isso pode ser feito em resposta a um ataque antes que os resultados do ataque sejam determinados. Nesse caso, o ataque muda o alvo para quem estiver ocupando o espaço anteriormente ocupado pelo alvo original."
@@ -477,7 +634,16 @@
         "criacao",
         "aprimoramento"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "criacao"
+        },
+        {
+          "type": "sphere",
+          "id": "aprimoramento"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você cria um objeto, antes do final do seu turno, você pode aprimorá-lo como uma ação bônus. A criação e o aprimoramento contam como um único efeito para fins de concentração.\n\nQualquer efeito de aprimoramento que se aplicaria a jogadas de ataque ou dano se aplica a quaisquer jogadas de ataque ou dano feitas como parte do ato de colocar o objeto em um alvo. O aprimoramento como ação bônus pode ser aumentado para afetar múltiplos objetos criados, se eles foram criados desde o início do seu turno. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. Você pode usar este talento (esfera dupla) mesmo que seu efeito de criação tenha um custo de pontos de magia de 1 ou mais."
@@ -494,7 +660,16 @@
         "aprimoramento",
         "telecinese"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "aprimoramento"
+        },
+        {
+          "type": "sphere",
+          "id": "telecinese"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você escolhe um objeto com uma habilidade de esfera de Telecinese, você pode aprimorá-lo como uma ação bônus antes do final do seu turno. Ambas as habilidades de esfera contam como um único efeito para fins de concentração, dissipação e remoção. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem.\n\nVocê pode usar este talento (esfera dupla) mesmo que sua habilidade de esfera de Telecinese tenha um custo de pontos de magia de 1 ou mais."
@@ -511,7 +686,16 @@
         "criacao",
         "telecinese"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "criacao"
+        },
+        {
+          "type": "sphere",
+          "id": "telecinese"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você cria um objeto, antes do final do seu turno, você pode usar uma habilidade de esfera de Telecinese (geralmente projétil ou levitar) nele como uma ação bônus. A habilidade de criação e a habilidade de esfera de Telecinese contam como um único efeito para fins de concentração.\n\nO uso da habilidade de esfera Telecinese como ação bônus pode ser aumentado para afetar múltiplos objetos criados, desde que tenham sido criados desde o início do seu turno. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. Você pode usar este talento (esfera dupla) mesmo que seu efeito de criação tenha um custo de ponto de magia de 1 ou mais."
@@ -528,7 +712,16 @@
         "escuridao",
         "mente"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "sphere",
+          "id": "mente"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Criaturas dentro da área de sua escuridão sofrem desvantagem em testes de resistência contra as condições encantado, amedrontado e inconsciente, bem como qualquer efeito que cause confusão, como a magia confusão. Isso conta como um efeito negativo da sua escuridão para fins de interação com o talento Visão Clara (fusão)."
@@ -545,7 +738,16 @@
         "vida",
         "distorcao"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "vida"
+        },
+        {
+          "type": "sphere",
+          "id": "distorcao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Sempre que você usar um teleporte, você pode, antes do final do seu turno, conjurar uma cura, restauração ou revigoramento como uma ação bônus. Você pode usar esse talento (esfera dupla) mesmo que seu efeito de teletransporte tenha um custo de ponto de magia de 1 ou mais."
@@ -562,23 +764,56 @@
         "luz",
         "protecao"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "luz"
+        },
+        {
+          "type": "sphere",
+          "id": "protecao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Como uma ação bônus, você pode fazer um aliado brilhar se ele estiver portando uma égide que você criou. Você deve usar uma ação separada para iluminá-lo. O brilho termina quando a égide termina. Você pode usar este talento (esfera dupla) mesmo se tiver acabado de conjurar a égide em seu aliado neste turno, e a égide tiver um custo de ponto de magia de 1 ou mais."
     },
     {
-      "id": "universal-chama-luminosa-esfera-dupla-luz-natureza-geomancia-do-fogo-criar-natureza",
+      "id": "universal-chama-luminosa",
       "name": "Chama Luminosa (esfera dupla, Luz, Natureza (geomancia do fogo; Criar Natureza))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "luz",
+        "natureza"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "luz"
+        },
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "text",
+          "text": "geomancia do fogo"
+        },
+        {
+          "type": "talent",
+          "id": "natureza-criar-natureza"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
-      "body": "Sempre que você usar Criar Natureza para criar um fogo, você também pode fazer com que o fogo brilhe. Você pode tratar uma habilidade de geomancia que tenha como alvo tal fogo e um efeito de iluminar que tenha como alvo tal brilho como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem."
+      "body": "Sempre que você usar Criar Natureza para criar um fogo, você também pode fazer com que o fogo brilhe. Você pode tratar uma habilidade de geomancia que tenha como alvo tal fogo e um efeito de iluminar que tenha como alvo tal brilho como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem.",
+      "_needsReview": [
+        "prereq:unresolved:geomancia do fogo"
+      ]
     },
     {
       "id": "universal-poder-da-sepultura",
@@ -592,7 +827,16 @@
         "morte",
         "aprimoramento"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "sphere",
+          "id": "aprimoramento"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um aprimoramento à criatura criada como uma ação bônus antes do final do seu turno. O aprimoramento e a reanimação contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. O aprimoramento como ação bônus pode ser aumentado para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais."
@@ -609,7 +853,16 @@
         "ilusao",
         "distorcao"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "ilusao"
+        },
+        {
+          "type": "sphere",
+          "id": "distorcao"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -631,7 +884,16 @@
         "escuridao",
         "luz"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "sphere",
+          "id": "luz"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Ao criar uma área de escuridão, antes do final do seu turno, você pode conjurar um brilho ou uma lente em outra criatura como uma ação bônus. Tanto a habilidade de esfera de escuridão quanto a de Luz contam como um único efeito para fins de concentração. Criaturas sob o efeito da habilidade de esfera de Luz não têm seus sentidos (incluindo a visão) prejudicados pela área de escuridão. Você pode usar este talento (esfera dupla) mesmo que seu efeito de escuridão tenha um custo de ponto de magia de 1 ou mais."
@@ -648,7 +910,16 @@
         "adivinhacao",
         "protecao"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "sphere",
+          "id": "protecao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Ao conceder um sentido a uma criatura, você pode conceder a ela uma égide como uma ação bônus antes do final do seu turno. Ambas as habilidades de esfera contam como um único efeito para fins de\n\nconcentração, dissipação e remoção. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. Você pode usar este talento (esfera dupla) mesmo que seu efeito sensorial tenha um custo de pontos de magia de 1 ou mais."
@@ -665,7 +936,16 @@
         "destruicao",
         "adivinhacao"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "destruicao"
+        },
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Ao usar uma rajada destrutiva, você ignora quaisquer bônus de CA ou testes de resistência de Destreza que os alvos afetados possam ter por cobertura parcial (+2 CA, testes de resistência de Destreza) e cobertura parcial (+5 CA, testes de resistência de Destreza)."
@@ -682,7 +962,16 @@
         "escuridao",
         "protecao"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "sphere",
+          "id": "protecao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Ao criar uma proteção, você pode conjurar escuridão como uma ação bônus, tendo a mesma área como alvo. A escuridão afeta apenas a área da proteção. Você pode aplicar talentos (de escuridão) a essa escuridão normalmente. A escuridão e a proteção contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. Você pode usar este talento (esfera dupla) mesmo que seu efeito de proteção tenha um custo de pontos de magia de 1 ou mais."
@@ -699,20 +988,46 @@
         "adivinhacao",
         "destino"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "adivinhacao"
+        },
+        {
+          "type": "sphere",
+          "id": "destino"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Sempre que você usar divino como uma ação, você pode, antes do final do seu turno, conjurar uma consagração, um motivo ou uma palavra como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito divino tenha um custo de ponto de magia de 1 ou mais."
     },
     {
-      "id": "universal-armazenamento-em-estase-esfera-dupla-tempo-distorcao-armazenamento-extradimensional",
+      "id": "universal-armazenamento-em-estase",
       "name": "Armazenamento em Estase (esfera dupla, Tempo, Distorção (Armazenamento Extradimensional))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "tempo",
+        "distorcao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "tempo"
+        },
+        {
+          "type": "sphere",
+          "id": "distorcao"
+        },
+        {
+          "type": "talent",
+          "id": "distorcao-armazenamento-extradimensional"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Ao gastar um minuto em concentração, você pode trancar parte do seu armazenamento extradimensional, enviando-o além do tempo e colocando seu conteúdo em estase. Isso torna o conteúdo selecionado inacessível até que você gaste outro minuto destrancando-o, mas enquanto estiver trancado, o conteúdo não sofre desgaste por idade ou por efeitos como ferrugem ou apodrecimento enquanto armazenado desta forma, e o tempo gasto no espaço não conta para a duração de habilidades como talentos (aprimorar) ou limites de tempo, como o limite de tempo para reviver uma criatura morta."
@@ -729,20 +1044,46 @@
         "morte",
         "tempo"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "sphere",
+          "id": "tempo"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um efeito de alterar o tempo que tenha como alvo uma criatura à criatura criada como uma ação bônus antes do final do seu turno. Alterar o tempo e reanimar contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjurar Alterar o Tempo pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais."
     },
     {
-      "id": "universal-necromancia-silvestre-esfera-dupla-morte-natureza-geomancia-vegetal",
+      "id": "universal-necromancia-silvestre",
       "name": "Necromancia Silvestre (esfera dupla, Morte, Natureza (geomancia vegetal))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "morte",
+        "natureza"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "sphere",
+          "id": "natureza"
+        },
+        {
+          "type": "text",
+          "text": "geomancia vegetal"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -750,17 +1091,37 @@
           "text": "Sempre que você usar reanimar para criar um morto-vivo corpóreo com um talento básico (morto-vivo), você pode infundi-lo com esporos e vida vegetal. A criatura reanimada perde o tipo de criatura morto-vivo e ganha o tipo de criatura vegetal."
         }
       ],
-      "body": "Você pode usar ossos e cadáveres inanimados, em vez de plantas, para cumprir quaisquer pré-requisitos adicionais para talentos e habilidades de geomancia vegetal.\n\nSeus talentos e habilidades de golpe fantasma que normalmente afetam apenas mortos-vivos também podem afetar criaturas vegetais. Você pode usar vegetação morta como alvo para cumprir os pré-requisitos de alvo para qualquer magia de reanimar que você conjure para criar um morto-vivo corpóreo com um talento básico (morto-vivo). O estado da vegetação determina quais tipos de mortos-vivos você pode reanimar; galhos secos e estéreis podem ser reanimados como esqueletos, galhos apodrecidos podem ser reanimados como zumbis, enquanto arbustos recém-cortados podem ser reanimados como carniçais, etc. Simplesmente cortar e desbastar madeira geralmente não desqualifica a vegetação como um alvo válido para reanimar, mas madeira que foi transformada em vigas de madeira serrada não é. O Mestre tem a palavra final sobre qual vegetação é ou não um alvo válido para reanimar, bem como qual criatura base é usada ao determinar seu ND (Nível de Desafio) e estatísticas; por exemplo, um alce de topiaria pode usar as estatísticas base de um alce, enquanto um humanoide de madeira cambaleante pode usar as estatísticas base de um bandido.\n\nAlém disso, sua habilidade de reanimar recebe o seguinte aprimoramento:"
+      "body": "Você pode usar ossos e cadáveres inanimados, em vez de plantas, para cumprir quaisquer pré-requisitos adicionais para talentos e habilidades de geomancia vegetal.\n\nSeus talentos e habilidades de golpe fantasma que normalmente afetam apenas mortos-vivos também podem afetar criaturas vegetais. Você pode usar vegetação morta como alvo para cumprir os pré-requisitos de alvo para qualquer magia de reanimar que você conjure para criar um morto-vivo corpóreo com um talento básico (morto-vivo). O estado da vegetação determina quais tipos de mortos-vivos você pode reanimar; galhos secos e estéreis podem ser reanimados como esqueletos, galhos apodrecidos podem ser reanimados como zumbis, enquanto arbustos recém-cortados podem ser reanimados como carniçais, etc. Simplesmente cortar e desbastar madeira geralmente não desqualifica a vegetação como um alvo válido para reanimar, mas madeira que foi transformada em vigas de madeira serrada não é. O Mestre tem a palavra final sobre qual vegetação é ou não um alvo válido para reanimar, bem como qual criatura base é usada ao determinar seu ND (Nível de Desafio) e estatísticas; por exemplo, um alce de topiaria pode usar as estatísticas base de um alce, enquanto um humanoide de madeira cambaleante pode usar as estatísticas base de um bandido.\n\nAlém disso, sua habilidade de reanimar recebe o seguinte aprimoramento:",
+      "_needsReview": [
+        "prereq:unresolved:geomancia vegetal"
+      ]
     },
     {
-      "id": "universal-transformar-objeto-esfera-dupla-alteracao-aprimoramento-animar-objeto",
+      "id": "universal-transformar-objeto",
       "name": "Transformar Objeto (esfera dupla, Alteração, Aprimoramento (Animar Objeto))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "alteracao",
+        "aprimoramento"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alteracao"
+        },
+        {
+          "type": "sphere",
+          "id": "aprimoramento"
+        },
+        {
+          "type": "talent",
+          "id": "aprimoramento-animar-objeto"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você usa Animar Objeto da esfera Aprimoramento, você pode aplicar uma metamorfose ao alvo como uma ação bônus antes do final do seu turno. O aprimoramento e a metamorfose contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de metamorfose\n\npode ser aprimorada para afetar múltiplos alvos com o talento Em Massa (metaesfera) da esfera Universal, se eles foram aprimorados desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de aprimoramento tenha um custo de ponto de magia de 1 ou mais."
@@ -777,7 +1138,16 @@
         "escuridao",
         "luz"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "escuridao"
+        },
+        {
+          "type": "sphere",
+          "id": "luz"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Áreas de escuridão criadas por você ou seus aliados podem coexistir dentro de áreas de efeitos de luz mágica criadas por você ou seus aliados; ambos os conjuradores devem concordar em permitir que seus efeitos coexistam para que este talento funcione. Em áreas onde um efeito de escuridão e um efeito de luz mágica criados por aliados se sobrepõem, a área se torna penumbra, enquanto ainda fornece efeitos adicionais como se fosse uma área de escuridão ou luz brilhante, conforme aplicável."
@@ -794,20 +1164,46 @@
         "alteracao",
         "morte"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "alteracao"
+        },
+        {
+          "type": "sphere",
+          "id": "morte"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar uma metamorfose à criatura criada como uma ação bônus antes do final do seu turno. A reanimação e a metamorfose contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de metamorfose pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais."
     },
     {
-      "id": "universal-vudu-esfera-dupla-morte-ilusao-disfarce-ilusorio",
+      "id": "universal-vudu",
       "name": "Vudu (esfera dupla, Morte, Ilusão (Disfarce Ilusório))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
       "group": "Talentos de Esfera Dupla",
-      "tags": [],
-      "prerequisites": [],
+      "tags": [
+        "esfera dupla",
+        "morte",
+        "ilusao"
+      ],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "sphere",
+          "id": "ilusao"
+        },
+        {
+          "type": "talent",
+          "id": "ilusao-disfarce-ilusorio"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você pode conceder aos seus mortos-vivos reanimados os benefícios do talento Disfarce Ilusório, fazendo com que pareçam como eram quando estavam vivos. Você não precisa saber a aparência da criatura quando estava viva para obter esse benefício."
@@ -824,7 +1220,16 @@
         "morte",
         "protecao"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "sphere",
+          "id": "morte"
+        },
+        {
+          "type": "sphere",
+          "id": "protecao"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar uma égide à criatura criada como uma ação bônus antes do final do seu turno. A égide e reanimar contam como um único efeito para fins de concentração.\n\nUse a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjuração de égide pode ser aprimorada para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, caso elas tenham sido criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimação tenha um custo de pontos de magia de 1 ou mais."

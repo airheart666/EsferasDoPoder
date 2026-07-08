@@ -719,6 +719,12 @@ function buildPackageSelector(active, title, spec) {
   for (const opt of spec.packages.options) {
     const o = document.createElement('option');
     o.value = opt.id; o.textContent = opt.label;
+    // Gate de escolha (ex.: Criação de Magias exige ≥2 esferas mágicas) → desabilita
+    // a option não-atendida (a menos que já seja a escolhida) com o motivo no rótulo.
+    if (opt.requires && active && dataIndex && spec.pkg !== opt.id) {
+      const req = Rules.packageRequirementMet(active, sphereIdFor(title), opt.id, dataIndex);
+      if (!req.ok) { o.disabled = true; o.textContent = `${opt.label} — ${req.reason}`; }
+    }
     if (spec.pkg === opt.id) o.selected = true;
     sel.appendChild(o);
   }
@@ -1402,12 +1408,16 @@ function removeSphere(char, title) {
   updateCharacter(char.id, { spheres: char.spheres });
 }
 // Escolhe o pacote-base (Alquimia). Muda o grupo-grátis → limpa os grátis atuais.
+// Gate: pacotes com `requires` (ex.: Criação de Magias exige ≥2 esferas mágicas)
+// são bloqueados — a option já vem disabled no seletor; isto é a defesa extra.
 function setPackage(char, title, pkgId) {
+  if (pkgId && dataIndex && !Rules.packageRequirementMet(char, sphereIdFor(title), pkgId, dataIndex).ok) return false;
   const e = acquireSphere(char, title);
   e.choices = e.choices || {};
   e.choices.pkg = pkgId || null;
   e.freePicks = [];
   updateCharacter(char.id, { spheres: char.spheres });
+  return true;
 }
 // Define/limpa o grátis do slot `index` (usado pelos seletores da barra). `talentId`
 // é um id de talento (ou null p/ limpar); a checagem de pré-requisito acontece no
@@ -1492,7 +1502,22 @@ function classSpec(title, pkg) {
       conds = opt.conditionals || []; baseTalentIds = opt.baseTalentIds || [];
     } else { baseFree = 0; conds = []; } // pacote ainda não escolhido
   }
-  return { fg, freeLabel, talentTags, baseFree, conds, baseTalentIds, canFree: baseFree > 0 || conds.length > 0, packages: rule.packages || null };
+  // O que "pertence a algum pacote" desta esfera (tags de pacote + habilidades-base
+  // de qualquer pacote) — p/ talentRole distinguir talento GERAL de talento de OUTRO
+  // pacote (KG-4 / decisão b). Base de outro pacote ≠ geral.
+  const allPackageTags = [], allPackageBaseIds = [];
+  if (rule.packages) {
+    const set = new Set(), bases = new Set();
+    for (const o of rule.packages.options) {
+      for (const t of (o.talentTags || [])) set.add(normalizeTerm(t));
+      const fgt = o.freeGroup && (o.freeGroup.tags || (o.freeGroup.tag ? [o.freeGroup.tag] : []));
+      for (const t of (fgt || [])) set.add(normalizeTerm(t));
+      for (const id of (o.baseTalentIds || [])) bases.add(id);
+    }
+    for (const t of set) allPackageTags.push(t);
+    for (const id of bases) allPackageBaseIds.push(id);
+  }
+  return { fg, freeLabel, talentTags, baseFree, conds, baseTalentIds, allPackageTags, allPackageBaseIds, canFree: baseFree > 0 || conds.length > 0, packages: rule.packages || null };
 }
 // Spec RESOLVIDO (com o personagem): capacidade de grátis = base + condicionais
 // satisfeitas por proficiência.
@@ -1511,8 +1536,13 @@ function resolveSpec(char, title, choices) {
 function talentRole(talent, cs) {
   if (cs.baseTalentIds && cs.baseTalentIds.includes(talent.id)) return 'base'; // habilidade-base do pacote (auto)
   if (cs.talentTags && cs.talentTags.length) {
-    const want = cs.talentTags.map(normalizeTerm);
-    if (!want.some(w => (talent.tags || []).map(normalizeTerm).includes(w))) return 'ignore';
+    const tags = (talent.tags || []).map(normalizeTerm);
+    const hasChosen = cs.talentTags.map(normalizeTerm).some(w => tags.includes(w));
+    // Pertence a OUTRO pacote se tem tag de pacote ≠ a escolhida OU é habilidade-base de
+    // outro pacote → ignora. Talentos GERAIS (nenhuma tag/base de pacote) ficam
+    // disponíveis em qualquer pacote (decisão b).
+    const isOtherPkgBase = (cs.allPackageBaseIds || []).includes(talent.id) && !(cs.baseTalentIds || []).includes(talent.id);
+    if (!hasChosen && ((cs.allPackageTags || []).some(t => tags.includes(t)) || isOtherPkgBase)) return 'ignore';
   }
   if (talent.kind === 'base') return 'base';
   if (!cs.canFree) return 'extra';

@@ -89,6 +89,7 @@
  * @property {number} [freePicks]
  * @property {string[]} [talentTags]
  * @property {Conditional[]} [conditionals]
+ * @property {{minMagicSpheresExcludingSelf?: number}} [requires]  Gate to CHOOSE this package.
  */
 
 /**
