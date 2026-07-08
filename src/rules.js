@@ -113,12 +113,44 @@ const Rules = (() => {
         let sum = 0;
         for (const pair of f.bonusByLevel || []) if (pair[0] <= level) sum += pair[1];
         if (!sum) continue;
+        // Features com restrição (ex.: Metamágica → só talentos Meta da Universal) NÃO
+        // inflam o orçamento geral — viram cota restrita (restrictedAllowances). A nota
+        // ainda aparece para explicar a mecânica.
+        if (f.restrictedTo) { if (f.note) out.notes.push(f.name + ': ' + f.note); continue; }
         if (f.section === 'martial') out.martial += sum; else out.magic += sum;
         if (f.note) out.notes.push(f.name + ': ' + f.note);
       }
     };
     addFeatures(cf.features);
     if (char.subclass && cf.subclasses && cf.subclasses[char.subclass]) addFeatures(cf.subclasses[char.subclass].features);
+    return out;
+  }
+
+  /**
+   * Cotas restritas de features (ex.: Feiticeiro "Metamágica" → N escolhas que só
+   * valem para talentos de uma tag numa esfera, de graça, fora do orçamento geral).
+   * count = soma cumulativa de bonusByLevel até o nível atual.
+   * @param {Character} char @param {DataIndex} idx
+   * @returns {{feature:string, sphere:(string|null), tag:(string|null), count:number, note:string}[]}
+   */
+  function restrictedAllowances(char, idx) {
+    /** @type {{feature:string, sphere:(string|null), tag:(string|null), count:number, note:string}[]} */
+    const out = [];
+    const cf = idx.classFeatures[char.className];
+    if (!cf) return out;
+    const level = char.level || 1;
+    /** @param {any[]} feats */
+    const scan = feats => {
+      for (const f of feats || []) {
+        if (!f.restrictedTo) continue;
+        let count = 0;
+        for (const pair of f.bonusByLevel || []) if (pair[0] <= level) count += pair[1];
+        if (!count) continue;
+        out.push({ feature: f.name, sphere: f.restrictedTo.sphere || null, tag: f.restrictedTo.tag || null, count, note: f.note || '' });
+      }
+    };
+    scan(cf.features);
+    if (char.subclass && cf.subclasses && cf.subclasses[char.subclass]) scan(cf.subclasses[char.subclass].features);
     return out;
   }
 
@@ -254,6 +286,7 @@ const Rules = (() => {
       }
     }
     for (const id of computeGrants(char, idx).specificTalents) set.add(id); // granted specific talents
+    for (const id of char.metamagic || []) set.add(id); // cota restrita (ex.: Metamágica → talentos Meta da Universal)
     return set;
   }
 
@@ -307,6 +340,7 @@ const Rules = (() => {
     indexData, classRow, derivedStats, traditionBonus, classFeatureBonus,
     talentBudget, computeGrants, grantedSphereIds, effectiveSection, slotsSpent,
     accessedSphereIds, ownedTalentIds, prereqCheck, canAddTalent, canAccessSphere,
+    restrictedAllowances,
   };
 })();
 

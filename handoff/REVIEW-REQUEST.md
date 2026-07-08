@@ -1,4 +1,4 @@
-# Review Request — Layout B (Bancada): restructure the "Meu Personagem" sheet
+# Review Request — KG-5: Metamágica restricted-allowance UI
 *Written by Builder (Bob). Read by Reviewer (Richard).*
 
 Ready for Review: YES
@@ -7,208 +7,161 @@ Ready for Review: YES
 
 ## What Was Built
 
-`renderCharacter` (the "Meu Personagem" sheet) is restructured into **Layout B / Bancada**,
-matching the approved interactive prototype at `design-previews/builder-bancada.html`
-(behavior/visual contract). This is UI plumbing only — it reuses the P3 enforcement layer
-end-to-end; **no rule changed, `src/rules.js` untouched**.
+A dedicated **accordion entry for Metamágica** ("✦ Metamágica — X/N escolhas") in the "Meu
+Personagem" sheet, next to the sphere entries — same expand/collapse mechanism, same bench
+(master-detail) pattern already used for talents/spheres. This is **UI-only**: the rules
+layer (`Rules.restrictedAllowances`, `Rules.ownedTalentIds` folding in `char.metamagic`,
+the general budget already not counting it) was built and tested in a prior step and is
+**untouched** — `src/rules.js`, `data/`, `schema/` are not in this diff. The UI only
+**consumes** `Rules.restrictedAllowances(active, dataIndex)` and reads/writes
+`char.metamagic: string[]`.
 
-New shape: a sticky left **rail** (character tabs, identity form, collapsible
-proficiências, mini-stats + a new budget bar, and a sphere-navigation list) and a right
-**main** area with the **active sphere's build panel** on top and a **master-detail
-workbench (the "bancada")** underneath — always visible, no modal/overlay. Adding a
-sphere happens in the same workbench (a "esferas" mode), not a separate picker.
-
-Every mutation (add/remove talent, acquire/remove sphere, package, free pick, `.char-field`)
-still goes through the exact same wrappers as before (`applyTalentToggle`, `tryAcquireSphere`,
-`setPackage`, `applyFreePickSelection`, `toggleExtraTalent`, `removeSphere`) and still
-triggers a full `renderCharacter()`. The only new thing is a **second, lighter re-render
-path** — `refreshCharBench()` — for purely visual state (which item is selected, search
-text, scope, which sphere is active in the rail) that doesn't touch the rules engine at all.
+For a Feiticeiro level ≥ 3 this shows a "✦ Metamágica" row in the accordion. Expanding it
+shows the current picks (as cards, with a ✕ to remove) and, in the bench below, a filtered
+list of Universal **metaesfera**-tagged talents to add — capped at N (2 at level 3, +1 at
+10, +1 at 17), cost 0, never touching the general magic-talent budget.
 
 ## Files Changed
 
 | File | What | Why |
 |---|---|---|
-| `app.js` | New module-level `charView = { sphere, benchMode, sel, scope, search }` (top of file, near the other module-level `let`s) | View-only state for the bancada — never written to localStorage, survives re-renders, reset on character switch. |
-| `app.js` | New: `charSphereTitles`, `talentCandidatesForSphere`, `talentPickPath`, `talentGate` (+`prereqStatusLabel`/`describePrereqs`), `sphereCandidates` | Pure-data versions of the filtering logic that used to live inside `buildAddTalentPicker`/`buildAddSpherePicker` (same predicates, same order) — extracted so the bench can build a list+detail from data instead of a `<select>`/pill row. `talentGate` reads `Rules.prereqCheck`/`Rules.canAddTalent` **display-only**, mirroring `applyTalentToggle`'s own branching exactly. |
-| `app.js` | **Deleted**: `buildAddTalentPicker`, `buildAddSpherePicker` | Their DOM output (inline pill row / `<select>`+button) has no place in Layout B — the bench replaces both. Kept-but-unused would be dead code; the filtering logic itself was preserved (see above), not reimplemented. |
-| `app.js` | `charTalentCard` hoisted to module scope (was a closure inside the old `renderCharacter`) | Body unchanged; now reusable by `renderSphereBuildPanel` without re-declaring a closure on every render. |
-| `app.js` | New `renderSphereBuildPanel(active, title)` | Extracted verbatim from the old per-sphere loop body — same DOM (header, `.char-sphere-manage`, "Incluído com a esfera", "Talentos", "Remover esfera"), still returns an element with the `.char-sphere` class. Now called once (active sphere only) instead of looped over every sphere. |
-| `app.js` | New: `buildCharBuildContent`, `buildRailNavHTML`, `buildCharBudgetHTML`/`statCellHTML`/`budgetBarHTML`, `buildTalentDetail`, `buildTalentBenchPanel`, `buildSphereDetail`, `buildSphereBenchPanel`, `buildCharBenchInner` | The rail nav, the budget mini-grid+bar (same `Rules.slotsSpent`/`traditionBonus`/`classFeatureBonus` numbers as before, re-presented as a bar instead of a text cell), and the two bancada modes (talents / spheres), each as list+detail. |
-| `app.js` | New: `resetCharView`, `normalizeCharView`, `switchActiveChar`, `refreshCharBench` | View-state lifecycle + the second re-render tier (see below). |
-| `app.js` | `renderCharacter()` rewritten | Same early-returns (no dataIndex, no active character) preserved verbatim. For an active character: builds `.char-layout` (`.char-rail` + `.char-main`), calls `normalizeCharView`, and assembles rail/build/bench from the new builders above. |
-| `app.js` | `setupCharacter()` — extended, not replaced | `.charsel-tab`/`#char-new`/`#char-delete` now call `switchActiveChar`/`resetCharView` (resets the bancada view on character switch, matching the prototype's `selectChar`). Removed the now-unreachable `.char-add-sphere-btn` case (its producer is gone). Added, inside the **same** existing delegated click listener: `.char-rail-sphere` (switch active sphere — view-only), `.char-rail-addsphere` (enter spheres mode — view-only), `.char-bench-li` (select — view-only), `.char-bench-scope[data-scope]` (toggle scope — view-only), `.char-bench-acquire` (acquire the selected sphere — **mutation**), and a second `.char-btn` branch guarded by `.closest('.char-bench')` (add a talent from the bench detail — **mutation**, reuses `applyTalentToggle`). Added one new listener kind, `content.addEventListener('input', ...)`, scoped to `.char-bench-search` only (live filtering; `change` doesn't fire per keystroke). |
-| `style.css` | Deleted dead rules: `.char-add-talent(-row)`, `.char-add-btn.char-btn`, `.char-add-sphere(-select\|-btn)` | Markup that produced them no longer exists. |
-| `style.css` | New Layout B block (`.char-layout`, `.char-main`, rail sizing overrides for the *reused* `.char-stats`/`.char-stat`, `.char-profs-details`, `.char-budget-bar` family, `.char-railnav`/`.char-rail-sphere`/`.char-rail-addsphere`, `.char-build .char-sphere` panel chrome, full `.char-bench*` family) + an 880px collapse-to-1-column media query | Visual layer only. Reuses existing design tokens (`--accent`, `--table-border`, `--stat-bg/-border`, `--oxblood`, `--verdigris`, `--copper`, fonts) so dark mode works automatically — no separate palette like the standalone mockup file needed. |
+| `app.js` | New module-level const `METAMAGIC_KEY = 'mm:Metamágica'` | Sentinel value for `charView.sphere` — lets the existing esfera expand/collapse machinery drive the Metamágica entry too, without a parallel state field. |
+| `app.js` | New `metamagicAllowance(active)` | Thin wrapper around `Rules.restrictedAllowances(active, dataIndex)[0] \|\| null` — the single call site every other new function reads from (scope is 1 allowance today, per brief). |
+| `app.js` | `buildCharBuildContent` — extended | After the sphere accordion entries, appends the Metamágica entry (expanded via `renderMetamagicPanel` or collapsed via `buildCollapsedMetamagic`) whenever `metamagicAllowance(active)` is non-null. The old "no spheres yet" early-return now also checks `!mm` so a Feiticeiro with the feature but literally zero spheres still sees the entry. |
+| `app.js` | New `buildCollapsedMetamagic(active, allowance)` | Mirrors `buildCollapsedSphere` — same `.char-sphere-collapsed` markup/handler, `data-sphere="mm:Metamágica"` instead of a title, "X/N escolha(s)" instead of "N talento(s)". |
+| `app.js` | New `renderMetamagicPanel(active, allowance)` | Mirrors `renderSphereBuildPanel` — same `.char-sphere` container (P1/P2's `.closest('.char-sphere')` guards stay intact) and `.char-sphere-title.char-sphere-toggle` header (collapses via the existing handler). Cards via `charTalentCard(model.frag, id, 'free', 'Universal')` (reused verbatim); removal is a dedicated `.char-mm-remove` ✕, NOT `.char-talent-remove` (which calls `toggleExtraTalent` against `spheres[].talents` — wrong array entirely). Shows a hint line while `picks.length < count`. |
+| `app.js` | `buildTalentBenchPanel` — one guard added at the top | `if (charView.sphere === METAMAGIC_KEY) return buildMetamagicBenchPanel(...)` — never falls into the normal esfera/scope-candidate path for the sentinel. |
+| `app.js` | New `metamagicCandidates(active, allowance)` | Filters the allowance's sphere (`Universal`) by `allowance.tag` (`metaesfera`), minus `Rules.ownedTalentIds` — which already includes `char.metamagic` AND every normal Universal pick, so dedupe in **both directions** (a Metamágica pick can't be offered again here; a normally-bought Universal talent can't be offered here either) comes for free from the existing rules-layer function, no new set-math needed. |
+| `app.js` | New `buildMetamagicDetail(active, item, allowance)` | Mirrors `buildTalentDetail`'s layout (name/meta/description clone via `findCardInFrag`), but the action button is `.char-mm-add` (own class, not `makeCharControl`/`applyTalentToggle` — cost 0, outside the budget, never blocked by prereqs/section budget). Disabled with "Cota cheia" once `char.metamagic.length >= allowance.count`. |
+| `app.js` | New `buildMetamagicBenchPanel(active, allowance)` | Same master-detail shell (`.char-bench-tools`/`.char-bench-list`/`.char-bench-detail`/`.char-bench-grid`) as the normal talent bench, reusing `.char-bench-li` and the search input — but the toolbar shows a single label ("Metamágica — escolha talentos (Meta) da Universal (X/N)") instead of scope chips / "+ Adicionar esfera" (neither makes sense for a one-sphere, one-tag restricted pool). |
+| `app.js` | `talentCandidatesForSphere` — one line added to the `owned` set | Now also excludes `char.metamagic` ids, so a Metamágica pick can't reappear as a purchasable **extra** in Universal's normal talent list (the other half of the two-way dedupe — `metamagicCandidates` already excludes the reverse via `Rules.ownedTalentIds`). |
+| `app.js` | `setupCharacter`'s existing delegated click listener — extended, not replaced | New `.char-mm-add` branch: checks `!mmAdd.disabled`, re-derives the allowance, defensively re-checks cap + tag, then `updateCharacter(active.id, { metamagic: picks.concat([id]) })` + `renderCharacter()` (mutation → full re-render, matches every other add path); over-cap shows `showCharNotice`. New `.char-mm-remove` branch: filters the id out, same update+re-render. |
+| `app.js` | `normalizeCharView` — one `\|\|` clause added | `METAMAGIC_KEY` is now a valid `charView.sphere` value **only** while `metamagicAllowance(active)` is truthy — if the feature disappears (e.g. level drops below 3, or switching to a character without it), it resets exactly like a removed esfera would. |
+| `app.js` | `migrateCharacters` — one line added | `if (!Array.isArray(c.metamagic)) { c.metamagic = []; changed = true; }`, alongside the existing `proficiencies`/`tradition`/`subclass` defaults. |
+| `style.css` | `.char-talent-remove` rule extended to also match `.char-mm-remove` (both the flat declaration and the `.char-talent-extra >` scoped one) | Same visual, zero duplication — `renderMetamagicPanel` adds the `.char-talent-extra` class to the cloned card wrapper for the same flex layout as a normal extra-talent card. |
+| `style.css` | `.char-btn.char-bench-add` selector extended to also match `.char-mm-add` (base, `:hover`, `:disabled`) | Same "Adicionar" button visual reused. `.char-mm-add` is deliberately **not** given the `.char-btn` class itself — see Decisions below. |
+| `style.css` | New `.char-mm-entry` (+ `.char-sphere-collapsed.char-mm-entry:hover`) | Subtle copper accent (vs. the sphere entries' default accent color) on both the collapsed row and the expanded header, so Metamágica visually reads as a class-feature grant rather than another purchasable esfera. Optional per the brief ("só um realce... se precisar") — kept minimal. |
 
-## The Two-Tier Re-render Strategy
+## Decisions Worth Flagging
 
-- **Mutations** (add/remove talent, acquire/remove sphere, package, free pick, `.char-field`)
-  → `renderCharacter()`, unchanged as the standing pattern. Rebuilds the whole sheet
-  including the rail (budget/stats can change on any of these).
-- **View-only** (select a bench item, toggle scope, type in search, switch the active
-  sphere via the rail, enter/leave "spheres" mode) → **`refreshCharBench()`**. This:
-  1. Toggles the `.active` class on `.char-rail-sphere`/`.char-rail-addsphere` in place
-     (no rebuild of the rail's form/proficiências/stats — those never depend on view state).
-  2. Replaces `#char-build`'s content.
-  3. Replaces `#char-bench`'s content, and if a `.char-bench-search` input had focus before
-     the patch, re-focuses the new one and restores the caret position (`selectionStart`)
-     so typing doesn't stutter.
-
-  **Note on scope, flagged for review:** the brief's literal wording says
-  `refreshCharBench()` "substitui só o subtree `.char-bench`". I deliberately also patch
-  `.char-build` (step 2) — switching the active sphere via the rail is a view-only action,
-  but it changes *which sphere's panel* `.char-build` must show. Without patching it too,
-  the rail highlight would move while the build panel kept showing the old sphere. The
-  rail's own stats/form are still left alone (mutation-only). I believe this is what was
-  intended (the mockup's monolithic `render()` always redraws both together), just
-  narrowed here for the search-focus problem specifically — flagging in case Arch reads it
-  differently.
-
-## Event-Wiring Approach
-
-Both the rail and the bench are inside `#content`, so everything routes through the
-**existing** delegated `click`/`change` listeners already bound in `setupCharacter` — no
-new listener objects except one `input` listener (needed because `change` only fires on
-blur, not per keystroke, and the brief lists `.char-bench-search` as a required new wire).
-Guards used to keep the two `.char-btn` producers apart:
-- `.char-btn` inside `.char-sphere` (the build panel's "Incluído"/"Talentos" cards) → the
-  pre-existing branch, unchanged.
-- `.char-btn` inside `.char-bench` (the workbench's Add button, produced by
-  `makeCharControl` same as everywhere else) → new branch, same `applyTalentToggle` call.
-
-These two containers are siblings and mutually exclusive by construction, so there's no
-double-handling risk (same pattern P3 already established for `.char-sphere` vs.
-`.sphere-acquire` on the reading page — untouched here).
+- **`.char-mm-add` does not carry the `.char-btn` class.** The brief says it "pode reusar o
+  visual de `.char-btn.char-bench-add`" — I read that as CSS reuse, not class reuse, and
+  deliberately kept it off `.char-btn`: the pre-existing delegated handler
+  `cbtn.closest('.char-btn') && cbtn.closest('.char-bench')` calls
+  `applyTalentToggle(active, title, JSON.parse(cbtn.dataset.char), ...)`, and a `.char-mm-add`
+  button only has `dataset.id` (no `dataset.char`/`dataset.sphere`) — sharing the class would
+  have made every Metamágica add attempt throw on `JSON.parse(undefined)`. CSS instead adds
+  `.char-mm-add` directly to the `.char-btn.char-bench-add` selector list.
+- **Kept the search input in the Metamágica bench toolbar**, even though the brief's toolbar
+  description only mentions a label. It's the same `.char-bench-search` element already wired
+  to the existing `input` listener (`refreshCharBench`) — costs nothing extra, matches the
+  normal bench's UX. Flag it if you'd rather it be dropped for stricter fidelity to "só um
+  rótulo".
+- **`metamagicAllowance` takes `[0]` of `Rules.restrictedAllowances`.** Scope is 1 allowance
+  today (only Metamágica exists) per the brief. If a second restricted-allowance feature is
+  ever added, this is the seam that needs to grow into a feature-keyed lookup — not attempted
+  here, correctly out of scope.
 
 ## Not Regressed (verified, see below)
 
-- **P1** (a granted sphere, e.g. Mente from Sangue Feérico, offers a free-pick selector in
-  the sheet without ever being "acquired") — `renderSphereBuildPanel` still builds
-  `.char-sphere-manage` from `buildPackageSelector`/`buildFreePickSelectors` exactly as
-  before, and `.char-sphere` + `.closest('.char-sphere')` guards are all still in place.
-- **P2** (Universal package selection in the sheet) — same code path, untouched.
-- **Reading-page acquire bar** (`renderSphereAcquireBar`) — not modified at all; confirmed
-  it still returns `.sphere-acquire` markup and is unaffected by anything in this change
-  (it's built by `setupFavorites`, a completely separate function).
+- **Sphere accordion** — untouched code paths (`renderSphereBuildPanel`, `buildCollapsedSphere`,
+  `.char-sphere-collapsed`/`.char-sphere-toggle` handlers) still drive title-keyed spheres
+  exactly as before; the Metamágica entry only ever appends after them.
+- **Bench (talents mode)** — `buildTalentBenchPanel`'s normal body is unchanged except for the
+  one early-return guard at the top; a character without the Metamágica feature (or with
+  `charView.sphere` pointing at a real esfera) never touches any of the new code.
+- **Bench (spheres mode)** — `buildSphereBenchPanel`/`buildSphereDetail` untouched.
+- **P1/P2** (granted-sphere free picks, Universal package selection) — `renderSphereBuildPanel`'s
+  `.char-sphere-manage` block and the `.char-sphere` class/`.closest('.char-sphere')` guards are
+  byte-identical to before this change.
+- **Reading-page acquire bar** (`renderSphereAcquireBar`/`setupFavorites`) — not touched at all.
 
 ## How This Was Verified
 
 - `npm run validate` — 0 errors (unaffected, doesn't touch app.js).
-- `npm run typecheck` — green (app.js is out of `checkJs` scope, confirmed in tsconfig.json).
-- `npm test` (`scripts/test-rules.js`) — 28/28, unaffected (pure `src/rules.js`, untouched).
-- `node scripts/sanity-builder.js` — 29/29, unaffected (rules/migration layer only).
+- `npm run typecheck` — green (app.js is out of `checkJs` scope).
+- `npm test` (`scripts/test-rules.js`) — **30/30**, including the pre-existing
+  "Metamágica does NOT add to general magic budget" / "Metamágica surfaces as a restricted
+  allowance" / "Metamágica allowance count = 2 at lvl5" cases from the rules-layer step this
+  UI consumes (all still pass — confirms nothing here needed rules changes).
+- `node scripts/sanity-builder.js` — **29/29** (confirms `migrateCharacters` now seeds
+  `metamagic: []` on legacy characters, alongside all pre-existing scenarios).
 - `node --check app.js` — clean.
 - **New jsdom smoke test** (written during the build, same technique as
   `scripts/sanity-builder.js` — loads the real `parser.js`/`chapters.js`/`src/rules.js`/
-  `src/data.js`/`app.js` into a jsdom `vm` context, not committed as a script but the code
-  is reproducible from this description): called the real `setupCharacter()` +
-  `renderCharacter()`, created a level-5 **Feiticeiro (Sangue Feérico)**, and dispatched
-  real `click`/`input` DOM events:
-  - Empty state (no character) renders its message, no throw.
-  - Full layout present: `.char-layout`, `.char-rail`, `.char-main`, `.char-build`,
-    `.char-bench`, `.char-railnav` populated (Mente granted → at least one rail entry),
-    `.char-build .char-sphere` present, `.char-budget-bar` rendered, bench list populated
-    with Mente candidates.
-  - Clicking a `.char-bench-li` updates `charView.sel` and the detail panel shows that
-    talent's `<h4>`.
-  - Clicking the "Todas" scope chip updates `charView.scope`.
-  - Typing in `.char-bench-search` (dispatched `input`) updates `charView.search` **and**
-    the input keeps focus after the `refreshCharBench()` DOM patch (the specific risk this
-    two-tier design exists to avoid).
-  - Clicking `.char-rail-addsphere` switches `benchMode` to `'spheres'` and confirms
-    `#char-build` goes empty (matches the prototype hiding the build panel during the
-    sphere catalog) while `.char-bench-li` now lists sphere candidates.
-  - Selecting an unblocked sphere candidate and clicking `.char-bench-acquire`: confirms
-    `benchMode` returns to `'talents'`, the acquired sphere becomes `charView.sphere`, and
-    `sphereEntry` now exists for it (real mutation via `tryAcquireSphere`).
-  - Clicking the bench detail's Add button (`.char-bench-detail .char-btn.char-bench-add`):
-    confirms the character's owned-talent count actually grew (real mutation via
-    `applyTalentToggle`).
-  - Confirmed `.char-sphere` class is still present on the build panel (P1/P2 guard
-    dependency) and `renderSphereAcquireBar('Mente')` still returns `.sphere-acquire`
-    (reading-page bar untouched).
-  - **24/24 assertions passed.**
+  `src/data.js`/`app.js` into a jsdom `vm` context, not committed as a script but fully
+  reproducible from this description): created a level-5 **Feiticeiro (Sangue Feérico)**
+  (Metamágica count = 2), called the real `setupCharacter()` + `renderCharacter()`, and
+  dispatched real `click` DOM events:
+  - Entry appears collapsed, "0/2" — clicking it expands the panel (header also reads "0/2"),
+    and the bench toolbar shows the "Metamágica — escolha talentos (Meta) da Universal (0/2)"
+    label.
+  - Selected a bench candidate, confirmed its detail shows an **enabled** `.char-mm-add`
+    button ("Adicionar (Metamágica)"); clicked it — the id landed in `char.metamagic`, the
+    header updated to "1/2", and `Rules.slotsSpent(active, dataIndex).magic` was **identical**
+    before and after (general budget genuinely untouched).
+  - Confirmed the panel **stays expanded** across the full `renderCharacter()` re-render
+    triggered by the add (normalizeCharView correctly keeps `METAMAGIC_KEY` valid while the
+    allowance exists).
+  - Picked a second (different) candidate — header reached "2/2".
+  - Selected a third candidate: `.char-mm-add` was **disabled**, labeled "Cota cheia"; clicking
+    it anyway was a confirmed no-op (`char.metamagic.length` stayed 2).
+  - **Dedupe, both directions:** acquired Universal normally (`tryAcquireSphere`), confirmed
+    `talentCandidatesForSphere(active, 'Universal')` does **not** offer either Metamágica pick
+    as a purchasable extra. Then took a *different* metaesfera-tagged talent as a normal
+    Universal extra pick (`addExtraTalentChecked`), and confirmed `metamagicCandidates`
+    immediately stopped offering it in the Metamágica bench.
+  - Clicked `.char-mm-remove` on a pick's card in the ficha — confirmed it left
+    `char.metamagic`, the header dropped back to "1/2", and the removed talent reappeared as
+    a Metamágica bench candidate.
+  - Created a fresh **level-1 Feiticeiro** (no Metamágica yet) — confirmed
+    `metamagicAllowance` returns `null` and the accordion shows **no** `mm:Metamágica` entry
+    at all.
+  - **26/26 assertions passed.**
 
-This exercises the real functions against real data, including the specific focus/caret
-risk the two-tier re-render was designed for — but it's still not a substitute for a human
-looking at the actual rendered layout (grid collapse at 880px, sticky rail scroll behavior,
-visual states like `.blocked`/`.over`, dark mode) in a real browser.
+This exercises the real functions against real data end-to-end, but it's still not a
+substitute for a human looking at the actual rendered accordion entry, card layout, and dark
+mode in a real browser.
 
 ## Browser Click-Through Checklist (for the Owner)
 
-Use a **Feiticeiro (Sangue Feérico)** and, separately, an **Artífice** — they exercise
-different paths (granted sphere / cross-section budget) already covered by the automated
-tests, but need eyes on the actual layout.
+Use a **Feiticeiro, subclass Sangue Feérico, level ≥ 3** (Metamágica is active at level 3+;
+try level 10 or 17 too if you want to see the count grow to 3/4).
 
-**A. First look**
-1. Open **Meu Personagem**, create a character (Feiticeiro, subclass Sangue Feérico,
-   any level ≥ 3). Confirm the new two-column layout: left rail (tabs, identity fields,
-   a collapsed "Proficiências" `<details>`, a mini-stat grid, a budget bar, and an
-   "Esferas" list showing **Mente — concedida**), right side showing Mente's build panel
-   on top and the bancada (search + scope chips + list + detail) below.
-2. Resize the window below ~880px — confirm the layout collapses to a single column
-   (rail on top, no longer sticky) and the bancada's list/detail also stack.
-
-**B. Bancada — talents**
-3. In the bancada, click a talent in the list — confirm the detail panel on the right
-   shows its name, cost ("Grátis" or "Custa 1 talento mágico"), a cloned description, a
-   pré-requisito line, and an Add button.
-4. Click Add — confirm it appears in the build panel above ("Incluído com a esfera" or
-   "Talentos" depending on grátis/extra), the budget bar in the rail updates live, and
-   the bench list no longer shows that talent.
-5. Type in the search box — confirm the list filters as you type **without losing focus**
-   (you should be able to keep typing without re-clicking the box).
-6. Toggle the scope chip to "Todas" — confirm the list now shows candidates from every
-   sphere you have, each tagged with its sphere name; toggle back to see only the active
-   sphere's list.
-7. Find a talent with a prerequisite you don't meet yet (e.g. a level-gated one) —
-   confirm it shows a 🔒 in the list and an ⚠ reason in the detail; click Add anyway and
-   confirm nothing happens (a small warning note appears, no mutation). Then satisfy the
-   prerequisite (e.g. add the required talent) and confirm it unlocks.
-8. Remove a talent (✕ in the build panel) — confirm the budget bar goes back down.
-
-**C. Bancada — spheres**
-9. Click **"+ Adicionar esfera"** at the bottom of the rail's sphere list — confirm the
-   build panel above disappears and the bancada now lists spheres you don't have yet
-   (grouped implicitly magic/martial), each showing 🔒 if it's outside your remaining
-   budget.
-10. Select one, confirm the detail shows its description and access cost, click
-    "+ Adquirir esfera" — confirm you land back in talents mode with that sphere now
-    active in the rail and its build panel visible, and the budget bar reflects the cost.
-11. Switch to the **Artífice** and repeat 9-10 with a martial (poder) sphere accessed via
-    the magic budget (Engenhosidade-style cross-section) — confirm the rail's budget bars
-    (both mágico and marcial, if applicable) reflect it correctly.
-
-**D. Not regressed**
-12. Confirm Mente (the granted sphere) still shows a package/free-pick control if
-    applicable, and has **no** "Remover esfera" button (granted spheres can't be removed).
-13. Switch between characters via the top tabs — confirm the rail and bancada reset to
-    that character's own first sphere (not left showing the previous character's view).
-14. Open any sphere chapter from the sidebar (not the sheet) and confirm the reading-page
-    **acquire bar** under the chapter title still looks and behaves exactly as before this
-    change (acquire/package/free-pick/remove, and the "Adicionar a…" popover when you have
-    2+ characters).
-
-## Deviations From the Brief
-
-- `refreshCharBench()` patches `.char-build` in addition to `.char-bench` — see the
-  "Note on scope" callout above under Two-Tier Re-render Strategy. Necessary for
-  correctness (switching sphere via the rail must update the visible build panel); flagged
-  for Arch/Richard rather than silently done.
-- Added a `.char-main` wrapper div (not in the brief's explicit CSS class list) as the
-  grid's second column, holding the pending-grants note + `.char-build` + `.char-bench`.
-  The grid needs exactly one element per column; this is purely organizational (mirrors
-  the mockup's own `.main` wrapper) and carries only `display:flex;flex-direction:column`
-  styling — no behavior.
-- Made `.char-rail-sphere` and `.char-rail-addsphere` `<button>` elements (the mockup uses
-  plain `<div onclick>`) for keyboard accessibility, consistent with how `.charsel-tab`/
-  `.char-new`/`.prof-chip` are already buttons elsewhere in this file.
+1. Open **Meu Personagem**, create the character. In the accordion (below the identity/stats
+   rail), scroll to the bottom of the sphere list — confirm a **"✦ Metamágica — 0/2
+   escolha(s)"** row appears, visually distinct (copper accent) from the sphere rows above it.
+2. Click it — confirm it expands like any sphere (the previously-expanded sphere, if any,
+   collapses), showing an empty "Escolhidos" area and a hint like "Escolha 2 talento(s) de
+   metaesfera na bancada abaixo."
+3. In the bancada below, confirm the toolbar reads something like "Metamágica — escolha
+   talentos (Meta) da Universal (0/2)" with **no** scope chips and **no** "+ Adicionar esfera"
+   button (unlike the normal talent bench).
+4. Click a talent in the list — confirm the detail shows its name, "Universal · Metamágica ·
+   grátis — fora do orçamento geral", the full cloned description, and an **"Adicionar
+   (Metamágica)"** button.
+5. Click it — confirm: the talent appears as a card under "Escolhidos" in the panel above
+   (with a ✕), the header/collapsed count go to "1/2", and the **magic budget bar in the
+   rail does NOT move** (this is the whole point of the feature — it must stay unaffected).
+6. Repeat to reach "2/2". Select a third candidate (if the sphere has more metaesfera talents
+   left) — confirm its Add button is **disabled** and reads "Cota cheia".
+7. Click the ✕ on one of the two chosen cards — confirm it's removed, the count drops to
+   "1/2", and the talent is offered again in the bench below.
+8. Acquire the **Universal** sphere normally (via "+ Adicionar esfera" on a different, real
+   sphere entry) and open its own talent list in the bench — confirm your remaining
+   Metamágica pick does **not** show up there as a normal purchasable extra. Conversely, buy a
+   *different* metaesfera-tagged Universal talent normally (as an extra) — confirm it
+   disappears from the Metamágica bench's candidate list (it's already yours either way).
+9. Change the character's level to **1** (or switch to a non-Feiticeiro character) — confirm
+   the "✦ Metamágica" entry disappears entirely from the accordion, and if it happened to be
+   the expanded entry, the sheet doesn't break (falls back to no sphere expanded / the first
+   available one).
+10. Confirm nothing else regressed: sphere accordion expand/collapse, the bench in talents/
+    spheres mode, a granted sphere's free-pick selector (P1), a Universal package selector
+    (P2), and the reading-page acquire bar under any sphere chapter — all exactly as before.
 
 ## Open Questions
 
-None blocking. One judgment call worth a look: per-sphere `_unresolvedLegacy` migration
-warnings (talents from old saves that couldn't be auto-resolved) now only show when that
-specific sphere is the active one in `.char-build`, instead of all being visible at once
-like the old flat layout — an expected consequence of master-detail, not something I think
-needs fixing, but flagging since it's a small behavior change outside the DoD checklist.
+None blocking. Two small judgment calls are called out above under "Decisions Worth
+Flagging" (the search box in the Metamágica toolbar, and the `.char-mm-add`/`.char-btn`
+class split) — flagging for visibility, not because I think either needs to change.

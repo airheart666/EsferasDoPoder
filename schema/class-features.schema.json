@@ -38,6 +38,15 @@
           "items": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
         },
         "group": { "type": "string" },
+        "restrictedTo": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Cota restrita: N escolhas (de bonusByLevel) usáveis SÓ em talentos desta tag nesta esfera, de graça — não é bônus de orçamento geral (ex.: Feiticeiro Metamágica → Universal/metaesfera).",
+          "properties": {
+            "sphere": { "type": "string" },
+            "tag": { "type": "string" }
+          }
+        },
         "note": { "type": "string" }
       }
     },

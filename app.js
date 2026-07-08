@@ -24,6 +24,11 @@ let activeObserver = null;
 // sel = id do item selecionado na bancada (talento OU título de esfera, conforme
 // benchMode); scope = 'sphere' | 'all' (candidatos só da esfera ativa vs. de todas).
 let charView = { sphere: null, benchMode: 'talents', sel: null, scope: 'sphere', search: '' };
+// Sentinela de charView.sphere para a entrada "Metamágica" (cota restrita — KG-5) no
+// accordion: mesmo mecanismo de expandir/recolher das esferas normais, mas não é um
+// título de esfera. Só há UMA allowance hoje (Feiticeiro); se surgir outra no futuro,
+// isto precisa virar chave-por-feature — escopo atual é 1.
+const METAMAGIC_KEY = 'mm:Metamágica';
 
 async function init() {
   setupDarkMode();
@@ -1679,10 +1684,22 @@ function talentCandidatesForSphere(active, title) {
   if (!entry && !granted) return [];
   const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
   const e = entry || { freePicks: [], talents: [] };
-  const owned = new Set([...(e.freePicks || []), ...(e.talents || [])]);
+  // char.metamagic entra na exclusão: um talento tomado pela cota restrita (Metamágica)
+  // não pode reaparecer como extra comprável na esfera comum (dedupe nos dois sentidos —
+  // metamagicCandidates já exclui via Rules.ownedTalentIds, que inclui char.metamagic).
+  const owned = new Set([...(e.freePicks || []), ...(e.talents || []), ...((active && active.metamagic) || [])]);
   return model.freeGroup.concat(model.extras)
     .filter(it => !owned.has(it.id) && !isGrantedTalentId(active, it.id))
     .map(it => ({ id: it.id, name: it.name, sphere: title }));
+}
+
+// Cota restrita ativa do personagem (ex.: Metamágica do Feiticeiro nível ≥3) — Rules
+// já garante 0 ou 1 item hoje (escopo atual); null quando a feature não existe (nível
+// baixo, outra classe, ou a subclasse não a concede).
+function metamagicAllowance(active) {
+  if (!active || !dataIndex) return null;
+  const list = Rules.restrictedAllowances(active, dataIndex);
+  return list[0] || null;
 }
 
 // Caminho que applyTalentToggle tomaria ao adicionar este candidato: 'free'
@@ -1894,7 +1911,8 @@ function renderSphereBuildPanel(active, title) {
 function buildCharBuildContent(active) {
   if (charView.benchMode === 'spheres') return null;
   const titles = charSphereTitles(active);
-  if (!titles.length) {
+  const mm = metamagicAllowance(active);
+  if (!titles.length && !mm) {
     const p = document.createElement('p');
     p.className = 'glossary-intro';
     p.textContent = 'Nenhuma esfera ainda. Use “+ Adicionar esfera” na bancada abaixo para começar.';
@@ -1903,13 +1921,92 @@ function buildCharBuildContent(active) {
   // Accordion: TODAS as esferas adquiridas/concedidas ficam visíveis — a ativa
   // (charView.sphere) expandida com o painel completo (gestão + cards), as demais
   // recolhidas (cabeçalho clicável = nome + contagem) → visão do conjunto num relance.
+  // A entrada Metamágica (cota restrita, sentinela METAMAGIC_KEY) entra por último,
+  // com o mesmo mecanismo de expandir/recolher — só quando a feature existe.
   const acc = document.createElement('div');
   acc.className = 'char-accordion';
   for (const title of titles) {
     if (title === charView.sphere) acc.appendChild(renderSphereBuildPanel(active, title));
     else acc.appendChild(buildCollapsedSphere(active, title));
   }
+  if (mm) {
+    if (charView.sphere === METAMAGIC_KEY) acc.appendChild(renderMetamagicPanel(active, mm));
+    else acc.appendChild(buildCollapsedMetamagic(active, mm));
+  }
   return acc;
+}
+
+// Cabeçalho recolhido da entrada Metamágica no accordion — mesmo padrão de
+// buildCollapsedSphere (reusa .char-sphere-collapsed + o handler já existente que lê
+// data-sphere), só que a "contagem" é X/N escolhas em vez de N talento(s).
+function buildCollapsedMetamagic(active, allowance) {
+  const count = (active.metamagic || []).length;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'char-sphere-collapsed char-mm-entry';
+  btn.dataset.sphere = METAMAGIC_KEY;
+  btn.innerHTML = `<span class="csc-caret" aria-hidden="true">▸</span><span class="csc-name">✦ Metamágica</span>`
+    + `<span class="csc-count">${count}/${allowance.count} escolha(s)</span>`;
+  return btn;
+}
+
+// Painel expandido da entrada Metamágica no accordion — espelha renderSphereBuildPanel:
+// mesma classe .char-sphere (as guards .closest('.char-sphere') de P1/P2 dependem dela)
+// e mesmo cabeçalho clicável (.char-sphere-toggle, sentinela METAMAGIC_KEY) para recolher.
+// As escolhas vivem em char.metamagic (ids de talento), custo 0 e fora do orçamento geral
+// — este painel só EXIBE; a mutação (push/remove) é tratada em setupCharacter via
+// .char-mm-add/.char-mm-remove (nunca applyTalentToggle).
+function renderMetamagicPanel(active, allowance) {
+  const picks = active.metamagic || [];
+  const model = getSphereModel(allowance.sphere, null);
+
+  const group = document.createElement('section');
+  group.className = 'char-sphere';
+  const h3 = document.createElement('h3');
+  h3.className = 'char-sphere-title char-sphere-toggle char-mm-entry';
+  h3.dataset.sphere = METAMAGIC_KEY;
+  h3.setAttribute('role', 'button');
+  h3.setAttribute('tabindex', '0');
+  h3.title = 'Recolher esta entrada';
+  h3.textContent = `✦ Metamágica — ${picks.length}/${allowance.count} escolha(s)`;
+  group.appendChild(h3);
+
+  if (allowance.note) {
+    const note = document.createElement('p');
+    note.className = 'char-subhead';
+    note.textContent = allowance.note;
+    group.appendChild(note);
+  }
+
+  if (picks.length) {
+    const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Escolhidos';
+    group.appendChild(sub);
+    const box = document.createElement('div'); box.className = 'char-cards';
+    for (const id of picks) {
+      // charTalentCard(kind='free') não inclui botão de remoção próprio — o ✕ aqui é
+      // .char-mm-remove (NÃO .char-talent-remove, que chamaria toggleExtraTalent).
+      const card = charTalentCard(model.frag, id, 'free', allowance.sphere);
+      card.classList.add('char-talent-extra');
+      const rm = document.createElement('button');
+      rm.type = 'button';
+      rm.className = 'char-mm-remove';
+      rm.dataset.id = id;
+      rm.title = 'Remover da Metamágica';
+      rm.textContent = '✕';
+      card.insertBefore(rm, card.firstChild);
+      box.appendChild(card);
+    }
+    group.appendChild(box);
+  }
+
+  if (picks.length < allowance.count) {
+    const hint = document.createElement('p');
+    hint.className = 'char-subhead';
+    hint.textContent = `Escolha ${allowance.count - picks.length} talento(s) de metaesfera na bancada abaixo.`;
+    group.appendChild(hint);
+  }
+
+  return group;
 }
 
 // Cabeçalho recolhido de uma esfera no accordion: nome + selo "concedida" +
@@ -2059,11 +2156,129 @@ function buildTalentDetail(active, item) {
   return box;
 }
 
+// Candidatos da cota de Metamágica: talentos da esfera-alvo da allowance (Universal,
+// hoje) que carregam a tag da allowance (metaesfera) e ainda não estão possuídos —
+// Rules.ownedTalentIds já inclui char.metamagic E as escolhas normais da esfera, então
+// o dedupe nos dois sentidos (não repetir um pick da Metamágica como extra comprável,
+// nem repetir um talento já comprado como opção de Metamágica) vem de graça daqui.
+function metamagicCandidates(active, allowance) {
+  const sid = sphereIdFor(allowance.sphere);
+  const sph = sid ? dataIndex.sphereById.get(sid) : null;
+  if (!sph) return [];
+  const owned = Rules.ownedTalentIds(active, dataIndex);
+  return sph.talents
+    .filter(t => (t.tags || []).includes(allowance.tag) && !owned.has(t.id))
+    .map(t => ({ id: t.id, name: t.name, sphere: allowance.sphere }));
+}
+
+// Detalhe de um candidato à Metamágica: mesmo layout de buildTalentDetail (nome, meta,
+// descrição CLONADA do card real), mas a ação é .char-mm-add — custo 0, fora do
+// orçamento geral, NUNCA passa por applyTalentToggle. Desabilitado ("Cota cheia") ao
+// atingir allowance.count.
+function buildMetamagicDetail(active, item, allowance) {
+  const box = document.createElement('div');
+  box.className = 'char-bench-detail-inner';
+  if (!item) { box.innerHTML = '<div class="char-bench-empty">Selecione um talento à esquerda.</div>'; return box; }
+  const talent = dataIndex.talentById.get(item.id);
+  const model = getSphereModel(item.sphere, null);
+  const picks = active.metamagic || [];
+  const full = picks.length >= allowance.count;
+
+  const head = document.createElement('div');
+  head.className = 'cbd-head';
+  const info = document.createElement('div');
+  info.className = 'cbd-head-info';
+  const h4 = document.createElement('h4');
+  h4.textContent = item.name;
+  info.appendChild(h4);
+  const meta = document.createElement('div');
+  meta.className = 'cbd-meta';
+  meta.textContent = `${item.sphere} · Metamágica · grátis — fora do orçamento geral`;
+  info.appendChild(meta);
+  head.appendChild(info);
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'char-mm-add';
+  btn.dataset.id = item.id;
+  btn.disabled = full;
+  btn.textContent = full ? 'Cota cheia' : 'Adicionar (Metamágica)';
+  head.appendChild(btn);
+  box.appendChild(head);
+
+  const body = document.createElement('div');
+  body.className = 'cbd-body';
+  const desc = document.createElement('div');
+  desc.className = 'cbd-desc';
+  const src = talent ? findCardInFrag(model.frag, talent) : null;
+  if (src) {
+    const clone = src.cloneNode(true);
+    clone.querySelectorAll('[id]').forEach(e => e.removeAttribute('id'));
+    desc.appendChild(clone);
+  } else {
+    desc.textContent = 'Descrição não encontrada — abra o capítulo da esfera.';
+  }
+  body.appendChild(desc);
+  box.appendChild(body);
+  return box;
+}
+
+// Bancada em modo Metamágica (sentinela METAMAGIC_KEY): mesma estrutura master-detail
+// (busca + lista .char-bench-li + detalhe), mas sem chips de escopo nem "+ Adicionar
+// esfera" (não fazem sentido para uma cota restrita de UMA esfera/tag fixa).
+function buildMetamagicBenchPanel(active, allowance) {
+  const wrap = document.createElement('div');
+  wrap.className = 'char-bench-panel';
+  const picks = active.metamagic || [];
+  let candidates = metamagicCandidates(active, allowance);
+  if (charView.search) {
+    const q = normalizeTerm(charView.search);
+    candidates = candidates.filter(it => normalizeTerm(it.name).includes(q));
+  }
+  if (charView.sel === null || !candidates.some(it => it.id === charView.sel)) {
+    charView.sel = candidates.length ? candidates[0].id : null;
+  }
+
+  const tools = document.createElement('div');
+  tools.className = 'char-bench-tools';
+  tools.innerHTML = `<input type="text" class="char-bench-search" placeholder="Buscar talento…" value="${escapeHtml(charView.search)}">
+    <span class="char-bench-scope on" style="cursor:default">Metamágica — escolha talentos (Meta) da ${escapeHtml(allowance.sphere)} (${picks.length}/${allowance.count})</span>`;
+
+  const listBox = document.createElement('div');
+  listBox.className = 'char-bench-list';
+  if (!candidates.length) {
+    listBox.innerHTML = '<div class="char-bench-empty">Nenhum talento disponível — já foram adquiridos todos ou não há resultado para a busca.</div>';
+  } else {
+    listBox.innerHTML = candidates.map(it => `<div class="char-bench-li${it.id === charView.sel ? ' sel' : ''}" data-id="${escapeHtml(it.id)}">
+      <span class="cbl-name">${escapeHtml(it.name)}</span>
+    </div>`).join('');
+  }
+
+  const detail = document.createElement('div');
+  detail.className = 'char-bench-detail';
+  detail.appendChild(buildMetamagicDetail(active, candidates.find(it => it.id === charView.sel) || null, allowance));
+
+  const grid = document.createElement('div');
+  grid.className = 'char-bench-grid';
+  grid.appendChild(listBox);
+  grid.appendChild(detail);
+
+  wrap.appendChild(tools);
+  wrap.appendChild(grid);
+  return wrap;
+}
+
 // Bancada modo "talentos": busca + escopo (esfera ativa/Todas) + lista mestre
 // (.char-bench-li) + detalhe (.char-bench-detail). Candidatos = mesma conta de
 // talentCandidatesForSphere (extraída do antigo buildAddTalentPicker); a
 // mutação real segue por applyTalentToggle (setupCharacter), nunca aqui.
 function buildTalentBenchPanel(active) {
+  // Sentinela Metamágica: bancada dedicada (candidatos = talentos da tag da allowance,
+  // botão .char-mm-add em vez de applyTalentToggle) — nunca cai no caminho normal abaixo.
+  if (charView.sphere === METAMAGIC_KEY) {
+    const allowance = metamagicAllowance(active);
+    if (allowance) return buildMetamagicBenchPanel(active, allowance);
+  }
   const wrap = document.createElement('div');
   wrap.className = 'char-bench-panel';
   const addSphereBtn = '<button type="button" class="char-bench-addsphere">+ Adicionar esfera</button>';
@@ -2242,8 +2457,11 @@ function resetCharView(active) {
 function normalizeCharView(active) {
   const titles = charSphereTitles(active);
   // null = "nenhuma esfera expandida" (accordion todo recolhido) — sempre válido;
-  // só reseta se a esfera ativa apontar para um título que não existe mais.
-  const validSphere = charView.sphere === null || titles.includes(charView.sphere);
+  // só reseta se a esfera ativa apontar para um título que não existe mais. O sentinela
+  // METAMAGIC_KEY só é válido enquanto a allowance existir — se a feature sumir (ex.:
+  // nível caiu abaixo de 3), vira inválido e reseta como qualquer esfera removida.
+  const validSphere = charView.sphere === null || titles.includes(charView.sphere)
+    || (charView.sphere === METAMAGIC_KEY && !!metamagicAllowance(active));
   if (!validSphere) resetCharView(active);
 }
 // Troca de personagem ativo — sempre reseta charView (mesmo semântica do
@@ -2474,6 +2692,7 @@ function migrateCharacters() {
     if (!c.proficiencies) { c.proficiencies = { skills: [], tools: [] }; changed = true; }
     if (!('tradition' in c)) { c.tradition = 'base'; changed = true; } // regra da mesa: +2 talentos a todos
     if (!('subclass' in c)) { c.subclass = ''; changed = true; }
+    if (!Array.isArray(c.metamagic)) { c.metamagic = []; changed = true; } // cota restrita (KG-5)
 
     // Formato antigo (pré-esferas): talents[] plano → spheres[] agrupado por título.
     if (!Array.isArray(c.spheres) && Array.isArray(c.talents)) {
@@ -2615,6 +2834,35 @@ function setupCharacter() {
       const title = cbtn.dataset.sphere;
       const item = JSON.parse(cbtn.dataset.char);
       if (applyTalentToggle(active, title, item, cbtn)) { charView.sel = null; renderCharacter(); }
+      return;
+    }
+    // Adicionar um talento à cota de Metamágica (bancada, sentinela METAMAGIC_KEY) —
+    // custo 0, fora do orçamento geral; NUNCA passa por applyTalentToggle.
+    const mmAdd = e.target.closest('.char-mm-add');
+    if (mmAdd) {
+      const active = getActiveChar();
+      if (!active || mmAdd.disabled) return;
+      const allowance = metamagicAllowance(active);
+      if (!allowance) return;
+      const id = mmAdd.dataset.id;
+      const talent = dataIndex.talentById.get(id);
+      const picks = active.metamagic || [];
+      const tagOk = talent && (talent.tags || []).includes(allowance.tag);
+      if (picks.length >= allowance.count || !tagOk) { showCharNotice(mmAdd, `Cota de Metamágica cheia (${allowance.count}).`); return; }
+      updateCharacter(active.id, { metamagic: picks.concat([id]) });
+      charView.sel = null;
+      renderCharacter();
+      return;
+    }
+    // Remover um talento da cota de Metamágica (na ficha) — não usa .char-talent-remove
+    // (aquele chama toggleExtraTalent, que mexe em spheres[].talents, não em metamagic).
+    const mmRm = e.target.closest('.char-mm-remove');
+    if (mmRm) {
+      const active = getActiveChar();
+      if (!active) return;
+      const id = mmRm.dataset.id;
+      updateCharacter(active.id, { metamagic: (active.metamagic || []).filter(x => x !== id) });
+      renderCharacter();
       return;
     }
     // Trocar a esfera ativa pelo rail (view-only → refreshCharBench)

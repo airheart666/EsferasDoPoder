@@ -178,6 +178,7 @@
  * @property {string} [tradition]
  * @property {{skills: string[], tools: string[]}} proficiencies
  * @property {CharSphere[]} spheres
+ * @property {string[]} [metamagic]  Talent ids chosen via a restricted allowance (e.g. Feiticeiro Metamágica → Universal metaesfera), cost 0.
  */
 
 /**

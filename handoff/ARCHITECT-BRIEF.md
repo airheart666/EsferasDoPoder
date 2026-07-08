@@ -4,119 +4,95 @@
 
 ---
 
-## Layout B (Bancada) — reestruturar a ficha "Meu Personagem"
+## KG-5 — Metamágica: UI da cota restrita (entrada própria no accordion)
 
-**Goal:** trocar o layout de `renderCharacter` (app.js:1726) pelo **Layout B / Bancada**, aprovado
-pelo Owner num protótipo interativo. Referência visual e de interação: **`design-previews/builder-bancada.html`**
-(abra e clique — é o contrato de comportamento). NÃO é uma reescrita da lógica: é UI que REUSA a
-camada de enforcement do P3. **Nenhuma regra nova. Nenhuma mudança em `src/rules.js`.**
+**Contexto:** a **camada de regras do KG-5 já está pronta e testada** (Arch). Falta só a UI no
+builder (`app.js` + `style.css`). Referência de comportamento aprovada pelo Owner: uma **entrada
+própria no accordion de esferas** ("✦ Metamágica — X/N escolhas"), que expande e mostra as
+escolhas + um seletor dos talentos metaesfera reusando a **bancada** (mesma leitura master-detail).
 
-O que o Layout B é: **rail fixo à esquerda** (identidade + valores + orçamento + navegação de
-esferas, sempre visível) e **à direita** o build da esfera ativa + uma **bancada master-detail**
-sempre na tela (lista de talentos → detalhe com descrição/custo/pré-requisito → botão Adicionar).
-Sem overlay/modal. Adicionar esfera acontece na mesma bancada (modo "esferas").
+**A regra (já implementada — só CONSUMA, não reimplemente):**
+- `Rules.restrictedAllowances(active, dataIndex)` → `[{feature, sphere, tag, count, note}]`.
+  Para Feiticeiro nível ≥3 devolve `[{feature:'Metamágica', sphere:'Universal', tag:'metaesfera',
+  count:N, note}]` (N=2 no 3, +1 no 10, +1 no 17); vazio para quem não tem a feature.
+- As escolhas vivem em **`char.metamagic: string[]`** (ids de talento). Custo 0, fora do orçamento
+  geral (o motor já não soma o +2). `Rules.ownedTalentIds` já inclui `char.metamagic`.
+- **Migração:** em `migrateCharacters`, garanta `char.metamagic = []` quando ausente.
 
-### Estado de view novo (module-level, NÃO persistir no localStorage)
-```js
-let charView = { sphere: null, benchMode: 'talents', sel: null, scope: 'sphere', search: '' };
-```
-Sobrevive aos re-renders (não é reconstruído). Normalizar quando trocar de personagem, ou quando
-`sphere` não existir mais nas esferas do ativo: `sphere = 1ª esfera (adquirida ou concedida) do
-ativo`, `benchMode='talents'`, `sel=null`, `search=''`. É o `STATE` do mockup portado.
+### O que construir
 
-### O que já existe — REUSAR, não reconstruir (assinaturas NÃO mudam)
-- **Valores/orçamento**: `characterStats`→`Rules.derivedStats` (1570), `Rules.slotsSpent`,
-  `Rules.talentBudget`, `traditionBonus`/`classFeatureBonus` — já computados no `renderCharacter`
-  atual (1807-1855). Reaproveitar; só apresentar como mini-grid + barra.
-- **Modelo da esfera**: `getSphereModel(title,pkg)` (1531) → `{bases,freeGroup,extras,roleByKey,frag}`;
-  `resolveSpec` (1484); `sphereEntry` (1335); `isGrantedSphere` (1326)/`isGrantedTalentId` (1328);
-  `grantedSpheresMap` (1312).
-- **Cards de talento na ficha**: `charTalentCard(fr, ref, kind, title)` (definido dentro do
-  `renderCharacter` atual, ~1891) — clona o card completo, recolhível, com `✕` nos extras. Reusar.
-- **Painel pacote+grátis (P1/P2)**: `buildPackageSelector` (696), `buildFreePickSelectors` (718),
-  `applyFreePickSelection` (751). O container da esfera DEVE manter a classe `.char-sphere` e o
-  bloco `.char-sphere-manage` para os handlers delegados de `.pkg-select`/`.freepick-select`
-  continuarem funcionando (eles têm guard `.closest('.char-sphere')`).
-- **Botão Adicionar da bancada** = `makeCharControl(item, role, active, entry, false, granted)` (613)
-  → devolve um `.char-btn` já com estado +/✓/grátis correto. Assim o handler `.char-btn` dentro de
-  `.char-sphere` em `setupCharacter` (2193-2201) roteia por `applyTalentToggle` (892) —
-  enforcement idêntico, zero regra nova. Só estilize maior.
-- **Candidatos de talento**: mesma conta do `buildAddTalentPicker` (1657):
-  `model.freeGroup.concat(model.extras)` − já possuídos (`freePicks`+`talents`) − `isGrantedTalentId`.
-  Escopo 'all' = união dessa conta sobre todas as esferas do ativo. Extraia num helper se ajudar.
-- **Candidatos de esfera**: mesma conta do `buildAddSpherePicker` (1687) — esferas não possuídas/
-  concedidas, agrupadas magia (`section==='magic'`)/poder. Extraia a lista (hoje ela devolve `<select>`).
-- **Gate só-de-exibição** (motivo do bloqueio na lista/detalhe): `Rules.canAddTalent` (extras),
-  `Rules.prereqCheck` (frees), `Rules.canAccessSphere` (esferas). LER apenas — a mutação real
-  segue pelos wrappers (`applyTalentToggle`/`tryAcquireSphere`).
-- **Mutadores** (chamar, nunca mutar estado direto): `tryAcquireSphere` (1369), `setPackage` (1390),
-  `applyFreePickSelection`, `applyTalentToggle`, `toggleExtraTalent` (1436), `removeSphere` (1383).
-- **Descrição de esfera** (detalhe modo-esferas): `cardDescription`/`descriptions.json`.
+1. **Sentinela de view:** defina `const METAMAGIC_KEY = 'mm:Metamágica';` (module-level). É o valor
+   que `charView.sphere` assume quando a entrada Metamágica está expandida. Não colide com título
+   de esfera. (Só há UMA allowance hoje; se quiser generalizar, chave por feature — mas escopo = 1.)
 
-### Estrutura de DOM (em `renderCharacter`)
-`.char-layout` = grid 2 colunas (rail 270px + main); colapsa p/ 1 coluna no mobile.
-1. **`.char-rail`** (sticky, `max-height:100vh; overflow:auto`): tabs `.char-selector`/`.charsel-tab`
-   + `#char-new` (reusar) · `.char-form` de identidade (MOVER pra cá, campos e handlers `.char-field`
-   inalterados) · proficiências (`buildProficiencies`) dentro de um `<details>` recolhível ·
-   mini-grid de stats + **`.char-budget-bar`** (largura = usados/orçamento; classe `.over` +
-   aviso quando estoura) · **`.char-railnav`**: um `.char-rail-sphere` (dataset.sphere=title) por
-   esfera (união `spheres[]`+`grantedMap` keys), selo "concedida" p/ granted, ativo destacado; +
-   rodapé `.char-rail-addsphere`.
-2. **`.char-build`** (main, topo): só a esfera ativa → extraia o corpo do loop per-sphere atual
-   (1938-2013) para `renderSphereBuildPanel(active, title)` (cabeçalho + `.char-sphere-manage` +
-   "Incluído com a esfera" + "Talentos" + "Remover esfera"). Mantém `.char-sphere`.
-3. **`.char-bench`** (main, baixo): master-detail.
-   - modo talentos: busca `.char-bench-search` + chips `.char-bench-scope` (esfera/Todas); lista
-     `.char-bench-li` (nome + "1 slot" ou 🔒 bloqueado); detalhe `.char-bench-detail` do `sel`
-     (descrição clonada via `findCardInFrag`, custo, linha de gate, botão Adicionar=`.char-btn`).
-   - modo esferas: lista de esferas não adquiridas; detalhe = descrição + custo de acesso + gate +
-     botão Adquirir → `tryAcquireSphere`.
+2. **Accordion (`buildCharBuildContent`):** depois das esferas, se `restrictedAllowances(active)`
+   não for vazio, acrescente a entrada Metamágica:
+   - expandida (`charView.sphere === METAMAGIC_KEY`) → `renderMetamagicPanel(active, allowance)`;
+   - recolhida → um `.char-sphere-collapsed` com `data-sphere="mm:Metamágica"`, rótulo
+     "✦ Metamágica" + `<span class="csc-count">X/N escolha(s)</span>` (X=`char.metamagic.length`,
+     N=`allowance.count`). O handler `.char-sphere-collapsed` **já existente** faz `charView.sphere
+     = data-sphere` → expande. Reuse-o (não crie handler novo p/ recolhido).
 
-### Re-render em dois níveis
-- **Mutações** (add/remove talento, adquirir/remover esfera, pacote, grátis, `.char-field`) →
-  `renderCharacter()` completo (já é o padrão).
-- **Só-view** (selecionar item, escopo, busca, trocar esfera ativa) → **`refreshCharBench()`** nova:
-  substitui só o subtree `.char-bench` + atualiza a classe ativa do rail (precedente: `refreshSphereUI`
-  faz patch dirigido). Preserva foco/cursor da busca (re-focar após patch).
+3. **`renderMetamagicPanel(active, allowance)`** — espelha `renderSphereBuildPanel`:
+   - container `section.char-sphere`; header `h3.char-sphere-title.char-sphere-toggle`
+     `data-sphere="mm:Metamágica"` (o handler `.char-sphere-toggle` já existente recolhe →
+     `charView.sphere=null`). Texto: "✦ Metamágica — X/N escolha(s)".
+   - a `note` da allowance (`<p class="char-subhead">…</p>` ou similar).
+   - cards das escolhas: para cada id em `char.metamagic`, `charTalentCard(model.frag, id, 'free',
+     'Universal')` (reuse — clona o card real). O ✕ de remoção NÃO pode usar `.char-talent-remove`
+     (aquele chama `toggleExtraTalent`); use um botão próprio `.char-mm-remove` `data-id="<id>"`.
+     `model = getSphereModel('Universal', null)` p/ ter o `frag`.
+   - se `char.metamagic.length < count`: uma linha guiando "escolha na bancada abaixo".
 
-### Wiring (estender o listener delegado em `setupCharacter`, 2132 — NÃO criar listeners novos)
-Novos: `.char-rail-sphere` (troca esfera), `.char-rail-addsphere` (benchMode='spheres'),
-`.char-bench-li` (sel → refreshCharBench), `.char-bench-scope`, `.char-bench-search` (input →
-refreshCharBench + re-focus), e o Adquirir do modo-esferas (reusar `.char-add-sphere-btn` lendo
-`charView.sel`, ou novo `.char-bench-acquire`). **Reusar sem tocar**: `.char-btn` em `.char-sphere`,
-`.char-talent-remove`, `.char-sphere-remove`, `.pkg-select`/`.freepick-select` (guards `.char-sphere`),
-`.char-field`, `.charsel-tab`, `#char-new`, `#char-delete`, `.prof-chip`. **NÃO** alterar os guards
-`.closest('.char-sphere')` em `setupFavorites`.
+4. **Bancada em modo Metamágica (`buildTalentBenchPanel`):** quando `charView.sphere ===
+   METAMAGIC_KEY`:
+   - candidatos = talentos da esfera **Universal** com a tag da allowance (`metaesfera`) que **não**
+     estejam em `char.metamagic` **nem** em `Rules.ownedTalentIds(active, dataIndex)` (evita duplicar
+     com uma escolha da própria Universal). Fonte: `getSphereModel('Universal', null)` →
+     `roleByKey`/talents, ou filtre `dataIndex.sphereById.get('universal').talents` por tag.
+   - barra de ferramentas: um rótulo "Metamágica — escolha talentos (Meta) da Universal (X/N)"
+     (sem chips de escopo; sem "+ Adicionar esfera").
+   - lista `.char-bench-li` (reuse) + detalhe. O detalhe pode reusar a estrutura de `buildTalentDetail`
+     (tag/nome/meta/descrição clonada), **mas** o botão de ação é `.char-mm-add` `data-id="<id>"`
+     com rótulo "Adicionar (Metamágica)"; desabilitado ("Cota cheia") quando
+     `char.metamagic.length >= count`. Considere um `buildMetamagicDetail(active, item, allowance)`
+     dedicado para não misturar com o caminho de `applyTalentToggle`.
 
-### CSS (`style.css`, junto do bloco `.char-*`)
-Novas classes de LAYOUT: `.char-layout`, `.char-rail`, `.char-railnav`/`.char-rail-sphere`/
-`.char-rail-addsphere`, `.char-build`, `.char-bench`/`.char-bench-list`/`.char-bench-detail`/
-`.char-bench-li`, `.char-budget-bar` + colapso responsivo. Espelhar o mockup. REUSAR sem duplicar:
-`.char-stats`, `.char-sphere`/`.char-cards`, `.char-btn`, `.char-sphere-manage`, `.pkg-select`,
-`.freepick-select`, `.char-talent-remove`, `.char-granted-badge`, `.char-selector`/`.charsel-tab`.
+5. **Dedupe na Universal comum:** em `talentCandidatesForSphere` (usado pela bancada no modo
+   talentos), exclua também ids presentes em `char.metamagic` — um talento tomado pela Metamágica
+   não deve aparecer como extra comprável na Universal (e vice-versa já vem da regra 4).
+
+6. **Handlers (`setupCharacter`, estenda o listener existente — NÃO crie outro):**
+   - `.char-mm-add` → se `char.metamagic.length < count` e a tag confere: `push(id)`,
+     `updateCharacter`, `renderCharacter()`; senão `showCharNotice(el, 'Cota de Metamágica cheia (N).')`.
+   - `.char-mm-remove` → remove o id de `char.metamagic`, `updateCharacter`, `renderCharacter()`.
+   - reutilize os handlers existentes de `.char-sphere-collapsed`, `.char-sphere-toggle`,
+     `.char-bench-li` (seleção) — eles já funcionam com o sentinela.
+
+7. **`normalizeCharView`:** trate `METAMAGIC_KEY` como válido quando a allowance existe:
+   `const validSphere = charView.sphere === null || titles.includes(charView.sphere) ||
+   (charView.sphere === METAMAGIC_KEY && Rules.restrictedAllowances(active, dataIndex).length > 0);`
+   (se a feature sumir — ex.: nível cair abaixo de 3 — o sentinela vira inválido e reseta.)
+
+8. **CSS (`style.css`):** mínimo — reuse `.char-sphere`, `.char-sphere-collapsed`, `.char-sphere-toggle`,
+   `.char-cards`, `.char-btn`. Só um realce do ✦/entrada Metamágica se precisar. O `.char-mm-add` pode
+   reusar o visual de `.char-btn.char-bench-add`.
 
 ### Flags (não adivinhe — pergunte ao Arch)
-- Só `app.js` e `style.css`. NÃO tocar `src/rules.js`, `parser.js`, `content/*.txt`, render do leitor,
-  nem assinaturas dos helpers compartilhados.
-- Barra de aquisição da leitura (`renderSphereAcquireBar`) tem de ficar IDÊNTICA.
-- Não regredir P1 (free-pick de esfera concedida na ficha) nem P2 (pacote Universal na ficha).
-- `charView` NÃO vai pro localStorage.
-- Manter `npm run validate`/`typecheck`/`test`/`sanity-builder` verdes (app.js fora do typecheck).
-  O gate real é o teste do Owner no browser — escreva o checklist de cliques no REVIEW-REQUEST.
+- **Nenhuma mudança em `src/rules.js`** (a regra está pronta) nem em `content/*.txt`/`parser.js`/leitor.
+- Não regredir: accordion (esferas), bancada (talentos e esferas), P1/P2, barra de aquisição da leitura.
+- Toda escolha passa pelo teto `count` e pela tag; nunca inflar o orçamento geral (a UI só reflete).
+- Mantenha `npm run validate`/`typecheck`/`test`/`sanity-builder` verdes (app.js fora do typecheck).
+  Gate real = teste do Owner no browser; escreva o checklist de cliques no REVIEW-REQUEST.
 
 ### Definition of Done
-- [ ] Ficha renderiza no Layout B: rail (identidade+stats+orçamento+nav) + build da esfera ativa +
-      bancada master-detail. Colapsa no mobile.
-- [ ] Trocar esfera pelo rail; selecionar talento → detalhe com descrição/custo/pré-req; Adicionar
-      com o orçamento (barra) subindo ao vivo; remover (✕) baixando.
-- [ ] Pré-req que destrava ao adquirir a dependência; pick bloqueado (nível/orçamento) mostra motivo
-      e NÃO muta; estouro de orçamento → barra `.over` + aviso.
-- [ ] Escopo esfera/Todas + busca; adicionar esfera pela bancada (modo esferas); trocar de personagem.
-- [ ] P1 (Mente concedida oferece free-pick na ficha) e P2 (pacote Universal na ficha) intactos.
-- [ ] Barra de aquisição da leitura idêntica.
-- [ ] `validate`/`typecheck`/`test`/`sanity-builder` verdes.
-- [ ] `handoff/REVIEW-REQUEST.md`: arquivos mudados, a estratégia de re-render em dois níveis, o
-      wiring, e o checklist de cliques (com dados reais) para o Owner.
+- [ ] Feiticeiro nível ≥3 mostra a entrada "✦ Metamágica — X/N" no accordion; expande/recolhe como as esferas.
+- [ ] Expandida: lista as escolhas atuais (cards + ✕) e, na bancada, os talentos metaesfera para escolher
+      (leitura master-detail), com o botão bloqueando ao atingir N.
+- [ ] Escolher/remover atualiza X/N ao vivo; o orçamento mágico geral NÃO muda (segue sem o +2).
+- [ ] Um talento tomado pela Metamágica não aparece como extra comprável na Universal (dedupe).
+- [ ] Personagem sem a feature (ex.: Feiticeiro nível 1, ou outra classe) NÃO mostra a entrada.
+- [ ] `validate`/`typecheck`/`test`/`sanity-builder` verdes; `REVIEW-REQUEST.md` com o checklist.
 
 ---
 

@@ -5,11 +5,10 @@
 
 ## Current Status
 
-**Active step:** Layout B (Bancada) restructure of `renderCharacter` BUILT, awaiting Richard's review.
-**Last cleared:** Layout B — app.js/style.css — 2026-07-07 (validate + typecheck + test + sanity-builder
-all green, plus a new jsdom smoke script driving the full rail/build/bench flow end-to-end incl. sphere
-acquisition and talent addition through the bench; browser click-through still needs a human — see
-REVIEW-REQUEST.md).
+**Active step:** KG-5 — Metamágica restricted-allowance UI BUILT, awaiting Richard's review.
+**Last cleared:** KG-5 UI — app.js/style.css — 2026-07-07 (validate + typecheck + test + sanity-builder
+all green, plus a new jsdom smoke script driving the full accordion-entry → bench → add/remove/cap flow
+end-to-end; browser click-through still needs a human — see REVIEW-REQUEST.md).
 **Pending deploy:** NO (feature branch `structured-mechanics-layer`, not merging until proven)
 **Curation DONE (Buckets 1 & 2):** flags 100→18. All talent-name mismatches resolved (sphere
 self-references fixed at source; talent-name variants via extractor `TALENT_ALIAS`; source renames
@@ -299,6 +298,81 @@ Deploy: pending
 
 ---
 
+### KG-5 — Metamágica: UI da cota restrita — BUILT (pending review)
+*Date: 2026-07-07*
+
+Files changed:
+- `app.js` — `METAMAGIC_KEY` module-level sentinel constant (value `'mm:Metamágica'`) for
+  `charView.sphere`. `metamagicAllowance(active)` helper (wraps `Rules.restrictedAllowances`,
+  the rules layer consumed as-is — 0 changes to `src/rules.js`/data/schema). Accordion
+  (`buildCharBuildContent`) appends the Metamágica entry after the sphere titles when an
+  allowance exists: `buildCollapsedMetamagic` (reuses `.char-sphere-collapsed` + the existing
+  `.char-sphere-collapsed`/`.char-sphere-toggle` handlers via the sentinel — no new expand/
+  collapse handler) and `renderMetamagicPanel` (mirrors `renderSphereBuildPanel`: `.char-sphere`
+  container, cards via `charTalentCard(frag, id, 'free', 'Universal')`, a dedicated
+  `.char-mm-remove` ✕ — NOT `.char-talent-remove`, which calls `toggleExtraTalent` against
+  `spheres[].talents` and would corrupt state). Bench mode: `buildTalentBenchPanel` branches to
+  `buildMetamagicBenchPanel` when `charView.sphere === METAMAGIC_KEY` (never falls into the
+  normal esfera/scope path); `metamagicCandidates` filters the allowance's sphere (`Universal`)
+  by `allowance.tag` (`metaesfera`) minus `Rules.ownedTalentIds` (already folds in
+  `char.metamagic` AND every normal pick — dedupe both directions is free); `buildMetamagicDetail`
+  mirrors `buildTalentDetail`'s layout but the action button is `.char-mm-add` (not
+  `makeCharControl`/`applyTalentToggle` — cost 0, outside the general budget), disabled
+  ("Cota cheia") once `char.metamagic.length >= allowance.count`. `talentCandidatesForSphere`
+  now also excludes `char.metamagic` ids (so a Metamágica pick can't reappear as a purchasable
+  extra in Universal's own talent list). `setupCharacter`'s existing delegated click listener
+  extended (not replaced) with `.char-mm-add` (push + `updateCharacter` + full `renderCharacter()`,
+  guarded by cap+tag, `showCharNotice` on cap-full) and `.char-mm-remove` (filter out + same).
+  `normalizeCharView` now treats `METAMAGIC_KEY` as valid only while `metamagicAllowance(active)`
+  is non-null (feature lost, e.g. level drop below 3 → resets like any removed esfera).
+  `migrateCharacters` guarantees `char.metamagic = []` when absent/non-array.
+- `style.css` — reused `.char-sphere`/`.char-sphere-collapsed`/`.char-cards`/`.char-bench-*`
+  wholesale; new rules: `.char-mm-remove` (shares the `.char-talent-remove` declaration, incl.
+  inside `.char-talent-extra >`), `.char-mm-add` (shares the `.char-btn.char-bench-add` visual —
+  deliberately NOT given the `.char-btn` class itself, to avoid colliding with the existing
+  delegated `.char-btn` + `.closest('.char-bench')` handler that would try
+  `JSON.parse(undefined)` on it), `.char-mm-entry` (subtle copper accent on the accordion
+  entry/header so it visually reads as a class-feature grant, not a purchasable esfera).
+
+Result: `npm run validate` (0 errors), `npm run typecheck` (green), `npm test` (30/30, incl. the
+pre-existing "Metamágica does NOT add to general magic budget" / "surfaces as a restricted
+allowance" / "count = 2 at lvl5" cases from the rules-layer step), `node scripts/sanity-builder.js`
+(29/29 — confirms `migrateCharacters` now seeds `metamagic: []` on legacy characters), `node --check
+app.js` clean. New ad hoc jsdom smoke script (same technique as `sanity-builder.js`, not committed)
+loads the real `app.js`/`src/rules.js`, creates a level-5 Feiticeiro (Sangue Feérico), calls
+`setupCharacter()` + `renderCharacter()`, and dispatches real click events end-to-end: entry
+appears collapsed at 0/2 → expand → bench lists metaesfera candidates → select+add pick #1 (lands
+in `char.metamagic`, X/N → 1/2, general magic budget unchanged) → add pick #2 (2/2) → 3rd candidate's
+`.char-mm-add` is disabled ("Cota cheia") and clicking it is a no-op → dedupe both directions
+(acquired Universal normally, confirmed a Metamágica pick isn't offered as an extra there; took a
+different metaesfera talent as a normal Universal extra, confirmed it disappears from the
+Metamágica bench) → remove (✕) takes it out of `char.metamagic`, X/N back to 1/2, and the removed
+talent reappears as a bench candidate → level-1 Feiticeiro (no feature) shows no entry at all.
+26/26 assertions passed. Full manual browser click-through still needed — see REVIEW-REQUEST.md.
+
+Decisions made:
+- `.char-mm-add` deliberately does NOT carry the `.char-btn` class (brief said it "pode reusar o
+  visual de `.char-btn.char-bench-add`", read as CSS reuse, not class reuse) — `.char-mm-add` sits
+  inside `.char-bench`, and the pre-existing delegated handler `cbtn.closest('.char-btn') &&
+  cbtn.closest('.char-bench')` calls `applyTalentToggle(active, title, JSON.parse(cbtn.dataset.char),
+  ...)`; a `.char-mm-add` button has no `dataset.char` (it only has `dataset.id`), so sharing the
+  class would throw on click. CSS reuses the `.char-btn.char-bench-add` declaration by adding
+  `.char-mm-add` to its selector list instead.
+- Kept the search input in `buildMetamagicBenchPanel` even though the brief's toolbar description
+  only mentions the label — it's the same `.char-bench-search` element already wired to the
+  existing `input` listener (`refreshCharBench`), costs nothing extra, and is consistent UX with
+  the normal talent bench. Flagging in case Richard/Arch wants it dropped for stricter brief
+  fidelity.
+- `metamagicAllowance(active)` returns `Rules.restrictedAllowances(active, dataIndex)[0] || null` —
+  scope is 1 allowance today (per brief); if a second restricted feature is ever added, this
+  becomes the seam that needs to grow into a keyed-by-feature lookup (not attempted here, out of
+  scope).
+
+Reviewer findings: pending — see `handoff/REVIEW-REQUEST.md`.
+Deploy: pending
+
+---
+
 ## Known Gaps
 *Logged here instead of fixed. Addressed in a future step.*
 
@@ -323,15 +397,11 @@ Deploy: pending
   Pacote Universal, the "Extremo" advanced ones) should be pickable regardless of the chosen package
   (currently `talentTags` scopes them out).
 
-- **KG-5 (Metamágica — restricted allowance)** — Feiticeiro's **Metamágica** feature
-  (`class-features.json`) already carries `"group": "talento (Meta) da esfera Universal"`, but
-  `Rules.classFeatureBonus` (src/rules.js:104) ignores `group` and just adds `bonusByLevel` (+2/+3/+4
-  cumulative) to the **general** magic budget — so the extra picks can be spent on ANY sphere. Correct
-  rule: those N picks are a **restricted allowance**, usable only on Universal **Meta** (metaesfera)
-  talents, at cost 0, without inflating the general budget. Needs a new grant/allowance type in the
-  rules engine + surfacing it in the builder (like P1/P2 in scope). **Owner decision: implement as a
-  dedicated increment AFTER the Layout B UI is validated & committed** (keeps the UI branch commit
-  UI-only). Note text already fixed (2026-07-07); the enforcement is what's deferred.
+- **KG-5 (Metamágica — restricted allowance)** — STATUS: rules layer + UI both BUILT (pending
+  Richard's review — see the KG-5 step above). `Rules.restrictedAllowances` surfaces the N picks
+  as a cost-0 allowance scoped to Universal's `metaesfera` tag (never inflates the general magic
+  budget); the builder now shows a dedicated "✦ Metamágica — X/N" accordion entry with a bench for
+  picking/removing. Leaving this entry until Richard/Arch formally close it.
 
 ---
 

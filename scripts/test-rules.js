@@ -31,11 +31,16 @@ ok('Feiticeiro lvl5 has derived stats', stats && stats.type === 'magic');
 ok('DC = 8 + prof + keyMod', stats.cd === 8 + stats.prof + 3);
 ok('has a PM pool (resource)', stats.resourceName === 'PM' && typeof stats.resource === 'number');
 
-// --- Budget = slots + tradition(+2) + class-feature bonus (Feiticeiro Metamágica +2 at lvl5) ---
+// --- Budget = slots + tradition(+2). Metamágica is a RESTRICTED allowance (Universal
+//     metaesfera), so it must NOT inflate the general magic budget (KG-5). ---
 const budget = Rules.talentBudget(feit, idx);
 const cfb = Rules.classFeatureBonus(feit, idx);
-ok('feature bonus applies (Feiticeiro Metamágica +2 at lvl5)', cfb.magic === 2);
-ok('magic budget = slots + 2 tradition + feature bonus', budget.magic === stats.magicTalents + 2 + cfb.magic);
+ok('Metamágica does NOT add to general magic budget', cfb.magic === 0);
+ok('magic budget = slots + 2 tradition (no restricted feature)', budget.magic === stats.magicTalents + 2);
+const allow = Rules.restrictedAllowances(feit, idx);
+const meta = allow.find(a => a.feature === 'Metamágica');
+ok('Metamágica surfaces as a restricted allowance', !!meta && meta.sphere === 'Universal' && meta.tag === 'metaesfera');
+ok('Metamágica allowance count = 2 at lvl5 (cumulative bonusByLevel)', meta && meta.count === 2);
 
 // --- Pick a real advanced talent and prove prereq blocking ---
 const mente = idx.sphereById.get('mente');

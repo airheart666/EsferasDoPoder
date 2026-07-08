@@ -1423,13 +1423,13 @@ h4.base-ability::after {
 [data-theme="dark"] .char-warn { color: var(--oxblood-light); }
 .char-warn-toast { margin: 0.5rem 0; }
 
-/* Talentos escolhidos: remover ✕ inline */
-.char-talent-remove {
+/* Talentos escolhidos: remover ✕ inline (.char-mm-remove = mesmo visual, cota de Metamágica) */
+.char-talent-remove, .char-mm-remove {
   background: none; border: none; cursor: pointer;
   color: var(--copper); font-family: var(--font-ui);
   font-size: 0.85rem; line-height: 1; flex: none; margin-right: 0.4rem;
 }
-.char-talent-remove:hover { color: var(--accent); }
+.char-talent-remove:hover, .char-mm-remove:hover { color: var(--accent); }
 .char-delete {
   display: inline-block;
   margin-top: 1.5rem;
@@ -1722,7 +1722,7 @@ h4.base-ability::after {
 .char-talent { margin-bottom: 0.55rem; }
 .char-talent .fav-card { margin: 0; }
 .char-talent-extra { display: flex; align-items: flex-start; gap: 0.35rem; }
-.char-talent-extra > .char-talent-remove {
+.char-talent-extra > .char-talent-remove, .char-talent-extra > .char-mm-remove {
   flex: none;
   margin: 0.5rem 0 0 0;
   font-size: 0.95rem;
@@ -1877,20 +1877,6 @@ h4.base-ability::after {
 .char-rail-sphere .crs-count { font-size: 0.76rem; color: var(--text-muted); }
 .char-rail-sphere.active .crs-count { color: var(--accent); }
 .char-rail-sphere .crs-granted { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--verdigris); }
-.char-rail-addsphere {
-  display: block;
-  width: 100%;
-  text-align: left;
-  font-family: var(--font-ui);
-  font-size: 0.86rem;
-  color: var(--copper);
-  background: none;
-  border: none;
-  border-top: 1px dashed var(--table-border);
-  padding: 0.5rem 0.7rem;
-  cursor: pointer;
-}
-.char-rail-addsphere:hover, .char-rail-addsphere.active { color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 
 /* ---- Build da esfera ativa (.char-build reusa .char-sphere/.char-cards) -- */
 .char-build .char-sphere {
@@ -1927,6 +1913,10 @@ h4.base-ability::after {
 .char-sphere-collapsed .csc-name { font-weight: 600; }
 .char-sphere-collapsed .csc-count { margin-left: auto; font-family: var(--font-ui); font-size: 0.8rem; color: var(--text-muted); }
 .char-sphere-collapsed .char-granted-badge { margin-left: 0; }
+/* Entrada Metamágica (cota restrita, sentinela METAMAGIC_KEY) — mesmo componente das
+   esferas, só realçado com a cor de "concedido"/feature de classe em vez do acento padrão. */
+.char-mm-entry, .char-accordion .char-sphere > .char-sphere-title.char-mm-entry { color: var(--copper); }
+.char-sphere-collapsed.char-mm-entry:hover { border-color: var(--copper); background: color-mix(in srgb, var(--copper) 6%, transparent); }
 
 /* ---- Bancada master-detail ------------------------------------------------ */
 .char-bench {
@@ -2028,9 +2018,11 @@ h4.base-ability::after {
 .cbd-req.bad { color: var(--oxblood); }
 [data-theme="dark"] .cbd-req.bad { color: var(--oxblood-light); }
 .cbd-req b { color: var(--text); }
-.cbd-head .char-btn.char-bench-add, .cbd-head .char-bench-acquire { flex: 0 0 auto; margin-top: 0.1rem; }
-/* Botão Adicionar da bancada = .char-btn (makeCharControl) — só maior/rotulado aqui. */
-.char-btn.char-bench-add {
+.cbd-head .char-btn.char-bench-add, .cbd-head .char-bench-acquire, .cbd-head .char-mm-add { flex: 0 0 auto; margin-top: 0.1rem; }
+/* Botão Adicionar da bancada = .char-btn (makeCharControl) — só maior/rotulado aqui.
+   .char-mm-add (cota de Metamágica) reusa o mesmo visual — não é .char-btn de propósito
+   (evita colidir com o handler delegado de applyTalentToggle em .char-bench .char-btn). */
+.char-btn.char-bench-add, .char-mm-add {
   font-family: var(--font-ui);
   font-size: 0.9rem;
   padding: 0.42rem 1rem;
@@ -2038,12 +2030,14 @@ h4.base-ability::after {
   border: 1px solid var(--verdigris);
   background: var(--verdigris);
   color: #fff;
+  cursor: pointer;
   white-space: nowrap;
 }
-.char-btn.char-bench-add:hover { background: color-mix(in srgb, var(--verdigris) 82%, black 0%); border-color: var(--verdigris); color: #fff; }
+.char-btn.char-bench-add:hover, .char-mm-add:hover:not(:disabled) { background: color-mix(in srgb, var(--verdigris) 82%, black 0%); border-color: var(--verdigris); color: #fff; }
 .char-btn.char-bench-add.needs-sphere,
-.char-btn.char-bench-add:disabled {
-  background: none; border-color: var(--table-border); color: var(--text-muted); opacity: 1;
+.char-btn.char-bench-add:disabled,
+.char-mm-add:disabled {
+  background: none; border-color: var(--table-border); color: var(--text-muted); opacity: 1; cursor: default;
 }
 /* Corpo ROLÁVEL: medida de leitura confortável + nada estoura o frame. */
 .cbd-body { padding: 0.9rem 1.2rem 1.2rem; }
