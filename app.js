@@ -1871,13 +1871,27 @@ function renderSphereBuildPanel(active, title) {
 
   const group = document.createElement('section');
   group.className = 'char-sphere';
+  const theme = sphereThemes[title];
+  if (theme) {
+    group.classList.add('themed');
+    group.style.setProperty('--sphere-h', theme.h);
+    group.style.setProperty('--sphere-s', theme.s);
+  }
   const h3 = document.createElement('h3');
   h3.className = 'char-sphere-title char-sphere-toggle';
   h3.dataset.sphere = title;
   h3.setAttribute('role', 'button');
   h3.setAttribute('tabindex', '0');
   h3.title = 'Recolher esta esfera';
-  h3.textContent = `${title} — ${count} talento(s)`;
+  if (theme && theme.sig && availableSigils.has(theme.sig)) {
+    const medal = document.createElement('span');
+    medal.className = 'char-sphere-medal';
+    medal.appendChild(makeSigil(theme.sig, 'card-sig'));
+    h3.appendChild(medal);
+  }
+  const label = document.createElement('span');
+  label.textContent = `${title} — ${count} talento(s)`;
+  h3.appendChild(label);
   if (granted) {
     const badge = document.createElement('span');
     badge.className = 'char-granted-badge';
@@ -3143,7 +3157,12 @@ function buildAccessCards(children) {
       text.appendChild(d);
     }
 
-    if (sig) card.appendChild(sig);
+    if (sig) {
+      const medal = document.createElement('span');
+      medal.className = 'card-sig-medal';
+      medal.appendChild(sig);
+      card.appendChild(medal);
+    }
     card.appendChild(text);
     grid.appendChild(card);
   }

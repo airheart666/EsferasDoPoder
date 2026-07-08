@@ -46,6 +46,12 @@
   --cover-text:       #f4ecd6;
   --badge-bg:         var(--accent);
   --badge-text:       #f4ecd6;
+  /* Escada de elevação: recessed (bancada) < bg < bg-content < raised (cartão) */
+  --bg-raised:        #faf3e0;
+  --bg-recessed:      #d7c89a;
+  --shadow-sm:        0 1px 3px rgba(44,32,16,0.12), 0 1px 2px rgba(44,32,16,0.08);
+  --shadow-md:        0 6px 18px rgba(44,32,16,0.16), 0 2px 5px rgba(44,32,16,0.10);
+  --shadow-inset:     inset 0 1px 4px rgba(44,32,16,0.16), inset 0 0 0 1px rgba(44,32,16,0.04);
   --grain:            0.5;
   --border-radius:    4px;
   --font-body:        'EB Garamond', Georgia, 'Times New Roman', serif;
@@ -89,6 +95,11 @@
   --cover-overlay:    rgba(0, 0, 0, 0.62);
   --cover-text:       #f4ecd6;
   --badge-text:       #1c160e;
+  --bg-raised:        #241c11;
+  --bg-recessed:      #0f0b06;
+  --shadow-sm:        0 1px 3px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.30);
+  --shadow-md:        0 6px 18px rgba(0,0,0,0.45), 0 2px 5px rgba(0,0,0,0.35);
+  --shadow-inset:     inset 0 1px 4px rgba(0,0,0,0.40), inset 0 0 0 1px rgba(255,255,255,0.03);
   --grain:            0.32;
 }
 
@@ -856,24 +867,52 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 }
 
 .sphere-card {
+  position: relative;
   display: flex;
-  gap: 0.7rem;
+  gap: 0.8rem;
   align-items: flex-start;
-  padding: 0.75rem 0.9rem;
+  padding: 0.85rem 1rem;
   border: 1px solid var(--table-border);
   border-left: 3px solid var(--accent);
   border-radius: var(--border-radius);
-  background: var(--bg-content);
+  background: var(--bg-raised);
+  box-shadow: var(--shadow-sm);
   text-decoration: none;
   color: var(--text);
-  transition: background 0.12s, border-color 0.12s, transform 0.12s;
+  overflow: hidden;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
 }
-.sphere-card:hover { background: var(--note-bg); border-left-color: var(--accent-light); }
-.sphere-card:active { transform: scale(0.99); background: var(--table-stripe); }
+/* lasca de luz no canto, na cor da própria esfera — o cartão fica "dentro" da cor */
+.sphere-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120px 90px at 100% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%);
+  pointer-events: none;
+}
+.sphere-card:hover {
+  border-left-color: var(--accent-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.sphere-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sphere-card:active { transform: translateY(0) scale(0.99); box-shadow: var(--shadow-sm); }
 /* card de esfera: accent pelo matiz próprio (L padrão do tema, p/ vibrar) */
 .sphere-card.themed { --accent: hsl(var(--sphere-h) calc(var(--sphere-s) * 1%) var(--acc-l-default)); }
-.card-sig { width: 30px; height: 30px; flex: none; color: var(--accent); margin-top: 0.1rem; }
-.sphere-card-text { min-width: 0; }
+.card-sig-medal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, var(--bg-raised));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.card-sig { width: 19px; height: 19px; flex: none; color: var(--accent); }
+.sphere-card-text { position: relative; min-width: 0; }
 
 .sphere-card-name {
   display: block;
@@ -1065,7 +1104,8 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
 .talent-card {
   border: 1px solid var(--table-border);
   border-radius: var(--border-radius);
-  background: var(--bg-content);
+  background: var(--bg-raised);
+  box-shadow: var(--shadow-sm);
   padding: 0.5rem 1rem 0.9rem;
   margin: 1.1rem 0;
 }
@@ -1103,7 +1143,6 @@ td[data-align="right"],  th[data-align="right"]  { text-align: right; }
   border-left: 3px solid var(--accent);
   background: linear-gradient(0deg, var(--bg-content), var(--bg-content)) padding-box;
 }
-[data-theme="dark"] .talent-card { background: rgba(255,255,255,0.02); }
 
 .talent-tags {
   display: flex;
@@ -1406,8 +1445,9 @@ h4.base-ability::after {
   border: 1px solid var(--stat-border);
   border-radius: var(--border-radius);
   background: var(--stat-bg);
+  box-shadow: var(--shadow-sm);
 }
-.cs-val { font-family: var(--font-display); font-size: 1.7rem; line-height: 1; color: var(--accent); }
+.cs-val { font-family: var(--font-display); font-size: 1.7rem; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
 .cs-label { font-family: var(--font-ui); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); }
 .cs-hint { font-family: var(--font-ui); font-size: 0.65rem; color: var(--text-muted); }
 .char-warn {
@@ -1661,28 +1701,52 @@ h4.base-ability::after {
   color: var(--text);
 }
 .char-feature-notes li { margin: 0.15rem 0; }
-.char-granted-badge {
+/* Pílula de status pequena — um único componente por trás de três nomes de
+   classe (badge de esfera concedida / tag inline / etiqueta de card). Antes
+   eram três blocos quase idênticos com tamanhos ligeiramente diferentes;
+   agora compartilham a base e só o texto/cor mudam por contexto. */
+.char-granted-badge, .char-tag, .char-card-tag {
   font-family: var(--font-ui);
   font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   vertical-align: middle;
-  color: var(--verdigris);
-  border: 1px solid color-mix(in srgb, var(--verdigris) 45%, transparent);
+  color: var(--text-muted);
+  border: 1px solid var(--table-border);
   border-radius: 999px;
   padding: 0.05rem 0.45rem;
   margin-left: 0.55rem;
 }
-.char-card-tag.char-tag-granted { color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
+.char-card-tag { display: inline-block; }
+.char-granted-badge, .char-card-tag.char-tag-granted { color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
 
 /* ---- Ficha: esferas adquiridas --------------------------------------------- */
 .char-sphere { margin: 0 0 1.6rem; }
+/* a esfera ativa na bancada tinge por seu próprio matiz (mesmo padrão de
+   .sphere-card.themed / #toc-nav a.toc-sphere) — sem isso, tudo cai no
+   accent genérico (oxblood/verdigris) e a cor da esfera nunca chega à ficha. */
+.char-sphere.themed { --accent: hsl(var(--sphere-h) calc(var(--sphere-s) * 1%) var(--acc-l-default)); }
 .char-sphere-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--accent);
   border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   padding-bottom: 0.2rem;
   margin-bottom: 0.5rem;
 }
+.char-sphere-medal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, var(--bg-raised));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.char-sphere-medal .card-sig { width: 15px; height: 15px; }
 .char-subhead {
   font-family: var(--font-ui);
   font-size: 0.72rem;
@@ -1690,17 +1754,6 @@ h4.base-ability::after {
   letter-spacing: 0.06em;
   color: var(--text-muted);
   margin: 0.6rem 0 0.25rem;
-}
-.char-tag {
-  font-family: var(--font-ui);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  border: 1px solid var(--table-border);
-  border-radius: 999px;
-  padding: 0 0.4rem;
-  margin-left: 0.4rem;
 }
 .char-tag-free { color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
 .char-included .fav-go { color: var(--text); }
@@ -1721,6 +1774,9 @@ h4.base-ability::after {
 .char-cards { margin: 0.3rem 0 0.6rem; }
 .char-talent { margin-bottom: 0.55rem; }
 .char-talent .fav-card { margin: 0; }
+/* talento na ficha herda a cor da esfera ativa (.char-sphere.themed) — o cartão
+   "pertence" à esfera, não só o cabeçalho da seção. */
+.char-talent .talent-card { border-left: 3px solid var(--accent); }
 .char-talent-extra { display: flex; align-items: flex-start; gap: 0.35rem; }
 .char-talent-extra > .char-talent-remove, .char-talent-extra > .char-mm-remove {
   flex: none;
@@ -1731,20 +1787,8 @@ h4.base-ability::after {
   padding: 0.05rem 0.35rem;
 }
 .char-talent-extra > .fav-card { flex: 1; min-width: 0; }
-/* Etiqueta base/grátis no cabeçalho do card (visível mesmo recolhido). */
-.char-card-tag {
-  display: inline-block;
-  font-family: var(--font-ui);
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  vertical-align: middle;
-  color: var(--text-muted);
-  border: 1px solid var(--table-border);
-  border-radius: 999px;
-  padding: 0.05rem 0.45rem;
-  margin-left: 0.55rem;
-}
+/* Etiqueta base/grátis no cabeçalho do card (visível mesmo recolhido) — base
+   compartilhada no bloco .char-granted-badge/.char-tag/.char-card-tag acima. */
 .char-card-tag.char-tag-free { color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
 
 /* Painel de gestão in-sheet de uma esfera: pacote-base + escolhas grátis
@@ -1760,6 +1804,7 @@ h4.base-ability::after {
   border-left: 3px solid var(--accent);
   border-radius: var(--border-radius);
   background: color-mix(in srgb, var(--accent) 5%, var(--bg-content));
+  box-shadow: var(--shadow-sm);
   font-family: var(--font-ui);
   font-size: 0.88rem;
 }
@@ -1771,7 +1816,18 @@ h4.base-ability::after {
    sempre visível (.char-bench). Espelha design-previews/builder-bancada.html.
    ============================================================ */
 .char-layout { display: grid; grid-template-columns: 270px 1fr; gap: 1.4rem; align-items: start; }
-.char-main { display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; }
+/* .char-main é a bancada: superfície recuada onde as esferas/talentos "pousam". */
+.char-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-width: 0;
+  padding: 1.1rem;
+  background: var(--bg-recessed);
+  border: 1px solid var(--table-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-inset);
+}
 
 /* ---- Rail --------------------------------------------------------------- */
 .char-rail {
@@ -1824,7 +1880,7 @@ h4.base-ability::after {
 .char-budget-bar + .char-budget-bar { margin-top: 0.5rem; }
 .char-budget-bar.over { border-color: var(--oxblood); }
 .cbb-line { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-ui); font-size: 0.8rem; color: var(--text-muted); }
-.cbb-line b { font-family: var(--font-display); font-weight: 600; color: var(--accent); font-size: 1.05rem; }
+.cbb-line b { font-family: var(--font-display); font-weight: 600; color: var(--accent); font-size: 1.05rem; font-variant-numeric: tabular-nums; }
 .char-budget-bar.over .cbb-line b { color: var(--oxblood); }
 .cbb-track { height: 6px; border-radius: 3px; background: var(--table-border); margin-top: 0.35rem; overflow: hidden; }
 .cbb-track i { display: block; height: 100%; background: var(--accent); transition: width 0.25s; }
