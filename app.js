@@ -1790,11 +1790,19 @@ function sphereCandidates(active) {
   if (!dataIndex) return { magic: [], martial: [] };
   const have = new Set((active.spheres || []).map(e => sphereTitleById.get(e.sphere) || e.sphere));
   const granted = grantedSpheresMap(active);
+  // Só oferecemos esferas em que o personagem realmente GASTA: a própria seção +
+  // as exceções cross-section (ex.: Artífice → Engenhosidade/Alquimia contam como
+  // magia). `effectiveSection` resolve o cross; `talentBudget` diz onde há orçamento.
+  // Assim um Guerreiro não vê todas as esferas de magia com cadeado, nem vice-versa.
+  const budget = Rules.talentBudget(active, dataIndex);
+  const canSpend = { magic: budget.magic > 0, martial: budget.martial > 0 };
   const groups = { magic: [], martial: [] };
   for (const sph of dataIndex.sphereById.values()) {
     const title = sph.name;
     if (have.has(title) || granted.has(title)) continue;
-    (groups[sph.section] || groups.magic).push({ id: sph.id, title, section: sph.section });
+    const eff = Rules.effectiveSection(active, sph.id, dataIndex);
+    if (!canSpend[eff]) continue; // seção onde o personagem não tem orçamento → não mostra
+    (groups[eff] || groups.magic).push({ id: sph.id, title, section: sph.section });
   }
   groups.magic.sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'));
   groups.martial.sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'));
@@ -2551,9 +2559,14 @@ function refreshCharBench() {
   }
 }
 
+// Preserva a rolagem entre re-renders da ficha: uma mutação (adicionar talento,
+// mudar nível/mod, etc.) não deve jogar ao topo. Só vai ao topo quando ENTRAMOS
+// na ficha (ainda não havia .char-layout no #content).
+let charKeepScrollY = 0;
 function renderCharacter() {
   currentChapterIndex = -1;
   const content = document.getElementById('content');
+  charKeepScrollY = content.querySelector('.char-layout') ? window.scrollY : 0;
   content.removeAttribute('data-section');
   applySphereTheme(content, null);
   content.innerHTML = '';
@@ -2708,7 +2721,7 @@ function finishCharRender() {
   document.title = 'Meu Personagem — Esferas de Magia e Poder';
   setupObserver();
   updateActiveSidebarLink('#personagem');
-  window.scrollTo(0, 0);
+  window.scrollTo(0, charKeepScrollY);
 }
 
 // Seção (magic/martial) de uma esfera pelo título — para contar orçamento.
