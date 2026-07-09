@@ -180,6 +180,9 @@
  * @property {{skills: string[], tools: string[]}} proficiencies
  * @property {CharSphere[]} spheres
  * @property {string[]} [metamagic]  Talent ids chosen via a restricted allowance (e.g. Feiticeiro Metamágica → Universal metaesfera), cost 0.
+ * @property {number} [updatedAt]    Date.now() do último write — carimbo de last-write-wins do sync na nuvem.
+ * @property {string} [ownerUid]     uid do dono na nuvem (Firestore); ausente no modo local.
+ * @property {string[]} [sharedTables]  (Fase 2) ids das mesas às quais o personagem está exposto.
  */
 
 /**

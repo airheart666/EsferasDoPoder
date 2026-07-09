@@ -1266,24 +1266,106 @@ function getActiveChar() {
 }
 function uid() { return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 
+// Sync na nuvem (Firebase) — no-op sem window.Cloud ou deslogado. `updatedAt`
+// (Date.now) é o carimbo de last-write-wins usado no merge de mergeCloudChars.
+function cloudPush(char) { try { if (window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) window.Cloud.pushCharacter(char); } catch (_) {} }
+function cloudRemove(id) { try { if (window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) window.Cloud.removeCharacter(id); } catch (_) {} }
+
 function createCharacter(patch) {
   const chars = getCharacters();
   const char = Object.assign({ id: uid(), name: 'Novo personagem', className: '', subclass: '', level: 1, keyMod: 0, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [] }, patch);
+  char.updatedAt = Date.now();
   chars.push(char);
   saveCharacters(chars);
   setActiveCharId(char.id);
+  cloudPush(char);
   return char;
 }
 function updateCharacter(id, patch) {
   const chars = getCharacters();
   const c = chars.find(x => x.id === id);
-  if (c) { Object.assign(c, patch); saveCharacters(chars); }
+  if (c) { Object.assign(c, patch); c.updatedAt = Date.now(); saveCharacters(chars); cloudPush(c); }
   return c;
 }
 function deleteCharacter(id) {
   let chars = getCharacters().filter(c => c.id !== id);
   saveCharacters(chars);
   if (getActiveCharId() === id) setActiveCharId(chars[0] ? chars[0].id : null);
+  cloudRemove(id);
+}
+
+/* ---- Integração com a nuvem (Firebase, opcional / offline-first) --------------
+   O leitor é estático; src/cloud.js só é carregado quando o builder abre. Sem
+   window.FIREBASE_CONFIG, tudo aqui é no-op e o app roda 100% local (como antes). */
+let cloudMigrated = false;   // 1ª sync após login já migrou (subiu) o local?
+let cloudLoading = false;    // src/cloud.js já foi injetado?
+let cloudWired = false;      // listeners registrados?
+
+function ensureCloud() {
+  if (cloudLoading || window.Cloud || !window.FIREBASE_CONFIG) return;
+  cloudLoading = true;
+  const s = document.createElement('script');
+  s.type = 'module'; s.src = 'src/cloud.js';
+  document.head.appendChild(s);
+}
+
+// Une nuvem→local por last-write-wins (updatedAt). Nunca apaga um local por ausência
+// na nuvem (deleção é sempre explícita, via removeCharacter). Na 1ª sync após login,
+// migra: sobe os locais que a nuvem não tem ou que são mais novos.
+function mergeCloudChars(remoteChars) {
+  const local = getCharacters();
+  const map = new Map(local.map(c => [c.id, c]));
+  const remoteMap = new Map((remoteChars || []).map(c => [c.id, c]));
+  let changed = false;
+  for (const rc of remoteChars || []) {
+    const lc = map.get(rc.id);
+    if (!lc || (rc.updatedAt || 0) > (lc.updatedAt || 0)) { map.set(rc.id, rc); changed = true; }
+  }
+  if (!cloudMigrated && window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) {
+    cloudMigrated = true;
+    for (const c of map.values()) {
+      const rc = remoteMap.get(c.id);
+      if (!rc || (c.updatedAt || 0) > (rc.updatedAt || 0)) window.Cloud.pushCharacter(c);
+    }
+  }
+  if (changed) {
+    saveCharacters([...map.values()]);
+    if (currentChapterIndex === -1) renderCharacter(); // re-render se estiver na ficha
+  }
+}
+
+// Registra os listeners de nuvem uma vez (chamado no setupCharacter).
+function setupCloud() {
+  if (cloudWired) return; cloudWired = true;
+  window.addEventListener('cloud-auth', e => {
+    if (!(e.detail && e.detail.user)) cloudMigrated = false; // logout → próximo login re-migra
+    if (currentChapterIndex === -1) renderCharacter();       // atualiza a barra de conta
+  });
+  window.addEventListener('cloud-chars', e => mergeCloudChars((e.detail && e.detail.chars) || []));
+}
+
+// Barra de conta no topo da ficha: entrar/sair do Google + estado de sync.
+function buildAccountBar() {
+  const bar = document.createElement('div');
+  bar.className = 'char-account';
+  if (!window.FIREBASE_CONFIG) return bar; // nuvem desligada → barra vazia
+  const user = window.Cloud && window.Cloud.user;
+  if (user) {
+    bar.innerHTML = '<span class="acc-status">☁ Sincronizado na nuvem</span>'
+      + '<span class="acc-user">' + (user.photo ? '<img class="acc-avatar" src="' + escapeHtml(user.photo) + '" alt="" referrerpolicy="no-referrer">' : '') + escapeHtml(user.name || user.email || 'conta') + '</span>'
+      + '<button type="button" class="acc-signout">Sair</button>';
+  } else {
+    bar.innerHTML = '<span class="acc-status acc-off">Salvo só neste aparelho</span>'
+      + '<button type="button" class="acc-signin">☁ Entrar com Google</button>';
+  }
+  return bar;
+}
+
+// Entrar: garante o cloud.js carregado (lazy) e então chama signIn.
+async function cloudSignIn() {
+  ensureCloud();
+  for (let i = 0; i < 60 && !(window.Cloud && window.Cloud.signIn); i++) await new Promise(r => setTimeout(r, 100));
+  if (window.Cloud && window.Cloud.signIn) window.Cloud.signIn();
 }
 
 /* ---- Proficiências (perícias 5e + ferramentas citadas por condicionais) ------ */
@@ -2565,6 +2647,7 @@ function refreshCharBench() {
 let charKeepScrollY = 0;
 function renderCharacter() {
   currentChapterIndex = -1;
+  ensureCloud(); // carrega a nuvem sob demanda (só quando o builder abre)
   const content = document.getElementById('content');
   charKeepScrollY = content.querySelector('.char-layout') ? window.scrollY : 0;
   content.removeAttribute('data-section');
@@ -2575,6 +2658,7 @@ function renderCharacter() {
   const h1 = document.createElement('h1');
   h1.textContent = 'Meu Personagem';
   frag.appendChild(h1);
+  frag.appendChild(buildAccountBar()); // barra de conta (entrar/sair Google + sync)
 
   if (!dataIndex || Object.keys(dataIndex.classes).length === 0) {
     const p = document.createElement('p');
@@ -2823,8 +2907,12 @@ function migrateCharacters() {
 
 function setupCharacter() {
   migrateCharacters();
+  setupCloud();
   const content = document.getElementById('content');
   content.addEventListener('click', e => {
+    // Conta na nuvem (entrar/sair Google) — no topo da ficha
+    if (e.target.closest('.acc-signin')) { cloudSignIn(); return; }
+    if (e.target.closest('.acc-signout')) { if (window.Cloud && window.Cloud.signOut) window.Cloud.signOut(); return; }
     const tab = e.target.closest('.charsel-tab');
     if (tab) { switchActiveChar(tab.dataset.id); renderCharacter(); return; }
     if (e.target.closest('#char-new')) {

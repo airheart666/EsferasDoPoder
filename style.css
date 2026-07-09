@@ -1815,6 +1815,21 @@ h4.base-ability::after {
    .char-sphere-manage/.pkg-select/.freepick-select) + bancada master-detail
    sempre visível (.char-bench). Espelha design-previews/builder-bancada.html.
    ============================================================ */
+/* Barra de conta (nuvem): entrar/sair Google + estado de sync. Discreta, no topo da ficha. */
+.char-account { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; margin: 0 0 1rem; font-family: var(--font-ui); font-size: 0.86rem; }
+.char-account:empty { display: none; }
+.char-account .acc-status { color: var(--verdigris); }
+.char-account .acc-status.acc-off { color: var(--text-muted); }
+.char-account .acc-user { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text); }
+.char-account .acc-avatar { width: 1.4rem; height: 1.4rem; border-radius: 50%; }
+.char-account .acc-signin, .char-account .acc-signout {
+  margin-left: auto; font-family: var(--font-ui); font-size: 0.85rem; cursor: pointer;
+  padding: 0.32rem 0.8rem; border-radius: var(--border-radius);
+  border: 1px solid var(--copper); background: none; color: var(--copper);
+}
+.char-account .acc-signin:hover, .char-account .acc-signout:hover { background: color-mix(in srgb, var(--copper) 12%, transparent); }
+.char-account .acc-signout { border-color: var(--table-border); color: var(--text-muted); }
+
 .char-layout { display: grid; grid-template-columns: 270px 1fr; gap: 1.4rem; align-items: start; }
 /* .char-main é a bancada: superfície recuada onde as esferas/talentos "pousam". */
 .char-main {

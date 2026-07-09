@@ -7,7 +7,9 @@
     "extract": "node scripts/extract-structured.js",
     "validate": "node scripts/validate.js",
     "test": "node scripts/test-rules.js",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "emulators": "npx -y firebase-tools emulators:start --only auth,firestore",
+    "rules:deploy": "npx -y firebase-tools deploy --only firestore:rules"
   },
   "devDependencies": {
     "@types/node": "^26.1.0",
