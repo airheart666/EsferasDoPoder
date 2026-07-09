@@ -2,23 +2,17 @@ rules_version = '2';
 // Regras do Firestore — Esferas do Poder (builder na nuvem).
 // FASE 1: cada personagem pertence a um dono; só o dono lê/escreve o seu.
 // (FASE 2 vai acrescentar leitura pelo mestre de uma mesa via character.sharedTables.)
-// Princípio: negar por padrão; exigir auth; ownerUid imutável e == usuário.
+// Cada condição numa única linha (o editor de regras engasga com && no início de linha).
 service cloud.firestore {
   match /databases/{database}/documents {
 
     match /characters/{charId} {
-      allow read: if request.auth != null
-                  && resource.data.ownerUid == request.auth.uid;
-      allow create: if request.auth != null
-                    && request.resource.data.ownerUid == request.auth.uid;
-      allow update: if request.auth != null
-                    && resource.data.ownerUid == request.auth.uid
-                    && request.resource.data.ownerUid == request.auth.uid;
-      allow delete: if request.auth != null
-                    && resource.data.ownerUid == request.auth.uid;
+      allow read: if request.auth != null && resource.data.ownerUid == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.ownerUid == request.auth.uid;
+      allow update: if request.auth != null && resource.data.ownerUid == request.auth.uid && request.resource.data.ownerUid == request.auth.uid;
+      allow delete: if request.auth != null && resource.data.ownerUid == request.auth.uid;
     }
 
-    // Tudo mais: negado.
     match /{document=**} {
       allow read, write: if false;
     }
