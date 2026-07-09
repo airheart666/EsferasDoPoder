@@ -1268,8 +1268,8 @@ function uid() { return 'c' + Date.now().toString(36) + Math.random().toString(3
 
 // Sync na nuvem (Firebase) — no-op sem window.Cloud ou deslogado. `updatedAt`
 // (Date.now) é o carimbo de last-write-wins usado no merge de mergeCloudChars.
-function cloudPush(char) { try { if (window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) window.Cloud.pushCharacter(char); } catch (_) {} }
-function cloudRemove(id) { try { if (window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) window.Cloud.removeCharacter(id); } catch (_) {} }
+function cloudPush(char) { try { if (window.Cloud?.isSignedIn?.()) window.Cloud.pushCharacter(char); } catch (_) {} }
+function cloudRemove(id) { try { if (window.Cloud?.isSignedIn?.()) window.Cloud.removeCharacter(id); } catch (_) {} }
 
 function createCharacter(patch) {
   const chars = getCharacters();
@@ -1321,7 +1321,7 @@ function mergeCloudChars(remoteChars) {
     const lc = map.get(rc.id);
     if (!lc || (rc.updatedAt || 0) > (lc.updatedAt || 0)) { map.set(rc.id, rc); changed = true; }
   }
-  if (!cloudMigrated && window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) {
+  if (!cloudMigrated && window.Cloud?.isSignedIn?.()) {
     cloudMigrated = true;
     for (const c of map.values()) {
       const rc = remoteMap.get(c.id);
