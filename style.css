@@ -496,6 +496,9 @@ body.modal-open { overflow: hidden; }
   color: var(--sidebar-text);
 }
 #toc-nav a.toc-home:hover { color: #fff; }
+/* Ícone de linha dos links especiais da nav (sigils.svg) — monocromático, alinhado ao texto. */
+#toc-nav a.toc-home { display: flex; align-items: center; gap: 0.5rem; }
+.toc-ico { width: 1.15em; height: 1.15em; flex: 0 0 auto; color: inherit; opacity: 0.9; }
 
 /* ============================================================
    MAIN CONTENT
@@ -2172,6 +2175,7 @@ h4.base-ability::after {
    Lista de mesas → linha compacta por personagem exposto → expande em ficha
    somente-leitura (reusa .char-sphere/.char-cards/.char-rail-stats do bloco
    "Meu Personagem" acima; só o que é específico da mesa vive aqui). ------------ */
+.mesa-gmbar { margin: 0.4rem 0 1.4rem; }
 .mesa-table { margin: 0 0 2rem; }
 .mesa-table-title {
   display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;

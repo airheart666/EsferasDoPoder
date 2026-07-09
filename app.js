@@ -1443,9 +1443,10 @@ function buildShareBar(active) {
   wrap.className = 'char-share';
   if (!(window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn())) return wrap;
   const tables = active.sharedTables || [];
-  let html = '<span class="char-share-label">Mesa/campanha</span>'
-    + '<button type="button" class="char-share-create">Criar mesa</button>'
-    + '<button type="button" class="char-share-add">Compartilhar por código</button>';
+  // Só a AÇÃO DO JOGADOR (expor este personagem). Criar mesa é do mestre → vive em
+  // "Minha mesa" (o mestre não tem ficha própria).
+  let html = '<span class="char-share-label">Mesas</span>'
+    + '<button type="button" class="char-share-add">Adicionar a uma mesa</button>';
   if (tables.length) {
     html += '<div class="char-share-list">' + tables.map(t =>
       `<span class="char-share-chip">${escapeHtml(t.name || 'Mesa')} <b>${escapeHtml(t.code)}</b>`
@@ -2931,10 +2932,17 @@ function renderMyTable() {
     return;
   }
 
+  // Ações do mestre: criar mesa (mostra o código pra enviar aos jogadores). Reusa o
+  // handler .char-share-create (o snapshot cloud-my-tables re-renderiza esta view).
+  const gmBar = document.createElement('div');
+  gmBar.className = 'mesa-gmbar';
+  gmBar.innerHTML = '<button type="button" class="char-share-create">Criar mesa</button>';
+  frag.appendChild(gmBar);
+
   if (!cloudMyTables.length) {
     const p = document.createElement('p');
     p.className = 'glossary-intro';
-    p.textContent = 'Você ainda não criou nenhuma mesa. Use "Criar mesa" na ficha do seu personagem e envie o código aos jogadores.';
+    p.textContent = 'Você ainda não criou nenhuma mesa. Clique em "Criar mesa" e envie o código aos seus jogadores; eles usam "Adicionar a uma mesa" na ficha para compartilhar os personagens com você.';
     frag.appendChild(p);
   } else {
     for (const table of cloudMyTables) {
@@ -4554,37 +4562,22 @@ function buildSidebar(tocTrees) {
 
   const frag = document.createDocumentFragment();
 
-  const homeLink = document.createElement('a');
-  homeLink.href = chapters[0]?.anchor || '#p1';
-  homeLink.className = 'toc-link toc-home';
-  homeLink.textContent = '⌂ Início';
-  frag.appendChild(homeLink);
-
-  const glossaryLink = document.createElement('a');
-  glossaryLink.href = '#glossario';
-  glossaryLink.className = 'toc-link toc-home';
-  glossaryLink.textContent = '📖 Glossário';
-  frag.appendChild(glossaryLink);
-
-  const favLink = document.createElement('a');
-  favLink.href = '#favoritos';
-  favLink.className = 'toc-link toc-home';
-  favLink.textContent = '★ Favoritos';
-  frag.appendChild(favLink);
-
-  const charLink = document.createElement('a');
-  charLink.href = '#personagem';
-  charLink.className = 'toc-link toc-home';
-  charLink.textContent = '🛡 Meu personagem';
-  frag.appendChild(charLink);
-
-  // FASE 2 — só visível logado (window.Cloud?.isSignedIn()); alternado em
-  // updateTableLinkVisibility (chamado no cloud-auth, quando o estado muda de verdade).
-  const tableLink = document.createElement('a');
-  tableLink.href = '#mesa';
-  tableLink.className = 'toc-link toc-home';
-  tableLink.id = 'toc-mesa-link';
-  tableLink.textContent = '🏰 Minha mesa';
+  // Links especiais com ícone de LINHA (sigils.svg, monocromático, herda a cor) —
+  // sem emojis, no mesmo traço dos sigils das esferas.
+  const navLink = (href, sig, label, id) => {
+    const a = document.createElement('a');
+    a.href = href; a.className = 'toc-link toc-home';
+    if (id) a.id = id;
+    a.appendChild(makeSigil(sig, 'toc-ico'));
+    a.appendChild(document.createTextNode(' ' + label));
+    return a;
+  };
+  frag.appendChild(navLink(chapters[0]?.anchor || '#p1', 'inicio', 'Início'));
+  frag.appendChild(navLink('#glossario', 'glossario', 'Glossário'));
+  frag.appendChild(navLink('#favoritos', 'favoritos', 'Favoritos'));
+  frag.appendChild(navLink('#personagem', 'personagem', 'Meu personagem'));
+  // FASE 2 — só visível logado; alternado em updateTableLinkVisibility (no cloud-auth).
+  const tableLink = navLink('#mesa', 'mesa', 'Minha mesa', 'toc-mesa-link');
   tableLink.style.display = 'none';
   frag.appendChild(tableLink);
 
