@@ -1300,6 +1300,7 @@ function deleteCharacter(id) {
 let cloudMigrated = false;   // 1ª sync após login já migrou (subiu) o local?
 let cloudLoading = false;    // src/cloud.js já foi injetado?
 let cloudWired = false;      // listeners registrados?
+let cloudLastError = null;   // último erro de sync (mostrado na barra de conta)
 
 function ensureCloud() {
   if (cloudLoading || window.Cloud || !window.FIREBASE_CONFIG) return;
@@ -1338,10 +1339,17 @@ function mergeCloudChars(remoteChars) {
 function setupCloud() {
   if (cloudWired) return; cloudWired = true;
   window.addEventListener('cloud-auth', e => {
-    if (!(e.detail && e.detail.user)) cloudMigrated = false; // logout → próximo login re-migra
+    if (!(e.detail && e.detail.user)) { cloudMigrated = false; cloudLastError = null; } // logout → re-migra depois
     if (currentChapterIndex === -1) renderCharacter();       // atualiza a barra de conta
   });
   window.addEventListener('cloud-chars', e => mergeCloudChars((e.detail && e.detail.chars) || []));
+  window.addEventListener('cloud-error', e => {
+    cloudLastError = (e.detail && e.detail.code) || 'erro';
+    if (currentChapterIndex === -1) renderCharacter();
+  });
+  window.addEventListener('cloud-ok', () => { // uma gravação deu certo → limpa o aviso
+    if (cloudLastError) { cloudLastError = null; if (currentChapterIndex === -1) renderCharacter(); }
+  });
 }
 
 // Barra de conta no topo da ficha: entrar/sair do Google + estado de sync.
@@ -1351,9 +1359,16 @@ function buildAccountBar() {
   if (!window.FIREBASE_CONFIG) return bar; // nuvem desligada → barra vazia
   const user = window.Cloud && window.Cloud.user;
   if (user) {
-    bar.innerHTML = '<span class="acc-status">☁ Sincronizado na nuvem</span>'
+    const synced = cloudLastError ? '⚠ Erro ao salvar na nuvem' : '☁ Sincronizado na nuvem';
+    bar.innerHTML = '<span class="acc-status' + (cloudLastError ? ' acc-err' : '') + '">' + synced + '</span>'
       + '<span class="acc-user">' + (user.photo ? '<img class="acc-avatar" src="' + escapeHtml(user.photo) + '" alt="" referrerpolicy="no-referrer">' : '') + escapeHtml(user.name || user.email || 'conta') + '</span>'
       + '<button type="button" class="acc-signout">Sair</button>';
+    if (cloudLastError) {
+      const hint = cloudLastError === 'permission-denied'
+        ? 'Permissão negada — publique as regras do Firestore (firestore.rules).'
+        : 'Código: ' + escapeHtml(String(cloudLastError)) + '. Verifique a conexão / o console.';
+      bar.innerHTML += '<span class="acc-err-hint">' + hint + '</span>';
+    }
   } else {
     bar.innerHTML = '<span class="acc-status acc-off">Salvo só neste aparelho</span>'
       + '<button type="button" class="acc-signin">☁ Entrar com Google</button>';

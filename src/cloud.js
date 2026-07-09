@@ -43,7 +43,7 @@ async function boot() {
       const chars = [];
       snap.forEach(d => chars.push({ ...d.data(), id: d.id }));
       emit('cloud-chars', { chars, fromCache: snap.metadata.fromCache });
-    }, err => console.warn('[cloud] onSnapshot', err && err.code));
+    }, err => { console.warn('[cloud] onSnapshot', err && err.code); emit('cloud-error', { op: 'read', code: (err && err.code) || 'erro' }); });
   };
 
   onAuthStateChanged(auth, u => {
@@ -69,12 +69,12 @@ async function boot() {
     async pushCharacter(char) {
       if (!user || !char || !char.id) return;
       const { id } = char;
-      try { await setDoc(doc(db, 'characters', id), { ...char, ownerUid: user.uid }); }
-      catch (e) { console.warn('[cloud] push', e && e.code); }
+      try { await setDoc(doc(db, 'characters', id), { ...char, ownerUid: user.uid }); emit('cloud-ok', {}); }
+      catch (e) { console.warn('[cloud] push', e && e.code); emit('cloud-error', { op: 'push', code: (e && e.code) || 'erro' }); }
     },
     async removeCharacter(id) {
       if (!user || !id) return;
-      try { await deleteDoc(doc(db, 'characters', id)); } catch (e) { console.warn('[cloud] remove', e && e.code); }
+      try { await deleteDoc(doc(db, 'characters', id)); } catch (e) { console.warn('[cloud] remove', e && e.code); emit('cloud-error', { op: 'remove', code: (e && e.code) || 'erro' }); }
     },
   };
   emit('cloud-ready', {});

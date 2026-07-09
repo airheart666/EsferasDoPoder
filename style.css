@@ -1820,6 +1820,9 @@ h4.base-ability::after {
 .char-account:empty { display: none; }
 .char-account .acc-status { color: var(--verdigris); }
 .char-account .acc-status.acc-off { color: var(--text-muted); }
+.char-account .acc-status.acc-err { color: var(--oxblood); }
+[data-theme="dark"] .char-account .acc-status.acc-err { color: var(--oxblood-light); }
+.char-account .acc-err-hint { flex-basis: 100%; font-size: 0.8rem; color: var(--text-muted); }
 .char-account .acc-user { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text); }
 .char-account .acc-avatar { width: 1.4rem; height: 1.4rem; border-radius: 50%; }
 .char-account .acc-signin, .char-account .acc-signout {
