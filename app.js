@@ -1302,6 +1302,15 @@ let cloudLoading = false;    // src/cloud.js já foi injetado?
 let cloudWired = false;      // listeners registrados?
 let cloudLastError = null;   // último erro de sync (mostrado na barra de conta)
 
+// FASE 2 — mesa/campanha: cache dos eventos do mestre (as mesas que EU criei + os
+// personagens expostos A MIM, ao vivo). Module-level porque chegam fora de qualquer
+// render específico; os listeners (setupCloud) re-renderizam #mesa quando for a view
+// atual. expandedMesaChars é estado de VIEW (não persiste) — quais linhas compactas
+// estão expandidas na ficha somente-leitura, como o Set do accordion da ficha própria.
+let cloudMyTables = [];
+let cloudTableChars = [];
+const expandedMesaChars = new Set();
+
 function ensureCloud() {
   if (cloudLoading || window.Cloud || !window.FIREBASE_CONFIG) return;
   cloudLoading = true;
@@ -1339,8 +1348,10 @@ function mergeCloudChars(remoteChars) {
 function setupCloud() {
   if (cloudWired) return; cloudWired = true;
   window.addEventListener('cloud-auth', e => {
-    if (!(e.detail && e.detail.user)) { cloudMigrated = false; cloudLastError = null; } // logout → re-migra depois
+    if (!(e.detail && e.detail.user)) { cloudMigrated = false; cloudLastError = null; cloudMyTables = []; cloudTableChars = []; } // logout → re-migra depois
     if (currentChapterIndex === -1) renderCharacter();       // atualiza a barra de conta
+    updateTableLinkVisibility();
+    if (location.hash === '#mesa') renderMyTable();
   });
   window.addEventListener('cloud-chars', e => mergeCloudChars((e.detail && e.detail.chars) || []));
   window.addEventListener('cloud-error', e => {
@@ -1350,6 +1361,23 @@ function setupCloud() {
   window.addEventListener('cloud-ok', () => { // uma gravação deu certo → limpa o aviso
     if (cloudLastError) { cloudLastError = null; if (currentChapterIndex === -1) renderCharacter(); }
   });
+  // FASE 2 — mesa/campanha (mestre): mesas que eu criei + personagens expostos a mim.
+  window.addEventListener('cloud-my-tables', e => {
+    cloudMyTables = (e.detail && e.detail.tables) || [];
+    if (location.hash === '#mesa') renderMyTable();
+  });
+  window.addEventListener('cloud-table-chars', e => {
+    cloudTableChars = (e.detail && e.detail.chars) || [];
+    if (location.hash === '#mesa') renderMyTable();
+  });
+}
+
+// Mostra/esconde o link "Minha mesa" da sidebar conforme o estado de login —
+// chamado no cloud-auth (login/logout) e reaproveitado sem re-render da sidebar
+// inteira (buildSidebar só roda uma vez, no boot).
+function updateTableLinkVisibility() {
+  const link = document.getElementById('toc-mesa-link');
+  if (link) link.style.display = (window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) ? '' : 'none';
 }
 
 // Barra de conta no topo da ficha: entrar/sair do Google + estado de sync.
@@ -1381,6 +1409,51 @@ async function cloudSignIn() {
   ensureCloud();
   for (let i = 0; i < 60 && !(window.Cloud && window.Cloud.signIn); i++) await new Promise(r => setTimeout(r, 100));
   if (window.Cloud && window.Cloud.signIn) window.Cloud.signIn();
+}
+
+/* ---- FASE 2 — Mesa/campanha: expor um personagem a uma mesa ------------------
+   Não há método próprio no Cloud para expor/desexpor: é um update normal do dono
+   (char.sharedTables/sharedTo) via updateCharacter, que já sobe pra nuvem sozinho.
+   sharedTo é sempre DERIVADO de sharedTables — nunca editado direto. ------------ */
+function deriveSharedTo(sharedTables) {
+  return [...new Set((sharedTables || []).map(t => t.gmUid))];
+}
+// Expõe `active` à mesa do código informado. Valida o código via Cloud.getTable
+// (existe? é uma mesa de verdade?) antes de gravar — nunca confia no texto digitado.
+async function exposeCharToTable(active, code) {
+  code = (code || '').trim();
+  if (!code) return { ok: false };
+  const t = await window.Cloud.getTable(code);
+  if (!t) return { ok: false, message: 'Código de mesa inválido.' };
+  const tables = active.sharedTables || [];
+  if (tables.some(x => x.code === t.code)) return { ok: true }; // já exposto → no-op
+  const sharedTables = tables.concat([{ code: t.code, name: t.name, gmUid: t.gmUid }]);
+  updateCharacter(active.id, { sharedTables, sharedTo: deriveSharedTo(sharedTables) });
+  return { ok: true };
+}
+function unexposeCharFromTable(active, code) {
+  const sharedTables = (active.sharedTables || []).filter(t => t.code !== code);
+  updateCharacter(active.id, { sharedTables, sharedTo: deriveSharedTo(sharedTables) });
+}
+// Barra "Compartilhar com mesa" na ficha (só logado): criar mesa (mostra o
+// código pra enviar aos jogadores) + expor este personagem por código + lista das
+// mesas em que ele já está, cada uma com desexpor. Vazia (sem DOM) quando deslogado.
+function buildShareBar(active) {
+  const wrap = document.createElement('div');
+  wrap.className = 'char-share';
+  if (!(window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn())) return wrap;
+  const tables = active.sharedTables || [];
+  let html = '<span class="char-share-label">Mesa/campanha</span>'
+    + '<button type="button" class="char-share-create">Criar mesa</button>'
+    + '<button type="button" class="char-share-add">Compartilhar por código</button>';
+  if (tables.length) {
+    html += '<div class="char-share-list">' + tables.map(t =>
+      `<span class="char-share-chip">${escapeHtml(t.name || 'Mesa')} <b>${escapeHtml(t.code)}</b>`
+      + `<button type="button" class="char-share-remove" data-code="${escapeHtml(t.code)}" title="Desexpor desta mesa">✕</button></span>`
+    ).join('') + '</div>';
+  }
+  wrap.innerHTML = html;
+  return wrap;
 }
 
 /* ---- Proficiências (perícias 5e + ferramentas citadas por condicionais) ------ */
@@ -2719,6 +2792,8 @@ function renderCharacter() {
 
   normalizeCharView(active);
 
+  frag.appendChild(buildShareBar(active)); // "Compartilhar com mesa" (só logado; vazio senão)
+
   const layout = document.createElement('div');
   layout.className = 'char-layout';
 
@@ -2821,6 +2896,211 @@ function finishCharRender() {
   setupObserver();
   updateActiveSidebarLink('#personagem');
   window.scrollTo(0, charKeepScrollY);
+}
+
+/* ============================================================
+   FASE 2 — MESA/CAMPANHA (visão do mestre)
+   #mesa → renderMyTable(): as mesas que EU criei (cloudMyTables) e, sob cada
+   uma, os personagens expostos a ela (cloudTableChars, filtrados por
+   sharedTables[].code) como linha compacta; clicar expande a ficha
+   somente-leitura (renderSharedCharacterReadonly). Só ativo logado — deslogado
+   o link nem aparece na sidebar (updateTableLinkVisibility), mas a view trata
+   o caso mesmo assim (link direto/refresh).
+   ============================================================ */
+function renderMyTable() {
+  currentChapterIndex = -1;
+  ensureCloud();
+  const content = document.getElementById('content');
+  content.removeAttribute('data-section');
+  applySphereTheme(content, null);
+  content.innerHTML = '';
+  const frag = document.createDocumentFragment();
+
+  const h1 = document.createElement('h1');
+  h1.textContent = 'Minha mesa';
+  frag.appendChild(h1);
+
+  const signedIn = !!(window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn());
+  if (!signedIn) {
+    const p = document.createElement('p');
+    p.className = 'glossary-intro';
+    p.textContent = 'Entre com sua conta Google (na ficha "Meu personagem") para criar mesas e ver os personagens que os jogadores compartilharem com você.';
+    frag.appendChild(p);
+    content.appendChild(frag);
+    finishMesaRender();
+    return;
+  }
+
+  if (!cloudMyTables.length) {
+    const p = document.createElement('p');
+    p.className = 'glossary-intro';
+    p.textContent = 'Você ainda não criou nenhuma mesa. Use "Criar mesa" na ficha do seu personagem e envie o código aos jogadores.';
+    frag.appendChild(p);
+  } else {
+    for (const table of cloudMyTables) {
+      const section = document.createElement('section');
+      section.className = 'mesa-table';
+      const h2 = document.createElement('h2');
+      h2.className = 'mesa-table-title';
+      h2.innerHTML = `${escapeHtml(table.name || 'Mesa')} <span class="mesa-table-code">código: ${escapeHtml(table.code)}</span>`;
+      section.appendChild(h2);
+
+      const chars = cloudTableChars.filter(c => (c.sharedTables || []).some(s => s.code === table.code));
+      if (!chars.length) {
+        const p = document.createElement('p');
+        p.className = 'mesa-empty';
+        p.textContent = 'Nenhum personagem exposto a esta mesa ainda.';
+        section.appendChild(p);
+      } else {
+        for (const char of chars) {
+          const expanded = expandedMesaChars.has(char.id);
+          const row = document.createElement('button');
+          row.type = 'button';
+          row.className = 'mesa-char-row' + (expanded ? ' expanded' : '');
+          row.dataset.id = char.id;
+          const stats = characterStats(char);
+          row.innerHTML = `<span class="mesa-char-caret" aria-hidden="true">▸</span>`
+            + `<span class="mesa-char-name">${escapeHtml(char.name || '(sem nome)')}</span>`
+            + `<span class="mesa-char-meta">${escapeHtml(char.className || '—')}${char.subclass ? ' — ' + escapeHtml(char.subclass) : ''} · nível ${char.level || 1}</span>`
+            + (stats ? `<span class="mesa-char-stat">CD ${stats.cd}</span>`
+                + (stats.resourceName ? `<span class="mesa-char-stat">${escapeHtml(stats.resourceName)} ${stats.resource}</span>` : '')
+                + `<span class="mesa-char-stat">Ataque ${stats.attack >= 0 ? '+' : ''}${stats.attack}</span>` : '');
+          section.appendChild(row);
+          if (expanded) {
+            const detail = document.createElement('div');
+            detail.className = 'mesa-char-detail';
+            detail.appendChild(renderSharedCharacterReadonly(char));
+            section.appendChild(detail);
+          }
+        }
+      }
+      frag.appendChild(section);
+    }
+  }
+
+  content.appendChild(frag);
+  finishMesaRender();
+}
+
+function finishMesaRender() {
+  applyStagger(document.getElementById('content'));
+  document.getElementById('top-title').textContent = 'Minha mesa';
+  document.title = 'Minha mesa — Esferas de Magia e Poder';
+  setupObserver();
+  updateActiveSidebarLink('#mesa');
+  window.scrollTo(0, 0);
+}
+
+// Ficha somente-leitura de um personagem de OUTRO usuário (visão do mestre) — char
+// vem do evento cloud-table-chars, NUNCA do localStorage. Reusa só helpers de
+// EXIBIÇÃO que recebem o char por parâmetro (buildCharBudgetHTML/characterStats/
+// charSphereTitles/grantedSpheresMap/getSphereModel/charTalentCard) — nunca
+// getActiveChar()/updateCharacter/mutadores. Sem bancada, pickers, +/✕, add-esfera.
+function renderSharedCharacterReadonly(char) {
+  const wrap = document.createElement('div');
+  wrap.className = 'mesa-char-sheet';
+
+  const head = document.createElement('div');
+  head.className = 'mesa-char-sheet-head';
+  head.innerHTML = `<h4>${escapeHtml(char.name || '(sem nome)')}</h4>`
+    + `<p class="mesa-char-sub">${escapeHtml(char.className || '—')}${char.subclass ? ' — ' + escapeHtml(char.subclass) : ''} · nível ${char.level || 1}</p>`;
+  wrap.appendChild(head);
+
+  const statsWrap = document.createElement('div');
+  statsWrap.className = 'char-rail-stats mesa-char-stats';
+  statsWrap.innerHTML = buildCharBudgetHTML(char);
+  wrap.appendChild(statsWrap);
+
+  if (!dataIndex) return wrap; // sem dados estruturados carregados: só os stats acima
+
+  const titles = charSphereTitles(char);
+  if (!titles.length) {
+    const p = document.createElement('p');
+    p.className = 'glossary-intro';
+    p.textContent = 'Nenhuma esfera.';
+    wrap.appendChild(p);
+  } else {
+    for (const title of titles) wrap.appendChild(renderReadonlySpherePanel(char, title));
+  }
+
+  const mm = char.metamagic || [];
+  if (mm.length) {
+    const allowance = metamagicAllowance(char);
+    const mmSphere = allowance ? allowance.sphere : 'Universal';
+    const model = getSphereModel(mmSphere, null);
+    const group = document.createElement('section');
+    group.className = 'char-sphere';
+    const h3 = document.createElement('h3');
+    h3.className = 'char-sphere-title';
+    h3.textContent = `✦ Metamágica — ${mm.length} escolha(s)`;
+    group.appendChild(h3);
+    const box = document.createElement('div'); box.className = 'char-cards';
+    for (const id of mm) box.appendChild(charTalentCard(model.frag, id, 'free', mmSphere));
+    group.appendChild(box);
+    wrap.appendChild(group);
+  }
+
+  return wrap;
+}
+
+// Painel de UMA esfera na ficha somente-leitura: mesmo agrupamento visual de
+// renderSphereBuildPanel (base/concedido/grátis em "Incluído com a esfera",
+// extras em "Talentos") mas SEM char-sphere-manage (pkg/freepick selectors) e
+// SEM os botões de mutação (.char-talent-remove/.char-sphere-remove) — os
+// extras usam charTalentCard(kind='extra') só para reusar a mesma renderização
+// de card, depois o ✕ é removido do clone (nunca chega ao DOM final).
+function renderReadonlySpherePanel(char, title) {
+  const entry = sphereEntry(char, title);
+  const granted = isGrantedSphere(char, title);
+  const grantedItems = grantedSpheresMap(char).get(title) || [];
+  const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
+  const fr = model.frag;
+  const freePicks = (entry && entry.freePicks) || [];
+  const extras = (entry && entry.talents) || [];
+  const count = grantedItems.length + freePicks.length + extras.length;
+
+  const group = document.createElement('section');
+  group.className = 'char-sphere';
+  const theme = sphereThemes[title];
+  if (theme) {
+    group.classList.add('themed');
+    group.style.setProperty('--sphere-h', theme.h);
+    group.style.setProperty('--sphere-s', theme.s);
+  }
+  const h3 = document.createElement('h3');
+  h3.className = 'char-sphere-title';
+  h3.textContent = `${title} — ${count} talento(s)`;
+  if (granted) {
+    const badge = document.createElement('span');
+    badge.className = 'char-granted-badge';
+    badge.textContent = 'concedida';
+    h3.appendChild(badge);
+  }
+  group.appendChild(h3);
+
+  if (model.bases.length || freePicks.length || grantedItems.length) {
+    const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Incluído com a esfera';
+    group.appendChild(sub);
+    const box = document.createElement('div'); box.className = 'char-cards';
+    for (const it of model.bases) box.appendChild(charTalentCard(fr, it.id, 'base', title));
+    for (const it of grantedItems) box.appendChild(charTalentCard(fr, it.id, 'granted', title));
+    for (const id of freePicks) box.appendChild(charTalentCard(fr, id, 'free', title));
+    group.appendChild(box);
+  }
+
+  if (extras.length) {
+    const sub = document.createElement('p'); sub.className = 'char-subhead'; sub.textContent = 'Talentos';
+    group.appendChild(sub);
+    const box = document.createElement('div'); box.className = 'char-cards';
+    for (const id of extras) {
+      const card = charTalentCard(fr, id, 'extra', title);
+      card.querySelector('.char-talent-remove')?.remove(); // somente-leitura: sem ✕
+      box.appendChild(card);
+    }
+    group.appendChild(box);
+  }
+
+  return group;
 }
 
 // Seção (magic/martial) de uma esfera pelo título — para contar orçamento.
@@ -2928,6 +3208,39 @@ function setupCharacter() {
     // Conta na nuvem (entrar/sair Google) — no topo da ficha
     if (e.target.closest('.acc-signin')) { cloudSignIn(); return; }
     if (e.target.closest('.acc-signout')) { if (window.Cloud && window.Cloud.signOut) window.Cloud.signOut(); return; }
+    // FASE 2 — criar mesa: pede um nome, mostra o código pra enviar aos jogadores.
+    const shCreate = e.target.closest('.char-share-create');
+    if (shCreate) {
+      (async () => {
+        const name = prompt('Nome da mesa:');
+        if (name == null) return;
+        const r = await window.Cloud.createTable(name);
+        if (r && r.ok) showCharNotice(shCreate, 'Mesa criada — código: ' + r.code);
+        else showCharNotice(shCreate, 'Não foi possível criar a mesa. Tente de novo.');
+      })();
+      return;
+    }
+    // FASE 2 — expor o personagem ativo a uma mesa por código.
+    const shAdd = e.target.closest('.char-share-add');
+    if (shAdd) {
+      const active = getActiveChar();
+      if (!active) return;
+      (async () => {
+        const code = prompt('Código da mesa:');
+        if (code == null) return;
+        const res = await exposeCharToTable(active, code);
+        if (!res.ok) showCharNotice(shAdd, res.message || 'Código de mesa inválido.');
+        renderCharacter();
+      })();
+      return;
+    }
+    // FASE 2 — desexpor o personagem ativo de uma mesa (remove o chip).
+    const shRm = e.target.closest('.char-share-remove');
+    if (shRm) {
+      const active = getActiveChar();
+      if (active) { unexposeCharFromTable(active, shRm.dataset.code); renderCharacter(); }
+      return;
+    }
     const tab = e.target.closest('.charsel-tab');
     if (tab) { switchActiveChar(tab.dataset.id); renderCharacter(); return; }
     if (e.target.closest('#char-new')) {
@@ -3100,6 +3413,15 @@ function setupCharacter() {
       charView.benchMode = 'talents';
       charView.sel = null;
       renderCharacter();
+      return;
+    }
+    // FASE 2 — visão do mestre: expandir/recolher a ficha somente-leitura de um
+    // personagem exposto (view-state em expandedMesaChars, não persiste).
+    const mrow = e.target.closest('.mesa-char-row');
+    if (mrow) {
+      const id = mrow.dataset.id;
+      if (expandedMesaChars.has(id)) expandedMesaChars.delete(id); else expandedMesaChars.add(id);
+      renderMyTable();
       return;
     }
   });
@@ -4142,9 +4464,10 @@ function renderGlossary() {
    NAVEGAÇÃO
    ============================================================ */
 function navigate(hash, opts = {}) {
-  if (hash === '#glossario' || hash === '#favoritos' || hash === '#personagem') {
+  if (hash === '#glossario' || hash === '#favoritos' || hash === '#personagem' || hash === '#mesa') {
     if (hash === '#favoritos') renderFavorites();
     else if (hash === '#personagem') renderCharacter();
+    else if (hash === '#mesa') renderMyTable();
     else renderGlossary();
     if (!opts.silent) {
       if (opts.replace) history.replaceState(null, '', hash);
@@ -4189,8 +4512,8 @@ function handleInternalLinkClick(e) {
   }
   const href = a.getAttribute('href');
 
-  // Páginas sintéticas (glossário / favoritos / personagem)
-  if (href === '#glossario' || href === '#favoritos' || href === '#personagem') {
+  // Páginas sintéticas (glossário / favoritos / personagem / mesa)
+  if (href === '#glossario' || href === '#favoritos' || href === '#personagem' || href === '#mesa') {
     e.preventDefault();
     navigate(href);
     return;
@@ -4254,6 +4577,16 @@ function buildSidebar(tocTrees) {
   charLink.className = 'toc-link toc-home';
   charLink.textContent = '🛡 Meu personagem';
   frag.appendChild(charLink);
+
+  // FASE 2 — só visível logado (window.Cloud?.isSignedIn()); alternado em
+  // updateTableLinkVisibility (chamado no cloud-auth, quando o estado muda de verdade).
+  const tableLink = document.createElement('a');
+  tableLink.href = '#mesa';
+  tableLink.className = 'toc-link toc-home';
+  tableLink.id = 'toc-mesa-link';
+  tableLink.textContent = '🏰 Minha mesa';
+  tableLink.style.display = 'none';
+  frag.appendChild(tableLink);
 
   frag.appendChild(document.createElement('hr'));
 

@@ -182,7 +182,17 @@
  * @property {string[]} [metamagic]  Talent ids chosen via a restricted allowance (e.g. Feiticeiro Metamágica → Universal metaesfera), cost 0.
  * @property {number} [updatedAt]    Date.now() do último write — carimbo de last-write-wins do sync na nuvem.
  * @property {string} [ownerUid]     uid do dono na nuvem (Firestore); ausente no modo local.
- * @property {string[]} [sharedTables]  (Fase 2) ids das mesas às quais o personagem está exposto.
+ * @property {string[]} [sharedTo]   (Fase 2) uids de mestres que podem LER — DERIVADO de sharedTables (únicos gmUid). Regra + query do mestre.
+ * @property {{code:string, name:string, gmUid:string}[]} [sharedTables]  (Fase 2) mesas às quais está exposto.
+ */
+
+/**
+ * @typedef {Object} Table  (Fase 2) mesa/campanha; doc id = code (convite).
+ * @property {string} code
+ * @property {string} gmUid
+ * @property {string} [gmName]
+ * @property {string} name
+ * @property {number} [createdAt]
  */
 
 /**

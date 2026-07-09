@@ -1833,6 +1833,29 @@ h4.base-ability::after {
 .char-account .acc-signin:hover, .char-account .acc-signout:hover { background: color-mix(in srgb, var(--copper) 12%, transparent); }
 .char-account .acc-signout { border-color: var(--table-border); color: var(--text-muted); }
 
+/* FASE 2 — "Compartilhar com mesa": mesma linguagem discreta da barra de conta. */
+.char-share { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin: 0 0 1.3rem; font-family: var(--font-ui); font-size: 0.85rem; }
+.char-share:empty { display: none; }
+.char-share-label { color: var(--text-muted); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.05em; }
+.char-share-create, .char-share-add {
+  font-family: var(--font-ui); font-size: 0.85rem; cursor: pointer;
+  padding: 0.32rem 0.8rem; border-radius: var(--border-radius);
+  border: 1px solid var(--copper); background: none; color: var(--copper);
+}
+.char-share-create:hover, .char-share-add:hover { background: color-mix(in srgb, var(--copper) 12%, transparent); }
+.char-share-list { display: flex; flex-wrap: wrap; gap: 0.4rem; flex-basis: 100%; }
+.char-share-chip {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.2rem 0.35rem 0.2rem 0.65rem; border-radius: 999px;
+  border: 1px solid var(--table-border); background: var(--stat-bg); color: var(--text);
+}
+.char-share-chip b { font-variant-numeric: tabular-nums; color: var(--verdigris); }
+.char-share-remove {
+  background: none; border: none; cursor: pointer; color: var(--copper);
+  font-family: var(--font-ui); font-size: 0.85rem; line-height: 1; padding: 0.1rem 0.25rem;
+}
+.char-share-remove:hover { color: var(--accent); }
+
 .char-layout { display: grid; grid-template-columns: 270px 1fr; gap: 1.4rem; align-items: start; }
 /* .char-main é a bancada: superfície recuada onde as esferas/talentos "pousam". */
 .char-main {
@@ -2143,6 +2166,47 @@ h4.base-ability::after {
   .char-bench-detail { overflow-y: visible; }
   .cbd-head { position: static; }
 }
+
+/* ============================================================
+   FASE 2 — MESA/CAMPANHA (#mesa, visão do mestre)
+   Lista de mesas → linha compacta por personagem exposto → expande em ficha
+   somente-leitura (reusa .char-sphere/.char-cards/.char-rail-stats do bloco
+   "Meu Personagem" acima; só o que é específico da mesa vive aqui). ------------ */
+.mesa-table { margin: 0 0 2rem; }
+.mesa-table-title {
+  display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
+  font-family: var(--font-display); font-size: 1.3rem; margin: 0 0 0.7rem;
+}
+.mesa-table-code {
+  font-family: var(--font-ui); font-size: 0.75rem; font-weight: 400;
+  color: var(--text-muted); letter-spacing: 0.03em;
+}
+.mesa-empty { color: var(--text-muted); font-style: italic; margin: 0 0 0.6rem; }
+
+.mesa-char-row {
+  display: flex; align-items: center; gap: 0.7rem; width: 100%;
+  font-family: var(--font-ui); font-size: 0.9rem; text-align: left;
+  cursor: pointer; padding: 0.55rem 0.8rem; margin: 0 0 0.4rem;
+  border: 1px solid var(--table-border); border-radius: var(--border-radius);
+  background: var(--stat-bg); color: var(--text);
+}
+.mesa-char-row:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.mesa-char-row.expanded { border-color: var(--accent); }
+.mesa-char-row .mesa-char-caret { color: var(--text-muted); transition: transform 0.15s; }
+.mesa-char-row.expanded .mesa-char-caret { transform: rotate(90deg); }
+.mesa-char-row .mesa-char-name { font-weight: 700; }
+.mesa-char-row .mesa-char-meta { color: var(--text-muted); }
+.mesa-char-row .mesa-char-stat { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--verdigris); }
+.mesa-char-row .mesa-char-stat + .mesa-char-stat { margin-left: 0.7rem; }
+
+.mesa-char-detail {
+  margin: 0 0 0.6rem; padding: 1rem 1.1rem;
+  border: 1px solid var(--table-border); border-left: 3px solid var(--accent);
+  border-radius: var(--border-radius); background: var(--bg-recessed);
+}
+.mesa-char-sheet-head h4 { margin: 0 0 0.15rem; font-family: var(--font-display); font-size: 1.15rem; }
+.mesa-char-sheet-head .mesa-char-sub { margin: 0 0 0.8rem; color: var(--text-muted); font-family: var(--font-ui); font-size: 0.85rem; }
+.mesa-char-stats { margin-bottom: 1rem; }
 
 /* Notação mecânica: dados e CD em chips discretos e escaneáveis */
 .dice, .dc {

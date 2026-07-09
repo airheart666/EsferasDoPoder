@@ -1,16 +1,25 @@
 rules_version = '2';
 // Regras do Firestore — Esferas do Poder (builder na nuvem).
 // FASE 1: cada personagem pertence a um dono; só o dono lê/escreve o seu.
-// (FASE 2 vai acrescentar leitura pelo mestre de uma mesa via character.sharedTables.)
+// FASE 2 (mesa/campanha): o personagem pode ser EXPOSTO a mestres via sharedTo:[gmUid];
+//   um mestre nesse array só LÊ (nunca escreve). Mesas em /tables: só o gm escreve; get
+//   por id (código) p/ entrar; list só as próprias (não enumera mesas alheias).
 // Cada condição numa única linha (o editor de regras engasga com && no início de linha).
 service cloud.firestore {
   match /databases/{database}/documents {
 
     match /characters/{charId} {
-      allow read: if request.auth != null && resource.data.ownerUid == request.auth.uid;
+      allow read: if request.auth != null && (resource.data.ownerUid == request.auth.uid || (('sharedTo' in resource.data) && request.auth.uid in resource.data.sharedTo));
       allow create: if request.auth != null && request.resource.data.ownerUid == request.auth.uid;
       allow update: if request.auth != null && resource.data.ownerUid == request.auth.uid && request.resource.data.ownerUid == request.auth.uid;
       allow delete: if request.auth != null && resource.data.ownerUid == request.auth.uid;
+    }
+
+    match /tables/{tableId} {
+      allow get: if request.auth != null;
+      allow list: if request.auth != null && resource.data.gmUid == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.gmUid == request.auth.uid;
+      allow update, delete: if request.auth != null && resource.data.gmUid == request.auth.uid;
     }
 
     match /{document=**} {

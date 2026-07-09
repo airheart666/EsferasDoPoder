@@ -14,13 +14,22 @@ const cfg = window.FIREBASE_CONFIG;
 
 const SDK = 'https://www.gstatic.com/firebasejs/10.12.0';
 
+// Código de convite de mesa (= id do doc). Alfabeto sem ambíguos (O0 I1 L). Colisão
+// (~30^6) é desprezível e, se ocorrer, o setDoc sobre mesa de outro gm é NEGADO pela
+// regra (update exige gmUid do dono) → vira erro, nunca sobrescreve.
+function genTableCode() {
+  const A = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+  let s = ''; for (let i = 0; i < 6; i++) s += A[Math.floor(Math.random() * A.length)];
+  return s;
+}
+
 async function boot() {
   if (!cfg) { window.Cloud = { available: false }; return; }
   const { initializeApp } = await import(`${SDK}/firebase-app.js`);
   const { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged,
           setPersistence, browserLocalPersistence, connectAuthEmulator } = await import(`${SDK}/firebase-auth.js`);
   const { initializeFirestore, getFirestore, persistentLocalCache, persistentMultipleTabManager,
-          collection, doc, setDoc, deleteDoc, query, where, onSnapshot, connectFirestoreEmulator } = await import(`${SDK}/firebase-firestore.js`);
+          collection, doc, getDoc, setDoc, deleteDoc, query, where, onSnapshot, connectFirestoreEmulator } = await import(`${SDK}/firebase-firestore.js`);
 
   const app = initializeApp(cfg);
   const auth = getAuth(app);
@@ -46,9 +55,28 @@ async function boot() {
     }, err => { console.warn('[cloud] onSnapshot', err && err.code); emit('cloud-error', { op: 'read', code: (err && err.code) || 'erro' }); });
   };
 
+  // FASE 2 — mesa/campanha: watchers do mestre (as mesas que EU criei + os personagens
+  // expostos A MIM, ao vivo). Para não-mestre as queries voltam vazias (baratas).
+  let unsubTables = null, unsubExposed = null;
+  const stopTableSync = () => {
+    if (unsubTables) { unsubTables(); unsubTables = null; }
+    if (unsubExposed) { unsubExposed(); unsubExposed = null; }
+  };
+  const startTableSync = uid => {
+    stopTableSync();
+    unsubTables = onSnapshot(query(collection(db, 'tables'), where('gmUid', '==', uid)), snap => {
+      const tables = []; snap.forEach(d => tables.push({ ...d.data(), code: d.id }));
+      emit('cloud-my-tables', { tables });
+    }, err => console.warn('[cloud] tables', err && err.code));
+    unsubExposed = onSnapshot(query(collection(db, 'characters'), where('sharedTo', 'array-contains', uid)), snap => {
+      const chars = []; snap.forEach(d => chars.push({ ...d.data(), id: d.id }));
+      emit('cloud-table-chars', { chars });
+    }, err => console.warn('[cloud] exposed', err && err.code));
+  };
+
   onAuthStateChanged(auth, u => {
     user = u ? { uid: u.uid, name: u.displayName || '', email: u.email || '', photo: u.photoURL || '' } : null;
-    if (u) startSync(u.uid); else stopSync();
+    if (u) { startSync(u.uid); startTableSync(u.uid); } else { stopSync(); stopTableSync(); }
     emit('cloud-auth', { user });
   });
 
@@ -75,6 +103,22 @@ async function boot() {
     async removeCharacter(id) {
       if (!user || !id) return;
       try { await deleteDoc(doc(db, 'characters', id)); } catch (e) { console.warn('[cloud] remove', e && e.code); emit('cloud-error', { op: 'remove', code: (e && e.code) || 'erro' }); }
+    },
+    // FASE 2 — mesas. Expor/desexpor um personagem é um update normal do dono (app.js
+    // altera sharedTo/sharedTables e chama updateCharacter → pushCharacter). Aqui só a
+    // criação/consulta de mesa.
+    async createTable(name) {
+      if (!user) return { ok: false };
+      const code = genTableCode();
+      try {
+        await setDoc(doc(db, 'tables', code), { gmUid: user.uid, gmName: user.name || '', name: (name || 'Mesa').slice(0, 60), createdAt: Date.now() });
+        return { ok: true, code, name: name || 'Mesa' };
+      } catch (e) { console.warn('[cloud] createTable', e && e.code); return { ok: false, code: e && e.code }; }
+    },
+    async getTable(code) {
+      if (!user || !code) return null;
+      try { const s = await getDoc(doc(db, 'tables', String(code).trim().toUpperCase())); return s.exists() ? { code: s.id, ...s.data() } : null; }
+      catch (e) { console.warn('[cloud] getTable', e && e.code); return null; }
     },
   };
   emit('cloud-ready', {});

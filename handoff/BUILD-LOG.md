@@ -5,11 +5,12 @@
 
 ## Current Status
 
-**Active step:** KG-5 — Metamágica restricted-allowance UI BUILT, awaiting Richard's review.
-**Last cleared:** KG-5 UI — app.js/style.css — 2026-07-07 (validate + typecheck + test + sanity-builder
-all green, plus a new jsdom smoke script driving the full accordion-entry → bench → add/remove/cap flow
-end-to-end; browser click-through still needs a human — see REVIEW-REQUEST.md).
-**Pending deploy:** NO (feature branch `structured-mechanics-layer`, not merging until proven)
+**Active step:** Cloud Phase 2 — mesa/campanha UI (app.js/style.css) BUILT, awaiting Richard's review.
+**Last cleared:** Cloud Phase 2 UI — app.js/style.css — 2026-07-09 (typecheck + test + sanity-builder +
+node --check all green, plus a new jsdom smoke script driving expose/unexpose + the real click→prompt→
+Cloud call flow + the GM #mesa view end-to-end off injected events; browser click-through with 2 Google
+accounts still needs a human — see REVIEW-REQUEST.md).
+**Pending deploy:** NO (branch `cloud-tables`, not merging until proven)
 **Curation DONE (Buckets 1 & 2):** flags 100→18. All talent-name mismatches resolved (sphere
 self-references fixed at source; talent-name variants via extractor `TALENT_ALIAS`; source renames
 Ataque→Golpe, Pomada→Bálsamo, Tempo→sphere-req; Borda Irregular card-split; 2 pp→PM typos). The
@@ -367,6 +368,94 @@ Decisions made:
   scope is 1 allowance today (per brief); if a second restricted feature is ever added, this
   becomes the seam that needs to grow into a keyed-by-feature lookup (not attempted here, out of
   scope).
+
+Reviewer findings: pending — see `handoff/REVIEW-REQUEST.md`.
+Deploy: pending
+
+---
+
+### Cloud Phase 2 — Mesa/campanha UI — BUILT (pending review)
+*Date: 2026-07-09*
+
+Core (rules + `src/cloud.js` + `firestore.rules` + `src/types.js` typedefs) was already done by Arch
+on branch `cloud-tables` before this step started. This step is UI only: `app.js` + `style.css`,
+consuming `window.Cloud.createTable/getTable` and the `cloud-my-tables`/`cloud-table-chars` events
+exactly as shipped — 0 changes to `src/cloud.js`/`firestore.rules`.
+
+Files changed:
+- `app.js` —
+  - **Share bar** (`buildShareBar`, only when `Cloud.isSignedIn()`, else an empty node): "Criar mesa"
+    (prompt name → `Cloud.createTable` → `showCharNotice` with the code) + "Compartilhar por código"
+    (prompt code → `Cloud.getTable`; `null` → `showCharNotice('Código de mesa inválido.')`) + chips for
+    `char.sharedTables` with a ✕ (desexpor). New helpers `deriveSharedTo` (unique gmUids),
+    `exposeCharToTable` (validates via `getTable`, dedupes by code, then `updateCharacter(id,
+    {sharedTables, sharedTo})`), `unexposeCharFromTable` (filters + same). No dedicated Cloud method for
+    expose/unexpose per the brief — it's a normal owner write, `pushCharacter` picks it up automatically.
+    Wired into `renderCharacter()` right after `normalizeCharView` and into the existing delegated click
+    listener in `setupCharacter` (`.char-share-create`/`.char-share-add`/`.char-share-remove`).
+  - **Cache + routing**: `cloudMyTables`/`cloudTableChars` module-level arrays + `expandedMesaChars`
+    (view-state `Set`, mirrors the accordion's expand/collapse pattern) — populated by two new
+    `setupCloud` listeners (`cloud-my-tables`/`cloud-table-chars`) that re-render only when
+    `location.hash === '#mesa'` (deliberately more precise than the pre-existing `currentChapterIndex
+    === -1` checks on `cloud-auth`/`cloud-chars`, which conflate all four synthetic views — didn't touch
+    those, just didn't copy the imprecision into new code). `navigate`/`handleInternalLinkClick` special-
+    case list gets `#mesa` → `renderMyTable()`. Sidebar gets a "🏰 Minha mesa" link (`#toc-mesa-link`,
+    `display:none` by default, toggled by `updateTableLinkVisibility()` called from `cloud-auth`).
+  - **`renderMyTable()`** (+ `finishMesaRender()`, mirrors `finishCharRender()`): signed-out guard message
+    when `!Cloud.isSignedIn()`; else per `cloudMyTables` entry, a `.mesa-table` section with a compact
+    `.mesa-char-row` per `cloudTableChars` entry whose `sharedTables[].code` matches (name · class/
+    subclass · level · `characterStats(char)` → CD/resource/attack). Click toggles `expandedMesaChars` +
+    re-renders (full `renderMyTable()` — dataset is small, no incremental-patch complexity needed); when
+    expanded, appends `renderSharedCharacterReadonly(char)`.
+  - **`renderSharedCharacterReadonly(char)`** (+ `renderReadonlySpherePanel`): a **lean** render (per the
+    brief's "ou monte um render enxuto" option, rather than pruning `renderSphereBuildPanel` in place,
+    which bakes in the manage-controls block) reusing only display helpers that take `char` by parameter
+    — `buildCharBudgetHTML`, `characterStats`, `charSphereTitles`, `grantedSpheresMap`, `sphereEntry`,
+    `isGrantedSphere`, `getSphereModel`, `charTalentCard`. Base/granted/free talents render via
+    `charTalentCard(fr, id, 'base'|'granted'|'free', title)` (already read-only, no ✕ for those kinds);
+    extras render via `charTalentCard(fr, id, 'extra', title)` (to reuse the exact same card DOM) and
+    then have their `.char-talent-remove` button stripped from the clone before it's appended — so no
+    edit affordance ever reaches the DOM and no core helper needed a new "readonly kind" param.
+    `char.metamagic` (if any) lists via the same `charTalentCard(..., 'free', ...)` pattern, sphere
+    resolved from `metamagicAllowance(char)`. Never calls `getActiveChar()`/`updateCharacter`/any
+    mutator — only reads the passed-in `char` (which for the GM comes straight off the
+    `cloud-table-chars` event, never localStorage).
+- `style.css` — `.char-share*` (share bar: reuses the `.acc-signin` button look + `.char-sphere-remove`'s
+  outline-button pattern for chips) and `.mesa-*` (table/row/detail: reuses `.char-sphere-collapsed`'s
+  row treatment for `.mesa-char-row`, `.char-rail-stats`/`.char-sphere`/`.char-cards` wholesale for the
+  read-only sheet body — only the mesa-specific wrapper chrome is new).
+
+Result: `npm run typecheck` (green), `npm test` (35/35, unchanged), `node scripts/sanity-builder.js`
+(29/29, unchanged), `node --check app.js` clean. New ad hoc jsdom smoke script (same technique as
+`sanity-builder.js`, not committed — lived in the scratchpad during the session) loads the real
+`app.js`/`src/rules.js`, stubs `window.Cloud` (no live Firebase) and drives: signed-out guards (no share
+buttons render, `buildShareBar` returns empty, `#mesa` shows the sign-in prompt with no tables) → signed-
+in expose with a bad code (`ok:false` + message, no state change) → expose with a valid code (chip
+appears, `sharedTables`/`sharedTo` persisted via `updateCharacter`/`getCharacters()`) → duplicate expose
+is a no-op → two tables under the same GM still dedupe `sharedTo` to 1 uid → unexpose removes just that
+entry and recomputes `sharedTo` → the REAL click → `prompt()` → `Cloud.getTable`/`Cloud.createTable` →
+re-render wiring (not just the underlying functions) → `#mesa` populated from injected
+`cloud-my-tables`/`cloud-table-chars` events shows the table name/code and a compact row with CD via
+`characterStats` → click expands `renderSharedCharacterReadonly` (shows the sphere + an extra talent,
+confirms zero `.char-btn`/`.char-sphere-manage`/`.char-talent-remove`/`.char-sphere-remove` anywhere in
+the sheet, confirms rendering another user's character touched no `localStorage` character) → click again
+collapses → sidebar link visibility flips with `updateTableLinkVisibility()`. 27/27 assertions passed.
+Full manual 2-Google-account browser click-through still needed — see `handoff/REVIEW-REQUEST.md`.
+
+Decisions made:
+- Used `prompt()`/existing `showCharNotice()` toast for "nome da mesa"/"código da mesa" and the created-
+  code readout — no modal component exists in the codebase yet; `confirm()` is already used the same way
+  for character deletion, so this stays consistent with existing UX rather than introducing new UI
+  machinery for a Builder-scoped step.
+- `renderMyTable()`/row-toggle does a full re-render on every expand/collapse rather than an incremental
+  patch (unlike the talent bench's `refreshCharBench`) — the GM's table/character counts are expected to
+  be small, and a full render keeps this step simple; flagging in case Richard wants the patch-based
+  pattern for consistency instead.
+- `cloud-my-tables`/`cloud-table-chars` re-render gated on `location.hash === '#mesa'` rather than reusing
+  `currentChapterIndex === -1`, since that sentinel is shared by 4 different synthetic views (favoritos/
+  glossário/personagem/mesa) and would otherwise yank a GM looking at Favoritos over to `#mesa` (or vice
+  versa) on an unrelated cloud event — pre-existing imprecision in the `cloud-auth`/`cloud-chars`
+  listeners was left as-is (out of scope for this step) but not copied into the new listeners.
 
 Reviewer findings: pending — see `handoff/REVIEW-REQUEST.md`.
 Deploy: pending

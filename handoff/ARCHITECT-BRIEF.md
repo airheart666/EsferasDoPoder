@@ -4,97 +4,112 @@
 
 ---
 
-## KG-5 — Metamágica: UI da cota restrita (entrada própria no accordion)
+## Nuvem Fase 2 — Mesa/campanha: UI (o mestre vê os personagens dos jogadores ao vivo)
 
-**Contexto:** a **camada de regras do KG-5 já está pronta e testada** (Arch). Falta só a UI no
-builder (`app.js` + `style.css`). Referência de comportamento aprovada pelo Owner: uma **entrada
-própria no accordion de esferas** ("✦ Metamágica — X/N escolhas"), que expande e mostra as
-escolhas + um seletor dos talentos metaesfera reusando a **bancada** (mesma leitura master-detail).
+**Contexto:** o núcleo (regras + `src/cloud.js` + typedefs) **já está pronto** (Arch). Falta a **UI**
+(`app.js` + `style.css`). Referência de decisão de UX (aprovada): visão do mestre = **lista compacta
++ expandir** por personagem. Só ativo quando **logado** (Fase 1); deslogado, o builder é local como
+hoje. **Não** tocar `src/cloud.js`/`firestore.rules` (Arch os desenhou), nem leitor/parser/conteúdo.
 
-**A regra (já implementada — só CONSUMA, não reimplemente):**
-- `Rules.restrictedAllowances(active, dataIndex)` → `[{feature, sphere, tag, count, note}]`.
-  Para Feiticeiro nível ≥3 devolve `[{feature:'Metamágica', sphere:'Universal', tag:'metaesfera',
-  count:N, note}]` (N=2 no 3, +1 no 10, +1 no 17); vazio para quem não tem a feature.
-- As escolhas vivem em **`char.metamagic: string[]`** (ids de talento). Custo 0, fora do orçamento
-  geral (o motor já não soma o +2). `Rules.ownedTalentIds` já inclui `char.metamagic`.
-- **Migração:** em `migrateCharacters`, garanta `char.metamagic = []` quando ausente.
+### O que o `window.Cloud` já oferece (CONSUMIR, não criar)
+- `window.Cloud.createTable(name)` → `{ ok, code, name }` (cria mesa; `code` é o convite = id).
+- `window.Cloud.getTable(code)` → `{ code, name, gmUid, gmName } | null` (valida um código ao expor).
+- Eventos (já emitidos ao logar): **`cloud-my-tables`** `{tables:[{code,gmUid,gmName,name,...}]}` (as
+  mesas que EU criei) e **`cloud-table-chars`** `{chars:[...]}` (personagens expostos A MIM, ao vivo).
+  Também os da Fase 1: `cloud-auth`, `cloud-chars`, `cloud-error`, `cloud-ok`.
+- **Expor/desexpor NÃO tem método próprio** — é um update do dono: você altera `char.sharedTables`/
+  `char.sharedTo` e chama `updateCharacter(char.id, {...})` (já existe; sobe pra nuvem sozinho).
+
+### Modelo de dados no personagem (seguir à risca)
+- `char.sharedTables: [{ code, name, gmUid }]` — mesas às quais ESTE personagem está exposto.
+- `char.sharedTo: [gmUid]` — **DERIVADO**: `unique(char.sharedTables.map(s => s.gmUid))`. É o que a
+  regra e a query do mestre usam. **Recalcular sempre** que mexer em sharedTables (expor/desexpor).
 
 ### O que construir
 
-1. **Sentinela de view:** defina `const METAMAGIC_KEY = 'mm:Metamágica';` (module-level). É o valor
-   que `charView.sphere` assume quando a entrada Metamágica está expandida. Não colide com título
-   de esfera. (Só há UMA allowance hoje; se quiser generalizar, chave por feature — mas escopo = 1.)
+1. **Expor um personagem (na ficha do jogador).** Na seção de esferas/conta da ficha (logado),
+   por personagem ativo: um controle "Compartilhar com mesa" que pede um **código** →
+   `const t = await window.Cloud.getTable(code)`; se `null` → `showCharNotice('Código de mesa inválido')`;
+   senão adiciona `{code:t.code, name:t.name, gmUid:t.gmUid}` a `char.sharedTables` (sem duplicar por
+   code), recalcula `char.sharedTo = unique(sharedTables.map(gmUid))`, e
+   `updateCharacter(char.id, { sharedTables, sharedTo })` → `renderCharacter()`. Mostrar a lista das
+   mesas em que o personagem está (nome + código), cada uma com **remover (desexpor)**: tira a entrada
+   de `sharedTables`, recalcula `sharedTo`, `updateCharacter`.
 
-2. **Accordion (`buildCharBuildContent`):** depois das esferas, se `restrictedAllowances(active)`
-   não for vazio, acrescente a entrada Metamágica:
-   - expandida (`charView.sphere === METAMAGIC_KEY`) → `renderMetamagicPanel(active, allowance)`;
-   - recolhida → um `.char-sphere-collapsed` com `data-sphere="mm:Metamágica"`, rótulo
-     "✦ Metamágica" + `<span class="csc-count">X/N escolha(s)</span>` (X=`char.metamagic.length`,
-     N=`allowance.count`). O handler `.char-sphere-collapsed` **já existente** faz `charView.sphere
-     = data-sphere` → expande. Reuse-o (não crie handler novo p/ recolhido).
+2. **Criar mesa (para o mestre).** Um botão "Criar mesa" (na mesma área) → pede um nome →
+   `const r = await window.Cloud.createTable(name)`; ao voltar `ok`, mostrar o **código** para
+   compartilhar (ex.: `showCharNotice('Mesa criada — código: ' + r.code)` ou um bloco copiável).
 
-3. **`renderMetamagicPanel(active, allowance)`** — espelha `renderSphereBuildPanel`:
-   - container `section.char-sphere`; header `h3.char-sphere-title.char-sphere-toggle`
-     `data-sphere="mm:Metamágica"` (o handler `.char-sphere-toggle` já existente recolhe →
-     `charView.sphere=null`). Texto: "✦ Metamágica — X/N escolha(s)".
-   - a `note` da allowance (`<p class="char-subhead">…</p>` ou similar).
-   - cards das escolhas: para cada id em `char.metamagic`, `charTalentCard(model.frag, id, 'free',
-     'Universal')` (reuse — clona o card real). O ✕ de remoção NÃO pode usar `.char-talent-remove`
-     (aquele chama `toggleExtraTalent`); use um botão próprio `.char-mm-remove` `data-id="<id>"`.
-     `model = getSphereModel('Universal', null)` p/ ter o `frag`.
-   - se `char.metamagic.length < count`: uma linha guiando "escolha na bancada abaixo".
+3. **Navegação `#mesa` → `renderMyTable()`.** Em `navigate(hash)` (app.js ~4145), acrescentar
+   `#mesa` ao bloco das views especiais (como `#personagem`) → `renderMyTable()`. Um link **"Minha
+   mesa"** na navegação (mostrado só quando `window.Cloud?.isSignedIn()`), levando a `#mesa`.
 
-4. **Bancada em modo Metamágica (`buildTalentBenchPanel`):** quando `charView.sphere ===
-   METAMAGIC_KEY`:
-   - candidatos = talentos da esfera **Universal** com a tag da allowance (`metaesfera`) que **não**
-     estejam em `char.metamagic` **nem** em `Rules.ownedTalentIds(active, dataIndex)` (evita duplicar
-     com uma escolha da própria Universal). Fonte: `getSphereModel('Universal', null)` →
-     `roleByKey`/talents, ou filtre `dataIndex.sphereById.get('universal').talents` por tag.
-   - barra de ferramentas: um rótulo "Metamágica — escolha talentos (Meta) da Universal (X/N)"
-     (sem chips de escopo; sem "+ Adicionar esfera").
-   - lista `.char-bench-li` (reuse) + detalhe. O detalhe pode reusar a estrutura de `buildTalentDetail`
-     (tag/nome/meta/descrição clonada), **mas** o botão de ação é `.char-mm-add` `data-id="<id>"`
-     com rótulo "Adicionar (Metamágica)"; desabilitado ("Cota cheia") quando
-     `char.metamagic.length >= count`. Considere um `buildMetamagicDetail(active, item, allowance)`
-     dedicado para não misturar com o caminho de `applyTalentToggle`.
+4. **`renderMyTable()` — visão do mestre.** Usa o cache dos eventos (guarde os últimos
+   `cloud-my-tables`/`cloud-table-chars` em vars module-level, setadas nos listeners do `setupCloud`;
+   re-renderize `#mesa` quando chegarem, se a view atual for a mesa). Para cada mesa do mestre
+   (`myTables`), liste os personagens expostos a ela (dos `exposedChars` cujo `sharedTables[].code`
+   inclui o code da mesa) como **linha compacta**: nome · classe/subclasse · nível ·
+   CD/PM/Ataque (use `characterStats(char)` → `Rules.derivedStats`). Clicar na linha **expande** a
+   ficha somente-leitura (`renderSharedCharacterReadonly`). Estado de expandido/recolhido: um
+   `Set` module-level de ids expandidos (view-state, não persistido), como o accordion.
 
-5. **Dedupe na Universal comum:** em `talentCandidatesForSphere` (usado pela bancada no modo
-   talentos), exclua também ids presentes em `char.metamagic` — um talento tomado pela Metamágica
-   não deve aparecer como extra comprável na Universal (e vice-versa já vem da regra 4).
-
-6. **Handlers (`setupCharacter`, estenda o listener existente — NÃO crie outro):**
-   - `.char-mm-add` → se `char.metamagic.length < count` e a tag confere: `push(id)`,
-     `updateCharacter`, `renderCharacter()`; senão `showCharNotice(el, 'Cota de Metamágica cheia (N).')`.
-   - `.char-mm-remove` → remove o id de `char.metamagic`, `updateCharacter`, `renderCharacter()`.
-   - reutilize os handlers existentes de `.char-sphere-collapsed`, `.char-sphere-toggle`,
-     `.char-bench-li` (seleção) — eles já funcionam com o sentinela.
-
-7. **`normalizeCharView`:** trate `METAMAGIC_KEY` como válido quando a allowance existe:
-   `const validSphere = charView.sphere === null || titles.includes(charView.sphere) ||
-   (charView.sphere === METAMAGIC_KEY && Rules.restrictedAllowances(active, dataIndex).length > 0);`
-   (se a feature sumir — ex.: nível cair abaixo de 3 — o sentinela vira inválido e reseta.)
-
-8. **CSS (`style.css`):** mínimo — reuse `.char-sphere`, `.char-sphere-collapsed`, `.char-sphere-toggle`,
-   `.char-cards`, `.char-btn`. Só um realce do ✦/entrada Metamágica se precisar. O `.char-mm-add` pode
-   reusar o visual de `.char-btn.char-bench-add`.
+5. **`renderSharedCharacterReadonly(char)` — ficha congelada.** Reusa a EXIBIÇÃO sem edição: o painel
+   de stats (`buildCharBudgetHTML(char)` — confira que ele aceita um char passado, não só o ativo) e,
+   por esfera do char, os cards via `charTalentCard(model.frag, id, kind, title)` (clona o card
+   completo — já é read-only). **Sem** bancada, pickers, botões +/✕, "adicionar esfera". Percorra
+   `char.spheres` + concedidas (`grantedSpheresMap(char)`) como o accordion faz, mas só listando os
+   talentos (base/concedido/grátis/extra) — reutilize a lógica de `renderSphereBuildPanel` PODANDO os
+   controles de edição, ou monte um render enxuto. Metamágica: liste `char.metamagic` se houver.
 
 ### Flags (não adivinhe — pergunte ao Arch)
-- **Nenhuma mudança em `src/rules.js`** (a regra está pronta) nem em `content/*.txt`/`parser.js`/leitor.
-- Não regredir: accordion (esferas), bancada (talentos e esferas), P1/P2, barra de aquisição da leitura.
-- Toda escolha passa pelo teto `count` e pela tag; nunca inflar o orçamento geral (a UI só reflete).
-- Mantenha `npm run validate`/`typecheck`/`test`/`sanity-builder` verdes (app.js fora do typecheck).
-  Gate real = teste do Owner no browser; escreva o checklist de cliques no REVIEW-REQUEST.
+- Toda mutação de exposição passa por `updateCharacter` (dono escreve; a regra já permite). Nunca
+  escreva em personagem de outro usuário — o mestre é **somente-leitura** (a UI não deve nem tentar).
+- `renderSharedCharacterReadonly` recebe um char de OUTRO usuário (não está no localStorage): não
+  chame `getActiveChar()`/mutadores; só helpers de exibição que recebem o char por parâmetro.
+- Não regredir: Fase 1 (login/sync), builder local deslogado, leitor estático. `navigate` das outras
+  views intacto.
+- Manter `typecheck`/`test`/`sanity-builder` verdes (app.js fora do typecheck). Gate real = teste do
+  Owner com 2 contas; escreva o checklist no REVIEW-REQUEST.
 
 ### Definition of Done
-- [ ] Feiticeiro nível ≥3 mostra a entrada "✦ Metamágica — X/N" no accordion; expande/recolhe como as esferas.
-- [ ] Expandida: lista as escolhas atuais (cards + ✕) e, na bancada, os talentos metaesfera para escolher
-      (leitura master-detail), com o botão bloqueando ao atingir N.
-- [ ] Escolher/remover atualiza X/N ao vivo; o orçamento mágico geral NÃO muda (segue sem o +2).
-- [ ] Um talento tomado pela Metamágica não aparece como extra comprável na Universal (dedupe).
-- [ ] Personagem sem a feature (ex.: Feiticeiro nível 1, ou outra classe) NÃO mostra a entrada.
-- [ ] `validate`/`typecheck`/`test`/`sanity-builder` verdes; `REVIEW-REQUEST.md` com o checklist.
+- [ ] Logado: criar mesa mostra um código; expor um personagem a uma mesa (por código) e ver a lista
+      de mesas do personagem (com desexpor). `sharedTo` sempre = únicos gmUid de `sharedTables`.
+- [ ] "Minha mesa" (link só logado) → `#mesa` → mesas do mestre com os personagens expostos em lista
+      compacta; clicar expande a ficha **somente-leitura** (stats + esferas/talentos), ao vivo.
+- [ ] Deslogado / sem nuvem: nada de mesa aparece; builder local intacto; leitor intacto.
+- [ ] `typecheck`/`test`/`sanity-builder` verdes; `REVIEW-REQUEST.md` com o checklist de 2 contas.
 
 ---
 
 ## Builder Plan
 *Builder adds their plan here before building. Architect reviews and approves.*
+
+Brief confirmed complete against actual code (`window.Cloud.createTable/getTable`, `cloud-my-tables`/
+`cloud-table-chars` event shapes, `sharedTo`/`sharedTables` typedefs in `src/types.js`, firestore.rules
+read grant) — matches the brief exactly. Proceeding without further Arch round-trip (brief is
+unambiguous, DoD is precise). Plan, `app.js` only unless noted:
+
+1. **Share bar on the char sheet** (near `buildAccountBar`, only when `Cloud.isSignedIn()`): "Criar
+   mesa" (prompt name → `createTable`) + "Compartilhar com mesa" (prompt code → `getTable`, on `null`
+   → `showCharNotice`), list of `char.sharedTables` chips with ✕ (desexpor). New helpers
+   `deriveSharedTo`, `exposeCharToTable`, `unexposeCharFromTable`, all funnel through `updateCharacter`.
+2. **Cache vars** `cloudMyTables`/`cloudTableChars` + `expandedMesaChars` (Set, view-state) at module
+   level; wired in `setupCloud`'s two new listeners, re-render `renderMyTable()` only when
+   `location.hash === '#mesa'` (more precise than the existing `currentChapterIndex === -1` checks —
+   avoids yanking the user to a different synthetic view on an unrelated cloud event).
+3. **`#mesa` route**: `navigate`/`handleInternalLinkClick` special-case list gets `#mesa`; sidebar gets
+   a "Minha mesa" link (`display:none` by default, toggled by a new `updateTableLinkVisibility()`
+   called from the `cloud-auth` listener).
+4. **`renderMyTable()`**: per GM table, compact rows from `cloudTableChars` filtered by
+   `sharedTables[].code`, click toggles `expandedMesaChars` + re-render, expanded row calls
+   **`renderSharedCharacterReadonly(char)`** (new) which reuses `buildCharBudgetHTML`/`characterStats`/
+   `charSphereTitles`/`grantedSpheresMap`/`getSphereModel`/`charTalentCard` — a lean render (per the
+   brief's "or monte um render enxuto" option) rather than reusing `renderSphereBuildPanel` wholesale,
+   since that function bakes in the manage-controls block. Extras rendered via
+   `charTalentCard(fr, id, 'extra', title)` then `.char-talent-remove` stripped from the clone, so no
+   edit affordance ships and no core helper needs a new "readonly" kind param.
+5. `style.css`: new rules for the share bar (`.char-share*`) and the mesa view (`.mesa-*`), reusing
+   existing tokens/patterns (`.char-sphere-remove`, `.acc-signin` button look, `.char-sphere-collapsed`
+   row look) rather than inventing a new visual language.
+
+No changes to `src/cloud.js`/`firestore.rules`. Building now.
