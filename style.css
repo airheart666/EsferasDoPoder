@@ -2177,6 +2177,13 @@ h4.base-ability::after {
    "Meu Personagem" acima; só o que é específico da mesa vive aqui). ------------ */
 .mesa-gmbar { margin: 0.4rem 0 1.4rem; }
 .mesa-table { margin: 0 0 2rem; }
+.mesa-table-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; }
+.mesa-table-delete {
+  font-family: var(--font-ui); font-size: 0.8rem; cursor: pointer; white-space: nowrap;
+  padding: 0.25rem 0.6rem; border-radius: var(--border-radius);
+  border: 1px solid var(--table-border); background: none; color: var(--text-muted);
+}
+.mesa-table-delete:hover { border-color: var(--oxblood); color: var(--oxblood); }
 .mesa-table-title {
   display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
   font-family: var(--font-display); font-size: 1.3rem; margin: 0 0 0.7rem;

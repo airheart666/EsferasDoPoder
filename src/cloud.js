@@ -120,6 +120,11 @@ async function boot() {
       try { const s = await getDoc(doc(db, 'tables', String(code).trim().toUpperCase())); return s.exists() ? { code: s.id, ...s.data() } : null; }
       catch (e) { console.warn('[cloud] getTable', e && e.code); return null; }
     },
+    async deleteTable(code) {
+      if (!user || !code) return { ok: false };
+      try { await deleteDoc(doc(db, 'tables', String(code))); return { ok: true }; }
+      catch (e) { console.warn('[cloud] deleteTable', e && e.code); return { ok: false, code: e && e.code }; }
+    },
   };
   emit('cloud-ready', {});
 }

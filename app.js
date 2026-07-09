@@ -2948,10 +2948,11 @@ function renderMyTable() {
     for (const table of cloudMyTables) {
       const section = document.createElement('section');
       section.className = 'mesa-table';
-      const h2 = document.createElement('h2');
-      h2.className = 'mesa-table-title';
-      h2.innerHTML = `${escapeHtml(table.name || 'Mesa')} <span class="mesa-table-code">código: ${escapeHtml(table.code)}</span>`;
-      section.appendChild(h2);
+      const head = document.createElement('div');
+      head.className = 'mesa-table-head';
+      head.innerHTML = `<h2 class="mesa-table-title">${escapeHtml(table.name || 'Mesa')} <span class="mesa-table-code">código: ${escapeHtml(table.code)}</span></h2>`
+        + `<button type="button" class="mesa-table-delete" data-code="${escapeHtml(table.code)}">Excluir mesa</button>`;
+      section.appendChild(head);
 
       const chars = cloudTableChars.filter(c => (c.sharedTables || []).some(s => s.code === table.code));
       if (!chars.length) {
@@ -3226,6 +3227,19 @@ function setupCharacter() {
         if (r && r.ok) showCharNotice(shCreate, 'Mesa criada — código: ' + r.code);
         else showCharNotice(shCreate, 'Não foi possível criar a mesa. Tente de novo.');
       })();
+      return;
+    }
+    // FASE 2 — excluir a própria mesa (só o gm). Os personagens dos jogadores NÃO são
+    // apagados (não temos permissão) — apenas deixam de aparecer aqui.
+    const delT = e.target.closest('.mesa-table-delete');
+    if (delT) {
+      const code = delT.dataset.code;
+      if (confirm('Excluir esta mesa? Os personagens dos jogadores não são apagados, mas deixam de aparecer na sua mesa.')) {
+        (async () => {
+          const r = window.Cloud && window.Cloud.deleteTable ? await window.Cloud.deleteTable(code) : { ok: false };
+          if (!r.ok) showCharNotice(delT, 'Não foi possível excluir a mesa.');
+        })();
+      }
       return;
     }
     // FASE 2 — expor o personagem ativo a uma mesa por código.
