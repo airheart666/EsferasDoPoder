@@ -125,6 +125,13 @@ async function boot() {
       try { await deleteDoc(doc(db, 'tables', String(code))); return { ok: true }; }
       catch (e) { console.warn('[cloud] deleteTable', e && e.code); return { ok: false, code: e && e.code }; }
     },
+    // true = existe, false = NÃO existe (excluída), null = não sei (erro/rede). O
+    // reconcile do app.js só limpa a referência no caso `false` (nunca em erro).
+    async tableExists(code) {
+      if (!user || !code) return null;
+      try { const s = await getDoc(doc(db, 'tables', String(code))); return s.exists(); }
+      catch (e) { console.warn('[cloud] tableExists', e && e.code); return null; }
+    },
   };
   emit('cloud-ready', {});
 }

@@ -1309,6 +1309,7 @@ let cloudLastError = null;   // último erro de sync (mostrado na barra de conta
 // estão expandidas na ficha somente-leitura, como o Set do accordion da ficha própria.
 let cloudMyTables = [];
 let cloudTableChars = [];
+let cloudReconciled = false;   // limpeza de mesas excluídas já rodou nesta sessão?
 const expandedMesaChars = new Set();
 
 function ensureCloud() {
@@ -1344,16 +1345,43 @@ function mergeCloudChars(remoteChars) {
   }
 }
 
+// Limpa referências mortas: se uma mesa em char.sharedTables foi EXCLUÍDA pelo mestre
+// (tableExists === false, nunca em erro/rede), remove o chip e recalcula sharedTo.
+// Roda 1x por sessão, após o 1º sync — o jogador não pode ver a mesa some ao vivo, mas
+// no próximo carregamento as referências mortas somem sozinhas.
+async function reconcileSharedTables() {
+  if (!window.Cloud?.tableExists) return;
+  const codes = new Set();
+  for (const c of getCharacters()) for (const s of (c.sharedTables || [])) if (s && s.code) codes.add(s.code);
+  if (!codes.size) return;
+  const dead = new Set();
+  for (const code of codes) { const ex = await window.Cloud.tableExists(code); if (ex === false) dead.add(code); }
+  if (!dead.size) return;
+  let changed = false;
+  for (const c of getCharacters()) {
+    const st = c.sharedTables || [];
+    const kept = st.filter(s => !dead.has(s.code));
+    if (kept.length !== st.length) {
+      updateCharacter(c.id, { sharedTables: kept, sharedTo: [...new Set(kept.map(s => s.gmUid).filter(Boolean))] });
+      changed = true;
+    }
+  }
+  if (changed && currentChapterIndex === -1) renderCharacter();
+}
+
 // Registra os listeners de nuvem uma vez (chamado no setupCharacter).
 function setupCloud() {
   if (cloudWired) return; cloudWired = true;
   window.addEventListener('cloud-auth', e => {
-    if (!(e.detail && e.detail.user)) { cloudMigrated = false; cloudLastError = null; cloudMyTables = []; cloudTableChars = []; } // logout → re-migra depois
+    if (!(e.detail && e.detail.user)) { cloudMigrated = false; cloudReconciled = false; cloudLastError = null; cloudMyTables = []; cloudTableChars = []; } // logout → re-migra/reconcilia depois
     if (currentChapterIndex === -1) renderCharacter();       // atualiza a barra de conta
     updateTableLinkVisibility();
     if (location.hash === '#mesa') renderMyTable();
   });
-  window.addEventListener('cloud-chars', e => mergeCloudChars((e.detail && e.detail.chars) || []));
+  window.addEventListener('cloud-chars', e => {
+    mergeCloudChars((e.detail && e.detail.chars) || []);
+    if (!cloudReconciled && window.Cloud?.isSignedIn?.()) { cloudReconciled = true; reconcileSharedTables(); }
+  });
   window.addEventListener('cloud-error', e => {
     cloudLastError = (e.detail && e.detail.code) || 'erro';
     if (currentChapterIndex === -1) renderCharacter();
