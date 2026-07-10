@@ -1816,7 +1816,7 @@ h4.base-ability::after {
    Rail fixo à esquerda (identidade+stats+orçamento+nav de esferas) + à direita
    o build da esfera ativa (.char-build, reusa .char-sphere/.char-cards/.char-btn/
    .char-sphere-manage/.pkg-select/.freepick-select) + bancada master-detail
-   sempre visível (.char-bench). Espelha design-previews/builder-bancada.html.
+   sempre visível (.char-bench). Layout "Bancada" (escolhido na fase de mockups).
    ============================================================ */
 /* Barra de conta (nuvem): entrar/sair Google + estado de sync. Discreta, no topo da ficha. */
 .char-account { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; margin: 0 0 1rem; font-family: var(--font-ui); font-size: 0.86rem; }
