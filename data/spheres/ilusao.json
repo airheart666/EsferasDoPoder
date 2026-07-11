@@ -593,5 +593,6 @@
       "body": "Você não pode criar figmentos (exceto obstruções através de Obstrução Ilusória). Você recebe um talento (charme) ou Obstrução Ilusória como talento bônus."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode criar imagens e impressões de coisas que não existem."
 }

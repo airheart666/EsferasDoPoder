@@ -8,7 +8,24 @@
     "s": 68,
     "sig": "destruicao"
   },
-  "acquisition": null,
+  "acquisition": {
+    "freeGroups": [
+      {
+        "tags": [
+          "tipo"
+        ],
+        "picks": 1,
+        "label": "tipo de explosão"
+      },
+      {
+        "tags": [
+          "formato"
+        ],
+        "picks": 1,
+        "label": "formato de explosão"
+      }
+    ]
+  },
   "talents": [
     {
       "id": "destruicao-explosao-destrutiva",
@@ -1393,5 +1410,6 @@
       "body": "Você não pode escolher qualquer talento (tipo) ao obter a esfera Destruição, mas fica limitado a talentos (tipo) associados às esferas Natureza e Clima, podendo usá-los apenas se o aprimoramento Extrair Natureza estiver ativo. Você recebe um talento de Destruição como um talento bônus. Você não pode possuir este talento e a variante Evocador Dedicado simultaneamente."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode usar poder destrutivo. Ao obter a esfera Destruição pela primeira vez, você ganha a habilidade de esfera de explosão destrutiva. Além disso, você ganha um talento de (tipo) e um talento de (formato) à sua escolha. Seu primeiro talento de (tipo) não precisa estar associado a uma esfera que você já possua. O talento Tipo de Explosão Extra concede acesso a tipos de explosão adicionais."
 }

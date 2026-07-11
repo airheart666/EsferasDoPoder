@@ -788,5 +788,6 @@
       "body": "Sempre que o parceiro adquirir a característica Aprimoramento de Atributo, ajuste qualquer atributo em sua ficha de estatísticas que dependa de um modificador de atributo que você aumentar. Por exemplo, se o parceiro tiver um ataque que usa seu modificador de Força, aumente os modificadores de ataque e dano do ataque se o modificador de Força aumentar. Se não estiver claro se um ataque corpo a corpo na ficha de estatísticas usa Força ou Destreza, o ataque pode usar qualquer um dos dois."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Os praticantes da esfera de Liderança aprendem a reunir, organizar e comandar outros. Ao adquirir a esfera de Liderança, você ganha proficiência em Persuasão. Se você já possui proficiência em Persuasão, você ganha um talento bônus desta esfera. Além disso, você ganha o pacote de Liderança de Seguidor ou de Parceiro."
 }

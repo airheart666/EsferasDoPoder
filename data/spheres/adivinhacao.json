@@ -8,7 +8,24 @@
     "s": 46,
     "sig": "adivinhacao"
   },
-  "acquisition": null,
+  "acquisition": {
+    "freeGroups": [
+      {
+        "tags": [
+          "adivinhar"
+        ],
+        "picks": 1,
+        "label": "adivinhar"
+      },
+      {
+        "tags": [
+          "sentido"
+        ],
+        "picks": 1,
+        "label": "sentido"
+      }
+    ]
+  },
   "talents": [
     {
       "id": "adivinhacao-adivinhar",
@@ -1435,5 +1452,6 @@
       "body": "Ao usar adivinhar ou sentido, a habilidade funciona apenas dentro de uma área em forma de cone, em vez de uma esfera centrada em você. Esta variante não altera o alcance em que você pode adivinhar alvos. Uma vez por rodada, em seu turno, você pode alterar a direção deste cone; Nenhuma ação é necessária. Você ganha um talento bônus desta esfera."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode prever o futuro e obter informações não acessíveis aos cinco sentidos comuns.\n\nAo adquirir a esfera de Adivinhação pela primeira vez, você ganha as habilidades das esferas divina e sensorial. Além disso, você ganha um talento (adivinhar) e um talento (sentido) à sua escolha. Seu primeiro talento (adivinhar) não precisa estar associado a uma esfera que você já possua. O talento Adivinhações Expandidas concede acesso a adivinhações alternativas adicionais."
 }

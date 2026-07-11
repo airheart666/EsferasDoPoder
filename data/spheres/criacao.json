@@ -648,5 +648,6 @@
       "body": "Para alterar ou criar objetos, você deve estar em contato físico com outro objeto composto do material resultante do efeito e não mais do que três categorias de tamanho menor (por exemplo, para criar um objeto de ferro Grande, você precisaria tocar outro objeto de ferro de tamanho Pequeno ou maior).\n\nSe você possuir Transformar Material, isso restringe os materiais nos quais você pode transformar o objeto alvo. Se você possuir o talento avançado Moldar Carne, você não pode usar seu próprio corpo para produzir objetos carnudos, embora possa usar outras criaturas.\n\nVocê ganha Materiais Expandidos como um talento bônus."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode criar e alterar materiais físicos. Ao ganhar a esfera de Criação pela primeira vez, você ganha as habilidades de alterar e criar."
 }

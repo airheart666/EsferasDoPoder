@@ -642,5 +642,6 @@
       "body": "Você ganha proficiência com itens e tecnologia da era Renascentista. Exemplos de armas da era Renascentista incluem bombas, mosquetes e pistolas."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "A esfera de Equipamento controla o equipamento que você aprende a usar e como você o utiliza. Ao obter a esfera de Equipamento pela primeira vez, escolha um talento de Equipamento à sua escolha e ganhe-o gratuitamente.\n\nAlguns talentos são marcados com (disciplina). Esses talentos concedem grupos de armas com raízes temáticas em comum, que podem ser muito diferentes mecanicamente, mas geralmente são apresentadas como complementares de alguma forma. Sempre que um talento ou habilidade se referir a uma disciplina de arma, ele afetará todas as armas incluídas em um determinado talento de (disciplina).\n\nAlguns talentos de (disciplina) listam armas específicas de determinadas regiões ou culturas. Essas armas têm sua arma padrão equivalente listada entre parênteses imediatamente após seus nomes."
 }

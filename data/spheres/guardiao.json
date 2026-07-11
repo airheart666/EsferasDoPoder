@@ -530,5 +530,6 @@
       "body": "Você não recebe uma reserva de dano atrasado e não pode selecionar nenhum talento (de resiliência). Você recebe o talento Guardião Veloz como um talento bônus. Você não pode possuir esta variante e a desvantagem Resiliente simultaneamente."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Guardiões se especializam em proteger seus aliados e atrair a ira de seus inimigos."
 }

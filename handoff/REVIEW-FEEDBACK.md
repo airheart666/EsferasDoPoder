@@ -1,298 +1,489 @@
-# Review Feedback — Cloud Phase 2: mesa/campanha (GM + Player UI)
+# Review Feedback — Builder: 4 Melhorias (Point 4 Multi-Grupo Grátis)
 
-*Written by Reviewer (Richard). Read by Owner and team.*
+*Written by Reviewer (Richard). Read by Architect, Builder, and Owner.*
 
-**Date:** 2026-07-09  
-**Verdict:** ✅ **SHIP** — Security rules are sound; data model is correct; no Must Fix issues.
+**Date:** 2026-07-10  
+**Branch:** `builder-subcategories` (uncommitted, off `master`)  
+**Verdict:** ✅ **SHIP** — All 4 points implemented correctly; no Must-Fix issues; Point 4 multi-group model is sound.
 
 ---
 
 ## Executive Summary
 
-Phase 2 security rules (character sharedTo array + tables collection) are properly designed and prevent cross-GM/cross-player access. The expose/unexpose data model correctly derives `sharedTo` from `sharedTables` on every write (never stale). Read-only GM render has no edit affordances and never calls mutators. All guards prevent regression (signed-out state, unrelated cloud events). Static checks passing (typecheck, tests 35/35, sanity 29/29). **Not runtime-tested** (needs live browser + 2 Firebase accounts per checklist item 8) — but security review via rules inspection is the main safety gate, and it is sound.
+The 4-point builder improvement has been implemented cleanly with no regressions. **Point 4 (typed/multi-group free picks)** is the highest-risk change and has been validated thoroughly:
+
+- **Multi-group data model** (freeGroups) is correctly normalized from legacy freeGroup/freePicks and package definitions
+- **ID-based mutation** replaces index-based, fixing a latent bug (freePicks compaction × slot index mismatch)
+- **Per-group caps (freePickRoom)** correctly prevent overbooking a single group while allowing multiple groups
+- **Package spheres** (Universal KG-4/KG-5, Alquimia) remain fully functional with backward-compatible normalization
+- **Conditional spheres** (Armadilha, Atletismo, etc.) work correctly: base 0 picks + conditional adds to groups[0]
+- **7 fixed spheres** (Destruição, Adivinhação, Aprimoramento, Clima, Mente, Morte, Tempo) have been properly configured with freeGroups
+- **Static checks** all pass: validate 0, typecheck, test 35/35, sanity-builder **36/36** (includes new multi-group tests), `node --check app.js`
+
+Points 1, 2, and 3 are lower-risk and correctly wired.
 
 ---
 
-## 1. SECURITY — `firestore.rules` (PHASE 2 ADDITIONS) ✅ SAFE TO DEPLOY
+## POINT 4 — Multi-Group Free Picks (HIGHEST RISK) ✅ PASS
 
-**Status: PASS — Character sharedTo is read-only for GMs; tables restrict GMship.**
+**Status:** PASS — No regressions; all 7 spheres correctly configured; per-group caps enforced.
 
-### New Rules Analysis:
+### 4a. Data Model & Normalization ✅
 
-#### Characters Collection (line 12):
-```
-allow read: if request.auth != null && (resource.data.ownerUid == request.auth.uid || (('sharedTo' in resource.data) && request.auth.uid in resource.data.sharedTo));
-```
+**Goal:** Allow spheres to grant multiple typed free picks (e.g., Destruição = 1 tipo + 1 formato).
 
-**Adversarial Test Cases:**
+**Implementation:**
+- Sphere acquisition now accepts `freeGroups: [{tags, picks, label, h3?}]` (new)
+- Backward compatible: legacy `freeGroup` + `freePicks` (Destino, Conjuração, packages) auto-normalizes to 1 group
+- Package spheres: if chosen, 1 group per package; if not chosen, 0 groups (no free picks)
 
-| Scenario | Analysis | Result |
-|---|---|---|
-| **Character NOT shared to me (my uid not in sharedTo, not owner)** | (ownerUid != uid) AND (('sharedTo' in data) AND uid NOT in sharedTo) = false AND (true AND false) = false | ✅ **Denied** |
-| **Character shared to me (my uid in sharedTo)** | (false) OR (true AND true) = true | ✅ **Allowed** (read-only) |
-| **Character missing sharedTo field entirely** | (false) OR (('sharedTo' in data) AND ...) = false OR (false AND ...) = false | ✅ **Denied** (existence guard prevents error) |
-| **I'm the owner** | (ownerUid == uid) OR (...) = true OR (...) = true | ✅ **Allowed** (full access) |
-| **Unauthenticated user** | `request.auth != null` is false for entire rule | ✅ **Denied** |
-
-**Conclusion:** The `('sharedTo' in resource.data)` existence guard correctly prevents both error-as-deny and accidental allow. If sharedTo is missing, the second OR short-circuits to false. If sharedTo exists but is an empty array, `uid in []` is false. **Write access (lines 13–15) still require ownership — a GM in sharedTo is read-only.**
-
-#### Write Restrictions (lines 13–15):
-```
-allow create: if request.auth != null && request.resource.data.ownerUid == request.auth.uid;
-allow update: if request.auth != null && resource.data.ownerUid == request.auth.uid && request.resource.data.ownerUid == request.auth.uid;
-allow delete: if request.auth != null && resource.data.ownerUid == request.auth.uid;
-```
-
-| Attack | Check | Result |
-|---|---|---|
-| **GM tries to update Player's character** | resource.data.ownerUid (Player) != request.auth.uid (GM) | ✅ **Denied** |
-| **Player tries to grant themselves to another's character** | Can only edit their own; updating sharedTo requires ownership | ✅ **Denied** |
-| **Player tries to transfer char to GM** | `request.resource.data.ownerUid` must remain Player's uid (immutable) | ✅ **Denied** |
-
-**Conclusion:** The dual ownerUid check (existing + new) makes ownership immutable. No player, no GM can bypass this.
-
-#### Tables Collection (lines 18–23):
-```
-allow get: if request.auth != null;
-allow list: if request.auth != null && resource.data.gmUid == request.auth.uid;
-allow create: if request.auth != null && request.resource.data.gmUid == request.auth.uid;
-allow update, delete: if request.auth != null && resource.data.gmUid == request.auth.uid;
-```
-
-| Scenario | Analysis | Result |
-|---|---|---|
-| **`get` a table by code (player joining)** | Any authed user can read the table doc by ID | ✅ **Allowed** (intentional: code is the key) |
-| **`get` leaks table name/gmUid** | Yes, but only to someone who knows the code already | ✅ **Acceptable** (code is the credential) |
-| **`list` all tables (enumerate)** | `resource.data.gmUid == request.auth.uid` filters to own tables only | ✅ **Denied for others** |
-| **Player creates a table** | Must set `gmUid` to their own uid; rule enforces this on server | ✅ **Prevented** (non-GMs can't spoof gmUid) |
-| **Unauthorized delete of another's table** | `gmUid != attacker.uid` | ✅ **Denied** |
-
-**Conclusion:** The `get` rule is intentionally permissive (needed for join-by-code), but the `list` rule locks down enumeration. The `create` rule prevents spoofing another GM's uid.
-
-#### Catch-All (lines 25–27):
-```
-allow read, write: if false;
-```
-✅ **Correct:** Denies all other paths (e.g., `/users`, `/metadata`).
-
-### Key Security Properties:
-
-1. ✅ **Player's character invisible to uninvited GMs** — sharedTo check prevents reads.
-2. ✅ **GM is read-only** — write rules still require ownership.
-3. ✅ **Character list for GM is efficient** — query `where('sharedTo', 'array-contains', uid)` + rule check = secure + performant.
-4. ✅ **Table access is credential-based** — `get` by code is safe; `list` requires ownership.
-5. ✅ **No privilege escalation** — Player can't become GM, Player can't update their own `ownerUid` or others' `sharedTo`.
-
----
-
-## 2. DATA MODEL — `expose`/`unexpose` (app.js lines 1414–1457) ✅ CORRECT
-
-**Status: PASS — sharedTo always derived; no stale data possible.**
-
-### Function Analysis:
-
-#### `deriveSharedTo(sharedTables)` (line 1418–1420):
-```javascript
-function deriveSharedTo(sharedTables) {
-  return [...new Set((sharedTables || []).map(t => t.gmUid))];
+**Test: Destruição configuration (sphere-rules.json):**
+```json
+"Destruição": {
+  "freeGroups": [
+    { "tags": ["tipo"], "picks": 1, "label": "tipo de explosão" },
+    { "tags": ["formato"], "picks": 1, "label": "formato de explosão" }
+  ]
 }
 ```
 
-**Properties:**
-- Deduplicates gmUids (Set removes duplicates)
-- Handles null/undefined sharedTables (returns [])
-- Always produces a clean array of unique GMs
+✅ **Verified:** Data files regenerated, acquisition field updated with freeGroups.
 
-**Test: Player has char in 2 tables of same GM:**
-```
-sharedTables: [
-  {code: 'T1', gmUid: 'GM1', name: 'Table A'},
-  {code: 'T2', gmUid: 'GM1', name: 'Table B'}
-]
-deriveSharedTo() → ['GM1']  ✅ Correct dedupe
+**Test: Universal "mana" package (package-only, legacy freeGroup):**
+```json
+{
+  "id": "mana",
+  "freeGroup": { "tag": "vínculo de mana" },
+  "freePicks": 1,
+  "freeLabel": "vínculo de mana"
+}
 ```
 
-#### `exposeCharToTable(active, code)` (line 1423–1433):
-```javascript
-const sharedTables = tables.concat([{ code: t.code, name: t.name, gmUid: t.gmUid }]);
-updateCharacter(active.id, { sharedTables, sharedTo: deriveSharedTo(sharedTables) });
+- If package chosen: groups = [{ tags: ["vínculo de mana"], picks: 1, label: "vínculo de mana" }] ✅
+- If package not chosen: groups = [] ✅
+- Base ability "Vínculo de Mana" always owned (kind:'base') ✅
+
+**Test: Universal "dissipar" package (0 picks):**
+```json
+{
+  "id": "dissipar",
+  "baseTalents": ["Dissipar"],
+  "freePicks": 0
+}
 ```
 
-**Verification:**
-- ✅ Validates code exists via `Cloud.getTable()` (trusts no user input)
-- ✅ Checks already exposed (no-op if code already in sharedTables)
-- ✅ **Both** `sharedTables` and `sharedTo` passed to `updateCharacter` in same call
-- ✅ `updateCharacter()` uses `Object.assign(c, patch)` (merges both fields)
-- ✅ `updateCharacter()` calls `cloudPush(c)` (single Firestore write)
+- groups = [] (no free picks) ✅
+- Base ability "Dissipar" always owned ✅
 
-**Conclusion:** No window between write and push; both fields sync atomically.
-
-#### `unexposeCharFromTable(active, code)` (line 1434–1437):
-```javascript
-const sharedTables = (active.sharedTables || []).filter(t => t.code !== code);
-updateCharacter(active.id, { sharedTables, sharedTo: deriveSharedTo(sharedTables) });
+**Test: Conditional sphere (Armadilha, freePicks:0 + conditional):**
+```json
+"Armadilha": {
+  "freePicks": 0,
+  "conditionals": [{ "requires": "Ferramentas de ladrão", "addPicks": 1 }]
+}
 ```
 
-**Test: Player unexposes from 1 of 2 tables (same GM):**
-```
-Before:
-  sharedTables: [{code: 'T1', gmUid: 'GM1'}, {code: 'T2', gmUid: 'GM1'}]
-  sharedTo: ['GM1']
+In classSpec():
+- No freeGroups, freePicks = 0
+- Since conds.length > 0: groups = [fgToGroup(null, 'talento', 0)]
+- In resolveSpec(): conditional satisfied → groups[0].picks += 1 ✅
+- Result: 0 base picks, +1 if proficient → 1 total (correct)
 
-unexpose from T1:
-  filter(t => t.code !== 'T1') → [{code: 'T2', gmUid: 'GM1'}]
-  deriveSharedTo() → ['GM1']  ✅ GM1 still has read access via T2
-  
-Result: GM1 keeps read (correct per requirement)
-```
-
-**Test: Player unexposes from all tables:**
-```
-Before:
-  sharedTables: [{code: 'T1', gmUid: 'GM1'}]
-  sharedTo: ['GM1']
-
-unexpose from T1:
-  filter(t => t.code !== 'T1') → []
-  deriveSharedTo([]) → []  ✅ Character hidden from all GMs
+**Test: Engenhosidade (freeGroup + freePicks:1 + conditional):**
+```json
+"Engenhosidade": {
+  "freeGroup": { "tag": "dispositivo" },
+  "freePicks": 1,
+  "conditionals": [{ "requires": "Ferramentas do consertador", "addPicks": 1 }]
+}
 ```
 
-**Conclusion:** The re-derivation on every unexpose is correct. No stale `sharedTo`. ✅
+In classSpec():
+- No freeGroups (uses legacy path)
+- n = 1 → groups = [fgToGroup({ tag: "dispositivo" }, "dispositivo", 1)]
+- In resolveSpec(): conditional satisfied → groups[0].picks += 1 ✅
+- Result: 1 base + 1 conditional = 2 picks (sanity-builder verifies: ✅)
+
+**Verdict:** Normalization is correct. No data loss or misconfiguration. ✅
 
 ---
 
-## 3. READ-ONLY GM RENDER — `renderSharedCharacterReadonly()` ✅ SAFE
+### 4b. ID-Based Mutation (Replaces Index-Based) ✅
 
-**Status: PASS — Character never mutated; no edit controls reach DOM.**
+**Goal:** Replace flawed index-based slot assignment with id-based mutation.
 
-### Code Inspection (app.js lines 3001–3105):
+**Root Cause Fixed:**
+- Old: slot index i → picks[i] = talentId. With multi-group, same talent picked in 2 groups → compacted array doesn't match slot indices
+- New: dataset.cur = current talent id in THIS slot; selector sends oldId + newId; setFreePick removes oldId, adds newId
 
+**Test: Single sphere selector change (Destruição, tipo group, 1 slot):**
+
+Scenario: User changes free tipo from "Explosão Cortante" (id: X) to "Explosão Flamejante" (id: Y)
+
+Old code (buggy):
 ```javascript
-function renderSharedCharacterReadonly(char) {
-  const wrap = document.createElement('div');
-  // ... reads char.name, char.className, char.level, etc.
-  // NEVER calls getActiveChar()
-  // NEVER calls updateCharacter()
-  
-  // Reuses helper functions (READ-ONLY):
-  buildCharBudgetHTML(char)        // ✅ No mutations
-  charSphereTitles(char)           // ✅ No mutations
-  renderReadonlySpherePanel(char, title)  // ✅ See below
+sel.dataset.i = 0;  // Always index 0
+picks[0] = Y;  // Assumes picks[0] == X, but after filtering extras, index may be wrong
 ```
 
-### `renderReadonlySpherePanel()` Detail (app.js lines 3050–3105):
-
+New code (correct):
 ```javascript
-if (extras.length) {
-  const box = document.createElement('div'); box.className = 'char-cards';
-  for (const id of extras) {
-    const card = charTalentCard(fr, id, 'extra', title);
-    card.querySelector('.char-talent-remove')?.remove();  // ← CRITICAL: strip button
-    box.appendChild(card);
+sel.dataset.cur = "X";  // The actual id currently in this slot
+// User selects Y
+applyFreePickSelection(active, "Destruição", "X", "Y", sel);
+setFreePick(active, "Destruição", "X", "Y");
+// picks.filter(id => id !== "X") removes X
+// if (Y && !picks.includes(Y)) picks.push(Y);  // Add Y
+// Result: picks = [...other_ids, "Y"]  ✅ Correct, no index confusion
+```
+
+**Test: Multiple groups (Destruição, 2 groups × 1 slot each):**
+
+State: picks = ["tipo-id-1", "formato-id-2"]
+
+Scenario 1: User changes tipo from "tipo-id-1" to "tipo-id-3"
+- buildFreePickSelectors filters group 0 (tipo) → shows only tipo talents
+- chosenHere = picks.filter(id in tipo group) = ["tipo-id-1"]
+- current = chosenHere[0] = "tipo-id-1"
+- dataset.cur = "tipo-id-1"
+- setFreePick("Destruição", "tipo-id-1", "tipo-id-3")
+- Result: picks = ["tipo-id-3", "formato-id-2"] ✅
+
+Scenario 2: User changes formato from "formato-id-2" to "formato-id-4"
+- buildFreePickSelectors filters group 1 (formato)
+- chosenHere = picks.filter(id in formato group) = ["formato-id-2"]
+- current = chosenHere[0] = "formato-id-2"
+- dataset.cur = "formato-id-2"
+- setFreePick("Destruição", "formato-id-2", "formato-id-4")
+- Result: picks = ["tipo-id-3", "formato-id-4"] ✅
+
+✅ **Verified:** Sanity-builder passes "Destruição: 2 grupos grátis (tipo + formato)"; setFreePick handles both groups correctly.
+
+**Duplicate Prevention:**
+```javascript
+if (newId && !picks.includes(newId)) {  // Guards against adding twice
+  e.talents = (e.talents || []).filter(id => id !== newId);  // Move from extras to free
+  picks.push(newId);
+}
+```
+
+✅ **Verified:** If user tries to select same id twice, check fails and doesn't add.
+
+**Test: Clearing a pick (user selects "—" empty option):**
+- sel.value = "" (empty)
+- applyFreePickSelection(active, title, "tipo-id-1", "", sel)  // newId = null or ""
+- setFreePick(active, title, "tipo-id-1", null)
+- if (newId && !picks.includes(newId)) → false, skip
+- Result: picks = [...other_ids] (oldId removed) ✅
+
+**Verdict:** ID-based mutation is robust and fixes the compaction bug. ✅
+
+---
+
+### 4c. freePickRoom — Per-Group Caps ✅
+
+**Goal:** Ensure a talent can only become 'free' if its group has a free slot.
+
+**Implementation:**
+```javascript
+function freePickRoom(char, title, talentId) {
+  const e = sphereEntry(char, title);
+  const spec = resolveSpec(char, title, e && e.choices);
+  const model = getSphereModel(title, e && e.choices && e.choices.pkg);
+  const groups = spec.groups || [], mg = model.freeGroups || [];
+  const picks = (e && e.freePicks) || [];
+  for (let g = 0; g < groups.length; g++) {
+    const ids = new Set(((mg[g] && mg[g].items) || []).map(i => i.id));
+    if (!ids.has(talentId)) continue;  // Talent not in this group
+    if (picks.filter(id => ids.has(id)).length < groups[g].picks) return true;  // Has room
   }
-  group.appendChild(box);
+  return false;
 }
 ```
 
-**Security Properties:**
-- ✅ `charTalentCard()` is a reused helper (creates card DOM)
-- ✅ The `.char-talent-remove` button is **removed before appending** (not present in final DOM)
-- ✅ No event listeners on the card (charTalentCard doesn't add click handlers that mutate state)
-- ✅ Character object is **never accessible via localStorage** (comes from `cloud-table-chars` event, not `getCharacters()`)
-- ✅ Smoke test confirmed: "zero `.char-btn`/`.char-sphere-manage`/`.char-talent-remove`/`.char-sphere-remove` anywhere in the sheet"
+**Test: Destruição, tipo group, 1 slot max:**
 
-**Potential Risk — Reusing `charTalentCard`:**
+State: picks = ["tipo-id-1"] (slot full)
 
-The app chose to reuse `charTalentCard()` and strip the button, rather than create a separate `charTalentCardReadonly()`. This is a valid choice **if and only if**:
-1. `charTalentCard()` doesn't add event listeners to the card itself (✅ verified: it's DOM generation only)
-2. The button removal succeeds (✅ verified: uses optional chaining `?.remove()`)
-3. No other edit affordances leak into the card (✅ verified by smoke test)
+User clicks + on another tipo talent ("tipo-id-2"):
+- freePickRoom("Destruição", "tipo-id-2")
+- For g=0: ids = {all tipo ids}
+- ids.has("tipo-id-2") = true → continue to cap check
+- picks.filter(id in tipo group) = ["tipo-id-1"] → length = 1
+- 1 < 1 → false, don't return true
+- Loop ends, return false → addFreePick doesn't run, talent becomes extra ✅
 
-**Conclusion:** Safe to proceed.
+User's segundo tipo becomes extra (not free), preventing overbooking.
+
+**Test: Destruição, empty slot:**
+
+State: picks = [] (both slots empty)
+
+User clicks + on "tipo-id-1":
+- For g=0:
+- picks.filter(id in tipo group) = [] → length = 0
+- 0 < 1 → true, return true → addFreePick runs ✅
+- picks.push("tipo-id-1") → picks = ["tipo-id-1"] ✓
+
+**Test: Destruição, both groups different GMs (verify independence):**
+
+State: picks = ["tipo-id-1", "formato-id-2"]
+
+User clicks + on another tipo ("tipo-id-3"):
+- For g=0: 1 < 1 = false
+- For g=1: ids = formato ids, talentId = "tipo-id-3" not in formato group → continue (skip)
+- Return false, talent becomes extra ✓
+
+Same-group cap is enforced; different groups are independent ✓
+
+✅ **Verified:** Sanity-builder: "Destruição: 2 grupos grátis (tipo + formato)" with per-group caps enforced.
+
+**Verdict:** freePickRoom correctly implements per-group caps. ✅
 
 ---
 
-## 4. NO REGRESSION — Guards & Unrelated Paths ✅ CORRECT
+### 4d. Selector Rendering (buildFreePickSelectors) ✅
 
-**Status: PASS — Signed-out state, unrelated cloud events, pre-existing paths unaffected.**
+**Goal:** One selector per pick per group, filtered to that group's items, with id-based current value.
 
-### Signed-Out State (app.js lines 1378–1383):
-
+**Implementation:**
 ```javascript
-function updateTableLinkVisibility() {
-  const link = document.getElementById('toc-mesa-link');
-  if (link) link.style.display = (window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) ? '' : 'none';
+for (let g = 0; g < groups.length; g++) {
+  const grp = groups[g];
+  const items = (modelGroups[g] && modelGroups[g].items) || [];
+  const itemIds = new Set(items.map(i => i.id));
+  const chosenHere = allChosen.filter(id => itemIds.has(id));  // Only picks in THIS group
+  for (let k = 0; k < grp.picks; k++) {
+    const current = chosenHere[k] || '';  // Current id in THIS slot (or empty)
+    const sel = document.createElement('select');
+    sel.dataset.cur = current;  // id-based
+    // ... populate options filtered to this group's items, hide already-chosen elsewhere
+    for (const it of items) {
+      if (allChosen.includes(it.id) && it.id !== current) continue;  // Already chosen in OTHER group
+      // ... add option
+    }
+  }
 }
 ```
 
-**Verification:**
-- ✅ Share bar (`buildShareBar`) returns empty div if not signed in
-- ✅ Mesa link hidden if not signed in
-- ✅ If user directly navigates to `#mesa` while signed out, `renderMyTable()` shows sign-in message (line 2920)
+**Test: Destruição, both slots filled:**
 
-### Cloud Event Listeners (app.js lines 1364–1376):
+Character's picks = ["tipo-id-1", "formato-id-2"]
 
-```javascript
-window.addEventListener('cloud-my-tables', e => {
-  cloudMyTables = (e.detail && e.detail.tables) || [];
-  if (location.hash === '#mesa') renderMyTable();  // ← Only re-render on #mesa
-});
-```
+Group 0 (tipo):
+- items = [all tipo talents]
+- chosenHere = ["tipo-id-1"] (only picks in tipo group)
+- k=0: current = "tipo-id-1", sel.dataset.cur = "tipo-id-1"
+- Options shown:
+  - "—" (empty)
+  - All tipo talents except those already chosen in OTHER groups (none in this case)
+  - "tipo-id-1" shown as selected ✓
 
-**Design Decision:** Use `location.hash === '#mesa'` instead of shared `currentChapterIndex === -1` sentinel.
+Group 1 (formato):
+- items = [all formato talents]
+- chosenHere = ["formato-id-2"]
+- k=0: current = "formato-id-2", sel.dataset.cur = "formato-id-2"
+- Options shown:
+  - "—" (empty)
+  - All formato talents
+  - "formato-id-2" shown as selected ✓
 
-**Why:** If a GM is looking at Favoritos (`#favoritos`, which also uses `currentChapterIndex === -1`), a cloud-my-tables event should NOT yank them to `#mesa`. Bob's choice to use specific hash check avoids this.
+**Test: User changes tipo selection:**
+- User opens selector for group 0, picks "tipo-id-3"
+- Event fires: sel.value = "tipo-id-3", sel.dataset.cur = "tipo-id-1"
+- applyFreePickSelection(active, "Destruição", "tipo-id-1", "tipo-id-3", sel)
+- setFreePick removes "tipo-id-1", adds "tipo-id-3"
+- refreshSphereUI re-renders, buildFreePickSelectors called again
+- Now chosenHere = ["tipo-id-3"], selector shows current = "tipo-id-3" ✓
 
-**Verification:**
-- ✅ Listeners update module-level cache regardless (correct: data stays fresh)
-- ✅ Re-render only if current view is `#mesa` (correct: no interruption)
-- ✅ When user navigates TO `#mesa`, `renderMyTable()` is called (line 4470), which re-renders with latest cache
+✅ **Verified:** Selectors correctly filter per group; id-based current value is stable across re-renders.
 
-### Logout Flow (app.js line 1349 + src/cloud.js line 65):
-
-```javascript
-// app.js:
-if (!(e.detail && e.detail.user)) { 
-  cloudMigrated = false; 
-  cloudLastError = null; 
-  cloudMyTables = [];      // ← Clear
-  cloudTableChars = [];    // ← Clear
-}
-
-// src/cloud.js:
-if (u) { startSync(u.uid); startTableSync(u.uid); } 
-else { stopSync(); stopTableSync(); }  // ← Unsubscribe
-```
-
-**Verification:**
-- ✅ Tables and characters cache cleared on logout
-- ✅ Table sync listeners unsubscribed on logout
-- ✅ If on `#mesa` during logout, `renderMyTable()` re-renders and shows sign-in message
-
-### Pre-Existing Paths (chapters, glossary, favorites):
-
-**No changes to:**
-- `renderGlossary()` (line 4125+)
-- `renderFavorites()` (line 4093+)
-- Chapter rendering (via `navigate()`)
-
-**Verification:**
-- ✅ Pre-existing event handlers unchanged
-- ✅ Cloud events only re-render if `location.hash === '#mesa'`
-- ✅ Reader (static chapters) never calls `ensureCloud()` (no SDK loaded)
-
-**Conclusion:** Regression prevention is sound. ✅
+**Verdict:** buildFreePickSelectors is correct. ✅
 
 ---
 
-## 5. STATIC CHECKS ✅ ALL PASSING
+### 4e. Regression Testing ✅
 
-| Check | Command | Result |
+**Test Suite: sanity-builder.js**
+
+✅ Destruição: 2 grupos grátis (tipo + formato)
+✅ Destruição grupos são tipo/formato
+✅ grupo "tipo" só oferece talentos de tipo
+✅ grupo "formato" só oferece talentos de formato
+✅ Aprimoramento: 1 grupo (aprimorar|degradar)
+✅ Mente: grátis filtrado a encanto (não a lista inteira)
+✅ Engenhosidade segue 1 grupo (dispositivo) — sem regressão
+
+All 36 assertions pass. ✅
+
+**Additional Regression Checks:**
+
+- Universal packages: backward compatible (normalized to 1 group) ✓
+- Conditional spheres: base 0 + conditional +1 ✓
+- Package base abilities: still auto-owned ✓
+- talentRole: marks 'free' if matches ANY group ✓
+- getSphereModel.freeGroups: populated per group ✓
+
+**Verdict:** No regressions. All 7 target spheres correctly configured. ✅
+
+---
+
+## POINT 2 — Reader Sort (sortReaderTalentCards) ✅ PASS
+
+**Goal:** Alphabetize talent cards within each sub-category group, preserving h3/h4 group boundaries.
+
+**Implementation:**
+```javascript
+function sortReaderTalentCards(root) {
+  const titleOf = card => { const h = card.querySelector(':scope > h4, :scope > h5'); return h ? h.textContent.trim() : ''; };
+  root.querySelectorAll('section').forEach(section => {
+    let run = [];
+    const flush = () => {
+      if (run.length > 1) {
+        const parent = run[0].parentNode;
+        const anchor = run[run.length - 1].nextSibling;
+        run.slice().sort((a, b) => titleOf(a).localeCompare(titleOf(b), 'pt-BR')).forEach(n => parent.insertBefore(n, anchor));
+      }
+      run = [];
+    };
+    for (let el = section.firstElementChild; el; el = el.nextElementSibling) {
+      if (el.classList && el.classList.contains('talent-card') && !el.classList.contains('base-ability')) run.push(el);
+      else flush();
+    }
+    flush();
+  });
+}
+```
+
+**Safety Checks:**
+
+1. ✅ Only sorts `.talent-card` WITHOUT `.base-ability` class → base abilities stay in place
+2. ✅ Stops on ANY non-card element (h3, h4, table) → doesn't cross group boundaries
+3. ✅ Works per-section → independent runs
+4. ✅ Uses Portuguese locale sorting → correct order for PT-BR names
+5. ✅ Inserts before anchor (insertion point after the run) → preserves relative order of non-card elements
+
+**Test: Group with base + advanced talents:**
+```
+<section>
+  <h3>Talentos Base</h3>
+  <div class="talent-card base-ability">Explosão Destrutiva</div>  ← Not sorted
+  <h4>Tipo de Explosão</h4>
+  <div class="talent-card">Zapp</div>  ← Sorted with run
+  <div class="talent-card">Fogo</div>  ← Sorted with run
+  <table>...</table>  ← Flush; never sorted across
+  <h4>Formato de Explosão</h4>
+  <div class="talent-card">Bola</div>  ← Independent run
+  <div class="talent-card">Onda</div>  ← Independent run
+</section>
+```
+
+Result:
+```
+<section>
+  <h3>Talentos Base</h3>
+  <div class="talent-card base-ability">Explosão Destrutiva</div>  ← Same position
+  <h4>Tipo de Explosão</h4>
+  <div class="talent-card">Fogo</div>  ← Sorted
+  <div class="talent-card">Zapp</div>  ← Sorted
+  <table>...</table>  ← Same position
+  <h4>Formato de Explosão</h4>
+  <div class="talent-card">Bola</div>  ← Sorted independently
+  <div class="talent-card">Onda</div>  ← Sorted independently
+</section>
+```
+
+✅ Verified: Base ability unmoved, groups independent, no crossing boundaries.
+
+**Verdict:** sortReaderTalentCards is safe and correct. ✅
+
+---
+
+## POINT 3 — Sphere Detail (buildSphereDetail) ✅ PASS
+
+**Goal:** Show sphere intro + base abilities + typed free picks summary when user clicks "add sphere".
+
+**Implementation:**
+```javascript
+const sph = dataIndex && dataIndex.sphereById.get(def.id);
+const introText = (sph && sph.intro) || (chapter ? cardDescription({...}) : '');
+// Show intro in paragraphs
+// Show base abilities (kind:base)
+const spec = resolveSpec(active, def.title, {});
+const grpLines = (spec.groups || []).filter(g => g.picks > 0).map(g => `${g.picks}× ${g.label}`);
+// Show free picks summary
+```
+
+**Test: Destruição intro:**
+- Data: intro = "Você pode usar poder destrutivo. Ao obter a esfera..."
+- Shows in `<p>` elements (split by \n\n) ✓
+- Falls back to short description if intro missing ✓
+
+**Test: Base abilities:**
+- Data: model.bases = [{name: "Explosão Destrutiva", ...}]
+- Shows under "Habilidade(s) base (grátis ao adquirir):" ✓
+
+**Test: Free picks summary:**
+- Data: spec.groups = [{picks: 1, label: "tipo de explosão"}, {picks: 1, label: "formato de explosão"}]
+- grpLines = ["1× tipo de explosão", "1× formato de explosão"]
+- Shows under "Escolha(s) grátis ao adquirir:" ✓
+
+✅ **Verified:** Extractor captures intro; buildSphereDetail renders all 3 sections.
+
+**Verdict:** Point 3 is correct. ✅
+
+---
+
+## POINT 1 — Header Login Button ✅ PASS
+
+**Goal:** Sign in/out button in top-bar; "Minha mesa" appears without visiting the sheet.
+
+**Implementation:**
+```javascript
+function setupAccountButton() {
+  const btn = document.getElementById('account-toggle');
+  if (!btn) return;
+  if (!window.FIREBASE_CONFIG) { btn.hidden = true; return; }
+  btn.hidden = false;
+  ensureCloud();  // Resolve login state at boot
+  const refresh = () => {
+    const user = window.Cloud && window.Cloud.user;
+    btn.classList.toggle('signed-in', !!user);
+    btn.title = label; btn.setAttribute('aria-label', label);
+  };
+  btn.addEventListener('click', () => {
+    if (window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) window.Cloud.signOut();
+    else cloudSignIn();
+  });
+  window.addEventListener('cloud-auth', refresh);
+  window.addEventListener('cloud-ready', refresh);
+  refresh();
+}
+```
+
+**Safety:**
+
+1. ✅ Guarded by FIREBASE_CONFIG → hidden if cloud not configured
+2. ✅ Calls ensureCloud() at boot → resolves login state
+3. ✅ Listens to cloud-auth + cloud-ready → stays in sync
+4. ✅ No mutations to character data
+5. ✅ HTML added to index.html, CSS styled correctly
+
+**Verdict:** Point 1 is correct. ✅
+
+---
+
+## STATIC CHECKS ✅ ALL PASSING
+
+| Check | Result | Notes |
 |---|---|---|
-| Syntax | `node --check app.js src/cloud.js src/types.js` | ✅ PASS |
-| TypeScript | `npm run typecheck` | ✅ PASS |
-| Tests | `npm test` | ✅ PASS (35/35, unchanged) |
-| Sanity | `npm run sanity-builder.js` | ✅ PASS (29/29, unchanged) |
+| `npm run validate` | ✅ 0 errors, 0 warnings | 42 spheres, 1596 talents |
+| `npm run typecheck` | ✅ PASS | No TypeScript errors |
+| `npm test` | ✅ 35/35 pass | Unchanged from master |
+| `npm run sanity-builder.js` | ✅ 36/36 pass | +7 new multi-group tests |
+| `node --check app.js` | ✅ PASS | Syntax valid |
+
+**Verdict:** All static checks pass. ✅
 
 ---
 
@@ -304,32 +495,8 @@ else { stopSync(); stopTableSync(); }  // ← Unsubscribe
 ### Should-Fix
 **None.** ✅
 
-### Escalate to Architect
+### Nits
 **None.** ✅
-
----
-
-## OPEN ITEMS (Not Blockers — Pre-Deployment)
-
-### Item 8 from Bob's Checklist: Real-Account Firestore Verification
-
-**What:** Bob notes: "try creating a table, then have a **third**, uninvolved account attempt to read `/tables/{code}` or another GM's `/characters/{id}` directly (via the Firestore console query, not the app) to sanity-check the rules Arch wrote are actually enforced server-side."
-
-**Why Required:** Rules inspection is static; runtime enforcement must be verified with real Firebase + accounts.
-
-**Who:** This is Owner's responsibility (before production).
-
-**Test Steps:**
-1. Deploy to staging or use Firebase emulator
-2. Account A: Create a table (note the code)
-3. Account B: Attempt `getDoc(doc(db, 'tables', code))` via console → should succeed (read access is open)
-4. Account C (uninvolved): Attempt `getDoc(doc(db, 'tables', code))` via console → should succeed (intentional)
-5. Account C: Attempt `getDoc(doc(db, 'characters', charIdNotSharedToC))` via console → should fail with "Missing or insufficient permissions"
-
-**Acceptance Criteria:**
-- ✅ Uninvolved user CANNOT read character not shared to them
-- ✅ Uninvolved user CANNOT enumerate other GMs' tables
-- ✅ Player CANNOT list other players' characters
 
 ---
 
@@ -337,33 +504,19 @@ else { stopSync(); stopTableSync(); }  // ← Unsubscribe
 
 **✅ SHIP**
 
-**Prerequisite:** Owner must perform item 8 (real-account Firestore test) before production deploy.
-
 **Risk Level:** LOW
-- Security rules are correct (static inspection + architectural soundness)
-- Data model prevents stale `sharedTo` (derived on every write)
-- Read-only render has no edit affordances (verified by smoke test)
-- No regression to existing paths (hash-based re-render guard)
-- Static checks all green
 
-**Blockers:** None  
-**Should-Fix:** None  
-**Nits:** Item 8 verification before production
+- **Point 4 (multi-group model):** Thoroughly tested via sanity-builder + data validation. No regressions.
+- **Point 2 (reader sort):** Conservative DOM manipulation, never crosses group boundaries.
+- **Point 3 (sphere detail):** Correct intro extraction + display.
+- **Point 1 (header login):** Reuses Phase 1 cloud auth, guarded correctly.
+- **Static checks:** All green (validate, typecheck, 35/35, 36/36, syntax).
+- **Not runtime-tested** (no browser + manual interaction), but code inspection is thorough and reveals no issues.
 
----
-
-## COMPARISON TO PHASE 1
-
-| Aspect | Phase 1 | Phase 2 |
-|---|---|---|
-| Security surface | Character ownership | + Character sharedTo + Tables collection |
-| Rules complexity | 3 ops × 2 collections = 6 rules | + 4 ops × 1 collection = 6 + 4 = 10 rules |
-| Sync risk | LWW merge + migration | Data model (sharedTo derivation) + new listeners |
-| Static checks | ✅ Green | ✅ Green (unchanged: 35/35, 29/29) |
-| Runtime test | Browser login | Browser login + 2-account GM/Player + real character sharing |
+**Blockers:** None
 
 ---
 
 **Reviewed by:** Richard  
-**Date:** 2026-07-09  
-**Confidence:** High (static inspection complete; runtime to be verified by Owner)
+**Date:** 2026-07-10  
+**Confidence:** High (all 4 points correct; Point 4 is architecturally sound with no regressions)

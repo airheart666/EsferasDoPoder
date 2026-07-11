@@ -9,7 +9,17 @@
     "sig": "morte",
     "lLight": 30
   },
-  "acquisition": null,
+  "acquisition": {
+    "freeGroups": [
+      {
+        "tags": [
+          "morto-vivo"
+        ],
+        "picks": 1,
+        "label": "morto-vivo"
+      }
+    ]
+  },
   "talents": [
     {
       "id": "morte-golpe-fantasma",
@@ -1452,5 +1462,6 @@
       "body": "Escolha um tipo de criatura: aberração, besta, dragão, gigante ou monstruosidade, ou duas raças humanoides. Você só pode reanimar criaturas mortas do tipo (ou raças) escolhido(s). Você recebe um talento (reanimar) ou (morto-vivo) à sua escolha como um talento bônus. Você não pode ter esta variante e a variante Limite Necromântico (reanimar) ao mesmo tempo."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode comandar os poderes da não-vida. Ao obter a esfera da Morte pela primeira vez, você ganha as habilidades de esfera Ataque Fantasma e Reanimar, além de um talento (morto-vivo) à sua escolha."
 }

@@ -8,7 +8,17 @@
     "s": 48,
     "sig": "mente"
   },
-  "acquisition": null,
+  "acquisition": {
+    "freeGroups": [
+      {
+        "tags": [
+          "encanto"
+        ],
+        "picks": 1,
+        "label": "encanto"
+      }
+    ]
+  },
   "talents": [
     {
       "id": "mente-encanto",
@@ -695,5 +705,6 @@
       "body": "Seus encantos produzem sinais estranhos e reconhecíveis no alvo — halos brilhantes, tremores no chão, olhos brilhantes e mutantes, padrões de fala mecânicos, etc.\n\nEsses sinais desaparecem imediatamente quando o encanto termina, deixando claro quando alguém está ou não sob sua influência.\n\nCD 5 Percepção: detectar os sinais\n\nCD 5 Arcana: saber que é controle mental\n\nCD 5 Intuição: suspeitar de coerção mental\n\nVocê ganha Encanto Expandido como talento bônus."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você ganha a habilidade de alterar a mente dos outros, fazendo com que ajam como você desejar. Quando você adquire a esfera da Mente pela primeira vez, você ganha a habilidade de encanto e um talento (encanto) de sua escolha."
 }

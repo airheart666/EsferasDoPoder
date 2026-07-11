@@ -379,5 +379,6 @@
       "body": "Sempre que você usar Golpe da Terra Arrasada com sucesso contra um alvo, você pode optar por enterrá-lo. O alvo se move 3 metros através do solo. Se isso fizer com que o alvo atravesse completamente o chão (como, por exemplo, caindo pelo telhado de um prédio), ele cai no chão abaixo, sofrendo dano de queda normalmente. Se o novo chão ainda estiver a menos de 3 metros, ele também pode se mover para dentro ou através dessa superfície para atingir o limite deste talento. Essa distância aumenta para 6 metros no 17º nível.\n\nEnquanto seu Golpe da Terra Arrasada imobilizar o alvo, ele também não poderá respirar e deverá prender a respiração ou começará a sufocar. Mesmo que escape da imobilização, ele ainda precisará escalar, voar ou sair do buraco em que está."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "O treinamento na esfera de Luta Livre ensina o praticante a derrubar rapidamente seus oponentes no chão, girando-os e arremessando-os contra o solo com força incrível.\n\nAo adquirir a esfera de Luta Livre, você ganha um talento (imobilização) à sua escolha. Sempre que iniciar uma manobra de agarrar ou começar seu turno agarrando uma criatura, você pode aplicar 1 talento (imobilização) como uma ação bônus. Se você for bem-sucedido em um teste contestado para impedir que uma criatura escape da sua manobra de agarrar, você pode aplicar um (imobilização) ao alvo como uma reação.\n\nObserve que alguns talentos de outras esferas, como Atletismo ou Bruto, aumentam diretamente quem você pode ou não agarrar."
 }

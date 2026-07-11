@@ -28,6 +28,21 @@
       "description": "Character-builder acquisition rules (migrated from sphere-rules.json).",
       "properties": {
         "freeGroup": { "$ref": "#/definitions/freeGroup" },
+        "freeGroups": {
+          "type": "array",
+          "description": "Grupos-grátis TIPADOS na aquisição (ex.: Destruição = 1 tipo + 1 formato). Cada grupo filtra por tag(s) e tem sua própria contagem de picks.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "tag":  { "type": "string" },
+              "tags": { "type": "array", "items": { "type": "string" } },
+              "h3":   { "type": "string" },
+              "picks": { "type": "number" },
+              "label": { "type": "string" }
+            }
+          }
+        },
         "freeLabel": { "type": "string" },
         "freePicks": { "type": "number" },
         "talentTags": { "type": "array", "items": { "type": "string" } },
@@ -38,6 +53,7 @@
         "packages": { "$ref": "#/definitions/packages" }
       }
     },
+    "intro": { "type": "string", "description": "Texto de introdução da esfera (preâmbulo antes do 1º talento); mostrado no builder ao adicionar a esfera." },
     "talents": {
       "type": "array",
       "items": { "$ref": "talent.schema.json" }

@@ -8,7 +8,18 @@
     "s": 46,
     "sig": "clima"
   },
-  "acquisition": null,
+  "acquisition": {
+    "freeGroups": [
+      {
+        "tags": [
+          "manto",
+          "mortalha"
+        ],
+        "picks": 1,
+        "label": "manto ou mortalha"
+      }
+    ]
+  },
   "talents": [
     {
       "id": "clima-manto",
@@ -509,5 +520,6 @@
       "body": "Em completa calmaria (Nível de intensidade do vento 0), não há vento suficiente para que veículos se movam à vela. Se houver uma brisa, ela não impactará significativamente a área.\n\nSeveridade 1\n\nNo nível de intensidade do vento 1, há um vento moderado com 50% de chance de apagar chamas expostas de tamanho minúsculo ou menor, como velas.\n\nSeveridade 2\n\nNo nível de intensidade do vento 2, a área impõe desvantagem em testes de ataque com armas de longo alcance e testes de Sabedoria (Percepção) que dependem da audição. O vento também apaga chamas abertas e dispersa a névoa. Além disso, vento de intensidade 2 ou superior exige um teste de Força (Atletismo) ou Destreza (Acrobacia) contra o efeito climático para voar. Aqueles que falharem devem pousar no final de seu turno ou cair. Se um vento forte estiver presente em uma área com muitos detritos soltos (como areia em um deserto), a área também impõe desvantagem em testes de Sabedoria (Percepção) que dependem da visão.\n\nSeveridade 3\n\nNo nível de intensidade do vento 3, há um vento de força de vendaval, poderoso o suficiente para derrubar galhos, senão árvores inteiras. Esses ventos, além de apagarem chamas abertas, têm 75% de chance de apagar chamas protegidas, como as de lanternas.\n\nAtaques comuns com armas de longo alcance são impossíveis, e mesmo armas de cerco sofrem desvantagem em seus testes de ataque à distância. A área também impõe desvantagem em todos os testes de Sabedoria (Percepção). Criaturas de tamanho Médio ou menor devem fazer um teste de Força (Atletismo) para se mover contra o vento. Criaturas de tamanho Pequeno ou menor que falharem neste teste são derrubadas e arrastadas 1d4 x 10 pés, sofrendo 1d4 de dano de concussão a cada 10 pés.\n\nSeveridade 4\n\nNo nível de intensidade do vento 4, há ventos de tornado. Todas as chamas são extintas. Todos os ataques à distância são impossíveis (mesmo com armas de cerco), testes de Sabedoria (Percepção) baseados na audição sempre falham, e a área fica levemente obscurecida. Criaturas de tamanho Enorme ou menor devem fazer um teste de Força (Atletismo) para se mover contra o vento. Criaturas de tamanho Grande ou menor que falharem neste teste são levantadas e arremessadas 2d4 x 10 pés, sofrendo 1d8 de dano de concussão a cada 10 pés após serem derrubadas. Voar nesta área é impossível; uma criatura voadora em meio a ventos de tornado deve pousar no final de seu turno ou cairá."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você comanda o clima para fazer sua vontade.\n\nAo obter a esfera Clima pela primeira vez, você ganha as habilidades das esferas Manto e Mortalha. Além disso, você ganha um talento (manto) ou (mortalha) à sua escolha.\n\nTalentos marcados com (manto) concedem novos efeitos ao seu manto. Talentos marcados com (mortalha) concedem novas mortalhas que você pode outorgar. Outros talentos podem ser marcados com uma categoria climática específica, como (aridez), (frio), (calor), etc. Esses talentos funcionam melhor em climas desse tipo ou os modificam.\n\nUse a tabela de Condições Climáticas abaixo como guia para determinar o clima atual. Mais detalhes e informações sobre a mecânica específica de cada categoria climática e sua intensidade, incluindo as CDs para alguns efeitos, podem ser encontrados no Apêndice ao final desta seção."
 }

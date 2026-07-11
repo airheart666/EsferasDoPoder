@@ -1,160 +1,50 @@
-# Review Request — Cloud Phase 2: mesa/campanha UI
-*Written by Bob. Read by Richard.*
+# Review Request — Builder: 4 melhorias (login header, ordem sub-cat, detalhe esfera, grátis tipados)
+*Written by Architect (implemented inline). Read by Richard.*
 
 Ready for Review: YES
 
 ---
 
-## What Was Built
+## Escopo (branch `builder-subcategories`, off master)
 
-The GM-side and player-side UI for Phase 2 (mesa/campanha), on top of the core Arch already shipped
-on this branch (`firestore.rules`, `src/cloud.js` — `createTable`/`getTable` + the
-`cloud-my-tables`/`cloud-table-chars` watchers, `src/types.js` typedefs). **This step touched only
-`app.js` and `style.css`** — `src/cloud.js` and `firestore.rules` are untouched (confirmed via `git
-diff --stat`, only `app.js`/`style.css` show under my changes).
+**Ponto 1 — Login no cabeçalho.** Botão `#account-toggle` no `#top-bar` (`index.html`) — deslogado
+entra (`cloudSignIn`), logado sai (`Cloud.signOut`); some sem `FIREBASE_CONFIG`. `setupAccountButton`
+(app.js) chama `ensureCloud()` no boot → a aba "Minha mesa" passa a aparecer sem visitar a ficha.
+Reusa a auth da Fase 1; nenhuma lógica nova de nuvem.
 
-Two pieces:
-1. **Player side** — a "Compartilhar com mesa" bar on the char sheet (only when signed in): create a
-   table (get a code back) and expose the active character to a table by code, with a remove per
-   table.
-2. **GM side** — `#mesa` (a new nav link "🏰 Minha mesa", shown only when signed in): per table the GM
-   created, the characters exposed to it as compact rows, click to expand a read-only sheet.
+**Ponto 2 — Ordem alfabética DENTRO de cada sub-categoria (builder + leitor).**
+- Builder: `getSphereModel` ordena `freeGroup`/`extras` e os itens por grupo via `sortBySubcategory`
+  (ordem dos grupos = 1ª aparição no dado; alfabético por nome dentro).
+- Leitor: `sortReaderTalentCards` (após `enhanceTalents` em `renderChapter`) reordena **corridas de
+  `.talent-card` consecutivos** in-place — nunca cruza h3/h4 de grupo, nunca move `.base-ability`
+  nem tabelas. Não altera `content/*.txt` nem ids.
 
-Everything is inert when signed out — no share controls render, `#mesa` shows a sign-in prompt, the
-sidebar link stays hidden.
+**Ponto 3 — Detalhe de "adicionar esfera" mostra texto inicial + bases + grátis.**
+`buildSphereDetail` mostra `sphere.intro` (preâmbulo, novo campo do extractor), talentos-base
+(`kind:base`), e as escolhas grátis tipadas concedidas. Fallback p/ a descrição curta se `intro` ausente.
 
-## Files changed
+**Ponto 4 — Concessão de grátis TIPADA e múltipla (corrige 7 esferas).** O núcleo sensível.
+- Modelo novo `acquisition.freeGroups: [{tags,picks,label}]`. Retrocompatível — `freeGroup`+`freePicks`
+  (Destino/Conjuração/Engenhosidade/pacotes) normaliza como 1 grupo. `classSpec` produz `groups[]`;
+  `resolveSpec` resolve picks (condicionais → grupo[0]); `talentRole` = free se casa QUALQUER grupo;
+  `getSphereModel.freeGroups` = itens por grupo.
+- `buildFreePickSelectors` reescrito: 1 seletor por pick POR grupo, filtrado às tags. Mutação virou
+  **id-based** (`setFreePick(old,new)`, `applyFreePickSelection(old,new)`) — corrige bug latente
+  (freePicks compactado × índice de slot) que multi-grupo exporia. Os 2 handlers lêem `dataset.cur`.
+- `freePickRoom` (cota por grupo) gateia o + dos cards e `applyTalentToggle` (2º tipo vira extra, não
+  grátis). Dados: `sphere-rules.json` → freeGroups das 7; schema+types; `data/` regenerado.
 
-### `app.js`
-| Lines | What |
-|---|---|
-| 1305–1313 | `cloudMyTables`/`cloudTableChars`/`expandedMesaChars` — module-level cache + view-state for the GM view. |
-| 1348–1377 | `setupCloud()` extended: on `cloud-auth` also calls `updateTableLinkVisibility()` and re-renders `#mesa` if that's the current hash; two new listeners for `cloud-my-tables`/`cloud-table-chars` that update the cache and re-render `#mesa` only when `location.hash === '#mesa'`. |
-| 1378–1383 | `updateTableLinkVisibility()` — shows/hides `#toc-mesa-link` per `Cloud.isSignedIn()`. |
-| 1414–1465 | `deriveSharedTo`, `exposeCharToTable`, `unexposeCharFromTable`, `buildShareBar` — the expose/unexpose data-model handling (see below) + the share-bar UI. |
-| 2795 | `renderCharacter()` — one line, appends `buildShareBar(active)` right after `normalizeCharView`. |
-| 2901–3105 (new block after `finishCharRender`) | `renderMyTable()`, `finishMesaRender()`, `renderSharedCharacterReadonly(char)`, `renderReadonlySpherePanel(char, title)` — the `#mesa` view. |
-| 3211–3252 | New handlers in `setupCharacter`'s existing delegated click listener: `.char-share-create`, `.char-share-add`, `.char-share-remove`. |
-| 3418–3427 | New handler: `.mesa-char-row` click → toggle `expandedMesaChars` → `renderMyTable()`. |
-| 4467, 4470 | `navigate()` — `#mesa` added to the special-hash list → `renderMyTable()`. |
-| 4515 | `handleInternalLinkClick()` — `#mesa` added to the synthetic-page href list. |
-| 4581–4590 | `buildSidebar()` — new `#toc-mesa-link` ("🏰 Minha mesa"), `display:none` by default. |
+## Foco da revisão (por risco)
+1. **Multi-grupo — não regredir pacotes/condicionais.** Pacote escolhido → 1 grupo; não escolhido →
+   nada grátis; condicionais somam no grupo[0]; só-condicional ganha grupo sem filtro (lista inteira,
+   como antes). Universal (KG-4/KG-5) e Alquimia corretos.
+2. **Mutação id-based.** Trocar/limpar um grátis; sem duplicar; grátis×extra exclusivos.
+3. **freePickRoom.** Destruição: 2 talentos de tipo pelo + → 1º grátis, 2º extra (cota do grupo).
+4. **Ordem do leitor.** `sortReaderTalentCards` só reordena corridas; não quebra base/tabelas/grupos.
+5. **Verde:** validate 0 · typecheck · test 35/35 · sanity-builder **36/36** · `node --check app.js`.
 
-### `style.css`
-- `.char-share*` (share bar) inserted after the `.char-account` block — reuses the `.acc-signin`
-  button look and the `.char-sphere-remove` outline-button pattern for chips.
-- `.mesa-*` (table/row/detail) inserted after the `.char-build` mobile media query — reuses
-  `.char-sphere-collapsed`'s row treatment for `.mesa-char-row`, and `.char-rail-stats`/`.char-sphere`/
-  `.char-cards` wholesale for the read-only sheet body.
-
-## Expose/unexpose data-model handling
-
-No dedicated Cloud method exists for this (by design, per the brief) — it's a normal owner write:
-
-```js
-function deriveSharedTo(sharedTables) {
-  return [...new Set((sharedTables || []).map(t => t.gmUid))];
-}
-async function exposeCharToTable(active, code) {
-  const t = await window.Cloud.getTable(code);          // validates the code is a real table
-  if (!t) return { ok: false, message: 'Código de mesa inválido.' };
-  const tables = active.sharedTables || [];
-  if (tables.some(x => x.code === t.code)) return { ok: true };   // already exposed → no-op
-  const sharedTables = tables.concat([{ code: t.code, name: t.name, gmUid: t.gmUid }]);
-  updateCharacter(active.id, { sharedTables, sharedTo: deriveSharedTo(sharedTables) });
-  return { ok: true };
-}
-function unexposeCharFromTable(active, code) {
-  const sharedTables = (active.sharedTables || []).filter(t => t.code !== code);
-  updateCharacter(active.id, { sharedTables, sharedTo: deriveSharedTo(sharedTables) });
-}
-```
-
-`sharedTo` is **never** written independently — it's always recomputed from `sharedTables` in the
-same `updateCharacter` call, so it can't drift. `updateCharacter` is the existing function (unchanged)
-that sets `updatedAt` and calls `cloudPush` → `window.Cloud.pushCharacter`, so this rides the existing
-sync path; the Firestore rule (`resource.data.ownerUid == request.auth.uid`) already restricts writes
-to the owner regardless.
-
-On the GM side, `renderSharedCharacterReadonly(char)`/`renderReadonlySpherePanel` never call
-`getActiveChar()` or any mutator — they only read the `char` object handed to them (which for the GM
-comes straight off the `cloud-table-chars` event, never `localStorage`). Extras reuse
-`charTalentCard(fr, id, 'extra', title)` for the card DOM, then strip the resulting `.char-talent-remove`
-button from the clone before it's appended, so no edit affordance reaches the GM's DOM and no core
-helper needed a new "readonly" kind.
-
-## Verification done
-
-- `npm run typecheck` — green.
-- `npm test` — 35/35 (unchanged, rules layer untouched).
-- `node scripts/sanity-builder.js` — 29/29 (unchanged).
-- `node --check app.js` — clean.
-- **New ad hoc jsdom smoke script** (same technique as `scripts/sanity-builder.js`, not committed —
-  lived in the scratchpad during the session, deleted after): loads the real `app.js`/`src/rules.js`,
-  stubs `window.Cloud` (no live Firebase — `isSignedIn`/`getTable`/`createTable`/`user`), and drives
-  27 assertions:
-  - Signed out: no `.char-share-create`/`-add` render, `buildShareBar` returns an empty node, `#mesa`
-    shows the sign-in guard message with no `.mesa-table`.
-  - Signed in: `exposeCharToTable` with an unknown code → `{ok:false, message}`, no state change;
-    with a valid code → chip renders, `sharedTables`/`sharedTo` persisted (verified via
-    `getCharacters()`, i.e. `updateCharacter` actually ran); exposing the same table twice is a no-op;
-    two tables under the same GM still dedupe `sharedTo` to 1 uid; unexpose removes just that entry
-    and recomputes `sharedTo`.
-  - The **real click** flow (not just the underlying functions): stubbed `window.prompt`, clicked
-    `.char-share-add`/`.char-share-create` for real, confirmed the click handler calls
-    `Cloud.getTable`/`Cloud.createTable` and the created-table code shows in a `showCharNotice` toast.
-  - `#mesa` populated from injected `cloud-my-tables`/`cloud-table-chars` events: table name+code
-    render, exposed character renders as a compact row with `characterStats`-derived CD; clicking
-    expands `renderSharedCharacterReadonly` (shows the sphere, a base talent AND an extra talent,
-    confirms **zero** `.char-btn`/`.char-sphere-manage`/`.char-talent-remove`/`.char-sphere-remove`
-    anywhere in the sheet, confirms rendering another user's character touched no `localStorage`
-    character); clicking again collapses it.
-  - `updateTableLinkVisibility()` flips the sidebar link's `display` both ways.
-
-**Not tested (needs a live browser + 2 real Google accounts)** — see checklist below.
-
-## 2-Google-account browser click-through (Owner)
-
-Needs `window.FIREBASE_CONFIG` pointed at a real (or emulator) project, and two different Google
-accounts — call them **Player** and **GM**.
-
-1. **Player**, signed out: open the app → "Meu personagem" → confirm there is no "Compartilhar com
-   mesa" bar, and the sidebar has no "Minha mesa" link.
-2. **Player**: sign in with Google → the share bar appears with "Criar mesa" and "Compartilhar por
-   código". Create (or have the character already have) an active character.
-3. **GM**, a different browser/profile, signed in with the other Google account → sidebar shows
-   "🏰 Minha mesa" → click it → "#mesa" → click "Criar mesa" isn't there (that lives on the Player's
-   char sheet under the account bar) — instead on the GM's own char sheet, click "Criar mesa", give it
-   a name, note the returned **code**. Confirm the table now shows under "Minha mesa" with 0 characters.
-4. **Player**: click "Compartilhar por código", paste the GM's code → confirm a chip
-   `<table name> <code> ✕` appears under the share bar.
-5. **GM**: on "Minha mesa" (may need a refresh, though the watcher should update live), confirm the
-   Player's character now appears as a compact row under that table (name · class/subclass · level ·
-   CD/PM/Attack). Click the row → confirm it expands into a read-only sheet (stats + spheres/talents)
-   with **no** +/✕ buttons, no "adicionar esfera", nothing clickable that mutates. Click again to
-   collapse.
-6. **Player**: change something on the character (e.g. add a talent, level up) → confirm the GM's
-   expanded/collapsed row updates live (no manual refresh) — this is the core "ao vivo" promise of
-   Phase 2.
-7. **Player**: click the chip's ✕ to unexpose → confirm the character disappears from the GM's table
-   view live.
-8. **GM**: try creating a table, then have a **third**, uninvolved account attempt to read
-   `/tables/{code}` or another GM's `/characters/{id}` directly (via the Firestore console query, not
-   the app) to sanity-check the rules Arch wrote are actually enforced server-side — this is Arch's
-   surface, but worth confirming end-to-end once real accounts exist.
-9. Confirm the pre-existing paths are unaffected throughout: signed-out builder stays fully local, the
-   static reader (any `#pN` chapter, glossário, favoritos) works exactly as before.
-
-## Open questions / notes for Arch/Richard
-
-- `renderMyTable()` does a full re-render on every row expand/collapse (not an incremental patch like
-  the talent bench's `refreshCharBench`) — chose simplicity given the GM's table/character counts are
-  expected to be small. Flag if a patch-based approach is wanted for consistency.
-- Used `prompt()`/the existing `showCharNotice()` toast for "nome da mesa"/"código da mesa" and the
-  created-code readout — no modal component exists yet in the codebase; `confirm()` is already used
-  the same way for character deletion, so this stays consistent with existing UX.
-- The `cloud-my-tables`/`cloud-table-chars` listeners re-render gated on `location.hash === '#mesa'`
-  rather than the pre-existing `currentChapterIndex === -1` sentinel used by `cloud-auth`/`cloud-chars`
-  — that sentinel is shared by all four synthetic views and would otherwise yank a GM looking at
-  Favoritos over to `#mesa` on an unrelated cloud event. Left the pre-existing imprecision as-is
-  (out of scope for this step) but didn't copy it into the new listeners.
+## Verificação feita
+validate 0 · typecheck verde · test 35/35 · sanity-builder 36/36 (Destruição=2 grupos tipo/formato;
+itens por grupo; Aprimoramento=aprimorar|degradar; Mente filtrado a encanto; Engenhosidade sem
+regressão) · app.js parseia. **Não** testado no browser (gate do Owner): os 2 seletores da Destruição,
+a ordem no leitor, o detalhe da esfera, o login no header.

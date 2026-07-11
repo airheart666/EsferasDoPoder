@@ -836,5 +836,6 @@
       "body": "Escolha prata ou madeira (ou outro material especial com a aprovação explícita do Mestre). Ao ser atingido por uma arma composta principalmente do material escolhido, o alvo da sua mudança de forma deve realizar um teste de resistência de Sabedoria com CD igual a 5 + o dano sofrido ou terá o efeito dissipado. O não pode ser alvo de sua mudança de forma novamente por 1 hora. Se o alvo estiver sob o efeito de uma Transformação Permanente, o efeito é suprimido por 1 hora, em vez de dissipado. Você ganha um talento bônus da esfera de alteração."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você tem a habilidade de alterar a constituição física de criaturas. Ao ganhar a esfera de Alteração pela primeira vez, você ganha a habilidade especial Metamorfose. Além disso, você ganha um talento (genótipo) para o qual se qualifica."
 }

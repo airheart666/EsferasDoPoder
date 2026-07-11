@@ -865,5 +865,6 @@
       "body": "Em vez de invocar escuridão do nada, você se baseia na sua própria sombra para produzir sua magia. Você estica e manipula sua sombra para criar áreas de escuridão e pode ter apenas uma ativa por vez. Quando sua escuridão está ativa, você não projeta uma sombra e não pode usar ou ser alvo de habilidades ou talentos que dependam da posse de uma sombra. Você não pode ter esta e a variante Fundir-se na Escuridão. Você ganha um talento bônus (escuridão)."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode criar e manipular a escuridão. Ao obter a esfera da escuridão pela primeira vez, você adquire as habilidades Escuridão e Véu."
 }

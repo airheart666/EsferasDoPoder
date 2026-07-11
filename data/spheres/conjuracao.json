@@ -999,5 +999,6 @@
       "body": "Seu companheiro de conjuração só o serve por compulsão. Caso você perca a concentração na invocação, em vez de desaparecer, o companheiro permanece pelo restante da duração máxima e ataca ou age contra você da melhor maneira possível. Você não pode dispensar um companheiro descontrolado. Você ganha um talento bônus de esfera de Conjuração."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você fez contratos com criaturas extraplanares, chamando-as para o seu lado quando necessário.\n\nAo ganhar a esfera de Conjuração pela primeira vez, você ganha a habilidade de esfera de invocação, um único companheiro e um talento (base) à sua escolha."
 }

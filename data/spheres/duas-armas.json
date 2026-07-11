@@ -300,5 +300,6 @@
       "body": "Você adquire a capacidade de empunhar uma arma adicional. Se você não possuir mãos adicionais ou algum outro método, pode empunhar a terceira arma com a boca, tratando-a como uma mão adicional que só pode ser usada para empunhar uma arma de uma mão ou leve. Enquanto empunha uma arma dessa maneira, você não pode fornecer componentes verbais para conjurar magias ou realizar testes de perícia que exijam fala ou canto, embora ainda possa se comunicar de forma incompreensível. Quando você usa o combate com duas armas em seu turno, pode fazer um ataque adicional com a arma da mão secundária, usando a terceira arma. Se fizer isso, não poderá realizar uma reação neste turno."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Os praticantes que utilizam duas armas simultaneamente treinam técnicas de ambidestria que lhes permitem empunhar duas armas ao mesmo tempo. Poucos guerreiros são tão impressionantes quanto os praticantes da arte do combate com duas armas.\n\nOs praticantes da Esfera de combate com duas armas adquirem as seguintes habilidades:"
 }

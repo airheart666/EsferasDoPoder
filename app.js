@@ -115,6 +115,7 @@ async function init() {
     setupCharacter();
     setupMobileMenu();
     setupBackToTop();
+    setupAccountButton();
 
     document.getElementById('content').addEventListener('click', handleInternalLinkClick);
     document.getElementById('toc-nav').addEventListener('click', handleInternalLinkClick);
@@ -735,30 +736,40 @@ function buildPackageSelector(active, title, spec) {
 // duplo que buildPackageSelector (barra de leitura + painel in-sheet).
 function buildFreePickSelectors(active, title, spec, model, entry) {
   const out = [];
-  if (!(spec.freePicks > 0 && model.freeGroup.length)) return out;
-  const picks = ((entry && entry.freePicks) || []).slice(0, spec.freePicks);
-  for (let i = 0; i < spec.freePicks; i++) {
-    const lbl = document.createElement('label');
-    lbl.className = 'freepick-l';
-    lbl.textContent = spec.freePicks > 1 ? `Grátis (${spec.freeLabel}) ${i + 1}: ` : `Grátis — 1 ${spec.freeLabel}: `;
-    const sel = document.createElement('select');
-    sel.className = 'freepick-select';
-    sel.dataset.sphere = title;
-    sel.dataset.i = String(i);
-    const none = document.createElement('option');
-    none.value = ''; none.textContent = '—';
-    sel.appendChild(none);
-    const chosenIds = new Set(picks.filter(Boolean));
-    for (const it of model.freeGroup) {
-      // esconde os já escolhidos em OUTROS slots
-      if (chosenIds.has(it.id) && picks[i] !== it.id) continue;
-      const opt = document.createElement('option');
-      opt.value = it.id; opt.textContent = it.name;
-      if (picks[i] === it.id) opt.selected = true;
-      sel.appendChild(opt);
+  const groups = spec.groups || [];
+  const modelGroups = model.freeGroups || [];
+  if (!spec.freePicks || !modelGroups.length) return out;
+  const allChosen = ((entry && entry.freePicks) || []).filter(Boolean);
+  // Um seletor por pick, POR grupo, filtrado às tags do grupo. As escolhas do
+  // personagem são atribuídas ao grupo a que pertencem (por id, não por índice de
+  // slot) → estável com múltiplos grupos e com o freePicks compactado.
+  for (let g = 0; g < groups.length; g++) {
+    const grp = groups[g];
+    const items = (modelGroups[g] && modelGroups[g].items) || [];
+    const itemIds = new Set(items.map(i => i.id));
+    const chosenHere = allChosen.filter(id => itemIds.has(id)); // escolhas deste grupo
+    for (let k = 0; k < grp.picks; k++) {
+      const current = chosenHere[k] || '';
+      const lbl = document.createElement('label');
+      lbl.className = 'freepick-l';
+      lbl.textContent = grp.picks > 1 ? `Grátis (${grp.label}) ${k + 1}: ` : `Grátis — 1 ${grp.label}: `;
+      const sel = document.createElement('select');
+      sel.className = 'freepick-select';
+      sel.dataset.sphere = title;
+      sel.dataset.cur = current; // id atual do slot → mutação por substituição (id-based)
+      const none = document.createElement('option');
+      none.value = ''; none.textContent = '—';
+      sel.appendChild(none);
+      for (const it of items) {
+        if (allChosen.includes(it.id) && it.id !== current) continue; // já escolhido em outro slot
+        const opt = document.createElement('option');
+        opt.value = it.id; opt.textContent = it.name;
+        if (it.id === current) opt.selected = true;
+        sel.appendChild(opt);
+      }
+      lbl.appendChild(sel);
+      out.push(lbl);
     }
-    lbl.appendChild(sel);
-    out.push(lbl);
   }
   return out;
 }
@@ -766,14 +777,14 @@ function buildFreePickSelectors(active, title, spec, model, entry) {
 // de mutar (mesma regra de addFreePickChecked); devolve true só se mutou, para o
 // chamador decidir como re-renderizar (refreshSphereUI na leitura, renderCharacter
 // na ficha). Compartilhado pelos dois handlers de `.freepick-select`.
-function applyFreePickSelection(active, title, index, talentId, anchorEl) {
-  if (talentId && dataIndex) {
-    const talent = dataIndex.talentById.get(talentId);
+function applyFreePickSelection(active, title, oldId, newId, anchorEl) {
+  if (newId && dataIndex) {
+    const talent = dataIndex.talentById.get(newId);
     const pre = talent ? Rules.prereqCheck(active, talent, dataIndex) : { ok: false, missing: [], unverified: [] };
-    if (!pre.ok) { showCharNotice(anchorEl, `Pré-requisito não atendido para "${talent ? talent.name : talentId}".`); return false; }
+    if (!pre.ok) { showCharNotice(anchorEl, `Pré-requisito não atendido para "${talent ? talent.name : newId}".`); return false; }
     if (pre.unverified.length) showCharNotice(anchorEl, `"${talent.name}" tem um pré-requisito em texto — confirme manualmente se ele é atendido.`);
   }
-  setFreePickAt(active, title, index, talentId);
+  setFreePick(active, title, oldId, newId);
   return true;
 }
 
@@ -921,9 +932,8 @@ function applyTalentToggle(active, title, item, cardEl) {
   if (granted) return addExtraTalentChecked(active, title, talent, cardEl); // esfera concedida: só extras (+1)
   const model = getSphereModel(title, entry.choices && entry.choices.pkg);
   const role = model.roleByKey.get(id) || 'extra';
-  const cap = resolveSpec(active, title, entry.choices).freePicks;
-  const room = (entry.freePicks || []).length < cap;
-  if (role === 'free' && room) return addFreePickChecked(active, title, talent, cardEl);
+  // grátis só se o GRUPO do talento ainda tem vaga (ex.: 1 tipo + 1 formato) — senão vira extra
+  if (role === 'free' && freePickRoom(active, title, id)) return addFreePickChecked(active, title, talent, cardEl);
   return addExtraTalentChecked(active, title, talent, cardEl);
 }
 // Confere Rules.prereqCheck antes de conceder um grátis — o grupo já filtra por
@@ -1072,7 +1082,7 @@ function setupFavorites() {
     if (!sel) return;
     const active = getActiveChar();
     if (!active) return;
-    if (applyFreePickSelection(active, sel.dataset.sphere, parseInt(sel.dataset.i || '0', 10), sel.value || null, sel)) {
+    if (applyFreePickSelection(active, sel.dataset.sphere, sel.dataset.cur || null, sel.value || null, sel)) {
       refreshSphereUI(sel.dataset.sphere);
     }
   });
@@ -1121,6 +1131,38 @@ function recordVisit(chapter, isCover) {
 // Fragmento com os .talent-card do capítulo (ordem de leitura, SEM deduplicar).
 // getSphereModel precisa de todos os cards — nomes repetidos (ex.: Conjuração tem
 // uma habilidade-base "Invocação" e um talento avançado homônimo) colidiriam no mapa.
+// Ponto 2 (leitor) — ordena alfabeticamente os .talent-card DENTRO de cada
+// sub-categoria. As esferas ocupam várias páginas (uma <section> por página) e uma
+// sub-categoria (ex.: "Tipo de Explosão", 42 talentos) atravessa muitas seções → é
+// preciso achatar os cards de TODAS as seções em ordem de leitura e ordenar a corrida
+// inteira, mesmo cruzando fronteiras de página. Conservador: uma corrida quebra em
+// QUALQUER elemento não-card (cabeçalhos h2/h3/h4-grupo, tabelas soltas), então nunca
+// cruza uma sub-categoria nem move habilidades-base (.base-ability). Ao reordenar, os
+// cards de seções seguintes são puxados para a posição do 1º card (marcador).
+function sortReaderTalentCards(root) {
+  const titleOf = card => { const h = card.querySelector(':scope > h4, :scope > h5'); return h ? h.textContent.trim() : ''; };
+  const seq = [];
+  root.querySelectorAll('section[id]').forEach(sec => { for (let el = sec.firstElementChild; el; el = el.nextElementSibling) seq.push(el); });
+  let run = [];
+  const flush = () => {
+    if (run.length > 1) {
+      const first = run[0], parent = first.parentNode;
+      const marker = document.createComment('');
+      parent.insertBefore(marker, first);
+      run.slice().sort((a, b) => titleOf(a).localeCompare(titleOf(b), 'pt-BR')).forEach(n => {
+        if (n.parentNode) n.parentNode.removeChild(n);
+        parent.insertBefore(n, marker);
+      });
+      parent.removeChild(marker);
+    }
+    run = [];
+  };
+  for (const el of seq) {
+    if (el.classList && el.classList.contains('talent-card') && !el.classList.contains('base-ability')) run.push(el);
+    else flush();
+  }
+  flush();
+}
 function buildChapterCardFrag(chapter) {
   const frag = document.createDocumentFragment();
   for (let pn = chapter.start; pn <= chapter.end; pn++) {
@@ -1367,6 +1409,30 @@ async function reconcileSharedTables() {
     }
   }
   if (changed && currentChapterIndex === -1) renderCharacter();
+}
+
+// Ponto 1 — botão de conta no cabeçalho: um mestre que nunca criou personagem
+// consegue logar sem ir à ficha (e a aba "Minha mesa" passa a aparecer). Deslogado
+// → entra; logado → sai. Reflete o estado via `cloud-auth`. Some sem nuvem configurada.
+function setupAccountButton() {
+  const btn = document.getElementById('account-toggle');
+  if (!btn) return;
+  if (!window.FIREBASE_CONFIG) { btn.hidden = true; return; }
+  btn.hidden = false;
+  ensureCloud(); // resolve o estado de login no boot, sem depender de abrir a ficha
+  const refresh = () => {
+    const user = window.Cloud && window.Cloud.user;
+    btn.classList.toggle('signed-in', !!user);
+    const label = user ? `Conta: ${user.name || user.email || 'Google'} — sair` : 'Entrar com Google';
+    btn.title = label; btn.setAttribute('aria-label', label);
+  };
+  btn.addEventListener('click', () => {
+    if (window.Cloud && window.Cloud.isSignedIn && window.Cloud.isSignedIn()) window.Cloud.signOut();
+    else cloudSignIn();
+  });
+  window.addEventListener('cloud-auth', refresh);
+  window.addEventListener('cloud-ready', refresh);
+  refresh();
 }
 
 // Registra os listeners de nuvem uma vez (chamado no setupCharacter).
@@ -1621,28 +1687,40 @@ function setPackage(char, title, pkgId) {
 // Define/limpa o grátis do slot `index` (usado pelos seletores da barra). `talentId`
 // é um id de talento (ou null p/ limpar); a checagem de pré-requisito acontece no
 // chamador (setupFavorites), aqui só a mutação de estado.
-function setFreePickAt(char, title, index, talentId) {
+// Substitui uma escolha grátis (por id, não por índice de slot): remove oldId e
+// adiciona newId (respeitando a cota do grupo). id-based → estável com multi-grupo.
+function setFreePick(char, title, oldId, newId) {
   const e = acquireSphere(char, title);
-  const cap = resolveSpec(char, title, e.choices).freePicks;
-  const picks = (e.freePicks || []).slice(0, cap);
-  while (picks.length < cap) picks.push(null);
-  if (talentId) {
-    e.talents = (e.talents || []).filter(id => id !== talentId);   // grátis e extra são exclusivos
-    for (let i = 0; i < picks.length; i++) if (i !== index && picks[i] === talentId) picks[i] = null;
-    if (index < cap) picks[index] = talentId;
-  } else if (index < picks.length) {
-    picks[index] = null;
+  let picks = (e.freePicks || []).slice();
+  if (oldId) picks = picks.filter(id => id !== oldId);
+  if (newId && !picks.includes(newId)) {
+    e.talents = (e.talents || []).filter(id => id !== newId);   // grátis e extra são exclusivos
+    picks.push(newId);
   }
-  e.freePicks = picks.filter(Boolean);
+  e.freePicks = picks;
   updateCharacter(char.id, { spheres: char.spheres });
 }
-// Adiciona um grátis no próximo slot livre (clique no + de um card elegível).
-// Mutação pura — quem chama (addFreePickChecked) já confirmou o pré-requisito.
+// Cota de grátis do GRUPO ao qual `talentId` pertence ainda tem vaga? (p/ o + dos
+// cards: um talento de tipo não deve virar grátis se o slot de tipo já está cheio.)
+function freePickRoom(char, title, talentId) {
+  const e = sphereEntry(char, title);
+  const spec = resolveSpec(char, title, e && e.choices);
+  const model = getSphereModel(title, e && e.choices && e.choices.pkg);
+  const groups = spec.groups || [], mg = model.freeGroups || [];
+  const picks = (e && e.freePicks) || [];
+  for (let g = 0; g < groups.length; g++) {
+    const ids = new Set(((mg[g] && mg[g].items) || []).map(i => i.id));
+    if (!ids.has(talentId)) continue;
+    if (picks.filter(id => ids.has(id)).length < groups[g].picks) return true;
+  }
+  return false;
+}
+// Adiciona um grátis (clique no + de um card elegível). Só se o GRUPO do talento
+// ainda tem vaga. Quem chama (addFreePickChecked) já confirmou o pré-requisito.
 function addFreePick(char, title, talentId) {
   const e = acquireSphere(char, title);
-  const cap = resolveSpec(char, title, e.choices).freePicks;
   if (!Array.isArray(e.freePicks)) e.freePicks = [];
-  if (e.freePicks.length >= cap || e.freePicks.includes(talentId)) return false;
+  if (e.freePicks.includes(talentId) || !freePickRoom(char, title, talentId)) return false;
   e.talents = (e.talents || []).filter(id => id !== talentId);
   e.freePicks.push(talentId);
   updateCharacter(char.id, { spheres: char.spheres });
@@ -1674,14 +1752,20 @@ function toggleExtraTalent(char, title, talentId) {
 // Nome-base de um talento (sem a tag entre parênteses no fim): "Cativar (encanto)" → "Cativar".
 // Usado para casar talentos concedidos (nomeados sem tag) com os nomes reais.
 function talentBaseName(s) { return String(s).replace(/\s*\([^)]*\)\s*$/, '').trim(); }
-function matchesFreeGroupStructured(talent, fg) {
-  if (!fg) return true; // fallback: qualquer não-base é elegível ao grátis
-  if (fg.tag || fg.tags) {
-    const want = (fg.tags || [fg.tag]).map(normalizeTerm);
-    return (talent.tags || []).map(normalizeTerm).some(w => want.includes(w));
-  }
-  if (fg.h3) { try { return new RegExp(fg.h3, 'i').test(talent.group || ''); } catch (_) { return false; } }
-  return false;
+// Grupo-grátis normalizado: { tags:[normalizado], h3:regex|null, label, picks }.
+// fg legado ({tag}/{tags}/{h3}) → grupo. Um grupo com tags vazias e sem h3 casa
+// qualquer talento não-base (fallback "lista inteira").
+function fgToGroup(fg, label, picks) {
+  if (!fg) return { tags: [], h3: null, label: label || 'talento', picks };
+  if (fg.h3) return { tags: [], h3: fg.h3, label: label || 'talento', picks };
+  const tags = (fg.tags || (fg.tag ? [fg.tag] : [])).map(normalizeTerm);
+  return { tags, h3: null, label: label || 'talento', picks };
+}
+function groupMatches(talent, g) {
+  if (!g) return true;
+  if (g.h3) { try { return new RegExp(g.h3, 'i').test(talent.group || ''); } catch (_) { return false; } }
+  if (g.tags && g.tags.length) { const tt = (talent.tags || []).map(normalizeTerm); return g.tags.some(w => tt.includes(w)); }
+  return true; // grupo sem filtro → qualquer não-base
 }
 // Spec de CLASSIFICAÇÃO (independe do personagem/proficiência): grupo-grátis,
 // tags de talento válidas e se a esfera/pacote pode conceder grátis. Depende só
@@ -1689,17 +1773,32 @@ function matchesFreeGroupStructured(talent, fg) {
 function classSpec(title, pkg) {
   const sph = sphereByTitle(title);
   const rule = (sph && sph.acquisition) || {};
-  let fg = rule.freeGroup || null, freeLabel = rule.freeLabel || 'talento', talentTags = rule.talentTags || null;
-  let baseFree = rule.freePicks != null ? rule.freePicks : 1;
+  let freeLabel = rule.freeLabel || 'talento', talentTags = rule.talentTags || null;
   let conds = rule.conditionals || [];
   let baseTalentIds = [];   // habilidades-base concedidas pelo pacote (ex.: Dissipar)
+  // groups[] = grupos-grátis normalizados (com contagem BASE, sem condicionais).
+  // Fontes: pacote escolhido (1 grupo) · rule.freeGroups (multi-grupo tipado, novo)
+  // · rule.freeGroup+freePicks (legado, 1 grupo). Condicionais aumentam picks no
+  // resolveSpec (grupo[0]). Esferas só-condicionais ganham um grupo sem filtro.
+  let groups = [];
   if (rule.packages) {
     const opt = rule.packages.options.find(o => o.id === pkg);
     if (opt) {
-      fg = opt.freeGroup || null; freeLabel = opt.freeLabel || freeLabel;
-      talentTags = opt.talentTags || talentTags; baseFree = opt.freePicks != null ? opt.freePicks : 0;
+      freeLabel = opt.freeLabel || freeLabel; talentTags = opt.talentTags || talentTags;
       conds = opt.conditionals || []; baseTalentIds = opt.baseTalentIds || [];
-    } else { baseFree = 0; conds = []; } // pacote ainda não escolhido
+      const n = opt.freePicks != null ? opt.freePicks : 0;
+      if (n > 0) groups = [fgToGroup(opt.freeGroup, freeLabel, n)];
+      else if (conds.length) groups = [fgToGroup(opt.freeGroup, freeLabel, 0)];
+    } else { conds = []; } // pacote ainda não escolhido → nada grátis
+  } else if (Array.isArray(rule.freeGroups)) {
+    groups = rule.freeGroups.map(g => ({
+      tags: (g.tags || (g.tag ? [g.tag] : [])).map(normalizeTerm),
+      h3: g.h3 || null, label: g.label || freeLabel, picks: g.picks != null ? g.picks : 1,
+    }));
+  } else {
+    const n = rule.freePicks != null ? rule.freePicks : 1;
+    if (n > 0) groups = [fgToGroup(rule.freeGroup, freeLabel, n)];
+    else if (conds.length) groups = [fgToGroup(rule.freeGroup, freeLabel, 0)]; // só-condicional (Armadilha etc.)
   }
   // O que "pertence a algum pacote" desta esfera (tags de pacote + habilidades-base
   // de qualquer pacote) — p/ talentRole distinguir talento GERAL de talento de OUTRO
@@ -1716,20 +1815,25 @@ function classSpec(title, pkg) {
     for (const t of set) allPackageTags.push(t);
     for (const id of bases) allPackageBaseIds.push(id);
   }
-  return { fg, freeLabel, talentTags, baseFree, conds, baseTalentIds, allPackageTags, allPackageBaseIds, canFree: baseFree > 0 || conds.length > 0, packages: rule.packages || null };
+  return { groups, freeLabel, talentTags, conds, baseTalentIds, allPackageTags, allPackageBaseIds, canFree: groups.length > 0 || conds.length > 0, packages: rule.packages || null };
 }
 // Spec RESOLVIDO (com o personagem): capacidade de grátis = base + condicionais
 // satisfeitas por proficiência.
 function resolveSpec(char, title, choices) {
   choices = choices || {};
   const cs = classSpec(title, choices.pkg);
-  let freePicks = cs.baseFree;
+  const groups = cs.groups.map(g => ({ tags: g.tags, h3: g.h3, label: g.label, picks: g.picks }));
   const conditionals = cs.conds.map(c => {
     const satisfied = isProficient(char, c.requires);
-    if (satisfied) freePicks += (c.addPicks != null ? c.addPicks : 1);
     return { requires: c.requires, addPicks: c.addPicks != null ? c.addPicks : 1, satisfied };
   });
-  return { fg: cs.fg, freeLabel: cs.freeLabel, talentTags: cs.talentTags, canFree: cs.canFree, freePicks, conditionals, packages: cs.packages, pkg: choices.pkg || null };
+  const addTotal = conditionals.filter(c => c.satisfied).reduce((s, c) => s + c.addPicks, 0);
+  if (addTotal > 0) {
+    if (!groups.length) groups.push({ tags: [], h3: null, label: cs.freeLabel, picks: 0 });
+    groups[0].picks += addTotal; // condicionais aumentam o 1º grupo (esferas condicionais são de grupo único)
+  }
+  const freePicks = groups.reduce((s, g) => s + g.picks, 0);
+  return { groups, freeLabel: cs.freeLabel, talentTags: cs.talentTags, canFree: cs.canFree, freePicks, conditionals, packages: cs.packages, pkg: choices.pkg || null };
 }
 // Papel ESTRUTURAL de um Talent (base/free/extra/ignore), lido do dado, não do DOM.
 function talentRole(talent, cs) {
@@ -1745,7 +1849,7 @@ function talentRole(talent, cs) {
   }
   if (talent.kind === 'base') return 'base';
   if (!cs.canFree) return 'extra';
-  return matchesFreeGroupStructured(talent, cs.fg) ? 'free' : 'extra';
+  return (cs.groups || []).some(g => groupMatches(talent, g)) ? 'free' : 'extra'; // grátis se casa QUALQUER grupo
 }
 // Contexto de concessão de uma esfera para um personagem (p/ cardDisplayRole/UI).
 function grantCtxFor(char, title) {
@@ -1777,20 +1881,36 @@ function getSphereModel(title, pkg) {
   if (sphereModelCache.has(key)) return sphereModelCache.get(key);
   const sph = sphereByTitle(title);
   const cs = classSpec(title, pkg);
-  const model = { bases: [], freeGroup: [], extras: [], freeLabel: cs.freeLabel, roleByKey: new Map(), frag: null };
+  // freeGroups = itens elegíveis POR grupo (p/ os seletores tipados); freeGroup = união plana.
+  const model = { bases: [], freeGroup: [], extras: [], freeLabel: cs.freeLabel, roleByKey: new Map(),
+                  freeGroups: (cs.groups || []).map(g => ({ label: g.label, tags: g.tags, h3: g.h3, picks: g.picks, items: [] })), frag: null };
   if (sph) {
     for (const t of sph.talents) {
       const role = talentRole(t, cs);
       if (role === 'ignore') continue;
-      const item = { id: t.id, name: t.name, sphere: title, section: t.section };
+      const item = { id: t.id, name: t.name, sphere: title, section: t.section, group: t.group || '' };
       model.roleByKey.set(t.id, role);
       (role === 'base' ? model.bases : role === 'free' ? model.freeGroup : model.extras).push(item);
+      if (role === 'free') for (let gi = 0; gi < (cs.groups || []).length; gi++) if (groupMatches(t, cs.groups[gi])) model.freeGroups[gi].items.push(item);
     }
   }
+  // Ponto 2 — ordem alfabética DENTRO de cada sub-categoria (group), preservando a
+  // ordem de 1ª aparição dos grupos. Aplica a freeGroup/extras + itens por grupo.
+  sortBySubcategory(model.freeGroup, sph); sortBySubcategory(model.extras, sph);
+  for (const g of model.freeGroups) g.items.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
   const chapter = chapters.find(ch => ch.title === title);
   if (chapter) model.frag = buildChapterCardFrag(chapter); // só p/ clonar cards completos na ficha
   sphereModelCache.set(key, model);
   return model;
+}
+// Ordena uma lista de itens {name, group} alfabeticamente DENTRO de cada sub-categoria
+// (group), mantendo os grupos na ordem de 1ª aparição no dado da esfera. `sph` fornece
+// essa ordem canônica dos grupos.
+function sortBySubcategory(items, sph) {
+  const order = new Map();
+  if (sph) for (const t of sph.talents) { const g = t.group || ''; if (!order.has(g)) order.set(g, order.size); }
+  const gi = g => (order.has(g) ? order.get(g) : 9999);
+  items.sort((a, b) => gi(a.group || '') - gi(b.group || '') || a.name.localeCompare(b.name, 'pt-BR'));
 }
 // Acha o card renderizado de um Talent estruturado, desambiguando homônimos pelo
 // mesmo sinal usado na extração (.base-ability ⟺ kind:'base').
@@ -2635,8 +2755,36 @@ function buildSphereDetail(active, def) {
   body.className = 'cbd-body';
   const desc = document.createElement('div');
   desc.className = 'cbd-desc';
-  desc.textContent = chapter ? cardDescription({ text: def.title, anchor: chapter.anchor }) : '';
+  // Ponto 3 — texto INICIAL da esfera (preâmbulo que explica as concessões), com
+  // fallback para a descrição curta se o intro não foi capturado.
+  const sph = dataIndex && dataIndex.sphereById.get(def.id);
+  const introText = (sph && sph.intro) || (chapter ? cardDescription({ text: def.title, anchor: chapter.anchor }) : '');
+  for (const para of String(introText).split(/\n\n+/)) {
+    if (!para.trim()) continue;
+    const p = document.createElement('p'); p.textContent = para.trim(); desc.appendChild(p);
+  }
   body.appendChild(desc);
+
+  // Talentos-base concedidos ao adquirir (kind:base) — ex.: "Explosão Destrutiva".
+  const model = getSphereModel(def.title, null);
+  if (model.bases.length) {
+    const h = document.createElement('p'); h.className = 'cbd-sub'; h.textContent = 'Habilidade(s) base (grátis ao adquirir):';
+    body.appendChild(h);
+    const ul = document.createElement('ul'); ul.className = 'cbd-baselist';
+    for (const b of model.bases) { const li = document.createElement('li'); li.textContent = b.name; ul.appendChild(li); }
+    body.appendChild(ul);
+  }
+  // Escolhas grátis TIPADAS que a esfera concede (ex.: 1 de tipo + 1 de formato) →
+  // deixa claro por que aparecem seletores grátis ao adquirir.
+  const spec = resolveSpec(active, def.title, {});
+  const grpLines = (spec.groups || []).filter(g => g.picks > 0).map(g => `${g.picks}× ${g.label}`);
+  if (grpLines.length) {
+    const h = document.createElement('p'); h.className = 'cbd-sub'; h.textContent = 'Escolha(s) grátis ao adquirir:';
+    body.appendChild(h);
+    const ul = document.createElement('ul'); ul.className = 'cbd-baselist';
+    for (const line of grpLines) { const li = document.createElement('li'); li.textContent = line; ul.appendChild(li); }
+    body.appendChild(ul);
+  }
   box.appendChild(body);
   return box;
 }
@@ -3499,7 +3647,7 @@ function setupCharacter() {
     const sel = e.target.closest('.freepick-select');
     if (sel && sel.closest('.char-sphere')) {
       const active = getActiveChar();
-      if (active && applyFreePickSelection(active, sel.dataset.sphere, parseInt(sel.dataset.i || '0', 10), sel.value || null, sel)) renderCharacter();
+      if (active && applyFreePickSelection(active, sel.dataset.sphere, sel.dataset.cur || null, sel.value || null, sel)) renderCharacter();
       return;
     }
   });
@@ -4191,6 +4339,7 @@ function renderChapter(index) {
   const isSphere = !isCover && chapter.sectionLabel !== 'Classes'
     && chapter.title !== PARAMS_CHAPTER_TITLE && chapter.title !== GLOSSARY_CHAPTER_TITLE;
   if (isSphere) enhanceTalents(sectionsFrag);
+  if (isSphere) sortReaderTalentCards(sectionsFrag); // ponto 2 — alfabético dentro de cada sub-categoria
   linkSphereCrossRefs(sectionsFrag, chapter);
   linkGlossaryTerms(sectionsFrag, chapter);
   highlightMechanics(sectionsFrag);

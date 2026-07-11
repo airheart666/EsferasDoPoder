@@ -99,8 +99,16 @@
  */
 
 /**
+ * @typedef {Object} FreeGroupTyped  Grupo-grátis tipado (freeGroups): filtro por tag(s) + contagem própria.
+ * @property {string} [tag]
+ * @property {string[]} [tags]
+ * @property {string} [h3]
+ * @property {number} [picks]
+ * @property {string} [label]
+ *
  * @typedef {Object} Acquisition
  * @property {FreeGroup} [freeGroup]
+ * @property {FreeGroupTyped[]} [freeGroups]  Múltiplos grupos-grátis tipados (ex.: Destruição = tipo + formato).
  * @property {string} [freeLabel]
  * @property {number} [freePicks]
  * @property {string[]} [talentTags]
@@ -122,6 +130,7 @@
  * @property {string}  name
  * @property {Section} section
  * @property {string|null} [summary]
+ * @property {string} [intro]  Preâmbulo da esfera (builder — ponto 3).
  * @property {Theme|null}  [theme]
  * @property {Acquisition|null} [acquisition]
  * @property {Talent[]} talents

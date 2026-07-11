@@ -445,5 +445,6 @@
       "body": "Sempre que usar Roubar Perícia, você pode escolher roubar um talento (mágico ou marcial) em vez de uma proficiência em perícia. Se tentar roubar uma esfera base para a qual o alvo possua talentos adicionais além do básico, você recebe desvantagem no seu teste. Criaturas afetadas não podem usar habilidades para as quais o talento pré-requisito foi roubado, e se você roubar talentos com pré-requisitos que você não atende, não poderá usá-los. Este é um efeito mágico."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Mestres da sutileza e da astúcia, os praticantes da esfera do Canalha sabem como manipular os oponentes para que baixem a guarda antes de tomar tudo o que têm.\n\nAo ganhar a esfera do Canalha, você ganha proficiência em Prestidigitação. Se você já possui proficiência em Prestidigitação, você ganha um talento bônus desta esfera. Você pode usar Roubar não apenas para pegar objetos, mas também para pegar objetos da mão de um alvo, como se estivesse realizando um desarme. Você também ganha um talento (truque) à sua escolha.\n\nAlguns talentos são marcados (truque). Você pode aplicar os benefícios de um único talento (truque) a um truque sujo ou roubo. Você deve atender aos pré-requisitos do talento antes de poder adicionar seus efeitos."
 }

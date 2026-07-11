@@ -8,7 +8,18 @@
     "s": 52,
     "sig": "aprimoramento"
   },
-  "acquisition": null,
+  "acquisition": {
+    "freeGroups": [
+      {
+        "tags": [
+          "aprimorar",
+          "degradar"
+        ],
+        "picks": 1,
+        "label": "aprimorar ou degradar"
+      }
+    ]
+  },
   "talents": [
     {
       "id": "aprimoramento-aprimorar",
@@ -499,5 +510,6 @@
       "body": "Você não pode usar a habilidade de aprimoramento. Você ganha um talento bônus, mas tanto o talento ganho ao escolher esta esfera quanto o talento bônus ganho por esta variante devem ser talentos de (aprimorar,degradar).\n\nMagias Pessoais\n\nVocê só pode usar suas habilidades de degradar e aprimorar em si mesmo e em seus próprios equipamentos, independentemente do alcance da esfera de Aprimoramento. Qualquer efeito de aprimoramento concedido a um objeto deixa de funcionar quando o objeto não estiver em sua posse ao final do seu turno. Você ganha um talento de (aprimorar) como talento bônus."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode aplicar melhorias em criaturas e objetos, alterando suas propriedades. Ao obter a esfera de Aprimoramento pela primeira vez, você ganha as habilidades de degradar e aprimorar, além de um talento (aprimorar) ou (degradar) à sua escolha."
 }

@@ -218,7 +218,7 @@ body::after {
 
 #top-title { flex: 1; font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; letter-spacing: 0.01em; }
 
-#menu-toggle, #theme-toggle, #home-link, #search-toggle, #reading-toggle {
+#menu-toggle, #theme-toggle, #home-link, #search-toggle, #reading-toggle, #account-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -234,7 +234,8 @@ body::after {
   opacity: 0.85;
   transition: opacity 0.15s, background 0.15s;
 }
-#menu-toggle:hover, #theme-toggle:hover, #home-link:hover, #search-toggle:hover, #reading-toggle:hover { opacity: 1; background: var(--chrome-hover); color: var(--accent); }
+#menu-toggle:hover, #theme-toggle:hover, #home-link:hover, #search-toggle:hover, #reading-toggle:hover, #account-toggle:hover { opacity: 1; background: var(--chrome-hover); color: var(--accent); }
+#account-toggle.signed-in { color: var(--verdigris); opacity: 1; } /* logado → destaque verdete */
 #menu-toggle:active, #theme-toggle:active, #home-link:active, #search-toggle:active, #reading-toggle:active { background: var(--chrome-hover); }
 #reading-toggle { font-family: var(--font-display); font-size: 1rem; font-weight: 500; }
 #reading-toggle[aria-expanded="true"] { background: var(--chrome-hover); color: var(--accent); opacity: 1; }
@@ -2145,6 +2146,10 @@ h4.base-ability::after {
 .cbd-desc, .cbd-desc * { min-width: 0; overflow-wrap: break-word; }
 .cbd-desc .fav-card, .cbd-desc .talent-card { margin: 0; }
 .cbd-desc table { display: block; overflow-x: auto; max-width: 100%; }
+.cbd-desc p { margin-bottom: 0.6rem; }
+.cbd-sub { font-family: var(--font-ui); font-weight: 700; font-size: 0.82rem; color: var(--accent); margin: 0.8rem 0 0.3rem; }
+.cbd-baselist { margin: 0 0 0.4rem 1.1rem; font-size: 0.92rem; }
+.cbd-baselist li { margin-bottom: 0.15rem; }
 .char-bench-acquire {
   align-self: flex-start;
   margin-top: auto;

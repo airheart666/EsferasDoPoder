@@ -1408,5 +1408,6 @@
       "body": "Como uma ação ou ação bônus, você pode gastar seu foco marcial para criar um item alquímico, veneno ou poção instantaneamente.\n\nComo custo adicional, você deve gastar uma quantidade de material de criação ou ouro cujo valor seja igual ao preço de compra do item; itens sem um preço de compra estabelecido não podem ser criados dessa forma. Para usar este talento, você também deve ter as ferramentas apropriadas à mão ou prontamente disponíveis; itens de alquimia exigem suprimentos de alquimista, venenos exigem kits de envenenador e poções exigem suprimentos de cervejeiro ou um kit de herborismo. Você só pode usar este talento um número de vezes igual ao seu bônus de proficiência. Você recupera os usos gastos ao terminar um descanso longo."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "O treinamento na esfera marcial da Alquimia ensina você a combinar substâncias químicas voláteis de forma rápida e eficiente para obter efeitos novos ou aprimorados.\n\nAo adquirir a esfera da Alquimia pela primeira vez, escolha entre o pacote de fórmula ou o pacote de veneno."
 }

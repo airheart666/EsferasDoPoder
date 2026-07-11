@@ -402,5 +402,6 @@
       "body": "Você pode gastar seu foco marcial como uma ação para bater as palmas das mãos, criando uma onda de choque trovejante que derruba tudo em seu caminho. Criaturas dentro de uma esfera de 9 metros sofrem 1d8 + modificador de Força de dano trovejante (aumentando em 1d8 nos níveis 5 (2d8), 11 (3d8) e 17 (4d8)) e ficam surdas por 1d4+1 rodadas. Um teste de resistência de Constituição bem-sucedido reduz o dano pela metade e nega o efeito de surdez. Todas as fontes de fogo não mágicas dentro da área afetada são extintas instantaneamente."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Os Brutos gostam de impor sua força, empurrando e golpeando os inimigos para movê-los pelo campo de batalha. Ao adquirir a esfera do Bruto, você ganha proficiência na perícia Atletismo. Se você já for proficiente, em vez disso, ganha um talento adicional desta esfera.\n\nTodos os praticantes da esfera do Bruto adquirem a seguinte habilidade:"
 }

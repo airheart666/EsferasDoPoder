@@ -186,6 +186,16 @@ function extractSphere(sphere, chapter, pages, meta) {
     else if (el.tagName === 'H4' && !seenH3) baseSet.add(el);
   }
 
+  // intro = parágrafos do preâmbulo da esfera (antes do 1º talento/h3/h4), pulando
+  // o título (h1/h2). É o texto que explica as concessões (ponto 3 do builder).
+  const introParts = [];
+  for (const el of items) {
+    if (/^H[1-2]$/.test(el.tagName)) continue;                 // título da esfera
+    if (el.tagName === 'H3' || el.tagName === 'H4') break;      // começaram os talentos
+    if (el.tagName === 'P') { const t = el.textContent.trim(); if (t) introParts.push(t); }
+  }
+  const intro = introParts.join('\n\n') || null;
+
   const isTable = el => /^\s*tabela\s*:/i.test(el.textContent);
   const nextContent = i => {
     for (let j = i + 1; j < items.length; j++) {
@@ -282,7 +292,7 @@ function extractSphere(sphere, chapter, pages, meta) {
       _prereqs: prereqs,            // internal, stripped after id resolution
     });
   }
-  return { section, talents };
+  return { section, talents, intro };
 }
 
 // KG-4: "(esfera dupla, A, B (talento), ...)" in a talent NAME encodes the required
@@ -419,8 +429,9 @@ function main() {
       talents: [],
       _reviewed: false,
     };
-    const { talents } = extractSphere(sphere, ch, pages, {});
+    const { talents, intro } = extractSphere(sphere, ch, pages, {});
     sphere.talents = talents;
+    if (intro) sphere.intro = intro;
     resolvePackageBaseTalents(sphere);
     allTalents.push(...talents);
     results.push(sphere);

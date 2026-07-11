@@ -1048,5 +1048,6 @@
       "body": "Ao se teletransportar, você deve sempre aplicar o aprimoramento para aumentar a distância que você pode teletransportar um alvo, mesmo que esteja se teletransportando para uma distância menor. Você recebe um talento (teletransporte) como um talento bônus. Você precisa ter a habilidade de teletransporte para selecionar esta variante."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode manipular o espaço à sua vontade. Ao obter a esfera de distorção pela primeira vez, você ganha as habilidades de teletransporte e de manipular espaço."
 }

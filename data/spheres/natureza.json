@@ -1220,5 +1220,6 @@
       "body": "Você não pode usar habilidades de protomancia, apenas talentos (espírito). Você deve escolher um pacote normalmente, mas não ganha nenhuma de suas habilidades de protomancia, contando apenas como possuindo o pacote para fins de qualificação para talentos (espírito). Você ganha um talento (espírito) de sua escolha como talento bônus."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode comandar o próprio terreno para obedecer às suas ordens.\n\nAo ganhar a esfera da Natureza pela primeira vez, você ganha as habilidades de esfera de protomancia e  espírito. Selecione um dos seguintes pacotes da Natureza: ar, terra, fogo, metal, planta ou água. O talento Protomancia Expandida concede acesso a pacotes adicionais. Cada talento ou habilidade de esfera da Natureza indicará se a duração é instantânea ou de concentração. Além disso, a maioria dos talentos da esfera da Natureza possui requisitos ambientais ou de terreno adicionais que devem ser atendidos para usar o talento ou habilidade da esfera."
 }

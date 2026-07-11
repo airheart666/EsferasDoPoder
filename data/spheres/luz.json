@@ -850,5 +850,6 @@
       "body": "Não pode criar brilhos. Apenas seleciona talentos (lente) e talentos que aprimoram efeitos (lente). Ganha um talento (lente) como talento bônus.\n\nBrilho Errante\n\nNão pode colocar brilhos em objetos ou criaturas. Ganha o talento Luzes Dançantes como talento bônus."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode criar e manipular a luz. Ao adquirir a esfera da Luz, você obtém as habilidades de iluminar, brilho e lente."
 }

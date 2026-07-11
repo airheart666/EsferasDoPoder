@@ -2008,5 +2008,6 @@
       "body": "Você pode reduzir o custo em pontos de magia do aprimoramento de talento Golpe (metaesfera) em 1 ponto de magia (mínimo 0)."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "A esfera Universal serve como um lar para diversas habilidades que não se encaixam em outras esferas, interagem com múltiplas esferas ou, por algum outro motivo, precisam de um lugar específico.\n\nAo obter a esfera Universal pela primeira vez, selecione e receba um dos seguintes pacotes universais: dissipar, mana, metaesfera, criação de feitiços ou magia selvagem. Alguns pacotes possuem requisitos ou pré-requisitos adicionais para serem utilizados. O talento Pacote Universal concede acesso a pacotes adicionais."
 }

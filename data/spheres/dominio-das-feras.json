@@ -607,5 +607,6 @@
       "body": "Você não ganha a habilidade de Montaria Habilidosa. Você ganha Cavaleiro de Escaramuça com esta variante."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "A esfera de Domínio das Feras concentra-se em todas as formas de manejo de animais.\n\nVocê ganha proficiência na perícia Lidar com Animais. Se você já for proficiente nessa perícia, ganha um talento bônus desta esfera em vez disso. Além disso, você ganha o pacote de Cavaleiro ou Domador da esfera Domínio das Feras.\n\nAlgumas habilidades exigem ações conjuntas. Essas ações requerem que tanto o usuário quanto a criatura domesticada paguem o custo de ação necessário juntos.\n\nEspecial: O pacote de Domador e os talentos relacionados a ele não podem ser adquiridos como talentos temporários ou talentos intercambiáveis; eles não podem ser colocados na arma personalizada de um armígero ou alterados através do talento Combatente Intuitivo, etc. Da mesma forma, os jogadores não podem fazer com que seus companheiros conjurados, companheiros animais, ajudantes ou qualquer outra coisa que não sejam seus próprios personagens jogadores adquiram este pacote ou seus talentos relacionados."
 }

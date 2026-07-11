@@ -8,7 +8,17 @@
     "s": 38,
     "sig": "tempo"
   },
-  "acquisition": null,
+  "acquisition": {
+    "freeGroups": [
+      {
+        "tags": [
+          "cronos"
+        ],
+        "picks": 1,
+        "label": "cronos"
+      }
+    ]
+  },
   "talents": [
     {
       "id": "tempo-alterar-o-tempo",
@@ -851,5 +861,6 @@
       "body": "Você só pode escolher a si mesmo como alvo ao usar habilidades de alteração do tempo que tenham criaturas como alvo. Você não pode adquirir o talento Fuso Temporal. Você recebe um talento bônus da esfera Tempo."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você pode alterar o próprio fluxo do tempo. Ao obter a esfera do Tempo pela primeira vez, você ganha a habilidade Alterar Tempo e um talento (cronos) à sua escolha."
 }

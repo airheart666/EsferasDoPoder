@@ -227,5 +227,6 @@
       "body": "Como ação, você pode gastar 10 peças de munição de uma arma de longo alcance para criar uma escada de flechas/virotes. Deve haver uma parede, penhasco ou outra superfície adequada, quase vertical, para você usar ao criar uma escada de flechas. A escada não pode se estender por mais de 1,5 metro por nível, mas você pode escolher seu formato (indo em linha reta, para cima ou para baixo, conforme desejar, mas não mais inclinado do que 45 graus em nenhuma direção). Você pode gastar seu foco marcial para executar esta manobra como uma reação, como construir uma plataforma para impedir que alguém caia.\n\nIsso só funciona com armas que disparam flechas, virotes ou outras munições apropriadas e não possui a propriedade de carregamento."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Praticantes de Barragem se especializam no uso de armas de longo alcance para realizar disparos rápidos, geralmente do meio do combate corpo a corpo.\n\nTodos os praticantes da esfera de Barragem ganham a seguinte habilidade:"
 }

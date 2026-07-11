@@ -592,5 +592,6 @@
       "body": "Você não ganha proficiência em Atletismo ou Acrobacia e não pode adquirir o talento Treinamento. Você ganha um talento (de movimento) como talento bônus."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Ao adquirir a esfera de Atletismo, você se torna proficiente em Atletismo ou Acrobacia. Se você já for proficiente em ambas, em vez disso, escolha um talento qualquer desta esfera como talento bônus.\n\nAlém disso, você adquire a seguinte habilidade:"
 }

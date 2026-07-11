@@ -615,5 +615,6 @@
       "body": "Você não ganha a habilidade Beberrão e não pode adquirir o status de bêbado nem selecionar talentos (bêbado). Você não pode possuir esta variante e a variante Alcoólatra simultaneamente. Você ganha Especialista da Taverna como talento bônus."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Brigões se especializam em usar tudo o que estiver disponível, dispostos a usar pernas de mesa, cadeiras e qualquer outra coisa como arma enquanto bebem uma cerveja gelada.\n\nPraticantes da Esfera do Brigão recebem as seguintes habilidades:"
 }

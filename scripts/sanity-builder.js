@@ -203,6 +203,23 @@ async function main() {
   const migrated2 = t.getCharacters().find(c => c.id === 'legacy1');
   ok('migration is idempotent (re-run does not duplicate unresolved items)', migrated2.spheres[0]._unresolvedLegacy.length === 1);
 
+  /* ---------------------------------------------------------------------
+   * 7) Multi/typed free-pick groups (ponto 4 — corrige 7 esferas).
+   * --------------------------------------------------------------------- */
+  const dz = t.resolveSpec(sangue, 'Destruição', {});
+  ok('Destruição: 2 grupos grátis (tipo + formato)', dz.groups.length === 2 && dz.freePicks === 2);
+  ok('Destruição grupos são tipo/formato', dz.groups[0].tags.includes('tipo') && dz.groups[1].tags.includes('formato'));
+  const dzm = t.getSphereModel('Destruição', null);
+  ok('grupo "tipo" só oferece talentos de tipo', dzm.freeGroups[0].items.length > 0 && dzm.freeGroups[0].items.every(it => t.dataIndex.talentById.get(it.id).tags.includes('tipo')));
+  ok('grupo "formato" só oferece talentos de formato', dzm.freeGroups[1].items.length > 0 && dzm.freeGroups[1].items.every(it => t.dataIndex.talentById.get(it.id).tags.includes('formato')));
+  const ap = t.resolveSpec(sangue, 'Aprimoramento', {});
+  ok('Aprimoramento: 1 grupo (aprimorar|degradar)', ap.groups.length === 1 && ap.freePicks === 1 && ap.groups[0].tags.includes('aprimorar') && ap.groups[0].tags.includes('degradar'));
+  const me = t.getSphereModel('Mente', null);
+  ok('Mente: grátis filtrado a encanto (não a lista inteira)', me.freeGroups.length === 1 && me.freeGroups[0].items.length > 0 && me.freeGroups[0].items.length < me.freeGroup.concat(me.extras).length && me.freeGroups[0].items.every(it => t.dataIndex.talentById.get(it.id).tags.includes('encanto')));
+  // regressão: Universal (pacote) e Engenhosidade (condicional) seguem com 1 grupo
+  const eng = t.resolveSpec(sangue, 'Engenhosidade', {});
+  ok('Engenhosidade segue 1 grupo (dispositivo) — sem regressão', eng.groups.length === 1 && eng.groups[0].tags.includes('dispositivo'));
+
   console.log(`\n${pass} assertions passed.`);
   // app.js registers `document.addEventListener('DOMContentLoaded', init)` at load
   // time; jsdom fires that event on its own shortly after the document is built,

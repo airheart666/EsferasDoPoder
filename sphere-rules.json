@@ -4,6 +4,14 @@
   "Conjuração": { "freeGroup": { "tag": "base" },                              "freeLabel": "companheiro", "freePicks": 1 },
   "Destino":    { "freeGroup": { "tags": ["consagração", "motivo", "palavra"] }, "freeLabel": "carta",       "freePicks": 1 },
 
+  "Destruição":   { "freeGroups": [ { "tags": ["tipo"],    "picks": 1, "label": "tipo de explosão" }, { "tags": ["formato"], "picks": 1, "label": "formato de explosão" } ] },
+  "Adivinhação":  { "freeGroups": [ { "tags": ["adivinhar"], "picks": 1, "label": "adivinhar" },        { "tags": ["sentido"], "picks": 1, "label": "sentido" } ] },
+  "Aprimoramento": { "freeGroups": [ { "tags": ["aprimorar", "degradar"], "picks": 1, "label": "aprimorar ou degradar" } ] },
+  "Clima":        { "freeGroups": [ { "tags": ["manto", "mortalha"], "picks": 1, "label": "manto ou mortalha" } ] },
+  "Mente":        { "freeGroups": [ { "tags": ["encanto"],    "picks": 1, "label": "encanto" } ] },
+  "Morte":        { "freeGroups": [ { "tags": ["morto-vivo"], "picks": 1, "label": "morto-vivo" } ] },
+  "Tempo":        { "freeGroups": [ { "tags": ["cronos"],     "picks": 1, "label": "cronos" } ] },
+
   "Criação":    { "freePicks": 0 },
   "Distorção":  { "freePicks": 0 },
   "Escuridão":  { "freePicks": 0 },

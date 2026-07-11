@@ -775,5 +775,6 @@
       "body": "Você não pode direcionar sua égide a outras criaturas, apenas a si mesmo.\n\nQualquer aura que você criar termina imediatamente se você encerrar seu turno fora dela.\n\nVocê ganha um talento bônus de (aura) ou (égide) à sua escolha."
     }
   ],
-  "_reviewed": false
+  "_reviewed": false,
+  "intro": "Você é um usuário das magias de preservação. Ao adquirir a esfera de Proteção pela primeira vez, você obtém as habilidades de égide, socorro e aura da esfera."
 }
