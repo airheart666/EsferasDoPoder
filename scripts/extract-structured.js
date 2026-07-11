@@ -348,6 +348,43 @@ function resolvePrereqs(allTalents, sphereIds) {
     t.prerequisites = resolved;
     delete t._prereqs;
   }
+
+  // Overrides autorais (prereq-overrides.json): substitui prerequisites de talentos
+  // cujo texto o parser não estrutura (grupos A/B/C/D). Resolve talent/sphere nomes→ids
+  // (recursivo em `or`), limpa _needsReview. Grupo E não entra aqui.
+  const overrides = loadOverrides();
+  if (overrides) applyPrereqOverrides(allTalents, overrides, byKey, globalBase, sphereIds);
+}
+// Resolve UM prereq de override (nomes→ids), recursivo em `or`. Tipos tag/skill/
+// package/level/martial-talent passam direto.
+function resolveOverridePrereq(pr, ownerSphere, byKey, globalBase, sphereIds, warns) {
+  if (pr.type === 'or') return { type: 'or', of: (pr.of || []).map(c => resolveOverridePrereq(c, ownerSphere, byKey, globalBase, sphereIds, warns)) };
+  if (pr.type === 'sphere') { const id = slugify(pr.name); if (!sphereIds.has(id)) warns.push('override sphere unknown: ' + pr.name); return { type: 'sphere', id }; }
+  if (pr.type === 'talent') {
+    const base = normalizeTerm(baseName(pr.name));
+    const sid = pr.sphereName ? slugify(pr.sphereName) : ownerSphere;
+    const id = byKey.get(sid + '|' + base) || globalBase.get(base);
+    if (!id) { warns.push('override talent unresolved: ' + pr.name); return { type: 'text', text: pr.name }; }
+    return { type: 'talent', id };
+  }
+  return pr; // tag / skill / package / level / martial-talent
+}
+function applyPrereqOverrides(allTalents, overrides, byKey, globalBase, sphereIds) {
+  const warns = [];
+  for (const [key, prereqs] of Object.entries(overrides)) {
+    if (key.startsWith('_')) continue; // _comment
+    const targets = allTalents.filter(t => t.name === key || t.name.startsWith(key + ' (') || t.name.startsWith(key + ' ['));
+    if (!targets.length) { warns.push('override target NOT FOUND: ' + key); continue; }
+    for (const t of targets) {
+      t.prerequisites = prereqs.map(p => resolveOverridePrereq(p, t.sphere, byKey, globalBase, sphereIds, warns));
+      if (t._needsReview) delete t._needsReview; // enforcement estruturado → limpa o flag
+    }
+  }
+  if (warns.length) console.warn('[overrides] ' + warns.join(' | '));
+}
+function loadOverrides() {
+  const p = path.join(ROOT, 'prereq-overrides.json');
+  return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null;
 }
 
 // ---- Resolve package baseTalents (names) → ids within the sphere -------------

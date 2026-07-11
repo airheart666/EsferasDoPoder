@@ -201,8 +201,8 @@
       "body": ""
     },
     {
-      "id": "universal-contra-magia-do-tolo",
-      "name": "Contra-magia do Tolo (dissipar)",
+      "id": "universal-contramagica-do-tolo",
+      "name": "Contramágica do Tolo (dissipar)",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
@@ -1646,8 +1646,8 @@
       "body": "Você pode gastar uma ação ou uma ação bônus para reduzir a chance de magia selvagem do próximo efeito de esfera que você conjurar antes do início do seu próximo turno em 25%. Essa habilidade não se acumula. Essa redução aumenta em 5% para cada talento de magia selvagem adicional que você possuir, até uma redução máxima de 50%."
     },
     {
-      "id": "universal-contra-ataque-caotico",
-      "name": "Contra-ataque Caótico (magia selvagem)",
+      "id": "universal-contramagica-caotica",
+      "name": "Contramágica Caótica (magia selvagem)",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
@@ -1657,16 +1657,23 @@
       ],
       "prerequisites": [
         {
-          "type": "text",
-          "text": "Contra-ataque ou a capacidade de conjurar dissipar magia"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "universal-contramagica"
+            },
+            {
+              "type": "package",
+              "sphere": "universal",
+              "pkg": "dissipar"
+            }
+          ]
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Quando você encerra com sucesso um efeito de magia ou esfera usando Contrafeitiço ou dissipar magia, o conjurador sofre um aumento de 50% na chance de usar magia selvagem até o final do seu próximo turno. Essa penalidade aumenta em 10% para cada talento de magia selvagem que você possuir, até um máximo de 100%. O conjurador afetado não tem conhecimento desse aumento.",
-      "_needsReview": [
-        "prereq:unresolved:Contra-ataque ou a capacidade de conjurar dissipar magia"
-      ]
+      "body": "Quando você encerra com sucesso um efeito de magia ou esfera usando Contramágica ou dissipar magia, o conjurador sofre um aumento de 50% na chance de usar magia selvagem até o final do seu próximo turno. Essa penalidade aumenta em 10% para cada talento de magia selvagem que você possuir, até um máximo de 100%. O conjurador afetado não tem conhecimento desse aumento."
     },
     {
       "id": "universal-maldicao-do-caos",
@@ -1815,8 +1822,8 @@
       "body": "Quando você desencadeia um evento de magia selvagem (mas não um evento maior), você pode gastar um ponto de magia como uma reação após o resultado ser revelado para rolar 1d20. Em um resultado de 1 a 10, subtraia o resultado do resultado da sua rolagem de magia selvagem e fique com o novo resultado, mesmo que seja pior. Em um resultado de 11 a 20, subtraia dez da sua rolagem e adicione esse número ao seu resultado de magia selvagem, ficando com o novo resultado, mesmo que seja pior. Se você possuir pelo menos 6 talentos de magia selvagem, você pode usar esta habilidade ao desencadear um evento maior (se as regras de evento maior estiverem sendo usadas)."
     },
     {
-      "id": "universal-contrafeitico",
-      "name": "Contrafeitiço",
+      "id": "universal-contramagica",
+      "name": "Contramágica",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
@@ -1824,8 +1831,18 @@
       "tags": [],
       "prerequisites": [
         {
-          "type": "text",
-          "text": "Dissipar ou pacote de mana"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "universal-dissipar"
+            },
+            {
+              "type": "package",
+              "sphere": "universal",
+              "pkg": "mana"
+            }
+          ]
         }
       ],
       "advanced": true,
@@ -1835,10 +1852,7 @@
           "text": "Como uma reação que pode ser usada quando uma criatura dentro do alcance que você possa ver estiver conjurando uma magia ou efeito de esfera, você pode tentar usar Dissipar para interromper a conjuração ou criar um Vínculo de Mana com essa criatura."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:Dissipar ou pacote de mana"
-      ]
+      "body": ""
     },
     {
       "id": "universal-foco-mistico",
@@ -1850,16 +1864,12 @@
       "tags": [],
       "prerequisites": [
         {
-          "type": "text",
-          "text": "Habilidade para obter foco marcial (veja Esferas de Poder)"
+          "type": "martial-talent"
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que você usar um efeito de esfera mágica como uma ação, você pode gastar 1 ponto de magia como uma ação bônus para recuperar foco marcial.",
-      "_needsReview": [
-        "prereq:unresolved:Habilidade para obter foco marcial (veja Esferas de Poder)"
-      ]
+      "body": "Sempre que você usar um efeito de esfera mágica como uma ação, você pode gastar 1 ponto de magia como uma ação bônus para recuperar foco marcial."
     },
     {
       "id": "universal-pacote-universal",

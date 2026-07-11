@@ -457,20 +457,22 @@
       "tags": [],
       "prerequisites": [
         {
-          "type": "sphere",
-          "id": "atletismo"
-        },
-        {
-          "type": "text",
-          "text": "Salto com Vara ou Balanço de Corda"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "m-atletismo-saltador-com-vara"
+            },
+            {
+              "type": "talent",
+              "id": "m-atletismo-balanco-de-corda"
+            }
+          ]
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Se você terminar seu turno no ar enquanto empunha um item de Salto com Vara ou Balanço de Corda, você pode, como uma Reação, gastar seu foco marcial para diminuir a velocidade da sua queda para 18 metros por um número de rodadas igual ao seu bônus de proficiência. Se você aterrissar antes que a descida lenta termine, você não sofre dano de queda e pode aterrissar de pé.",
-      "_needsReview": [
-        "prereq:unresolved:Salto com Vara ou Balanço de Corda"
-      ]
+      "body": "Se você terminar seu turno no ar enquanto empunha um item de Salto com Vara ou Balanço de Corda, você pode, como uma Reação, gastar seu foco marcial para diminuir a velocidade da sua queda para 18 metros por um número de rodadas igual ao seu bônus de proficiência. Se você aterrissar antes que a descida lenta termine, você não sofre dano de queda e pode aterrissar de pé."
     },
     {
       "id": "m-atletismo-nado-de-tubarao",

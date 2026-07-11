@@ -641,28 +641,21 @@
           "id": "alteracao"
         },
         {
-          "type": "text",
-          "text": "qualquer talento que conceda resistência a ácido"
-        },
-        {
-          "type": "talent",
-          "id": "clima-frio"
-        },
-        {
-          "type": "talent",
-          "id": "destruicao-fogo"
-        },
-        {
-          "type": "talent",
-          "id": "destruicao-raio"
-        },
-        {
-          "type": "talent",
-          "id": "destruicao-necrotico"
-        },
-        {
-          "type": "text",
-          "text": "radiante ou trovão como opção de traço"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "alteracao-elemental"
+            },
+            {
+              "type": "talent",
+              "id": "alteracao-gosma"
+            },
+            {
+              "type": "talent",
+              "id": "alteracao-tracos-sobrenaturais"
+            }
+          ]
         },
         {
           "type": "level",
@@ -671,11 +664,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode adicionar o seguinte traço às suas formas:\n\nImunidade à Energia: (Aumente 1 PM) Você pode conceder ao alvo imunidade a um tipo de energia (ácido, frio, fogo, raio, necrótico, radiante ou trovão) ao qual ele tenha resistência.\n\nVulnerabilidade: Você pode conceder ao alvo vulnerabilidade a um dos seguintes tipos de dano: ácido, frio, fogo, raio, necrótico, radiante ou trovão. Se o alvo tiver resistência ao tipo de dano escolhido, ele perde essa resistência. Se o alvo for imune ao tipo de dano, esta característica reduz essa imunidade à resistência.",
-      "_needsReview": [
-        "prereq:unresolved:qualquer talento que conceda resistência a ácido",
-        "prereq:unresolved:radiante ou trovão como opção de traço"
-      ]
+      "body": "Você pode adicionar o seguinte traço às suas formas:\n\nImunidade à Energia: (Aumente 1 PM) Você pode conceder ao alvo imunidade a um tipo de energia (ácido, frio, fogo, raio, necrótico, radiante ou trovão) ao qual ele tenha resistência.\n\nVulnerabilidade: Você pode conceder ao alvo vulnerabilidade a um dos seguintes tipos de dano: ácido, frio, fogo, raio, necrótico, radiante ou trovão. Se o alvo tiver resistência ao tipo de dano escolhido, ele perde essa resistência. Se o alvo for imune ao tipo de dano, esta característica reduz essa imunidade à resistência."
     },
     {
       "id": "alteracao-transformacao-extrema",

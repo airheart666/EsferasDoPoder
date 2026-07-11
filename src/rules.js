@@ -32,6 +32,9 @@ const Rules = (() => {
   /** @param {string} s */
   const slug = s => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
     .replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-');
+  // Igual ao extractor/app.js: minúsculas, sem acento, espaços colapsados (mantidos) —
+  // é como as TAGS são gravadas no dado (comparar prereq 'tag' com a mesma forma).
+  const normalizeTerm = (/** @type {string} */ s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim().replace(/\s+/g, ' ');
 
   /** @param {{magic:number, martial:number}} o @param {Section} section */
   const bySection = (o, section) => (section === 'martial' ? o.martial : o.magic);
@@ -305,15 +308,51 @@ const Rules = (() => {
   function prereqCheck(char, talent, idx) {
     const owned = ownedTalentIds(char, idx);
     const accessed = accessedSphereIds(char, idx);
+    const ctx = { owned, accessed };
     /** @type {Prerequisite[]} */ const missing = [];
     /** @type {Prerequisite[]} */ const unverified = [];
     for (const p of talent.prerequisites || []) {
-      if (p.type === 'level') { if ((char.level || 1) < (p.min || 1)) missing.push(p); }
-      else if (p.type === 'sphere') { if (!p.id || !accessed.has(p.id)) missing.push(p); }
-      else if (p.type === 'talent') { if (!p.id || !owned.has(p.id)) missing.push(p); }
-      else unverified.push(p);
+      const r = prereqEval(p, char, idx, ctx);
+      if (r === false) missing.push(p);
+      else if (r === null) unverified.push(p); // descritivo/desconhecido → confirmar manualmente
     }
     return { ok: missing.length === 0, missing, unverified };
+  }
+  // Avalia UM pré-requisito: true (satisfeito) / false (falta) / null (não verificável).
+  // `ctx` = { owned:Set<talentId>, accessed:Set<sphereId> } já computados.
+  /** @param {any} p @param {Character} char @param {DataIndex} idx @param {{owned:Set<string>, accessed:Set<string>}} ctx @returns {boolean|null} */
+  function prereqEval(p, char, idx, ctx) {
+    switch (p.type) {
+      case 'level': return (char.level || 1) >= (p.min || 1);
+      case 'sphere': return !!p.id && ctx.accessed.has(p.id);
+      case 'talent': return !!p.id && ctx.owned.has(p.id);
+      case 'or': { // satisfeito se QUALQUER filho satisfaz; null se todos forem null (nenhum falso definitivo)
+        let anyNull = false;
+        for (const child of p.of || []) { const r = prereqEval(child, char, idx, ctx); if (r === true) return true; if (r === null) anyNull = true; }
+        return anyNull ? null : false;
+      }
+      case 'tag': { // ≥ count talentos possuídos cujas tags intersectam p.tags
+        const want = (p.tags || []).map(normalizeTerm);
+        let n = 0;
+        for (const tid of ctx.owned) { const t = idx.talentById.get(tid); if (t && (t.tags || []).map(normalizeTerm).some(tg => want.includes(tg))) n++; }
+        return n >= (p.count || 1);
+      }
+      case 'skill': { // proficiência (perícia/ferramenta) — normalizada
+        const prof = char.proficiencies || { skills: [], tools: [] };
+        const set = new Set((prof.skills || []).concat(prof.tools || []).map(normalizeTerm));
+        return set.has(normalizeTerm(p.skill || ''));
+      }
+      case 'package': { // a esfera do char escolheu esse pacote
+        const sid = p.sphere;
+        const e = (char.spheres || []).find(x => x.sphere === sid);
+        return !!(e && e.choices && e.choices.pkg === p.pkg);
+      }
+      case 'martial-talent': { // possui ≥1 talento de esfera com section:'martial'
+        for (const tid of ctx.owned) { const t = idx.talentById.get(tid); const sph = t && idx.sphereById.get(t.sphere); if (sph && sph.section === 'martial') return true; }
+        return false;
+      }
+      default: return null; // text/descritivo
+    }
   }
 
   /**

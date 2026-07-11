@@ -1,0 +1,29 @@
+{
+  "_comment": "Pré-requisitos estruturados AUTORAIS para talentos cujo texto o extractor não parseia (grupos A/B/C/D + decisões do Owner). Fundido por NOME no data/ pelo extractor (talent/sphere resolvidos p/ id via resolvePrereqs); substitui prerequisites e limpa _needsReview. Tipos: talent, sphere, level, or{of[]}, tag{tags[],count}, skill{skill}, package{sphere,pkg}, martial-talent. Grupo E (esfera dupla aninhado) NÃO entra aqui — curadoria manual futura.",
+
+  "Fantasma": [ { "type": "or", "of": [ { "type": "talent", "name": "Sombra" }, { "type": "talent", "name": "Espectro" } ] } ],
+  "Múmia": [ { "type": "or", "of": [ { "type": "talent", "name": "Esqueleto" }, { "type": "talent", "name": "Zumbi" } ] } ],
+  "Prole Vampírica": [ { "type": "or", "of": [ { "type": "talent", "name": "Carniçal" }, { "type": "talent", "name": "Zumbi" } ] } ],
+  "Inumano": [ { "type": "or", "of": [ { "type": "talent", "name": "Esqueleto" }, { "type": "talent", "name": "Zumbi" } ] } ],
+  "Aparição": [ { "type": "or", "of": [ { "type": "talent", "name": "Sombra" }, { "type": "talent", "name": "Aparição" } ] } ],
+
+  "Descida de Helicóptero": [ { "type": "or", "of": [ { "type": "talent", "name": "Saltador com Vara" }, { "type": "talent", "name": "Balanço de Corda" } ] } ],
+
+  "Batedor Especialista": [ { "type": "or", "of": [ { "type": "skill", "skill": "Furtividade" }, { "type": "skill", "skill": "Sobrevivência" } ] } ],
+
+  "Morte (motivo)": [ { "type": "sphere", "name": "Destino" }, { "type": "tag", "tags": ["motivo"], "count": 1 }, { "type": "level", "min": 5 } ],
+  "A Alta Sacerdotisa": [ { "type": "sphere", "name": "Destino" }, { "type": "tag", "tags": ["motivo"], "count": 1 }, { "type": "level", "min": 5 } ],
+  "Execração": [ { "type": "sphere", "name": "Destino" }, { "type": "tag", "tags": ["palavra"], "count": 1 }, { "type": "level", "min": 11 } ],
+
+  "Frasco Universal": [ { "type": "sphere", "name": "Alquimia" }, { "type": "tag", "tags": ["fórmula", "veneno"], "count": 5 } ],
+
+  "Mestre dos Mortos": [ { "type": "sphere", "name": "Liderança" }, { "type": "tag", "tags": ["ajudante"], "count": 1 } ],
+  "Esquadrão": [ { "type": "sphere", "name": "Liderança" }, { "type": "tag", "tags": ["seguidores"], "count": 1 }, { "type": "tag", "tags": ["parceiro"], "count": 1 }, { "type": "level", "min": 5 } ],
+
+  "Manipulação de Energia": [ { "type": "sphere", "name": "Alteração" }, { "type": "or", "of": [ { "type": "talent", "name": "Elemental" }, { "type": "talent", "name": "Gosma" }, { "type": "talent", "name": "Traços Sobrenaturais" } ] }, { "type": "level", "min": 11 } ],
+
+  "Contramágica": [ { "type": "or", "of": [ { "type": "talent", "name": "Dissipar" }, { "type": "package", "sphere": "universal", "pkg": "mana" } ] } ],
+  "Contramágica Caótica": [ { "type": "or", "of": [ { "type": "talent", "name": "Contramágica" }, { "type": "package", "sphere": "universal", "pkg": "dissipar" } ] } ],
+
+  "Foco Místico": [ { "type": "martial-talent" } ]
+}

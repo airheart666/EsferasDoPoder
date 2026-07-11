@@ -142,4 +142,53 @@ ok('KG-4: Aurora ALLOWED with Luz+Clima', Rules.prereqCheck(kg4Two, aurora, idx)
 ok('KG-4: Criação de Magias package BLOCKED with <2 magic spheres', Rules.packageRequirementMet(kg4Base, 'universal', 'criacao-magias', idx).ok === false);
 ok('KG-4: Criação de Magias package ALLOWED with ≥2 magic spheres', Rules.packageRequirementMet(kg4Two, 'universal', 'criacao-magias', idx).ok === true);
 
+// --- Tier 2: novos tipos de pré-requisito (or / tag / skill / package / martial-talent) ---
+const mkChar = (o) => ({ id: 't2', name: 'T', className: 'Feiticeiro', subclass: '', level: 11, keyMod: 0, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [], ...o });
+
+// OR: Múmia (Morte) requer Esqueleto OU Zumbi
+const mumia = idx.sphereById.get('morte').talents.find(t => t.id === 'morte-mumia');
+ok('OR: Múmia tem prereq or[Esqueleto, Zumbi]', !!mumia && (mumia.prerequisites || []).some(p => p.type === 'or' && p.of.length === 2));
+/** @type {any} */
+const semUndead = mkChar({ spheres: [{ sphere: 'morte', section: 'magic', choices: {}, freePicks: [], talents: [] }] });
+ok('OR: Múmia BLOQUEADA sem Esqueleto/Zumbi', Rules.prereqCheck(semUndead, mumia, idx).ok === false);
+/** @type {any} */
+const comEsqueleto = mkChar({ spheres: [{ sphere: 'morte', section: 'magic', choices: {}, freePicks: [], talents: ['morte-esqueleto'] }] });
+ok('OR: Múmia LIBERADA com Esqueleto (qualquer alternativa)', Rules.prereqCheck(comEsqueleto, mumia, idx).ok === true);
+
+// TAG: Frasco Universal (Alquimia) requer 5 talentos (fórmula|veneno)
+const frasco = idx.sphereById.get('alquimia').talents.find(t => t.name.startsWith('Frasco Universal'));
+const formulas = idx.sphereById.get('alquimia').talents.filter(t => (t.tags || []).includes('formula')).slice(0, 5).map(t => t.id);
+/** @type {any} */
+const quatro = mkChar({ className: 'Artífice', subclass: 'Alquimista', spheres: [{ sphere: 'alquimia', section: 'martial', choices: {}, freePicks: [], talents: formulas.slice(0, 4) }] });
+/** @type {any} */
+const cinco = mkChar({ className: 'Artífice', subclass: 'Alquimista', spheres: [{ sphere: 'alquimia', section: 'martial', choices: {}, freePicks: [], talents: formulas }] });
+ok('TAG: Frasco BLOQUEADO com 4 talentos de fórmula', Rules.prereqCheck(quatro, frasco, idx).ok === false);
+ok('TAG: Frasco LIBERADO com 5 talentos de fórmula', Rules.prereqCheck(cinco, frasco, idx).ok === true);
+
+// SKILL: Batedor Especialista requer Furtividade ou Sobrevivência (perícia)
+const batEsp = idx.sphereById.get('batedor').talents.find(t => t.name.startsWith('Batedor Especialista'));
+/** @type {any} */
+const semPer = mkChar({ className: 'Batedor', spheres: [{ sphere: 'batedor', section: 'martial', choices: {}, freePicks: [], talents: [] }] });
+/** @type {any} */
+const comPer = mkChar({ className: 'Batedor', proficiencies: { skills: ['Furtividade'], tools: [] }, spheres: [{ sphere: 'batedor', section: 'martial', choices: {}, freePicks: [], talents: [] }] });
+ok('SKILL: Batedor Especialista BLOQUEADO sem a perícia', Rules.prereqCheck(semPer, batEsp, idx).ok === false);
+ok('SKILL: Batedor Especialista LIBERADO com Furtividade', Rules.prereqCheck(comPer, batEsp, idx).ok === true);
+
+// PACKAGE + rename: Contramágica Caótica requer Contramágica OU pacote dissipar
+const contraCaotico = idx.sphereById.get('universal').talents.find(t => t.name.startsWith('Contramágica Caótica'));
+ok('rename: talento Contramágica existe (era Contrafeitiço)', !!idx.talentById.get('universal-contramagica'));
+/** @type {any} */
+const comDissipar = mkChar({ spheres: [{ sphere: 'universal', section: 'magic', choices: { pkg: 'dissipar' }, freePicks: [], talents: [] }] });
+ok('PACKAGE: Contramágica Caótica LIBERADO com pacote dissipar', Rules.prereqCheck(comDissipar, contraCaotico, idx).ok === true);
+/** @type {any} */
+const pkgMeta = mkChar({ spheres: [{ sphere: 'universal', section: 'magic', choices: { pkg: 'metaesfera' }, freePicks: [], talents: [] }] });
+ok('PACKAGE: Contramágica Caótica BLOQUEADO com outro pacote', Rules.prereqCheck(pkgMeta, contraCaotico, idx).ok === false);
+
+// MARTIAL-TALENT: Foco Místico requer possuir um talento de esfera marcial
+const focoMistico = idx.sphereById.get('universal').talents.find(t => t.name === 'Foco Místico');
+/** @type {any} */
+const artificeMarcial = mkChar({ className: 'Artífice', subclass: 'Alquimista', spheres: [{ sphere: 'alquimia', section: 'martial', choices: {}, freePicks: [], talents: [formulas[0]] }] });
+ok('MARTIAL: Foco Místico BLOQUEADO sem talento marcial', Rules.prereqCheck(mkChar({}), focoMistico, idx).ok === false);
+ok('MARTIAL: Foco Místico LIBERADO com talento de esfera marcial', Rules.prereqCheck(artificeMarcial, focoMistico, idx).ok === true);
+
 console.log(`\n${pass} assertions passed.`);

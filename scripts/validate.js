@@ -69,6 +69,18 @@ if (fs.existsSync(path.join(ROOT, 'data', 'traditions.json'))) {
   }
 }
 
+// prereq-overrides.json (fonte autoral): estrutura leve — cada entrada é um array de
+// prereqs {type,...}. Nomes talent/sphere são resolvidos pelo extractor; o RESULTADO já
+// é validado pelo talent.schema acima. Aqui só pega malformação grosseira na fonte.
+if (fs.existsSync(path.join(ROOT, 'prereq-overrides.json'))) {
+  const ov = load('prereq-overrides.json');
+  for (const [k, v] of Object.entries(ov)) {
+    if (k.startsWith('_')) continue;
+    if (!Array.isArray(v)) { err(`prereq-overrides.json: "${k}" deve ser um array de prereqs`); continue; }
+    for (const p of v) if (!p || typeof p.type !== 'string') err(`prereq-overrides.json: "${k}" tem um prereq sem type`);
+  }
+}
+
 // ---- 2. Referential integrity ------------------------------------------------
 const talentIds = new Set();
 const sphereIds = new Set();

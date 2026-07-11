@@ -894,28 +894,22 @@
       "target": "Um objeto do falecido",
       "prerequisites": [
         {
-          "type": "sphere",
-          "id": "morte"
-        },
-        {
-          "type": "talent",
-          "id": "morte-habilidoso"
-        },
-        {
-          "type": "talent",
-          "id": "morte-poltergeist"
-        },
-        {
-          "type": "text",
-          "text": "Sombra (morto-vivo) ou Espectro (morto-vivo)"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "morte-sombra"
+            },
+            {
+              "type": "talent",
+              "id": "morte-espectro"
+            }
+          ]
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao reanimar, você pode criar um fantasma.\n\nFantasma\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento mantém os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR8 (-1)14 (+2)10 (+0)10 (+0)12 (+1)18 (+4)\n\nResistências a Dano: concussão, perfuração e corte de ataques não mágicos\n\nImunidades a Dano: necrótico\n\nImunidades a Condições: agarrado, paralisado, envenenado, restringido\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nMovimento Incorpóreo. O fantasma pode se tornar incorpóreo enquanto se move e atravessar outras criaturas e objetos como se fossem terreno difícil. Se terminar seu turno dentro de um objeto, ele é deslocado para o espaço desocupado mais próximo e sofre 1d10 de dano de força para cada 1,5 m percorridos.\n\nFraquezas do Fantasma. O fantasma possui uma das seguintes falhas, escolhida pelo conjurador de esferas quando é reanimado:\n\nAssombração. Um fantasma está ligado a um local, criatura ou objeto específico que teve significado para ele em vida. Um fantasma não pode viajar mais de 150 metros de sua assombração. Se a assombração for destruída, o fantasma não estará mais ligado e desaparece em direção à sua respectiva vida após a morte. O Mestre deve determinar quem, o quê ou onde um fantasma assombra.\n\nInstrumentos de sua Morte. Um fantasma tem vulnerabilidade a qualquer dano causado por aquilo que o matou em vida. Por exemplo, se uma criatura morreu queimada na fogueira, o fantasma teria vulnerabilidade a dano de fogo. O Mestre deve determinar como tal criatura morreu antes de se tornar um fantasma e o que qualifica para a vulnerabilidade a dano.\n\nAssuntos Pendentes. Um fantasma anseia por concluir alguma tarefa inacabada de sua vida. Assim que essa tarefa for concluída, ele desaparece em direção à sua respectiva vida após a morte. O Mestre deve determinar quais pendências o fantasma possui.\n\nAções\n\nToque Murchante. Ataque Mágico Corpo a Corpo: +4 (Car) mais seu bônus de proficiência para acertar, um alvo. Acerto: 4 (1d6) de dano necrótico. Esse dano necrótico aumenta em 1d6 no 5º nível (2d6), no 11º nível (3d6) e no 17º nível (4d6).",
-      "_needsReview": [
-        "prereq:unresolved:Sombra (morto-vivo) ou Espectro (morto-vivo)"
-      ]
+      "body": "Ao reanimar, você pode criar um fantasma.\n\nFantasma\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento mantém os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR8 (-1)14 (+2)10 (+0)10 (+0)12 (+1)18 (+4)\n\nResistências a Dano: concussão, perfuração e corte de ataques não mágicos\n\nImunidades a Dano: necrótico\n\nImunidades a Condições: agarrado, paralisado, envenenado, restringido\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nMovimento Incorpóreo. O fantasma pode se tornar incorpóreo enquanto se move e atravessar outras criaturas e objetos como se fossem terreno difícil. Se terminar seu turno dentro de um objeto, ele é deslocado para o espaço desocupado mais próximo e sofre 1d10 de dano de força para cada 1,5 m percorridos.\n\nFraquezas do Fantasma. O fantasma possui uma das seguintes falhas, escolhida pelo conjurador de esferas quando é reanimado:\n\nAssombração. Um fantasma está ligado a um local, criatura ou objeto específico que teve significado para ele em vida. Um fantasma não pode viajar mais de 150 metros de sua assombração. Se a assombração for destruída, o fantasma não estará mais ligado e desaparece em direção à sua respectiva vida após a morte. O Mestre deve determinar quem, o quê ou onde um fantasma assombra.\n\nInstrumentos de sua Morte. Um fantasma tem vulnerabilidade a qualquer dano causado por aquilo que o matou em vida. Por exemplo, se uma criatura morreu queimada na fogueira, o fantasma teria vulnerabilidade a dano de fogo. O Mestre deve determinar como tal criatura morreu antes de se tornar um fantasma e o que qualifica para a vulnerabilidade a dano.\n\nAssuntos Pendentes. Um fantasma anseia por concluir alguma tarefa inacabada de sua vida. Assim que essa tarefa for concluída, ele desaparece em direção à sua respectiva vida após a morte. O Mestre deve determinar quais pendências o fantasma possui.\n\nAções\n\nToque Murchante. Ataque Mágico Corpo a Corpo: +4 (Car) mais seu bônus de proficiência para acertar, um alvo. Acerto: 4 (1d6) de dano necrótico. Esse dano necrótico aumenta em 1d6 no 5º nível (2d6), no 11º nível (3d6) e no 17º nível (4d6)."
     },
     {
       "id": "morte-imortal",
@@ -1021,24 +1015,22 @@
       "target": "O cadáver preservado de uma criatura morta",
       "prerequisites": [
         {
-          "type": "sphere",
-          "id": "morte"
-        },
-        {
-          "type": "talent",
-          "id": "morte-habilidoso"
-        },
-        {
-          "type": "text",
-          "text": "Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "morte-esqueleto"
+            },
+            {
+              "type": "talent",
+              "id": "morte-zumbi"
+            }
+          ]
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao usar reanimar, você pode criar uma múmia utilizando a ficha de estatísticas abaixo:\n\nMúmia\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os mesmos modos de movimento da criatura original, mas é reduzida para 6 metros.\n\nFORDESCONINTSABCAR16 (+3)8 (-1)14 (+2)6 (-2)16 (+3)12 (+1)\n\nVulnerabilidades a Dano: fogo\n\nImunidades a Dano: necrótico, veneno\n\nImunidades a Condições: exaustão, amedrontado, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 13\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala.\n\nAções\n\nGolpe. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano de concussão.",
-      "_needsReview": [
-        "prereq:unresolved:Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
-      ]
+      "body": "Ao usar reanimar, você pode criar uma múmia utilizando a ficha de estatísticas abaixo:\n\nMúmia\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os mesmos modos de movimento da criatura original, mas é reduzida para 6 metros.\n\nFORDESCONINTSABCAR16 (+3)8 (-1)14 (+2)6 (-2)16 (+3)12 (+1)\n\nVulnerabilidades a Dano: fogo\n\nImunidades a Dano: necrótico, veneno\n\nImunidades a Condições: exaustão, amedrontado, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 13\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala.\n\nAções\n\nGolpe. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano de concussão."
     },
     {
       "id": "morte-morto-vivo-permanente",
@@ -1307,24 +1299,22 @@
       "target": "Uma criatura com 0 pontos de vida",
       "prerequisites": [
         {
-          "type": "sphere",
-          "id": "morte"
-        },
-        {
-          "type": "talent",
-          "id": "morte-habilidoso"
-        },
-        {
-          "type": "text",
-          "text": "Carniçal (morto-vivo) ou Zumbi (morto-vivo)"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "morte-carnical"
+            },
+            {
+              "type": "talent",
+              "id": "morte-zumbi"
+            }
+          ]
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "O alvo deve fazer um teste de resistência de Constituição ou morrer. Se o alvo morrer, você pode criar uma prole vampírica, usando a ficha de estatísticas abaixo:\n\nProle Vampírica\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR16 (+3)16 (+3)10 (+0)10 (+0)8 (-1)12 (+1)\n\nResistências a Dano: necrótico; Ataques contundentes, perfurantes e cortantes de fontes não mágicas\n\nSentidos: visão no escuro 18 m, Percepção passiva 10\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nEscalada de Aranha. O vampiro pode escalar superfícies difíceis, inclusive de cabeça para baixo em tetos, sem precisar fazer um teste de habilidade.\n\nFraquezas Vampíricas. O vampiro possui as seguintes fraquezas:\n\nProibição. O vampiro não pode entrar em uma residência sem um convite de um dos ocupantes.\n\nFerido por Água Corrente. O vampiro sofre 20 de dano ácido quando termina seu turno em água corrente.\n\nEstaca no Coração. O vampiro é destruído se uma arma perfurante de madeira for cravada em seu coração enquanto ele estiver incapacitado em seu local de repouso.\n\nHipersensibilidade à Luz Solar. O vampiro sofre 20 de dano radiante quando inicia seu turno sob a luz do sol. Enquanto estiver sob a luz do sol, ele tem desvantagem em jogadas de ataque e testes de habilidade.\n\nAções\n\nMordida. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano perfurante.",
-      "_needsReview": [
-        "prereq:unresolved:Carniçal (morto-vivo) ou Zumbi (morto-vivo)"
-      ]
+      "body": "O alvo deve fazer um teste de resistência de Constituição ou morrer. Se o alvo morrer, você pode criar uma prole vampírica, usando a ficha de estatísticas abaixo:\n\nProle Vampírica\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR16 (+3)16 (+3)10 (+0)10 (+0)8 (-1)12 (+1)\n\nResistências a Dano: necrótico; Ataques contundentes, perfurantes e cortantes de fontes não mágicas\n\nSentidos: visão no escuro 18 m, Percepção passiva 10\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nEscalada de Aranha. O vampiro pode escalar superfícies difíceis, inclusive de cabeça para baixo em tetos, sem precisar fazer um teste de habilidade.\n\nFraquezas Vampíricas. O vampiro possui as seguintes fraquezas:\n\nProibição. O vampiro não pode entrar em uma residência sem um convite de um dos ocupantes.\n\nFerido por Água Corrente. O vampiro sofre 20 de dano ácido quando termina seu turno em água corrente.\n\nEstaca no Coração. O vampiro é destruído se uma arma perfurante de madeira for cravada em seu coração enquanto ele estiver incapacitado em seu local de repouso.\n\nHipersensibilidade à Luz Solar. O vampiro sofre 20 de dano radiante quando inicia seu turno sob a luz do sol. Enquanto estiver sob a luz do sol, ele tem desvantagem em jogadas de ataque e testes de habilidade.\n\nAções\n\nMordida. Ataque com Arma Corpo a Corpo: +3 mais seu bônus de proficiência para acertar, um alvo. Acerto: 7 (1d6+3) de dano perfurante."
     },
     {
       "id": "morte-vigor",
@@ -1363,24 +1353,22 @@
       "target": "Um cadáver fresco",
       "prerequisites": [
         {
-          "type": "sphere",
-          "id": "morte"
-        },
-        {
-          "type": "talent",
-          "id": "morte-habilidoso"
-        },
-        {
-          "type": "text",
-          "text": "Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "morte-esqueleto"
+            },
+            {
+              "type": "talent",
+              "id": "morte-zumbi"
+            }
+          ]
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao reanimar, você pode criar um inumano.\n\nInumano\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR14 (+2)14 (+2)14 (+2)10 (+0)12 (+1)8 (-1)\n\nResistências a Dano: necrótico; dano de concussão, perfuração e corte de ataques não mágicos que não sejam feitos com armas de prata\n\nImunidades a Dano: veneno\n\nImunidades a Condições: exaustão, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz do sol, o Inumano tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGarras. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 6 (1d6+2) de dano cortante.",
-      "_needsReview": [
-        "prereq:unresolved:Esqueleto (morto-vivo) ou Zumbi (morto-vivo)"
-      ]
+      "body": "Ao reanimar, você pode criar um inumano.\n\nInumano\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à CD da sua esfera\n\nPontos de Vida iguais aos pontos de vida máximos originais do alvo\n\nDeslocamento possui os modos de movimento da criatura original, mas é reduzida para 9 metros.\n\nFORDESCONINTSABCAR14 (+2)14 (+2)14 (+2)10 (+0)12 (+1)8 (-1)\n\nResistências a Dano: necrótico; dano de concussão, perfuração e corte de ataques não mágicos que não sejam feitos com armas de prata\n\nImunidades a Dano: veneno\n\nImunidades a Condições: exaustão, envenenado\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz do sol, o Inumano tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGarras. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 6 (1d6+2) de dano cortante."
     },
     {
       "id": "morte-aparicao",
@@ -1395,28 +1383,22 @@
       "target": "Um objeto do falecido",
       "prerequisites": [
         {
-          "type": "sphere",
-          "id": "morte"
-        },
-        {
-          "type": "talent",
-          "id": "morte-habilidoso"
-        },
-        {
-          "type": "talent",
-          "id": "morte-poltergeist"
-        },
-        {
-          "type": "text",
-          "text": "Sombra (morto-vivo) ou Aparição (morto-vivo)"
+          "type": "or",
+          "of": [
+            {
+              "type": "talent",
+              "id": "morte-sombra"
+            },
+            {
+              "type": "talent",
+              "id": "morte-aparicao"
+            }
+          ]
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Ao reanimar, você pode criar uma aparição.\n\nAparição\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento 0 m, voo 6 m (pairar)\n\nFORDESCONINTSABCAR6 (-2)14 (+2)16 (+3)10 (+0)12 (+1)14 (+2)\n\nImunidades a Dano: necrótico\n\nImunidades a Condições: agarrado, paralisado, envenenado, restringido\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nMovimento Incorpóreo. O aparição pode se tornar incorpóreo enquanto se move e atravessar outras criaturas e objetos como se fossem terreno difícil. Se terminar seu turno dentro de um objeto, ele é deslocado para o espaço desocupado mais próximo e sofre 1d10 de dano de força para cada 1,5 metro percorrido.\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz solar, o aparição tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGolpe. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 6 (1d6+2) de dano de impacto.",
-      "_needsReview": [
-        "prereq:unresolved:Sombra (morto-vivo) ou Aparição (morto-vivo)"
-      ]
+      "body": "Ao reanimar, você pode criar uma aparição.\n\nAparição\n\nMorto-vivo, sem alinhamento\n\nClasse de Armadura igual à sua CD de esfera\n\nPontos de Vida iguais à metade dos pontos de vida máximos originais do alvo\n\nDeslocamento 0 m, voo 6 m (pairar)\n\nFORDESCONINTSABCAR6 (-2)14 (+2)16 (+3)10 (+0)12 (+1)14 (+2)\n\nImunidades a Dano: necrótico\n\nImunidades a Condições: agarrado, paralisado, envenenado, restringido\n\nSentidos: visão no escuro 18 m, Percepção passiva 11\n\nIdiomas: fala qualquer idioma que conhecia em vida e entende os idiomas que você fala\n\nMovimento Incorpóreo. O aparição pode se tornar incorpóreo enquanto se move e atravessar outras criaturas e objetos como se fossem terreno difícil. Se terminar seu turno dentro de um objeto, ele é deslocado para o espaço desocupado mais próximo e sofre 1d10 de dano de força para cada 1,5 metro percorrido.\n\nFraqueza à Luz Solar. Enquanto estiver sob a luz solar, o aparição tem desvantagem em jogadas de ataque, testes de habilidade e testes de resistência.\n\nAções\n\nGolpe. Ataque com Arma Corpo a Corpo: +2 mais seu bônus de proficiência para acertar, um alvo. Acerto: 6 (1d6+2) de dano de impacto."
     },
     {
       "id": "morte-limite-necromantico",

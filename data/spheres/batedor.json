@@ -816,32 +816,22 @@
       "tags": [],
       "prerequisites": [
         {
-          "type": "sphere",
-          "id": "batedor"
-        },
-        {
-          "type": "text",
-          "text": "proficiente em Investigação"
-        },
-        {
-          "type": "text",
-          "text": "Percepção"
-        },
-        {
-          "type": "text",
-          "text": "Furtividade ou Sobrevivência"
-        },
-        {
-          "type": "level",
-          "min": 1
+          "type": "or",
+          "of": [
+            {
+              "type": "skill",
+              "skill": "Furtividade"
+            },
+            {
+              "type": "skill",
+              "skill": "Sobrevivência"
+            }
+          ]
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Escolha uma das seguintes perícias nas quais você seja proficiente: Investigação, Percepção, Furtividade ou Sobrevivência.\n\nAdicione o dobro do seu modificador de proficiência a essa perícia.\n\nEste talento pode ser escolhido múltiplas vezes, cada vez que uma perícia diferente for selecionada.",
-      "_needsReview": [
-        "prereq:unresolved:Furtividade ou Sobrevivência"
-      ]
+      "body": "Escolha uma das seguintes perícias nas quais você seja proficiente: Investigação, Percepção, Furtividade ou Sobrevivência.\n\nAdicione o dobro do seu modificador de proficiência a essa perícia.\n\nEste talento pode ser escolhido múltiplas vezes, cada vez que uma perícia diferente for selecionada."
     },
     {
       "id": "m-batedor-olhar-inimigo",

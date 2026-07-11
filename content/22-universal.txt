@@ -74,7 +74,7 @@ nível (raio de 4,5 metros) e 17º nível (raio de 6 metros).
 **Aprimoramento 1PM**: :: Quando você contra-ataca com sucesso uma magia usando Dissipar, o conjurador deve ser bem-sucedido em um teste de resistência de Inteligência ou sofrerá desvantagem em todas as jogadas de ataque com magia e concederá vantagem em qualquer teste de resistência feito contra suas magias e esferas mágicas por 1 minuto.
 
 
-#### Contra-magia do Tolo (dissipar)
+#### Contramágica do Tolo (dissipar)
 **Aprimoramento 1PM**: :: Quando você contra-ataca com sucesso uma magia usando Dissipar, o conjurador deve ser bem-sucedido em um teste de resistência de Inteligência igual à CD da sua esfera ou acreditará que a magia teve o efeito pretendido, mesmo que, de outra forma, estivesse ciente de sua falha. Trate este efeito como uma ilusão com duração igual à da magia contra-atacada e use as regras para interagir e investigar ilusões.
 
 
@@ -382,10 +382,10 @@ Quando você desencadeia um evento de magia selvagem (mas não um evento maior),
 Você pode gastar uma ação ou uma ação bônus para reduzir a chance de magia selvagem do próximo efeito de esfera que você conjurar antes do início do seu próximo turno em 25%. Essa habilidade não se acumula. Essa redução aumenta em 5% para cada talento de magia selvagem adicional que você possuir, até uma redução máxima de 50%.
 
 
-#### Contra-ataque Caótico (magia selvagem)
+#### Contramágica Caótica (magia selvagem)
 **Pré-requisitos**: :: Contra-ataque ou a capacidade de conjurar dissipar magia.
 
-Quando você encerra com sucesso um efeito de magia ou esfera usando Contrafeitiço ou dissipar magia, o conjurador sofre um aumento de 50% na chance de usar magia selvagem até o final do seu próximo turno. Essa penalidade aumenta em 10% para cada talento de magia selvagem que você possuir, até um máximo de 100%. O conjurador afetado não tem conhecimento desse aumento.
+Quando você encerra com sucesso um efeito de magia ou esfera usando Contramágica ou dissipar magia, o conjurador sofre um aumento de 50% na chance de usar magia selvagem até o final do seu próximo turno. Essa penalidade aumenta em 10% para cada talento de magia selvagem que você possuir, até um máximo de 100%. O conjurador afetado não tem conhecimento desse aumento.
 
 #### Maldição do Caos (magia selvagem)
 Como uma ação bônus, você pode gastar um ponto de magia para carregar seu próximo ataque com energias disruptivas. A próxima criatura que sofrer dano com um ataque de arma antes do início do seu próximo turno aumenta sua chance de usar magia selvagem em 100% por um número de rodadas igual ao seu modificador de habilidade principal (mínimo 1). As criaturas afetadas não têm conhecimento dessa penalidade.
@@ -431,7 +431,7 @@ Quando você desencadeia um evento de magia selvagem (mas não um evento maior),
 
 ### Outros Talentos
 
-#### Contrafeitiço
+#### Contramágica
 **Pré-requisitos**: :: Dissipar ou pacote de mana.
 
 **Aprimoramento 2PM**: :: Como uma reação que pode ser usada quando uma criatura dentro do alcance que você possa ver estiver conjurando uma magia ou efeito de esfera, você pode tentar usar Dissipar para interromper a conjuração ou criar um Vínculo de Mana com essa criatura.

@@ -1138,20 +1138,17 @@
           "id": "alquimia"
         },
         {
-          "type": "text",
-          "text": "qualquer combinação de cinco talentos de (fórmula) ou (veneno)"
-        },
-        {
-          "type": "level",
-          "min": 1
+          "type": "tag",
+          "tags": [
+            "fórmula",
+            "veneno"
+          ],
+          "count": 5
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Como uma ação bônus, o usuário pode transmutar o conteúdo deste frasco em qualquer item alquímico ou veneno cujo valor seja de 100 gp ou menos. Uma vez que o conteúdo tenha sido transmutado, ele deixa de ser um frasco universal, tornando-se o item em que foi transmutado.\n\nPotência: Gaste Foco Marcial. O valor máximo do item transmutado aumenta em 100 gp (200 gp) e aumenta novamente em 100 gp nos níveis 5 (300 gp), 11 (400 gp) e 17 (500 gp).",
-      "_needsReview": [
-        "prereq:unresolved:qualquer combinação de cinco talentos de (fórmula) ou (veneno)"
-      ]
+      "body": "Como uma ação bônus, o usuário pode transmutar o conteúdo deste frasco em qualquer item alquímico ou veneno cujo valor seja de 100 gp ou menos. Uma vez que o conteúdo tenha sido transmutado, ele deixa de ser um frasco universal, tornando-se o item em que foi transmutado.\n\nPotência: Gaste Foco Marcial. O valor máximo do item transmutado aumenta em 100 gp (200 gp) e aumenta novamente em 100 gp nos níveis 5 (300 gp), 11 (400 gp) e 17 (500 gp)."
     },
     {
       "id": "m-alquimia-elixir-da-saude",

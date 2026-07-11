@@ -30,10 +30,16 @@
 
 /**
  * @typedef {Object} Prerequisite
- * @property {'talent'|'sphere'|'level'|'text'} type
+ * @property {'talent'|'sphere'|'level'|'text'|'or'|'tag'|'skill'|'package'|'martial-talent'} type
  * @property {string} [id]   Referenced talent/sphere id (type talent|sphere).
  * @property {number} [min]  Minimum character level (type level).
  * @property {string} [text] Free-form / unresolved prerequisite (type text).
+ * @property {Prerequisite[]} [of]  Alternativas (type or) — satisfeito se QUALQUER uma.
+ * @property {string[]} [tags]      Tags aceitas (type tag).
+ * @property {number} [count]       Nº mínimo de talentos com a(s) tag(s) (type tag).
+ * @property {string} [skill]       Perícia/ferramenta (type skill).
+ * @property {string} [sphere]      Id da esfera do pacote (type package).
+ * @property {string} [pkg]         Id do pacote (type package).
  */
 
 /**

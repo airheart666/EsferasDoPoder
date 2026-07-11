@@ -7,9 +7,24 @@ _All talent-name mismatches (Buckets 1 & 2) are resolved:_
 - _Formatting fix: "Borda Irregular (frágil)" split into its own talent card (was merged into Escudo Improvisado)._
 - _The 2 `pp`-cost typos (Sentido, Aprimorar) fixed to `0 PM`._
 
-The **17 remaining** are NOT name fixes — they are prerequisite **types** the rules engine must support.
-They stay as structured `text` prereqs (surfaced to the user as "confirm manually"), never silently
-blocking or passing. Phase 3 rules-engine backlog.
+## Tier 2 — RESOLVIDO 2026-07-11 (branch `tier2-prereqs`)
+
+O motor ganhou os tipos de pré-requisito **`or` / `tag` / `skill` / `package` / `martial-talent`**
+(`src/rules.js` `prereqEval`), e os ~15 casos flagged foram estruturados numa tabela autoral
+**`prereq-overrides.json`** (fundida por nome no extractor → resolve talent/sphere→id, limpa
+`_needsReview`). Decisões do Owner aplicadas (incl. Condicionamento Intenso corrigido na fonte = só
+nível 5; Manipulação de Energia = OR bespoke de Elemental/Gosma/Traços Sobrenaturais; rename
+**Contrafeitiço→Contramágica** e Contra-magia do Tolo→Contramágica do Tolo). **Flagged: 22 → 5.**
+
+**Restam 5 (grupo E — reservado p/ curadoria manual do Owner):** os talentos "esfera dupla" com
+referência aninhada não resolvida — Aprimoramento de Liga / Telecinese de Liga ("geomancia metálica"),
+Chama Luminosa ("geomancia do fogo"), Necromancia Silvestre ("geomancia vegetal"), Explosão Cadavérica
+("Bomba Cadavérica"). Ficam como `text` (confirmar manualmente) até a curadoria de E.
+
+---
+## (Histórico) Backlog original — Bucket 3
+
+The **17 originally-flagged** were prerequisite **types** the rules engine had to support (now done above).
 
 ## Remaining (17)
 

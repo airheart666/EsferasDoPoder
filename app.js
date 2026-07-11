@@ -592,7 +592,9 @@ function showCharNotice(anchorEl, message) {
   note.className = 'char-warn char-warn-toast';
   note.setAttribute('role', 'alert');
   note.textContent = message;
-  const host = (anchorEl && anchorEl.closest) ? anchorEl.closest('.sphere-acquire, .talent-card, .char-sphere') : null;
+  // Ancestral mais próximo: p/ um seletor de grátis/pacote, o próprio rótulo
+  // (.freepick-l/.pkg-l) → o aviso aparece JUNTO ao dropdown, não no fim do card.
+  const host = (anchorEl && anchorEl.closest) ? anchorEl.closest('.freepick-l, .pkg-l, .sphere-acquire, .talent-card, .char-sphere') : null;
   if (host && host.parentNode) host.parentNode.insertBefore(note, host.nextSibling);
   else document.getElementById('content')?.prepend(note);
   window.setTimeout(() => note.remove(), 4500);
@@ -762,6 +764,8 @@ function buildFreePickSelectors(active, title, spec, model, entry) {
       sel.appendChild(none);
       for (const it of items) {
         if (allChosen.includes(it.id) && it.id !== current) continue; // já escolhido em outro slot
+        // só oferece talentos com pré-requisito atendido (mantém o já-selecionado neste slot).
+        if (it.id !== current) { const t = dataIndex && dataIndex.talentById.get(it.id); if (t && !Rules.prereqCheck(active, t, dataIndex).ok) continue; }
         const opt = document.createElement('option');
         opt.value = it.id; opt.textContent = it.name;
         if (it.id === current) opt.selected = true;
@@ -2068,13 +2072,19 @@ function talentPickPath(active, title, item) {
 }
 
 // Descreve prerequisitos estruturados (nível/esfera/talento) por extenso, em PT-BR.
+function describePrereq(p) {
+  if (p.type === 'level') return `nível ${p.min}`;
+  if (p.type === 'sphere') return `esfera ${sphereTitleById.get(p.id) || p.id}`;
+  if (p.type === 'talent') { const t = dataIndex.talentById.get(p.id); return t ? t.name : p.id; }
+  if (p.type === 'or') return (p.of || []).map(describePrereq).join(' ou ');
+  if (p.type === 'tag') { const n = p.count || 1; const tg = (p.tags || []).join(' ou '); return `${n} talento${n > 1 ? 's' : ''} de (${tg})`; }
+  if (p.type === 'skill') return `proficiência em ${p.skill}`;
+  if (p.type === 'package') return `pacote ${p.pkg} (${sphereTitleById.get(p.sphere) || p.sphere})`;
+  if (p.type === 'martial-talent') return 'um talento de esfera marcial';
+  return 'pré-requisito descritivo (confirme com o mestre)';
+}
 function describePrereqs(list) {
-  return list.map(p => {
-    if (p.type === 'level') return `nível ${p.min}`;
-    if (p.type === 'sphere') return sphereTitleById.get(p.id) || p.id;
-    if (p.type === 'talent') { const t = dataIndex.talentById.get(p.id); return t ? t.name : p.id; }
-    return 'pré-requisito em texto';
-  }).join(', ');
+  return list.map(describePrereq).join(', ');
 }
 function prereqStatusLabel(pre, talent) {
   if (!pre.missing.length) {

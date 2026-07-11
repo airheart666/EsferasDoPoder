@@ -878,8 +878,11 @@
           "id": "destino"
         },
         {
-          "type": "text",
-          "text": "um talento (motivo)"
+          "type": "tag",
+          "tags": [
+            "motivo"
+          ],
+          "count": 1
         },
         {
           "type": "level",
@@ -888,10 +891,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode conceder um motivo que permite a um alvo preservar e, em última instância, alterar os outros motivos que ele possui. Enquanto este motivo estiver ativo, sempre que o alvo dispensar um motivo aprimorado que não seja Morte, há 50% de chance de que ele não termine. Dispensar o motivo enquanto estiver aprimorado permite que o alvo conjure qualquer talento (motivo) que ele conheça como parte da mesma ação.",
-      "_needsReview": [
-        "prereq:unresolved:um talento (motivo)"
-      ]
+      "body": "Você pode conceder um motivo que permite a um alvo preservar e, em última instância, alterar os outros motivos que ele possui. Enquanto este motivo estiver ativo, sempre que o alvo dispensar um motivo aprimorado que não seja Morte, há 50% de chance de que ele não termine. Dispensar o motivo enquanto estiver aprimorado permite que o alvo conjure qualquer talento (motivo) que ele conheça como parte da mesma ação."
     },
     {
       "id": "destino-execracao",
@@ -907,8 +907,11 @@
           "id": "destino"
         },
         {
-          "type": "text",
-          "text": "pelo menos um talento [maldição] (palavra)"
+          "type": "tag",
+          "tags": [
+            "palavra"
+          ],
+          "count": 1
         },
         {
           "type": "level",
@@ -922,10 +925,7 @@
           "text": "Qualquer efeito de talento [maldição] (palavra) que normalmente dura até o início do próximo turno torna-se permanente até ser dissipado."
         }
       ],
-      "body": "",
-      "_needsReview": [
-        "prereq:unresolved:pelo menos um talento [maldição] (palavra)"
-      ]
+      "body": ""
     },
     {
       "id": "destino-a-alta-sacerdotisa",
@@ -943,8 +943,11 @@
           "id": "destino"
         },
         {
-          "type": "text",
-          "text": "um talento (motivo)"
+          "type": "tag",
+          "tags": [
+            "motivo"
+          ],
+          "count": 1
         },
         {
           "type": "level",
@@ -953,10 +956,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode conceder um motivo que estende os benefícios de outros motivos que afetam o alvo aos seus aliados. Ao conjurar este motivo, escolha outro motivo que esteja afetando o alvo para vinculá-lo. Os aliados do alvo recebem o efeito do motivo enquanto estiverem a até 9 metros do alvo. Dissipar este motivo enquanto estiver aprimorado permite que o alvo, como parte da mesma ação, dispense o talento (motivo) vinculado, concedendo o efeito dispensado a todos os aliados a até 9 metros do alvo.",
-      "_needsReview": [
-        "prereq:unresolved:um talento (motivo)"
-      ]
+      "body": "Você pode conceder um motivo que estende os benefícios de outros motivos que afetam o alvo aos seus aliados. Ao conjurar este motivo, escolha outro motivo que esteja afetando o alvo para vinculá-lo. Os aliados do alvo recebem o efeito do motivo enquanto estiverem a até 9 metros do alvo. Dissipar este motivo enquanto estiver aprimorado permite que o alvo, como parte da mesma ação, dispense o talento (motivo) vinculado, concedendo o efeito dispensado a todos os aliados a até 9 metros do alvo."
     }
   ],
   "_reviewed": false,

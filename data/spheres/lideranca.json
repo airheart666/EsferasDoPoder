@@ -603,16 +603,16 @@
           "id": "lideranca"
         },
         {
-          "type": "text",
-          "text": "pacote de ajudante"
+          "type": "tag",
+          "tags": [
+            "ajudante"
+          ],
+          "count": 1
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode recrutar ajudantes do tipo morto-vivo, que encontram e reanimam cadáveres com rituais arcanos. Esses companheiros são construídos normalmente, mas possuem o tipo morto-vivo e ganham os seguintes modificadores e habilidades, dependendo se são Esqueleto ou Zumbi:\n\nEsqueleto\n\n•+2 Des, -4 Int, -4 Car\n\n•Vulnerável: concussão\n\n•Imune: dano de veneno\n\n•Imunidade a Condições: exaustão e veneno\n\n•Sentidos: visão no escuro 18 m\n\n•Idiomas: Não pode falar, mas ainda entende os idiomas que conhece\n\nZumbi\n\n•+1 For, +2 Con, -6 Int, -4 Sab, -4 Car\n\n•Fortitude Morta-Viva (Se o dano reduzir a criatura a 0 Pontos de Vida, ela deve fazer um teste de resistência de Constituição com CD 5 + o dano sofrido, a menos que o dano seja radiante ou proveniente de um acerto crítico. Em caso de sucesso, a criatura fica com 1 ponto de vida.)\n\n•Imune: dano de veneno\n\n•Imunidade a Condições: veneno\n\n•Sentidos: visão no escuro 18 m\n\n•Idiomas: Não pode Fala, mas ainda entende os idiomas que conhece.",
-      "_needsReview": [
-        "prereq:unresolved:pacote de ajudante"
-      ]
+      "body": "Você pode recrutar ajudantes do tipo morto-vivo, que encontram e reanimam cadáveres com rituais arcanos. Esses companheiros são construídos normalmente, mas possuem o tipo morto-vivo e ganham os seguintes modificadores e habilidades, dependendo se são Esqueleto ou Zumbi:\n\nEsqueleto\n\n•+2 Des, -4 Int, -4 Car\n\n•Vulnerável: concussão\n\n•Imune: dano de veneno\n\n•Imunidade a Condições: exaustão e veneno\n\n•Sentidos: visão no escuro 18 m\n\n•Idiomas: Não pode falar, mas ainda entende os idiomas que conhece\n\nZumbi\n\n•+1 For, +2 Con, -6 Int, -4 Sab, -4 Car\n\n•Fortitude Morta-Viva (Se o dano reduzir a criatura a 0 Pontos de Vida, ela deve fazer um teste de resistência de Constituição com CD 5 + o dano sofrido, a menos que o dano seja radiante ou proveniente de um acerto crítico. Em caso de sucesso, a criatura fica com 1 ponto de vida.)\n\n•Imune: dano de veneno\n\n•Imunidade a Condições: veneno\n\n•Sentidos: visão no escuro 18 m\n\n•Idiomas: Não pode Fala, mas ainda entende os idiomas que conhece."
     },
     {
       "id": "m-lideranca-artesao-mistico",
@@ -690,12 +690,18 @@
           "id": "lideranca"
         },
         {
-          "type": "text",
-          "text": "pacotes de seguidores e parceiros"
+          "type": "tag",
+          "tags": [
+            "seguidores"
+          ],
+          "count": 1
         },
         {
-          "type": "talent",
-          "id": "m-lideranca-soldados"
+          "type": "tag",
+          "tags": [
+            "parceiro"
+          ],
+          "count": 1
         },
         {
           "type": "level",
@@ -704,10 +710,7 @@
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Você pode recrutar suas tropas de seguidores para serem parceiros.\n\nEscolha uma tropa para se tornar um parceiro. Essa tropa se torna uma tropa de estudantes, uma tropa de exploradores ou uma tropa de veteranos e avança como se fosse um parceiro, exceto que cada nível que um esquadrão possui conta como dois níveis ao determinar o nível máximo do seu parceiro ou parceiros. Para cada nível que o esquadrão tiver além do 1º, ele ganha três Dados de Vida e seu máximo de pontos de vida aumenta. Para determinar o valor do aumento, role o Dado de Vida (o tipo de dado aparece na ficha de estatísticas do parceiro) três vezes e adicione três vezes o seu modificador de Constituição. Ele ganha um mínimo de 3 pontos de vida por nível. Essa tropa o seguirá em situações perigosas como qualquer outro parceiro.",
-      "_needsReview": [
-        "prereq:unresolved:pacotes de seguidores e parceiros"
-      ]
+      "body": "Você pode recrutar suas tropas de seguidores para serem parceiros.\n\nEscolha uma tropa para se tornar um parceiro. Essa tropa se torna uma tropa de estudantes, uma tropa de exploradores ou uma tropa de veteranos e avança como se fosse um parceiro, exceto que cada nível que um esquadrão possui conta como dois níveis ao determinar o nível máximo do seu parceiro ou parceiros. Para cada nível que o esquadrão tiver além do 1º, ele ganha três Dados de Vida e seu máximo de pontos de vida aumenta. Para determinar o valor do aumento, role o Dado de Vida (o tipo de dado aparece na ficha de estatísticas do parceiro) três vezes e adicione três vezes o seu modificador de Constituição. Ele ganha um mínimo de 3 pontos de vida por nível. Essa tropa o seguirá em situações perigosas como qualquer outro parceiro."
     },
     {
       "id": "m-lideranca-teletransporte",

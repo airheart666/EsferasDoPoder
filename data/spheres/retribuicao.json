@@ -294,20 +294,13 @@
           "id": "retribuicao"
         },
         {
-          "type": "text",
-          "text": "habilidade de contra-ataque"
-        },
-        {
           "type": "level",
           "min": 5
         }
       ],
       "advanced": true,
       "enhancements": [],
-      "body": "Sempre que você realizar um contra-ataque bem-sucedido, você pode gastar seu foco marcial para fazer com que a criatura atingida pelo seu contra-ataque faça um teste de resistência de Carisma; Se este teste de resistência falhar, durante 1 minuto, sempre que a criatura tentar a ação que desencadeou seu contra-ataque, ela deverá fazer um teste de resistência de Carisma bem-sucedido ou ficará impossibilitada de realizar essa ação, embora ainda possa optar por realizar outra ação em seu lugar. Criaturas imunes à condição amedrontada são imunes a este efeito.",
-      "_needsReview": [
-        "prereq:unresolved:habilidade de contra-ataque"
-      ]
+      "body": "Sempre que você realizar um contra-ataque bem-sucedido, você pode gastar seu foco marcial para fazer com que a criatura atingida pelo seu contra-ataque faça um teste de resistência de Carisma; Se este teste de resistência falhar, durante 1 minuto, sempre que a criatura tentar a ação que desencadeou seu contra-ataque, ela deverá fazer um teste de resistência de Carisma bem-sucedido ou ficará impossibilitada de realizar essa ação, embora ainda possa optar por realizar outra ação em seu lugar. Criaturas imunes à condição amedrontada são imunes a este efeito."
     },
     {
       "id": "m-retribuicao-pugilista",
