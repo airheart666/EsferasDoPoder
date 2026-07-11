@@ -18,7 +18,8 @@ const spheres = fs.readdirSync(path.join(ROOT, 'data', 'spheres'))
   .map(f => load(path.join('data', 'spheres', f)));
 const classes = load(path.join('data', 'classes.json'));
 const classFeatures = load(path.join('data', 'class-features.json'));
-const idx = Rules.indexData(spheres, classes, classFeatures);
+const traditions = load(path.join('data', 'traditions.json'));
+const idx = Rules.indexData(spheres, classes, classFeatures, traditions);
 
 let pass = 0;
 const ok = (name, cond) => { assert.ok(cond, name); console.log('  ✓ ' + name); pass++; };

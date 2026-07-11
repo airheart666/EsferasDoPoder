@@ -31,7 +31,7 @@ const warn = m => warnings.push(m);
 
 // ---- 1. Schema conformance ---------------------------------------------------
 const ajv = new Ajv({ allErrors: true, strict: false });
-for (const f of ['schema/talent.schema.json', 'schema/sphere.schema.json', 'schema/class.schema.json', 'schema/class-features.schema.json'])
+for (const f of ['schema/talent.schema.json', 'schema/sphere.schema.json', 'schema/class.schema.json', 'schema/class-features.schema.json', 'schema/traditions.schema.json'])
   ajv.addSchema(load(f));
 const validateSphere = ajv.getSchema('sphere.schema.json');
 
@@ -56,6 +56,17 @@ if (fs.existsSync(path.join(ROOT, 'data', 'classes.json'))) {
 if (fs.existsSync(path.join(ROOT, 'data', 'class-features.json'))) {
   const doc = load(path.join('data', 'class-features.json'));
   if (!validateClassFeatures(doc)) for (const e of validateClassFeatures.errors) err(`class-features.json: ${e.instancePath || '/'} ${e.message}`);
+}
+const validateTraditions = ajv.getSchema('traditions.schema.json');
+if (fs.existsSync(path.join(ROOT, 'data', 'traditions.json'))) {
+  const doc = load(path.join('data', 'traditions.json'));
+  if (!validateTraditions(doc)) for (const e of validateTraditions.errors) err(`traditions.json: ${e.instancePath || '/'} ${e.message}`);
+  else { // ids únicos por tipo
+    for (const type of ['magic', 'martial']) {
+      const seen = new Set();
+      for (const tr of doc[type] || []) { if (seen.has(tr.id)) err(`traditions.json: duplicate id "${tr.id}" in ${type}`); seen.add(tr.id); }
+    }
+  }
 }
 
 // ---- 2. Referential integrity ------------------------------------------------

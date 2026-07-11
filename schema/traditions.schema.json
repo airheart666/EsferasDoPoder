@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "traditions.schema.json",
+  "title": "Traditions",
+  "description": "Tradições nomeadas do builder (conjurador/marcial), por tipo. Cada uma soma talentBonus ao orçamento de talentos do tipo. Dado autoral em traditions.json (raiz) → copiado p/ data/.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "magic": { "type": "array", "items": { "$ref": "#/definitions/tradition" } },
+    "martial": { "type": "array", "items": { "$ref": "#/definitions/tradition" } }
+  },
+  "definitions": {
+    "tradition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "talentBonus"],
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "talentBonus": { "type": "number" },
+        "keyAbility": { "type": ["string", "null"] },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

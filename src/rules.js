@@ -40,16 +40,17 @@ const Rules = (() => {
    * @param {Sphere[]} spheres
    * @param {Object<string, ClassDef>} [classes]
    * @param {Object<string, any>} [classFeatures]
+   * @param {{magic?:any[], martial?:any[]}} [traditions]
    * @returns {DataIndex}
    */
-  function indexData(spheres, classes, classFeatures) {
+  function indexData(spheres, classes, classFeatures, traditions) {
     /** @type {Map<string, Talent>} */ const talentById = new Map();
     /** @type {Map<string, Sphere>} */ const sphereById = new Map();
     for (const s of spheres) {
       sphereById.set(s.id, s);
       for (const t of s.talents) talentById.set(t.id, t);
     }
-    return { talentById, sphereById, classes: classes || {}, classFeatures: classFeatures || {} };
+    return { talentById, sphereById, classes: classes || {}, classFeatures: classFeatures || {}, traditions: traditions || { magic: [], martial: [] } };
   }
 
   /**
@@ -93,7 +94,12 @@ const Rules = (() => {
   function traditionBonus(char, idx) {
     const cls = idx.classes[char.className];
     if (!cls || !char.tradition) return 0;
-    return (cls.type === 'magic' || cls.type === 'martial') ? 2 : 0;
+    if (cls.type !== 'magic' && cls.type !== 'martial') return 0;
+    // Lê o bônus da tradição escolhida em traditions.json (por tipo). Sem o dado, ou
+    // tradição não encontrada → 0. "base" = +2 (idêntico ao stub anterior).
+    const list = (idx.traditions && idx.traditions[cls.type]) || [];
+    const trad = list.find(t => t.id === char.tradition);
+    return trad ? (trad.talentBonus || 0) : 0;
   }
 
   /**

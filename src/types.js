@@ -205,11 +205,19 @@
  */
 
 /**
+ * @typedef {Object} Tradition  Tradição nomeada (traditions.json), por tipo (magic/martial).
+ * @property {string} id
+ * @property {string} label
+ * @property {number} talentBonus   Talentos extras concedidos (somados ao orçamento do tipo).
+ * @property {string|null} [keyAbility]
+ * @property {string} [notes]
+ *
  * @typedef {Object} DataIndex
  * @property {Map<string, Talent>} talentById
  * @property {Map<string, Sphere>} sphereById
  * @property {Object<string, ClassDef>} classes
  * @property {Object<string, any>} classFeatures
+ * @property {{magic?: Tradition[], martial?: Tradition[]}} traditions
  */
 
 /**

@@ -1,0 +1,14 @@
+{
+  "magic": [
+    { "id": "base", "label": "Base", "talentBonus": 2, "keyAbility": null,
+      "notes": "Regra da mesa: +2 talentos mágicos a todos os conjuradores." },
+	{ "id": "base-extra", "label": "Mestre Generoso", "talentBonus": 3, "keyAbility": null,
+      "notes": "Os frutos de um erro também podem ser colhidos." }
+  ],
+  "martial": [
+    { "id": "base", "label": "Base", "talentBonus": 2, "keyAbility": null,
+      "notes": "Regra da mesa: +2 talentos marciais a todos os marciais." },
+	{ "id": "base-extra", "label": "Mestre Generoso", "talentBonus": 3, "keyAbility": null,
+      "notes": "Os frutos de um erro também podem ser colhidos." }
+  ]
+}

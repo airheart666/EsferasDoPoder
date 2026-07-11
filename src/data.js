@@ -19,7 +19,7 @@ const DataLoader = (() => {
 
   /**
    * @param {string} [base] path prefix to the data dir (default "data/")
-   * @returns {Promise<{spheres: Sphere[], classes: Object<string,ClassDef>, classFeatures: Object<string,any>}>}
+   * @returns {Promise<{spheres: Sphere[], classes: Object<string,ClassDef>, classFeatures: Object<string,any>, traditions: any}>}
    */
   async function loadData(base) {
     const dir = base || 'data/';
@@ -27,15 +27,18 @@ const DataLoader = (() => {
       if (!r.ok) throw new Error(`failed to load ${dir + p}: ${r.status}`);
       return r.json();
     });
+    // Tradições são opcionais — se traditions.json faltar, o builder segue (bônus 0).
+    const getJsonOpt = (/** @type {string} */ p) => fetch(dir + p).then(r => r.ok ? r.json() : null).catch(() => null);
 
     /** @type {{id:string}[]} */
     const manifest = await getJson('spheres.json');
-    const [spheres, classes, classFeatures] = await Promise.all([
+    const [spheres, classes, classFeatures, traditions] = await Promise.all([
       Promise.all(manifest.map(m => getJson('spheres/' + m.id + '.json'))),
       getJson('classes.json'),
       getJson('class-features.json'),
+      getJsonOpt('traditions.json'),
     ]);
-    return { spheres, classes, classFeatures };
+    return { spheres, classes, classFeatures, traditions };
   }
 
   return { loadData };

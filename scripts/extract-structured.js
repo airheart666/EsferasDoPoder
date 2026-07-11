@@ -457,6 +457,13 @@ function main() {
     if (!dryRun) {
       const sphereManifest = results.map(s => ({ id: s.id, name: s.name, section: s.section }));
       fs.writeFileSync(path.join(ROOT, 'data', 'spheres.json'), JSON.stringify(sphereManifest, null, 2) + '\n');
+      // Tradições: dado AUTORAL (traditions.json na raiz) copiado p/ data/ (passthrough,
+      // sem transformação) — o browser lê tudo de data/. Editar = editar a raiz + extract.
+      const tradPath = path.join(ROOT, 'traditions.json');
+      if (fs.existsSync(tradPath)) {
+        fs.writeFileSync(path.join(ROOT, 'data', 'traditions.json'), fs.readFileSync(tradPath, 'utf8'));
+        console.log('data/traditions.json copied from root');
+      }
     }
     const grantUnresolved = migrateClasses(allTalents);
     console.log(`data/classes.json + data/class-features.json migrated` +

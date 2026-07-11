@@ -1419,6 +1419,7 @@ h4.base-ability::after {
   letter-spacing: 0.05em;
   color: var(--text-muted);
 }
+.char-field-note { display: block; font-family: var(--font-ui); font-size: 0.78rem; text-transform: none; letter-spacing: 0; color: var(--text-muted); font-style: italic; margin-top: 0.2rem; }
 .char-field {
   font-family: var(--font-body);
   font-size: 1rem;

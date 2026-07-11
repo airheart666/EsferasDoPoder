@@ -75,8 +75,8 @@ async function init() {
     // orçamento, pré-requisitos, concedidos e classificação grátis/base/extra. Se falhar, o
     // companheiro de personagem fica indisponível (mesmo tratamento de antes).
     try {
-      const { spheres, classes, classFeatures: cf } = await DataLoader.loadData();
-      dataIndex = Rules.indexData(spheres, classes, cf);
+      const { spheres, classes, classFeatures: cf, traditions } = await DataLoader.loadData();
+      dataIndex = Rules.indexData(spheres, classes, cf, traditions);
       for (const sph of dataIndex.sphereById.values()) {
         sphereIdByTitle.set(sph.name, sph.id);
         sphereTitleById.set(sph.id, sph.name);
@@ -1941,25 +1941,25 @@ function classFeatureBonus(char) {
   return (char && dataIndex) ? Rules.classFeatureBonus(char, dataIndex) : { magic: 0, martial: 0, notes: [] };
 }
 
-/* ---- Tradições (Conjurador / Marcial) ---------------------------------------
-   Por ora só a opção "Base" (+2 talentos do tipo da classe). Estrutura pronta
-   para tradições reais (bônus/desvantagens) no futuro. O tipo do seletor segue
-   o tipo da classe: magic → Tradição de Conjurador; martial → Tradição Marcial. */
-const TRADITIONS = {
-  magic:   { label: 'Tradição de Conjurador', options: [{ id: 'base', label: 'Base', bonus: 2 }] },
-  martial: { label: 'Tradição Marcial',       options: [{ id: 'base', label: 'Base', bonus: 2 }] },
-};
+/* ---- Tradições (Conjurador / Marcial) — data-driven (traditions.json) --------
+   As tradições vêm de dataIndex.traditions[tipo] (magic/martial). O tipo do
+   seletor segue o tipo da classe: magic → Tradição de Conjurador; martial →
+   Tradição Marcial. Adicionar tradições = editar traditions.json (+ npm run extract). */
+const TRADITION_LABEL = { magic: 'Tradição de Conjurador', martial: 'Tradição Marcial' };
 // Campo <select> da tradição no formulário (só quando a classe define um tipo).
 function traditionField(char) {
   const cls = dataIndex && dataIndex.classes[char.className];
-  const t = cls && TRADITIONS[cls.type];
-  if (!t) return '';
+  const type = cls && cls.type;
+  const list = (dataIndex && dataIndex.traditions && dataIndex.traditions[type]) || [];
+  if (!type || !list.length) return '';
   const opts = ['<option value="">— nenhuma —</option>']
-    .concat(t.options.map(o => `<option value="${o.id}"${char.tradition === o.id ? ' selected' : ''}>${escapeHtml(o.label)} (+${o.bonus} talentos)</option>`))
+    .concat(list.map(o => `<option value="${escapeHtml(o.id)}"${char.tradition === o.id ? ' selected' : ''}>${escapeHtml(o.label)} (+${o.talentBonus || 0} talentos)</option>`))
     .join('');
-  return `<label class="char-field-l">${t.label}
+  const chosen = list.find(o => o.id === char.tradition);
+  const note = chosen && chosen.notes ? `<span class="char-field-note">${escapeHtml(chosen.notes)}</span>` : '';
+  return `<label class="char-field-l">${TRADITION_LABEL[type] || 'Tradição'}
        <select class="char-field" data-field="tradition">${opts}</select>
-     </label>`;
+     </label>${note}`;
 }
 // Campo <select> da subclasse (opções das subclasses da classe, via TOC).
 function subclassField(char) {

@@ -52,8 +52,8 @@ async function main() {
 
   const loadDataIndex = vm.runInContext(
     `(async function(){
-       const { spheres, classes, classFeatures } = await DataLoader.loadData();
-       dataIndex = Rules.indexData(spheres, classes, classFeatures);
+       const { spheres, classes, classFeatures, traditions } = await DataLoader.loadData();
+       dataIndex = Rules.indexData(spheres, classes, classFeatures, traditions);
        for (const sph of dataIndex.sphereById.values()) { sphereIdByTitle.set(sph.name, sph.id); sphereTitleById.set(sph.id, sph.name); }
      })`,
     ctx
