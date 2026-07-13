@@ -402,6 +402,40 @@ function resolvePackageBaseTalents(sphere) {
   }
 }
 
+// ---- Fase 2: derive package prerequisites from element/type tags -------------
+// Um talento marcado com a tag de um pacote (ex.: Natureza "fogo", Dom. das Feras
+// "montaria") passa a EXIGIR aquele pacote — pré-requisito estruturado {type:'package'},
+// reusando o motor do Tier 2. Só esferas "base-scoped" (pacotes SEM talentTags:
+// Natureza, Dom. das Feras); esferas tag-scoped (Universal/Alquimia) já ocultam esses
+// talentos pelo talentRole e NÃO devem ganhar prereq (evita regredir a Metamágica/KG-5).
+// Mapa tag→pacote: opt.scopeTags quando autorado, senão o próprio id do pacote.
+function derivePackagePrereqs(sphere) {
+  const pkgs = sphere.acquisition && sphere.acquisition.packages;
+  if (!pkgs || !Array.isArray(pkgs.options)) return 0;
+  if (pkgs.options.some(o => (o.talentTags || []).length)) return 0; // tag-scoped → pular
+  const baseIds = new Set(pkgs.options.flatMap(o => o.baseTalentIds || []));
+  const tagToPkg = new Map();
+  for (const opt of pkgs.options) {
+    const scope = (opt.scopeTags && opt.scopeTags.length) ? opt.scopeTags : [opt.id];
+    for (const tg of scope) tagToPkg.set(normalizeTerm(tg), opt.id);
+  }
+  let added = 0;
+  for (const t of sphere.talents) {
+    if (baseIds.has(t.id)) continue; // a habilidade-base do pacote não exige a si mesma
+    const pkgSet = new Set();
+    for (const tag of t.tags || []) { const pid = tagToPkg.get(normalizeTerm(tag)); if (pid) pkgSet.add(pid); }
+    if (!pkgSet.size) continue;
+    t.prerequisites = t.prerequisites || [];
+    for (const pid of pkgSet) {
+      if (!t.prerequisites.some(p => p.type === 'package' && p.sphere === sphere.id && p.pkg === pid)) {
+        t.prerequisites.push({ type: 'package', sphere: sphere.id, pkg: pid });
+        added++;
+      }
+    }
+  }
+  return added;
+}
+
 // ---- Migrate classes.json + class-features.json into data/ -------------------
 // classes.json is already schema-shaped (copied through). class-features grants
 // reference talents by {name, sphere}; we resolve each to a stable talent id so
@@ -475,6 +509,10 @@ function main() {
   }
   const allSphereIds = new Set([...sphereNames].map(slugify));
   resolvePrereqs(allTalents, allSphereIds);
+  // Fase 2: escopo por elemento/tipo (depois dos overrides — AUMENTA, não substitui).
+  let pkgPrereqs = 0;
+  for (const sphere of results) pkgPrereqs += derivePackagePrereqs(sphere);
+  if (pkgPrereqs) console.log(`  package scoping: +${pkgPrereqs} prereq(s) de pacote (Fase 2)`);
 
   // Report + write
   let totalTalents = 0, flagged = 0;

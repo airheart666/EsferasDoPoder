@@ -9,11 +9,72 @@
     "sig": "natureza"
   },
   "acquisition": {
-    "freeGroup": {
-      "h3": "pacote"
-    },
-    "freeLabel": "pacote",
-    "freePicks": 1
+    "packages": {
+      "label": "Pacote de Natureza",
+      "grantTalent": "Protomancia Expandida",
+      "options": [
+        {
+          "id": "ar",
+          "label": "Ar",
+          "baseTalents": [
+            "Ar"
+          ],
+          "baseTalentIds": [
+            "natureza-ar"
+          ]
+        },
+        {
+          "id": "terra",
+          "label": "Terra",
+          "baseTalents": [
+            "Terra"
+          ],
+          "baseTalentIds": [
+            "natureza-terra"
+          ]
+        },
+        {
+          "id": "fogo",
+          "label": "Fogo",
+          "baseTalents": [
+            "Fogo"
+          ],
+          "baseTalentIds": [
+            "natureza-fogo"
+          ]
+        },
+        {
+          "id": "metal",
+          "label": "Metal",
+          "baseTalents": [
+            "Metal"
+          ],
+          "baseTalentIds": [
+            "natureza-metal"
+          ]
+        },
+        {
+          "id": "planta",
+          "label": "Planta",
+          "baseTalents": [
+            "Planta"
+          ],
+          "baseTalentIds": [
+            "natureza-planta"
+          ]
+        },
+        {
+          "id": "agua",
+          "label": "Água",
+          "baseTalents": [
+            "Água"
+          ],
+          "baseTalentIds": [
+            "natureza-agua"
+          ]
+        }
+      ]
+    }
   },
   "talents": [
     {
@@ -213,7 +274,13 @@
         "protomancia",
         "ar"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "ar"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -290,7 +357,13 @@
         "base": 1,
         "text": "1 PM"
       },
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "terra"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -355,7 +428,13 @@
         "base": 1,
         "text": "1 PM"
       },
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "fogo"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -376,7 +455,13 @@
         "agua",
         "protomancia"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "agua"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -397,7 +482,13 @@
         "terra",
         "protomancia"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "terra"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -464,7 +555,18 @@
         "text": "2PM"
       },
       "area": "quadrado de 3 metros",
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "terra"
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "fogo"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -514,7 +616,13 @@
         "base": 2,
         "text": "2PM"
       },
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "metal"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -544,7 +652,13 @@
         "planta"
       ],
       "target": "uma criatura",
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "planta"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -573,7 +687,13 @@
         "protomancia",
         "planta"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "planta"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -603,7 +723,13 @@
         "metal"
       ],
       "target": "um objeto de metal",
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "metal"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você adquire as seguintes habilidades. Se um pacote adicional estiver listado, você precisa possuí-lo para usar essa habilidade.\n\nGume Alterado\n\n(concentração) Você pode escolher uma arma de metal dentro do alcance. A arma acerta um golpe crítico com um resultado de 19 ou 20 no dado, ou torna-se incapaz de acertar um golpe crítico.\n\nResfriar Metal (água)\n\n(concentração; requer metal) Escolha um objeto de metal manufaturado, como uma arma de metal ou uma armadura de metal pesada ou média, que você possa ver dentro do alcance. Você faz com que o objeto fique extremamente frio. Qualquer criatura em contato físico com o objeto sofre 1d8 de dano de frio. Enquanto o efeito persistir, você pode usar uma ação bônus em cada um dos seus turnos subsequentes para causar esse dano novamente.\n\nSe uma criatura estiver segurando ou vestindo o objeto e sofrer dano dele, ela deve ser bem-sucedida em um teste de resistência de Constituição ou ficará impossibilitada de soltar ou guardar o objeto, pois ele congelará em seu corpo. Se não soltar o objeto, terá desvantagem em jogadas de ataque e testes de habilidade até o início do seu próximo turno. Esse dano aumenta em 1d8 no 5º (2d8), 11º (3d8) e 17º (4d8) níveis.\n\nResfriar Metal pode ser usado para dissipar Aquecer Metal.\n\nAlcance Forjado\n\n(concentração; requer arma de metal) Você pode aumentar o alcance de uma arma de metal dentro do alcance em até 1,5 metro. Esse alcance aumenta para 3 metros no 11º nível.\n\nAquecer Metal (fogo)\n\n(concentração; requer metal) Escolha um objeto de metal fabricado, como uma arma de metal ou uma armadura de metal pesada ou média, que você possa ver dentro do alcance. Você faz com que o objeto brilhe em brasa. Qualquer criatura em contato físico com o objeto sofre 1d8 de dano de fogo. Enquanto o efeito persistir, você pode usar uma ação bônus em cada um dos seus turnos subsequentes para causar esse dano novamente.\n\nSe uma criatura estiver segurando ou vestindo o objeto e sofrer o dano, ela deve ser bem-sucedida em um teste de resistência de Constituição ou soltar o objeto, se puder. Se não soltar o objeto, ela terá desvantagem em jogadas de ataque e testes de habilidade até o início do seu próximo turno.\n\nEsse dano aumenta em 1d8 no 5º (2d8), 11º (3d8) e 17º (4d8) níveis.\n\nA magia Aquecer Metal pode ser usada para dissipar Resfriar Metal."
@@ -623,7 +749,13 @@
         "base": 1,
         "text": "1PM"
       },
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "fogo"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -645,7 +777,13 @@
         "agua"
       ],
       "area": "cubo de 3 metros",
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "agua"
+        }
+      ],
       "advanced": false,
       "enhancements": [
         {
@@ -900,6 +1038,11 @@
         {
           "type": "level",
           "min": 15
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "terra"
         }
       ],
       "advanced": true,
@@ -922,7 +1065,18 @@
         "base": 3,
         "text": "3PM"
       },
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "fogo"
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "agua"
+        }
+      ],
       "advanced": true,
       "enhancements": [],
       "body": "Pré-requisito: Esfera da Natureza (Criar Natureza, Termoturgia), 15º nível ou superior.\n\n(Concentração) Você cria uma explosão de água fervente que congela instantaneamente ao atingir seus alvos. Você cria uma erupção que surge de uma área de 3 metros quadrados de solo sólido dentro do alcance, estendendo-se por 9 metros no ar. Isso causa 5d6 de dano de fogo por rodada a todas as criaturas que iniciarem seu turno dentro da área afetada. Um teste de resistência de Destreza bem-sucedido reduz o dano à metade.\n\nA partir da segunda rodada da erupção do gêiser, a água que esfria rapidamente começa a cair sobre todos os alvos em um raio de 9 metros do gêiser (mas não no espaço onde o gêiser causa dano de fogo), durando o tempo do efeito de 1d4 rodadas. Qualquer criatura atingida por essa chuva congelante sofre 2d6 pontos de dano de frio a cada rodada e deve ser bem-sucedida em um teste de resistência de Força ou ficará presa pela camada de gelo que se forma sobre ela. Mesmo criaturas afetadas pelo gêiser principal que falharam em seu teste de resistência de Destreza, mas saíram da área da chuva congelante, ficam presas, pois a água sobre elas congela.\n\nCriaturas presas podem tentar um teste de resistência de Força como uma ação para escapar do gelo, ou outra criatura pode usar uma ação para quebrar o gelo ao redor da criatura presa. O gelo derrete naturalmente após um minuto em um dia normal."
@@ -990,6 +1144,11 @@
         {
           "type": "level",
           "min": 11
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "agua"
         }
       ],
       "advanced": true,
@@ -1025,6 +1184,11 @@
         {
           "type": "level",
           "min": 5
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "fogo"
         }
       ],
       "advanced": true,
@@ -1058,6 +1222,11 @@
         {
           "type": "level",
           "min": 15
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "planta"
         }
       ],
       "advanced": true,
@@ -1091,6 +1260,11 @@
         {
           "type": "level",
           "min": 15
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "agua"
         }
       ],
       "advanced": true,
@@ -1124,6 +1298,11 @@
         {
           "type": "level",
           "min": 15
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "fogo"
         }
       ],
       "advanced": true,
@@ -1154,6 +1333,11 @@
         {
           "type": "level",
           "min": 1
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "ar"
         }
       ],
       "advanced": true,
@@ -1191,6 +1375,11 @@
         {
           "type": "level",
           "min": 5
+        },
+        {
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "fogo"
         }
       ],
       "advanced": true,

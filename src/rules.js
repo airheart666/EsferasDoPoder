@@ -35,6 +35,11 @@ const Rules = (() => {
   // Igual ao extractor/app.js: minúsculas, sem acento, espaços colapsados (mantidos) —
   // é como as TAGS são gravadas no dado (comparar prereq 'tag' com a mesma forma).
   const normalizeTerm = (/** @type {string} */ s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim().replace(/\s+/g, ' ');
+  // Pacotes possuídos de uma entrada de esfera. Multi-pacote: `packages` é a lista
+  // (packages[0] = grátis da aquisição; demais via talento repetível). Retrocompatível
+  // com o formato antigo `choices.pkg` (single) → [pkg].
+  /** @param {any} e @returns {string[]} */
+  const pkgList = (e) => Array.isArray(e && e.packages) ? e.packages : ((e && e.choices && e.choices.pkg) ? [e.choices.pkg] : []);
 
   /** @param {{magic:number, martial:number}} o @param {Section} section */
   const bySection = (o, section) => (section === 'martial' ? o.martial : o.magic);
@@ -258,7 +263,9 @@ const Rules = (() => {
   function slotsSpent(char, idx) {
     let magic = 0, martial = 0;
     for (const e of char.spheres || []) {
-      const cost = (e.granted ? 0 : 1) + (e.talents ? e.talents.length : 0); // granted access is free
+      // acesso (grátis se concedido) + extras + pacotes ALÉM do 1º (o 1º é grátis na aquisição)
+      const extraPkgs = Math.max(0, pkgList(e).length - 1);
+      const cost = (e.granted ? 0 : 1) + (e.talents ? e.talents.length : 0) + extraPkgs;
       if (effectiveSection(char, e.sphere, idx) === 'martial') martial += cost; else magic += cost;
     }
     return { magic, martial };
@@ -285,14 +292,10 @@ const Rules = (() => {
     for (const e of char.spheres || []) {
       for (const id of e.freePicks || []) set.add(id);
       for (const id of e.talents || []) set.add(id);
-      // package base ability (e.g. Universal "Dissipar" package → Dissipar), auto-granted
-      const pkg = e.choices && e.choices.pkg;
-      if (pkg) {
-        const sph = idx.sphereById.get(e.sphere);
-        const opts = (sph && sph.acquisition && sph.acquisition.packages && sph.acquisition.packages.options) || [];
-        const opt = opts.find(o => o.id === pkg);
-        if (opt) for (const id of opt.baseTalentIds || []) set.add(id);
-      }
+      // habilidades-base de TODOS os pacotes possuídos (multi-pacote), auto-concedidas
+      const sph = idx.sphereById.get(e.sphere);
+      const opts = (sph && sph.acquisition && sph.acquisition.packages && sph.acquisition.packages.options) || [];
+      for (const pkg of pkgList(e)) { const opt = opts.find(o => o.id === pkg); if (opt) for (const id of opt.baseTalentIds || []) set.add(id); }
     }
     for (const id of computeGrants(char, idx).specificTalents) set.add(id); // granted specific talents
     for (const id of char.metamagic || []) set.add(id); // cota restrita (ex.: Metamágica → talentos Meta da Universal)
@@ -342,10 +345,9 @@ const Rules = (() => {
         const set = new Set((prof.skills || []).concat(prof.tools || []).map(normalizeTerm));
         return set.has(normalizeTerm(p.skill || ''));
       }
-      case 'package': { // a esfera do char escolheu esse pacote
-        const sid = p.sphere;
-        const e = (char.spheres || []).find(x => x.sphere === sid);
-        return !!(e && e.choices && e.choices.pkg === p.pkg);
+      case 'package': { // o char possui esse pacote na esfera (na lista de pacotes)
+        const e = (char.spheres || []).find(x => x.sphere === p.sphere);
+        return pkgList(e).includes(p.pkg);
       }
       case 'martial-talent': { // possui ≥1 talento de esfera com section:'martial'
         for (const tid of ctx.owned) { const t = idx.talentById.get(tid); const sph = t && idx.sphereById.get(t.sphere); if (sph && sph.section === 'martial') return true; }
@@ -407,11 +409,26 @@ const Rules = (() => {
     return { ok: true, reason: '' };
   }
 
+  /**
+   * Can the character take an ADDITIONAL package on a sphere (via the repeatable grant
+   * talent, e.g. "Protomancia Expandida")? Costs a slot (counted by slotsSpent). Blocks
+   * on the package's `requires` gate or exhausted section budget. `pkgId` optional
+   * (budget-only check when omitted). Returns {ok, req, budgetOk, remaining, section}.
+   * @param {Character} char @param {string} sphereId @param {string|null} pkgId @param {DataIndex} idx
+   */
+  function canAddPackage(char, sphereId, pkgId, idx) {
+    const req = pkgId ? packageRequirementMet(char, sphereId, pkgId, idx) : { ok: true, reason: '' };
+    const section = effectiveSection(char, sphereId, idx);
+    const remaining = bySection(talentBudget(char, idx), section) - bySection(slotsSpent(char, idx), section);
+    const budgetOk = remaining >= 1;
+    return { ok: req.ok && budgetOk, req, budgetOk, remaining, section };
+  }
+
   return {
     indexData, classRow, derivedStats, traditionBonus, classFeatureBonus,
     talentBudget, computeGrants, grantedSphereIds, effectiveSection, slotsSpent,
     accessedSphereIds, ownedTalentIds, prereqCheck, canAddTalent, canAccessSphere,
-    restrictedAllowances, packageRequirementMet,
+    restrictedAllowances, packageRequirementMet, canAddPackage,
   };
 })();
 

@@ -90,6 +90,7 @@
  * @property {string} label
  * @property {string[]} [baseTalents]    Talent names auto-granted as the package's base ability.
  * @property {string[]} [baseTalentIds]  Resolved ids of baseTalents (extractor-filled).
+ * @property {string[]} [scopeTags]      Fase 2: tags que amarram um talento a este pacote (talento com a tag → prereq de pacote). Ausente = usa o id do pacote.
  * @property {FreeGroup} [freeGroup]
  * @property {string} [freeLabel]
  * @property {number} [freePicks]
@@ -101,6 +102,7 @@
 /**
  * @typedef {Object} Packages
  * @property {string} [label]
+ * @property {string} [grantTalent]  Nome do talento repetível que concede um pacote adicional (ex.: 'Protomancia Expandida'). Ausente = só o pacote grátis da aquisição.
  * @property {PackageOption[]} options
  */
 
@@ -178,7 +180,8 @@
  * @property {string} sphere        Sphere id.
  * @property {Section} section
  * @property {boolean} [granted]    Access granted by a subclass (free); absent/false if slot-bought.
- * @property {{pkg?: string}} [choices]  e.g. { pkg: 'formula' } for package spheres.
+ * @property {string[]} [packages]  Pacotes possuídos (multi): [0] = grátis da aquisição; [1..] via o talento repetível (custam 1 slot cada).
+ * @property {{pkg?: string}} [choices]  Legado single-pacote (migrado p/ `packages`); ainda usado por dados salvos antigos.
  * @property {string[]} freePicks   Talent ids taken via the sphere's free picks.
  * @property {string[]} talents     Talent ids taken as extra (slot-costing) picks.
  */

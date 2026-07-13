@@ -1,5 +1,18 @@
 {
-  "Natureza":   { "freeGroup": { "h3": "pacote" },                              "freeLabel": "pacote",      "freePicks": 1 },
+  "Natureza": {
+    "packages": {
+      "label": "Pacote de Natureza",
+      "grantTalent": "Protomancia Expandida",
+      "options": [
+        { "id": "ar",     "label": "Ar",     "baseTalents": ["Ar"] },
+        { "id": "terra",  "label": "Terra",  "baseTalents": ["Terra"] },
+        { "id": "fogo",   "label": "Fogo",   "baseTalents": ["Fogo"] },
+        { "id": "metal",  "label": "Metal",  "baseTalents": ["Metal"] },
+        { "id": "planta", "label": "Planta", "baseTalents": ["Planta"] },
+        { "id": "agua",   "label": "Água",   "baseTalents": ["Água"] }
+      ]
+    }
+  },
   "Alteração":  { "freeGroup": { "tag": "genótipo" },                           "freeLabel": "genótipo",    "freePicks": 1 },
   "Conjuração": { "freeGroup": { "tag": "base" },                              "freeLabel": "companheiro", "freePicks": 1 },
   "Destino":    { "freeGroup": { "tags": ["consagração", "motivo", "palavra"] }, "freeLabel": "carta",       "freePicks": 1 },
@@ -22,6 +35,7 @@
   "Universal": {
     "packages": {
       "label": "Pacote universal",
+      "grantTalent": "Pacote Universal",
       "options": [
         { "id": "dissipar",       "label": "Dissipar",          "baseTalents": ["Dissipar"],        "talentTags": ["dissipar"],        "freeLabel": "dissipar",        "freePicks": 0 },
         { "id": "mana",           "label": "Mana",              "baseTalents": ["Vínculo de Mana"], "talentTags": ["vínculo de mana"], "freeGroup": { "tag": "vínculo de mana" }, "freeLabel": "vínculo de mana", "freePicks": 1 },
@@ -48,7 +62,17 @@
   "Armadilha":        { "freePicks": 0, "conditionals": [ { "requires": "Ferramentas de ladrão", "addPicks": 1 } ] },
   "Atletismo":        { "freePicks": 0, "conditionals": [ { "requires": ["Atletismo", "Acrobacia"], "addPicks": 1 } ] },
   "Bruto":            { "freePicks": 0, "conditionals": [ { "requires": "Atletismo", "addPicks": 1 } ] },
-  "Domínio das Feras": { "freePicks": 0, "conditionals": [ { "requires": "Lidar com Animais", "addPicks": 1 } ] },
+  "Domínio das Feras": {
+    "packages": {
+      "label": "Pacote de Domínio das Feras",
+      "grantTalent": "Pacote Extra de Domínio das Feras",
+      "options": [
+        { "id": "cavaleiro", "label": "Cavaleiro", "baseTalents": ["Pacote de Cavaleiro"], "scopeTags": ["montaria", "requer pacote de montaria"] },
+        { "id": "domador",   "label": "Domador",   "baseTalents": ["Pacote de Domador"],   "scopeTags": ["domador", "requer pacote de domador"] }
+      ]
+    },
+    "conditionals": [ { "requires": "Lidar com Animais", "addPicks": 1 } ]
+  },
   "Canalha":          { "freePicks": 0, "conditionals": [ { "requires": "Prestidigitação", "addPicks": 1 } ] },
   "Liderança":        { "freePicks": 0, "conditionals": [ { "requires": "Persuasão", "addPicks": 1 } ] },
 

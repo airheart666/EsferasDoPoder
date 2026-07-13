@@ -594,7 +594,7 @@ function showCharNotice(anchorEl, message) {
   note.textContent = message;
   // Ancestral mais próximo: p/ um seletor de grátis/pacote, o próprio rótulo
   // (.freepick-l/.pkg-l) → o aviso aparece JUNTO ao dropdown, não no fim do card.
-  const host = (anchorEl && anchorEl.closest) ? anchorEl.closest('.freepick-l, .pkg-l, .sphere-acquire, .talent-card, .char-sphere') : null;
+  const host = (anchorEl && anchorEl.closest) ? anchorEl.closest('.freepick-l, .pkg-l, .pkg-add-l, .sphere-acquire, .talent-card, .char-sphere') : null;
   if (host && host.parentNode) host.parentNode.insertBefore(note, host.nextSibling);
   else document.getElementById('content')?.prepend(note);
   window.setTimeout(() => note.remove(), 4500);
@@ -627,6 +627,25 @@ function makeFavButton(item) {
 // ignore) e o estado do personagem ativo. Base → chip; ignore → nada; demais → +/✓.
 function makeCharControl(item, role, active, entry, multi, granted) {
   if (role === 'ignore') return null; // não é talento (feature de pacote/regras)
+  // Talento-pacote (Ar/Fogo/Cavaleiro…): exibido mas BLOQUEADO — vem só como pacote
+  // (grátis na aquisição ou via o talento repetível), nunca por seleção direta.
+  if (role === 'package') {
+    const chip = document.createElement('span');
+    chip.className = 'pkg-chip';
+    chip.textContent = 'pacote';
+    chip.title = 'Este talento representa um PACOTE — obtido ao escolher o pacote (grátis na aquisição) ou via o talento de pacote extra, não por seleção direta.';
+    return chip;
+  }
+  // Talento repetível de concessão (Protomancia Expandida / Pacote Universal / Pacote
+  // Extra): não é +1 normal — abre o seletor de pacote extra (quando a esfera é do char).
+  if (role === 'grant') {
+    if (active && (entry || granted)) { const p = buildGrantPicker(active, item.sphere, entry); if (p) return p; }
+    const chip = document.createElement('span');
+    chip.className = 'pkg-chip';
+    chip.textContent = 'pacote extra';
+    chip.title = active ? 'Adquira a esfera para escolher pacotes adicionais.' : 'Talento de pacote extra — repetível, cada uso concede um novo pacote.';
+    return chip;
+  }
   if (role === 'base' || role === 'granted') {
     const chip = document.createElement('span');
     chip.className = role === 'granted' ? 'granted-chip' : 'base-included';
@@ -685,7 +704,7 @@ function makeCharControl(item, role, active, entry, multi, granted) {
 function addFavoriteStars(root, chapter) {
   const active = getActiveChar();
   const entry = active ? sphereEntry(active, chapter.title) : null;
-  const model = getSphereModel(chapter.title, entry && entry.choices ? entry.choices.pkg : null);
+  const model = getSphereModel(chapter.title, pkgListOf(entry));
   const gc = grantCtxFor(active, chapter.title);
   const multi = getCharacters().length > 1;
   for (const card of root.querySelectorAll('.talent-card')) {
@@ -710,9 +729,11 @@ function addFavoriteStars(root, chapter) {
 // o handler delegado de `.pkg-select` (setupFavorites) funciona nos dois lugares.
 function buildPackageSelector(active, title, spec) {
   if (!spec.packages) return null;
+  const owned = spec.pkgs || [];
+  const free = owned[0] || ''; // packages[0] = o pacote grátis da aquisição
   const lbl = document.createElement('label');
   lbl.className = 'pkg-l';
-  lbl.textContent = `${spec.packages.label || 'Pacote'}: `;
+  lbl.textContent = `${spec.packages.grantTalent ? 'Pacote grátis' : (spec.packages.label || 'Pacote')}: `;
   const sel = document.createElement('select');
   sel.className = 'pkg-select';
   sel.dataset.sphere = title;
@@ -722,17 +743,84 @@ function buildPackageSelector(active, title, spec) {
   for (const opt of spec.packages.options) {
     const o = document.createElement('option');
     o.value = opt.id; o.textContent = opt.label;
+    if (free === opt.id) o.selected = true;
+    else if (owned.includes(opt.id)) { o.disabled = true; o.textContent = `${opt.label} — já adquirido`; } // já tomado como pacote extra
     // Gate de escolha (ex.: Criação de Magias exige ≥2 esferas mágicas) → desabilita
     // a option não-atendida (a menos que já seja a escolhida) com o motivo no rótulo.
-    if (opt.requires && active && dataIndex && spec.pkg !== opt.id) {
+    else if (opt.requires && active && dataIndex) {
       const req = Rules.packageRequirementMet(active, sphereIdFor(title), opt.id, dataIndex);
       if (!req.ok) { o.disabled = true; o.textContent = `${opt.label} — ${req.reason}`; }
     }
-    if (spec.pkg === opt.id) o.selected = true;
     sel.appendChild(o);
   }
   lbl.appendChild(sel);
   return lbl;
+}
+// Seletor "adicionar pacote extra" do talento repetível (Protomancia Expandida etc.):
+// oferece só os pacotes AINDA NÃO possuídos; escolher um chama addPackage (custa 1 slot).
+// Repetível → reaparece com um a menos a cada pacote adquirido, até esgotar.
+function buildGrantPicker(active, title, entry) {
+  const owned = pkgListOf(entry);
+  const packages = (sphereByTitle(title) || {}).acquisition && sphereByTitle(title).acquisition.packages;
+  if (!packages) return null;
+  const avail = packages.options.filter(o => !owned.includes(o.id));
+  if (!avail.length) {
+    const done = document.createElement('span');
+    done.className = 'pkg-chip pkg-chip-done';
+    done.textContent = 'todos os pacotes adquiridos';
+    return done;
+  }
+  const lbl = document.createElement('label');
+  lbl.className = 'pkg-add-l';
+  // O 1º pacote (nenhum possuído ainda) é o grátis da aquisição; os seguintes custam 1.
+  lbl.textContent = owned.length ? 'Adquirir pacote (custa 1): ' : 'Escolher pacote grátis: ';
+  const sel = document.createElement('select');
+  sel.className = 'pkg-add-select';
+  sel.dataset.sphere = title;
+  const none = document.createElement('option');
+  none.value = ''; none.textContent = '— escolher —';
+  sel.appendChild(none);
+  for (const opt of avail) {
+    const o = document.createElement('option');
+    o.value = opt.id; o.textContent = opt.label;
+    if (opt.requires && dataIndex) {
+      const req = Rules.packageRequirementMet(active, sphereIdFor(title), opt.id, dataIndex);
+      if (!req.ok) { o.disabled = true; o.textContent = `${opt.label} — ${req.reason}`; }
+    }
+    sel.appendChild(o);
+  }
+  lbl.appendChild(sel);
+  return lbl;
+}
+// Faixa dos pacotes POSSUÍDOS, com ✕ para remover os extras (packages[1..]). O pacote
+// grátis (packages[0]) não tem ✕ — troca-se pelo dropdown "Pacote grátis". Null quando
+// a esfera não tem pacotes ou só há o grátis (nada a remover).
+function buildOwnedPackagesStrip(active, title, entry) {
+  const owned = pkgListOf(entry);
+  const packages = (sphereByTitle(title) || {}).acquisition && sphereByTitle(title).acquisition.packages;
+  if (!packages || owned.length <= 1) return null;
+  const labelOf = id => { const o = packages.options.find(x => x.id === id); return o ? o.label : id; };
+  const wrap = document.createElement('div');
+  wrap.className = 'pkg-owned';
+  const cap = document.createElement('span');
+  cap.className = 'pkg-owned-cap'; cap.textContent = 'Pacotes:';
+  wrap.appendChild(cap);
+  owned.forEach((id, i) => {
+    const chip = document.createElement('span');
+    chip.className = 'pkg-owned-chip' + (i === 0 ? ' free' : '');
+    chip.textContent = labelOf(id) + (i === 0 ? ' (grátis)' : '');
+    if (i > 0) { // só os extras são removíveis (devolvem 1 talento)
+      const rm = document.createElement('button');
+      rm.type = 'button'; rm.className = 'pkg-remove';
+      rm.dataset.sphere = title; rm.dataset.pkg = id;
+      rm.textContent = '✕';
+      rm.title = `Remover o pacote ${labelOf(id)} (devolve 1 talento)`;
+      rm.setAttribute('aria-label', rm.title);
+      chip.appendChild(rm);
+    }
+    wrap.appendChild(chip);
+  });
+  return wrap;
 }
 // Seletores de escolha grátis (um por slot, N = capacidade resolvida) — mesmo uso
 // duplo que buildPackageSelector (barra de leitura + painel in-sheet).
@@ -762,6 +850,7 @@ function buildFreePickSelectors(active, title, spec, model, entry) {
       const none = document.createElement('option');
       none.value = ''; none.textContent = '—';
       sel.appendChild(none);
+      let added = 0; // opções reais (fora o placeholder "—")
       for (const it of items) {
         if (allChosen.includes(it.id) && it.id !== current) continue; // já escolhido em outro slot
         // só oferece talentos com pré-requisito atendido (mantém o já-selecionado neste slot).
@@ -770,6 +859,19 @@ function buildFreePickSelectors(active, title, spec, model, entry) {
         opt.value = it.id; opt.textContent = it.name;
         if (it.id === current) opt.selected = true;
         sel.appendChild(opt);
+        added++;
+      }
+      // Grupo sem nenhuma opção elegível (ex.: "esfera dupla" da Criação de Magias quando
+      // você ainda não possui as duas esferas de nenhuma combinação) → nota clara em vez
+      // de um dropdown vazio que parece quebrado.
+      if (!added && !current) {
+        lbl.classList.add('empty');
+        const note = document.createElement('span');
+        note.className = 'freepick-empty';
+        note.textContent = `nenhum(a) ${grp.label} disponível — requer o pré-requisito do talento (ex.: possuir as duas esferas).`;
+        lbl.appendChild(note);
+        out.push(lbl);
+        continue;
       }
       lbl.appendChild(sel);
       out.push(lbl);
@@ -837,9 +939,8 @@ function renderSphereAcquireBar(chapter) {
   // Adquirida OU concedida: mostra pacote + escolha grátis (uma esfera concedida
   // também dá o grátis inicial da esfera). `entry` pode ser null numa esfera
   // concedida ainda sem escolhas — os seletores criam a entrada ao escolher.
-  const choices = (entry && entry.choices) || {};
-  const spec = resolveSpec(active, chapter.title, choices);
-  const model = getSphereModel(chapter.title, spec.pkg);
+  const spec = resolveSpec(active, chapter.title, pkgListOf(entry));
+  const model = getSphereModel(chapter.title, spec.pkgs);
 
   const status = document.createElement('span');
   status.className = 'acquire-status' + (granted ? ' granted' : '');
@@ -848,9 +949,11 @@ function renderSphereAcquireBar(chapter) {
     : `✓ ${chapter.title} adquirida`;
   bar.appendChild(status);
 
-  // Seletor de pacote-base (Alquimia)
+  // Seletor de pacote-base (Alquimia) + faixa de pacotes possuídos (remover extras)
   const pkgSel = buildPackageSelector(active, chapter.title, spec);
   if (pkgSel) bar.appendChild(pkgSel);
+  const ownedStrip = buildOwnedPackagesStrip(active, chapter.title, entry);
+  if (ownedStrip) bar.appendChild(ownedStrip);
 
   // Notas das condicionais de proficiência (resolvidas automaticamente)
   for (const c of spec.conditionals) {
@@ -891,7 +994,7 @@ function refreshSphereUI(title) {
   const content = document.getElementById('content');
   const active = getActiveChar();
   const entry = active ? sphereEntry(active, title) : null;
-  const model = getSphereModel(title, entry && entry.choices ? entry.choices.pkg : null);
+  const model = getSphereModel(title, pkgListOf(entry));
   const gc = grantCtxFor(active, title);
   const multi = getCharacters().length > 1;
   const chapter = chapters.find(c => c.title === title);
@@ -912,7 +1015,7 @@ function refreshSphereUI(title) {
     const item = { id, name, sphere: title, anchor: section ? '#' + section.id : (chapter ? chapter.anchor : ''), slug: h.id || '' };
     const actions = card.querySelector('.talent-actions');
     if (!actions) continue;
-    const oldCtl = actions.querySelector(':scope > .char-btn, :scope > .base-included, :scope > .granted-chip');
+    const oldCtl = actions.querySelector(':scope > .char-btn, :scope > .base-included, :scope > .granted-chip, :scope > .pkg-chip, :scope > .pkg-l, :scope > .pkg-add-l');
     const newCtl = makeCharControl(item, role, active, entry, multi, gc.granted);
     if (oldCtl) { if (newCtl) oldCtl.replaceWith(newCtl); else oldCtl.remove(); }
     else if (newCtl) actions.insertBefore(newCtl, actions.firstChild);
@@ -933,9 +1036,10 @@ function applyTalentToggle(active, title, item, cardEl) {
   if (entry && (entry.talents || []).includes(id)) { toggleExtraTalent(active, title, id); return true; }
   const talent = dataIndex.talentById.get(id);
   if (!talent) { showCharNotice(cardEl, 'Talento não encontrado nos dados estruturados.'); return false; }
-  if (granted) return addExtraTalentChecked(active, title, talent, cardEl); // esfera concedida: só extras (+1)
-  const model = getSphereModel(title, entry.choices && entry.choices.pkg);
+  const model = getSphereModel(title, pkgListOf(entry));
   const role = model.roleByKey.get(id) || 'extra';
+  if (role === 'package' || role === 'grant') return false; // talento-pacote/repetível: só via o seletor de pacote
+  if (granted) return addExtraTalentChecked(active, title, talent, cardEl); // esfera concedida: só extras (+1)
   // grátis só se o GRUPO do talento ainda tem vaga (ex.: 1 tipo + 1 formato) — senão vira extra
   if (role === 'free' && freePickRoom(active, title, id)) return addFreePickChecked(active, title, talent, cardEl);
   return addExtraTalentChecked(active, title, talent, cardEl);
@@ -1041,6 +1145,15 @@ function setupFavorites() {
       if (active) { removeSphere(active, rs.dataset.removesphere); refreshSphereUI(rs.dataset.removesphere); }
       return;
     }
+    // Remover um pacote extra — ficha/bancada à parte (setupCharacter cuida)
+    const pkgRm = e.target.closest('.pkg-remove');
+    if (pkgRm && (pkgRm.closest('.char-sphere') || pkgRm.closest('.char-bench'))) return;
+    if (pkgRm) {
+      e.preventDefault();
+      const active = getActiveChar();
+      if (active) { removePackage(active, pkgRm.dataset.sphere, pkgRm.dataset.pkg); refreshSphereUI(pkgRm.dataset.sphere); }
+      return;
+    }
     // Adicionar/remover em cada talento — com ≥2 personagens, pergunta o alvo
     // (dentro da ficha (.char-sphere) o alvo já é fixo — setupCharacter cuida disso)
     const cbtn = e.target.closest('.char-btn');
@@ -1072,12 +1185,24 @@ function setupFavorites() {
     // Trocar o personagem-alvo na barra de aquisição (sem presumir o último)
     const who = e.target.closest('.char-target-select');
     if (who) { setActiveCharId(who.value); refreshSphereUI(who.dataset.sphere); return; }
-    // Escolher o pacote-base (Alquimia) — na ficha (.char-sphere), setupCharacter cuida disso
+    // Escolher o pacote GRÁTIS — na ficha (.char-sphere), setupCharacter cuida disso
     const pkg = e.target.closest('.pkg-select');
     if (pkg && pkg.closest('.char-sphere')) return;
     if (pkg) {
       const active = getActiveChar();
       if (active) { setPackage(active, pkg.dataset.sphere, pkg.value || null); refreshSphereUI(pkg.dataset.sphere); }
+      return;
+    }
+    // Adquirir um pacote EXTRA (talento repetível) — ficha/bancada à parte (setupCharacter)
+    const pkgAdd = e.target.closest('.pkg-add-select');
+    if (pkgAdd && (pkgAdd.closest('.char-sphere') || pkgAdd.closest('.char-bench'))) return;
+    if (pkgAdd) {
+      const active = getActiveChar();
+      if (active && pkgAdd.value) {
+        const res = addPackage(active, pkgAdd.dataset.sphere, pkgAdd.value);
+        if (!res.ok && res.reason) showCharNotice(pkgAdd, res.reason);
+        refreshSphereUI(pkgAdd.dataset.sphere);
+      }
       return;
     }
     // Seletor de escolha grátis (por slot) na barra de aquisição — idem, ficha à parte
@@ -1676,15 +1801,79 @@ function removeSphere(char, title) {
   char.spheres = char.spheres.filter(s => s.sphere !== sid);
   updateCharacter(char.id, { spheres: char.spheres });
 }
-// Escolhe o pacote-base (Alquimia). Muda o grupo-grátis → limpa os grátis atuais.
-// Gate: pacotes com `requires` (ex.: Criação de Magias exige ≥2 esferas mágicas)
-// são bloqueados — a option já vem disabled no seletor; isto é a defesa extra.
+// Define o pacote GRÁTIS da aquisição (packages[0]) — Alquimia/Universal/Natureza/
+// Dom. das Feras. Muda o grupo-grátis → limpa os grátis atuais; preserva os pacotes
+// EXTRAS (packages[1..], tomados via o talento repetível). Gate: pacotes com `requires`
+// (ex.: Criação de Magias exige ≥2 esferas mágicas) são bloqueados (defesa extra).
 function setPackage(char, title, pkgId) {
   if (pkgId && dataIndex && !Rules.packageRequirementMet(char, sphereIdFor(title), pkgId, dataIndex).ok) return false;
   const e = acquireSphere(char, title);
-  e.choices = e.choices || {};
-  e.choices.pkg = pkgId || null;
+  const rest = pkgListOf(e).slice(1).filter(id => id !== pkgId); // pacotes extras, sem duplicar o novo grátis
+  e.packages = pkgId ? [pkgId, ...rest] : rest;
+  if (e.choices) delete e.choices.pkg; // migra do formato antigo single-pacote
   e.freePicks = [];
+  updateCharacter(char.id, { spheres: char.spheres });
+  return true;
+}
+// Adiciona um pacote EXTRA (via o talento repetível: Protomancia Expandida / Pacote
+// Universal / Pacote Extra de Dom. das Feras) — custa 1 slot (contabilizado por
+// Rules.slotsSpent como pacote além do 1º). Idempotente. Gate: `requires` do pacote +
+// orçamento da seção (Rules.canAddPackage). Devolve {ok, reason?}.
+function addPackage(char, title, pkgId) {
+  if (!pkgId) return { ok: false };
+  const e = acquireSphere(char, title);
+  if (pkgListOf(e).includes(pkgId)) return { ok: false, reason: 'Você já possui este pacote.' };
+  const isFree = pkgListOf(e).length === 0; // 1º pacote = grátis (custo 0) → sem gate de orçamento
+  if (dataIndex) {
+    if (isFree) { // só o gate de escolha (ex.: Criação de Magias exige ≥2 esferas mágicas)
+      const req = Rules.packageRequirementMet(char, sphereIdFor(title), pkgId, dataIndex);
+      if (!req.ok) return { ok: false, reason: req.reason };
+    } else {
+      const chk = Rules.canAddPackage(char, sphereIdFor(title), pkgId, dataIndex);
+      if (!chk.ok) return { ok: false, reason: !chk.req.ok ? chk.req.reason : `Sem talentos ${chk.section === 'martial' ? 'marciais' : 'mágicos'} suficientes para um pacote extra.` };
+    }
+  }
+  e.packages = [...pkgListOf(e), pkgId];
+  if (e.choices) delete e.choices.pkg;
+  updateCharacter(char.id, { spheres: char.spheres });
+  return { ok: true };
+}
+// Remove um pacote possuído (devolve o slot que ele custava). Também descarta os
+// grátis que pertenciam SÓ a esse pacote (ex.: a "esfera dupla" da Criação de Magias),
+// pra não sobrar talento órfão. A habilidade-base do pacote é auto-concedida por
+// Rules.ownedTalentIds, então cai sozinha ao tirar o pacote.
+function removePackage(char, title, pkgId) {
+  const e = sphereEntry(char, title);
+  if (!e) return false;
+  const list = pkgListOf(e);
+  const i = list.indexOf(pkgId);
+  if (i < 0) return false;
+  const next = list.slice(); next.splice(i, 1);
+  e.packages = next;
+  if (e.choices) delete e.choices.pkg;
+  // Descarta escolhas/extras que dependiam SÓ deste pacote — em grátis E extras:
+  //  (a) prereq de pacote {package, pkg removido} (Fase 2: Natureza/Dom. das Feras,
+  //      talentos comprados como extras), e
+  //  (b) grátis marcados com as tags do grupo deste pacote (Universal tag-scoped),
+  //      quando não casam nenhum pacote ainda possuído.
+  const sid = sphereIdFor(title);
+  const sph = sphereByTitle(title);
+  const opts = (sph && sph.acquisition && sph.acquisition.packages && sph.acquisition.packages.options) || [];
+  const removedTags = ((opts.find(o => o.id === pkgId) || {}).talentTags || []).map(normalizeTerm);
+  const keptTags = new Set();
+  for (const id of next) for (const t of ((opts.find(o => o.id === id) || {}).talentTags || [])) keptTags.add(normalizeTerm(t));
+  const isOrphan = fid => {
+    const t = dataIndex && dataIndex.talentById.get(fid);
+    if (!t) return false;
+    if ((t.prerequisites || []).some(p => p.type === 'package' && p.sphere === sid && p.pkg === pkgId)) return true; // (a)
+    if (removedTags.length) { // (b)
+      const tt = (t.tags || []).map(normalizeTerm);
+      if (removedTags.some(x => tt.includes(x)) && ![...keptTags].some(x => tt.includes(x))) return true;
+    }
+    return false;
+  };
+  e.freePicks = (e.freePicks || []).filter(fid => !isOrphan(fid));
+  e.talents = (e.talents || []).filter(fid => !isOrphan(fid));
   updateCharacter(char.id, { spheres: char.spheres });
   return true;
 }
@@ -1708,8 +1897,8 @@ function setFreePick(char, title, oldId, newId) {
 // cards: um talento de tipo não deve virar grátis se o slot de tipo já está cheio.)
 function freePickRoom(char, title, talentId) {
   const e = sphereEntry(char, title);
-  const spec = resolveSpec(char, title, e && e.choices);
-  const model = getSphereModel(title, e && e.choices && e.choices.pkg);
+  const spec = resolveSpec(char, title, pkgListOf(e));
+  const model = getSphereModel(title, pkgListOf(e));
   const groups = spec.groups || [], mg = model.freeGroups || [];
   const picks = (e && e.freePicks) || [];
   for (let g = 0; g < groups.length; g++) {
@@ -1771,29 +1960,54 @@ function groupMatches(talent, g) {
   if (g.tags && g.tags.length) { const tt = (talent.tags || []).map(normalizeTerm); return g.tags.some(w => tt.includes(w)); }
   return true; // grupo sem filtro → qualquer não-base
 }
+// Lista de pacotes possuídos numa entrada de esfera. Multi-pacote: `packages` é a
+// lista (packages[0] = grátis da aquisição; os demais via o talento repetível).
+// Retrocompatível com o formato antigo `choices.pkg` (single) → [pkg].
+function pkgListOf(entry) {
+  if (!entry) return [];
+  if (Array.isArray(entry.packages)) return entry.packages;
+  if (entry.choices && entry.choices.pkg) return [entry.choices.pkg];
+  return [];
+}
 // Spec de CLASSIFICAÇÃO (independe do personagem/proficiência): grupo-grátis,
 // tags de talento válidas e se a esfera/pacote pode conceder grátis. Depende só
-// do título + pacote escolhido → base do cache do getSphereModel.
-function classSpec(title, pkg) {
+// do título + pacotes possuídos → base do cache do getSphereModel. `pkgs` é a
+// LISTA de pacotes possuídos (tolera string/null legados) — multi-pacote = UNIÃO
+// dos grupos-grátis, habilidades-base e tags dos pacotes possuídos.
+function classSpec(title, pkgs) {
+  pkgs = Array.isArray(pkgs) ? pkgs : (pkgs ? [pkgs] : []);
   const sph = sphereByTitle(title);
   const rule = (sph && sph.acquisition) || {};
   let freeLabel = rule.freeLabel || 'talento', talentTags = rule.talentTags || null;
   let conds = rule.conditionals || [];
-  let baseTalentIds = [];   // habilidades-base concedidas pelo pacote (ex.: Dissipar)
+  let baseTalentIds = [];   // habilidades-base concedidas pelos pacotes possuídos (ex.: Dissipar)
+  let grantTalentId = null; // id do talento repetível (Protomancia Expandida etc.)
   // groups[] = grupos-grátis normalizados (com contagem BASE, sem condicionais).
-  // Fontes: pacote escolhido (1 grupo) · rule.freeGroups (multi-grupo tipado, novo)
-  // · rule.freeGroup+freePicks (legado, 1 grupo). Condicionais aumentam picks no
-  // resolveSpec (grupo[0]). Esferas só-condicionais ganham um grupo sem filtro.
+  // Fontes: pacotes possuídos (1 grupo cada, unidos) · rule.freeGroups (multi-grupo
+  // tipado) · rule.freeGroup+freePicks (legado, 1 grupo). Condicionais aumentam
+  // picks no resolveSpec (grupo[0]). Esferas só-condicionais ganham um grupo sem filtro.
   let groups = [];
   if (rule.packages) {
-    const opt = rule.packages.options.find(o => o.id === pkg);
-    if (opt) {
-      freeLabel = opt.freeLabel || freeLabel; talentTags = opt.talentTags || talentTags;
-      conds = opt.conditionals || []; baseTalentIds = opt.baseTalentIds || [];
+    if (rule.packages.grantTalent && sph) {
+      const gt = sph.talents.find(t => t.name === rule.packages.grantTalent);
+      grantTalentId = gt ? gt.id : null;
+    }
+    const owned = rule.packages.options.filter(o => pkgs.includes(o.id));
+    const tagSet = new Set(), baseSet = new Set();
+    const condList = (rule.conditionals || []).slice(); // condicionais de nível-esfera valem sempre
+    let label = null;
+    for (const opt of owned) {
+      label = label || opt.freeLabel;
+      for (const t of (opt.talentTags || [])) tagSet.add(normalizeTerm(t));
+      for (const id of (opt.baseTalentIds || [])) baseSet.add(id);
+      for (const c of (opt.conditionals || [])) condList.push(c);
       const n = opt.freePicks != null ? opt.freePicks : 0;
-      if (n > 0) groups = [fgToGroup(opt.freeGroup, freeLabel, n)];
-      else if (conds.length) groups = [fgToGroup(opt.freeGroup, freeLabel, 0)];
-    } else { conds = []; } // pacote ainda não escolhido → nada grátis
+      if (n > 0) groups.push(fgToGroup(opt.freeGroup, opt.freeLabel || freeLabel, n));
+    }
+    freeLabel = label || freeLabel;
+    if (tagSet.size) talentTags = [...tagSet];
+    baseTalentIds = [...baseSet];
+    conds = condList;
   } else if (Array.isArray(rule.freeGroups)) {
     groups = rule.freeGroups.map(g => ({
       tags: (g.tags || (g.tag ? [g.tag] : [])).map(normalizeTerm),
@@ -1806,7 +2020,7 @@ function classSpec(title, pkg) {
   }
   // O que "pertence a algum pacote" desta esfera (tags de pacote + habilidades-base
   // de qualquer pacote) — p/ talentRole distinguir talento GERAL de talento de OUTRO
-  // pacote (KG-4 / decisão b). Base de outro pacote ≠ geral.
+  // pacote (KG-4 / decisão b) e exibir-mas-bloquear os talentos-pacote não possuídos.
   const allPackageTags = [], allPackageBaseIds = [];
   if (rule.packages) {
     const set = new Set(), bases = new Set();
@@ -1819,13 +2033,13 @@ function classSpec(title, pkg) {
     for (const t of set) allPackageTags.push(t);
     for (const id of bases) allPackageBaseIds.push(id);
   }
-  return { groups, freeLabel, talentTags, conds, baseTalentIds, allPackageTags, allPackageBaseIds, canFree: groups.length > 0 || conds.length > 0, packages: rule.packages || null };
+  return { groups, freeLabel, talentTags, conds, baseTalentIds, grantTalentId, allPackageTags, allPackageBaseIds, canFree: groups.length > 0 || conds.length > 0, packages: rule.packages || null };
 }
 // Spec RESOLVIDO (com o personagem): capacidade de grátis = base + condicionais
 // satisfeitas por proficiência.
-function resolveSpec(char, title, choices) {
-  choices = choices || {};
-  const cs = classSpec(title, choices.pkg);
+function resolveSpec(char, title, pkgs) {
+  pkgs = Array.isArray(pkgs) ? pkgs : (pkgs ? [pkgs] : []);
+  const cs = classSpec(title, pkgs);
   const groups = cs.groups.map(g => ({ tags: g.tags, h3: g.h3, label: g.label, picks: g.picks }));
   const conditionals = cs.conds.map(c => {
     const satisfied = isProficient(char, c.requires);
@@ -1837,19 +2051,27 @@ function resolveSpec(char, title, choices) {
     groups[0].picks += addTotal; // condicionais aumentam o 1º grupo (esferas condicionais são de grupo único)
   }
   const freePicks = groups.reduce((s, g) => s + g.picks, 0);
-  return { groups, freeLabel: cs.freeLabel, talentTags: cs.talentTags, canFree: cs.canFree, freePicks, conditionals, packages: cs.packages, pkg: choices.pkg || null };
+  return { groups, freeLabel: cs.freeLabel, talentTags: cs.talentTags, canFree: cs.canFree, freePicks, conditionals, packages: cs.packages, grantTalentId: cs.grantTalentId, pkgs };
 }
 // Papel ESTRUTURAL de um Talent (base/free/extra/ignore), lido do dado, não do DOM.
 function talentRole(talent, cs) {
-  if (cs.baseTalentIds && cs.baseTalentIds.includes(talent.id)) return 'base'; // habilidade-base do pacote (auto)
-  if (cs.talentTags && cs.talentTags.length) {
+  const tid = talent.id;
+  // Habilidade-base de um pacote: possuído → 'base' (auto-concedida); não-possuído →
+  // 'package' (exibido mas bloqueado — só via o talento repetível / o pacote grátis).
+  if ((cs.allPackageBaseIds || []).includes(tid))
+    return (cs.baseTalentIds || []).includes(tid) ? 'base' : 'package';
+  // O talento repetível que concede um pacote (Protomancia Expandida / Pacote Universal /
+  // Pacote Extra de Dom. das Feras) → papel próprio: abre o seletor de pacote, não +1 normal.
+  if (cs.grantTalentId && tid === cs.grantTalentId) return 'grant';
+  // Escopo por pacote (KG-4): um talento marcado com a tag de um pacote só aparece se o
+  // char possui esse pacote; se pertence a um pacote NÃO possuído → 'ignore'. Talentos
+  // GERAIS (sem tag de pacote) ficam disponíveis em qualquer pacote (decisão b).
+  if ((cs.allPackageTags || []).length) {
     const tags = (talent.tags || []).map(normalizeTerm);
-    const hasChosen = cs.talentTags.map(normalizeTerm).some(w => tags.includes(w));
-    // Pertence a OUTRO pacote se tem tag de pacote ≠ a escolhida OU é habilidade-base de
-    // outro pacote → ignora. Talentos GERAIS (nenhuma tag/base de pacote) ficam
-    // disponíveis em qualquer pacote (decisão b).
-    const isOtherPkgBase = (cs.allPackageBaseIds || []).includes(talent.id) && !(cs.baseTalentIds || []).includes(talent.id);
-    if (!hasChosen && ((cs.allPackageTags || []).some(t => tags.includes(t)) || isOtherPkgBase)) return 'ignore';
+    if (cs.allPackageTags.some(t => tags.includes(t))) {
+      const owned = (cs.talentTags || []).map(normalizeTerm).some(w => tags.includes(w));
+      if (!owned) return 'ignore';
+    }
   }
   if (talent.kind === 'base') return 'base';
   if (!cs.canFree) return 'extra';
@@ -1872,7 +2094,7 @@ function grantCtxFor(char, title) {
 function cardDisplayRole(model, title, name, isBaseCard, gc) {
   const id = resolveTalentId(title, name, isBaseCard);
   const structural = id ? (model.roleByKey.get(id) || 'ignore') : 'ignore';
-  if (structural === 'ignore' || structural === 'base') return { id, role: structural };
+  if (structural === 'ignore' || structural === 'base' || structural === 'package' || structural === 'grant') return { id, role: structural };
   if (id && gc && gc.specificTalents.has(id)) return { id, role: 'granted' };  // talento específico concedido
   return { id, role: structural };  // free/extra normal — esfera concedida também dá o grátis inicial da esfera
 }
@@ -1880,13 +2102,16 @@ function cardDisplayRole(model, title, name, isBaseCard, gc) {
 // Cacheado por título|pacote. `model.frag` guarda os cards renderizados do
 // capítulo — usado só por charTalentCard/findCardInFrag para CLONAR o card
 // completo na ficha (exibição), nunca para decidir papel/regra.
-function getSphereModel(title, pkg) {
-  const key = title + '|' + (pkg || '');
+function getSphereModel(title, pkgs) {
+  pkgs = Array.isArray(pkgs) ? pkgs : (pkgs ? [pkgs] : []);
+  const key = title + '|' + pkgs.join(',');
   if (sphereModelCache.has(key)) return sphereModelCache.get(key);
   const sph = sphereByTitle(title);
-  const cs = classSpec(title, pkg);
+  const cs = classSpec(title, pkgs);
   // freeGroups = itens elegíveis POR grupo (p/ os seletores tipados); freeGroup = união plana.
-  const model = { bases: [], freeGroup: [], extras: [], freeLabel: cs.freeLabel, roleByKey: new Map(),
+  // packageTalents = talentos-pacote/repetível (exibidos mas bloqueados). grantTalentId = id do repetível.
+  const model = { bases: [], freeGroup: [], extras: [], packageTalents: [], freeLabel: cs.freeLabel, roleByKey: new Map(),
+                  packages: cs.packages, grantTalentId: cs.grantTalentId,
                   freeGroups: (cs.groups || []).map(g => ({ label: g.label, tags: g.tags, h3: g.h3, picks: g.picks, items: [] })), frag: null };
   if (sph) {
     for (const t of sph.talents) {
@@ -1894,6 +2119,7 @@ function getSphereModel(title, pkg) {
       if (role === 'ignore') continue;
       const item = { id: t.id, name: t.name, sphere: title, section: t.section, group: t.group || '' };
       model.roleByKey.set(t.id, role);
+      if (role === 'package' || role === 'grant') { model.packageTalents.push(item); continue; }
       (role === 'base' ? model.bases : role === 'free' ? model.freeGroup : model.extras).push(item);
       if (role === 'free') for (let gi = 0; gi < (cs.groups || []).length; gi++) if (groupMatches(t, cs.groups[gi])) model.freeGroups[gi].items.push(item);
     }
@@ -2035,15 +2261,23 @@ function talentCandidatesForSphere(active, title) {
   const entry = sphereEntry(active, title);
   const granted = isGrantedSphere(active, title);
   if (!entry && !granted) return [];
-  const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
+  const model = getSphereModel(title, pkgListOf(entry));
   const e = entry || { freePicks: [], talents: [] };
   // char.metamagic entra na exclusão: um talento tomado pela cota restrita (Metamágica)
   // não pode reaparecer como extra comprável na esfera comum (dedupe nos dois sentidos —
   // metamagicCandidates já exclui via Rules.ownedTalentIds, que inclui char.metamagic).
   const owned = new Set([...(e.freePicks || []), ...(e.talents || []), ...((active && active.metamagic) || [])]);
-  return model.freeGroup.concat(model.extras)
+  const out = model.freeGroup.concat(model.extras)
     .filter(it => !owned.has(it.id) && !isGrantedTalentId(active, it.id))
     .map(it => ({ id: it.id, name: it.name, sphere: title }));
+  // O talento repetível de pacote (Protomancia Expandida etc.) também entra na listagem:
+  // selecioná-lo abre o seletor de pacote extra (não é um talento comum) — seu detalhe
+  // renderiza o picker via makeCharControl(role='grant').
+  if (model.grantTalentId) {
+    const g = model.packageTalents.find(it => it.id === model.grantTalentId);
+    if (g) out.push({ id: g.id, name: g.name, sphere: title, pkgRole: 'grant' });
+  }
+  return out;
 }
 
 // Cota restrita ativa do personagem (ex.: Metamágica do Feiticeiro nível ≥3) — Rules
@@ -2063,10 +2297,10 @@ function talentPickPath(active, title, item) {
   if (isGrantedSphere(active, title)) return 'extra';
   const entry = sphereEntry(active, title);
   if (!entry) return 'extra';
-  const model = getSphereModel(title, entry.choices && entry.choices.pkg);
+  const model = getSphereModel(title, pkgListOf(entry));
   const role = model.roleByKey.get(item.id) || 'extra';
   if (role !== 'free') return 'extra';
-  const cap = resolveSpec(active, title, entry.choices).freePicks;
+  const cap = resolveSpec(active, title, pkgListOf(entry)).freePicks;
   const room = (entry.freePicks || []).length < cap;
   return room ? 'free' : 'extra';
 }
@@ -2079,7 +2313,11 @@ function describePrereq(p) {
   if (p.type === 'or') return (p.of || []).map(describePrereq).join(' ou ');
   if (p.type === 'tag') { const n = p.count || 1; const tg = (p.tags || []).join(' ou '); return `${n} talento${n > 1 ? 's' : ''} de (${tg})`; }
   if (p.type === 'skill') return `proficiência em ${p.skill}`;
-  if (p.type === 'package') return `pacote ${p.pkg} (${sphereTitleById.get(p.sphere) || p.sphere})`;
+  if (p.type === 'package') {
+    const sph = dataIndex && dataIndex.sphereById.get(p.sphere);
+    const opt = sph && sph.acquisition && sph.acquisition.packages && (sph.acquisition.packages.options || []).find(o => o.id === p.pkg);
+    return `pacote ${opt ? opt.label : p.pkg} (${sphereTitleById.get(p.sphere) || p.sphere})`;
+  }
   if (p.type === 'martial-talent') return 'um talento de esfera marcial';
   return 'pré-requisito descritivo (confirme com o mestre)';
 }
@@ -2199,7 +2437,7 @@ function renderSphereBuildPanel(active, title) {
   const granted = isGrantedSphere(active, title); // acesso concedido → selo "concedida" + não removível
   const grantedMap = grantedSpheresMap(active);
   const grantedItems = grantedMap.get(title) || [];
-  const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
+  const model = getSphereModel(title, pkgListOf(entry));
   const fr = model.frag;
   const freePicks = (entry && entry.freePicks) || [];
   const extras = (entry && entry.talents) || [];
@@ -2246,14 +2484,17 @@ function renderSphereBuildPanel(active, title) {
 
   // Gestão in-sheet: pacote-base (Alquimia/Universal) + escolhas grátis
   // (mesmos helpers da barra de aquisição da leitura — P1/P2 funcionam aqui também).
-  const choices = (entry && entry.choices) || {};
-  const spec = resolveSpec(active, title, choices);
+  // Só o pacote GRÁTIS aqui. O(s) pacote(s) EXTRA vêm do talento repetível
+  // (Protomancia Expandida etc.), que aparece na listagem de talentos da bancada.
+  const spec = resolveSpec(active, title, pkgListOf(entry));
   const pkgSel = buildPackageSelector(active, title, spec);
+  const ownedStrip = buildOwnedPackagesStrip(active, title, entry);
   const freePickSels = buildFreePickSelectors(active, title, spec, model, entry);
-  if (pkgSel || freePickSels.length) {
+  if (pkgSel || ownedStrip || freePickSels.length) {
     const manage = document.createElement('div');
     manage.className = 'char-sphere-manage';
     if (pkgSel) manage.appendChild(pkgSel);
+    if (ownedStrip) manage.appendChild(ownedStrip);
     for (const lbl of freePickSels) manage.appendChild(lbl);
     group.appendChild(manage);
   }
@@ -2487,11 +2728,12 @@ function buildTalentDetail(active, item) {
   const entry = sphereEntry(active, title);
   const granted = isGrantedSphere(active, title);
   const talent = dataIndex.talentById.get(item.id);
-  const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
+  const model = getSphereModel(title, pkgListOf(entry));
   const sph = dataIndex.sphereById.get(sphereIdFor(title));
   const mtl = sph && sph.section === 'martial';
+  const role = model.roleByKey.get(item.id) || 'extra';
+  const isPkgRole = role === 'grant' || role === 'package';
   const path = talentPickPath(active, title, item);
-  const gate = talentGate(active, title, item);
 
   // Cabeçalho fixo: identidade + ação (Adicionar). Fica preso no topo enquanto o
   // corpo com as regras rola → a ação está sempre visível.
@@ -2504,17 +2746,26 @@ function buildTalentDetail(active, item) {
   info.appendChild(h4);
   const meta = document.createElement('div');
   meta.className = 'cbd-meta';
-  meta.textContent = `${title} · ${mtl ? 'poder' : 'magia'} · ${path === 'free' ? 'grátis — escolha da esfera' : `custa 1 talento ${mtl ? 'marcial' : 'mágico'}`}`;
+  meta.textContent = role === 'grant'
+    ? `${title} · pacote extra — escolha abaixo (custa 1 talento ${mtl ? 'marcial' : 'mágico'} por pacote)`
+    : role === 'package'
+    ? `${title} · pacote — obtido ao escolher o pacote, não por seleção direta`
+    : `${title} · ${mtl ? 'poder' : 'magia'} · ${path === 'free' ? 'grátis — escolha da esfera' : `custa 1 talento ${mtl ? 'marcial' : 'mágico'}`}`;
   info.appendChild(meta);
-  const req = document.createElement('div');
-  req.className = 'cbd-req' + (gate.blocked ? ' bad' : '');
-  req.innerHTML = (gate.blocked ? '⚠ ' : '✓ ') + '<b>Pré-requisito:</b> ' + escapeHtml(gate.label || '');
-  info.appendChild(req);
+  if (!isPkgRole) { // talentos-pacote/repetível não têm pré-requisito de seleção comum
+    const gate = talentGate(active, title, item);
+    const req = document.createElement('div');
+    req.className = 'cbd-req' + (gate.blocked ? ' bad' : '');
+    req.innerHTML = (gate.blocked ? '⚠ ' : '✓ ') + '<b>Pré-requisito:</b> ' + escapeHtml(gate.label || '');
+    info.appendChild(req);
+  }
   head.appendChild(info);
-  const btn = makeCharControl(item, model.roleByKey.get(item.id) || 'extra', active, entry, false, granted);
+  const btn = makeCharControl(item, role, active, entry, false, granted);
   if (btn) {
     btn.classList.add('char-bench-add');
-    if (!btn.classList.contains('on') && !btn.disabled) btn.textContent = 'Adicionar ao personagem';
+    // Só relabela botões reais (.char-btn) — o picker de pacote (role 'grant') é um
+    // <label>/<select>; sobrescrever textContent apagaria o dropdown.
+    if (btn.classList.contains('char-btn') && !btn.classList.contains('on') && !btn.disabled) btn.textContent = 'Adicionar ao personagem';
     head.appendChild(btn);
   }
   box.appendChild(head);
@@ -2700,9 +2951,17 @@ function buildTalentBenchPanel(active) {
     listBox.innerHTML = '<div class="char-bench-empty">Nenhum talento disponível — já foram adquiridos todos ou não há resultado para a busca.</div>';
   } else {
     listBox.innerHTML = candidates.map(it => {
+      // Talento repetível de pacote (Protomancia Expandida etc.): nunca "bloqueado" —
+      // seu detalhe abre o seletor de pacote. Rótulo próprio ("pacote"), não bloqueado/slot.
+      if (it.pkgRole === 'grant') {
+        const tagG = charView.scope === 'all' ? `<span class="cbl-tag">${escapeHtml(it.sphere)}</span>` : '';
+        return `<div class="char-bench-li${it.id === charView.sel ? ' sel' : ''}" data-id="${escapeHtml(it.id)}">
+          <span class="cbl-name">${escapeHtml(it.name)}</span>${tagG}<span class="cbl-meta">pacote</span>
+        </div>`;
+      }
       const gate = talentGate(active, it.sphere, it);
       const path = talentPickPath(active, it.sphere, it);
-      const meta = gate.blocked ? '<span class="cbl-lock">🔒</span>' : `<span class="cbl-meta">${path === 'free' ? 'grátis' : '1 slot'}</span>`;
+      const meta = gate.blocked ? '<span class="cbl-lock">bloqueado</span>' : `<span class="cbl-meta">${path === 'free' ? 'grátis' : '1 slot'}</span>`;
       const tag = charView.scope === 'all' ? `<span class="cbl-tag">${escapeHtml(it.sphere)}</span>` : '';
       return `<div class="char-bench-li${gate.blocked ? ' blocked' : ''}${it.id === charView.sel ? ' sel' : ''}" data-id="${escapeHtml(it.id)}">
         <span class="cbl-name">${escapeHtml(it.name)}</span>${tag}${meta}
@@ -2786,7 +3045,7 @@ function buildSphereDetail(active, def) {
   }
   // Escolhas grátis TIPADAS que a esfera concede (ex.: 1 de tipo + 1 de formato) →
   // deixa claro por que aparecem seletores grátis ao adquirir.
-  const spec = resolveSpec(active, def.title, {});
+  const spec = resolveSpec(active, def.title, []);
   const grpLines = (spec.groups || []).filter(g => g.picks > 0).map(g => `${g.picks}× ${g.label}`);
   if (grpLines.length) {
     const h = document.createElement('p'); h.className = 'cbd-sub'; h.textContent = 'Escolha(s) grátis ao adquirir:';
@@ -2823,7 +3082,7 @@ function buildSphereBenchPanel(active) {
     listBox.innerHTML = all.map(s => {
       const check = Rules.canAccessSphere(active, s.id, dataIndex);
       const blocked = !check.ok;
-      const meta = blocked ? '<span class="cbl-lock">🔒</span>' : '<span class="cbl-meta">1 talento</span>';
+      const meta = blocked ? '<span class="cbl-lock">bloqueado</span>' : '<span class="cbl-meta">1 talento</span>';
       return `<div class="char-bench-li${blocked ? ' blocked' : ''}${s.title === charView.sel ? ' sel' : ''}" data-id="${escapeHtml(s.title)}">
         <span class="cbl-name">${escapeHtml(s.title)}</span>${meta}
       </div>`;
@@ -3248,7 +3507,7 @@ function renderReadonlySpherePanel(char, title) {
   const entry = sphereEntry(char, title);
   const granted = isGrantedSphere(char, title);
   const grantedItems = grantedSpheresMap(char).get(title) || [];
-  const model = getSphereModel(title, entry && entry.choices && entry.choices.pkg);
+  const model = getSphereModel(title, pkgListOf(entry));
   const fr = model.frag;
   const freePicks = (entry && entry.freePicks) || [];
   const extras = (entry && entry.talents) || [];
@@ -3356,6 +3615,12 @@ function migrateCharacters() {
       if (!Array.isArray(e.freePicks)) { e.freePicks = []; changed = true; }
       if (!Array.isArray(e.talents)) { e.talents = []; changed = true; }
       if (!e.choices) { e.choices = {}; changed = true; }
+      // Single→multi pacote: choices.pkg → packages:[pkg] (não-destrutivo; packages[0]=grátis)
+      if (!Array.isArray(e.packages)) {
+        e.packages = (e.choices && e.choices.pkg) ? [e.choices.pkg] : [];
+        if (e.choices) delete e.choices.pkg;
+        changed = true;
+      }
 
       // título curado → id estruturado (só se ainda não for um id conhecido)
       if (dataIndex && e.sphere && !dataIndex.sphereById.has(e.sphere)) {
@@ -3484,6 +3749,13 @@ function setupCharacter() {
     if (rs) {
       const active = getActiveChar();
       if (active) { removeSphere(active, rs.dataset.removesphere); renderCharacter(); }
+      return;
+    }
+    // Remover um pacote extra (na ficha/bancada — devolve 1 talento)
+    const pkgRm = e.target.closest('.pkg-remove');
+    if (pkgRm && (pkgRm.closest('.char-sphere') || pkgRm.closest('.char-bench'))) {
+      const active = getActiveChar();
+      if (active) { removePackage(active, pkgRm.dataset.sphere, pkgRm.dataset.pkg); renderCharacter(); }
       return;
     }
     if (e.target.closest('#char-delete')) {
@@ -3646,11 +3918,22 @@ function setupCharacter() {
       renderCharacter();
       return;
     }
-    // Pacote-base (Alquimia/Universal) escolhido no painel in-sheet de uma esfera
+    // Pacote GRÁTIS escolhido no painel in-sheet de uma esfera
     const pkg = e.target.closest('.pkg-select');
     if (pkg && pkg.closest('.char-sphere')) {
       const active = getActiveChar();
       if (active) { setPackage(active, pkg.dataset.sphere, pkg.value || null); renderCharacter(); }
+      return;
+    }
+    // Pacote EXTRA (talento repetível) — no painel in-sheet OU na bancada (detalhe)
+    const pkgAdd = e.target.closest('.pkg-add-select');
+    if (pkgAdd && (pkgAdd.closest('.char-sphere') || pkgAdd.closest('.char-bench'))) {
+      const active = getActiveChar();
+      if (active && pkgAdd.value) {
+        const res = addPackage(active, pkgAdd.dataset.sphere, pkgAdd.value);
+        if (!res.ok && res.reason) showCharNotice(pkgAdd, res.reason);
+        renderCharacter();
+      }
       return;
     }
     // Escolha grátis (por slot) no painel in-sheet de uma esfera

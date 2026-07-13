@@ -1592,13 +1592,38 @@ h4.base-ability::after {
 .char-picker-row.active .cp-name { color: var(--accent); }
 .char-picker-row .cp-state { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; }
 /* Seletor de pacote-base (Alquimia) e notas de condicional */
-.pkg-l { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); }
-.pkg-select {
+.pkg-l, .pkg-add-l { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); }
+.pkg-select, .pkg-add-select {
   font-family: var(--font-body); font-size: 0.92rem; font-weight: 700;
   color: var(--accent); background: var(--bg-content);
   border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--table-border));
   border-radius: var(--border-radius); padding: 0.2rem 0.4rem;
 }
+/* Selo de talento-PACOTE (exibido mas bloqueado): obtido só como pacote, nunca por
+   seleção direta. Distinto do "✦ incluída" (base auto) — tom neutro de "info". */
+.pkg-chip {
+  display: inline-flex; align-items: center; gap: 0.2rem;
+  font-family: var(--font-ui); font-size: 0.72rem;
+  color: var(--text-muted);
+  border: 1px dashed color-mix(in srgb, var(--accent) 35%, var(--table-border));
+  border-radius: 999px; padding: 0.1rem 0.5rem; white-space: nowrap;
+}
+.pkg-chip-done { border-style: solid; color: var(--verdigris); border-color: color-mix(in srgb, var(--verdigris) 45%, transparent); }
+/* Faixa de pacotes possuídos (com ✕ para remover os extras). */
+.pkg-owned { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0.35rem; }
+.pkg-owned-cap { font-family: var(--font-ui); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+.pkg-owned-chip {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-family: var(--font-ui); font-size: 0.78rem; color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--table-border));
+  border-radius: 999px; padding: 0.1rem 0.5rem; white-space: nowrap;
+}
+.pkg-owned-chip.free { color: var(--text-muted); border-style: dashed; }
+.pkg-remove {
+  cursor: pointer; border: none; background: none; padding: 0; line-height: 1;
+  font-size: 0.9rem; color: var(--copper);
+}
+.pkg-remove:hover { color: var(--accent); }
 .acquire-cond {
   font-size: 0.78rem;
   color: var(--text-muted);
@@ -1631,6 +1656,8 @@ h4.base-ability::after {
   background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 .freepick-l { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); }
+.freepick-l.empty { color: var(--text-muted); }
+.freepick-empty { font-size: 0.8rem; font-style: italic; color: var(--text-muted); opacity: 0.85; }
 .freepick-select {
   font-family: var(--font-body);
   font-size: 0.92rem;

@@ -128,6 +128,56 @@ ok('Universal access costs 1 slot; package base ability is free', Rules.slotsSpe
 const univMana = { ...univ, spheres: [{ sphere: 'universal', section: 'magic', choices: { pkg: 'mana' }, freePicks: [], talents: [] }] };
 ok('Universal "mana" package → Vínculo de Mana owned', Rules.ownedTalentIds(univMana, idx).has('universal-vinculo-de-mana'));
 
+// --- Fase 1: multi-pacote (packages[]) ---
+// packages[0] = grátis (aquisição); packages[1..] = via o talento repetível (1 slot cada).
+/** @type {any} */
+const nat2 = { id: 'n2', name: 'N', className: 'Feiticeiro', subclass: '', level: 5, keyMod: 0, tradition: 'base', proficiencies: { skills: [], tools: [] }, spheres: [{ sphere: 'natureza', section: 'magic', packages: ['ar', 'fogo'], freePicks: [], talents: [] }] };
+const nat2Owned = Rules.ownedTalentIds(nat2, idx);
+ok('MULTI-PKG: dois pacotes → ambas as bases possuídas (Ar+Fogo)', nat2Owned.has('natureza-ar') && nat2Owned.has('natureza-fogo'));
+ok('MULTI-PKG: 1 pacote extra custa +1 slot (acesso 1 + extra 1 = 2)', Rules.slotsSpent(nat2, idx).magic === 2);
+/** @type {any} */
+const nat1 = { ...nat2, spheres: [{ sphere: 'natureza', section: 'magic', packages: ['ar'], freePicks: [], talents: [] }] };
+ok('MULTI-PKG: 1 pacote grátis não custa slot extra (só o acesso = 1)', Rules.slotsSpent(nat1, idx).magic === 1);
+ok('MULTI-PKG: só o pacote grátis → só a sua base (Ar, não Fogo)', Rules.ownedTalentIds(nat1, idx).has('natureza-ar') && !Rules.ownedTalentIds(nat1, idx).has('natureza-fogo'));
+// canAddPackage: gate de `requires` + orçamento
+/** @type {any} */
+const nat1Rich = { ...nat1, level: 20 };
+ok('MULTI-PKG: canAddPackage OK p/ pacote não-possuído com orçamento', Rules.canAddPackage(nat1Rich, 'natureza', 'terra', idx).ok === true);
+// Legado choices.pkg segue equivalente ao novo packages[]
+/** @type {any} */
+const natLegacy = { ...nat1, spheres: [{ sphere: 'natureza', section: 'magic', choices: { pkg: 'ar' }, freePicks: [], talents: [] }] };
+ok('MULTI-PKG: choices.pkg legado ≡ packages:[pkg]', Rules.ownedTalentIds(natLegacy, idx).has('natureza-ar') && Rules.slotsSpent(natLegacy, idx).magic === 1);
+
+// --- Fase 2: escopo por elemento/tipo (talento com tag de pacote → exige o pacote) ---
+const domFogo = idx.sphereById.get('natureza').talents.find(t => t.id === 'natureza-dominio-do-fogo');
+const lava = idx.sphereById.get('natureza').talents.find(t => t.id === 'natureza-dominio-da-lava');
+ok('SCOPE: Domínio do Fogo carrega prereq de pacote fogo', !!domFogo && domFogo.prerequisites.some(p => p.type === 'package' && p.pkg === 'fogo'));
+/** @type {any} */
+const natFogo = { ...nat1, spheres: [{ sphere: 'natureza', section: 'magic', packages: ['fogo'], freePicks: [], talents: [] }] };
+ok('SCOPE: Domínio do Fogo BLOQUEADO sem o pacote Fogo', Rules.prereqCheck(nat1, domFogo, idx).ok === false);
+ok('SCOPE: Domínio do Fogo LIBERADO com o pacote Fogo', Rules.prereqCheck(natFogo, domFogo, idx).ok === true);
+/** @type {any} */
+const natFogoTerra = { ...nat1, spheres: [{ sphere: 'natureza', section: 'magic', packages: ['fogo', 'terra'], freePicks: [], talents: [] }] };
+ok('SCOPE: Domínio da Lava (terra+fogo) BLOQUEADO só com Fogo', Rules.prereqCheck(natFogo, lava, idx).ok === false);
+ok('SCOPE: Domínio da Lava LIBERADO com Fogo+Terra', Rules.prereqCheck(natFogoTerra, lava, idx).ok === true);
+// KG-5 salvaguarda: talentos metaesfera da Universal NÃO ganharam prereq de pacote
+const metaTal = idx.sphereById.get('universal').talents.find(t => (t.tags || []).includes('metaesfera'));
+ok('SCOPE: Universal (tag-scoped) NÃO recebe prereq de pacote (KG-5 intacto)', !!metaTal && !metaTal.prerequisites.some(p => p.type === 'package'));
+// Dom. das Feras: alias scopeTags (montaria → cavaleiro) — tag ≠ id do pacote
+const montaria = idx.sphereById.get('dominio-das-feras').talents.find(t => t.id === 'm-dominio-das-feras-montaria-acrobatica');
+ok('SCOPE: alias montaria→cavaleiro (scopeTags) vira prereq de pacote cavaleiro', !!montaria && montaria.prerequisites.some(p => p.type === 'package' && p.pkg === 'cavaleiro'));
+/** @type {any} */
+const dfBase = { id: 'df', name: 'DF', className: 'Guerreiro', subclass: '', level: 5, keyMod: 0, tradition: '', proficiencies: { skills: [], tools: [] }, spheres: [{ sphere: 'dominio-das-feras', section: 'martial', packages: ['domador'], freePicks: [], talents: [] }] };
+ok('SCOPE: montaria BLOQUEADO com pacote Domador (falta Cavaleiro)', Rules.prereqCheck(dfBase, montaria, idx).ok === false);
+/** @type {any} */
+const dfCav = { ...dfBase, spheres: [{ sphere: 'dominio-das-feras', section: 'martial', packages: ['cavaleiro'], freePicks: [], talents: [] }] };
+ok('SCOPE: montaria LIBERADO com pacote Cavaleiro', Rules.prereqCheck(dfCav, montaria, idx).ok === true);
+// canAddPackage: orçamento esgotado → bloqueia (nível 1 tem orçamento pequeno)
+/** @type {any} */
+const natFull = { ...nat1, level: 1, spheres: [{ sphere: 'natureza', section: 'magic', packages: ['ar', 'terra', 'fogo', 'metal', 'planta'], freePicks: [], talents: [] }] };
+const chkFull = Rules.canAddPackage(natFull, 'natureza', 'agua', idx);
+ok('MULTI-PKG: canAddPackage bloqueia sem orçamento (budgetOk=false)', chkFull.ok === false && chkFull.budgetOk === false);
+
 // --- KG-4: dual-sphere (esfera dupla) talents now enforce their named spheres ---
 const aurora = idx.sphereById.get('universal').talents.find(t => t.id === 'universal-aurora');
 ok('KG-4: Aurora carries its 2 sphere prereqs (Luz + Clima)', !!aurora && aurora.prerequisites.filter(p => p.type === 'sphere').length === 2);

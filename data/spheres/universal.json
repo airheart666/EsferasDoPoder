@@ -11,6 +11,7 @@
   "acquisition": {
     "packages": {
       "label": "Pacote universal",
+      "grantTalent": "Pacote Universal",
       "options": [
         {
           "id": "dissipar",

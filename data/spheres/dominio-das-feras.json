@@ -9,7 +9,40 @@
     "sig": "dominio-das-feras"
   },
   "acquisition": {
-    "freePicks": 0,
+    "packages": {
+      "label": "Pacote de Domínio das Feras",
+      "grantTalent": "Pacote Extra de Domínio das Feras",
+      "options": [
+        {
+          "id": "cavaleiro",
+          "label": "Cavaleiro",
+          "baseTalents": [
+            "Pacote de Cavaleiro"
+          ],
+          "scopeTags": [
+            "montaria",
+            "requer pacote de montaria"
+          ],
+          "baseTalentIds": [
+            "m-dominio-das-feras-pacote-de-cavaleiro"
+          ]
+        },
+        {
+          "id": "domador",
+          "label": "Domador",
+          "baseTalents": [
+            "Pacote de Domador"
+          ],
+          "scopeTags": [
+            "domador",
+            "requer pacote de domador"
+          ],
+          "baseTalentIds": [
+            "m-dominio-das-feras-pacote-de-domador"
+          ]
+        }
+      ]
+    },
     "conditionals": [
       {
         "requires": "Lidar com Animais",
@@ -80,7 +113,13 @@
       "tags": [
         "montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Enquanto montado, você pode substituir um teste de Adestramento de Animais por qualquer teste de habilidade modificado pela proficiência em Atletismo ou Acrobacia feito por sua montaria. Se você possuir a esfera de Atletismo, poderá usar seus talentos de (movimento) como parte do movimento de sua montaria, usando Adestramento de Animais em vez de Acrobacia e Atletismo."
@@ -95,7 +134,13 @@
       "tags": [
         "montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Se você agarrar uma fera maior que você ou subir em uma criatura maior do tipo besta, poderá forçar a criatura a agir como sua montaria. A criatura pode fazer um teste de resistência de Carisma para resistir a isso e, se falhar, poderá tentar novamente no início de seu turno a cada rodada para se libertar do seu controle. Se falhar no teste de resistência, deverá agir como uma montaria disposta naquele turno e não poderá realizar nenhuma ação, exceto as direcionadas por você. Se a criatura se libertar do seu controle, mas você ainda estiver montado nela, poderá tentar forçar o controle novamente como uma ação.\n\nSe você possuir o pacote (domador) e o talento Habilidades Abrangentes, poderá usar este talento em qualquer criatura à qual sua habilidade de domar se aplique, embora criaturas que não sejam do tipo besta recebam um bônus de +2 em seu teste de resistência de Carisma."
@@ -110,7 +155,13 @@
       "tags": [
         "montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando um ataque mira sua montaria, você pode forçar o ataque a mirar em você."
@@ -125,7 +176,13 @@
       "tags": [
         "montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Enquanto montado em uma criatura do seu tamanho ou maior, você pode se proteger atrás de sua montaria como uma ação bônus. Você pode gastar foco marcial para usar isso como uma reação. Sua montaria fornece cobertura total de uma direção. Ao usar uma montaria dessa maneira, você deve escolher uma borda do seu espaço. Essa borda é tratada como cobertura total para ataques que visam apenas você e que passam por essa borda, mas sua montaria ainda pode ser alvo de ataques normalmente, e você não pode usar Cavaleiro Defensivo ao usar sua montaria como cobertura. Se essa habilidade for usada em reação a um ataque, o ataque mirará em sua montaria. Você pode encerrar esse efeito sem a necessidade de uma ação em seu turno."
@@ -140,7 +197,13 @@
       "tags": [
         "montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você pode comandar sua montaria não apenas para realizar as ações de Disparada, Desengajar e Esquivar, mas também pode comandá-la para realizar a ação de Ataque, mas apenas para realizar um empurrão. Se você realizar um empurrão, pode usar o modificador de Força da sua montaria em vez do seu próprio."
@@ -155,7 +218,13 @@
       "tags": [
         "montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você tem vantagem em jogadas de ataque corpo a corpo contra criaturas desmontadas que sejam menores que sua montaria."
@@ -170,7 +239,13 @@
       "tags": [
         "montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Sua montaria pode realizar uma manobra de atropelamento como sua ação ou como uma ação bônus."
@@ -185,7 +260,13 @@
       "tags": [
         "montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Sua montaria pode realizar a ação Desengajar como uma ação bônus."
@@ -200,7 +281,13 @@
       "tags": [
         "domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Como uma ação bônus conjunta, você ou uma de suas criaturas domadas podem distrair um inimigo como se estivessem usando a ação Ajudar, concedendo vantagem no teste de ataque para o outro, realizado antes do final do seu turno."
@@ -215,7 +302,13 @@
       "tags": [
         "domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você pode domar criaturas de qualquer tipo não humanoide, embora elas devam possuir um máximo de 4 de Inteligência, e você tem desvantagem no teste contra criaturas que não sejam do tipo besta. Apenas a Inteligência permanente conta para determinar se uma criatura pode ser afetada; penalidades ou efeitos que reduzem a Inteligência não permitem que uma criatura seja afetada."
@@ -230,7 +323,13 @@
       "tags": [
         "domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Enquanto estiver ao alcance de uma de suas bestas domadas, quando um ataque for direcionado a você ou à besta, o outro pode aumentar a CA da criatura alvo em +2 como uma reação."
@@ -245,7 +344,13 @@
       "tags": [
         "domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Quando uma de suas bestas domadas obtiver sucesso em uma manobra de agarrar ou empurrar, você pode fazer um ataque contra o alvo como uma reação."
@@ -260,7 +365,13 @@
       "tags": [
         "domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Como uma ação bônus conjunta, você pode fazer contato físico com uma de suas criaturas domadas dentro do seu alcance natural, recuperando seu foco marcial."
@@ -275,7 +386,13 @@
       "tags": [
         "domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Enquanto estiver a até 9 metros de suas bestas domadas, você e essas bestas domadas podem usar a maior pontuação de Percepção passiva possuída por você ou por um aliado animal dentro desse alcance."
@@ -290,7 +407,13 @@
       "tags": [
         "domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Todas as suas criaturas domadas são consideradas treinadas para serem montarias."
@@ -305,7 +428,13 @@
       "tags": [
         "domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Suas criaturas domadas têm vantagem em testes de ataque contra uma criatura se pelo menos uma outra de suas criaturas domadas estiver a até 1,5 metro da criatura, e esse aliado não estiver incapacitado."
@@ -367,6 +496,11 @@
         {
           "type": "level",
           "min": 1
+        },
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
         }
       ],
       "advanced": true,
@@ -417,6 +551,11 @@
         {
           "type": "level",
           "min": 1
+        },
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
         }
       ],
       "advanced": true,
@@ -445,6 +584,11 @@
         {
           "type": "level",
           "min": 1
+        },
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
         }
       ],
       "advanced": true,
@@ -473,6 +617,11 @@
         {
           "type": "level",
           "min": 1
+        },
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
         }
       ],
       "advanced": true,
@@ -505,6 +654,11 @@
         {
           "type": "level",
           "min": 5
+        },
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
         }
       ],
       "advanced": true,
@@ -555,6 +709,11 @@
         {
           "type": "level",
           "min": 5
+        },
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
         }
       ],
       "advanced": true,
@@ -571,7 +730,13 @@
       "tags": [
         "requer pacote de domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você só pode ter uma criatura domesticada por vez e só pode domesticar feras que não sejam maiores que Médias e tenham um nível de desafio de 1/4 ou inferior. Adicione seu bônus de proficiência à CA, às jogadas de ataque e às jogadas de dano da fera, bem como a quaisquer testes de resistência e perícias nos quais ela seja proficiente. Seu máximo de pontos de vida é igual a (o modificador de Constituição da fera + seu modificador de atributo principal + 5) multiplicado pelo seu nível. Como qualquer criatura, ela pode gastar Dados de Vida durante um descanso curto para recuperar pontos de vida (a fera tem um número de Dados de Vida [d6s] igual ao seu nível). O nível de desafio máximo da sua fera domesticada aumenta em um passo quando você atinge o 5º nível (ND 1/2), o 11º nível (ND 1) e o 17º nível (ND 2). Você não pode possuir esta variante e a variante Domador de Monstros simultaneamente."
@@ -586,7 +751,13 @@
       "tags": [
         "requer pacote de domador"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "domador"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você ganha Habilidades Abrangentes com esta variante. Você não pode usar sua habilidade de domesticar em criaturas do tipo besta."
@@ -601,7 +772,13 @@
       "tags": [
         "requer pacote de montaria"
       ],
-      "prerequisites": [],
+      "prerequisites": [
+        {
+          "type": "package",
+          "sphere": "dominio-das-feras",
+          "pkg": "cavaleiro"
+        }
+      ],
       "advanced": false,
       "enhancements": [],
       "body": "Você não ganha a habilidade de Montaria Habilidosa. Você ganha Cavaleiro de Escaramuça com esta variante."

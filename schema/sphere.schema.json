@@ -95,6 +95,7 @@
       "required": ["options"],
       "properties": {
         "label": { "type": "string" },
+        "grantTalent": { "type": "string", "description": "Nome do talento repetível que concede um pacote adicional (ex.: 'Protomancia Expandida'). Ausente = só o pacote grátis da aquisição." },
         "options": {
           "type": "array",
           "items": {
@@ -106,6 +107,7 @@
               "label": { "type": "string" },
               "baseTalents": { "type": "array", "items": { "type": "string" }, "description": "Talent names auto-granted (base ability) when this package is chosen." },
               "baseTalentIds": { "type": "array", "items": { "type": "string" }, "description": "Resolved ids of baseTalents (filled by the extractor)." },
+              "scopeTags": { "type": "array", "items": { "type": "string" }, "description": "Fase 2: tags que amarram um talento a este pacote (talento com a tag → prereq de pacote, derivado pelo extractor). Ausente = usa o próprio id do pacote como tag (ex.: Natureza 'fogo')." },
               "freeGroup": { "$ref": "#/definitions/freeGroup" },
               "freeLabel": { "type": "string" },
               "freePicks": { "type": "number" },
