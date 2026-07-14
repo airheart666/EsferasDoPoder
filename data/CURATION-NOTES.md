@@ -16,10 +16,13 @@ O motor ganhou os tipos de pré-requisito **`or` / `tag` / `skill` / `package` /
 nível 5; Manipulação de Energia = OR bespoke de Elemental/Gosma/Traços Sobrenaturais; rename
 **Contrafeitiço→Contramágica** e Contra-magia do Tolo→Contramágica do Tolo). **Flagged: 22 → 5.**
 
-**Restam 5 (grupo E — reservado p/ curadoria manual do Owner):** os talentos "esfera dupla" com
-referência aninhada não resolvida — Aprimoramento de Liga / Telecinese de Liga ("geomancia metálica"),
-Chama Luminosa ("geomancia do fogo"), Necromancia Silvestre ("geomancia vegetal"), Explosão Cadavérica
-("Bomba Cadavérica"). Ficam como `text` (confirmar manualmente) até a curadoria de E.
+**Grupo E — RESOLVIDO (Owner, 2026-07-14). Flagged: 5 → 0.** Os 5 "esfera dupla" com referência
+aninhada foram curados. Decisão do Owner: **"geomancia" é erro de tradução de "protomancia"** — texto
+corrigido na fonte (`content/22-universal.txt`) e o requisito mapeado para o **pacote da Natureza**:
+Aprimoramento de Liga / Telecinese de Liga → pacote `metal`; Chama Luminosa → pacote `fogo` (+ talento
+Criar Natureza); Necromancia Silvestre → pacote `planta`. Explosão Cadavérica: "Bomba Cadavérica" era o
+talento **Bomba de Cadáver** (Morte) — nome corrigido no texto e mapeado por id. Cada um mantém 2 prereqs
+de esfera (KG-4). Prereqs autorados em `prereq-overrides.json`.
 
 ---
 ## (Histórico) Backlog original — Bucket 3

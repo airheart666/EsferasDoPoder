@@ -298,7 +298,7 @@
     },
     {
       "id": "universal-aprimoramento-de-liga",
-      "name": "Aprimoramento de Liga (esfera dupla, Aprimoramento, Natureza (geomancia metálica))",
+      "name": "Aprimoramento de Liga (esfera dupla, Aprimoramento, Natureza (Protomancia Metal))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
@@ -318,20 +318,18 @@
           "id": "natureza"
         },
         {
-          "type": "text",
-          "text": "geomancia metálica"
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "metal"
         }
       ],
       "advanced": false,
       "enhancements": [],
-      "body": "Sempre que você usar uma habilidade de geomancia do pacote de metal para criar ou afetar um objeto de metal, você pode aprimorar o objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais.",
-      "_needsReview": [
-        "prereq:unresolved:geomancia metálica"
-      ]
+      "body": "Sempre que você usar uma habilidade de protomancia do pacote de metal para criar ou afetar um objeto de metal, você pode aprimorar o objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de protomancia tenha um custo de ponto de magia de 1 ou mais."
     },
     {
       "id": "universal-telecinese-de-liga",
-      "name": "Telecinese de Liga (esfera dupla, Telecinese, Natureza (geomancia metálica))",
+      "name": "Telecinese de Liga (esfera dupla, Telecinese, Natureza (Protomancia Metal))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
@@ -351,16 +349,14 @@
           "id": "natureza"
         },
         {
-          "type": "text",
-          "text": "geomancia metálica"
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "metal"
         }
       ],
       "advanced": false,
       "enhancements": [],
-      "body": "Quando você cria um objeto de metal usando qualquer geomancia, você pode usar uma habilidade de esfera de Telecinese (geralmente levitar ou projétil) no objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais.",
-      "_needsReview": [
-        "prereq:unresolved:geomancia metálica"
-      ]
+      "body": "Quando você cria um objeto de metal usando qualquer protomancia, você pode usar uma habilidade de esfera de Telecinese (geralmente levitar ou projétil) no objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de protomancia tenha um custo de ponto de magia de 1 ou mais."
     },
     {
       "id": "universal-aurora",
@@ -508,7 +504,7 @@
     },
     {
       "id": "universal-explosao-cadaverica",
-      "name": "Explosão Cadavérica (esfera dupla, forma de explosão, Morte (Bomba Cadavérica), Destruição)",
+      "name": "Explosão Cadavérica (esfera dupla, forma de explosão, Morte (Bomba de Cadáver), Destruição)",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
@@ -525,20 +521,17 @@
           "id": "morte"
         },
         {
-          "type": "text",
-          "text": "Bomba Cadavérica"
-        },
-        {
           "type": "sphere",
           "id": "destruicao"
+        },
+        {
+          "type": "talent",
+          "id": "morte-bomba-de-cadaver"
         }
       ],
       "advanced": false,
       "enhancements": [],
-      "body": "Você pode usar uma explosão destrutiva para ativar seu talento Bomba Cadavérica em vez de um Golpe Fantasma. Os alvos afetados têm direito a um teste de resistência de Destreza para reduzir o dano à metade.",
-      "_needsReview": [
-        "prereq:unresolved:Bomba Cadavérica"
-      ]
+      "body": "Você pode usar uma explosão destrutiva para ativar seu talento Bomba de Cadáver em vez de um Golpe Fantasma. Os alvos afetados têm direito a um teste de resistência de Destreza para reduzir o dano à metade."
     },
     {
       "id": "universal-companheiro-destrutivo",
@@ -781,7 +774,7 @@
     },
     {
       "id": "universal-chama-luminosa",
-      "name": "Chama Luminosa (esfera dupla, Luz, Natureza (geomancia do fogo; Criar Natureza))",
+      "name": "Chama Luminosa (esfera dupla, Luz, Natureza (Protomancia Fogo; Criar Natureza))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
@@ -801,8 +794,9 @@
           "id": "natureza"
         },
         {
-          "type": "text",
-          "text": "geomancia do fogo"
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "fogo"
         },
         {
           "type": "talent",
@@ -811,10 +805,7 @@
       ],
       "advanced": false,
       "enhancements": [],
-      "body": "Sempre que você usar Criar Natureza para criar um fogo, você também pode fazer com que o fogo brilhe. Você pode tratar uma habilidade de geomancia que tenha como alvo tal fogo e um efeito de iluminar que tenha como alvo tal brilho como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem.",
-      "_needsReview": [
-        "prereq:unresolved:geomancia do fogo"
-      ]
+      "body": "Sempre que você usar Criar Natureza para criar um fogo, você também pode fazer com que o fogo brilhe. Você pode tratar uma habilidade de protomancia que tenha como alvo tal fogo e um efeito de iluminar que tenha como alvo tal brilho como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem."
     },
     {
       "id": "universal-poder-da-sepultura",
@@ -1061,7 +1052,7 @@
     },
     {
       "id": "universal-necromancia-silvestre",
-      "name": "Necromancia Silvestre (esfera dupla, Morte, Natureza (geomancia vegetal))",
+      "name": "Necromancia Silvestre (esfera dupla, Morte, Natureza (Protomancia Planta))",
       "sphere": "universal",
       "section": "magic",
       "kind": "talent",
@@ -1081,8 +1072,9 @@
           "id": "natureza"
         },
         {
-          "type": "text",
-          "text": "geomancia vegetal"
+          "type": "package",
+          "sphere": "natureza",
+          "pkg": "planta"
         }
       ],
       "advanced": false,
@@ -1092,10 +1084,7 @@
           "text": "Sempre que você usar reanimar para criar um morto-vivo corpóreo com um talento básico (morto-vivo), você pode infundi-lo com esporos e vida vegetal. A criatura reanimada perde o tipo de criatura morto-vivo e ganha o tipo de criatura vegetal."
         }
       ],
-      "body": "Você pode usar ossos e cadáveres inanimados, em vez de plantas, para cumprir quaisquer pré-requisitos adicionais para talentos e habilidades de geomancia vegetal.\n\nSeus talentos e habilidades de golpe fantasma que normalmente afetam apenas mortos-vivos também podem afetar criaturas vegetais. Você pode usar vegetação morta como alvo para cumprir os pré-requisitos de alvo para qualquer magia de reanimar que você conjure para criar um morto-vivo corpóreo com um talento básico (morto-vivo). O estado da vegetação determina quais tipos de mortos-vivos você pode reanimar; galhos secos e estéreis podem ser reanimados como esqueletos, galhos apodrecidos podem ser reanimados como zumbis, enquanto arbustos recém-cortados podem ser reanimados como carniçais, etc. Simplesmente cortar e desbastar madeira geralmente não desqualifica a vegetação como um alvo válido para reanimar, mas madeira que foi transformada em vigas de madeira serrada não é. O Mestre tem a palavra final sobre qual vegetação é ou não um alvo válido para reanimar, bem como qual criatura base é usada ao determinar seu ND (Nível de Desafio) e estatísticas; por exemplo, um alce de topiaria pode usar as estatísticas base de um alce, enquanto um humanoide de madeira cambaleante pode usar as estatísticas base de um bandido.\n\nAlém disso, sua habilidade de reanimar recebe o seguinte aprimoramento:",
-      "_needsReview": [
-        "prereq:unresolved:geomancia vegetal"
-      ]
+      "body": "Você pode usar ossos e cadáveres inanimados, em vez de plantas, para cumprir quaisquer pré-requisitos adicionais para talentos e habilidades de Protomancia Planta.\n\nSeus talentos e habilidades de golpe fantasma que normalmente afetam apenas mortos-vivos também podem afetar criaturas vegetais. Você pode usar vegetação morta como alvo para cumprir os pré-requisitos de alvo para qualquer magia de reanimar que você conjure para criar um morto-vivo corpóreo com um talento básico (morto-vivo). O estado da vegetação determina quais tipos de mortos-vivos você pode reanimar; galhos secos e estéreis podem ser reanimados como esqueletos, galhos apodrecidos podem ser reanimados como zumbis, enquanto arbustos recém-cortados podem ser reanimados como carniçais, etc. Simplesmente cortar e desbastar madeira geralmente não desqualifica a vegetação como um alvo válido para reanimar, mas madeira que foi transformada em vigas de madeira serrada não é. O Mestre tem a palavra final sobre qual vegetação é ou não um alvo válido para reanimar, bem como qual criatura base é usada ao determinar seu ND (Nível de Desafio) e estatísticas; por exemplo, um alce de topiaria pode usar as estatísticas base de um alce, enquanto um humanoide de madeira cambaleante pode usar as estatísticas base de um bandido.\n\nAlém disso, sua habilidade de reanimar recebe o seguinte aprimoramento:"
     },
     {
       "id": "universal-transformar-objeto",

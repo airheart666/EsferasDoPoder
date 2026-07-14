@@ -1,5 +1,5 @@
 {
-  "_comment": "Pré-requisitos estruturados AUTORAIS para talentos cujo texto o extractor não parseia (grupos A/B/C/D + decisões do Owner). Fundido por NOME no data/ pelo extractor (talent/sphere resolvidos p/ id via resolvePrereqs); substitui prerequisites e limpa _needsReview. Tipos: talent, sphere, level, or{of[]}, tag{tags[],count}, skill{skill}, package{sphere,pkg}, martial-talent. Grupo E (esfera dupla aninhado) NÃO entra aqui — curadoria manual futura.",
+  "_comment": "Pré-requisitos estruturados AUTORAIS para talentos cujo texto o extractor não parseia (grupos A/B/C/D + Grupo E + decisões do Owner). Fundido por NOME no data/ pelo extractor (talent/sphere resolvidos p/ id via resolvePrereqs); substitui prerequisites e limpa _needsReview. Tipos: talent, sphere, level, or{of[]}, tag{tags[],count}, skill{skill}, package{sphere,pkg}, martial-talent. Grupo E (esfera dupla aninhado): 'protomancia X' (erro de tradução de 'geomancia') = pacote da Natureza (metal/fogo/planta); esfera dupla mantém 2 prereqs de esfera p/ KG-4.",
 
   "Fantasma": [ { "type": "or", "of": [ { "type": "talent", "name": "Sombra" }, { "type": "talent", "name": "Espectro" } ] } ],
   "Múmia": [ { "type": "or", "of": [ { "type": "talent", "name": "Esqueleto" }, { "type": "talent", "name": "Zumbi" } ] } ],
@@ -25,5 +25,11 @@
   "Contramágica": [ { "type": "or", "of": [ { "type": "talent", "name": "Dissipar" }, { "type": "package", "sphere": "universal", "pkg": "mana" } ] } ],
   "Contramágica Caótica": [ { "type": "or", "of": [ { "type": "talent", "name": "Contramágica" }, { "type": "package", "sphere": "universal", "pkg": "dissipar" } ] } ],
 
-  "Foco Místico": [ { "type": "martial-talent" } ]
+  "Foco Místico": [ { "type": "martial-talent" } ],
+
+  "Aprimoramento de Liga": [ { "type": "sphere", "name": "Aprimoramento" }, { "type": "sphere", "name": "Natureza" }, { "type": "package", "sphere": "natureza", "pkg": "metal" } ],
+  "Telecinese de Liga":    [ { "type": "sphere", "name": "Telecinese" },    { "type": "sphere", "name": "Natureza" }, { "type": "package", "sphere": "natureza", "pkg": "metal" } ],
+  "Explosão Cadavérica":   [ { "type": "sphere", "name": "Morte" }, { "type": "sphere", "name": "Destruição" }, { "type": "talent", "name": "Bomba de Cadáver", "sphereName": "Morte" } ],
+  "Chama Luminosa":        [ { "type": "sphere", "name": "Luz" },   { "type": "sphere", "name": "Natureza" }, { "type": "package", "sphere": "natureza", "pkg": "fogo" },  { "type": "talent", "name": "Criar Natureza", "sphereName": "Natureza" } ],
+  "Necromancia Silvestre": [ { "type": "sphere", "name": "Morte" }, { "type": "sphere", "name": "Natureza" }, { "type": "package", "sphere": "natureza", "pkg": "planta" } ]
 }

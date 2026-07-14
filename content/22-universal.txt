@@ -95,11 +95,11 @@ Você pode tratar sua habilidade Dissipar como um talento (tipo explosão), mold
 
 ### Talentos de Esfera Dupla
 
-#### Aprimoramento de Liga (esfera dupla, Aprimoramento, Natureza (geomancia metálica))
-Sempre que você usar uma habilidade de geomancia do pacote de metal para criar ou afetar um objeto de metal, você pode aprimorar o objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais.
+#### Aprimoramento de Liga (esfera dupla, Aprimoramento, Natureza (Protomancia Metal))
+Sempre que você usar uma habilidade de protomancia do pacote de metal para criar ou afetar um objeto de metal, você pode aprimorar o objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de protomancia tenha um custo de ponto de magia de 1 ou mais.
 
-#### Telecinese de Liga (esfera dupla, Telecinese, Natureza (geomancia metálica))
-Quando você cria um objeto de metal usando qualquer geomancia, você pode usar uma habilidade de esfera de Telecinese (geralmente levitar ou projétil) no objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de geomancia tenha um custo de ponto de magia de 1 ou mais.
+#### Telecinese de Liga (esfera dupla, Telecinese, Natureza (Protomancia Metal))
+Quando você cria um objeto de metal usando qualquer protomancia, você pode usar uma habilidade de esfera de Telecinese (geralmente levitar ou projétil) no objeto como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de protomancia tenha um custo de ponto de magia de 1 ou mais.
 
 #### Aurora (esfera dupla, Luz, Clima)
 Enquanto estiver em clima de severidade 1 ou superior, você pode, como um efeito de esfera de Luz, aumentar magicamente o nível de luz em um passo como uma ação bônus (a escuridão se torna penumbra, a penumbra se torna luz brilhante). Essa mudança na luz afeta tudo dentro do seu alcance de brilho. No 11º nível, você pode aumentar o nível de luz em um passo adicional (a escuridão se torna luz brilhante). Áreas de escuridão mágica dentro do alcance deste efeito não são afetadas, seus níveis de luz permanecendo inalterados.
@@ -121,8 +121,8 @@ Quando você transforma um alvo, você também pode fazer com que esse alvo bril
 #### Coalescência (esfera dupla, Morte, Vida)
 Sempre que você usar um golpe fantasma, você pode, antes do final do seu turno, conjurar uma cura, restauração ou revigoramento como uma ação bônus. Você pode usar este talento (esfera dupla) mesmo que seu efeito de Golpe Fantasma tenha um custo de pontos de magia de 1 ou mais.
 
-#### Explosão Cadavérica (esfera dupla, forma de explosão, Morte (Bomba Cadavérica), Destruição)
-Você pode usar uma explosão destrutiva para ativar seu talento Bomba Cadavérica em vez de um Golpe Fantasma. Os alvos afetados têm direito a um teste de resistência de Destreza para reduzir o dano à metade.
+#### Explosão Cadavérica (esfera dupla, forma de explosão, Morte (Bomba de Cadáver), Destruição)
+Você pode usar uma explosão destrutiva para ativar seu talento Bomba de Cadáver em vez de um Golpe Fantasma. Os alvos afetados têm direito a um teste de resistência de Destreza para reduzir o dano à metade.
 
 #### Companheiro Destrutivo (esfera dupla, Conjuração (Companheiro Explosivo), Destruição)
 Quando você invoca um companheiro que possui o talento Companheiro Explosivo (forma), você pode aplicar um único talento (tipo explosão) que você possui a esse companheiro. Quando o companheiro explosivo detona, ele usa d8 e o tipo de dano do talento (tipo explosão) e aplica seus efeitos adicionais como se fosse uma explosão destrutiva. Quaisquer custos adicionais de pontos de magia associados ao talento (tipo explosão) escolhido devem ser pagos como parte da conjuração da invocação.
@@ -160,8 +160,8 @@ Sempre que você usar um teleporte, você pode, antes do final do seu turno, con
 #### Égide Luminosa (esfera dupla, Luz, Proteção)
 Como uma ação bônus, você pode fazer um aliado brilhar se ele estiver portando uma égide que você criou. Você deve usar uma ação separada para iluminá-lo. O brilho termina quando a égide termina. Você pode usar este talento (esfera dupla) mesmo se tiver acabado de conjurar a égide em seu aliado neste turno, e a égide tiver um custo de ponto de magia de 1 ou mais.
 
-#### Chama Luminosa (esfera dupla, Luz, Natureza (geomancia do fogo; Criar Natureza))
-Sempre que você usar Criar Natureza para criar um fogo, você também pode fazer com que o fogo brilhe. Você pode tratar uma habilidade de geomancia que tenha como alvo tal fogo e um efeito de iluminar que tenha como alvo tal brilho como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem.
+#### Chama Luminosa (esfera dupla, Luz, Natureza (Protomancia Fogo; Criar Natureza))
+Sempre que você usar Criar Natureza para criar um fogo, você também pode fazer com que o fogo brilhe. Você pode tratar uma habilidade de protomancia que tenha como alvo tal fogo e um efeito de iluminar que tenha como alvo tal brilho como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem.
 
 #### Poder da Sepultura (esfera dupla, Morte, Aprimoramento)
 Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um aprimoramento à criatura criada como uma ação bônus antes do final do seu turno. O aprimoramento e a reanimação contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. O aprimoramento como ação bônus pode ser aumentado para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (de esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais.
@@ -196,8 +196,8 @@ Ao gastar um minuto em concentração, você pode trancar parte do seu armazenam
 #### Morte Rápida (esfera dupla, Morte, Tempo)
 Quando você usa reanimar para criar um morto-vivo com um talento básico (morto-vivo), você pode aplicar um efeito de alterar o tempo que tenha como alvo uma criatura à criatura criada como uma ação bônus antes do final do seu turno. Alterar o tempo e reanimar contam como um único efeito para fins de concentração. Use a duração mais curta dos dois efeitos, encerrando ambos quando expirarem. A ação bônus de conjurar Alterar o Tempo pode ser aumentada para afetar múltiplas criaturas reanimadas com o talento Em Massa (metaesfera) da esfera Universal, se elas foram criadas desde o início do seu turno. Você pode usar este talento (esfera dupla) mesmo que seu efeito de reanimar tenha um custo de ponto de magia de 1 ou mais.
 
-#### Necromancia Silvestre (esfera dupla, Morte, Natureza (geomancia vegetal))
-Você pode usar ossos e cadáveres inanimados, em vez de plantas, para cumprir quaisquer pré-requisitos adicionais para talentos e habilidades de geomancia vegetal.
+#### Necromancia Silvestre (esfera dupla, Morte, Natureza (Protomancia Planta))
+Você pode usar ossos e cadáveres inanimados, em vez de plantas, para cumprir quaisquer pré-requisitos adicionais para talentos e habilidades de Protomancia Planta.
 
 Seus talentos e habilidades de golpe fantasma que normalmente afetam apenas mortos-vivos também podem afetar criaturas vegetais. Você pode usar vegetação morta como alvo para cumprir os pré-requisitos de alvo para qualquer magia de reanimar que você conjure para criar um morto-vivo corpóreo com um talento básico (morto-vivo). O estado da vegetação determina quais tipos de mortos-vivos você pode reanimar; galhos secos e estéreis podem ser reanimados como esqueletos, galhos apodrecidos podem ser reanimados como zumbis, enquanto arbustos recém-cortados podem ser reanimados como carniçais, etc. Simplesmente cortar e desbastar madeira geralmente não desqualifica a vegetação como um alvo válido para reanimar, mas madeira que foi transformada em vigas de madeira serrada não é. O Mestre tem a palavra final sobre qual vegetação é ou não um alvo válido para reanimar, bem como qual criatura base é usada ao determinar seu ND (Nível de Desafio) e estatísticas; por exemplo, um alce de topiaria pode usar as estatísticas base de um alce, enquanto um humanoide de madeira cambaleante pode usar as estatísticas base de um bandido.
 

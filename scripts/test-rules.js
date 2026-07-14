@@ -241,4 +241,17 @@ const artificeMarcial = mkChar({ className: 'Artífice', subclass: 'Alquimista',
 ok('MARTIAL: Foco Místico BLOQUEADO sem talento marcial', Rules.prereqCheck(mkChar({}), focoMistico, idx).ok === false);
 ok('MARTIAL: Foco Místico LIBERADO com talento de esfera marcial', Rules.prereqCheck(artificeMarcial, focoMistico, idx).ok === true);
 
+// GRUPO E: esfera dupla aninhada — "protomancia X" (erro de tradução de "geomancia")
+// resolve p/ o pacote da Natureza; "Bomba Cadavérica" → talento Bomba de Cadáver.
+const ligaMetal = idx.sphereById.get('universal').talents.find(t => t.id === 'universal-aprimoramento-de-liga');
+ok('GRUPO E: Aprim. de Liga carrega prereq pacote natureza/metal', !!ligaMetal && ligaMetal.prerequisites.some(p => p.type === 'package' && p.sphere === 'natureza' && p.pkg === 'metal'));
+ok('GRUPO E: Explosão Cadavérica → talento Bomba de Cadáver', idx.sphereById.get('universal').talents.find(t => t.id === 'universal-explosao-cadaverica').prerequisites.some(p => p.type === 'talent' && p.id === 'morte-bomba-de-cadaver'));
+ok('GRUPO E: nenhum talento continua flagged (_needsReview zerado)', ![...idx.talentById.values()].some(t => t._needsReview && t._needsReview.length));
+/** @type {any} */
+const ligaSemMetal = mkChar({ spheres: [{ sphere: 'aprimoramento', section: 'magic', packages: [], freePicks: [], talents: [] }, { sphere: 'natureza', section: 'magic', packages: ['ar'], freePicks: [], talents: [] }] });
+ok('GRUPO E: Aprim. de Liga BLOQUEADO sem pacote Metal', Rules.prereqCheck(ligaSemMetal, ligaMetal, idx).ok === false);
+/** @type {any} */
+const ligaComMetal = mkChar({ spheres: [{ sphere: 'aprimoramento', section: 'magic', packages: [], freePicks: [], talents: [] }, { sphere: 'natureza', section: 'magic', packages: ['metal'], freePicks: [], talents: [] }] });
+ok('GRUPO E: Aprim. de Liga LIBERADO com Aprimoramento+Natureza+pacote Metal', Rules.prereqCheck(ligaComMetal, ligaMetal, idx).ok === true);
+
 console.log(`\n${pass} assertions passed.`);
