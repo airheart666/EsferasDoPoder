@@ -9,7 +9,11 @@
     "sig": "ilusao"
   },
   "acquisition": {
-    "freePicks": 0
+    "freePicks": 0,
+    "baseTalents": [
+      "Charme",
+      "Figmento"
+    ]
   },
   "talents": [
     {
@@ -82,7 +86,7 @@
       "name": "Figmento",
       "sphere": "ilusao",
       "section": "magic",
-      "kind": "talent",
+      "kind": "base",
       "group": "Habilidades Básicas de Ilusão",
       "tags": [],
       "cost": {
@@ -115,7 +119,7 @@
       "name": "Charme",
       "sphere": "ilusao",
       "section": "magic",
-      "kind": "talent",
+      "kind": "base",
       "group": "Habilidades Básicas de Ilusão",
       "tags": [],
       "action": "1 ação",

@@ -387,6 +387,20 @@ function loadOverrides() {
   return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null;
 }
 
+// ---- Force sphere-level base abilities (acquisition.baseTalents) --------------
+// Algumas esferas descrevem suas bases DEPOIS do 1º grupo (ex.: Batedor põe os
+// "Lembretes de Regras de Combate" primeiro), então a heurística "h4 antes do 1º h3"
+// não as pega. `acquisition.baseTalents` (nomes) força esses talentos a kind:'base'.
+function applyAcquisitionBaseTalents(sphere) {
+  const names = sphere.acquisition && sphere.acquisition.baseTalents;
+  if (!Array.isArray(names) || !names.length) return;
+  const want = new Set(names.map(n => normalizeTerm(baseName(n))));
+  let hit = 0;
+  for (const t of sphere.talents) if (want.has(normalizeTerm(baseName(t.name)))) { t.kind = 'base'; hit++; }
+  const missing = names.filter(n => !sphere.talents.some(t => normalizeTerm(baseName(t.name)) === normalizeTerm(baseName(n))));
+  if (missing.length) console.log(`  ⚠ ${sphere.name} baseTalents não encontrados: ${missing.join(', ')}`);
+}
+
 // ---- Resolve package baseTalents (names) → ids within the sphere -------------
 // e.g. Universal's "Dissipar" package auto-grants the "Dissipar" base ability.
 function resolvePackageBaseTalents(sphere) {
@@ -503,6 +517,7 @@ function main() {
     const { talents, intro } = extractSphere(sphere, ch, pages, {});
     sphere.talents = talents;
     if (intro) sphere.intro = intro;
+    applyAcquisitionBaseTalents(sphere);
     resolvePackageBaseTalents(sphere);
     allTalents.push(...talents);
     results.push(sphere);

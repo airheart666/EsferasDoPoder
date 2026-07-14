@@ -3166,8 +3166,13 @@ function refreshCharBench() {
     const activeEl = document.activeElement;
     const wasSearch = !!(activeEl && activeEl.classList && activeEl.classList.contains('char-bench-search'));
     const caret = wasSearch ? activeEl.selectionStart : null;
+    // Preserva a rolagem da lista de talentos (a lista é recriada; sem isso ela volta ao
+    // topo a cada clique num item, atrapalhando a leitura sequencial).
+    const prevList = benchHost.querySelector('.char-bench-list');
+    const listScroll = prevList ? prevList.scrollTop : null;
     benchHost.innerHTML = '';
     benchHost.appendChild(buildCharBenchInner(active));
+    if (listScroll != null) { const nl = benchHost.querySelector('.char-bench-list'); if (nl) nl.scrollTop = listScroll; }
     if (wasSearch) {
       const inp = benchHost.querySelector('.char-bench-search');
       if (inp) { inp.focus(); if (caret != null) { try { inp.setSelectionRange(caret, caret); } catch (_) { /* ignora */ } } }

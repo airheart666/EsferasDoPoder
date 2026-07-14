@@ -9,7 +9,11 @@
     "sig": "canalha"
   },
   "acquisition": {
-    "freePicks": 0,
+    "freeGroup": {
+      "tag": "truque"
+    },
+    "freeLabel": "truque",
+    "freePicks": 1,
     "conditionals": [
       {
         "requires": "Prestidigitação",

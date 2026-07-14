@@ -46,6 +46,7 @@
         "freeLabel": { "type": "string" },
         "freePicks": { "type": "number" },
         "talentTags": { "type": "array", "items": { "type": "string" } },
+        "baseTalents": { "type": "array", "items": { "type": "string" }, "description": "Nomes de talentos que a esfera concede como HABILIDADE-BASE (kind:base, auto-concedidos). Para esferas cujas bases não ficam antes do 1º grupo na fonte (ex.: Batedor: Analisar, Afinidade com Perícia). O extractor marca esses talentos como base." },
         "conditionals": {
           "type": "array",
           "items": { "$ref": "#/definitions/conditional" }

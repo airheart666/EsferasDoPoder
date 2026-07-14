@@ -17,8 +17,8 @@
 
   "Frasco Universal": [ { "type": "sphere", "name": "Alquimia" }, { "type": "tag", "tags": ["fórmula", "veneno"], "count": 5 } ],
 
-  "Mestre dos Mortos": [ { "type": "sphere", "name": "Liderança" }, { "type": "tag", "tags": ["ajudante"], "count": 1 } ],
-  "Esquadrão": [ { "type": "sphere", "name": "Liderança" }, { "type": "tag", "tags": ["seguidores"], "count": 1 }, { "type": "tag", "tags": ["parceiro"], "count": 1 }, { "type": "level", "min": 5 } ],
+  "Mestre dos Mortos": [ { "type": "sphere", "name": "Liderança" }, { "type": "package", "sphere": "lideranca", "pkg": "companheiro" } ],
+  "Esquadrão": [ { "type": "sphere", "name": "Liderança" }, { "type": "package", "sphere": "lideranca", "pkg": "seguidores" }, { "type": "package", "sphere": "lideranca", "pkg": "companheiro" }, { "type": "talent", "name": "Soldados" }, { "type": "level", "min": 5 } ],
 
   "Manipulação de Energia": [ { "type": "sphere", "name": "Alteração" }, { "type": "or", "of": [ { "type": "talent", "name": "Elemental" }, { "type": "talent", "name": "Gosma" }, { "type": "talent", "name": "Traços Sobrenaturais" } ] }, { "type": "level", "min": 11 } ],
 

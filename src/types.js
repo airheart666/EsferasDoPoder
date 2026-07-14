@@ -120,6 +120,7 @@
  * @property {string} [freeLabel]
  * @property {number} [freePicks]
  * @property {string[]} [talentTags]
+ * @property {string[]} [baseTalents]  Nomes de talentos forçados a kind:base (auto-concedidos) — bases que não ficam antes do 1º grupo na fonte.
  * @property {Conditional[]} [conditionals]
  * @property {Packages} [packages]
  */

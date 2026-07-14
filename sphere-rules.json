@@ -28,7 +28,7 @@
   "Criação":    { "freePicks": 0 },
   "Distorção":  { "freePicks": 0 },
   "Escuridão":  { "freePicks": 0 },
-  "Ilusão":     { "freePicks": 0 },
+  "Ilusão":     { "freePicks": 0, "baseTalents": ["Charme", "Figmento"] },
   "Luz":        { "freePicks": 0 },
   "Proteção":   { "freePicks": 0 },
   "Telecinese": { "freePicks": 0 },
@@ -49,14 +49,23 @@
 
   "Atirador":         { "freePicks": 0 },
   "Barragem":         { "freePicks": 0 },
-  "Batedor":          { "freePicks": 0 },
+  "Batedor":          { "freePicks": 0, "baseTalents": ["Analisar", "Afinidade com Perícia: Furtividade"], "conditionals": [ { "requires": "Furtividade", "addPicks": 1 } ] },
   "Brigão":           { "freePicks": 0 },
   "Duas Armas":       { "freePicks": 0 },
   "Duelismo":         { "freePicks": 0 },
   "Escudo":           { "freePicks": 0 },
   "General":          { "freePicks": 0 },
   "Gladiador":        { "freePicks": 0 },
-  "Guardião":         { "freePicks": 0 },
+  "Guardião": {
+    "packages": {
+      "label": "Pacote de Guardião",
+      "grantTalent": "Guardião Expandido",
+      "options": [
+        { "id": "desafio",  "label": "Desafio",  "baseTalents": ["Desafio"],  "scopeTags": ["desafio"] },
+        { "id": "patrulha", "label": "Patrulha", "baseTalents": ["Patrulha"], "scopeTags": ["área"] }
+      ]
+    }
+  },
   "Retribuição":      { "freePicks": 0 },
 
   "Armadilha":        { "freePicks": 0, "conditionals": [ { "requires": "Ferramentas de ladrão", "addPicks": 1 } ] },
@@ -73,8 +82,18 @@
     },
     "conditionals": [ { "requires": "Lidar com Animais", "addPicks": 1 } ]
   },
-  "Canalha":          { "freePicks": 0, "conditionals": [ { "requires": "Prestidigitação", "addPicks": 1 } ] },
-  "Liderança":        { "freePicks": 0, "conditionals": [ { "requires": "Persuasão", "addPicks": 1 } ] },
+  "Canalha":          { "freeGroup": { "tag": "truque" }, "freeLabel": "truque", "freePicks": 1, "conditionals": [ { "requires": "Prestidigitação", "addPicks": 1 } ] },
+  "Liderança": {
+    "packages": {
+      "label": "Pacote de Liderança",
+      "grantTalent": "Liderança Expandida",
+      "options": [
+        { "id": "seguidores",  "label": "Seguidores",  "baseTalents": ["Pacote de Seguidores"],  "scopeTags": ["seguidores"] },
+        { "id": "companheiro", "label": "Companheiro", "baseTalents": ["Pacote de Companheiro"], "scopeTags": ["companheiro"] }
+      ]
+    },
+    "conditionals": [ { "requires": "Persuasão", "addPicks": 1 } ]
+  },
 
   "Engenhosidade": {
     "freeGroup": { "tag": "dispositivo" }, "freeLabel": "dispositivo", "freePicks": 1,

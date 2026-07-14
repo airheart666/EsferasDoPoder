@@ -254,4 +254,41 @@ ok('GRUPO E: Aprim. de Liga BLOQUEADO sem pacote Metal', Rules.prereqCheck(ligaS
 const ligaComMetal = mkChar({ spheres: [{ sphere: 'aprimoramento', section: 'magic', packages: [], freePicks: [], talents: [] }, { sphere: 'natureza', section: 'magic', packages: ['metal'], freePicks: [], talents: [] }] });
 ok('GRUPO E: Aprim. de Liga LIBERADO com Aprimoramento+Natureza+pacote Metal', Rules.prereqCheck(ligaComMetal, ligaMetal, idx).ok === true);
 
+// PACOTES MARCIAIS: Guardião e Liderança agora são esferas de pacote (correção de modelagem)
+const gDesafioTal = idx.sphereById.get('guardiao').talents.find(t => t.id === 'm-guardiao-auge-da-vitoria');
+const gResil = idx.sphereById.get('guardiao').talents.find(t => t.id === 'm-guardiao-punicao');
+ok('GUARDIÃO: é esfera de pacote (Desafio/Patrulha)', !!(idx.sphereById.get('guardiao').acquisition || {}).packages);
+ok('GUARDIÃO: (área) → pacote Patrulha', (idx.sphereById.get('guardiao').talents.find(t => t.id === 'm-guardiao-assistencia').prerequisites || []).some(p => p.type === 'package' && p.pkg === 'patrulha'));
+ok('GUARDIÃO: (resiliência) é geral (sem prereq de pacote)', !(gResil.prerequisites || []).some(p => p.type === 'package'));
+/** @type {any} */
+const gPatrulha = mkChar({ spheres: [{ sphere: 'guardiao', section: 'martial', packages: ['patrulha'], freePicks: [], talents: [] }] });
+/** @type {any} */
+const gDesafio = mkChar({ spheres: [{ sphere: 'guardiao', section: 'martial', packages: ['desafio'], freePicks: [], talents: [] }] });
+ok('GUARDIÃO: talento (desafio) BLOQUEADO com pacote Patrulha', Rules.prereqCheck(gPatrulha, gDesafioTal, idx).ok === false);
+ok('GUARDIÃO: talento (desafio) LIBERADO com pacote Desafio', Rules.prereqCheck(gDesafio, gDesafioTal, idx).ok === true);
+ok('GUARDIÃO: pacote Desafio → habilidade-base Desafio possuída', Rules.ownedTalentIds(gDesafio, idx).has('m-guardiao-desafio'));
+// Liderança: "Parceiro"/"Ajudante" consolidados em Companheiro; pacotes Seguidores/Companheiro
+const lSeg = idx.sphereById.get('lideranca').talents.find(t => t.id === 'm-lideranca-alquimistas');
+ok('LIDERANÇA: tags consolidadas (sem parceiro/ajudante)', !idx.sphereById.get('lideranca').talents.some(t => (t.tags || []).some(x => x === 'parceiro' || x === 'ajudante')));
+/** @type {any} */
+const lComp = mkChar({ spheres: [{ sphere: 'lideranca', section: 'martial', packages: ['companheiro'], freePicks: [], talents: [] }] });
+/** @type {any} */
+const lSegC = mkChar({ spheres: [{ sphere: 'lideranca', section: 'martial', packages: ['seguidores'], freePicks: [], talents: [] }] });
+ok('LIDERANÇA: (seguidores) BLOQUEADO com pacote Companheiro', Rules.prereqCheck(lComp, lSeg, idx).ok === false);
+ok('LIDERANÇA: (seguidores) LIBERADO com pacote Seguidores', Rules.prereqCheck(lSegC, lSeg, idx).ok === true);
+
+// Batedor: habilidades-base (Analisar, Afinidade) auto-concedidas via acquisition.baseTalents
+ok('BATEDOR: 2 habilidades-base (kind:base)', idx.sphereById.get('batedor').talents.filter(t => t.kind === 'base').length === 2);
+/** @type {any} */
+const batedor = mkChar({ className: 'Batedor', spheres: [{ sphere: 'batedor', section: 'martial', packages: [], freePicks: [], talents: [] }] });
+const batOwned = Rules.ownedTalentIds(batedor, idx);
+ok('BATEDOR: Analisar + Afinidade auto-concedidas ao possuir a esfera', batOwned.has('m-batedor-analisar') && batOwned.has('m-batedor-afinidade-com-pericia-furtividade'));
+// Canalha: esfera concede 1 talento (truque) grátis (freeGroup truque)
+ok('CANALHA: acquisition concede grátis (truque)', idx.sphereById.get('canalha').acquisition.freePicks === 1 && (idx.sphereById.get('canalha').acquisition.freeGroup || {}).tag === 'truque');
+// Ilusão: Charme + Figmento auto-concedidas (baseTalents)
+/** @type {any} */
+const ilus = mkChar({ spheres: [{ sphere: 'ilusao', section: 'magic', packages: [], freePicks: [], talents: [] }] });
+const ilusOwned = Rules.ownedTalentIds(ilus, idx);
+ok('ILUSÃO: Charme + Figmento auto-concedidas', ilusOwned.has('ilusao-charme') && ilusOwned.has('ilusao-figmento'));
+
 console.log(`\n${pass} assertions passed.`);

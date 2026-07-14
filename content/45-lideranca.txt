@@ -1,7 +1,7 @@
 <div class='pageNumber auto'></div>
 
 ## Liderança
-Os praticantes da esfera de Liderança aprendem a reunir, organizar e comandar outros. Ao adquirir a esfera de Liderança, você ganha proficiência em Persuasão. Se você já possui proficiência em Persuasão, você ganha um talento bônus desta esfera. Além disso, você ganha o pacote de Liderança de Seguidor ou de Parceiro.
+Os praticantes da esfera de Liderança aprendem a reunir, organizar e comandar outros. Ao adquirir a esfera de Liderança, você ganha proficiência em Persuasão. Se você já possui proficiência em Persuasão, você ganha um talento bônus desta esfera. Além disso, você ganha o pacote de Liderança de Seguidor ou de Companheiro.
 
 ### Regras de Liderança
 A esfera de Liderança difere das outras esferas marciais porque não lida com as habilidades de um indivíduo, mas sim com as pessoas com quem ele se cerca. É sempre possível que um Mestre de Jogo crie um NPC para complementar um grupo ou que uma equipe de aventureiros contrate alguns capangas para auxiliá-los, e essas decisões cabem ao Mestre de Jogo.
@@ -10,9 +10,9 @@ A esfera de Liderança, no entanto, reflete personagens para os quais ter seguid
 
 Sendo assim, a esfera de Liderança possui algumas restrições especiais que a diferenciam das demais esferas:
 
-• :: Embora o Mestre de Jogo sempre tenha a capacidade de alterar as regras para se adequarem a um jogo ou campanha, a esfera de Liderança só pode ser utilizada com a permissão do Mestre; alguns jogos podem simplesmente não se adequar a ajudantes e companheiros, enquanto alguns Mestres podem simplesmente não querer assumir o fardo de ter tantos NPCs seguindo os personagens jogadores o tempo todo. Mesmo que o Mestre de Jogo permita a esfera de Liderança, ele tem o direito de dizer que ela não pode ser escolhida antes do 5º nível do personagem; embora alguns personagens possam começar o jogo com um aliado de confiança, a maioria dos aventureiros precisa, no mínimo, ter uma reputação antes de começar a atrair ajudantes e seguidores para sua causa.
+• :: Embora o Mestre de Jogo sempre tenha a capacidade de alterar as regras para se adequarem a um jogo ou campanha, a esfera de Liderança só pode ser utilizada com a permissão do Mestre; alguns jogos podem simplesmente não se adequar a companheiros e companheiros, enquanto alguns Mestres podem simplesmente não querer assumir o fardo de ter tantos NPCs seguindo os personagens jogadores o tempo todo. Mesmo que o Mestre de Jogo permita a esfera de Liderança, ele tem o direito de dizer que ela não pode ser escolhida antes do 5º nível do personagem; embora alguns personagens possam começar o jogo com um aliado de confiança, a maioria dos aventureiros precisa, no mínimo, ter uma reputação antes de começar a atrair companheiros e seguidores para sua causa.
 
-• :: A esfera de Liderança e seus talentos não podem ser escolhidos como talentos temporários ou talentos intercambiáveis; Eles não podem ser colocados dentro da arma personalizada de um armígero ou alterados por meio do talento Combatente Intuitivo, etc. Da mesma forma, os jogadores não podem fazer com que seus companheiros conjurados, companheiros animais, ajudantes ou qualquer pessoa que não seja seu personagem jogador assuma a esfera ou os talentos de Liderança.
+• :: A esfera de Liderança e seus talentos não podem ser escolhidos como talentos temporários ou talentos intercambiáveis; Eles não podem ser colocados dentro da arma personalizada de um armígero ou alterados por meio do talento Combatente Intuitivo, etc. Da mesma forma, os jogadores não podem fazer com que seus companheiros conjurados, companheiros animais, companheiros ou qualquer pessoa que não seja seu personagem jogador assuma a esfera ou os talentos de Liderança.
 
 #### Companheiros
 Os companheiros não são exclusivos da esfera de Liderança; eles também aparecem em diversas publicações oficiais. Companheiros de outras publicações podem ser obtidos através da esfera de Liderança, e um Mestre de Jogo pode sempre adicionar um companheiro a um grupo quando desejar, independentemente de um jogador ter ou não a esfera de Liderança.
@@ -23,14 +23,14 @@ Quando, onde e como um companheiro é obtido fica a critério do Mestre de Jogo,
 Companheiros e seguidores não são considerados personagens jogadores e, portanto, não recebem pontos de experiência.
 
 #### Custos de Companheiros
-Como os companheiros e seguidores obtidos na esfera de Liderança são "comprados" com talentos, eles não custam dinheiro para contratar, mas, da mesma forma, não podem gerar dinheiro para os jogadores trabalhando em empregos paralelos, a menos que um talento específico na esfera de Liderança diga o contrário. Em vez disso, o custo de contratar, alimentar e equipar esses companheiros, bem como o dinheiro que eles ganhariam com atividades de tempo livre, é abstraído; Os ajudantes são pagos com a experiência que ganham, com os itens diversos que recuperam e vendem, que os PCs não se preocupam em usar, e os seguidores geram dinheiro para o PC em trabalhos secundários sem importância, que então cobrem seu pagamento e manutenção. Um jogador sempre pode dar aos seus ajudantes e companheiros equipamentos melhores e itens mágicos por conta própria, mas esses custos precisam sair do seu próprio bolso.
+Como os companheiros e seguidores obtidos na esfera de Liderança são "comprados" com talentos, eles não custam dinheiro para contratar, mas, da mesma forma, não podem gerar dinheiro para os jogadores trabalhando em empregos paralelos, a menos que um talento específico na esfera de Liderança diga o contrário. Em vez disso, o custo de contratar, alimentar e equipar esses companheiros, bem como o dinheiro que eles ganhariam com atividades de tempo livre, é abstraído; Os companheiros são pagos com a experiência que ganham, com os itens diversos que recuperam e vendem, que os PCs não se preocupam em usar, e os seguidores geram dinheiro para o PC em trabalhos secundários sem importância, que então cobrem seu pagamento e manutenção. Um jogador sempre pode dar aos seus companheiros e companheiros equipamentos melhores e itens mágicos por conta própria, mas esses custos precisam sair do seu próprio bolso.
 
 #### Lealdade
-Os ajudantes e seguidores são leais ao jogador, mas nenhum ser inteligente tolerará ser maltratado. Ajudantes especialmente descontentes podem trabalhar em segredo para causar sua ruína.
+Os companheiros e seguidores são leais ao jogador, mas nenhum ser inteligente tolerará ser maltratado. Companheiros especialmente descontentes podem trabalhar em segredo para causar sua ruína.
 
-Além disso, se um jogador causar a morte de seus ajudantes e seguidores, ele começará a ter dificuldade em encontrar outros dispostos a tomar seus lugares.
+Além disso, se um jogador causar a morte de seus companheiros e seguidores, ele começará a ter dificuldade em encontrar outros dispostos a tomar seus lugares.
 
-Se um ajudante ou grupo de seguidores está se sentindo particularmente leal ou como eles reagem a maus tratos é determinado pelo Mestre de Jogo, mas como regra opcional, a lealdade pode ser medida em uma escala de 0 a 20. Companheiros e seguidores têm uma lealdade máxima igual ao seu valor de Carisma e uma lealdade inicial de metade desse valor. Se os membros do grupo agirem de maneira contrária ao 
+Se um companheiro ou grupo de seguidores está se sentindo particularmente leal ou como eles reagem a maus tratos é determinado pelo Mestre de Jogo, mas como regra opcional, a lealdade pode ser medida em uma escala de 0 a 20. Companheiros e seguidores têm uma lealdade máxima igual ao seu valor de Carisma e uma lealdade inicial de metade desse valor. Se os membros do grupo agirem de maneira contrária ao 
 
 \page
 <div class='pageNumber auto'></div>
@@ -39,11 +39,11 @@ alinhamento ou vínculo do companheiro, role 1d4 e subtraia esse número da leal
 
 Esse valor aumenta para 2d4 se ele for abusado, enganado ou colocado em perigo pelo grupo por motivos puramente egoístas. Da mesma forma, se o personagem o tratar especialmente bem, ajudá-lo a alcançar objetivos ligados ao seu vínculo, gastar seu próprio dinheiro em presentes e recompensas para ele ou realizar um feito inspirador que o faça se sentir bem com seu trabalho, role 1d4 e adicione esse número à lealdade dele. Se a lealdade chegar a 0, o personagem deixa de ser leal e irá abandonar o grupo ou trabalhar para sabotá-lo.
 
-#### Substituindo Parceiros
-A esfera de Liderança pressupõe que seus parceiros e seguidores não sejam contratados temporários, mas sim companheiros dedicados: um cavaleiro e seu escudeiro, um mestre da guilda dos ladrões e sua família criminosa, um estudioso e seus alunos, um capitão mercenário e suas tropas, etc. No entanto, é possível que o jogador deseje trocar de parceiro ou que, por razões narrativas, o Mestre tenha decidido removê-lo; o escudeiro ou estagiário pode se formar ou retornar para casa para cuidar da família, etc. Quando isso acontecer, o Mestre e o jogador devem trabalhar juntos para determinar onde, quando e como um novo parceiro será recrutado para substituí-lo. Isso também pode ocorrer se o antigo parceiro precisar ser substituído porque morreu ou o abandonou devido à baixa lealdade, mas o jogador pode ter dificuldade em encontrar um novo parceiro ou grupo de seguidores se tiver a reputação de maltratar ou de causar a morte de parceiros e seguidores.
+#### Substituindo Companheiros
+A esfera de Liderança pressupõe que seus companheiros e seguidores não sejam contratados temporários, mas sim companheiros dedicados: um cavaleiro e seu escudeiro, um mestre da guilda dos ladrões e sua família criminosa, um estudioso e seus alunos, um capitão mercenário e suas tropas, etc. No entanto, é possível que o jogador deseje trocar de companheiro ou que, por razões narrativas, o Mestre tenha decidido removê-lo; o escudeiro ou estagiário pode se formar ou retornar para casa para cuidar da família, etc. Quando isso acontecer, o Mestre e o jogador devem trabalhar juntos para determinar onde, quando e como um novo companheiro será recrutado para substituí-lo. Isso também pode ocorrer se o antigo companheiro precisar ser substituído porque morreu ou o abandonou devido à baixa lealdade, mas o jogador pode ter dificuldade em encontrar um novo companheiro ou grupo de seguidores se tiver a reputação de maltratar ou de causar a morte de companheiros e seguidores.
 
-#### Interpretando Ajudantes e Seguidores
-Ajudantes e seguidores estão sob o controle do jogador (especialmente em combate), mas isso não significa que sejam criaturas sem mente. O Mestre pode querer controlar o ajudante ou até mesmo alguns seguidores importantes (o chefe da caravana, o estagiário-chefe, etc.) para fins de interpretação, assim como faria com outros NPCs importantes. Se o Mestre não quiser dar voz a tantos NPCs, uma alternativa a um jogador simplesmente controlar todos os seus seguidores e ajudantes (o que pode privar o jogo de interações divertidas entre os personagens) é deixar a interpretação dos ajudantes e seguidores de um jogador para os outros jogadores à mesa, que podem escolher um ajudante ou seguidor importante e interpretá-lo sempre que necessário.
+#### Interpretando Companheiros e Seguidores
+Companheiros e seguidores estão sob o controle do jogador (especialmente em combate), mas isso não significa que sejam criaturas sem mente. O Mestre pode querer controlar o companheiro ou até mesmo alguns seguidores importantes (o chefe da caravana, o estagiário-chefe, etc.) para fins de interpretação, assim como faria com outros NPCs importantes. Se o Mestre não quiser dar voz a tantos NPCs, uma alternativa a um jogador simplesmente controlar todos os seus seguidores e companheiros (o que pode privar o jogo de interações divertidas entre os personagens) é deixar a interpretação dos companheiros e seguidores de um jogador para os outros jogadores à mesa, que podem escolher um companheiro ou seguidor importante e interpretá-lo sempre que necessário.
 
 ##### Variante: Seguidores do Grupo
 Em alguns jogos, especialmente aqueles focados em um grupo viajante maior do que um grupo de aventureiros normal (como uma caravana, um exército mercenário, etc.), em vez de um jogador arcar com o ônus de gastar recursos de personagem para ter um grupo de seguidores e companheiros, o grupo como um todo poderia ter a permissão de adquirir talentos. Isso poderia ser feito de várias maneiras, como permitir que cada personagem contribua com talentos para um conjunto compartilhado. Um "líder" ficaria com a esfera base, enquanto os outros poderiam adicionar talentos adicionais, refletindo os companheiros e seguidores que atraem com suas habilidades. Qualquer um que possua um talento (de companheiro) poderia usá-lo com qualquer um dos companheiros compartilhados do grupo.
@@ -54,13 +54,13 @@ Alternativamente, a esfera base poderia simplesmente ser concedida ao grupo, com
 #### Pacote de Companheiro
 Você ganha um companheiro. Um companheiro pode ser qualquer tipo de criatura com uma ficha de estatísticas, mas seu nível de desafio deve ser 1/2 ou menor.
 
-Como explicado na seção “Aprimorando um Companheiro”, um companheiro começa com esta ficha de estatísticas e a aprimora conforme progride como companheiro. Algumas classes de companheiro podem ter pré-requisitos adicionais. Ao criar um companheiro, você escolhe a classe que ele terá pelo resto de sua carreira, cada uma detalhada abaixo: Explorador, Estudante ou Veterano. Trabalhe com o Mestre para determinar quais opções estão disponíveis, pois, dependendo do local, algumas coisas podem simplesmente não fazer sentido. Além das classes de ajudante Explorador, Estudante e Veterano, um Mestre pode aprovar outras classes de ajudante que tenham sido publicadas em outras fontes aprovadas.
+Como explicado na seção “Aprimorando um Companheiro”, um companheiro começa com esta ficha de estatísticas e a aprimora conforme progride como companheiro. Algumas classes de companheiro podem ter pré-requisitos adicionais. Ao criar um companheiro, você escolhe a classe que ele terá pelo resto de sua carreira, cada uma detalhada abaixo: Explorador, Estudante ou Veterano. Trabalhe com o Mestre para determinar quais opções estão disponíveis, pois, dependendo do local, algumas coisas podem simplesmente não fazer sentido. Além das classes de companheiro Explorador, Estudante e Veterano, um Mestre pode aprovar outras classes de companheiro que tenham sido publicadas em outras fontes aprovadas.
 
-Os ajudantes que você ganha através da esfera de Liderança sempre têm um nível igual à metade do seu (nível mínimo 1); quando você ganha um nível par após o nível 2, seu ajudante sobe 1 nível. Você não pode possuir mais de 1 ajudante da esfera de Liderança, a menos que seus talentos digam o contrário.
+Os companheiros que você ganha através da esfera de Liderança sempre têm um nível igual à metade do seu (nível mínimo 1); quando você ganha um nível par após o nível 2, seu companheiro sobe 1 nível. Você não pode possuir mais de 1 companheiro da esfera de Liderança, a menos que seus talentos digam o contrário.
 
-Os ajudantes abaixo começam o jogo com o equipamento concedido por sua tradição marcial. O equipamento inicial de um ajudante não pode ser usado para aumentar a riqueza do personagem; os ajudantes raramente concordarão em ter o equipamento do qual dependem para sobreviver vendido sem o seu conhecimento.
+Os companheiros abaixo começam o jogo com o equipamento concedido por sua tradição marcial. O equipamento inicial de um companheiro não pode ser usado para aumentar a riqueza do personagem; os companheiros raramente concordarão em ter o equipamento do qual dependem para sobreviver vendido sem o seu conhecimento.
 
-Para conveniência dos jogadores, aqui estão três fichas de estatísticas que podem ser usadas para aplicar níveis de classe de ajudante
+Para conveniência dos jogadores, aqui estão três fichas de estatísticas que podem ser usadas para aplicar níveis de classe de companheiro
 
 
 \page
@@ -307,18 +307,18 @@ Cada vez que este talento for adquirido após o primeiro, seus seguidores recebe
 <div class='pageNumber auto'></div>
 
 
-### Talentos de Parceiro
+### Talentos de Companheiro
 
-#### Cobertura Aliada (parceiro)
-Você e seus parceiros recebem um bônus de +1 na CA enquanto estiverem a 1,5 metro de você ou de outro parceiro. Os benefícios de múltiplos parceiros não se acumulam.
+#### Cobertura Aliada (companheiro)
+Você e seus companheiros recebem um bônus de +1 na CA enquanto estiverem a 1,5 metro de você ou de outro companheiro. Os benefícios de múltiplos companheiros não se acumulam.
 
-Quando você for alvo de um ataque ou efeito de alvo único e estiver a 1,5 metro de um parceiro, você pode gastar foco marcial para redirecionar o ataque ou efeito para o parceiro como uma reação.
+Quando você for alvo de um ataque ou efeito de alvo único e estiver a 1,5 metro de um companheiro, você pode gastar foco marcial para redirecionar o ataque ou efeito para o companheiro como uma reação.
 
-#### Manobra Inicial (parceiro)
-Uma vez por rodada, quando um de seus parceiros obtiver sucesso em um desarme, agarramento ou empurrão, o alvo provoca um ataque de oportunidade seu.
+#### Manobra Inicial (companheiro)
+Uma vez por rodada, quando um de seus companheiros obtiver sucesso em um desarme, agarramento ou empurrão, o alvo provoca um ataque de oportunidade seu.
 
-#### Trabalho em Equipe Oportunista (parceiro)
-Enquanto estiver a 1,5 metro de um parceiro, quando você ou o parceiro realizar um desarme, agarramento ou empurrão, o outro pode gastar seu foco marcial como uma reação para conceder vantagem na rolagem.
+#### Trabalho em Equipe Oportunista (companheiro)
+Enquanto estiver a 1,5 metro de um companheiro, quando você ou o companheiro realizar um desarme, agarramento ou empurrão, o outro pode gastar seu foco marcial como uma reação para conceder vantagem na rolagem.
 
 #### Táticas de Matilha (companheiro)
 Você e seus companheiros recebem um bônus de +1 nas jogadas de ataque com armas enquanto estiverem a 1,5 metro de você ou de outro companheiro. Os benefícios de múltiplos companheiros não se acumulam.
@@ -340,7 +340,7 @@ Você pode escolher este talento várias vezes. Os efeitos se acumulam.
 Escolha um pacote de Liderança que você não possua. Você ganha esse pacote.
 
 Recrutamento Aprimorado
-O nível do seu parceiro passa a ser igual a 3/4 do seu nível, arredondado para baixo, em vez de 1/2 do seu nível, arredondado para baixo. Você pode escolher este talento duas vezes, caso em que o nível máximo do seu parceiro passa a ser igual ao seu.
+O nível do seu companheiro passa a ser igual a 3/4 do seu nível, arredondado para baixo, em vez de 1/2 do seu nível, arredondado para baixo. Você pode escolher este talento duas vezes, caso em que o nível máximo do seu companheiro passa a ser igual ao seu.
 
 Liderança Aprimorada
 Você adiciona o dobro do seu bônus de proficiência aos testes de Persuasão.
@@ -365,7 +365,7 @@ Seus seguidores estão equipados com bestas voadoras, dirigíveis, levitação a
 #### Alistar
 **Pré-requisitos**: :: Esfera de Liderança, 5º nível.
 
-Você pode gastar foco marcial como uma Ação para forçar uma criatura não hostil a até 9 metros a fazer um teste de resistência de Carisma ou ficar enfeitiçada por você por 1 hora. Enquanto enfeitiçada, a criatura servirá você como se fosse um ajudante. Criaturas que não sejam humanoides têm vantagem em seus testes de resistência.
+Você pode gastar foco marcial como uma Ação para forçar uma criatura não hostil a até 9 metros a fazer um teste de resistência de Carisma ou ficar enfeitiçada por você por 1 hora. Enquanto enfeitiçada, a criatura servirá você como se fosse um companheiro. Criaturas que não sejam humanoides têm vantagem em seus testes de resistência.
 
 \page
 <div class='pageNumber auto'></div>
@@ -375,10 +375,10 @@ Uma vez que uma criatura seja bem-sucedida em seu teste de resistência contra o
 Caso a criatura enfeitiçada sofra dano, ou caso você tente fazer com que ela realize uma ação obviamente suicida, ela será automaticamente libertada dos efeitos do encantamento.
 
 
-#### Mestre dos Mortos (ajudante)
-**Pré-requisitos**: :: Esfera de Liderança (pacote de ajudante).
+#### Mestre dos Mortos (companheiro)
+**Pré-requisitos**: :: Esfera de Liderança (pacote de Companheiro).
 
-Você pode recrutar ajudantes do tipo morto-vivo, que encontram e reanimam cadáveres com rituais arcanos. Esses companheiros são construídos normalmente, mas possuem o tipo morto-vivo e ganham os seguintes modificadores e habilidades, dependendo se são Esqueleto ou Zumbi:
+Você pode recrutar companheiros do tipo morto-vivo, que encontram e reanimam cadáveres com rituais arcanos. Esses companheiros são construídos normalmente, mas possuem o tipo morto-vivo e ganham os seguintes modificadores e habilidades, dependendo se são Esqueleto ou Zumbi:
 :
 **Esqueleto**
 
@@ -413,11 +413,11 @@ Se você possuir o talento Mensageiros, seus mensageiros podem alcançar qualque
 
 
 #### Esquadrão
-**Pré-requisitos**: :: Esfera de Liderança (pacotes de seguidores e parceiros, Soldados), 5º nível de personagem.
+**Pré-requisitos**: :: Esfera de Liderança (pacotes de seguidores e Companheiro, Soldados), 5º nível de personagem.
 
-Você pode recrutar suas tropas de seguidores para serem parceiros.
+Você pode recrutar suas tropas de seguidores para serem companheiros.
 
-Escolha uma tropa para se tornar um parceiro. Essa tropa se torna uma tropa de estudantes, uma tropa de exploradores ou uma tropa de veteranos e avança como se fosse um parceiro, exceto que cada nível que um esquadrão possui conta como dois níveis ao determinar o nível máximo do seu parceiro ou parceiros. Para cada nível que o esquadrão tiver além do 1º, ele ganha três Dados de Vida e seu máximo de pontos de vida aumenta. Para determinar o valor do aumento, role o Dado de Vida (o tipo de dado aparece na ficha de estatísticas do parceiro) três vezes e adicione três vezes o seu modificador de Constituição. Ele ganha um mínimo de 3 pontos de vida por nível. Essa tropa o seguirá em situações perigosas como qualquer outro parceiro.
+Escolha uma tropa para se tornar um companheiro. Essa tropa se torna uma tropa de estudantes, uma tropa de exploradores ou uma tropa de veteranos e avança como se fosse um companheiro, exceto que cada nível que um esquadrão possui conta como dois níveis ao determinar o nível máximo do seu companheiro ou companheiros. Para cada nível que o esquadrão tiver além do 1º, ele ganha três Dados de Vida e seu máximo de pontos de vida aumenta. Para determinar o valor do aumento, role o Dado de Vida (o tipo de dado aparece na ficha de estatísticas do companheiro) três vezes e adicione três vezes o seu modificador de Constituição. Ele ganha um mínimo de 3 pontos de vida por nível. Essa tropa o seguirá em situações perigosas como qualquer outro companheiro.
 
 
 #### Teletransporte
@@ -434,18 +434,18 @@ Se você possuir o talento Mensageiros, seus mensageiros podem alcançar qualque
 
 
 ### Regras Adicionais
-#### Avançando um Ajudante
-Seu ajudante começa como um personagem de 1º nível. Consulte a tabela abaixo para determinar o bônus de proficiência do seu ajudante e as novas características que ele ganha ao subir de nível.
+#### Avançando um Companheiro
+Seu companheiro começa como um personagem de 1º nível. Consulte a tabela abaixo para determinar o bônus de proficiência do seu companheiro e as novas características que ele ganha ao subir de nível.
 
 #### Pontos de Vida
-Sempre que o ajudante sobe de nível, ele ganha um Dado de Vida e seu máximo de pontos de vida aumenta. Para determinar o valor do aumento, role o Dado de Vida (o tipo de dado aparece na ficha de estatísticas do ajudante) e adicione seu modificador de Constituição. Ele ganha um mínimo de 1 ponto de vida por nível.
+Sempre que o companheiro sobe de nível, ele ganha um Dado de Vida e seu máximo de pontos de vida aumenta. Para determinar o valor do aumento, role o Dado de Vida (o tipo de dado aparece na ficha de estatísticas do companheiro) e adicione seu modificador de Constituição. Ele ganha um mínimo de 1 ponto de vida por nível.
 
-Se o ajudante chegar a 0 pontos de vida e não for morto imediatamente, ele fica inconsciente e, em seguida, faz testes de resistência contra a morte, assim como um personagem jogador.
+Se o companheiro chegar a 0 pontos de vida e não for morto imediatamente, ele fica inconsciente e, em seguida, faz testes de resistência contra a morte, assim como um personagem jogador.
 
 #### Bônus de Proficiência
-O bônus de proficiência do ajudante é determinado pelo seu nível de classe, conforme mostrado na tabela da classe. Sempre que o bônus de proficiência do parceiro aumentar em 1, adicione 1 ao modificador de ataque de todos os ataques em sua ficha de estatísticas e aumente as CDs em sua ficha de estatísticas em 1.
+O bônus de proficiência do companheiro é determinado pelo seu nível de classe, conforme mostrado na tabela da classe. Sempre que o bônus de proficiência do companheiro aumentar em 1, adicione 1 ao modificador de ataque de todos os ataques em sua ficha de estatísticas e aumente as CDs em sua ficha de estatísticas em 1.
 
 #### Aumentos de Atributo
-Sempre que o parceiro adquirir a característica Aprimoramento de Atributo, ajuste qualquer atributo em sua ficha de estatísticas que dependa de um modificador de atributo que você aumentar. Por exemplo, se o parceiro tiver um ataque que usa seu modificador de Força, aumente os modificadores de ataque e dano do ataque se o modificador de Força aumentar. Se não estiver claro se um ataque corpo a corpo na ficha de estatísticas usa Força ou Destreza, o ataque pode usar qualquer um dos dois.
+Sempre que o companheiro adquirir a característica Aprimoramento de Atributo, ajuste qualquer atributo em sua ficha de estatísticas que dependa de um modificador de atributo que você aumentar. Por exemplo, se o companheiro tiver um ataque que usa seu modificador de Força, aumente os modificadores de ataque e dano do ataque se o modificador de Força aumentar. Se não estiver claro se um ataque corpo a corpo na ficha de estatísticas usa Força ou Destreza, o ataque pode usar qualquer um dos dois.
 
 \page
